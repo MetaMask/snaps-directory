@@ -1,49 +1,21 @@
-import * as React from "react"
-import { Link, HeadFC, PageProps } from "gatsby"
+import * as React from "react";
+import { Text, Box, Container, Center, Heading } from "@chakra-ui/react";
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-
-const NotFoundPage: React.FC<PageProps> = () => {
+const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+    <Box p="8" textAlign="center">
+      <Container>
+        <Center>
+          <Heading m="2" as="h1" size="2xl">
+            404
+          </Heading>
+        </Center>
+        <Text mt="4" opacity="0.75">
+          These are not the droids you are looking for.
+        </Text>
+      </Container>
+    </Box>
+  );
+};
 
-export default NotFoundPage
-
-export const Head: HeadFC = () => <title>Not found</title>
+export default NotFoundPage;
