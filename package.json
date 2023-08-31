@@ -20,13 +20,15 @@
     "@chakra-ui/react": "^2.8.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@metamask/snaps-controllers": "^1.0.2",
     "framer-motion": "^10.16.2",
     "gatsby": "^5.12.3",
     "gatsby-plugin-react-helmet": "^6.12.0",
+    "node-fetch": "^2.6.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "node-fetch": "^2.6.11"
+    "semver": "^7.5.4"
   },
   "devDependencies": {
     "@types/node": "^20.3.3",

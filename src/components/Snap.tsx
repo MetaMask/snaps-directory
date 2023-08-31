@@ -1,7 +1,7 @@
-import { Box, Flex, Text, Button, Center } from "@chakra-ui/react";
+import { Flex, Text, Button, Avatar } from "@chakra-ui/react";
 import React from "react";
 
-export const Snap = ({ metadata, snapId }) => {
+export const Snap = ({ name, description, snapId, svgIcon, latestVersion }) => {
   return (
     <Flex
       flexDirection="column"
@@ -12,17 +12,26 @@ export const Snap = ({ metadata, snapId }) => {
       boxShadow="base"
     >
       <Flex flexDirection="column">
-        <Flex mb="2">
-          <Text
-            fontSize="lg"
-            fontWeight="semibold"
-            lineHeight="short"
-            isTruncated
-            verticalAlign="middle"
-          >
-            {metadata.name}
-          </Text>
-        </Flex>
+        <Avatar
+          src={svgIcon}
+          name={name.slice(0, 1).toUpperCase()}
+          fontSize="md"
+          background="background.alternative"
+          color="text.alternative"
+          size="sm"
+          margin="1"
+        />
+        <Text
+          fontSize="lg"
+          fontWeight="semibold"
+          lineHeight="short"
+          isTruncated
+          verticalAlign="middle"
+        >
+          {name}
+        </Text>
+        <Text>{description}</Text>
+        <Text>{latestVersion}</Text>
         <Button>Visit dapp</Button>
       </Flex>
     </Flex>

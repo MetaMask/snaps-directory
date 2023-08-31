@@ -10,9 +10,10 @@ const IndexPage = () => {
       allSnap {
         nodes {
           snapId
-          metadata {
-            name
-          }
+          name
+          description
+          svgIcon
+          latestVersion
         }
       }
     }
