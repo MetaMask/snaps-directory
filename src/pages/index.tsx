@@ -1,8 +1,9 @@
-import { Box, Center, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Box, SimpleGrid } from "@chakra-ui/react";
 import { graphql, useStaticQuery } from "gatsby";
-import React, { useState } from "react";
+import React from "react";
 import { Seo } from "../components/SEO";
 import { Snap } from "../components/Snap";
+import { Layout } from "../components/Layout";
 
 const IndexPage = () => {
   const rawData = useStaticQuery(graphql`
@@ -24,18 +25,17 @@ const IndexPage = () => {
   return (
     <>
       <Seo />
-      <Box py="4" px="8">
-        <Center mb="4">
-          <Heading>Discover Snaps</Heading>
-        </Center>
-        <SimpleGrid minChildWidth="300px" spacing={4}>
-          {snaps
-            .filter((snap) => !snap.snapId.endsWith("example-snap"))
-            .map((snap) => (
-              <Snap {...snap} />
-            ))}
-        </SimpleGrid>
-      </Box>
+      <Layout>
+        <Box py="4" px="8">
+          <SimpleGrid minChildWidth="300px" spacing={4}>
+            {snaps
+              .filter((snap) => !snap.snapId.endsWith("example-snap"))
+              .map((snap) => (
+                <Snap {...snap} />
+              ))}
+          </SimpleGrid>
+        </Box>
+      </Layout>
     </>
   );
 };
