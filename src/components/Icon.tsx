@@ -3,12 +3,17 @@ import { Image } from '@chakra-ui/react';
 import type { ForwardRefExoticComponent } from 'react';
 import { forwardRef } from 'react';
 
+import externalLinkIcon from '../assets/icons/external-link.svg';
 import snapIcon from '../assets/icons/snap.svg';
 
 const DEFAULT_ICONS = {
   snap: {
     alt: 'Snap',
     src: snapIcon,
+  },
+  externalLink: {
+    alt: 'External Link',
+    src: externalLinkIcon,
   },
 };
 

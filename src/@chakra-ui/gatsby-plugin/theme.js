@@ -100,7 +100,7 @@ const theme = extendTheme({
       },
       gray: {
         muted: {
-          default: '#D6D9DC',
+          default: '#878787',
           _dark: '#3B4046',
         },
       },
@@ -268,7 +268,7 @@ const theme = extendTheme({
 
     Text: defineStyleConfig({
       baseStyle: {
-        color: 'text',
+        color: 'black',
       },
     }),
 
@@ -303,8 +303,8 @@ const theme = extendTheme({
           height: '48px',
           borderRadius: '30px',
           background: 'info.default',
-          fontSize: 'sm',
-          fontWeight: 'normal',
+          fontSize: 'md',
+          fontWeight: '500',
           lineHeight: '157%',
           color: 'white',
           borderColor: 'info.default',
@@ -315,8 +315,8 @@ const theme = extendTheme({
           height: '48px',
           borderRadius: '30px',
           background: 'transparent',
-          fontSize: 'sm',
-          fontWeight: 'normal',
+          fontSize: 'md',
+          fontWeight: '500',
           lineHeight: '157%',
           color: 'info.default',
           borderColor: 'info.default',
@@ -359,20 +359,6 @@ const theme = extendTheme({
     body: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
     code: `SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace`,
     custom: `"Euclid Circular B", sans-serif`,
-  },
-
-  styles: {
-    global: {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      '#root': {
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '$100vh',
-      },
-      iframe: {
-        display: 'none',
-      },
-    },
   },
 });
 
