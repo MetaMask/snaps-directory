@@ -9,7 +9,6 @@
   "repository": {
     "type": "git"
   },
-  "author": "Frederik Bolding",
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
