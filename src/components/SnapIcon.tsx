@@ -23,17 +23,15 @@ export const SnapIcon: FunctionComponent<SnapIconProps> = ({
 }) => {
   return (
     <Box position="relative">
-      {svgIcon && (
-        <Avatar
-          src={svgIcon}
-          name={snapName.slice(1, 2).toUpperCase()}
-          fontSize="md"
-          background="background.alternative"
-          color="text.alternative"
-          size="sm"
-          margin="1"
-        />
-      )}
+      <Avatar
+        src={svgIcon as string}
+        name={snapName.slice(1, 2).toUpperCase()}
+        fontSize="md"
+        background="background.alternative"
+        color="text.alternative"
+        size="sm"
+        margin="1"
+      />
       <Icon
         icon="snap"
         width="16px"
