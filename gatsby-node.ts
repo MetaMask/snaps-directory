@@ -1,6 +1,7 @@
-import { detectSnapLocation } from '@metamask/snaps-controllers/dist/snaps/location';
 import type { GatsbyNode } from 'gatsby';
 import fetch from 'node-fetch';
+// eslint-disable-next-line import/no-nodejs-modules
+import { resolve } from 'path';
 import semver from 'semver/preload';
 
 export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
@@ -28,23 +29,24 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       },
     );
 
-    const location = detectSnapLocation(snap.id, {
-      versionRange: latestVersion as any,
-    });
-    const { result: manifest } = await location.manifest();
-    const { iconPath } = manifest.source.location.npm;
-    const svgIcon = iconPath
-      ? `data:image/svg+xml;utf8,${encodeURIComponent(
-          (await location.fetch(iconPath)).toString(),
-        )}`
-      : undefined;
+    // const location = detectSnapLocation(snap.id, {
+    //   versionRange: latestVersion as any,
+    // });
+    //
+    // const { result: manifest } = await location.manifest();
+    // const { iconPath } = manifest.source.location.npm;
+    // const svgIcon = iconPath
+    //   ? `data:image/svg+xml;utf8,${encodeURIComponent(
+    //       (await location.fetch(iconPath)).toString(),
+    //     )}`
+    //   : undefined;
 
     const content = {
       snapId: snap.id,
       name: snap.metadata.name,
-      description: manifest.description,
+      description: 'a', // manifest.description,
       latestVersion,
-      svgIcon,
+      svgIcon: 'a',
     };
 
     const node = {
@@ -61,4 +63,26 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
 
     await createNode(node);
   }
+};
+
+export const onCreateWebpackConfig: GatsbyNode[`onCreateWebpackConfig`] = ({
+  actions,
+}) => {
+  actions.setWebpackConfig({
+    externals: {
+      'node:crypto': 'commonjs crypto',
+    },
+    resolve: {
+      fallback: {
+        crypto: false,
+        fs: false,
+        os: false,
+        path: false,
+        stream: false,
+        tty: false,
+        // eslint-disable-next-line no-restricted-globals
+        util: resolve(__dirname, 'node_modules/util/util.js'),
+      },
+    },
+  });
 };

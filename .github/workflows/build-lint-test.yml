@@ -22,9 +22,6 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - prepare
-    strategy:
-      matrix:
-        node-version: [16.x, 18.x, 20.x]
     steps:
       - uses: actions/checkout@v3
       - name: Set up Node.js
@@ -47,9 +44,6 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - prepare
-    strategy:
-      matrix:
-        node-version: [16.x, 18.x, 20.x]
     steps:
       - uses: actions/checkout@v3
       - name: Set up Node.js
