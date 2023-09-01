@@ -1,16 +1,21 @@
 import { Flex, Text, Button } from '@chakra-ui/react';
+import { Link } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
 import { SnapIcon } from './SnapIcon';
+import type { Fields } from '../utils';
 
-// TODO: Fix types.
-export const Snap: FunctionComponent<any> = ({
-  name,
-  description,
-  snapId,
-  svgIcon,
-  latestVersion,
-}) => {
+export const Snap: FunctionComponent<
+  Fields<
+    Queries.Snap,
+    | 'name'
+    | 'description'
+    | 'snapId'
+    | 'svgIcon'
+    | 'latestVersion'
+    | 'gatsbyPath'
+  >
+> = ({ name, description, snapId, svgIcon, latestVersion, gatsbyPath }) => {
   return (
     <Flex flexDirection="column" px="5" py="4" rounded="2xl" boxShadow="base">
       <Flex flexDirection="column">
@@ -26,6 +31,9 @@ export const Snap: FunctionComponent<any> = ({
         <Text>{description}</Text>
         <Text>{latestVersion}</Text>
         <Button>Visit dapp</Button>
+        <Link to={gatsbyPath}>
+          <Button>Snap page</Button>
+        </Link>
       </Flex>
     </Flex>
   );

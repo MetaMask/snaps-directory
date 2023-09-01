@@ -45,6 +45,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       snapId: snap.id,
       name: snap.metadata.name,
       description: manifest.description,
+      slug: snap.metadata.name.toLowerCase().replace(/\s/gu, '-'),
       latestVersion,
       svgIcon,
     };
