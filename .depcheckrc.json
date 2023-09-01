@@ -1,9 +1,13 @@
 {
   "ignores": [
+    "@chakra-ui/gatsby-plugin",
     "@lavamoat/allow-scripts",
     "@lavamoat/preinstall-always-fail",
     "@metamask/auto-changelog",
     "@types/*",
+    "@yarnpkg/*",
+    "clipanion",
+    "gatsby-plugin-react-helmet",
     "prettier-plugin-packagejson",
     "ts-node",
     "typedoc"

@@ -61,6 +61,6 @@ module.exports = {
     'dist/',
     'docs/',
     '.yarn/',
-    'public/'
+    'public/',
   ],
 };

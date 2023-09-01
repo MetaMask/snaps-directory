@@ -1,8 +1,16 @@
-import { Flex, Text, Button, Avatar } from "@chakra-ui/react";
-import React from "react";
-import { SnapIcon } from "./SnapIcon";
+import { Flex, Text, Button } from '@chakra-ui/react';
+import type { FunctionComponent } from 'react';
 
-export const Snap = ({ name, description, snapId, svgIcon, latestVersion }) => {
+import { SnapIcon } from './SnapIcon';
+
+// TODO: Fix types.
+export const Snap: FunctionComponent<any> = ({
+  name,
+  description,
+  snapId,
+  svgIcon,
+  latestVersion,
+}) => {
   return (
     <Flex flexDirection="column" px="5" py="4" rounded="2xl" boxShadow="base">
       <Flex flexDirection="column">
@@ -12,9 +20,7 @@ export const Snap = ({ name, description, snapId, svgIcon, latestVersion }) => {
             <Text fontWeight="semibold" isTruncated>
               {name}
             </Text>
-            <Text isTruncated>
-              {snapId.slice(4)}
-            </Text>
+            <Text isTruncated>{snapId.slice(4)}</Text>
           </Flex>
         </Flex>
         <Text>{description}</Text>

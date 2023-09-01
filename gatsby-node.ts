@@ -7,9 +7,6 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
   actions,
   createNodeId,
   createContentDigest,
-  store,
-  cache,
-  reporter,
 }) => {
   const { createNode } = actions;
 
@@ -17,7 +14,8 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
     'https://raw.githubusercontent.com/MetaMask/snaps-registry/main/src/registry.json',
   ).then(async (response) => response.json());
 
-  const verifiedSnaps = Object.values(registry.verifiedSnaps);
+  // TODO: Fix types.
+  const verifiedSnaps: any[] = Object.values(registry.verifiedSnaps);
 
   for (const snap of verifiedSnaps) {
     const latestVersion = Object.keys(snap.versions).reduce(
@@ -48,17 +46,19 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       latestVersion,
       svgIcon,
     };
+
     const node = {
       ...content,
       parent: null,
       children: [],
-      id: createNodeId(`snap__${snap.id}`),
+      id: createNodeId(`snap__${snap.id as string}`),
       internal: {
         type: 'Snap',
         content: JSON.stringify(content),
         contentDigest: createContentDigest(content),
       },
     };
-    createNode(node);
+
+    await createNode(node);
   }
 };

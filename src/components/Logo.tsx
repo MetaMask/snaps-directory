@@ -1,8 +1,7 @@
-import { Image, useColorMode } from "@chakra-ui/react";
-import type { FunctionComponent } from "react";
-import React from "react"
+import { Image } from '@chakra-ui/react';
+import type { FunctionComponent } from 'react';
 
-import logo from "../assets/logo.svg";
+import logo from '../assets/logo.svg';
 
 /**
  * Render the Snaps Directory logo.

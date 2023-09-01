@@ -1,8 +1,7 @@
-import { Flex } from "@chakra-ui/react";
-import type { FunctionComponent, ReactNode } from "react";
-import React from "react";
+import { Flex } from '@chakra-ui/react';
+import type { FunctionComponent, ReactNode } from 'react';
 
-import { Header } from "./Header";
+import { Header } from './Header';
 
 type LayoutProps = {
   children?: ReactNode;
@@ -11,6 +10,8 @@ type LayoutProps = {
 /**
  * Render the layout of the application.
  *
+ * @param props - The component props.
+ * @param props.children - The children to render.
  * @returns A React component.
  */
 export const Layout: FunctionComponent<LayoutProps> = ({ children }) => (
