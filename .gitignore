@@ -78,5 +78,6 @@ node_modules/
 !.yarn/versions
 
 # Gatsby
+.cache
 public
 src/gatsby-types.d.ts
