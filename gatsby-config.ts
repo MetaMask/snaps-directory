@@ -3,16 +3,14 @@ import type { GatsbyConfig } from 'gatsby';
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `snaps-discover`,
-    siteUrl: `https://www.yourdomain.tld`,
-    author: '',
+    description: 'Discover and install MetaMask Snaps.',
+    // TODO: Update URL.
+    siteUrl: `https://metamask.io`,
+    author: 'MetaMask',
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   jsxRuntime: 'automatic',
   plugins: [
-    'gatsby-plugin-react-helmet',
     {
       resolve: '@chakra-ui/gatsby-plugin',
       options: {
