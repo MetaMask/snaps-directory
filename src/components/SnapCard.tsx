@@ -15,22 +15,22 @@ export const SnapCard: FunctionComponent<
     description.length > 115 ? `${description.slice(0, 115)}...` : description;
 
   return (
-    <Flex
-      flexDirection="column"
-      px="5"
-      py="4"
-      rounded="2xl"
-      boxShadow="base"
-      backgroundColor="white"
-    >
-      <Flex flexDirection="column">
-        <Box marginBottom="4">
-          <Link to={gatsbyPath}>
+    <Link to={gatsbyPath}>
+      <Flex
+        flexDirection="column"
+        px="5"
+        py="4"
+        rounded="2xl"
+        boxShadow="base"
+        backgroundColor="white"
+      >
+        <Flex flexDirection="column">
+          <Box marginBottom="4">
             <SnapAuthorship name={name} svgIcon={svgIcon} snapId={snapId} />
-          </Link>
-        </Box>
-        <Text fontSize="sm">{shortDescription}</Text>
+          </Box>
+          <Text fontSize="sm">{shortDescription}</Text>
+        </Flex>
       </Flex>
-    </Flex>
+    </Link>
   );
 };
