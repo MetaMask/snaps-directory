@@ -1,4 +1,4 @@
-import { Flex, Text, Button } from '@chakra-ui/react';
+import { Flex, Text, Box } from '@chakra-ui/react';
 import { Link } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
@@ -11,6 +11,9 @@ export const SnapCard: FunctionComponent<
     'name' | 'description' | 'snapId' | 'svgIcon' | 'gatsbyPath'
   >
 > = ({ name, description, snapId, svgIcon, gatsbyPath }) => {
+  const shortDescription =
+    description.length > 115 ? `${description.slice(0, 115)}...` : description;
+
   return (
     <Flex
       flexDirection="column"
@@ -21,13 +24,12 @@ export const SnapCard: FunctionComponent<
       backgroundColor="white"
     >
       <Flex flexDirection="column">
-        <Flex mb="2">
-          <SnapAuthorship name={name} svgIcon={svgIcon} snapId={snapId} />
-        </Flex>
-        <Text>{description}</Text>
-        <Link to={gatsbyPath}>
-          <Button>Snap page</Button>
-        </Link>
+        <Box marginBottom="4">
+          <Link to={gatsbyPath}>
+            <SnapAuthorship name={name} svgIcon={svgIcon} snapId={snapId} />
+          </Link>
+        </Box>
+        <Text fontSize="sm">{shortDescription}</Text>
       </Flex>
     </Flex>
   );

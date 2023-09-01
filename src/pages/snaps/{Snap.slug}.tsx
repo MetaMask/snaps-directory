@@ -1,12 +1,16 @@
-import { Box, Button, Divider, Flex, Text } from '@chakra-ui/react';
+import { Box, Button, Container, Divider, Flex, Text } from '@chakra-ui/react';
 import { graphql } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
 import { SnapAuthorship, Icon, SnapData } from '../../components';
+import type { Fields } from '../../utils';
 
 type SnapPageProps = {
   data: {
-    snap: Queries.Snap;
+    snap: Fields<
+      Queries.Snap,
+      'name' | 'svgIcon' | 'snapId' | 'description' | 'latestVersion'
+    >;
   };
 };
 
@@ -14,8 +18,8 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
   const { name, snapId, svgIcon, description, latestVersion } = data.snap;
 
   return (
-    <Box py="4" px="8">
-      <Box p="6" rounded="2xl" boxShadow="base">
+    <Container maxWidth="container.lg">
+      <Box p="6" rounded="2xl" boxShadow="base" background="white">
         <Flex justifyContent="space-between">
           <SnapAuthorship name={name} svgIcon={svgIcon} snapId={snapId} />
           <Flex alignItems="center">
@@ -51,7 +55,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
         </Text>
         <Text mt="1">{description}</Text>
       </Box>
-    </Box>
+    </Container>
   );
 };
 

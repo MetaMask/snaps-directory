@@ -54,7 +54,7 @@ const theme = extendTheme({
 
   semanticTokens: {
     colors: {
-      'chakra-body-bg': { _light: 'white', _dark: '#24272A' },
+      'chakra-body-bg': { _light: '#F8FAFC', _dark: '#24272A' },
       text: {
         default: '#24272A',
         _dark: '#9FA6AE',
@@ -219,6 +219,10 @@ const theme = extendTheme({
     },
 
     Link: defineStyleConfig({
+      baseStyle: {
+        color: 'info.default',
+      },
+
       variants: {
         'navigation-active': {
           opacity: '1',

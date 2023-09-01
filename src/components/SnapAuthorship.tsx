@@ -1,4 +1,4 @@
-import { Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 
 import { SnapIcon } from './SnapIcon';
@@ -8,16 +8,16 @@ export const SnapAuthorship: FunctionComponent<
   Fields<Queries.Snap, 'name' | 'snapId' | 'svgIcon'>
 > = ({ name, snapId, svgIcon }) => {
   return (
-    <Flex>
+    <Flex alignItems="center">
       <SnapIcon snapName={name} svgIcon={svgIcon} />
-      <Flex ml="2" flexDirection="column" justifyContent="center">
+      <Box ml="2" overflow="hidden">
         <Text fontWeight="semibold" isTruncated>
           {name}
         </Text>
         <Text color="gray.muted" fontFamily="custom" isTruncated>
           {snapId.slice(4)}
         </Text>
-      </Flex>
+      </Box>
     </Flex>
   );
 };

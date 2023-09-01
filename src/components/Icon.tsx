@@ -4,9 +4,14 @@ import type { ForwardRefExoticComponent } from 'react';
 import { forwardRef } from 'react';
 
 import externalLinkIcon from '../assets/icons/external-link.svg';
+import searchIcon from '../assets/icons/search.svg';
 import snapIcon from '../assets/icons/snap.svg';
 
 const DEFAULT_ICONS = {
+  search: {
+    alt: 'Search',
+    src: searchIcon,
+  },
   snap: {
     alt: 'Snap',
     src: snapIcon,

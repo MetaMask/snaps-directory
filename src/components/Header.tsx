@@ -11,6 +11,8 @@ export const Header: FunctionComponent = () => (
     display="flex"
     flexDirection="row"
     justifyContent="space-between"
+    background="white"
+    marginBottom="20"
   >
     <Stack direction="row" height="7" align="center">
       <Logo />
