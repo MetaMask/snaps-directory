@@ -1,15 +1,13 @@
-import type { PropsOf } from "@chakra-ui/react";
-import { Image, useColorMode } from "@chakra-ui/react";
-import { hasProperty } from "@metamask/utils";
-import type { ForwardRefExoticComponent } from "react";
-import { forwardRef } from "react";
-import React from "react";
+import type { PropsOf } from '@chakra-ui/react';
+import { Image } from '@chakra-ui/react';
+import type { ForwardRefExoticComponent } from 'react';
+import { forwardRef } from 'react';
 
-import snapIcon from "../assets/icons/snap.svg";
+import snapIcon from '../assets/icons/snap.svg';
 
 const DEFAULT_ICONS = {
   snap: {
-    alt: "Snap",
+    alt: 'Snap',
     src: snapIcon,
   },
 };
@@ -41,31 +39,22 @@ export const Icon: ForwardRefExoticComponent<IconProps> = forwardRef(
     {
       icon,
       alt = DEFAULT_ICONS[icon].alt,
-      width = "32px",
+      width = '32px',
       height = width,
       ...props
     },
-    ref
+    ref,
   ) => {
-    const { colorMode } = useColorMode();
-
     const iconMetadata = DEFAULT_ICONS[icon];
-    const defaultSrc = iconMetadata.src;
-    const darkSrc = hasProperty(iconMetadata, "srcDark")
-      ? iconMetadata.srcDark
-      : iconMetadata.src;
-
-    const src = colorMode === "light" ? defaultSrc : darkSrc;
-
     return (
       <Image
         ref={ref}
-        src={src}
+        src={iconMetadata.src}
         alt={alt}
         width={width}
         height={height}
         {...props}
       />
     );
-  }
+  },
 );

@@ -1,8 +1,7 @@
-import { Container, Stack } from "@chakra-ui/react";
-import type { FunctionComponent } from "react";
-import React from "react";
+import { Container, Stack } from '@chakra-ui/react';
+import type { FunctionComponent } from 'react';
 
-import { Logo } from "./Logo";
+import { Logo } from './Logo';
 
 export const Header: FunctionComponent = () => (
   <Container

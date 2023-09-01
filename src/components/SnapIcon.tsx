@@ -1,12 +1,11 @@
-import { Avatar, Box } from "@chakra-ui/react";
-import type { FunctionComponent } from "react";
-import React from "react"
+import { Avatar, Box } from '@chakra-ui/react';
+import type { FunctionComponent } from 'react';
 
-import { Icon } from "./Icon";
+import { Icon } from './Icon';
 
 export type SnapIconProps = {
   snapName: string;
-  svgIcon: string | undefined;
+  svgIcon?: string | undefined;
 };
 
 /**
@@ -15,6 +14,7 @@ export type SnapIconProps = {
  *
  * @param props - The props.
  * @param props.snapName - The name of the snap.
+ * @param props.svgIcon - The SVG icon defined in the snap's manifest.
  * @returns The Snap icon component.
  */
 export const SnapIcon: FunctionComponent<SnapIconProps> = ({
@@ -24,7 +24,7 @@ export const SnapIcon: FunctionComponent<SnapIconProps> = ({
   return (
     <Box position="relative">
       <Avatar
-        src={svgIcon}
+        src={svgIcon as string}
         name={snapName.slice(1, 2).toUpperCase()}
         fontSize="md"
         background="background.alternative"

@@ -8,14 +8,14 @@ import {
   tabsAnatomy,
   modalAnatomy,
   switchAnatomy,
-} from "@chakra-ui/anatomy";
+} from '@chakra-ui/anatomy';
 import {
   createMultiStyleConfigHelpers,
   cssVar,
   defineStyle,
   defineStyleConfig,
   extendTheme,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
 /* eslint-disable @typescript-eslint/unbound-method */
 const {
@@ -45,7 +45,7 @@ const {
 /* eslint-enable @typescript-eslint/unbound-method */
 
 const config = {
-  initialColorMode: "system",
+  initialColorMode: 'system',
   useSystemColorMode: true,
 };
 
@@ -54,82 +54,82 @@ const theme = extendTheme({
 
   semanticTokens: {
     colors: {
-      "chakra-body-bg": { _light: "white", _dark: "#24272A" },
+      'chakra-body-bg': { _light: 'white', _dark: '#24272A' },
       text: {
-        default: "#24272A",
-        _dark: "#9FA6AE",
+        default: '#24272A',
+        _dark: '#9FA6AE',
         tab: {
-          default: "#535A61",
-          _dark: "#FFFFFF",
+          default: '#535A61',
+          _dark: '#FFFFFF',
           selected: {
-            default: "#24272A",
-            _dark: "#FFFFFF",
+            default: '#24272A',
+            _dark: '#FFFFFF',
           },
         },
         console: {
-          default: "#535A61",
-          _dark: "#D6D9DC",
+          default: '#535A61',
+          _dark: '#D6D9DC',
         },
       },
       background: {
-        alternative: { default: "#F5F5F5", _dark: "#1D1F22" },
+        alternative: { default: '#F5F5F5', _dark: '#1D1F22' },
         hover: {
-          default: "#FAFBFC",
-          _dark: "#141618",
+          default: '#FAFBFC',
+          _dark: '#141618',
         },
       },
       info: {
         default: {
-          default: "#0376C9",
-          _dark: "#1098FC",
+          default: '#0376C9',
+          _dark: '#1098FC',
         },
         muted: {
-          default: "rgba(3, 118, 201, 0.1)",
-          _dark: "#141618",
+          default: 'rgba(3, 118, 201, 0.1)',
+          _dark: '#141618',
         },
       },
       border: {
         default: {
-          default: "#D6D9DC",
-          _dark: "#3B4046",
+          default: '#D6D9DC',
+          _dark: '#3B4046',
         },
         active: {
-          default: "#24272A",
-          _dark: "rgba(255, 255, 255, 0.06)",
+          default: '#24272A',
+          _dark: 'rgba(255, 255, 255, 0.06)',
         },
       },
       gray: {
         muted: {
-          default: "#D6D9DC",
-          _dark: "#3B4046",
+          default: '#D6D9DC',
+          _dark: '#3B4046',
         },
       },
     },
     borders: {
       muted: {
-        default: "1px solid #D6D9DC",
-        _dark: "1px solid #3B4046",
+        default: '1px solid #D6D9DC',
+        _dark: '1px solid #3B4046',
       },
     },
   },
 
   colors: {
     text: {
-      white: "#FFFFFF",
-      alternative: "#535A61",
-      success: "#579F6E",
-      error: "#D34C46",
-      muted: "#BBC0C5",
+      white: '#FFFFFF',
+      alternative: '#535A61',
+      success: '#579F6E',
+      error: '#D34C46',
+      muted: '#BBC0C5',
     },
     error: {
-      default: "#D34C46",
-      muted: "rgba(215, 56, 71, 0.1)",
+      default: '#D34C46',
+      muted: 'rgba(215, 56, 71, 0.1)',
     },
     success: {
-      default: "#579F6E",
+      default: '#579F6E',
     },
     gray: {
-      40: "#F2F4F6",
+      40: '#F2F4F6',
     },
   },
 
@@ -141,7 +141,7 @@ const theme = extendTheme({
       },
       sizes: {
         fullWidth: {
-          maxWidth: "100%",
+          maxWidth: '100%',
         },
       },
     }),
@@ -156,54 +156,54 @@ const theme = extendTheme({
       baseStyle: defineFormPartsStyle({
         container: {
           label: {
-            fontSize: "xs",
+            fontSize: 'xs',
             marginBottom: 1,
           },
           input: {
             marginBottom: 4,
-            borderColor: "border.default",
-            outline: "none",
-            fontSize: "sm",
+            borderColor: 'border.default',
+            outline: 'none',
+            fontSize: 'sm',
             _active: {
-              borderColor: "border.active",
-              outline: "none",
-              boxShadow: "none",
+              borderColor: 'border.active',
+              outline: 'none',
+              boxShadow: 'none',
             },
             _focusVisible: {
-              borderColor: "border.active",
-              outline: "none",
-              boxShadow: "none",
+              borderColor: 'border.active',
+              outline: 'none',
+              boxShadow: 'none',
             },
           },
           textarea: {
             marginBottom: 4,
-            borderColor: "border.default",
-            outline: "none",
-            fontSize: "sm",
+            borderColor: 'border.default',
+            outline: 'none',
+            fontSize: 'sm',
             _active: {
-              borderColor: "border.active",
-              outline: "none",
-              boxShadow: "none",
+              borderColor: 'border.active',
+              outline: 'none',
+              boxShadow: 'none',
             },
             _focusVisible: {
-              borderColor: "border.active",
-              outline: "none",
-              boxShadow: "none",
+              borderColor: 'border.active',
+              outline: 'none',
+              boxShadow: 'none',
             },
           },
           select: {
-            borderColor: "border.default",
-            outline: "none",
-            fontSize: "sm",
+            borderColor: 'border.default',
+            outline: 'none',
+            fontSize: 'sm',
             _active: {
-              borderColor: "border.active",
-              outline: "none",
-              boxShadow: "none",
+              borderColor: 'border.active',
+              outline: 'none',
+              boxShadow: 'none',
             },
             _focusVisible: {
-              borderColor: "border.active",
-              outline: "none",
-              boxShadow: "none",
+              borderColor: 'border.active',
+              outline: 'none',
+              boxShadow: 'none',
             },
           },
         },
@@ -213,22 +213,22 @@ const theme = extendTheme({
     Heading: {
       variants: {
         main: {
-          fontFamily: "custom",
+          fontFamily: 'custom',
         },
       },
     },
 
     Link: defineStyleConfig({
       variants: {
-        "navigation-active": {
-          opacity: "1",
-          background: "background.alternative",
-          borderRadius: "lg",
+        'navigation-active': {
+          opacity: '1',
+          background: 'background.alternative',
+          borderRadius: 'lg',
         },
 
-        "navigation-default": {
-          opacity: "0.6",
-          borderRadius: "lg",
+        'navigation-default': {
+          opacity: '0.6',
+          borderRadius: 'lg',
         },
       },
     }),
@@ -237,29 +237,29 @@ const theme = extendTheme({
       variants: {
         line: defineTabsPartsStyle({
           tablist: {
-            background: "background.alternative",
-            borderBottom: "1px solid",
-            borderColor: "border.default",
-            paddingX: "4",
+            background: 'background.alternative',
+            borderBottom: '1px solid',
+            borderColor: 'border.default',
+            paddingX: '4',
           },
           tab: {
-            color: "text.tab",
-            fontSize: "xs",
-            fontWeight: "600",
-            textTransform: "uppercase",
-            outline: "none",
-            paddingTop: "0",
-            paddingX: "0",
-            paddingBottom: "0.5",
-            marginY: "3",
-            background: "none",
-            "& + &": {
-              marginLeft: "4",
+            color: 'text.tab',
+            fontSize: 'xs',
+            fontWeight: '600',
+            textTransform: 'uppercase',
+            outline: 'none',
+            paddingTop: '0',
+            paddingX: '0',
+            paddingBottom: '0.5',
+            marginY: '3',
+            background: 'none',
+            '& + &': {
+              marginLeft: '4',
             },
             _selected: {
-              color: "text.tab.selected",
-              borderBottom: "2px solid",
-              borderColor: "border.active",
+              color: 'text.tab.selected',
+              borderBottom: '2px solid',
+              borderColor: 'border.active',
             },
           },
         }),
@@ -268,7 +268,7 @@ const theme = extendTheme({
 
     Text: defineStyleConfig({
       baseStyle: {
-        color: "text",
+        color: 'text',
       },
     }),
 
@@ -276,11 +276,11 @@ const theme = extendTheme({
       variants: {
         code: defineTagPartsStyle({
           container: {
-            color: "info.default",
-            background: "info.muted",
-            borderRadius: "0px",
-            fontWeight: "normal",
-            fontFamily: "code",
+            color: 'info.default',
+            background: 'info.muted',
+            borderRadius: '0px',
+            fontWeight: 'normal',
+            fontFamily: 'code',
           },
         }),
       },
@@ -289,56 +289,56 @@ const theme = extendTheme({
     Button: defineStyleConfig({
       variants: {
         solid: defineStyle({
-          bg: "#24272A",
-          textColor: "white",
+          bg: '#24272A',
+          textColor: 'white',
           _hover: {
-            bg: "#0376C9",
+            bg: '#0376C9',
           },
           _active: {
-            bg: "#0376C9",
+            bg: '#0376C9',
           },
-          fontFamily: "custom",
+          fontFamily: 'custom',
         }),
         primary: defineStyle({
-          height: "48px",
-          borderRadius: "30px",
-          background: "info.default",
-          fontSize: "sm",
-          fontWeight: "normal",
-          lineHeight: "157%",
-          color: "white",
-          borderColor: "info.default",
-          padding: "3",
-          fontFamily: "custom",
+          height: '48px',
+          borderRadius: '30px',
+          background: 'info.default',
+          fontSize: 'sm',
+          fontWeight: 'normal',
+          lineHeight: '157%',
+          color: 'white',
+          borderColor: 'info.default',
+          padding: '3',
+          fontFamily: 'custom',
         }),
         outline: defineStyle({
-          height: "48px",
-          borderRadius: "30px",
-          background: "transparent",
-          fontSize: "sm",
-          fontWeight: "normal",
-          lineHeight: "157%",
-          color: "info.default",
-          borderColor: "info.default",
-          padding: "3",
-          fontFamily: "custom",
+          height: '48px',
+          borderRadius: '30px',
+          background: 'transparent',
+          fontSize: 'sm',
+          fontWeight: 'normal',
+          lineHeight: '157%',
+          color: 'info.default',
+          borderColor: 'info.default',
+          padding: '3',
+          fontFamily: 'custom',
         }),
       },
     }),
 
     Skeleton: defineStyleConfig({
       baseStyle: defineStyle({
-        [cssVar("skeleton-start-color").variable]:
-          "colors.background.alternative",
-        [cssVar("skeleton-end-color").variable]: "colors.border",
-        borderRadius: "lg",
+        [cssVar('skeleton-start-color').variable]:
+          'colors.background.alternative',
+        [cssVar('skeleton-end-color').variable]: 'colors.border',
+        borderRadius: 'lg',
       }),
     }),
 
     Modal: defineModalMultiStyleConfig({
       baseStyle: defineModalPartsStyle({
         dialog: {
-          bg: "chakra-body-bg",
+          bg: 'chakra-body-bg',
         },
       }),
     }),
@@ -347,7 +347,7 @@ const theme = extendTheme({
       baseStyle: defineSwitchPartsStyle({
         track: {
           _checked: {
-            bg: "#0376C9",
+            bg: '#0376C9',
           },
         },
       }),
@@ -364,13 +364,13 @@ const theme = extendTheme({
   styles: {
     global: {
       // eslint-disable-next-line @typescript-eslint/naming-convention
-      "#root": {
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "$100vh",
+      '#root': {
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '$100vh',
       },
       iframe: {
-        display: "none",
+        display: 'none',
       },
     },
   },

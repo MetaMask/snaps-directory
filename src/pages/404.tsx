@@ -1,5 +1,4 @@
-import * as React from "react";
-import { Text, Box, Container, Center, Heading } from "@chakra-ui/react";
+import { Text, Box, Container, Center, Heading } from '@chakra-ui/react';
 
 const NotFoundPage = () => {
   return (
