@@ -33,7 +33,6 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@metamask/snaps-controllers": "^1.0.2",
-    "@metamask/utils": "^8.1.0",
     "framer-motion": "^10.16.2",
     "gatsby": "^5.12.3",
     "gatsby-plugin-react-helmet": "^6.12.0",
@@ -56,7 +55,6 @@
     "@types/react-dom": "^18.2.6",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
-    "crypto-browserify": "^3.12.0",
     "depcheck": "^1.4.3",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
@@ -73,8 +71,7 @@
     "prettier": "^2.7.1",
     "prettier-plugin-packagejson": "^2.3.0",
     "ts-jest": "^28.0.7",
-    "typescript": "~4.8.4",
-    "util": "^0.12.5"
+    "typescript": "~4.8.4"
   },
   "packageManager": "yarn@3.6.3",
   "engines": {

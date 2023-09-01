@@ -1,6 +1,5 @@
 import type { PropsOf } from '@chakra-ui/react';
-import { Image, useColorMode } from '@chakra-ui/react';
-import { hasProperty } from '@metamask/utils';
+import { Image } from '@chakra-ui/react';
 import type { ForwardRefExoticComponent } from 'react';
 import { forwardRef } from 'react';
 
@@ -46,20 +45,11 @@ export const Icon: ForwardRefExoticComponent<IconProps> = forwardRef(
     },
     ref,
   ) => {
-    const { colorMode } = useColorMode();
-
     const iconMetadata = DEFAULT_ICONS[icon];
-    const defaultSrc = iconMetadata.src;
-    const darkSrc = hasProperty(iconMetadata, 'srcDark')
-      ? iconMetadata.srcDark
-      : iconMetadata.src;
-
-    const src = colorMode === 'light' ? defaultSrc : darkSrc;
-
     return (
       <Image
         ref={ref}
-        src={src}
+        src={iconMetadata.src}
         alt={alt}
         width={width}
         height={height}
