@@ -20,6 +20,7 @@ module.exports = {
             allow: ['Text'],
           },
         ],
+        '@typescript-eslint/restrict-template-expressions': 'off',
 
         'react/display-name': 'off',
         'react/prop-types': 'off',

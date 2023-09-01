@@ -1,14 +1,28 @@
-import { Box, SimpleGrid } from '@chakra-ui/react';
-import { graphql } from 'gatsby';
+import {
+  Box,
+  SimpleGrid,
+  Container,
+  Heading,
+  Text,
+  Flex,
+  Link,
+  Input,
+  InputGroup,
+  InputLeftElement,
+} from '@chakra-ui/react';
+import { graphql, Link as RouterLink } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
-import { SnapCard } from '../components/SnapCard';
+import { Icon, SnapCard } from '../components';
 import type { Fields } from '../utils';
 
 type IndexPageProps = {
   data: {
     allSnap: {
-      nodes: Queries.Snap[];
+      nodes: Fields<
+        Queries.Snap,
+        'id' | 'snapId' | 'name' | 'description' | 'svgIcon' | 'gatsbyPath'
+      >[];
     };
   };
 };
@@ -17,16 +31,44 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
   const snaps = data.allSnap.nodes;
 
   return (
-    <Box py="4" px="8">
-      <SimpleGrid minChildWidth="300px" spacing={4}>
-        {snaps
-          // TODO: Fix types.
-          .filter((snap: any) => !snap.snapId.endsWith('example-snap'))
-          .map((snap: any) => (
-            <SnapCard key={snap.id} {...snap} />
-          ))}
-      </SimpleGrid>
-    </Box>
+    <Container maxWidth="container.lg">
+      <Flex direction="row" justifyContent="space-between" marginBottom="6">
+        <Box maxWidth="400px" width="100%">
+          <Heading as="h2" fontSize="2xl">
+            Community Snaps
+          </Heading>
+          <Text>
+            Discover snaps to customize your web3 experience via our official
+            directory.{' '}
+            <Link as={RouterLink} to="/">
+              Read more
+            </Link>{' '}
+            and{' '}
+            <Link as={RouterLink} to="/">
+              FAQ
+            </Link>
+            .
+          </Text>
+        </Box>
+        <Box maxWidth="400px" width="100%" marginTop="auto">
+          <InputGroup background="white" borderRadius="full">
+            <InputLeftElement pointerEvents="none">
+              <Icon icon="search" width="20px" />
+            </InputLeftElement>
+            <Input borderRadius="full" placeholder="Search snaps..." />
+          </InputGroup>
+        </Box>
+      </Flex>
+      <Box>
+        <SimpleGrid columns={[1, null, 2, 3]} spacing={4}>
+          {snaps
+            .filter((snap) => !snap.snapId.endsWith('example-snap'))
+            .map((snap) => (
+              <SnapCard key={snap.id} {...snap} />
+            ))}
+        </SimpleGrid>
+      </Box>
+    </Container>
   );
 };
 
