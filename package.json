@@ -31,9 +31,29 @@
     "semver": "^7.5.4"
   },
   "devDependencies": {
+    "@lavamoat/allow-scripts": "^2.3.1",
+    "@lavamoat/preinstall-always-fail": "^1.0.0",
     "@types/node": "^20.3.3",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "typescript": "^5.1.6"
+  },
+  "packageManager": "yarn@3.6.3",
+  "lavamoat": {
+    "allowScripts": {
+      "@lavamoat/preinstall-always-fail": false,
+      "@metamask/snaps-controllers>@metamask/permission-controller>@metamask/controller-utils>ethereumjs-util>ethereum-cryptography>keccak": false,
+      "@metamask/snaps-controllers>@metamask/permission-controller>@metamask/controller-utils>ethereumjs-util>ethereum-cryptography>secp256k1": false,
+      "gatsby": false,
+      "gatsby>@parcel/cache>lmdb": false,
+      "gatsby>@pmmmwh/react-refresh-webpack-plugin>core-js-pure": false,
+      "gatsby>core-js": false,
+      "gatsby>gatsby-cli": false,
+      "gatsby>gatsby-sharp>sharp": true,
+      "gatsby>gatsby-telemetry": false,
+      "gatsby>lmdb": false,
+      "gatsby>lmdb>msgpackr>msgpackr-extract": false,
+      "gatsby>memoizee>es5-ext": false
+    }
   }
 }
