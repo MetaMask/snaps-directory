@@ -2,13 +2,11 @@ import { Flex, Text } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 
 import { SnapIcon } from './SnapIcon';
+import type { Fields } from '../utils';
 
-// TODO: Fix types.
-export const SnapAuthorship: FunctionComponent<any> = ({
-  name,
-  snapId,
-  svgIcon,
-}) => {
+export const SnapAuthorship: FunctionComponent<
+  Fields<Queries.Snap, 'name' | 'snapId' | 'svgIcon'>
+> = ({ name, snapId, svgIcon }) => {
   return (
     <Flex>
       <SnapIcon snapName={name} svgIcon={svgIcon} />

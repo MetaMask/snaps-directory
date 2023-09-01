@@ -5,7 +5,6 @@ import type { FunctionComponent } from 'react';
 import { SnapAuthorship } from './SnapAuthorship';
 import type { Fields } from '../utils';
 
-// TODO: Fix types.
 export const SnapCard: FunctionComponent<
   Fields<
     Queries.Snap,
