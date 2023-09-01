@@ -29,13 +29,13 @@ export const SnapIcon: FunctionComponent<SnapIconProps> = ({
         fontSize="md"
         background="background.alternative"
         color="text.alternative"
-        size="sm"
+        size="md"
         margin="1"
       />
       <Icon
         icon="snap"
-        width="16px"
-        height="16px"
+        width="24px"
+        height="24px"
         position="absolute"
         bottom="0px"
         right="0px"

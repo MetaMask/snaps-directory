@@ -13,6 +13,11 @@
     "target": "es2020",
     "jsx": "preserve"
   },
-  "include": ["src", "gatsby-node.ts", "gatsby-config.ts"],
+  "include": [
+    "src",
+    "gatsby-node.ts",
+    "gatsby-config.ts",
+    "gatsby-browser.tsx"
+  ],
   "exclude": ["./dist/**/*"]
 }

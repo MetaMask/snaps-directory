@@ -2,7 +2,7 @@ import { Box, SimpleGrid } from '@chakra-ui/react';
 import { graphql } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
-import { Layout, Snap } from '../components';
+import { SnapCard } from '../components/SnapCard';
 import type { Fields } from '../utils';
 
 type IndexPageProps = {
@@ -17,18 +17,16 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
   const snaps = data.allSnap.nodes;
 
   return (
-    <Layout>
-      <Box py="4" px="8">
-        <SimpleGrid minChildWidth="300px" spacing={4}>
-          {snaps
-            // TODO: Fix types.
-            .filter((snap: any) => !snap.snapId.endsWith('example-snap'))
-            .map((snap: any) => (
-              <Snap key={snap.id} {...snap} />
-            ))}
-        </SimpleGrid>
-      </Box>
-    </Layout>
+    <Box py="4" px="8">
+      <SimpleGrid minChildWidth="300px" spacing={4}>
+        {snaps
+          // TODO: Fix types.
+          .filter((snap: any) => !snap.snapId.endsWith('example-snap'))
+          .map((snap: any) => (
+            <SnapCard key={snap.id} {...snap} />
+          ))}
+      </SimpleGrid>
+    </Box>
   );
 };
 
