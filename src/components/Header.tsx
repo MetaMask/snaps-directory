@@ -1,4 +1,5 @@
 import { Container, Stack } from '@chakra-ui/react';
+import { Link } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
 import { Logo } from './Logo';
@@ -15,7 +16,9 @@ export const Header: FunctionComponent = () => (
     marginBottom="20"
   >
     <Stack direction="row" height="7" align="center">
-      <Logo />
+      <Link to="/">
+        <Logo />
+      </Link>
     </Stack>
   </Container>
 );
