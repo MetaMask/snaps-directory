@@ -12,7 +12,9 @@ import {
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import { graphql, Link as RouterLink } from 'gatsby';
-import type { FunctionComponent } from 'react';
+import type { ChangeEvent, FunctionComponent } from 'react';
+import { useState } from 'react';
+import { useGatsbyPluginFusejs } from 'react-use-fusejs';
 
 import { Icon, SnapCard } from '../components';
 import type { Fields } from '../utils';
@@ -25,11 +27,26 @@ type IndexPageProps = {
         'id' | 'snapId' | 'name' | 'description' | 'svgIcon' | 'gatsbyPath'
       >[];
     };
+    fusejs: Queries.fusejs;
   };
 };
 
 const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
-  const snaps = data.allSnap.nodes;
+  const [query, setQuery] = useState('');
+  const result = useGatsbyPluginFusejs<Queries.Snap>(query, data.fusejs);
+
+  const snaps = query
+    ? data.allSnap.nodes.filter(({ snapId }) => {
+        const snap = result.find(
+          (searchResult) => searchResult.item.snapId === snapId,
+        );
+        return Boolean(snap);
+      })
+    : data.allSnap.nodes;
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setQuery(event.target.value);
+  };
 
   return (
     <Container maxWidth="container.lg">
@@ -58,7 +75,13 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
             <InputLeftElement pointerEvents="none">
               <Icon icon="search" width="20px" />
             </InputLeftElement>
-            <Input borderRadius="full" placeholder={t`Search snaps...`} />
+            <Input
+              type="search"
+              borderRadius="full"
+              placeholder={t`Search snaps...`}
+              value={query}
+              onChange={handleChange}
+            />
           </InputGroup>
         </Box>
       </Flex>
@@ -118,6 +141,11 @@ export const query = graphql`
         latestVersion
         gatsbyPath(filePath: "/snaps/{Snap.slug}")
       }
+    }
+
+    fusejs {
+      index
+      data
     }
 
     site {
