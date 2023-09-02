@@ -312,8 +312,13 @@ const theme = extendTheme({
           lineHeight: '157%',
           color: 'white',
           borderColor: 'info.default',
-          padding: '3',
+          padding: '4',
           fontFamily: 'custom',
+          _hover: {
+            _disabled: {
+              background: 'info.default',
+            },
+          },
         }),
         outline: defineStyle({
           height: '48px',
@@ -323,8 +328,9 @@ const theme = extendTheme({
           fontWeight: '500',
           lineHeight: '157%',
           color: 'info.default',
+          border: '1.5px solid',
           borderColor: 'info.default',
-          padding: '3',
+          padding: '4',
           fontFamily: 'custom',
         }),
       },

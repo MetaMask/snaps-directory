@@ -3,11 +3,21 @@ import { Image } from '@chakra-ui/react';
 import type { ForwardRefExoticComponent } from 'react';
 import { forwardRef } from 'react';
 
+import checkIcon from '../assets/icons/check.svg';
 import externalLinkIcon from '../assets/icons/external-link.svg';
+import metamaskIcon from '../assets/icons/metamask.svg';
 import searchIcon from '../assets/icons/search.svg';
 import snapIcon from '../assets/icons/snap.svg';
 
 const DEFAULT_ICONS = {
+  check: {
+    alt: 'Check',
+    src: checkIcon,
+  },
+  metamask: {
+    alt: 'MetaMask',
+    src: metamaskIcon,
+  },
   search: {
     alt: 'Search',
     src: searchIcon,

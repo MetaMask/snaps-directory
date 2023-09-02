@@ -3,7 +3,12 @@ import { t, Trans } from '@lingui/macro';
 import { graphql } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
-import { SnapAuthorship, Icon, SnapData } from '../../components';
+import {
+  SnapAuthorship,
+  Icon,
+  SnapData,
+  InstallSnapButton,
+} from '../../components';
 import type { Fields } from '../../utils';
 
 type SnapPageProps = {
@@ -27,13 +32,15 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             <Button
               variant="outline"
               leftIcon={<Icon icon="externalLink" />}
-              mr="2"
+              mr="4"
             >
               <Trans>Website</Trans>
             </Button>
-            <Button variant="primary">
-              <Trans>Install {name}</Trans>
-            </Button>
+            <InstallSnapButton
+              snapId={snapId}
+              name={name}
+              version={latestVersion}
+            />
           </Flex>
         </Flex>
         <Divider my="6" />
