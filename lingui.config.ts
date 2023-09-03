@@ -1,4 +1,5 @@
-import { LinguiConfig } from '@lingui/conf';
+import type { LinguiConfig } from '@lingui/conf';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { formatter } from '@lingui/format-json';
 
 const config: LinguiConfig = {
@@ -7,10 +8,10 @@ const config: LinguiConfig = {
   format: formatter({ style: 'lingui' }),
   catalogs: [
     {
-      path: "<rootDir>/src/locales/{locale}/messages",
-      include: ["src"],
+      path: '<rootDir>/src/locales/{locale}/messages',
+      include: ['src'],
     },
   ],
-}
+};
 
 export default config;
