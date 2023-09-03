@@ -59,6 +59,43 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
   );
 };
 
+type HeadProps = SnapPageProps & {
+  data: {
+    site: {
+      siteMetadata: Fields<
+        Queries.SiteSiteMetadata,
+        'title' | 'description' | 'author'
+      >;
+    };
+  };
+};
+
+export const Head: FunctionComponent<HeadProps> = ({ data }) => (
+  <>
+    <html lang="en" />
+    <title>
+      {data.snap.name} - {data.site.siteMetadata.title}
+    </title>
+    <meta name="description" content={data.site.siteMetadata.description} />
+    <meta
+      property="og:title"
+      content={`${data.snap.name} ${data.site.siteMetadata.title}`}
+    />
+    <meta
+      property="og:description"
+      content={data.site.siteMetadata.description}
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content={data.site.siteMetadata.author} />
+    <meta name="twitter:title" content={data.site.siteMetadata.title} />
+    <meta
+      name="twitter:description"
+      content={data.site.siteMetadata.description}
+    />
+  </>
+);
+
 export const query = graphql`
   query ($id: String) {
     snap(id: { eq: $id }) {
@@ -67,6 +104,14 @@ export const query = graphql`
       svgIcon
       description
       latestVersion
+    }
+
+    site {
+      siteMetadata {
+        title
+        description
+        author
+      }
     }
   }
 `;
