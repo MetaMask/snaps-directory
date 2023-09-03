@@ -89,7 +89,8 @@
       "gatsby>gatsby-telemetry": false,
       "gatsby>lmdb": false,
       "gatsby>lmdb>msgpackr>msgpackr-extract": false,
-      "gatsby>memoizee>es5-ext": false
+      "gatsby>memoizee>es5-ext": false,
+      "gatsby-plugin-manifest>sharp": false
     }
   }
 }
