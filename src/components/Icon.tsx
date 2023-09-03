@@ -4,6 +4,7 @@ import type { ForwardRefExoticComponent } from 'react';
 import { forwardRef } from 'react';
 
 import checkIcon from '../assets/icons/check.svg';
+import externalLinkMutedIcon from '../assets/icons/external-link-muted.svg';
 import externalLinkIcon from '../assets/icons/external-link.svg';
 import metamaskIcon from '../assets/icons/metamask.svg';
 import searchIcon from '../assets/icons/search.svg';
@@ -29,6 +30,10 @@ const DEFAULT_ICONS = {
   externalLink: {
     alt: 'External Link',
     src: externalLinkIcon,
+  },
+  externalLinkMuted: {
+    alt: 'External Link',
+    src: externalLinkMutedIcon,
   },
 };
 

@@ -5,6 +5,7 @@ export * from './Icon';
 export * from './InstallSnapButton';
 export * from './Layout';
 export * from './Logo';
+export * from './PostInstallModal';
 export * from './SnapCard';
 export * from './SnapIcon';
 export * from './SnapData';
