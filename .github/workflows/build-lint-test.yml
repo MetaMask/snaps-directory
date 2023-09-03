@@ -30,6 +30,8 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'yarn'
       - run: yarn --immutable --immutable-cache
+      - name: Extract translations
+        run: yarn lang:extract
       - run: yarn build
       - name: Require clean working directory
         shell: bash
