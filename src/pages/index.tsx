@@ -10,6 +10,7 @@ import {
   InputGroup,
   InputLeftElement,
 } from '@chakra-ui/react';
+import { t, Trans } from '@lingui/macro';
 import { graphql, Link as RouterLink } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
@@ -35,19 +36,21 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
       <Flex direction="row" justifyContent="space-between" marginBottom="6">
         <Box maxWidth="400px" width="100%">
           <Heading as="h2" fontSize="2xl">
-            Community Snaps
+            <Trans>Community Snaps</Trans>
           </Heading>
           <Text>
-            Discover snaps to customize your web3 experience via our official
-            directory.{' '}
-            <Link as={RouterLink} to="/">
-              Read more
-            </Link>{' '}
-            and{' '}
-            <Link as={RouterLink} to="/">
-              FAQ
-            </Link>
-            .
+            <Trans>
+              Discover snaps to customize your web3 experience via our official
+              directory.{' '}
+              <Link as={RouterLink} to="/">
+                Read more
+              </Link>{' '}
+              and{' '}
+              <Link as={RouterLink} to="/">
+                FAQ
+              </Link>
+              .
+            </Trans>
           </Text>
         </Box>
         <Box maxWidth="400px" width="100%" marginTop="auto">
@@ -55,7 +58,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
             <InputLeftElement pointerEvents="none">
               <Icon icon="search" width="20px" />
             </InputLeftElement>
-            <Input borderRadius="full" placeholder="Search snaps..." />
+            <Input borderRadius="full" placeholder={t`Search snaps...`} />
           </InputGroup>
         </Box>
       </Flex>

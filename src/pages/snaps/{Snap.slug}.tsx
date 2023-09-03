@@ -1,4 +1,5 @@
 import { Box, Button, Container, Divider, Flex, Text } from '@chakra-ui/react';
+import { t, Trans } from '@lingui/macro';
 import { graphql } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
@@ -28,30 +29,34 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
               leftIcon={<Icon icon="externalLink" />}
               mr="2"
             >
-              Website
+              <Trans>Website</Trans>
             </Button>
-            <Button variant="primary">Install {name}</Button>
+            <Button variant="primary">
+              <Trans>Install {name}</Trans>
+            </Button>
           </Flex>
         </Flex>
         <Divider my="6" />
         <Flex justifyContent="space-between">
-          <SnapData label="Developer" value="Foo" />
-          <SnapData label="Category" value="Foo" />
-          <SnapData label="Source Code" value="Foo" />
-          <SnapData label="Version" value={latestVersion} />
-          <SnapData label="Audit" value="Foo" />
+          <SnapData label={t`Developer`} value="Foo" />
+          <SnapData label={t`Category`} value="Foo" />
+          <SnapData label={t`Source Code`} value="Foo" />
+          <SnapData label={t`Version`} value={latestVersion} />
+          <SnapData label={t`Audit`} value="Foo" />
         </Flex>
         <Divider my="6" />
         <Text color="gray.muted" fontFamily="custom" textTransform="uppercase">
-          Description by{' '}
-          <Text
-            as="span"
-            color="black"
-            fontFamily="custom"
-            textTransform="uppercase"
-          >
-            {name}
-          </Text>
+          <Trans>
+            Description by{' '}
+            <Text
+              as="span"
+              color="black"
+              fontFamily="custom"
+              textTransform="uppercase"
+            >
+              {name}
+            </Text>
+          </Trans>
         </Text>
         <Text mt="1">{description}</Text>
       </Box>

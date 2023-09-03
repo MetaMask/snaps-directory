@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from 'gatsby';
+import { resolve } from 'path';
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -38,6 +39,20 @@ const config: GatsbyConfig = {
          * if your app uses a lot z-index to position elements.
          */
         portalZIndex: undefined,
+      },
+    },
+    {
+      resolve: 'gatsby-theme-i18n',
+      options: {
+        defaultLang: 'en',
+        // eslint-disable-next-line no-restricted-globals
+        configPath: resolve(__dirname, './src/locales/config.json'),
+      },
+    },
+    {
+      resolve: 'gatsby-theme-i18n-lingui',
+      options: {
+        localeDir: './src/locales',
       },
     },
   ],
