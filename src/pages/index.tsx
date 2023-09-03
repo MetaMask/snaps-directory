@@ -9,6 +9,7 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  Stack,
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import { graphql } from 'gatsby';
@@ -17,7 +18,7 @@ import type { ChangeEvent, FunctionComponent } from 'react';
 import { useMemo, useState } from 'react';
 import { useGatsbyPluginFusejs } from 'react-use-fusejs';
 
-import { Icon, SnapCard } from '../components';
+import { Icon, SnapCard, FilterMenu } from '../components';
 import { useInstalledSnaps } from '../hooks';
 import type { Fields } from '../utils';
 
@@ -51,7 +52,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
       const isSnapAInstalled = Boolean(cachedInstalledSnaps[a.snapId]);
       const isSnapBInstalled = Boolean(cachedInstalledSnaps[b.snapId]);
 
-      return isSnapBInstalled - isSnapAInstalled;
+      return Number(isSnapBInstalled) - Number(isSnapAInstalled);
     });
 
     return sorted;
@@ -70,7 +71,12 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
 
   return (
     <Container maxWidth="container.xl">
-      <Flex direction="row" justifyContent="space-between" marginBottom="6">
+      <Flex
+        direction="row"
+        justifyContent="space-between"
+        marginBottom="6"
+        gap="2"
+      >
         <Box maxWidth="400px" width="100%">
           <Heading as="h2" fontSize="2xl" marginBottom="1">
             <Trans>Discover Snaps</Trans>
@@ -93,7 +99,8 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
             </Trans>
           </Text>
         </Box>
-        <Box maxWidth="400px" width="100%" marginTop="auto">
+        <Stack direction="row" maxWidth="400px" width="100%" marginTop="auto">
+          <FilterMenu />
           <InputGroup background="white" borderRadius="full">
             <InputLeftElement pointerEvents="none">
               <Icon icon="search" width="20px" />
@@ -106,7 +113,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
               onChange={handleChange}
             />
           </InputGroup>
-        </Box>
+        </Stack>
       </Flex>
       <Box>
         <SimpleGrid columns={[1, null, 2, 3]} spacing={4}>

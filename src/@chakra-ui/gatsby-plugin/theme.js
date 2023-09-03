@@ -8,6 +8,7 @@ import {
   tabsAnatomy,
   modalAnatomy,
   switchAnatomy,
+  menuAnatomy,
 } from '@chakra-ui/anatomy';
 import {
   createMultiStyleConfigHelpers,
@@ -42,6 +43,11 @@ const {
   definePartsStyle: defineSwitchPartsStyle,
   defineMultiStyleConfig: defineSwitchMultiStyleConfig,
 } = createMultiStyleConfigHelpers(switchAnatomy.keys);
+
+const {
+  definePartsStyle: defineMenuPartsStyle,
+  defineMultiStyleConfig: defineMenuMultiStyleConfig,
+} = createMultiStyleConfigHelpers(menuAnatomy.keys);
 /* eslint-enable @typescript-eslint/unbound-method */
 
 const config = {
@@ -402,6 +408,19 @@ const theme = extendTheme({
           _checked: {
             bg: '#0376C9',
           },
+        },
+      }),
+    }),
+
+    Menu: defineMenuMultiStyleConfig({
+      baseStyle: defineMenuPartsStyle({
+        list: {
+          border: 'none',
+          borderRadius: 'lg',
+          padding: '1',
+        },
+        item: {
+          padding: '2',
         },
       }),
     }),
