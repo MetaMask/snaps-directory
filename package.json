@@ -13,6 +13,8 @@
     "build": "yarn lang:compile && gatsby build",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
+    "lang:compile": "lingui compile",
+    "lang:extract": "lingui extract",
     "lint": "yarn lint:eslint && yarn lint:constraints && yarn lint:misc --check && yarn lint:dependencies --check",
     "lint:constraints": "yarn constraints",
     "lint:dependencies": "depcheck && yarn dedupe",
@@ -23,9 +25,7 @@
     "start": "gatsby develop",
     "test": "jest --passWithNoTests && jest-it-up",
     "test:watch": "jest --watch",
-    "typecheck": "tsc --noEmit",
-    "lang:extract": "lingui extract",
-    "lang:compile": "lingui compile"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@chakra-ui/anatomy": "^2.2.0",
@@ -41,6 +41,7 @@
     "node-fetch": "^2.6.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "semver": "^7.5.4"
   },
   "devDependencies": {
@@ -48,6 +49,7 @@
     "@lavamoat/allow-scripts": "^2.3.1",
     "@lavamoat/preinstall-always-fail": "^1.0.0",
     "@lingui/cli": "^4.4.2",
+    "@lingui/conf": "^4.4.2",
     "@lingui/format-json": "^4.4.2",
     "@metamask/eslint-config": "^12.0.0",
     "@metamask/eslint-config-browser": "^12.0.0",
@@ -78,7 +80,6 @@
     "jest-it-up": "^2.0.2",
     "prettier": "^2.7.1",
     "prettier-plugin-packagejson": "^2.3.0",
-    "react-helmet": "^6.1.0",
     "ts-jest": "^28.0.7",
     "typescript": "~4.8.4"
   },
