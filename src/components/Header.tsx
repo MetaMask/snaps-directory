@@ -1,24 +1,28 @@
-import { Container, Stack } from '@chakra-ui/react';
+import type { BoxProps } from '@chakra-ui/react';
+import { Box, Container, Stack } from '@chakra-ui/react';
 import { Link } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
 import { Logo } from './Logo';
 
-export const Header: FunctionComponent = () => (
-  <Container
+type HeaderProps = BoxProps;
+
+export const Header: FunctionComponent<HeaderProps> = (props) => (
+  <Box
+    {...props}
     as="header"
-    size="fullWidth"
-    borderBottom="muted"
     display="flex"
     flexDirection="row"
     justifyContent="space-between"
     background="white"
     marginBottom="20"
   >
-    <Stack direction="row" height="7" align="center">
-      <Link to="/">
-        <Logo />
-      </Link>
-    </Stack>
-  </Container>
+    <Container maxWidth="7xl">
+      <Stack direction="row" height="7" align="center">
+        <Link to="/">
+          <Logo />
+        </Link>
+      </Stack>
+    </Container>
+  </Box>
 );
