@@ -21,7 +21,7 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
   version,
 }) => {
   const provider = useEthereumProvider();
-  const installedSnaps = useInstalledSnaps();
+  const [installedSnaps, updateInstalledSnaps] = useInstalledSnaps();
   const [installing, setInstalling] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -45,7 +45,10 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
       // TODO: Notify user of failure.
       .then(() => onOpen())
       .catch((error) => console.error(error))
-      .finally(() => setInstalling(false));
+      .finally(() => {
+        updateInstalledSnaps();
+        setInstalling(false);
+      });
   };
 
   if (isInstalled) {

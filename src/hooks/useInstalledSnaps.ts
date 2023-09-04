@@ -15,7 +15,10 @@ export function useInstalledSnaps() {
     Record<string, { version: string }>
   >({});
 
-  useEffect(() => {
+  /**
+   * Update the installed snaps.
+   */
+  function updateSnaps() {
     if (!provider) {
       return;
     }
@@ -32,7 +35,11 @@ export function useInstalledSnaps() {
         setInstalledSnaps(snaps as Record<string, { version: string }>);
       })
       .catch((error) => console.error(error));
+  }
+
+  useEffect(() => {
+    updateSnaps();
   }, [provider]);
 
-  return installedSnaps;
+  return [installedSnaps, updateSnaps] as const;
 }
