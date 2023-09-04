@@ -12,7 +12,6 @@
   "scripts": {
     "build": "yarn lang:compile && gatsby build",
     "clean": "gatsby clean",
-    "develop": "gatsby develop",
     "lang:compile": "lingui compile",
     "lang:extract": "lingui extract",
     "lint": "yarn lint:eslint && yarn lint:constraints && yarn lint:misc --check && yarn lint:dependencies --check",
@@ -22,7 +21,7 @@
     "lint:fix": "yarn lint:eslint --fix && yarn lint:constraints --fix && yarn lint:misc --write && yarn lint:dependencies",
     "lint:misc": "prettier '**/*.json' '**/*.md' '!CHANGELOG.md' '**/*.yml' '!.yarnrc.yml' --ignore-path .gitignore --no-error-on-unmatched-pattern",
     "serve": "gatsby serve",
-    "start": "gatsby develop",
+    "start": "yarn lang:compile && gatsby develop",
     "test": "jest --passWithNoTests && jest-it-up",
     "test:watch": "jest --watch",
     "typecheck": "tsc --noEmit"
