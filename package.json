@@ -90,7 +90,7 @@
       "gatsby>lmdb": false,
       "gatsby>lmdb>msgpackr>msgpackr-extract": false,
       "gatsby>memoizee>es5-ext": false,
-      "gatsby-plugin-manifest>sharp": false
+      "gatsby-plugin-manifest>sharp": true
     }
   }
 }
