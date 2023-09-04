@@ -10,9 +10,10 @@
     "type": "git"
   },
   "scripts": {
-    "build": "gatsby build",
+    "build": "yarn lang:compile && gatsby build",
     "clean": "gatsby clean",
-    "develop": "gatsby develop",
+    "lang:compile": "lingui compile",
+    "lang:extract": "lingui extract",
     "lint": "yarn lint:eslint && yarn lint:constraints && yarn lint:misc --check && yarn lint:dependencies --check",
     "lint:constraints": "yarn constraints",
     "lint:dependencies": "depcheck && yarn dedupe",
@@ -20,7 +21,7 @@
     "lint:fix": "yarn lint:eslint --fix && yarn lint:constraints --fix && yarn lint:misc --write && yarn lint:dependencies",
     "lint:misc": "prettier '**/*.json' '**/*.md' '!CHANGELOG.md' '**/*.yml' '!.yarnrc.yml' --ignore-path .gitignore --no-error-on-unmatched-pattern",
     "serve": "gatsby serve",
-    "start": "gatsby develop",
+    "start": "yarn lang:compile && gatsby develop",
     "test": "jest --passWithNoTests && jest-it-up",
     "test:watch": "jest --watch",
     "typecheck": "tsc --noEmit"
@@ -31,17 +32,23 @@
     "@chakra-ui/react": "^2.8.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@lingui/macro": "^4.4.2",
+    "@lingui/react": "^4.4.2",
     "@metamask/snaps-controllers": "^1.0.2",
     "framer-motion": "^10.16.2",
     "gatsby": "^5.12.3",
     "node-fetch": "^2.6.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "semver": "^7.5.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.22.11",
     "@lavamoat/allow-scripts": "^2.3.1",
     "@lavamoat/preinstall-always-fail": "^1.0.0",
+    "@lingui/cli": "^4.4.2",
+    "@lingui/conf": "^4.4.2",
     "@metamask/eslint-config": "^12.0.0",
     "@metamask/eslint-config-browser": "^12.0.0",
     "@metamask/eslint-config-jest": "^12.0.0",
@@ -64,6 +71,9 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "gatsby-plugin-manifest": "^5.12.0",
+    "gatsby-plugin-react-helmet": "^6.12.0",
+    "gatsby-theme-i18n": "^3.0.0",
+    "gatsby-theme-i18n-lingui": "^3.0.0",
     "jest": "^28.1.3",
     "jest-it-up": "^2.0.2",
     "prettier": "^2.7.1",
@@ -90,7 +100,8 @@
       "gatsby>lmdb": false,
       "gatsby>lmdb>msgpackr>msgpackr-extract": false,
       "gatsby>memoizee>es5-ext": false,
-      "gatsby-plugin-manifest>sharp": true
+      "gatsby-plugin-manifest>sharp": true,
+      "@lingui/cli>esbuild": false
     }
   }
 }

@@ -1,4 +1,5 @@
 import { Text, Box, Container, Center, Heading } from '@chakra-ui/react';
+import { Trans } from '@lingui/macro';
 
 const NotFoundPage = () => {
   return (
@@ -10,7 +11,7 @@ const NotFoundPage = () => {
           </Heading>
         </Center>
         <Text mt="4" opacity="0.75">
-          These are not the droids you are looking for.
+          <Trans>These are not the droids you are looking for.</Trans>
         </Text>
       </Container>
     </Box>

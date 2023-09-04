@@ -3,12 +3,15 @@
     "@chakra-ui/gatsby-plugin",
     "@lavamoat/allow-scripts",
     "@lavamoat/preinstall-always-fail",
+    "@lingui/cli",
     "@metamask/auto-changelog",
     "@types/*",
     "@yarnpkg/*",
     "clipanion",
     "gatsby-plugin-*",
+    "gatsby-theme-*",
     "prettier-plugin-packagejson",
+    "react-helmet",
     "ts-node",
     "typedoc"
   ]

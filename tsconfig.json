@@ -17,7 +17,8 @@
     "src",
     "gatsby-node.ts",
     "gatsby-config.ts",
-    "gatsby-browser.tsx"
+    "gatsby-browser.tsx",
+    "lingui.config.ts"
   ],
   "exclude": ["./dist/**/*"]
 }
