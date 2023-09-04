@@ -1,6 +1,4 @@
 import type { GatsbyConfig } from 'gatsby';
-// eslint-disable-next-line import/no-nodejs-modules
-import { resolve } from 'path';
 
 const config: GatsbyConfig = {
   siteMetadata: {
