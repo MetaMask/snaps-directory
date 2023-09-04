@@ -42,6 +42,7 @@
     "node-fetch": "^2.6.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-use-fusejs": "^2.0.2",
     "semver": "^7.5.4"
   },
   "devDependencies": {
@@ -71,6 +72,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gatsby-plugin-fusejs": "^2.0.2",
     "gatsby-plugin-manifest": "^5.12.0",
     "jest": "^28.1.3",
     "jest-it-up": "^2.0.2",

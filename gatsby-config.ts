@@ -40,6 +40,29 @@ const config: GatsbyConfig = {
         portalZIndex: undefined,
       },
     },
+    {
+      resolve: 'gatsby-plugin-fusejs',
+      options: {
+        query: `
+          {
+            allSnap {
+              nodes {
+                snapId
+                name
+                description
+              }
+            }
+          }
+        `,
+        keys: ['snapId', 'name', 'description'],
+        normalizer: ({ data }) =>
+          data.allSnap.nodes.map((node) => ({
+            snapId: node.snapId,
+            name: node.name,
+            description: node.description,
+          })),
+      },
+    },
   ],
 };
 
