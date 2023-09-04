@@ -12,7 +12,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
   const { createNode } = actions;
 
   const registry = await fetch(
-    'https://raw.githubusercontent.com/MetaMask/snaps-registry/main/src/registry.json',
+    'https://acl.execution.consensys.io/latest/registry.json',
   ).then(async (response) => response.json());
 
   // TODO: Fix types.
