@@ -76,6 +76,7 @@
     "gatsby-theme-i18n-lingui": "^3.0.0",
     "jest": "^28.1.3",
     "jest-it-up": "^2.0.2",
+    "node-fetch-cache": "^3.1.3",
     "prettier": "^2.7.1",
     "prettier-plugin-packagejson": "^2.3.0",
     "ts-jest": "^28.0.7",
