@@ -43,7 +43,7 @@ msgstr ""
 
 #: src/components/InstallSnapButton.tsx:83
 msgid "Install {name}"
-msgstr "<<<<<<< HEAD"
+msgstr ""
 
 #: src/components/PostInstallModal.tsx:41
 msgid "Installation complete"
