@@ -234,6 +234,17 @@ const theme = extendTheme({
           opacity: '0.6',
           borderRadius: 'lg',
         },
+
+        box: {
+          display: 'block',
+          width: '100%',
+          paddingX: '4',
+          paddingY: '3',
+          borderRadius: 'lg',
+          backgroundColor: 'background.alternative',
+          border: '1px solid',
+          borderColor: 'border.default',
+        },
       },
     }),
 
@@ -274,6 +285,12 @@ const theme = extendTheme({
       baseStyle: {
         color: 'black',
       },
+
+      variants: {
+        muted: {
+          color: 'gray.muted',
+        },
+      },
     }),
 
     Tag: defineTagMultiStyleConfig({
@@ -312,8 +329,13 @@ const theme = extendTheme({
           lineHeight: '157%',
           color: 'white',
           borderColor: 'info.default',
-          padding: '3',
+          padding: '4',
           fontFamily: 'custom',
+          _hover: {
+            _disabled: {
+              background: 'info.default',
+            },
+          },
         }),
         outline: defineStyle({
           height: '48px',
@@ -323,8 +345,9 @@ const theme = extendTheme({
           fontWeight: '500',
           lineHeight: '157%',
           color: 'info.default',
+          border: '1.5px solid',
           borderColor: 'info.default',
-          padding: '3',
+          padding: '4',
           fontFamily: 'custom',
         }),
       },
@@ -345,6 +368,20 @@ const theme = extendTheme({
           bg: 'chakra-body-bg',
         },
       }),
+
+      variants: {
+        minimal: defineModalPartsStyle({
+          dialog: {
+            padding: '6',
+            background: 'white',
+            borderRadius: '3xl',
+          },
+
+          body: {
+            padding: '0',
+          },
+        }),
+      },
     }),
 
     Switch: defineSwitchMultiStyleConfig({

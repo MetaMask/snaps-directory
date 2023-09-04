@@ -2,7 +2,7 @@ import { i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
 import type { GatsbyBrowser } from 'gatsby';
 
-import { Layout } from './components';
+import { EthereumProvider, Layout } from './components';
 import { messages } from './locales/en/messages';
 
 // eslint-disable-next-line import/no-unassigned-import, import/extensions
@@ -44,5 +44,9 @@ export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({
 export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
   element,
 }) => {
-  return <I18nProvider i18n={i18n}>{element}</I18nProvider>;
+  return (
+    <I18nProvider i18n={i18n}>
+      <EthereumProvider>{element}</EthereumProvider>
+    </I18nProvider>
+  );
 };
