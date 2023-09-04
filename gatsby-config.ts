@@ -2,15 +2,28 @@ import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `snaps-discover`,
+    title: 'Snaps Directory',
     description: 'Discover and install MetaMask Snaps.',
-    // TODO: Update URL.
-    siteUrl: `https://metamask.io`,
+    siteUrl: 'https://snaps.metamask.io',
     author: 'MetaMask',
   },
   graphqlTypegen: true,
   jsxRuntime: 'automatic',
   plugins: [
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        /* eslint-disable @typescript-eslint/naming-convention */
+        name: 'Snaps Directory',
+        short_name: 'Snaps Directory',
+        start_url: '/',
+        display: 'standalone',
+        icon: 'src/assets/favicon.svg',
+        background_color: '#ffffff',
+        theme_color: '#ffffff',
+        /* eslint-enable @typescript-eslint/naming-convention */
+      },
+    },
     {
       resolve: '@chakra-ui/gatsby-plugin',
       options: {
