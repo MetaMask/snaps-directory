@@ -35,14 +35,12 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
   const [query, setQuery] = useState('');
   const result = useGatsbyPluginFusejs<Queries.Snap>(query, data.fusejs);
 
-  const snaps = query
-    ? data.allSnap.nodes.filter(({ snapId }) => {
-        const snap = result.find(
-          (searchResult) => searchResult.item.snapId === snapId,
-        );
-        return Boolean(snap);
-      })
-    : data.allSnap.nodes;
+  const snaps =
+    query.length > 0
+      ? data.allSnap.nodes.filter(({ snapId }) =>
+          result.some((searchResult) => searchResult.item.snapId === snapId),
+        )
+      : data.allSnap.nodes;
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
