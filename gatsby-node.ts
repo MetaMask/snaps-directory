@@ -1,6 +1,8 @@
 import { detectSnapLocation } from '@metamask/snaps-controllers/dist/snaps/location';
 import type { GatsbyNode } from 'gatsby';
+import type { RequestInfo, RequestInit } from 'node-fetch';
 import fetch from 'node-fetch';
+import { fetchBuilder, FileSystemCache } from 'node-fetch-cache';
 // eslint-disable-next-line import/no-nodejs-modules
 import semver from 'semver/preload';
 
@@ -21,6 +23,17 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
     },
   ).then(async (response) => response.json());
 
+  const cachedFetch = fetchBuilder.withCache(
+    new FileSystemCache({ cacheDirectory: '.cache/npm' }),
+  );
+
+  const customFetch = (url: RequestInfo, options: RequestInit | undefined) => {
+    if (url.toString().endsWith('.tgz')) {
+      return cachedFetch(url, options);
+    }
+    return fetch(url, options);
+  };
+
   // TODO: Fix types.
   const verifiedSnaps: any[] = Object.values(registry.verifiedSnaps);
 
@@ -37,6 +50,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
 
     const location = detectSnapLocation(snap.id, {
       versionRange: latestVersion as any,
+      fetch: customFetch as any,
     });
 
     const { result: manifest } = await location.manifest();
