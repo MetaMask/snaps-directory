@@ -81,4 +81,4 @@ node_modules/
 .cache
 public
 src/gatsby-types.d.ts
-src/locales/*/messages.js
+src/locales/*/messages.mjs

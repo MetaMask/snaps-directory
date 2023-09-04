@@ -9,9 +9,7 @@
     "@yarnpkg/*",
     "clipanion",
     "gatsby-plugin-*",
-    "gatsby-theme-*",
     "prettier-plugin-packagejson",
-    "react-helmet",
     "ts-node",
     "typedoc"
   ]

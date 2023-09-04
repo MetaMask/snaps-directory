@@ -42,20 +42,6 @@ const config: GatsbyConfig = {
         portalZIndex: undefined,
       },
     },
-    {
-      resolve: 'gatsby-theme-i18n',
-      options: {
-        defaultLang: 'en',
-        // eslint-disable-next-line no-restricted-globals
-        configPath: resolve(__dirname, './src/locales/config.json'),
-      },
-    },
-    {
-      resolve: 'gatsby-theme-i18n-lingui',
-      options: {
-        localeDir: './src/locales',
-      },
-    },
   ],
 };
 

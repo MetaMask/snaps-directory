@@ -1,7 +1,7 @@
 import type { LinguiConfig } from '@lingui/conf';
 
 const config: LinguiConfig = {
-  compileNamespace: 'cjs',
+  compileNamespace: 'es',
   locales: ['en'],
   format: 'po',
   catalogs: [
