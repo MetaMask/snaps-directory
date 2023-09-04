@@ -13,6 +13,12 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
 
   const registry = await fetch(
     'https://acl.execution.consensys.io/latest/registry.json',
+    {
+      headers: {
+        'User-Agent':
+          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36',
+      },
+    },
   ).then(async (response) => response.json());
 
   // TODO: Fix types.
