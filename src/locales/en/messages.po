@@ -13,11 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/snaps/{Snap.slug}.tsx:45
+#: src/pages/snaps/{Snap.slug}.tsx:52
 msgid "Audit"
 msgstr ""
 
-#: src/pages/snaps/{Snap.slug}.tsx:42
+#: src/pages/snaps/{Snap.slug}.tsx:49
 msgid "Category"
 msgstr ""
 
@@ -25,11 +25,15 @@ msgstr ""
 msgid "Community Snaps"
 msgstr ""
 
-#: src/pages/snaps/{Snap.slug}.tsx:49
+#: src/components/PostInstallModal.tsx:44
+msgid "Continue to {name}'s website to get started with this snap."
+msgstr ""
+
+#: src/pages/snaps/{Snap.slug}.tsx:56
 msgid "Description by <0>{name}</0>"
 msgstr ""
 
-#: src/pages/snaps/{Snap.slug}.tsx:41
+#: src/pages/snaps/{Snap.slug}.tsx:48
 msgid "Developer"
 msgstr ""
 
@@ -37,15 +41,23 @@ msgstr ""
 msgid "Discover snaps to customize your web3 experience via our official directory. <0>Read more</0> and <1>FAQ</1>."
 msgstr ""
 
-#: src/pages/snaps/{Snap.slug}.tsx:35
+#: src/components/InstallSnapButton.tsx:83
 msgid "Install {name}"
+msgstr ""
+
+#: src/components/PostInstallModal.tsx:41
+msgid "Installation complete"
+msgstr ""
+
+#: src/components/InstallSnapButton.tsx:61
+msgid "Installed"
 msgstr ""
 
 #: src/pages/index.tsx:61
 msgid "Search snaps..."
 msgstr ""
 
-#: src/pages/snaps/{Snap.slug}.tsx:43
+#: src/pages/snaps/{Snap.slug}.tsx:50
 msgid "Source Code"
 msgstr ""
 
@@ -53,10 +65,10 @@ msgstr ""
 msgid "These are not the droids you are looking for."
 msgstr ""
 
-#: src/pages/snaps/{Snap.slug}.tsx:44
+#: src/pages/snaps/{Snap.slug}.tsx:51
 msgid "Version"
 msgstr ""
 
-#: src/pages/snaps/{Snap.slug}.tsx:32
+#: src/pages/snaps/{Snap.slug}.tsx:37
 msgid "Website"
 msgstr ""
