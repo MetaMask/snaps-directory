@@ -25,6 +25,10 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
+#: src/components/Icon.tsx:16
+msgid "Check"
+msgstr ""
+
 #: src/pages/index.tsx:54
 msgid "Community Snaps"
 msgstr ""
@@ -45,6 +49,11 @@ msgstr ""
 msgid "Discover snaps to customize your web3 experience via our official directory. <0>Read more</0> and <1>FAQ</1>."
 msgstr ""
 
+#: src/components/Icon.tsx:32
+#: src/components/Icon.tsx:36
+msgid "External Link"
+msgstr ""
+
 #: src/components/InstallSnapButton.tsx:83
 msgid "Install {name}"
 msgstr ""
@@ -57,12 +66,24 @@ msgstr ""
 msgid "Installed"
 msgstr ""
 
+#: src/components/Icon.tsx:20
+msgid "MetaMask"
+msgstr ""
+
 #: src/components/Footer.tsx:37
 msgid "Privacy Policy"
 msgstr ""
 
+#: src/components/Icon.tsx:24
+msgid "Search"
+msgstr ""
+
 #: src/pages/index.tsx:79
 msgid "Search snaps..."
+msgstr ""
+
+#: src/components/Icon.tsx:28
+msgid "Snap"
 msgstr ""
 
 #: src/pages/snaps/{Snap.slug}.tsx:50

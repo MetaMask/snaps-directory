@@ -1,5 +1,6 @@
 import type { PropsOf } from '@chakra-ui/react';
 import { Image } from '@chakra-ui/react';
+import { t } from '@lingui/macro';
 import type { ForwardRefExoticComponent } from 'react';
 import { forwardRef } from 'react';
 
@@ -12,27 +13,27 @@ import snapIcon from '../assets/icons/snap.svg';
 
 const DEFAULT_ICONS = {
   check: {
-    alt: 'Check',
+    alt: t`Check`,
     src: checkIcon,
   },
   metamask: {
-    alt: 'MetaMask',
+    alt: t`MetaMask`,
     src: metamaskIcon,
   },
   search: {
-    alt: 'Search',
+    alt: t`Search`,
     src: searchIcon,
   },
   snap: {
-    alt: 'Snap',
+    alt: t`Snap`,
     src: snapIcon,
   },
   externalLink: {
-    alt: 'External Link',
+    alt: t`External Link`,
     src: externalLinkIcon,
   },
   externalLinkMuted: {
-    alt: 'External Link',
+    alt: t`External Link`,
     src: externalLinkMutedIcon,
   },
 };
