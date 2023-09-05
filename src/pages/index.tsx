@@ -11,7 +11,7 @@ import {
   InputLeftElement,
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
-import { graphql, Link as RouterLink } from 'gatsby';
+import { graphql } from 'gatsby';
 import shuffle from 'lodash/shuffle';
 import type { ChangeEvent, FunctionComponent } from 'react';
 import { useMemo, useState } from 'react';
@@ -67,8 +67,11 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
               <Link href="https://metamask.io/snaps/" isExternal={true}>
                 Learn more
               </Link>{' '}
-              and {/* TODO: Update link to FAQ page. */}
-              <Link as={RouterLink} to="/">
+              and{' '}
+              <Link
+                href="https://support.metamask.io/hc/en-us/articles/18245938714395"
+                isExternal={true}
+              >
                 FAQ
               </Link>
               .
