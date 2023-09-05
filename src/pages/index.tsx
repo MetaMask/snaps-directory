@@ -148,10 +148,10 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
   return (
     <Container maxWidth="container.xl">
       <Flex
-        direction="row"
+        direction={['column', null, 'row']}
         justifyContent="space-between"
         marginBottom="6"
-        gap="2"
+        gap="4"
       >
         <Box maxWidth="400px" width="100%">
           <Heading as="h2" fontSize="2xl" marginBottom="1">
@@ -175,7 +175,12 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
             </Trans>
           </Text>
         </Box>
-        <Stack direction="row" maxWidth="400px" width="100%" marginTop="auto">
+        <Stack
+          direction="row"
+          maxWidth={['100%', null, '400px']}
+          width="100%"
+          marginTop="auto"
+        >
           <FilterMenu
             selectedCategories={selectedCategories}
             onToggle={handleToggle}
