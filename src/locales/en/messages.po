@@ -34,6 +34,7 @@ msgid "Category"
 msgstr ""
 
 #: src/components/Icon.tsx
+#: src/components/Icon.tsx
 msgid "Check"
 msgstr ""
 
@@ -59,6 +60,10 @@ msgid "Discover snaps to customize your web3 experience via our official directo
 msgstr ""
 
 #: src/components/Icon.tsx
+msgid "Dropdown"
+msgstr ""
+
+#: src/components/Icon.tsx
 #: src/components/Icon.tsx
 msgid "External Link"
 msgstr ""
@@ -76,7 +81,17 @@ msgid "Installing {name}"
 msgstr ""
 
 #: src/components/Icon.tsx
+#: src/components/SnapCategory.tsx
+msgid "Interoperability"
+msgstr ""
+
+#: src/components/Icon.tsx
 msgid "MetaMask"
+msgstr ""
+
+#: src/components/Icon.tsx
+#: src/components/SnapCategory.tsx
+msgid "Notifications"
 msgstr ""
 
 #: src/components/Header.tsx
@@ -110,6 +125,14 @@ msgstr ""
 
 #: src/pages/404.tsx
 msgid "These are not the droids you are looking for."
+msgstr ""
+
+#: src/components/SnapCategory.tsx
+msgid "Transaction insights"
+msgstr ""
+
+#: src/components/Icon.tsx
+msgid "Transaction Insights"
 msgstr ""
 
 #: src/pages/snap/{Snap.slug}.tsx

@@ -1,4 +1,5 @@
 import { Text } from '@chakra-ui/react';
+import { t } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
 import type { IconName } from './Icon';
@@ -14,15 +15,15 @@ export const SNAP_CATEGORY_LABELS: Record<
   { name: string; icon: IconName }
 > = {
   [RegistrySnapCategory.Interoperability]: {
-    name: 'Interoperability',
+    name: t`Interoperability`,
     icon: 'interoperability',
   },
   [RegistrySnapCategory.Notifications]: {
-    name: 'Notifications',
+    name: t`Notifications`,
     icon: 'notifications',
   },
   [RegistrySnapCategory.TransactionInsights]: {
-    name: 'Transaction insights',
+    name: t`Transaction insights`,
     icon: 'transactionInsights',
   },
 };
