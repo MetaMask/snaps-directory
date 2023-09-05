@@ -10,6 +10,7 @@
     "clipanion",
     "gatsby-plugin-*",
     "prettier-plugin-packagejson",
+    "simple-git-hooks",
     "ts-node",
     "typedoc"
   ]
