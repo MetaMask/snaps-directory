@@ -91,8 +91,11 @@ function getSnaps({
           .filter(Boolean) as IndexSnap[])
       : snaps;
 
-  // If all categories are selected, return all snaps.
-  if (categories.length === Object.keys(RegistrySnapCategory).length) {
+  // If all or no categories are selected, return all snaps.
+  if (
+    categories.length === 0 ||
+    categories.length === Object.keys(RegistrySnapCategory).length
+  ) {
     return searchedSnaps;
   }
 
