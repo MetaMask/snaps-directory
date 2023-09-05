@@ -4,6 +4,7 @@ import { t } from '@lingui/macro';
 import type { ForwardRefExoticComponent } from 'react';
 import { forwardRef } from 'react';
 
+import backIcon from '../assets/icons/back.svg';
 import checkIcon from '../assets/icons/check.svg';
 import externalLinkMutedIcon from '../assets/icons/external-link-muted.svg';
 import externalLinkIcon from '../assets/icons/external-link.svg';
@@ -12,6 +13,10 @@ import searchIcon from '../assets/icons/search.svg';
 import snapIcon from '../assets/icons/snap.svg';
 
 const DEFAULT_ICONS = {
+  back: {
+    alt: t`Back`,
+    src: backIcon,
+  },
   check: {
     alt: t`Check`,
     src: checkIcon,
