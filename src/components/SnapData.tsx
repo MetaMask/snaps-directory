@@ -1,10 +1,19 @@
 import { Flex, Text } from '@chakra-ui/react';
+import type { FunctionComponent, ReactNode } from 'react';
 
-export const SnapData = ({ label, value }) => (
+export type SnapDataProps = {
+  label: string;
+  value: ReactNode;
+};
+
+export const SnapData: FunctionComponent<SnapDataProps> = ({
+  label,
+  value,
+}) => (
   <Flex flexDirection="column">
     <Text color="gray.muted" fontFamily="custom" textTransform="uppercase">
       {label}
     </Text>
-    <Text>{value}</Text>
+    {value}
   </Flex>
 );

@@ -1,7 +1,5 @@
 import type { MetaMaskInpageProvider } from '@metamask/providers';
 
-declare module '*.svg';
-
 declare global {
   // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface Window {

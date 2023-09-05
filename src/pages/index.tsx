@@ -144,7 +144,7 @@ export const query = graphql`
         description
         svgIcon
         latestVersion
-        gatsbyPath(filePath: "/snaps/{Snap.slug}")
+        gatsbyPath(filePath: "/snap/{Snap.slug}")
       }
     }
 

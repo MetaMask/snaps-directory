@@ -68,6 +68,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       slug: snap.metadata.name.toLowerCase().replace(/\s/gu, '-'),
       latestVersion,
       svgIcon,
+      ...snap.metadata,
     };
 
     const node = {
