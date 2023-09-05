@@ -57,7 +57,11 @@ export const SnapAudits: FunctionComponent<SnapAuditsProps> = ({ audits }) => {
             {reports.map((report, index) => (
               <>
                 {' '}
-                <Link isExternal={true} key={`audit-report-${auditor}-${report}`} href={report}>
+                <Link
+                  isExternal={true}
+                  key={`audit-report-${auditor}-${report}`}
+                  href={report}
+                >
                   [{index + 1}]
                 </Link>
               </>
