@@ -13,6 +13,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/components/Footer.tsx:31
+msgid "©{0} MetaMask. All rights reserved."
+msgstr ""
+
 #: src/pages/snaps/{Snap.slug}.tsx:52
 msgid "Audit"
 msgstr ""
@@ -53,12 +57,20 @@ msgstr ""
 msgid "Installed"
 msgstr ""
 
+#: src/components/Footer.tsx:37
+msgid "Privacy Policy"
+msgstr ""
+
 #: src/pages/index.tsx:79
 msgid "Search snaps..."
 msgstr ""
 
 #: src/pages/snaps/{Snap.slug}.tsx:50
 msgid "Source Code"
+msgstr ""
+
+#: src/components/Footer.tsx:20
+msgid "Start exploring blockchain applications in seconds. Trusted by over 30 million users worldwide."
 msgstr ""
 
 #: src/pages/404.tsx:14
