@@ -12,8 +12,9 @@ import {
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import { graphql, Link as RouterLink } from 'gatsby';
+import { shuffle } from 'lodash';
 import type { ChangeEvent, FunctionComponent } from 'react';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useGatsbyPluginFusejs } from 'react-use-fusejs';
 
 import { Icon, SnapCard } from '../components';
@@ -34,13 +35,19 @@ type IndexPageProps = {
 const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
   const [query, setQuery] = useState('');
   const result = useGatsbyPluginFusejs<Queries.Snap>(query, data.fusejs);
+  const shuffledSnaps = useMemo(
+    () => shuffle(data.allSnap.nodes),
+    [data.allSnap.nodes],
+  );
 
   const snaps =
     query.length > 0
-      ? data.allSnap.nodes.filter(({ snapId }) =>
-          result.some((searchResult) => searchResult.item.snapId === snapId),
+      ? result.map((searchResult) =>
+          shuffledSnaps.find(
+            ({ snapId }) => searchResult.item.snapId === snapId,
+          ),
         )
-      : data.allSnap.nodes;
+      : shuffledSnaps;
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
