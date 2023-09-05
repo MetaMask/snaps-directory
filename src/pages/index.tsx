@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import { graphql, Link as RouterLink } from 'gatsby';
-import { shuffle } from 'lodash';
+import shuffle from 'lodash/shuffle';
 import type { ChangeEvent, FunctionComponent } from 'react';
 import { useMemo, useState } from 'react';
 import { useGatsbyPluginFusejs } from 'react-use-fusejs';
