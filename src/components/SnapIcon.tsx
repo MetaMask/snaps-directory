@@ -6,6 +6,7 @@ import { Icon } from './Icon';
 
 export type SnapIconProps = BoxProps & {
   snapName: string;
+  isInstalled: boolean;
   svgIcon?: string | undefined;
 };
 
@@ -16,11 +17,13 @@ export type SnapIconProps = BoxProps & {
  * @param props - The props.
  * @param props.snapName - The name of the snap.
  * @param props.svgIcon - The SVG icon defined in the snap's manifest.
+ * @param props.isInstalled - Whether the snap is installed or not.
  * @returns The Snap icon component.
  */
 export const SnapIcon: FunctionComponent<SnapIconProps> = ({
   snapName,
   svgIcon,
+  isInstalled,
   ...props
 }) => {
   return (
@@ -35,7 +38,7 @@ export const SnapIcon: FunctionComponent<SnapIconProps> = ({
         margin="1"
       />
       <Icon
-        icon="snap"
+        icon={isInstalled ? 'snap' : 'snapMuted'}
         width="24px"
         height="24px"
         position="absolute"
