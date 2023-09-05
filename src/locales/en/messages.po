@@ -58,10 +58,6 @@ msgstr ""
 msgid "External Link"
 msgstr ""
 
-#: src/components/InstallSnapButton.tsx:80
-#~ msgid "Install {name}"
-#~ msgstr ""
-
 #: src/components/PostInstallModal.tsx:41
 msgid "Installation complete"
 msgstr ""

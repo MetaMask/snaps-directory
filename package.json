@@ -13,7 +13,7 @@
     "build": "yarn lang:compile && gatsby build",
     "clean": "gatsby clean",
     "lang:compile": "lingui compile",
-    "lang:extract": "lingui extract",
+    "lang:extract": "lingui extract --clean",
     "lint": "yarn lint:eslint && yarn lint:constraints && yarn lint:misc --check && yarn lint:dependencies --check",
     "lint:constraints": "yarn constraints",
     "lint:dependencies": "depcheck && yarn dedupe",
