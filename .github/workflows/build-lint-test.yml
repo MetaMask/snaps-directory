@@ -29,6 +29,13 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'yarn'
+      - name: Cache NPM tarballs
+        id: cache-npm-tarballs
+        uses: actions/cache@v3
+        with:
+          path: |
+            .cache/npm
+          key: npm-tarball-cache
       - run: yarn --immutable --immutable-cache
       - name: Extract translations
         run: yarn lang:extract
