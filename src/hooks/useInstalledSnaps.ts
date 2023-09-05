@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { useEthereumProvider } from './useEthereumProvider';
 
@@ -15,10 +15,7 @@ export function useInstalledSnaps() {
     Record<string, { version: string }>
   >({});
 
-  /**
-   * Update the installed snaps.
-   */
-  function updateSnaps() {
+  const updateSnaps = useCallback(() => {
     if (!provider) {
       return;
     }
@@ -35,11 +32,11 @@ export function useInstalledSnaps() {
         setInstalledSnaps(snaps as Record<string, { version: string }>);
       })
       .catch((error) => console.error(error));
-  }
+  }, [provider]);
 
   useEffect(() => {
     updateSnaps();
-  }, [provider]);
+  }, [provider, updateSnaps]);
 
   return [installedSnaps, updateSnaps] as const;
 }

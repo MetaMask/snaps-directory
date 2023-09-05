@@ -1,14 +1,16 @@
-import { Flex, Text, Box, Tag } from '@chakra-ui/react';
+import { Flex, Text, Box } from '@chakra-ui/react';
 import { Link } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
 import { SnapAuthorship } from './SnapAuthorship';
-import { useInstalledSnaps } from '../hooks';
 import type { Fields } from '../utils';
 
 /**
+ * Normalize the description to ensure it ends with a period. This also replaces
+ * "Metamask" with "MetaMask".
  *
- * @param description
+ * @param description - The description to normalize.
+ * @returns The normalized description.
  */
 function normalizeDescription(description: string) {
   let normalizedDescription = description.trim();
@@ -25,9 +27,6 @@ export const SnapCard: FunctionComponent<
     'name' | 'description' | 'snapId' | 'svgIcon' | 'gatsbyPath'
   >
 > = ({ name, description, snapId, svgIcon, gatsbyPath }) => {
-  const [installedSnaps] = useInstalledSnaps();
-  const isInstalled = Boolean(installedSnaps[snapId]);
-
   return (
     <Link to={gatsbyPath}>
       <Flex
