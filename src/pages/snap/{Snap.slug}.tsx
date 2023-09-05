@@ -47,7 +47,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
   const { name, snapId, svgIcon, description, latestVersion } = data.snap;
 
   return (
-    <Container maxWidth="container.lg">
+    <Container maxWidth="container.xl">
       <BackButton />
       <Box p="6" rounded="2xl" boxShadow="base" background="white">
         <Flex justifyContent="space-between">

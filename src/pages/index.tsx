@@ -54,20 +54,20 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
   };
 
   return (
-    <Container maxWidth="container.lg">
+    <Container maxWidth="container.xl">
       <Flex direction="row" justifyContent="space-between" marginBottom="6">
         <Box maxWidth="400px" width="100%">
-          <Heading as="h2" fontSize="2xl">
-            <Trans>Community Snaps</Trans>
+          <Heading as="h2" fontSize="2xl" marginBottom="1">
+            <Trans>Discover Snaps</Trans>
           </Heading>
           <Text>
             <Trans>
               Discover snaps to customize your web3 experience via our official
               directory.{' '}
-              <Link as={RouterLink} to="/">
-                Read more
+              <Link href="https://metamask.io/snaps/" isExternal={true}>
+                Learn more
               </Link>{' '}
-              and{' '}
+              and {/* TODO: Update link to FAQ page. */}
               <Link as={RouterLink} to="/">
                 FAQ
               </Link>
