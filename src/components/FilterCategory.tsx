@@ -3,12 +3,14 @@ import type { FunctionComponent } from 'react';
 
 import type { IconName } from './Icon';
 import { Icon } from './Icon';
+import type { RegistrySnapCategory } from './SnapCategory';
+import { SNAP_CATEGORY_LABELS } from './SnapCategory';
 
 export type FilterCategoryProps = {
-  category: string;
+  category: RegistrySnapCategory;
   icon: IconName;
   enabled: boolean;
-  onToggle: (category: string) => void;
+  onToggle: (category: RegistrySnapCategory) => void;
 };
 
 export const FilterCategory: FunctionComponent<FilterCategoryProps> = ({
@@ -30,7 +32,7 @@ export const FilterCategory: FunctionComponent<FilterCategoryProps> = ({
           visibility={enabled ? 'initial' : 'hidden'}
         />
         <Icon icon={icon} width="32px" />
-        <Text>{category}</Text>
+        <Text>{SNAP_CATEGORY_LABELS[category].name}</Text>
       </Stack>
     </MenuItem>
   );
