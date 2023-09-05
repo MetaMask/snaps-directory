@@ -77,7 +77,7 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
           loadingText={`Install ${name}`}
           onClick={handleInstall}
         >
-          <Trans>Install {name}</Trans>
+          <Trans>Add to MetaMask</Trans>
         </Button>
       )}
     </>

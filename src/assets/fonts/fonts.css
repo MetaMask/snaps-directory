@@ -8,6 +8,13 @@
 @font-face {
   font-family: 'Euclid Circular B';
   font-style: normal;
+  font-weight: 500;
+  src: url('./EuclidCircularB-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Euclid Circular B';
+  font-style: normal;
   font-weight: 700;
   src: url('./EuclidCircularB-Bold.woff2') format('woff2');
 }

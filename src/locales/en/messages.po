@@ -17,11 +17,15 @@ msgstr ""
 msgid "©{0} MetaMask. All rights reserved."
 msgstr ""
 
-#: src/pages/snaps/{Snap.slug}.tsx:63
+#: src/components/InstallSnapButton.tsx:80
+msgid "Add to MetaMask"
+msgstr ""
+
+#: src/pages/snap/{Snap.slug}.tsx:108
 msgid "Audit"
 msgstr ""
 
-#: src/pages/snaps/{Snap.slug}.tsx:60
+#: src/pages/snap/{Snap.slug}.tsx:81
 msgid "Category"
 msgstr ""
 
@@ -37,11 +41,11 @@ msgstr ""
 msgid "Continue to {name}'s website to get started with this snap."
 msgstr ""
 
-#: src/pages/snaps/{Snap.slug}.tsx:67
+#: src/pages/snap/{Snap.slug}.tsx:124
 msgid "Description by <0>{name}</0>"
 msgstr ""
 
-#: src/pages/snaps/{Snap.slug}.tsx:59
+#: src/pages/snap/{Snap.slug}.tsx:92
 msgid "Developer"
 msgstr ""
 
@@ -52,10 +56,6 @@ msgstr ""
 #: src/components/Icon.tsx:32
 #: src/components/Icon.tsx:36
 msgid "External Link"
-msgstr ""
-
-#: src/components/InstallSnapButton.tsx:80
-msgid "Install {name}"
 msgstr ""
 
 #: src/components/PostInstallModal.tsx:41
@@ -86,7 +86,7 @@ msgstr ""
 msgid "Snap"
 msgstr ""
 
-#: src/pages/snaps/{Snap.slug}.tsx:61
+#: src/pages/snap/{Snap.slug}.tsx:102
 msgid "Source Code"
 msgstr ""
 
@@ -98,10 +98,10 @@ msgstr ""
 msgid "These are not the droids you are looking for."
 msgstr ""
 
-#: src/pages/snaps/{Snap.slug}.tsx:62
+#: src/pages/snap/{Snap.slug}.tsx:89
 msgid "Version"
 msgstr ""
 
-#: src/pages/snaps/{Snap.slug}.tsx:46
+#: src/pages/snap/{Snap.slug}.tsx:65
 msgid "Website"
 msgstr ""
