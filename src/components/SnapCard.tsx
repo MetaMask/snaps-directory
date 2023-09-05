@@ -1,9 +1,23 @@
-import { Flex, Text, Box } from '@chakra-ui/react';
+import { Flex, Text, Box, Tag } from '@chakra-ui/react';
 import { Link } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
 import { SnapAuthorship } from './SnapAuthorship';
+import { useInstalledSnaps } from '../hooks';
 import type { Fields } from '../utils';
+
+/**
+ *
+ * @param description
+ */
+function normalizeDescription(description: string) {
+  let normalizedDescription = description.trim();
+  if (!description.endsWith('.') && !description.endsWith('!')) {
+    normalizedDescription = `${description}.`;
+  }
+
+  return normalizedDescription.replace(/Metamask/gu, 'MetaMask');
+}
 
 export const SnapCard: FunctionComponent<
   Fields<
@@ -11,8 +25,8 @@ export const SnapCard: FunctionComponent<
     'name' | 'description' | 'snapId' | 'svgIcon' | 'gatsbyPath'
   >
 > = ({ name, description, snapId, svgIcon, gatsbyPath }) => {
-  const shortDescription =
-    description.length > 115 ? `${description.slice(0, 115)}...` : description;
+  const [installedSnaps] = useInstalledSnaps();
+  const isInstalled = Boolean(installedSnaps[snapId]);
 
   return (
     <Link to={gatsbyPath}>
@@ -23,12 +37,23 @@ export const SnapCard: FunctionComponent<
         rounded="2xl"
         boxShadow="base"
         backgroundColor="white"
+        height="167px"
       >
         <Flex flexDirection="column">
           <Box marginBottom="4">
             <SnapAuthorship name={name} svgIcon={svgIcon} snapId={snapId} />
           </Box>
-          <Text fontSize="sm">{shortDescription}</Text>
+          <Text
+            fontSize="sm"
+            display="-webkit-box"
+            overflow="hidden"
+            sx={{
+              WebkitLineClamp: 3,
+              WebkitBoxOrient: 'vertical',
+            }}
+          >
+            {normalizeDescription(description)}
+          </Text>
         </Flex>
       </Flex>
     </Link>

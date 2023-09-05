@@ -14,7 +14,7 @@ export const SnapAuthorship: FunctionComponent<
         <Text fontWeight="semibold" isTruncated>
           {name}
         </Text>
-        <Text color="gray.muted" fontFamily="custom" isTruncated>
+        <Text color="gray.muted" fontFamily="custom" fontSize="xs" isTruncated>
           {snapId.slice(4)}
         </Text>
       </Box>
