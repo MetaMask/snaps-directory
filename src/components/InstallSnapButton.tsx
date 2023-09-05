@@ -51,18 +51,6 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
       });
   };
 
-  if (isInstalled) {
-    return (
-      <Button
-        leftIcon={<Icon icon="check" width="20px" />}
-        variant="primary"
-        isDisabled={true}
-      >
-        <Trans>Installed</Trans>
-      </Button>
-    );
-  }
-
   return (
     <>
       <PostInstallModal
@@ -72,16 +60,26 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
         icon={icon}
       />
 
-      <Button
-        leftIcon={<Icon icon="metamask" width="20px" />}
-        variant="primary"
-        isDisabled={!provider}
-        isLoading={installing}
-        loadingText={`Install ${name}`}
-        onClick={handleInstall}
-      >
-        <Trans>Install {name}</Trans>
-      </Button>
+      {isInstalled ? (
+        <Button
+          leftIcon={<Icon icon="check" width="20px" />}
+          variant="primary"
+          isDisabled={true}
+        >
+          <Trans>Installed</Trans>
+        </Button>
+      ) : (
+        <Button
+          leftIcon={<Icon icon="metamask" width="20px" />}
+          variant="primary"
+          isDisabled={!provider}
+          isLoading={installing}
+          loadingText={`Install ${name}`}
+          onClick={handleInstall}
+        >
+          <Trans>Install {name}</Trans>
+        </Button>
+      )}
     </>
   );
 };

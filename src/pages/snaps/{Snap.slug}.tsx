@@ -1,4 +1,12 @@
-import { Box, Button, Container, Divider, Flex, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Container,
+  Divider,
+  Flex,
+  Link,
+  Text,
+} from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import { graphql } from 'gatsby';
 import type { FunctionComponent } from 'react';
@@ -34,11 +42,14 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
               leftIcon={<Icon icon="externalLink" />}
               mr="4"
             >
-              <Trans>Website</Trans>
+              <Link href="#" _hover={{ textDecoration: 'none' }}>
+                <Trans>Website</Trans>
+              </Link>
             </Button>
             <InstallSnapButton
               snapId={snapId}
               name={name}
+              icon={svgIcon}
               version={latestVersion}
             />
           </Flex>

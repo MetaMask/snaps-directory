@@ -27,7 +27,7 @@ export const SnapIcon: FunctionComponent<SnapIconProps> = ({
     <Box position="relative" {...props}>
       <Avatar
         src={svgIcon as string}
-        name={snapName.slice(1, 2).toUpperCase()}
+        name={snapName.slice(0, 1).toUpperCase()}
         fontSize="md"
         background="background.alternative"
         color="text.alternative"
