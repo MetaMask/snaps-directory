@@ -47,6 +47,14 @@ msgid "Description by <0>{name}</0>"
 msgstr ""
 
 #: src/pages/snap/{Snap.slug}.tsx
+msgid "Desktop only"
+msgstr ""
+
+#: src/pages/snap/{Snap.slug}.tsx
+msgid "Desktop Only"
+msgstr ""
+
+#: src/pages/snap/{Snap.slug}.tsx
 msgid "Developer"
 msgstr ""
 
@@ -96,6 +104,10 @@ msgstr ""
 
 #: src/components/Icon.tsx
 msgid "MetaMask"
+msgstr ""
+
+#: src/pages/snap/{Snap.slug}.tsx
+msgid "MetaMask Snaps is in open beta and only supported via our extension clients on desktop such as Brave, Chrome, or Firefox."
 msgstr ""
 
 #: src/components/Icon.tsx
