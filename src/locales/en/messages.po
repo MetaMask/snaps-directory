@@ -69,6 +69,10 @@ msgid "External Link"
 msgstr ""
 
 #: src/pages/snap/{Snap.slug}.tsx
+msgid "Got it"
+msgstr ""
+
+#: src/pages/snap/{Snap.slug}.tsx
 msgid "Install {name}"
 msgstr ""
 
