@@ -11,10 +11,10 @@ import {
   DrawerBody,
   DrawerOverlay,
   DrawerContent,
-  Image,
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import { graphql } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import type { FunctionComponent } from 'react';
 
 import type { RegistrySnapCategory } from '../../components';
@@ -30,8 +30,6 @@ import {
 } from '../../components';
 import { ExternalLink } from '../../components/ExternalLink';
 import type { Fields } from '../../utils';
-
-const desktopOnlyImage = '../assets/images/desktop_only.svg';
 
 type SnapPageProps = {
   data: {
@@ -170,14 +168,39 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
           size="lg"
         >
           <DrawerOverlay />
-          <DrawerContent className="install-drawer-content">
+          <DrawerContent
+            className="install-drawer-content"
+            borderTopRadius={'48px'}
+          >
             <DrawerBody className="install-drawer-body">
-              <Image src={desktopOnlyImage} alt="Desktop only image"></Image>
-              <Text fontSize={24}>Desktop only</Text>
-              <Text fontSize={16}>
-                MetaMask Snaps is in open beta and only supported via our
-                extension clients on desktop such as Brave, Chrome, or Firefox.
-              </Text>
+              <Flex
+                justifyContent={'center'}
+                alignItems={'center'}
+                flexDirection={'column'}
+                paddingTop={'16px'}
+                paddingBottom={'24px'}
+              >
+                <StaticImage
+                  src="../../assets/images/desktop_only.png"
+                  alt="Desktop Only"
+                />
+                <Text fontSize={24} marginTop={'16px'}>
+                  Desktop only
+                </Text>
+                <Text fontSize={16} textAlign={'center'} marginTop={'16px'}>
+                  MetaMask Snaps is in open beta and only supported via our
+                  extension clients on desktop such as Brave, Chrome, or
+                  Firefox.
+                </Text>
+                <Button
+                  onClick={onMobileDrawerClose}
+                  variant="primary"
+                  width={'100%'}
+                  marginTop={'16px'}
+                >
+                  <Trans>Got it</Trans>
+                </Button>
+              </Flex>
             </DrawerBody>
           </DrawerContent>
         </Drawer>
