@@ -13,7 +13,6 @@ import {
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import { graphql } from 'gatsby';
-import shuffle from 'lodash/shuffle';
 import type { ChangeEvent, FunctionComponent } from 'react';
 import { useMemo, useState } from 'react';
 import { useGatsbyPluginFusejs } from 'react-use-fusejs';
@@ -25,7 +24,7 @@ import {
   RegistrySnapCategory,
   SNAP_CATEGORY_LABELS,
 } from '../components';
-import { useInstalledSnaps } from '../hooks';
+import { useInstalledSnaps, useShuffledSnaps } from '../hooks';
 import type { Fields } from '../utils';
 
 type IndexSnap = Fields<
@@ -41,9 +40,6 @@ type IndexSnap = Fields<
 
 type IndexPageProps = {
   data: {
-    allSnap: {
-      nodes: IndexSnap[];
-    };
     fusejs: Queries.fusejs;
   };
 };
@@ -112,14 +108,10 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_installedSnaps, _updateSnaps, cachedInstalledSnaps] =
     useInstalledSnaps();
-
-  const shuffledSnaps = useMemo(
-    () => shuffle(data.allSnap.nodes),
-    [data.allSnap.nodes],
-  );
   const [selectedCategories, setSelectedCategories] = useState<
     RegistrySnapCategory[]
   >(Object.keys(SNAP_CATEGORY_LABELS) as RegistrySnapCategory[]);
+  const shuffledSnaps = useShuffledSnaps();
 
   const snaps = useMemo(
     () =>
@@ -248,6 +240,7 @@ export const Head: FunctionComponent<HeadProps> = ({ data }) => (
 
 export const query = graphql`
   query {
+<<<<<<< HEAD
     allSnap {
       nodes {
         snapId
@@ -260,6 +253,8 @@ export const query = graphql`
       }
     }
 
+=======
+>>>>>>> 2137964 (Cache shuffled snaps in React context)
     fusejs {
       index
       data

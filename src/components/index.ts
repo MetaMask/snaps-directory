@@ -1,6 +1,6 @@
+export * from './providers';
 export * from './BackButton';
 export * from './Container';
-export * from './EthereumProvider';
 export * from './FilterButton';
 export * from './FilterCategory';
 export * from './FilterMenu';
