@@ -5,22 +5,6 @@ import type { FunctionComponent } from 'react';
 import { SnapAuthorship } from './SnapAuthorship';
 import type { Fields } from '../utils';
 
-/**
- * Normalize the description to ensure it ends with a period. This also replaces
- * "Metamask" with "MetaMask".
- *
- * @param description - The description to normalize.
- * @returns The normalized description.
- */
-function normalizeDescription(description: string) {
-  let normalizedDescription = description.trim();
-  if (!description.endsWith('.') && !description.endsWith('!')) {
-    normalizedDescription = `${description}.`;
-  }
-
-  return normalizedDescription.replace(/Metamask/gu, 'MetaMask');
-}
-
 export const SnapCard: FunctionComponent<
   Fields<
     Queries.Snap,
@@ -51,7 +35,7 @@ export const SnapCard: FunctionComponent<
               WebkitBoxOrient: 'vertical',
             }}
           >
-            {normalizeDescription(description)}
+            {description}
           </Text>
         </Flex>
       </Flex>
