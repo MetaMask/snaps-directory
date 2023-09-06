@@ -8,8 +8,10 @@ import type { Fields } from '../utils';
 export const SnapAuthorship: FunctionComponent<
   Fields<Queries.Snap, 'name' | 'snapId' | 'svgIcon'>
 > = ({ name, snapId, svgIcon }) => {
-  const [installedSnaps] = useInstalledSnaps();
-  const isInstalled = Boolean(installedSnaps[snapId]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_installedSnaps, _updateSnaps, cachedInstalledSnaps] =
+    useInstalledSnaps();
+  const isInstalled = Boolean(cachedInstalledSnaps[snapId]);
 
   return (
     <Flex alignItems="center">

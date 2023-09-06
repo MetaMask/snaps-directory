@@ -17,20 +17,21 @@ export function useInstalledSnaps() {
     Record<string, { version: string }>
   >({});
 
-    const [cachedInstalledSnaps, setCachedInstalledSnaps] = useState<
-    Record<string, { version: string }>
-  >({});
-
-  useEffect(() => {
+  const loadCache = () => {
     try {
       const cached = window.localStorage.getItem(LOCALSTORAGE_KEY);
       if (cached) {
-        setCachedInstalledSnaps(JSON.parse(cached));
+        return JSON.parse(cached);
       }
     } catch {
       // no op
     }
-  }, []);
+    return {};
+  };
+
+  const [cachedInstalledSnaps, setCachedInstalledSnaps] = useState<
+    Record<string, { version: string }>
+  >(loadCache());
 
   useEffect(() => {
     if (Object.keys(installedSnaps).length > 0) {
