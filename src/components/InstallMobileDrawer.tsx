@@ -42,7 +42,7 @@ export const InstallMobileDrawer: FunctionComponent<
               paddingBottom={6}
             >
               <StaticImage
-                src="../assets/images/desktop_only.png"
+                src="../assets/images/desktop_only.svg"
                 alt={t`desktop only`}
               />
               <Text fontSize="2xl" marginTop={4}>
