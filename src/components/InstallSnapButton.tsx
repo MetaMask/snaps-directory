@@ -1,5 +1,5 @@
 import { Button, useDisclosure } from '@chakra-ui/react';
-import { Trans } from '@lingui/macro';
+import { Trans, t } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 import { useState } from 'react';
 
@@ -74,7 +74,7 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
           variant="primary"
           isDisabled={!provider}
           isLoading={installing}
-          loadingText={`Install ${name}`}
+          loadingText={t`Installing ${name}`}
           onClick={handleInstall}
         >
           <Trans>Add to MetaMask</Trans>
