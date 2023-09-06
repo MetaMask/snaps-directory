@@ -10,6 +10,12 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   jsxRuntime: 'automatic',
   plugins: [
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: { name: 'content', path: './src/pages' },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

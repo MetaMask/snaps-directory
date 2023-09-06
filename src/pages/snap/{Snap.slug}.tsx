@@ -30,7 +30,7 @@ type SnapPageProps = {
     snap: Fields<
       Queries.Snap,
       | 'name'
-      | 'svgIcon'
+      | 'icon'
       | 'snapId'
       | 'description'
       | 'latestVersion'
@@ -39,12 +39,13 @@ type SnapPageProps = {
       | 'author'
       | 'sourceCode'
       | 'audits'
+      | 'banner'
     >;
   };
 };
 
 const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
-  const { name, snapId, svgIcon, description, latestVersion } = data.snap;
+  const { name, snapId, icon, description, latestVersion } = data.snap;
 
   return (
     <Container
@@ -59,7 +60,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
           flexDirection={{ base: 'column', md: 'row' }}
           alignItems="center"
         >
-          <SnapAuthorship name={name} svgIcon={svgIcon} snapId={snapId} />
+          <SnapAuthorship name={name} icon={icon} snapId={snapId} />
           <Flex
             alignItems="center"
             flexDirection={{ base: 'column', md: 'row' }}
@@ -86,7 +87,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             <InstallSnapButton
               snapId={snapId}
               name={name}
-              icon={svgIcon}
+              icon={icon}
               version={latestVersion}
             />
           </Flex>
@@ -165,7 +166,7 @@ type HeadProps = SnapPageProps & {
     site: {
       siteMetadata: Fields<
         Queries.SiteSiteMetadata,
-        'title' | 'description' | 'author'
+        'title' | 'description' | 'author' | 'siteUrl'
       >;
     };
   };
@@ -178,21 +179,29 @@ export const Head: FunctionComponent<HeadProps> = ({ data }) => (
       {data.snap.name} - {data.site.siteMetadata.title}
     </title>
     <meta name="description" content={data.site.siteMetadata.description} />
-    <meta
-      property="og:title"
-      content={`${data.snap.name} ${data.site.siteMetadata.title}`}
-    />
+    <meta property="og:title" content={data.snap.name} />
+    <meta property="og:site_name" content="MetaMask Snaps Directory" />
     <meta
       property="og:description"
       content={data.site.siteMetadata.description}
     />
     <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
+    <meta
+      name="og:image"
+      content={`${data.site.siteMetadata.siteUrl}${data.snap.banner.publicURL}`}
+    />
+    <meta name="og:image:width" content="1200" />
+    <meta name="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content={data.site.siteMetadata.author} />
     <meta name="twitter:title" content={data.site.siteMetadata.title} />
     <meta
       name="twitter:description"
       content={data.site.siteMetadata.description}
+    />
+    <meta
+      name="twitter:image"
+      content={`${data.site.siteMetadata.siteUrl}${data.snap.banner.publicURL}`}
     />
   </>
 );
@@ -202,7 +211,7 @@ export const query = graphql`
     snap(id: { eq: $id }) {
       name
       snapId
-      svgIcon
+      icon
       description
       latestVersion
       website
@@ -216,6 +225,9 @@ export const query = graphql`
         auditor
         report
       }
+      banner {
+        publicURL
+      }
     }
 
     site {
@@ -223,6 +235,7 @@ export const query = graphql`
         title
         description
         author
+        siteUrl
       }
     }
   }
