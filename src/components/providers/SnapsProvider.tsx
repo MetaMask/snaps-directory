@@ -7,7 +7,13 @@ import type { Fields } from '../../utils';
 
 export type Snap = Fields<
   Queries.Snap,
-  'id' | 'snapId' | 'name' | 'description' | 'svgIcon' | 'gatsbyPath'
+  | 'id'
+  | 'snapId'
+  | 'name'
+  | 'description'
+  | 'svgIcon'
+  | 'category'
+  | 'gatsbyPath'
 >;
 
 export const SnapsProviderContext = createContext<Snap[]>([]);
@@ -34,6 +40,7 @@ export const SnapsProvider: FunctionComponent<SnapsProviderProps> = ({
           description
           svgIcon
           latestVersion
+          category
           gatsbyPath(filePath: "/snap/{Snap.slug}")
         }
       }

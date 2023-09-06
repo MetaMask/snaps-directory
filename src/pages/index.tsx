@@ -240,21 +240,6 @@ export const Head: FunctionComponent<HeadProps> = ({ data }) => (
 
 export const query = graphql`
   query {
-<<<<<<< HEAD
-    allSnap {
-      nodes {
-        snapId
-        name
-        description
-        svgIcon
-        latestVersion
-        category
-        gatsbyPath(filePath: "/snap/{Snap.slug}")
-      }
-    }
-
-=======
->>>>>>> 2137964 (Cache shuffled snaps in React context)
     fusejs {
       index
       data
