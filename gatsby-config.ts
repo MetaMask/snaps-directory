@@ -63,8 +63,8 @@ const config: GatsbyConfig = {
           })),
       },
     },
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
   ],
 };
 

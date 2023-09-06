@@ -168,35 +168,34 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
           size="lg"
         >
           <DrawerOverlay />
-          <DrawerContent
-            className="install-drawer-content"
-            borderTopRadius={'48px'}
-          >
-            <DrawerBody className="install-drawer-body">
+          <DrawerContent borderTopRadius="48px">
+            <DrawerBody>
               <Flex
-                justifyContent={'center'}
-                alignItems={'center'}
-                flexDirection={'column'}
-                paddingTop={'16px'}
-                paddingBottom={'24px'}
+                justifyContent="center"
+                alignItems="center"
+                flexDirection="column"
+                paddingTop="16px"
+                paddingBottom="24px"
               >
                 <StaticImage
                   src="../../assets/images/desktop_only.png"
-                  alt="Desktop Only"
+                  alt={t`Desktop Only`}
                 />
-                <Text fontSize={24} marginTop={'16px'}>
-                  Desktop only
+                <Text fontSize="2xl" marginTop="16px">
+                  <Trans>Desktop only</Trans>
                 </Text>
-                <Text fontSize={16} textAlign={'center'} marginTop={'16px'}>
-                  MetaMask Snaps is in open beta and only supported via our
-                  extension clients on desktop such as Brave, Chrome, or
-                  Firefox.
+                <Text textAlign="center" marginTop="16px">
+                  <Trans>
+                    MetaMask Snaps is in open beta and only supported via our
+                    extension clients on desktop such as Brave, Chrome, or
+                    Firefox.
+                  </Trans>
                 </Text>
                 <Button
                   onClick={onMobileDrawerClose}
                   variant="primary"
-                  width={'100%'}
-                  marginTop={'16px'}
+                  width="100%"
+                  marginTop="16px"
                 >
                   <Trans>Got it</Trans>
                 </Button>
