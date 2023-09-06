@@ -51,14 +51,13 @@ type SnapPageProps = {
   };
 };
 
-const isMobile = () => {
-  return window.innerWidth <= 768; // Adjust the breakpoint as needed
-};
-
 const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
   const { name, snapId, svgIcon, description, latestVersion } = data.snap;
-  const mobile = isMobile();
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const {
+    isOpen: isMobileDrawerOpen,
+    onOpen: onMobileDrawerOpen,
+    onClose: onMobileDrawerClose,
+  } = useDisclosure();
 
   return (
     <Container maxWidth="container.xl">
@@ -82,12 +81,24 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
                 </Link>
               </Button>
             )}
-            <InstallSnapButton
-              snapId={snapId}
-              name={name}
-              icon={svgIcon}
-              version={latestVersion}
-            />
+            <Box display={{ base: 'block', md: 'none' }}>
+              <Button
+                onClick={onMobileDrawerOpen}
+                leftIcon={<Icon icon="metamask" width="20px" />}
+                variant="primary"
+                loadingText={`Install ${name}`}
+              >
+                <Trans>Install {name}</Trans>
+              </Button>
+            </Box>
+            <Box display={{ base: 'none', md: 'block' }}>
+              <InstallSnapButton
+                snapId={snapId}
+                name={name}
+                icon={svgIcon}
+                version={latestVersion}
+              />
+            </Box>
           </Flex>
         </Flex>
         <Divider my="6" />
@@ -151,9 +162,13 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
         </Text>
         <Text mt="1">{description}</Text>
       </Box>
-
       <>
-        <Drawer placement="bottom" onClose={onClose} isOpen={isOpen} size="lg">
+        <Drawer
+          placement="bottom"
+          onClose={onMobileDrawerClose}
+          isOpen={isMobileDrawerOpen}
+          size="lg"
+        >
           <DrawerOverlay />
           <DrawerContent className="install-drawer-content">
             <DrawerBody className="install-drawer-body">
