@@ -13,95 +13,95 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Footer.tsx:31
+#: src/components/Footer.tsx
 msgid "©{0} MetaMask. All rights reserved."
 msgstr ""
 
-#: src/components/InstallSnapButton.tsx:80
+#: src/components/InstallSnapButton.tsx
 msgid "Add to MetaMask"
 msgstr ""
 
-#: src/pages/snap/{Snap.slug}.tsx:108
+#: src/pages/snap/{Snap.slug}.tsx
 msgid "Audit"
 msgstr ""
 
-#: src/pages/snap/{Snap.slug}.tsx:81
+#: src/pages/snap/{Snap.slug}.tsx
 msgid "Category"
 msgstr ""
 
-#: src/components/Icon.tsx:16
+#: src/components/Icon.tsx
 msgid "Check"
 msgstr ""
 
-#: src/pages/index.tsx:61
+#: src/pages/index.tsx
 msgid "Community Snaps"
 msgstr ""
 
-#: src/components/PostInstallModal.tsx:44
+#: src/components/PostInstallModal.tsx
 msgid "Continue to {name}'s website to get started with this snap."
 msgstr ""
 
-#: src/pages/snap/{Snap.slug}.tsx:124
+#: src/pages/snap/{Snap.slug}.tsx
 msgid "Description by <0>{name}</0>"
 msgstr ""
 
-#: src/pages/snap/{Snap.slug}.tsx:92
+#: src/pages/snap/{Snap.slug}.tsx
 msgid "Developer"
 msgstr ""
 
-#: src/pages/index.tsx:64
+#: src/pages/index.tsx
 msgid "Discover snaps to customize your web3 experience via our official directory. <0>Read more</0> and <1>FAQ</1>."
 msgstr ""
 
-#: src/components/Icon.tsx:32
-#: src/components/Icon.tsx:36
+#: src/components/Icon.tsx
+#: src/components/Icon.tsx
 msgid "External Link"
 msgstr ""
 
-#: src/components/PostInstallModal.tsx:41
+#: src/components/PostInstallModal.tsx
 msgid "Installation complete"
 msgstr ""
 
-#: src/components/InstallSnapButton.tsx:69
+#: src/components/InstallSnapButton.tsx
 msgid "Installed"
 msgstr ""
 
-#: src/components/Icon.tsx:20
+#: src/components/Icon.tsx
 msgid "MetaMask"
 msgstr ""
 
-#: src/components/Footer.tsx:37
+#: src/components/Footer.tsx
 msgid "Privacy Policy"
 msgstr ""
 
-#: src/components/Icon.tsx:24
+#: src/components/Icon.tsx
 msgid "Search"
 msgstr ""
 
-#: src/pages/index.tsx:86
+#: src/pages/index.tsx
 msgid "Search snaps..."
 msgstr ""
 
-#: src/components/Icon.tsx:28
+#: src/components/Icon.tsx
 msgid "Snap"
 msgstr ""
 
-#: src/pages/snap/{Snap.slug}.tsx:102
+#: src/pages/snap/{Snap.slug}.tsx
 msgid "Source Code"
 msgstr ""
 
-#: src/components/Footer.tsx:20
+#: src/components/Footer.tsx
 msgid "Start exploring blockchain applications in seconds. Trusted by over 30 million users worldwide."
 msgstr ""
 
-#: src/pages/404.tsx:14
+#: src/pages/404.tsx
 msgid "These are not the droids you are looking for."
 msgstr ""
 
-#: src/pages/snap/{Snap.slug}.tsx:89
+#: src/pages/snap/{Snap.slug}.tsx
 msgid "Version"
 msgstr ""
 
-#: src/pages/snap/{Snap.slug}.tsx:65
+#: src/pages/snap/{Snap.slug}.tsx
 msgid "Website"
 msgstr ""
