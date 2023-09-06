@@ -2,7 +2,7 @@ import type { MetaMaskInpageProvider } from '@metamask/providers';
 import type { FunctionComponent, ReactNode } from 'react';
 import { createContext, useEffect, useState } from 'react';
 
-import { getEthereumProvider } from '../utils';
+import { getEthereumProvider } from '../../utils';
 
 export const EthereumProviderContext =
   createContext<MetaMaskInpageProvider | null>(null);
