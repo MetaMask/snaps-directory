@@ -23,7 +23,7 @@ export const SNAP_CATEGORY_LABELS: Record<
     icon: 'notifications',
   },
   [RegistrySnapCategory.TransactionInsights]: {
-    name: t`Transaction insights`,
+    name: t`Transaction Insights`,
     icon: 'transactionInsights',
   },
 };

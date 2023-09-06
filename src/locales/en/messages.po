@@ -81,6 +81,7 @@ msgid "Installing {name}"
 msgstr ""
 
 #: src/components/Icon.tsx
+#: src/components/Icon.tsx
 #: src/components/SnapCategory.tsx
 msgid "Interoperability"
 msgstr ""
@@ -89,6 +90,7 @@ msgstr ""
 msgid "MetaMask"
 msgstr ""
 
+#: src/components/Icon.tsx
 #: src/components/Icon.tsx
 #: src/components/SnapCategory.tsx
 msgid "Notifications"
@@ -127,11 +129,9 @@ msgstr ""
 msgid "These are not the droids you are looking for."
 msgstr ""
 
-#: src/components/SnapCategory.tsx
-msgid "Transaction insights"
-msgstr ""
-
 #: src/components/Icon.tsx
+#: src/components/Icon.tsx
+#: src/components/SnapCategory.tsx
 msgid "Transaction Insights"
 msgstr ""
 

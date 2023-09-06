@@ -15,7 +15,7 @@ export const FilterButton: FunctionComponent<FilterButtonProps> = forwardRef<
     ref={ref}
     {...props}
     variant="primary"
-    padding="0"
+    padding="0.5"
     height="auto"
     background="white"
     borderRadius="full"
@@ -24,7 +24,7 @@ export const FilterButton: FunctionComponent<FilterButtonProps> = forwardRef<
     sx={{
       '.chakra-button__icon': {
         margin: '0',
-        marginRight: '1',
+        marginX: '1',
       },
     }}
   >
@@ -34,17 +34,15 @@ export const FilterButton: FunctionComponent<FilterButtonProps> = forwardRef<
       sx={{
         '& > *': {
           borderRadius: 'full',
-          border: '3px solid',
-          borderColor: 'white',
           ':not(:first-of-type)': {
             marginLeft: '-16px',
           },
         },
       }}
     >
-      <Icon icon="transactionInsights" width="32px" />
-      <Icon icon="interoperability" width="32px" />
-      <Icon icon="notifications" width="32px" />
+      <Icon icon="transactionInsightsOutline" width="34px" />
+      <Icon icon="interoperabilityOutline" width="34px" />
+      <Icon icon="notificationsOutline" width="34px" />
     </Stack>
   </Button>
 ));
