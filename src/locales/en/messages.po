@@ -78,6 +78,10 @@ msgstr ""
 msgid "MetaMask"
 msgstr ""
 
+#: src/components/Header.tsx
+msgid "Open Beta"
+msgstr ""
+
 #: src/components/Footer.tsx
 msgid "Privacy Policy"
 msgstr ""
