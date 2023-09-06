@@ -68,6 +68,10 @@ msgstr ""
 msgid "External Link"
 msgstr ""
 
+#: src/pages/snap/{Snap.slug}.tsx
+msgid "Install {name}"
+msgstr ""
+
 #: src/components/PostInstallModal.tsx
 msgid "Installation complete"
 msgstr ""
