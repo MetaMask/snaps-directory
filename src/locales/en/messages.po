@@ -71,6 +71,10 @@ msgstr ""
 msgid "Installed"
 msgstr ""
 
+#: src/components/InstallSnapButton.tsx
+msgid "Installing {name}"
+msgstr ""
+
 #: src/components/Icon.tsx
 msgid "MetaMask"
 msgstr ""
