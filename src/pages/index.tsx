@@ -36,7 +36,9 @@ type IndexPageProps = {
 const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
   const [query, setQuery] = useState('');
   const result = useGatsbyPluginFusejs<Queries.Snap>(query, data.fusejs);
-  const [installedSnaps] = useInstalledSnaps();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_installedSnaps, _updateSnaps, cachedInstalledSnaps] =
+    useInstalledSnaps();
 
   const shuffledSnaps = useMemo(
     () => shuffle(data.allSnap.nodes),
@@ -46,8 +48,8 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
   const sortedSnaps = useMemo(() => {
     // First we shuffle, then we sort installed snaps to the top.
     const sorted = shuffledSnaps.sort((a, b) => {
-      const isSnapAInstalled = Boolean(installedSnaps[a.snapId]);
-      const isSnapBInstalled = Boolean(installedSnaps[b.snapId]);
+      const isSnapAInstalled = Boolean(cachedInstalledSnaps[a.snapId]);
+      const isSnapBInstalled = Boolean(cachedInstalledSnaps[b.snapId]);
       if (isSnapAInstalled && !isSnapBInstalled) {
         return -1;
       } else if (isSnapBInstalled && !isSnapAInstalled) {
@@ -58,7 +60,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
     });
 
     return sorted;
-  }, [shuffledSnaps, installedSnaps]);
+  }, [shuffledSnaps, cachedInstalledSnaps]);
 
   const snaps =
     query.length > 0

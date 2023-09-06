@@ -2,6 +2,8 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { useEthereumProvider } from './useEthereumProvider';
 
+const LOCALSTORAGE_KEY = 'installed-cache';
+
 /**
  * Get the installed snaps that the current page has access to. Note that if a
  * snap is installed from another website, it will not show up in the list here,
@@ -14,6 +16,31 @@ export function useInstalledSnaps() {
   const [installedSnaps, setInstalledSnaps] = useState<
     Record<string, { version: string }>
   >({});
+
+    const [cachedInstalledSnaps, setCachedInstalledSnaps] = useState<
+    Record<string, { version: string }>
+  >({});
+
+  useEffect(() => {
+    try {
+      const cached = window.localStorage.getItem(LOCALSTORAGE_KEY);
+      if (cached) {
+        setCachedInstalledSnaps(JSON.parse(cached));
+      }
+    } catch {
+      // no op
+    }
+  }, []);
+
+  useEffect(() => {
+    if (Object.keys(installedSnaps).length > 0) {
+      setCachedInstalledSnaps(installedSnaps);
+      window.localStorage.setItem(
+        LOCALSTORAGE_KEY,
+        JSON.stringify(installedSnaps),
+      );
+    }
+  }, [installedSnaps]);
 
   const updateSnaps = useCallback(() => {
     if (!provider) {
@@ -38,5 +65,5 @@ export function useInstalledSnaps() {
     updateSnaps();
   }, [provider, updateSnaps]);
 
-  return [installedSnaps, updateSnaps] as const;
+  return [installedSnaps, updateSnaps, cachedInstalledSnaps] as const;
 }
