@@ -50,9 +50,6 @@ msgid "Developer"
 msgstr ""
 
 #: src/components/BackButton.tsx
-msgid "Discover Snaps"
-msgstr ""
-
 #: src/pages/index.tsx
 msgid "Discover Snaps"
 msgstr ""
