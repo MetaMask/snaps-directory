@@ -6,6 +6,12 @@ import {
   Flex,
   Link,
   Text,
+  useDisclosure,
+  Drawer,
+  DrawerBody,
+  DrawerOverlay,
+  DrawerContent,
+  Image,
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import { graphql } from 'gatsby';
@@ -25,6 +31,8 @@ import {
 import { ExternalLink } from '../../components/ExternalLink';
 import type { Fields } from '../../utils';
 
+const desktopOnlyImage = '../assets/images/desktop_only.svg';
+
 type SnapPageProps = {
   data: {
     snap: Fields<
@@ -43,8 +51,14 @@ type SnapPageProps = {
   };
 };
 
+const isMobile = () => {
+  return window.innerWidth <= 768; // Adjust the breakpoint as needed
+};
+
 const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
   const { name, snapId, svgIcon, description, latestVersion } = data.snap;
+  const mobile = isMobile();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Container maxWidth="container.xl">
@@ -137,6 +151,22 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
         </Text>
         <Text mt="1">{description}</Text>
       </Box>
+
+      <>
+        <Drawer placement="bottom" onClose={onClose} isOpen={isOpen} size="lg">
+          <DrawerOverlay />
+          <DrawerContent className="install-drawer-content">
+            <DrawerBody className="install-drawer-body">
+              <Image src={desktopOnlyImage} alt="Desktop only image"></Image>
+              <Text fontSize={24}>Desktop only</Text>
+              <Text fontSize={16}>
+                MetaMask Snaps is in open beta and only supported via our
+                extension clients on desktop such as Brave, Chrome, or Firefox.
+              </Text>
+            </DrawerBody>
+          </DrawerContent>
+        </Drawer>
+      </>
     </Container>
   );
 };
