@@ -32,23 +32,23 @@ export const InstallMobileDrawer: FunctionComponent<
     <>
       <Drawer placement="bottom" onClose={onClose} isOpen={isOpen} size="lg">
         <DrawerOverlay />
-        <DrawerContent borderTopRadius="48px">
+        <DrawerContent borderTopRadius="3rem">
           <DrawerBody>
             <Flex
               justifyContent="center"
               alignItems="center"
               flexDirection="column"
-              paddingTop="16px"
-              paddingBottom="24px"
+              paddingTop={4}
+              paddingBottom={6}
             >
               <StaticImage
                 src="../assets/images/desktop_only.png"
                 alt={t`desktop only`}
               />
-              <Text fontSize="2xl" marginTop="16px">
+              <Text fontSize="2xl" marginTop={4}>
                 <Trans>Desktop only</Trans>
               </Text>
-              <Text textAlign="center" marginTop="16px">
+              <Text textAlign="center" marginTop={4}>
                 <Trans>
                   MetaMask Snaps is in open beta and only supported via our
                   extension clients on desktop such as Brave, Chrome, or
@@ -59,7 +59,7 @@ export const InstallMobileDrawer: FunctionComponent<
                 onClick={onClose}
                 variant="primary"
                 width="100%"
-                marginTop="16px"
+                marginTop={4}
               >
                 <Trans>Got it</Trans>
               </Button>
