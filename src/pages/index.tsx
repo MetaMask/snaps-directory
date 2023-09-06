@@ -62,10 +62,10 @@ type GetSnapsArgs = {
  *
  * @param args - The arguments object.
  * @param args.snaps - The snaps to filter.
+ * @param args.cachedSnaps - The cached snaps.
  * @param args.categories - The selected categories.
  * @param args.searchQuery - The search query.
  * @param args.searchResults - The search results.
- * @param args.cachedSnaps
  * @returns The snaps to display.
  */
 function getSnaps({
@@ -86,10 +86,12 @@ function getSnaps({
     searchQuery.length > 0
       ? (searchResults
           .map((searchResult) =>
-            snaps.find(({ snapId }) => searchResult.item.snapId === snapId),
+            sortedSnaps.find(
+              ({ snapId }) => searchResult.item.snapId === snapId,
+            ),
           )
           .filter(Boolean) as IndexSnap[])
-      : snaps;
+      : sortedSnaps;
 
   // If all or no categories are selected, return all snaps.
   if (
@@ -128,7 +130,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
         searchQuery: query,
         searchResults: result,
       }),
-    [shuffledSnaps, selectedCategories, query, result],
+    [shuffledSnaps, cachedInstalledSnaps, selectedCategories, query, result],
   );
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
