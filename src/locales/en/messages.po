@@ -46,6 +46,14 @@ msgstr ""
 msgid "Description by <0>{name}</0>"
 msgstr ""
 
+#: src/components/InstallMobileDrawer.tsx
+msgid "desktop only"
+msgstr ""
+
+#: src/components/InstallMobileDrawer.tsx
+msgid "Desktop only"
+msgstr ""
+
 #: src/pages/snap/{Snap.slug}.tsx
 msgid "Developer"
 msgstr ""
@@ -68,6 +76,14 @@ msgstr ""
 msgid "External Link"
 msgstr ""
 
+#: src/components/InstallMobileDrawer.tsx
+msgid "Got it"
+msgstr ""
+
+#: src/pages/snap/{Snap.slug}.tsx
+msgid "Install {name}"
+msgstr ""
+
 #: src/components/PostInstallModal.tsx
 msgid "Installation complete"
 msgstr ""
@@ -88,6 +104,10 @@ msgstr ""
 
 #: src/components/Icon.tsx
 msgid "MetaMask"
+msgstr ""
+
+#: src/components/InstallMobileDrawer.tsx
+msgid "MetaMask Snaps is in open beta and only supported via our extension clients on desktop such as Brave, Chrome, or Firefox."
 msgstr ""
 
 #: src/components/Icon.tsx
