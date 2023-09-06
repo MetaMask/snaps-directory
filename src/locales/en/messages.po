@@ -25,6 +25,10 @@ msgstr ""
 msgid "Audit"
 msgstr ""
 
+#: src/components/Icon.tsx
+msgid "Back"
+msgstr ""
+
 #: src/pages/snap/{Snap.slug}.tsx
 msgid "Category"
 msgstr ""
@@ -47,6 +51,10 @@ msgstr ""
 
 #: src/pages/snap/{Snap.slug}.tsx
 msgid "Developer"
+msgstr ""
+
+#: src/components/BackButton.tsx
+msgid "Discover Snaps"
 msgstr ""
 
 #: src/pages/index.tsx

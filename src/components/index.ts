@@ -1,3 +1,4 @@
+export * from './BackButton';
 export * from './Container';
 export * from './EthereumProvider';
 export * from './Header';

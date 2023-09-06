@@ -20,6 +20,7 @@ import {
   SnapSourceCode,
   SnapAudits,
   SnapCategory,
+  BackButton,
 } from '../../components';
 import { ExternalLink } from '../../components/ExternalLink';
 import type { Fields } from '../../utils';
@@ -47,6 +48,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
 
   return (
     <Container maxWidth="container.lg">
+      <BackButton />
       <Box p="6" rounded="2xl" boxShadow="base" background="white">
         <Flex justifyContent="space-between">
           <SnapAuthorship name={name} svgIcon={svgIcon} snapId={snapId} />
