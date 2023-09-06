@@ -1,5 +1,8 @@
 import { Text } from '@chakra-ui/react';
+import { t } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
+
+import type { IconName } from './Icon';
 
 export enum RegistrySnapCategory {
   Interoperability = 'interoperability',
@@ -7,10 +10,22 @@ export enum RegistrySnapCategory {
   TransactionInsights = 'transaction insights',
 }
 
-export const SNAP_CATEGORY_LABELS: Record<RegistrySnapCategory, string> = {
-  [RegistrySnapCategory.Interoperability]: 'Interoperability',
-  [RegistrySnapCategory.Notifications]: 'Notifications',
-  [RegistrySnapCategory.TransactionInsights]: 'Transaction Insights',
+export const SNAP_CATEGORY_LABELS: Record<
+  RegistrySnapCategory,
+  { name: string; icon: IconName }
+> = {
+  [RegistrySnapCategory.Interoperability]: {
+    name: t`Interoperability`,
+    icon: 'interoperability',
+  },
+  [RegistrySnapCategory.Notifications]: {
+    name: t`Notifications`,
+    icon: 'notifications',
+  },
+  [RegistrySnapCategory.TransactionInsights]: {
+    name: t`Transaction Insights`,
+    icon: 'transactionInsights',
+  },
 };
 
 export type SnapCategoryProps = {
@@ -19,4 +34,4 @@ export type SnapCategoryProps = {
 
 export const SnapCategory: FunctionComponent<SnapCategoryProps> = ({
   category,
-}) => <Text>{SNAP_CATEGORY_LABELS[category]}</Text>;
+}) => <Text>{SNAP_CATEGORY_LABELS[category].name}</Text>;

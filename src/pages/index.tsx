@@ -9,6 +9,7 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  Stack,
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import { graphql } from 'gatsby';
@@ -17,21 +18,93 @@ import type { ChangeEvent, FunctionComponent } from 'react';
 import { useMemo, useState } from 'react';
 import { useGatsbyPluginFusejs } from 'react-use-fusejs';
 
-import { Icon, SnapCard } from '../components';
+import {
+  Icon,
+  SnapCard,
+  FilterMenu,
+  RegistrySnapCategory,
+  SNAP_CATEGORY_LABELS,
+} from '../components';
 import { useInstalledSnaps } from '../hooks';
 import type { Fields } from '../utils';
+
+type IndexSnap = Fields<
+  Queries.Snap,
+  | 'id'
+  | 'snapId'
+  | 'name'
+  | 'description'
+  | 'svgIcon'
+  | 'category'
+  | 'gatsbyPath'
+>;
 
 type IndexPageProps = {
   data: {
     allSnap: {
-      nodes: Fields<
-        Queries.Snap,
-        'id' | 'snapId' | 'name' | 'description' | 'svgIcon' | 'gatsbyPath'
-      >[];
+      nodes: IndexSnap[];
     };
     fusejs: Queries.fusejs;
   };
 };
+
+type GetSnapsArgs = {
+  snaps: IndexSnap[];
+  cachedSnaps: Record<string, { version: string }>;
+  categories: RegistrySnapCategory[];
+  searchQuery: string;
+  searchResults: { item: Queries.Snap }[];
+};
+
+/**
+ * Get the snaps to display on the index page, based on the selected categories
+ * and search query.
+ *
+ * @param args - The arguments object.
+ * @param args.snaps - The snaps to filter.
+ * @param args.cachedSnaps - The cached snaps.
+ * @param args.categories - The selected categories.
+ * @param args.searchQuery - The search query.
+ * @param args.searchResults - The search results.
+ * @returns The snaps to display.
+ */
+function getSnaps({
+  snaps,
+  cachedSnaps,
+  categories,
+  searchQuery,
+  searchResults,
+}: GetSnapsArgs) {
+  const sortedSnaps = snaps.sort((a, b) => {
+    const isSnapAInstalled = Boolean(cachedSnaps[a.snapId]);
+    const isSnapBInstalled = Boolean(cachedSnaps[b.snapId]);
+
+    return Number(isSnapBInstalled) - Number(isSnapAInstalled);
+  });
+
+  const searchedSnaps =
+    searchQuery.length > 0
+      ? (searchResults
+          .map((searchResult) =>
+            sortedSnaps.find(
+              ({ snapId }) => searchResult.item.snapId === snapId,
+            ),
+          )
+          .filter(Boolean) as IndexSnap[])
+      : sortedSnaps;
+
+  // If all or no categories are selected, return all snaps.
+  if (
+    categories.length === 0 ||
+    categories.length === Object.keys(RegistrySnapCategory).length
+  ) {
+    return searchedSnaps;
+  }
+
+  return searchedSnaps.filter((snap) =>
+    categories.includes(snap?.category as RegistrySnapCategory),
+  );
+}
 
 const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
   const [query, setQuery] = useState('');
@@ -44,33 +117,44 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
     () => shuffle(data.allSnap.nodes),
     [data.allSnap.nodes],
   );
+  const [selectedCategories, setSelectedCategories] = useState<
+    RegistrySnapCategory[]
+  >(Object.keys(SNAP_CATEGORY_LABELS) as RegistrySnapCategory[]);
 
-  const sortedSnaps = useMemo(() => {
-    // First we shuffle, then we sort installed snaps to the top.
-    const sorted = shuffledSnaps.sort((a, b) => {
-      const isSnapAInstalled = Boolean(cachedInstalledSnaps[a.snapId]);
-      const isSnapBInstalled = Boolean(cachedInstalledSnaps[b.snapId]);
-
-      return isSnapBInstalled - isSnapAInstalled;
-    });
-
-    return sorted;
-  }, [shuffledSnaps, cachedInstalledSnaps]);
-
-  const snaps =
-    query.length > 0
-      ? result.map((searchResult) =>
-          sortedSnaps.find(({ snapId }) => searchResult.item.snapId === snapId),
-        )
-      : sortedSnaps;
+  const snaps = useMemo(
+    () =>
+      getSnaps({
+        snaps: shuffledSnaps,
+        cachedSnaps: cachedInstalledSnaps,
+        categories: selectedCategories,
+        searchQuery: query,
+        searchResults: result,
+      }),
+    [shuffledSnaps, cachedInstalledSnaps, selectedCategories, query, result],
+  );
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
   };
 
+  const handleToggle = (category: RegistrySnapCategory) => {
+    if (selectedCategories.includes(category)) {
+      return setSelectedCategories(
+        selectedCategories.filter((item) => item !== category),
+      );
+    }
+
+    return setSelectedCategories([...selectedCategories, category]);
+  };
+
   return (
     <Container maxWidth="container.xl">
-      <Flex direction="row" justifyContent="space-between" marginBottom="6">
+      <Flex
+        direction={['column', null, 'row']}
+        justifyContent="space-between"
+        marginBottom="6"
+        gap="4"
+      >
         <Box maxWidth="400px" width="100%">
           <Heading as="h2" fontSize="2xl" marginBottom="1">
             <Trans>Discover Snaps</Trans>
@@ -93,7 +177,16 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
             </Trans>
           </Text>
         </Box>
-        <Box maxWidth="400px" width="100%" marginTop="auto">
+        <Stack
+          direction="row"
+          maxWidth={['100%', null, '400px']}
+          width="100%"
+          marginTop="auto"
+        >
+          <FilterMenu
+            selectedCategories={selectedCategories}
+            onToggle={handleToggle}
+          />
           <InputGroup background="white" borderRadius="full">
             <InputLeftElement pointerEvents="none">
               <Icon icon="search" width="20px" />
@@ -106,7 +199,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
               onChange={handleChange}
             />
           </InputGroup>
-        </Box>
+        </Stack>
       </Flex>
       <Box>
         <SimpleGrid columns={[1, null, 2, 3]} spacing={4}>
@@ -162,6 +255,7 @@ export const query = graphql`
         description
         svgIcon
         latestVersion
+        category
         gatsbyPath(filePath: "/snap/{Snap.slug}")
       }
     }
