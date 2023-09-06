@@ -4117,7 +4117,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lingui/format-po@npm:4.4.2":
+"@lingui/format-po@npm:4.4.2, @lingui/format-po@npm:^4.4.2":
   version: 4.4.2
   resolution: "@lingui/format-po@npm:4.4.2"
   dependencies:
@@ -18100,6 +18100,7 @@ __metadata:
     "@lingui/cli": ^4.4.2
     "@lingui/conf": ^4.4.2
     "@lingui/core": ^4.4.2
+    "@lingui/format-po": ^4.4.2
     "@lingui/macro": ^4.4.2
     "@lingui/react": ^4.4.2
     "@metamask/eslint-config": ^12.0.0
