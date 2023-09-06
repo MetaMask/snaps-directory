@@ -96,6 +96,7 @@ msgid "Search snaps..."
 msgstr ""
 
 #: src/components/Icon.tsx
+#: src/components/Icon.tsx
 msgid "Snap"
 msgstr ""
 

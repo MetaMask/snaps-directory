@@ -18,6 +18,7 @@ import { useMemo, useState } from 'react';
 import { useGatsbyPluginFusejs } from 'react-use-fusejs';
 
 import { Icon, SnapCard } from '../components';
+import { useInstalledSnaps } from '../hooks';
 import type { Fields } from '../utils';
 
 type IndexPageProps = {
@@ -35,19 +36,33 @@ type IndexPageProps = {
 const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
   const [query, setQuery] = useState('');
   const result = useGatsbyPluginFusejs<Queries.Snap>(query, data.fusejs);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_installedSnaps, _updateSnaps, cachedInstalledSnaps] =
+    useInstalledSnaps();
+
   const shuffledSnaps = useMemo(
     () => shuffle(data.allSnap.nodes),
     [data.allSnap.nodes],
   );
 
+  const sortedSnaps = useMemo(() => {
+    // First we shuffle, then we sort installed snaps to the top.
+    const sorted = shuffledSnaps.sort((a, b) => {
+      const isSnapAInstalled = Boolean(cachedInstalledSnaps[a.snapId]);
+      const isSnapBInstalled = Boolean(cachedInstalledSnaps[b.snapId]);
+
+      return isSnapBInstalled - isSnapAInstalled;
+    });
+
+    return sorted;
+  }, [shuffledSnaps, cachedInstalledSnaps]);
+
   const snaps =
     query.length > 0
       ? result.map((searchResult) =>
-          shuffledSnaps.find(
-            ({ snapId }) => searchResult.item.snapId === snapId,
-          ),
+          sortedSnaps.find(({ snapId }) => searchResult.item.snapId === snapId),
         )
-      : shuffledSnaps;
+      : sortedSnaps;
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);

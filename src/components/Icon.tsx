@@ -10,6 +10,7 @@ import externalLinkMutedIcon from '../assets/icons/external-link-muted.svg';
 import externalLinkIcon from '../assets/icons/external-link.svg';
 import metamaskIcon from '../assets/icons/metamask.svg';
 import searchIcon from '../assets/icons/search.svg';
+import snapMutedIcon from '../assets/icons/snap-muted.svg';
 import snapIcon from '../assets/icons/snap.svg';
 
 const DEFAULT_ICONS = {
@@ -32,6 +33,10 @@ const DEFAULT_ICONS = {
   snap: {
     alt: t`Snap`,
     src: snapIcon,
+  },
+  snapMuted: {
+    alt: t`Snap`,
+    src: snapMutedIcon,
   },
   externalLink: {
     alt: t`External Link`,
