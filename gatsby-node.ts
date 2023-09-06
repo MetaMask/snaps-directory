@@ -9,6 +9,22 @@ import { fetchBuilder, FileSystemCache } from 'node-fetch-cache';
 import path from 'path';
 import semver from 'semver/preload';
 
+/**
+ * Normalize the description to ensure it ends with a period. This also replaces
+ * "Metamask" with "MetaMask".
+ *
+ * @param description - The description to normalize.
+ * @returns The normalized description.
+ */
+function normalizeDescription(description: string) {
+  let normalizedDescription = description.trim();
+  if (!description.endsWith('.') && !description.endsWith('!')) {
+    normalizedDescription = `${description}.`;
+  }
+
+  return normalizedDescription.replace(/Metamask/gu, 'MetaMask');
+}
+
 export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
   actions,
   createNodeId,
@@ -80,13 +96,13 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       : undefined;
 
     const content = {
+      ...snap.metadata,
       snapId: snap.id,
       name: snap.metadata.name,
-      description: manifest.description,
+      description: normalizeDescription(manifest.description),
       slug: snap.metadata.name.toLowerCase().replace(/\s/gu, '-'),
       latestVersion,
       svgIcon,
-      ...snap.metadata,
     };
 
     const node = {
