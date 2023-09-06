@@ -11,7 +11,7 @@ import {
   InputLeftElement,
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
-import { graphql, Link as RouterLink } from 'gatsby';
+import { graphql } from 'gatsby';
 import shuffle from 'lodash/shuffle';
 import type { ChangeEvent, FunctionComponent } from 'react';
 import { useMemo, useState } from 'react';
@@ -54,21 +54,24 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
   };
 
   return (
-    <Container maxWidth="container.lg">
+    <Container maxWidth="container.xl">
       <Flex direction="row" justifyContent="space-between" marginBottom="6">
         <Box maxWidth="400px" width="100%">
-          <Heading as="h2" fontSize="2xl">
-            <Trans>Community Snaps</Trans>
+          <Heading as="h2" fontSize="2xl" marginBottom="1">
+            <Trans>Discover Snaps</Trans>
           </Heading>
           <Text>
             <Trans>
               Discover snaps to customize your web3 experience via our official
               directory.{' '}
-              <Link as={RouterLink} to="/">
-                Read more
+              <Link href="https://metamask.io/snaps/" isExternal={true}>
+                Learn more
               </Link>{' '}
               and{' '}
-              <Link as={RouterLink} to="/">
+              <Link
+                href="https://support.metamask.io/hc/en-us/articles/18245938714395"
+                isExternal={true}
+              >
                 FAQ
               </Link>
               .

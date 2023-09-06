@@ -9,5 +9,5 @@ import logo from '../assets/logo.svg';
  * @returns A React component.
  */
 export const Logo: FunctionComponent = () => {
-  return <Image src={logo} alt="MetaMask Snaps Directory" height="7" />;
+  return <Image src={logo} alt="MetaMask Snaps Directory" height="24px" />;
 };

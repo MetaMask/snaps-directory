@@ -1,5 +1,6 @@
 import type { BoxProps } from '@chakra-ui/react';
-import { Box, Container, Stack } from '@chakra-ui/react';
+import { Box, Container, Stack, Tag } from '@chakra-ui/react';
+import { Trans } from '@lingui/macro';
 import { Link } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
@@ -18,11 +19,14 @@ export const Header: FunctionComponent<HeaderProps> = (props) => (
     marginBottom="20"
   >
     <Container maxWidth="7xl">
-      <Stack direction="row" height="7" align="center">
-        <Link to="/">
+      <Link to="/">
+        <Stack direction="row" alignItems="center" gap="2">
           <Logo />
-        </Link>
-      </Stack>
+          <Tag fontSize="0.65rem">
+            <Trans>Open Beta</Trans>
+          </Tag>
+        </Stack>
+      </Link>
     </Container>
   </Box>
 );

@@ -37,10 +37,6 @@ msgstr ""
 msgid "Check"
 msgstr ""
 
-#: src/pages/index.tsx
-msgid "Community Snaps"
-msgstr ""
-
 #: src/components/PostInstallModal.tsx
 msgid "Continue to {name}'s website to get started with this snap."
 msgstr ""
@@ -54,11 +50,12 @@ msgid "Developer"
 msgstr ""
 
 #: src/components/BackButton.tsx
+#: src/pages/index.tsx
 msgid "Discover Snaps"
 msgstr ""
 
 #: src/pages/index.tsx
-msgid "Discover snaps to customize your web3 experience via our official directory. <0>Read more</0> and <1>FAQ</1>."
+msgid "Discover snaps to customize your web3 experience via our official directory. <0>Learn more</0> and <1>FAQ</1>."
 msgstr ""
 
 #: src/components/Icon.tsx
@@ -76,6 +73,10 @@ msgstr ""
 
 #: src/components/Icon.tsx
 msgid "MetaMask"
+msgstr ""
+
+#: src/components/Header.tsx
+msgid "Open Beta"
 msgstr ""
 
 #: src/components/Footer.tsx

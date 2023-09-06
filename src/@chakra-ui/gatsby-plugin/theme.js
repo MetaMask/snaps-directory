@@ -294,6 +294,18 @@ const theme = extendTheme({
     }),
 
     Tag: defineTagMultiStyleConfig({
+      baseStyle: {
+        container: {
+          borderRadius: 'full',
+          fontSize: 'sm',
+          fontWeight: '500',
+          textTransform: 'uppercase',
+          paddingX: '2',
+          color: 'info.default',
+          background: 'info.muted',
+        },
+      },
+
       variants: {
         code: defineTagPartsStyle({
           container: {
