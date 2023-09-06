@@ -50,7 +50,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
     const sorted = shuffledSnaps.sort((a, b) => {
       const isSnapAInstalled = Boolean(cachedInstalledSnaps[a.snapId]);
       const isSnapBInstalled = Boolean(cachedInstalledSnaps[b.snapId]);
-      
+
       return isSnapBInstalled - isSnapAInstalled;
     });
 
