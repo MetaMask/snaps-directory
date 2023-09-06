@@ -7,14 +7,9 @@ import {
   Link,
   Text,
   useDisclosure,
-  Drawer,
-  DrawerBody,
-  DrawerOverlay,
-  DrawerContent,
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import { graphql } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
 import type { FunctionComponent } from 'react';
 
 import type { RegistrySnapCategory } from '../../components';
@@ -27,6 +22,7 @@ import {
   SnapAudits,
   SnapCategory,
   BackButton,
+  InstallMobileDrawer,
 } from '../../components';
 import { ExternalLink } from '../../components/ExternalLink';
 import type { Fields } from '../../utils';
@@ -160,50 +156,10 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
         </Text>
         <Text mt="1">{description}</Text>
       </Box>
-      <>
-        <Drawer
-          placement="bottom"
-          onClose={onMobileDrawerClose}
-          isOpen={isMobileDrawerOpen}
-          size="lg"
-        >
-          <DrawerOverlay />
-          <DrawerContent borderTopRadius="48px">
-            <DrawerBody>
-              <Flex
-                justifyContent="center"
-                alignItems="center"
-                flexDirection="column"
-                paddingTop="16px"
-                paddingBottom="24px"
-              >
-                <StaticImage
-                  src="../../assets/images/desktop_only.png"
-                  alt={t`Desktop Only`}
-                />
-                <Text fontSize="2xl" marginTop="16px">
-                  <Trans>Desktop only</Trans>
-                </Text>
-                <Text textAlign="center" marginTop="16px">
-                  <Trans>
-                    MetaMask Snaps is in open beta and only supported via our
-                    extension clients on desktop such as Brave, Chrome, or
-                    Firefox.
-                  </Trans>
-                </Text>
-                <Button
-                  onClick={onMobileDrawerClose}
-                  variant="primary"
-                  width="100%"
-                  marginTop="16px"
-                >
-                  <Trans>Got it</Trans>
-                </Button>
-              </Flex>
-            </DrawerBody>
-          </DrawerContent>
-        </Drawer>
-      </>
+      <InstallMobileDrawer
+        isOpen={isMobileDrawerOpen}
+        onClose={onMobileDrawerClose}
+      ></InstallMobileDrawer>
     </Container>
   );
 };

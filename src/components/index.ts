@@ -7,6 +7,7 @@ export * from './FilterMenu';
 export * from './Header';
 export * from './Icon';
 export * from './InstallSnapButton';
+export * from './InstallMobileDrawer';
 export * from './Layout';
 export * from './Logo';
 export * from './PostInstallModal';
