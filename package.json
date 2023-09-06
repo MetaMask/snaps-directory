@@ -123,7 +123,8 @@
       "gatsby-plugin-manifest>sharp": true,
       "@lingui/cli>esbuild": false,
       "simple-git-hooks": true,
-      "gatsby-plugin-sharp>sharp": false
+      "gatsby-plugin-sharp>sharp": true,
+      "sharp": true
     }
   }
 }
