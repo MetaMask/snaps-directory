@@ -122,7 +122,8 @@
       "gatsby>memoizee>es5-ext": false,
       "gatsby-plugin-manifest>sharp": true,
       "@lingui/cli>esbuild": false,
-      "simple-git-hooks": true
+      "simple-git-hooks": true,
+      "gatsby-plugin-sharp>sharp": false
     }
   }
 }
