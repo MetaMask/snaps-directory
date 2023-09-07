@@ -8,7 +8,12 @@ import metamaskLogo from '../assets/metamask-logo.svg';
 export type FooterProps = BoxProps;
 
 export const Footer: FunctionComponent<FooterProps> = (props) => (
-  <Box {...props} as="footer" background="white" marginTop="20">
+  <Box
+    {...props}
+    as="footer"
+    background="white"
+    marginTop={{ base: 4, md: 20 }}
+  >
     <Container maxWidth="7xl" paddingY="8">
       <Image src={metamaskLogo} alt="MetaMask" marginBottom="4" />
       <Text

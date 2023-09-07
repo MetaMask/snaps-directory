@@ -81,6 +81,7 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
           isLoading={installing}
           loadingText={t`Installing ${name}`}
           onClick={handleInstall}
+          width={{ base: '100%', md: 'auto' }}
         >
           <Trans>Add to MetaMask</Trans>
         </Button>

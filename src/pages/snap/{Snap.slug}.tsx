@@ -47,17 +47,32 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
   const { name, snapId, svgIcon, description, latestVersion } = data.snap;
 
   return (
-    <Container maxWidth="container.xl">
+    <Container
+      maxWidth="container.xl"
+      paddingTop="0"
+      marginTop={{ base: 4, md: 20 }}
+    >
       <BackButton />
       <Box p="6" rounded="2xl" boxShadow="base" background="white">
-        <Flex justifyContent="space-between">
+        <Flex
+          justifyContent="space-between"
+          flexDirection={{ base: 'column', md: 'row' }}
+          alignItems="center"
+        >
           <SnapAuthorship name={name} svgIcon={svgIcon} snapId={snapId} />
-          <Flex alignItems="center">
+          <Flex
+            alignItems="center"
+            flexDirection={{ base: 'column', md: 'row' }}
+            marginTop={{ base: 4, md: 0 }}
+            width={{ base: '100%', md: 'auto' }}
+          >
             {data.snap.website && (
               <Button
                 variant="outline"
                 leftIcon={<Icon icon="externalLink" />}
-                mr="4"
+                width={{ base: '100%', md: 'auto' }}
+                marginBottom={{ base: 2, md: 0 }}
+                marginRight={{ base: 0, md: 4 }}
               >
                 <Link
                   href={data.snap.website}
@@ -77,7 +92,11 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
           </Flex>
         </Flex>
         <Divider my="6" />
-        <Flex justifyContent="space-between">
+        <Flex
+          justifyContent={{ base: 'center', md: 'space-between' }}
+          flexDirection={{ base: 'column', md: 'row' }}
+          rowGap={{ base: 4, md: 0 }}
+        >
           {data.snap.category && (
             <SnapData
               label={t`Category`}
