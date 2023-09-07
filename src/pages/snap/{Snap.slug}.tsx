@@ -174,7 +174,7 @@ type HeadProps = SnapPageProps & {
 
 export const Head: FunctionComponent<HeadProps> = ({ data }) => {
   const title = `${data.snap.name} - ${data.site.siteMetadata.title}`;
-  const description = `Discover and install ${data.snap.name} on the MetaMask Snaps Directory to enhance your MetaMask experience. Easily find and install useful Snaps to customize your MetaMask wallet.`;
+  const description = `Discover and install ${data.snap.name} on the MetaMask Snaps Directory to enhance your web3 experience. Easily find and install useful Snaps to customize your MetaMask wallet.`;
   const image = `${data.site.siteMetadata.siteUrl}${data.snap.banner.publicURL}`;
 
   return (
