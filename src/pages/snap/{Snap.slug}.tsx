@@ -6,7 +6,6 @@ import {
   Flex,
   Link,
   Text,
-  useDisclosure,
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import { graphql } from 'gatsby';
@@ -22,7 +21,6 @@ import {
   SnapAudits,
   SnapCategory,
   BackButton,
-  InstallMobileDrawer,
 } from '../../components';
 import { ExternalLink } from '../../components/ExternalLink';
 import type { Fields } from '../../utils';
@@ -47,11 +45,6 @@ type SnapPageProps = {
 
 const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
   const { name, snapId, svgIcon, description, latestVersion } = data.snap;
-  const {
-    isOpen: isMobileDrawerOpen,
-    onOpen: onMobileDrawerOpen,
-    onClose: onMobileDrawerClose,
-  } = useDisclosure();
 
   return (
     <Container maxWidth="container.xl">
@@ -75,24 +68,12 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
                 </Link>
               </Button>
             )}
-            <Box display={{ base: 'block', md: 'none' }}>
-              <Button
-                onClick={onMobileDrawerOpen}
-                leftIcon={<Icon icon="metamask" width="20px" />}
-                variant="primary"
-                loadingText={`Install ${name}`}
-              >
-                <Trans>Install {name}</Trans>
-              </Button>
-            </Box>
-            <Box display={{ base: 'none', md: 'block' }}>
-              <InstallSnapButton
-                snapId={snapId}
-                name={name}
-                icon={svgIcon}
-                version={latestVersion}
-              />
-            </Box>
+            <InstallSnapButton
+              snapId={snapId}
+              name={name}
+              icon={svgIcon}
+              version={latestVersion}
+            />
           </Flex>
         </Flex>
         <Divider my="6" />
@@ -156,10 +137,6 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
         </Text>
         <Text mt="1">{description}</Text>
       </Box>
-      <InstallMobileDrawer
-        isOpen={isMobileDrawerOpen}
-        onClose={onMobileDrawerClose}
-      ></InstallMobileDrawer>
     </Container>
   );
 };
