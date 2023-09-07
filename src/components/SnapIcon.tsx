@@ -6,7 +6,7 @@ import { Icon } from './Icon';
 
 export type SnapIconProps = BoxProps & {
   snapName: string;
-  isInstalled?: boolean;
+  isInstalled: boolean;
   svgIcon?: string | undefined;
 };
 
@@ -23,7 +23,7 @@ export type SnapIconProps = BoxProps & {
 export const SnapIcon: FunctionComponent<SnapIconProps> = ({
   snapName,
   svgIcon,
-  isInstalled = true,
+  isInstalled,
   ...props
 }) => {
   return (

@@ -36,7 +36,12 @@ export const PostInstallModal: FunctionComponent<PostInstallModalProps> = ({
       <ModalContent>
         <ModalBody>
           <Center flexDirection="column">
-            <SnapIcon snapName={name} svgIcon={icon} marginBottom="4" />
+            <SnapIcon
+              snapName={name}
+              svgIcon={icon}
+              isInstalled={true}
+              marginBottom="4"
+            />
             <Heading as="h3" fontSize="lg" marginBottom="4">
               <Trans>Installation complete</Trans>
             </Heading>
