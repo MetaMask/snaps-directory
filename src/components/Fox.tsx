@@ -12,7 +12,7 @@ export const Fox: FunctionComponent = () => {
   }, []);
 
   useEffect(() => {
-    if (!ref) {
+    if (typeof window === 'undefined' || !ref) {
       return;
     }
 
@@ -32,5 +32,5 @@ export const Fox: FunctionComponent = () => {
     };
   }, [ref]);
 
-  return <Box ref={callback} />;
+  return <Box ref={callback} width="300px" height="200px" />;
 };

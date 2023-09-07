@@ -10,6 +10,7 @@ export const InstallUnsupported: FunctionComponent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const isMobile =
+    typeof navigator !== 'undefined' &&
     // Basic RegExp to detect mobile devices. This is not a perfect solution,
     // but it should be good enough.
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/iu.test(
