@@ -27,18 +27,6 @@ repo_name(RepoUrl, RepoName) :-
 
 % The package must have a description.
 \+ gen_enforced_field(WorkspaceCwd, 'description', null).
-% The description cannot end with a period.
-gen_enforced_field(WorkspaceCwd, 'description', DescriptionWithoutTrailingPeriod) :-
-  workspace_field(WorkspaceCwd, 'description', Description),
-  atom_length(Description, Length),
-  LengthLessOne is Length - 1,
-  sub_atom(Description, LengthLessOne, 1, 0, LastCharacter),
-  sub_atom(Description, 0, LengthLessOne, 1, DescriptionWithoutPossibleTrailingPeriod),
-  (
-    LastCharacter == '.' ->
-      DescriptionWithoutTrailingPeriod = DescriptionWithoutPossibleTrailingPeriod ;
-      DescriptionWithoutTrailingPeriod = Description
-  ).
 
 % The homepage of the package must match its name (which is in turn based on its
 % workspace directory name).
