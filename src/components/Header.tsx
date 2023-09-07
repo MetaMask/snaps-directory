@@ -16,7 +16,6 @@ export const Header: FunctionComponent<HeaderProps> = (props) => (
     flexDirection="row"
     justifyContent="space-between"
     background="white"
-    marginBottom="20"
   >
     <Container maxWidth="7xl">
       <Link to="/">

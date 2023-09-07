@@ -11,7 +11,6 @@ export const BackButton: FunctionComponent = () => (
     to="/"
     display="flex"
     fontWeight="500"
-    gap="1"
     alignItems="center"
     marginBottom="4"
   >

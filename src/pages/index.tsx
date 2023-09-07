@@ -141,11 +141,15 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
   };
 
   return (
-    <Container maxWidth="container.xl">
+    <Container
+      maxWidth="container.xl"
+      paddingTop="0"
+      marginTop={{ base: 4, md: 20 }}
+    >
       <Flex
         direction={['column', null, 'row']}
         justifyContent="space-between"
-        marginBottom="6"
+        marginBottom={{ base: 4, md: 6 }}
         gap="4"
       >
         <Box maxWidth="400px" width="100%">

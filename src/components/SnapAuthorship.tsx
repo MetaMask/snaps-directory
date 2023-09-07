@@ -14,7 +14,7 @@ export const SnapAuthorship: FunctionComponent<
   const isInstalled = Boolean(cachedInstalledSnaps[snapId]);
 
   return (
-    <Flex alignItems="center">
+    <Flex alignItems="center" width={{ base: '100%', md: 'auto' }}>
       <SnapIcon snapName={name} svgIcon={svgIcon} isInstalled={isInstalled} />
       <Box ml="2" overflow="hidden">
         <Text fontWeight="semibold" isTruncated>
