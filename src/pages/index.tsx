@@ -1,6 +1,5 @@
 import {
   Box,
-  SimpleGrid,
   Container,
   Heading,
   Text,
@@ -12,6 +11,7 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
+import loadable from '@loadable/component';
 import { graphql } from 'gatsby';
 import type { ChangeEvent, FunctionComponent } from 'react';
 import { useMemo, useState } from 'react';
@@ -19,13 +19,14 @@ import { useGatsbyPluginFusejs } from 'react-use-fusejs';
 
 import {
   Icon,
-  SnapCard,
   FilterMenu,
   RegistrySnapCategory,
   SNAP_CATEGORY_LABELS,
 } from '../components';
 import { useInstalledSnaps, useShuffledSnaps } from '../hooks';
 import type { Fields } from '../utils';
+
+const SnapsGrid = loadable(async () => import('../components/SnapsGrid'));
 
 type IndexSnap = Fields<
   Queries.Snap,
@@ -194,13 +195,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
         </Stack>
       </Flex>
       <Box>
-        <SimpleGrid columns={[1, null, 2, 3]} spacing={4}>
-          {snaps
-            .filter((snap) => !snap.snapId.endsWith('example-snap'))
-            .map((snap) => (
-              <SnapCard key={snap.id} {...snap} />
-            ))}
-        </SimpleGrid>
+        <SnapsGrid snaps={snaps} />
       </Box>
     </Container>
   );
