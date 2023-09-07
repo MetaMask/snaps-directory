@@ -1,8 +1,8 @@
 {
-  "name": "snaps-discover",
+  "name": "@metamask/snaps-directory",
   "version": "1.0.0",
   "private": true,
-  "description": "snaps-discover",
+  "description": "Discover and customize your web3 experience with the MetaMask Snaps Directory. Explore various community Snaps to enhance your web3 interactions and unlock new possibilities.",
   "keywords": [
     "gatsby"
   ],

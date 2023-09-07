@@ -172,39 +172,31 @@ type HeadProps = SnapPageProps & {
   };
 };
 
-export const Head: FunctionComponent<HeadProps> = ({ data }) => (
-  <>
-    <html lang="en" />
-    <title>
-      {data.snap.name} - {data.site.siteMetadata.title}
-    </title>
-    <meta name="description" content={data.site.siteMetadata.description} />
-    <meta property="og:title" content={data.snap.name} />
-    <meta property="og:site_name" content="MetaMask Snaps Directory" />
-    <meta
-      property="og:description"
-      content={data.site.siteMetadata.description}
-    />
-    <meta property="og:type" content="website" />
-    <meta
-      name="og:image"
-      content={`${data.site.siteMetadata.siteUrl}${data.snap.banner.publicURL}`}
-    />
-    <meta name="og:image:width" content="1200" />
-    <meta name="og:image:height" content="630" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content={data.site.siteMetadata.author} />
-    <meta name="twitter:title" content={data.site.siteMetadata.title} />
-    <meta
-      name="twitter:description"
-      content={data.site.siteMetadata.description}
-    />
-    <meta
-      name="twitter:image"
-      content={`${data.site.siteMetadata.siteUrl}${data.snap.banner.publicURL}`}
-    />
-  </>
-);
+export const Head: FunctionComponent<HeadProps> = ({ data }) => {
+  const title = `${data.snap.name} - ${data.site.siteMetadata.title}`;
+  const description = `Discover and install ${data.snap.name} on the MetaMask Snaps Directory to enhance your MetaMask experience. Easily find and install useful Snaps to customize your MetaMask wallet.`;
+  const image = `${data.site.siteMetadata.siteUrl}${data.snap.banner.publicURL}`;
+
+  return (
+    <>
+      <html lang="en" />
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta property="og:title" content={data.snap.name} />
+      <meta property="og:site_name" content={data.site.siteMetadata.title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content="website" />
+      <meta name="og:image" content={image} />
+      <meta name="og:image:width" content="1200" />
+      <meta name="og:image:height" content="630" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content={data.site.siteMetadata.author} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
+    </>
+  );
+};
 
 export const query = graphql`
   query ($id: String) {
