@@ -11567,25 +11567,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-source-filesystem@npm:^5.12.0":
-  version: 5.12.0
-  resolution: "gatsby-source-filesystem@npm:5.12.0"
-  dependencies:
-    "@babel/runtime": ^7.20.13
-    chokidar: ^3.5.3
-    file-type: ^16.5.4
-    fs-extra: ^11.1.1
-    gatsby-core-utils: ^4.12.0
-    mime: ^3.0.0
-    pretty-bytes: ^5.6.0
-    valid-url: ^1.0.9
-    xstate: ^4.38.0
-  peerDependencies:
-    gatsby: ^5.0.0-next
-  checksum: 2b578429e3294b59dee64a46a3cbbbb6bef77dd2b5b5e64a61b4a0a7ca61872669dd9ffbcd3821b9959403ffe6527901d4c4537f6c47ab88b45e5e94fe960f75
-  languageName: node
-  linkType: hard
-
 "gatsby-telemetry@npm:^4.12.0":
   version: 4.12.0
   resolution: "gatsby-telemetry@npm:4.12.0"
@@ -16623,13 +16604,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-bytes@npm:^5.6.0":
-  version: 5.6.0
-  resolution: "pretty-bytes@npm:5.6.0"
-  checksum: 9c082500d1e93434b5b291bd651662936b8bd6204ec9fa17d563116a192d6d86b98f6d328526b4e8d783c07d5499e2614a807520249692da9ec81564b2f439cd
-  languageName: node
-  linkType: hard
-
 "pretty-error@npm:^2.1.2":
   version: 2.1.2
   resolution: "pretty-error@npm:2.1.2"
@@ -18182,7 +18156,6 @@ __metadata:
     gatsby: ^5.12.3
     gatsby-plugin-fusejs: ^2.0.2
     gatsby-plugin-manifest: ^5.12.0
-    gatsby-source-filesystem: ^5.12.0
     jest: ^28.1.3
     jest-it-up: ^2.0.2
     lint-staged: ^14.0.1
@@ -19693,13 +19666,6 @@ __metadata:
     "@types/istanbul-lib-coverage": ^2.0.1
     convert-source-map: ^1.6.0
   checksum: 2069d59ee46cf8d83b4adfd8a5c1a90834caffa9f675e4360f1157ffc8578ef0f763c8f32d128334424159bb6b01f3876acd39cd13297b2769405a9da241f8d1
-  languageName: node
-  linkType: hard
-
-"valid-url@npm:^1.0.9":
-  version: 1.0.9
-  resolution: "valid-url@npm:1.0.9"
-  checksum: 3ecb030559404441c2cf104cbabab8770efb0f36d117db03d1081052ef133015a68806148ce954bb4dd0b5c42c14b709a88783c93d66b0916cb67ba771c98702
   languageName: node
   linkType: hard
 
