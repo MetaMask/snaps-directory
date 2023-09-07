@@ -4,6 +4,7 @@ import type { FunctionComponent } from 'react';
 import { useState } from 'react';
 
 import { Icon } from './Icon';
+import { InstallUnsupported } from './InstallUnsupported';
 import { PostInstallModal } from './PostInstallModal';
 import { useEthereumProvider, useInstalledSnaps } from '../hooks';
 
@@ -50,6 +51,10 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
         setInstalling(false);
       });
   };
+
+  if (!provider) {
+    return <InstallUnsupported />;
+  }
 
   return (
     <>

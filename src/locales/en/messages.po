@@ -18,6 +18,7 @@ msgid "©{0} MetaMask. All rights reserved."
 msgstr ""
 
 #: src/components/InstallSnapButton.tsx
+#: src/components/InstallUnsupported.tsx
 msgid "Add to MetaMask"
 msgstr ""
 
@@ -46,11 +47,8 @@ msgstr ""
 msgid "Description by <0>{name}</0>"
 msgstr ""
 
-#: src/components/InstallMobileDrawer.tsx
-msgid "desktop only"
-msgstr ""
-
-#: src/components/InstallMobileDrawer.tsx
+#: src/components/InstallUnsupportedMobile.tsx
+#: src/components/InstallUnsupportedMobile.tsx
 msgid "Desktop only"
 msgstr ""
 
@@ -67,6 +65,10 @@ msgstr ""
 msgid "Discover snaps to customize your web3 experience via our official directory. <0>Learn more</0> and <1>FAQ</1>."
 msgstr ""
 
+#: src/components/InstallUnsupportedDesktop.tsx
+msgid "Download MetaMask"
+msgstr ""
+
 #: src/components/Icon.tsx
 msgid "Dropdown"
 msgstr ""
@@ -76,12 +78,12 @@ msgstr ""
 msgid "External Link"
 msgstr ""
 
-#: src/components/InstallMobileDrawer.tsx
+#: src/components/InstallUnsupportedMobile.tsx
 msgid "Got it"
 msgstr ""
 
-#: src/pages/snap/{Snap.slug}.tsx
-msgid "Install {name}"
+#: src/components/InstallUnsupportedDesktop.tsx
+msgid "Install MetaMask"
 msgstr ""
 
 #: src/components/PostInstallModal.tsx
@@ -106,8 +108,8 @@ msgstr ""
 msgid "MetaMask"
 msgstr ""
 
-#: src/components/InstallMobileDrawer.tsx
-msgid "MetaMask Snaps is in open beta and only supported via our extension clients on desktop such as Brave, Chrome, or Firefox."
+#: src/components/InstallUnsupportedMobile.tsx
+msgid "MetaMask Snaps is in open beta and only supported via our extension clients on desktop such as <0>Chrome</0> or <1>Firefox</1>."
 msgstr ""
 
 #: src/components/Icon.tsx
@@ -147,6 +149,10 @@ msgstr ""
 
 #: src/pages/404.tsx
 msgid "These are not the droids you are looking for."
+msgstr ""
+
+#: src/components/InstallUnsupportedDesktop.tsx
+msgid "To use MetaMask Snaps, you need the extension in your browser."
 msgstr ""
 
 #: src/components/Icon.tsx
