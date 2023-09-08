@@ -73,6 +73,7 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
           leftIcon={<Icon icon="check" width="20px" />}
           variant="primary"
           isDisabled={true}
+          width={{ base: '100%', md: 'auto' }}
         >
           <Trans>Installed</Trans>
         </Button>
