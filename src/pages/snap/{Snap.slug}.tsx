@@ -128,10 +128,8 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
                       <Trans>FAQ</Trans>
                     </ExternalLink>
                   )}
-                  {(data.snap.support as any).knowledgeBase && (
-                    <ExternalLink
-                      href={(data.snap.support as any).knowledgeBase}
-                    >
+                  {data.snap.support.knowledgeBase && (
+                    <ExternalLink href={data.snap.support.knowledgeBase}>
                       <Trans>Knowledge Base</Trans>
                     </ExternalLink>
                   )}
