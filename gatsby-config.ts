@@ -22,8 +22,7 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         /* eslint-disable @typescript-eslint/naming-convention */
-        name: 'Snaps Directory',
-        short_name: 'Snaps Directory',
+        name: 'MetaMask Snaps Directory',
         start_url: '/',
         display: 'standalone',
         icon: 'src/assets/favicon.svg',
