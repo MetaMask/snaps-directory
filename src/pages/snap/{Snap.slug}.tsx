@@ -40,6 +40,7 @@ type SnapPageProps = {
       | 'sourceCode'
       | 'audits'
       | 'banner'
+      | 'support'
     >;
   };
 };
@@ -113,9 +114,26 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             <SnapData
               label={t`Developer`}
               value={
-                <ExternalLink href={data.snap.author.website as string}>
-                  {data.snap.author.name}
-                </ExternalLink>
+                <>
+                  <ExternalLink href={data.snap.author.website as string}>
+                    {data.snap.author.name}
+                  </ExternalLink>
+                  {data.snap.support.contact && (
+                    <ExternalLink href={data.snap.support.contact}>
+                      <Trans>Contact</Trans>
+                    </ExternalLink>
+                  )}
+                  {data.snap.support.faq && (
+                    <ExternalLink href={data.snap.support.faq}>
+                      <Trans>FAQ</Trans>
+                    </ExternalLink>
+                  )}
+                  {data.snap.support.knowledgeBase && (
+                    <ExternalLink href={data.snap.support.knowledgeBase}>
+                      <Trans>Knowledge Base</Trans>
+                    </ExternalLink>
+                  )}
+                </>
               }
             />
           )}
@@ -219,6 +237,11 @@ export const query = graphql`
       }
       banner {
         publicURL
+      }
+      support {
+        contact
+        faq
+        knowledgeBase
       }
     }
 

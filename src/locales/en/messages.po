@@ -39,6 +39,10 @@ msgstr ""
 msgid "Check"
 msgstr ""
 
+#: src/pages/snap/{Snap.slug}.tsx
+msgid "Contact"
+msgstr ""
+
 #: src/components/PostInstallModal.tsx
 msgid "Continue to {name}'s website to get started with this snap."
 msgstr ""
@@ -78,6 +82,10 @@ msgstr ""
 msgid "External Link"
 msgstr ""
 
+#: src/pages/snap/{Snap.slug}.tsx
+msgid "FAQ"
+msgstr ""
+
 #: src/components/InstallUnsupportedMobile.tsx
 msgid "Got it"
 msgstr ""
@@ -102,6 +110,10 @@ msgstr ""
 #: src/components/Icon.tsx
 #: src/components/SnapCategory.tsx
 msgid "Interoperability"
+msgstr ""
+
+#: src/pages/snap/{Snap.slug}.tsx
+msgid "Knowledge Base"
 msgstr ""
 
 #: src/components/Icon.tsx
