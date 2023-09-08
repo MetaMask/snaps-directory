@@ -46,7 +46,7 @@ type SnapPageProps = {
 };
 
 const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
-  const { name, snapId, icon, description, latestVersion } = data.snap;
+  const { name, snapId, icon, website, description, latestVersion } = data.snap;
 
   return (
     <Container
@@ -89,6 +89,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
               snapId={snapId}
               name={name}
               icon={icon}
+              website={website}
               version={latestVersion}
             />
           </Flex>

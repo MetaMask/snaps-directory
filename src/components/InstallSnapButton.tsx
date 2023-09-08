@@ -12,6 +12,7 @@ type InstallSnapButtonProps = {
   snapId: string;
   name: string;
   icon: string;
+  website: string;
   version: string;
 };
 
@@ -19,6 +20,7 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
   snapId,
   name,
   icon,
+  website,
   version,
 }) => {
   const provider = useEthereumProvider();
@@ -63,6 +65,7 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
         onClose={onClose}
         name={name}
         icon={icon}
+        website={website}
       />
 
       {isInstalled ? (
