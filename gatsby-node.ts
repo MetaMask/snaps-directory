@@ -10,7 +10,7 @@ import { fetchBuilder, FileSystemCache } from 'node-fetch-cache';
 import path from 'path';
 import semver from 'semver/preload';
 
-import { generateImage, normalizeName } from './src/utils/images';
+import { generateImage } from './src/utils/images';
 
 export type SnapNode = Node & {
   name: string;
@@ -183,7 +183,7 @@ export const onCreateNode: GatsbyNode[`onCreateNode`] = async ({
 
   const bannerNode = await createFileNodeFromBuffer({
     buffer: banner,
-    name: normalizeName(snapNode.name).toLowerCase().replace(/\s/gu, '-'),
+    name: 'banner',
     ext: '.png',
     parentNodeId: snapNode.id,
     createNode,
