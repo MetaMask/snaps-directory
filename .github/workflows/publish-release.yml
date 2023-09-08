@@ -29,6 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: name-version
+        name: Get Slack name and version
         shell: bash
         if: inputs.slack-subteam != ''
         run: |
@@ -36,14 +37,15 @@ jobs:
           NAME_VERSION_TEXT_STRIPPED="${NAME_VERSION_TEXT#@}"
           echo "NAME_VERSION=$NAME_VERSION_TEXT_STRIPPED" >> "$GITHUB_OUTPUT"
       - id: final-text
+        name: Get Slack final text
         shell: bash
         if: inputs.slack-subteam != ''
         run: |
           DEFAULT_TEXT="\`${{ steps.name-version.outputs.NAME_VERSION }}\` is awaiting deployment :rocket: \n <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/|→ Click here to review deployment>"
-          SUBTEAM_TEXT="${{ inputs.subteam }}"
+          SUBTEAM_TEXT="${{ inputs.slack-subteam }}"
           FINAL_TEXT="$DEFAULT_TEXT"
           if [[ ! "$SUBTEAM_TEXT" == "" ]]; then
-          FINAL_TEXT="<!subteam^$SUBTEAM_TEXT> $DEFAULT_TEXT"
+            FINAL_TEXT="<!subteam^$SUBTEAM_TEXT> $DEFAULT_TEXT"
           fi
           echo "FINAL_TEXT=$FINAL_TEXT" >> "$GITHUB_OUTPUT"
       - name: Post to a Slack channel
