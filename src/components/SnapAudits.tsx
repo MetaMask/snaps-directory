@@ -1,4 +1,4 @@
-import { Box, Link, Text } from '@chakra-ui/react';
+import { Link, Text } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 import { useMemo } from 'react';
 
@@ -41,7 +41,7 @@ export const SnapAudits: FunctionComponent<SnapAuditsProps> = ({ audits }) => {
   const groupedAudits = useMemo(() => getAudits(audits), [audits]);
 
   return (
-    <Box>
+    <>
       {Object.entries(groupedAudits).map(([auditor, reports]) => {
         if (reports.length === 1) {
           return (
@@ -69,6 +69,6 @@ export const SnapAudits: FunctionComponent<SnapAuditsProps> = ({ audits }) => {
           </Text>
         );
       })}
-    </Box>
+    </>
   );
 };
