@@ -35,7 +35,9 @@ jobs:
         with:
           path: |
             .cache/npm
-          key: npm-tarball-cache
+          key: npm-tarballs-${{ github.run_id }}
+          restore-keys: |
+            npm-tarballs
       - run: yarn --immutable --immutable-cache
       - name: Extract translations
         run: yarn lang:extract
