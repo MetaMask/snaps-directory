@@ -7,10 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.1.1]
-### Uncategorized
-- Fix audit alignment ([#61](https://github.com/MetaMask/snaps-directory/pull/61))
-- Use descriptions and summaries from registry ([#60](https://github.com/MetaMask/snaps-directory/pull/60))
-- Add linting for changelog ([#59](https://github.com/MetaMask/snaps-directory/pull/59))
+### Changed
+- Use descriptions and summaries from the Snaps registry ([#60](https://github.com/MetaMask/snaps-directory/pull/60))
+
+### Fixed
+- Fix alignment of audits on Snap details page ([#61](https://github.com/MetaMask/snaps-directory/pull/61))
 - Fix translations outside of React context ([#58](https://github.com/MetaMask/snaps-directory/pull/58))
 
 ## [0.1.0]
