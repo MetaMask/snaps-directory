@@ -90,7 +90,9 @@ export const PostInstallModal: FunctionComponent<PostInstallModalProps> = ({
                 </Link>
               </>
             ) : (
-              <Trans>{name} is now ready to use.</Trans>
+              <Text variant="muted" textAlign="center">
+                <Trans>{name} is now ready to use.</Trans>
+              </Text>
             )}
           </Center>
         </ModalBody>
