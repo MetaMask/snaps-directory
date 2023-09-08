@@ -1,4 +1,5 @@
 import { MenuItem, Stack, Text } from '@chakra-ui/react';
+import { Trans } from '@lingui/react';
 import type { FunctionComponent } from 'react';
 
 import type { IconName } from './Icon';
@@ -32,7 +33,9 @@ export const FilterCategory: FunctionComponent<FilterCategoryProps> = ({
           visibility={enabled ? 'initial' : 'hidden'}
         />
         <Icon icon={icon} width="32px" />
-        <Text>{SNAP_CATEGORY_LABELS[category].name}</Text>
+        <Text>
+          <Trans id={SNAP_CATEGORY_LABELS[category].name.id} />
+        </Text>
       </Stack>
     </MenuItem>
   );
