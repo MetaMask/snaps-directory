@@ -110,12 +110,14 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
         )}`
       : undefined;
 
+    const [snapLocation, slug] = snap.id.split(':');
     const content = {
       ...snap.metadata,
       snapId: snap.id,
       name: manifest.proposedName,
       description: normalizeDescription(manifest.description),
-      slug: manifest.proposedName.toLowerCase().replace(/\s/gu, '-'),
+      location: snapLocation,
+      slug,
       latestVersion,
       icon,
     };
