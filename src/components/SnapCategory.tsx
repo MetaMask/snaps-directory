@@ -1,5 +1,7 @@
 import { Text } from '@chakra-ui/react';
-import { t } from '@lingui/macro';
+import type { MessageDescriptor } from '@lingui/core';
+import { defineMessage } from '@lingui/macro';
+import { Trans } from '@lingui/react';
 import type { FunctionComponent } from 'react';
 
 import type { IconName } from './Icon';
@@ -12,18 +14,18 @@ export enum RegistrySnapCategory {
 
 export const SNAP_CATEGORY_LABELS: Record<
   RegistrySnapCategory,
-  { name: string; icon: IconName }
+  { name: MessageDescriptor; icon: IconName }
 > = {
   [RegistrySnapCategory.Interoperability]: {
-    name: t`Interoperability`,
+    name: defineMessage`Interoperability`,
     icon: 'interoperability',
   },
   [RegistrySnapCategory.Notifications]: {
-    name: t`Notifications`,
+    name: defineMessage`Notifications`,
     icon: 'notifications',
   },
   [RegistrySnapCategory.TransactionInsights]: {
-    name: t`Transaction Insights`,
+    name: defineMessage`Transaction Insights`,
     icon: 'transactionInsights',
   },
 };
@@ -34,4 +36,8 @@ export type SnapCategoryProps = {
 
 export const SnapCategory: FunctionComponent<SnapCategoryProps> = ({
   category,
-}) => <Text>{SNAP_CATEGORY_LABELS[category].name}</Text>;
+}) => (
+  <Text>
+    <Trans id={SNAP_CATEGORY_LABELS[category].name.id} />
+  </Text>
+);
