@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.1.2]
-### Uncategorized
+### Fixed
 - Fix installation button responsiveness ([#68](https://github.com/MetaMask/snaps-directory/pull/68))
 - Improve search ([#67](https://github.com/MetaMask/snaps-directory/pull/67))
 - Add UI improvements for medium screens on a Snap info page ([#65](https://github.com/MetaMask/snaps-directory/pull/65))
