@@ -106,6 +106,10 @@ msgstr ""
 msgid "Get in touch"
 msgstr ""
 
+#: src/pages/404.tsx
+msgid "Go home"
+msgstr ""
+
 #: src/components/InstallUnsupportedMobile.tsx
 msgid "Got it"
 msgstr ""
@@ -185,7 +189,7 @@ msgid "Support"
 msgstr ""
 
 #: src/pages/404.tsx
-msgid "These are not the droids you are looking for."
+msgid "The page you're looking for can't be found."
 msgstr ""
 
 #: src/components/InstallUnsupportedDesktop.tsx
