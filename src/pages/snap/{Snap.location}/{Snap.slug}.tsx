@@ -98,7 +98,8 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
         <Flex
           justifyContent={{ base: 'center', md: 'space-between' }}
           flexDirection={{ base: 'column', md: 'row' }}
-          rowGap={{ base: 4, md: 0 }}
+          flexWrap={{ base: 'nowrap', md: 'wrap', lg: 'nowrap' }}
+          rowGap={{ base: 4, lg: 0 }}
         >
           {data.snap.category && (
             <SnapData
@@ -121,6 +122,16 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
               }
             />
           )}
+          {
+            // An empty Box taking full width will divide elements in two rows
+            // only on medium size screens while keeping the full flex
+            // system for every screen.
+          }
+          <Box
+            display={{ base: 'none', md: 'flex', lg: 'none' }}
+            flexBasis="100%"
+            height={0}
+          />
           {data.snap.sourceCode && (
             <SnapData
               label={t`Source Code`}
