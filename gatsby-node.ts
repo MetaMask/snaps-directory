@@ -115,11 +115,18 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       : undefined;
 
     const [snapLocation, slug] = snap.id.split(':');
+    const description = normalizeDescription(
+      snap.metadata.description ?? manifest.description,
+    );
+    const summary = normalizeDescription(
+      snap.metadata.summary ?? manifest.description,
+    );
     const content = {
       ...snap.metadata,
       snapId: snap.id,
       name: manifest.proposedName,
-      description: normalizeDescription(manifest.description),
+      description,
+      summary,
       location: snapLocation,
       slug,
       latestVersion,

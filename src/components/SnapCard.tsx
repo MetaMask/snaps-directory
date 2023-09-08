@@ -6,11 +6,8 @@ import { SnapAuthorship } from './SnapAuthorship';
 import type { Fields } from '../utils';
 
 export const SnapCard: FunctionComponent<
-  Fields<
-    Queries.Snap,
-    'name' | 'description' | 'snapId' | 'icon' | 'gatsbyPath'
-  >
-> = ({ name, description, snapId, icon, gatsbyPath }) => {
+  Fields<Queries.Snap, 'name' | 'summary' | 'snapId' | 'icon' | 'gatsbyPath'>
+> = ({ name, summary, snapId, icon, gatsbyPath }) => {
   return (
     <Link to={gatsbyPath}>
       <Flex
@@ -35,7 +32,7 @@ export const SnapCard: FunctionComponent<
               WebkitBoxOrient: 'vertical',
             }}
           >
-            {description}
+            {summary}
           </Text>
         </Flex>
       </Flex>
