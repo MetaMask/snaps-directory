@@ -183,10 +183,6 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: src/components/FooterLinks.tsx
-msgid "Terms of Use"
-msgstr ""
-
 #: src/pages/404.tsx
 msgid "These are not the droids you are looking for."
 msgstr ""

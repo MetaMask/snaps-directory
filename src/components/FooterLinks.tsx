@@ -14,10 +14,6 @@ export const FOOTER_LINKS = [
         title: t`Developer Docs`,
         url: 'https://docs.metamask.io/snaps/',
       },
-      {
-        title: t`Terms of Use`,
-        url: 'https://consensys.net/terms-of-use/',
-      },
     ],
   },
   {
