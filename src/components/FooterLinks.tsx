@@ -1,34 +1,35 @@
 import { Box, Flex, Heading, Link, List, ListItem } from '@chakra-ui/react';
-import { t } from '@lingui/macro';
+import { defineMessage } from '@lingui/macro';
+import { Trans } from '@lingui/react';
 import type { FunctionComponent } from 'react';
 
 export const FOOTER_LINKS = [
   {
-    title: t`About`,
+    title: defineMessage`About`,
     links: [
       {
-        title: t`Website`,
+        title: defineMessage`Website`,
         url: 'https://metamask.io/snaps',
       },
       {
-        title: t`Developer Docs`,
+        title: defineMessage`Developer Docs`,
         url: 'https://docs.metamask.io/snaps/',
       },
     ],
   },
   {
-    title: t`Get in touch`,
+    title: defineMessage`Get in touch`,
     links: [
       {
-        title: t`Contact Us`,
+        title: defineMessage`Contact Us`,
         url: 'https://support.metamask.io/hc/en-us/articles/360058969391-How-to-contact-MetaMask-Support',
       },
       {
-        title: t`Feedback`,
+        title: defineMessage`Feedback`,
         url: 'https://survey.usabilla.com/live/s/64f99fe2b12d6940df7c0357?utm_source=snapsdirectory&utm_medium=landing-page&utm_campaign=2023_Sep_snaps-launch_awareness_content',
       },
       {
-        title: t`Support`,
+        title: defineMessage`Support`,
         url: 'https://support.metamask.io/',
       },
     ],
@@ -51,7 +52,7 @@ export const FooterLinks: FunctionComponent = () => (
           fontWeight="500"
           textTransform="uppercase"
         >
-          {title}
+          <Trans id={title.id} />
         </Heading>
         <List>
           {links.map(({ title: linkTitle, url }) => (
@@ -66,7 +67,7 @@ export const FooterLinks: FunctionComponent = () => (
                 isExternal={true}
                 color="gray.muted"
               >
-                {linkTitle}
+                <Trans id={linkTitle.id} />
               </Link>
             </ListItem>
           ))}

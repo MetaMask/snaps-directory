@@ -1,6 +1,8 @@
 import type { PropsOf } from '@chakra-ui/react';
 import { Image } from '@chakra-ui/react';
-import { t } from '@lingui/macro';
+import type { MessageDescriptor } from '@lingui/core';
+import { defineMessage } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 import type { ForwardRefExoticComponent } from 'react';
 import { forwardRef } from 'react';
 
@@ -23,67 +25,67 @@ import transactionInsightsIcon from '../assets/icons/transaction-insights.svg';
 
 const DEFAULT_ICONS = {
   back: {
-    alt: t`Back`,
+    alt: defineMessage`Back`,
     src: backIcon,
   },
   check: {
-    alt: t`Check`,
+    alt: defineMessage`Check`,
     src: checkIcon,
   },
   checkBlue: {
-    alt: t`Check`,
+    alt: defineMessage`Check`,
     src: checkBlueIcon,
   },
   metamask: {
-    alt: t`MetaMask`,
+    alt: defineMessage`MetaMask`,
     src: metamaskIcon,
   },
   dropdown: {
-    alt: t`Dropdown`,
+    alt: defineMessage`Dropdown`,
     src: dropdownIcon,
   },
   interoperability: {
-    alt: t`Interoperability`,
+    alt: defineMessage`Interoperability`,
     src: interoperabilityIcon,
   },
   interoperabilityOutline: {
-    alt: t`Interoperability`,
+    alt: defineMessage`Interoperability`,
     src: interoperabilityOutlineIcon,
   },
   notifications: {
-    alt: t`Notifications`,
+    alt: defineMessage`Notifications`,
     src: notificationsIcon,
   },
   notificationsOutline: {
-    alt: t`Notifications`,
+    alt: defineMessage`Notifications`,
     src: notificationsOutlineIcon,
   },
   search: {
-    alt: t`Search`,
+    alt: defineMessage`Search`,
     src: searchIcon,
   },
   snap: {
-    alt: t`Snap`,
+    alt: defineMessage`Snap`,
     src: snapIcon,
   },
   snapMuted: {
-    alt: t`Snap`,
+    alt: defineMessage`Snap`,
     src: snapMutedIcon,
   },
   transactionInsights: {
-    alt: t`Transaction Insights`,
+    alt: defineMessage`Transaction Insights`,
     src: transactionInsightsIcon,
   },
   transactionInsightsOutline: {
-    alt: t`Transaction Insights`,
+    alt: defineMessage`Transaction Insights`,
     src: transactionInsightsOutlineIcon,
   },
   externalLink: {
-    alt: t`External Link`,
+    alt: defineMessage`External Link`,
     src: externalLinkIcon,
   },
   externalLinkMuted: {
-    alt: t`External Link`,
+    alt: defineMessage`External Link`,
     src: externalLinkMutedIcon,
   },
 };
@@ -92,7 +94,7 @@ export type IconName = keyof typeof DEFAULT_ICONS;
 
 export type IconProps = {
   icon: IconName;
-  alt?: string;
+  alt?: MessageDescriptor;
   width?: string;
   height?: string;
 } & PropsOf<typeof Image>;
@@ -121,12 +123,14 @@ export const Icon: ForwardRefExoticComponent<IconProps> = forwardRef(
     },
     ref,
   ) => {
+    const { i18n } = useLingui();
     const iconMetadata = DEFAULT_ICONS[icon];
+
     return (
       <Image
         ref={ref}
         src={iconMetadata.src}
-        alt={alt}
+        alt={i18n._(alt)}
         width={width}
         height={height}
         {...props}
