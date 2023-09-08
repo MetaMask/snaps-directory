@@ -100,7 +100,9 @@ function getSnaps({
 
 const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
   const [query, setQuery] = useState('');
-  const result = useGatsbyPluginFusejs<Queries.Snap>(query, data.fusejs);
+  const result = useGatsbyPluginFusejs<Queries.Snap>(query, data.fusejs, {
+    threshold: 0.3,
+  });
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_installedSnaps, _updateSnaps, cachedInstalledSnaps] =
     useInstalledSnaps();
