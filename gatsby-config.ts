@@ -14,7 +14,6 @@ const config: GatsbyConfig = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-cname',
     {
       resolve: 'gatsby-source-filesystem',
       options: { name: 'content', path: './src/pages' },
