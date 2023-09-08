@@ -10,7 +10,7 @@ import { fetchBuilder, FileSystemCache } from 'node-fetch-cache';
 import path from 'path';
 import semver from 'semver/preload';
 
-import { generateImage, normalizeName } from './src/utils/images';
+import { generateImage } from './src/utils/images';
 
 export type SnapNode = Node & {
   name: string;
@@ -87,6 +87,10 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
   const verifiedSnaps: any[] = Object.values(registry.verifiedSnaps);
 
   for (const snap of verifiedSnaps) {
+    if (snap.id.endsWith('example-snap')) {
+      continue;
+    }
+
     const latestVersion = Object.keys(snap.versions).reduce(
       (result, version) => {
         if (result === null || semver.gt(version, result)) {
@@ -110,12 +114,14 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
         )}`
       : undefined;
 
+    const [snapLocation, slug] = snap.id.split(':');
     const content = {
       ...snap.metadata,
       snapId: snap.id,
       name: manifest.proposedName,
       description: normalizeDescription(manifest.description),
-      slug: manifest.proposedName.toLowerCase().replace(/\s/gu, '-'),
+      location: snapLocation,
+      slug,
       latestVersion,
       icon,
     };
@@ -177,7 +183,7 @@ export const onCreateNode: GatsbyNode[`onCreateNode`] = async ({
 
   const bannerNode = await createFileNodeFromBuffer({
     buffer: banner,
-    name: normalizeName(snapNode.name).toLowerCase().replace(/\s/gu, '-'),
+    name: 'banner',
     ext: '.png',
     parentNodeId: snapNode.id,
     createNode,
