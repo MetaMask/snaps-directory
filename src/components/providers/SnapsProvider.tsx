@@ -31,6 +31,7 @@ export const SnapsProvider: FunctionComponent<SnapsProviderProps> = ({
         nodes {
           snapId
           name
+          summary
           description
           icon
           latestVersion
