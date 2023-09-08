@@ -4676,6 +4676,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@metamask/auto-changelog@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@metamask/auto-changelog@npm:3.2.0"
+  dependencies:
+    diff: ^5.0.0
+    execa: ^5.1.1
+    semver: ^7.3.5
+    yargs: ^17.0.1
+  bin:
+    auto-changelog: dist/cli.js
+  checksum: 7cd19400bb60d478455fbf9ffe7c295b21df64764a01f90776beda04bfa46242f34751112b862b4bd5955f04a7d28cfa7d6b2e745f3d3baaccda7c493f761658
+  languageName: node
+  linkType: hard
+
 "@metamask/base-controller@npm:^3.0.0, @metamask/base-controller@npm:^3.2.1":
   version: 3.2.1
   resolution: "@metamask/base-controller@npm:3.2.1"
@@ -4975,6 +4989,7 @@ __metadata:
     "@lingui/macro": ^4.4.2
     "@lingui/react": ^4.4.2
     "@loadable/component": ^5.15.3
+    "@metamask/auto-changelog": ^3.2.0
     "@metamask/eslint-config": ^12.0.0
     "@metamask/eslint-config-browser": ^12.0.0
     "@metamask/eslint-config-jest": ^12.0.0
@@ -9906,6 +9921,13 @@ __metadata:
   version: 28.1.1
   resolution: "diff-sequences@npm:28.1.1"
   checksum: e2529036505567c7ca5a2dea86b6bcd1ca0e3ae63bf8ebf529b8a99cfa915bbf194b7021dc1c57361a4017a6d95578d4ceb29fabc3232a4f4cb866a2726c7690
+  languageName: node
+  linkType: hard
+
+"diff@npm:^5.0.0":
+  version: 5.1.0
+  resolution: "diff@npm:5.1.0"
+  checksum: c7bf0df7c9bfbe1cf8a678fd1b2137c4fb11be117a67bc18a0e03ae75105e8533dbfb1cda6b46beb3586ef5aed22143ef9d70713977d5fb1f9114e21455fba90
   languageName: node
   linkType: hard
 
@@ -21162,7 +21184,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs@npm:^17.3.1":
+"yargs@npm:^17.0.1, yargs@npm:^17.3.1":
   version: 17.7.2
   resolution: "yargs@npm:17.7.2"
   dependencies:

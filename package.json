@@ -1,13 +1,15 @@
 {
   "name": "@metamask/snaps-directory",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "Discover and customize your web3 experience with the MetaMask Snaps Directory. Explore various community Snaps to enhance your web3 interactions and unlock new possibilities.",
   "keywords": [
     "gatsby"
   ],
+  "homepage": "https://github.com/MetaMask/snaps-directory#readme",
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/MetaMask/snaps-directory.git"
   },
   "scripts": {
     "build": "yarn lang:compile && gatsby build",
@@ -66,6 +68,7 @@
     "@lingui/cli": "^4.4.2",
     "@lingui/conf": "^4.4.2",
     "@lingui/format-po": "^4.4.2",
+    "@metamask/auto-changelog": "^3.2.0",
     "@metamask/eslint-config": "^12.0.0",
     "@metamask/eslint-config-browser": "^12.0.0",
     "@metamask/eslint-config-jest": "^12.0.0",
