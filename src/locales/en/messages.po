@@ -13,8 +13,12 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Footer.tsx
+#: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
+msgstr ""
+
+#: src/components/FooterLinks.tsx
+msgid "About"
 msgstr ""
 
 #: src/components/InstallSnapButton.tsx
@@ -43,6 +47,10 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
+#: src/components/FooterLinks.tsx
+msgid "Contact Us"
+msgstr ""
+
 #: src/components/PostInstallModal.tsx
 msgid "Continue to {name}'s website to get started with this snap."
 msgstr ""
@@ -58,6 +66,10 @@ msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Developer"
+msgstr ""
+
+#: src/components/FooterLinks.tsx
+msgid "Developer Docs"
 msgstr ""
 
 #: src/components/BackButton.tsx
@@ -84,6 +96,14 @@ msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "FAQ"
+msgstr ""
+
+#: src/components/FooterLinks.tsx
+msgid "Feedback"
+msgstr ""
+
+#: src/components/FooterLinks.tsx
+msgid "Get in touch"
 msgstr ""
 
 #: src/components/InstallUnsupportedMobile.tsx
@@ -134,7 +154,7 @@ msgstr ""
 msgid "Open Beta"
 msgstr ""
 
-#: src/components/Footer.tsx
+#: src/components/FooterCopyright.tsx
 msgid "Privacy Policy"
 msgstr ""
 
@@ -159,6 +179,10 @@ msgstr ""
 msgid "Start exploring blockchain applications in seconds. Trusted by over 30 million users worldwide."
 msgstr ""
 
+#: src/components/FooterLinks.tsx
+msgid "Support"
+msgstr ""
+
 #: src/pages/404.tsx
 msgid "These are not the droids you are looking for."
 msgstr ""
@@ -177,6 +201,7 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
+#: src/components/FooterLinks.tsx
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Website"
 msgstr ""
