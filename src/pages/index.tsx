@@ -17,6 +17,7 @@ import type { ChangeEvent, FunctionComponent } from 'react';
 import { useMemo, useState } from 'react';
 import { useGatsbyPluginFusejs } from 'react-use-fusejs';
 
+import banner from '../assets/images/seo/home.png';
 import {
   Icon,
   FilterMenu,
@@ -30,13 +31,7 @@ const SnapsGrid = loadable(async () => import('../components/SnapsGrid'));
 
 type IndexSnap = Fields<
   Queries.Snap,
-  | 'id'
-  | 'snapId'
-  | 'name'
-  | 'description'
-  | 'svgIcon'
-  | 'category'
-  | 'gatsbyPath'
+  'id' | 'snapId' | 'name' | 'description' | 'icon' | 'category' | 'gatsbyPath'
 >;
 
 type IndexPageProps = {
@@ -210,32 +205,40 @@ type HeadProps = {
     site: {
       siteMetadata: Fields<
         Queries.SiteSiteMetadata,
-        'title' | 'description' | 'author'
+        'title' | 'description' | 'author' | 'siteUrl'
       >;
     };
   };
 };
 
-export const Head: FunctionComponent<HeadProps> = ({ data }) => (
-  <>
-    <html lang="en" />
-    <title>{data.site.siteMetadata.title}</title>
-    <meta name="description" content={data.site.siteMetadata.description} />
-    <meta property="og:title" content={data.site.siteMetadata.title} />
-    <meta
-      property="og:description"
-      content={data.site.siteMetadata.description}
-    />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:creator" content={data.site.siteMetadata.author} />
-    <meta name="twitter:title" content={data.site.siteMetadata.title} />
-    <meta
-      name="twitter:description"
-      content={data.site.siteMetadata.description}
-    />
-  </>
-);
+export const Head: FunctionComponent<HeadProps> = ({ data }) => {
+  const image = `${data.site.siteMetadata.siteUrl}${banner}`;
+
+  return (
+    <>
+      <html lang="en" />
+      <title>{data.site.siteMetadata.title}</title>
+      <meta name="description" content={data.site.siteMetadata.description} />
+      <meta property="og:title" content={data.site.siteMetadata.title} />
+      <meta
+        property="og:description"
+        content={data.site.siteMetadata.description}
+      />
+      <meta property="og:type" content="website" />
+      <meta name="og:image" content={image} />
+      <meta name="og:image:width" content="1200" />
+      <meta name="og:image:height" content="630" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content={data.site.siteMetadata.author} />
+      <meta name="twitter:title" content={data.site.siteMetadata.title} />
+      <meta
+        name="twitter:description"
+        content={data.site.siteMetadata.description}
+      />
+      <meta name="twitter:image" content={image} />
+    </>
+  );
+};
 
 export const query = graphql`
   query {
@@ -249,6 +252,7 @@ export const query = graphql`
         title
         description
         author
+        siteUrl
       }
     }
   }

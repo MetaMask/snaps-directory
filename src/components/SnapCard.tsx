@@ -8,9 +8,9 @@ import type { Fields } from '../utils';
 export const SnapCard: FunctionComponent<
   Fields<
     Queries.Snap,
-    'name' | 'description' | 'snapId' | 'svgIcon' | 'gatsbyPath'
+    'name' | 'description' | 'snapId' | 'icon' | 'gatsbyPath'
   >
-> = ({ name, description, snapId, svgIcon, gatsbyPath }) => {
+> = ({ name, description, snapId, icon, gatsbyPath }) => {
   return (
     <Link to={gatsbyPath}>
       <Flex
@@ -24,7 +24,7 @@ export const SnapCard: FunctionComponent<
       >
         <Flex flexDirection="column">
           <Box marginBottom="4">
-            <SnapAuthorship name={name} svgIcon={svgIcon} snapId={snapId} />
+            <SnapAuthorship name={name} icon={icon} snapId={snapId} />
           </Box>
           <Text
             fontSize="sm"

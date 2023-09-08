@@ -2,12 +2,27 @@
 import { detectSnapLocation } from '@metamask/snaps-controllers/dist/snaps/location';
 import deepEqual from 'fast-deep-equal';
 import { rm } from 'fs/promises';
-import type { GatsbyNode } from 'gatsby';
+import type { GatsbyNode, Node } from 'gatsby';
+import { createFileNodeFromBuffer } from 'gatsby-source-filesystem';
 import type { RequestInfo, RequestInit } from 'node-fetch';
 import fetch from 'node-fetch';
 import { fetchBuilder, FileSystemCache } from 'node-fetch-cache';
 import path from 'path';
 import semver from 'semver/preload';
+
+import { generateImage, normalizeName } from './src/utils/images';
+
+export type SnapNode = Node & {
+  name: string;
+  description: string;
+  author: {
+    name: string;
+    website: string;
+  };
+  slug: string;
+  latestVersion: string;
+  icon: string;
+};
 
 /**
  * Normalize the description to ensure it ends with a period. This also replaces
@@ -89,7 +104,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
 
     const { result: manifest } = await location.manifest();
     const { iconPath } = manifest.source.location.npm;
-    const svgIcon = iconPath
+    const icon = iconPath
       ? `data:image/svg+xml;utf8,${encodeURIComponent(
           (await location.fetch(iconPath)).toString(),
         )}`
@@ -102,10 +117,10 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       description: normalizeDescription(manifest.description),
       slug: manifest.proposedName.toLowerCase().replace(/\s/gu, '-'),
       latestVersion,
-      svgIcon,
+      icon,
     };
 
-    const node = {
+    const node: SnapNode = {
       ...content,
       parent: null,
       children: [],
@@ -119,4 +134,53 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
 
     await createNode(node);
   }
+};
+
+export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] =
+  ({ actions }) => {
+    const { createTypes } = actions;
+
+    createTypes(`
+      type Snap implements Node {
+        banner: File @link(from: "fields.localFile")
+      }
+    `);
+  };
+
+export const onCreateNode: GatsbyNode[`onCreateNode`] = async ({
+  node,
+  actions,
+  createNodeId,
+  cache,
+  getCache,
+}) => {
+  if (node.internal.type !== 'Snap') {
+    return;
+  }
+
+  const snapNode = node as SnapNode;
+  const { createNode, createNodeField } = actions;
+
+  const banner = await generateImage(
+    snapNode.name,
+    snapNode.author?.name,
+    snapNode.icon,
+  );
+
+  const bannerNode = await createFileNodeFromBuffer({
+    buffer: banner,
+    name: normalizeName(snapNode.name).toLowerCase().replace(/\s/gu, '-'),
+    ext: '.png',
+    parentNodeId: snapNode.id,
+    createNode,
+    createNodeId,
+    cache,
+    getCache,
+  });
+
+  createNodeField({
+    node,
+    name: 'localFile',
+    value: bannerNode.id,
+  });
 };

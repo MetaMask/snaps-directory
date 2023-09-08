@@ -9,6 +9,7 @@
     "@yarnpkg/*",
     "clipanion",
     "gatsby-plugin-*",
+    "gatsby-transformer-*",
     "prettier-plugin-packagejson",
     "simple-git-hooks",
     "ts-node",

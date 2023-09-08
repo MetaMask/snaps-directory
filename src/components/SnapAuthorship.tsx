@@ -6,8 +6,8 @@ import { useInstalledSnaps } from '../hooks';
 import type { Fields } from '../utils';
 
 export const SnapAuthorship: FunctionComponent<
-  Fields<Queries.Snap, 'name' | 'snapId' | 'svgIcon'>
-> = ({ name, snapId, svgIcon }) => {
+  Fields<Queries.Snap, 'name' | 'snapId' | 'icon'>
+> = ({ name, snapId, icon }) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_installedSnaps, _updateSnaps, cachedInstalledSnaps] =
     useInstalledSnaps();
@@ -15,7 +15,7 @@ export const SnapAuthorship: FunctionComponent<
 
   return (
     <Flex alignItems="center" width={{ base: '100%', md: 'auto' }}>
-      <SnapIcon snapName={name} svgIcon={svgIcon} isInstalled={isInstalled} />
+      <SnapIcon snapName={name} icon={icon} isInstalled={isInstalled} />
       <Box ml="2" overflow="hidden">
         <Text fontWeight="semibold" isTruncated>
           {name}

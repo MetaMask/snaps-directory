@@ -2,14 +2,21 @@ import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: 'Snaps Directory',
-    description: 'Discover and install MetaMask Snaps.',
+    title: 'MetaMask Snaps Directory',
+    description:
+      'Discover and customize your web3 experience with the MetaMask Snaps directory. Explore various community Snaps to enhance your web3 interactions and unlock new possibilities.',
     siteUrl: 'https://snaps.metamask.io',
     author: 'MetaMask',
   },
   graphqlTypegen: true,
   jsxRuntime: 'automatic',
   plugins: [
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: { name: 'content', path: './src/pages' },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
