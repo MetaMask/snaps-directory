@@ -1,4 +1,5 @@
 import {
+  Box,
   Center,
   Flex,
   Heading,
@@ -19,16 +20,33 @@ export type PostInstallModalProps = {
   isOpen: boolean;
   onClose: () => void;
 
-  // TODO: Add website.
   name: string;
   icon: string;
+  website?: string;
 };
+
+/**
+ * Normalize a URL to its host and pathname.
+ *
+ * @param value - The URL to normalize.
+ * @returns The normalized URL.
+ */
+function normalizeUrl(value: string): string {
+  try {
+    const url = new URL(value);
+    const path = url.pathname === '/' ? '' : url.pathname;
+    return url.host + path;
+  } catch {
+    return value;
+  }
+}
 
 export const PostInstallModal: FunctionComponent<PostInstallModalProps> = ({
   isOpen,
   onClose,
   name,
   icon,
+  website,
 }) => {
   return (
     <Modal variant="minimal" size="xs" isOpen={isOpen} onClose={onClose}>
@@ -45,21 +63,37 @@ export const PostInstallModal: FunctionComponent<PostInstallModalProps> = ({
             <Heading as="h3" fontSize="lg" marginBottom="4">
               <Trans>Installation complete</Trans>
             </Heading>
-            <Text variant="muted" textAlign="center" marginBottom="4">
-              <Trans>
-                Continue to {name}&apos;s website to get started with this snap.
-              </Trans>
-            </Text>
-            <Link
-              variant="box"
-              href="https://organization.com/snap"
-              isExternal={true}
-            >
-              <Flex justifyContent="space-between" alignItems="center">
-                <span>organization.com/snap</span>
-                <Icon icon="externalLinkMuted" marginLeft="2" width="20px" />
-              </Flex>
-            </Link>
+            {website ? (
+              <>
+                <Text variant="muted" textAlign="center" marginBottom="4">
+                  <Trans>
+                    Continue to {name}&apos;s website to get started with this
+                    snap.
+                  </Trans>
+                </Text>
+                <Link variant="box" href={website} isExternal={true}>
+                  <Flex justifyContent="space-between" alignItems="center">
+                    <Box
+                      as="span"
+                      overflow="hidden"
+                      textOverflow="ellipsis"
+                      whiteSpace="nowrap"
+                    >
+                      {normalizeUrl(website)}
+                    </Box>
+                    <Icon
+                      icon="externalLinkMuted"
+                      marginLeft="2"
+                      width="20px"
+                    />
+                  </Flex>
+                </Link>
+              </>
+            ) : (
+              <Text variant="muted" textAlign="center">
+                <Trans>{name} is now ready to use.</Trans>
+              </Text>
+            )}
           </Center>
         </ModalBody>
       </ModalContent>
