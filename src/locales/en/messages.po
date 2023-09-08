@@ -180,6 +180,7 @@ msgid "Start exploring blockchain applications in seconds. Trusted by over 30 mi
 msgstr ""
 
 #: src/components/FooterLinks.tsx
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Support"
 msgstr ""
 
