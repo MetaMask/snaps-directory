@@ -5,6 +5,7 @@ import type { FunctionComponent } from 'react';
 
 import { FooterCopyright } from './FooterCopyright';
 import { FooterLinks } from './FooterLinks';
+import { FooterTerms } from './FooterTerms';
 import metamaskLogo from '../assets/metamask-logo.svg';
 
 export type FooterProps = BoxProps;
@@ -35,11 +36,11 @@ export const Footer: FunctionComponent<FooterProps> = (props) => (
               over 30 million users worldwide.
             </Trans>
           </Text>
-          <FooterCopyright display={['none', null, 'block']} />
         </Box>
         <FooterLinks />
-        <FooterCopyright display={['block', null, 'none']} />
       </Flex>
+      <FooterTerms />
+      <FooterCopyright />
     </Container>
   </Box>
 );
