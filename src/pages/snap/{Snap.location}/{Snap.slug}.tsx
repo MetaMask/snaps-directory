@@ -131,7 +131,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             display={{ base: 'none', md: 'flex', lg: 'none' }}
             flexBasis="100%"
             height={0}
-          ></Box>
+          />
           {data.snap.sourceCode && (
             <SnapData
               label={t`Source Code`}
