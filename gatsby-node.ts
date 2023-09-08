@@ -87,6 +87,10 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
   const verifiedSnaps: any[] = Object.values(registry.verifiedSnaps);
 
   for (const snap of verifiedSnaps) {
+    if (snap.id.endsWith('example-snap')) {
+      continue;
+    }
+
     const latestVersion = Object.keys(snap.versions).reduce(
       (result, version) => {
         if (result === null || semver.gt(version, result)) {

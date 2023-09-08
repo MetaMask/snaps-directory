@@ -10,11 +10,9 @@ export type SnapsGridProps = {
 
 export const SnapsGrid: FunctionComponent<SnapsGridProps> = ({ snaps }) => (
   <SimpleGrid columns={[1, null, 2, 3]} spacing={4}>
-    {snaps
-      .filter((snap) => !snap.snapId.endsWith('example-snap'))
-      .map((snap) => (
-        <SnapCard key={snap.id} {...snap} />
-      ))}
+    {snaps.map((snap) => (
+      <SnapCard key={snap.id} {...snap} />
+    ))}
   </SimpleGrid>
 );
 

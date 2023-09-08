@@ -39,7 +39,7 @@ msgstr ""
 msgid "Check"
 msgstr ""
 
-#: src/pages/snap/{Snap.slug}.tsx
+#: src/pages/snaps/{Snap.location}/{Snap.slug}.tsx
 msgid "Contact"
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "External Link"
 msgstr ""
 
-#: src/pages/snap/{Snap.slug}.tsx
+#: src/pages/snaps/{Snap.location}/{Snap.slug}.tsx
 msgid "FAQ"
 msgstr ""
 
@@ -112,7 +112,7 @@ msgstr ""
 msgid "Interoperability"
 msgstr ""
 
-#: src/pages/snap/{Snap.slug}.tsx
+#: src/pages/snaps/{Snap.location}/{Snap.slug}.tsx
 msgid "Knowledge Base"
 msgstr ""
 
