@@ -22,7 +22,7 @@ msgstr ""
 msgid "Add to MetaMask"
 msgstr ""
 
-#: src/pages/snaps/{Snap.location}/{Snap.slug}.tsx
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Audit"
 msgstr ""
 
@@ -30,7 +30,7 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
-#: src/pages/snaps/{Snap.location}/{Snap.slug}.tsx
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Category"
 msgstr ""
 
@@ -39,7 +39,7 @@ msgstr ""
 msgid "Check"
 msgstr ""
 
-#: src/pages/snaps/{Snap.location}/{Snap.slug}.tsx
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Contact"
 msgstr ""
 
@@ -47,7 +47,7 @@ msgstr ""
 msgid "Continue to {name}'s website to get started with this snap."
 msgstr ""
 
-#: src/pages/snaps/{Snap.location}/{Snap.slug}.tsx
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Description by <0>{name}</0>"
 msgstr ""
 
@@ -56,7 +56,7 @@ msgstr ""
 msgid "Desktop only"
 msgstr ""
 
-#: src/pages/snaps/{Snap.location}/{Snap.slug}.tsx
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Developer"
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "External Link"
 msgstr ""
 
-#: src/pages/snaps/{Snap.location}/{Snap.slug}.tsx
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "FAQ"
 msgstr ""
 
@@ -112,7 +112,7 @@ msgstr ""
 msgid "Interoperability"
 msgstr ""
 
-#: src/pages/snaps/{Snap.location}/{Snap.slug}.tsx
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Knowledge Base"
 msgstr ""
 
@@ -151,7 +151,7 @@ msgstr ""
 msgid "Snap"
 msgstr ""
 
-#: src/pages/snaps/{Snap.location}/{Snap.slug}.tsx
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Source Code"
 msgstr ""
 
@@ -173,10 +173,10 @@ msgstr ""
 msgid "Transaction Insights"
 msgstr ""
 
-#: src/pages/snaps/{Snap.location}/{Snap.slug}.tsx
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Version"
 msgstr ""
 
-#: src/pages/snaps/{Snap.location}/{Snap.slug}.tsx
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Website"
 msgstr ""
