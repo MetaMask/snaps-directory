@@ -7,7 +7,14 @@ import type { Fields } from '../../utils';
 
 export type Snap = Fields<
   Queries.Snap,
-  'id' | 'snapId' | 'name' | 'description' | 'icon' | 'category' | 'gatsbyPath'
+  | 'id'
+  | 'snapId'
+  | 'name'
+  | 'summary'
+  | 'description'
+  | 'icon'
+  | 'category'
+  | 'gatsbyPath'
 >;
 
 export const SnapsProviderContext = createContext<Snap[]>([]);

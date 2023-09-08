@@ -22,7 +22,7 @@ export const FilterMenu: FunctionComponent<FilterMenuProps> = ({
         {Object.entries(SNAP_CATEGORY_LABELS).map(
           ([category, { name, icon }]) => (
             <FilterCategory
-              key={name}
+              key={name.id}
               category={category as RegistrySnapCategory}
               icon={icon}
               enabled={selectedCategories.includes(

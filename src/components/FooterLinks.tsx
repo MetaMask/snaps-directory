@@ -44,7 +44,7 @@ export const FooterLinks: FunctionComponent = () => (
     marginBottom="12"
   >
     {FOOTER_LINKS.map(({ title, links }) => (
-      <Box key={`footer-${title}`}>
+      <Box key={`footer-${title.id}`}>
         <Heading
           as="h3"
           fontSize="sm"
@@ -57,7 +57,7 @@ export const FooterLinks: FunctionComponent = () => (
         <List>
           {links.map(({ title: linkTitle, url }) => (
             <ListItem
-              key={`footer-link-${title}-${url}`}
+              key={`footer-link-${title.id}-${url}`}
               marginTop="6"
               fontSize="sm"
             >
