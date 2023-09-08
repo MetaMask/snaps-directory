@@ -114,26 +114,9 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             <SnapData
               label={t`Developer`}
               value={
-                <>
-                  <ExternalLink href={data.snap.author.website as string}>
-                    {data.snap.author.name}
-                  </ExternalLink>
-                  {data.snap.support.contact && (
-                    <ExternalLink href={data.snap.support.contact}>
-                      <Trans>Contact</Trans>
-                    </ExternalLink>
-                  )}
-                  {data.snap.support.faq && (
-                    <ExternalLink href={data.snap.support.faq}>
-                      <Trans>FAQ</Trans>
-                    </ExternalLink>
-                  )}
-                  {data.snap.support.knowledgeBase && (
-                    <ExternalLink href={data.snap.support.knowledgeBase}>
-                      <Trans>Knowledge Base</Trans>
-                    </ExternalLink>
-                  )}
-                </>
+                <ExternalLink href={data.snap.author.website as string}>
+                  {data.snap.author.name}
+                </ExternalLink>
               }
             />
           )}
@@ -155,6 +138,32 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
                     >[]
                   }
                 />
+              }
+            />
+          )}
+          {(data.snap.support?.contact ||
+            data.snap.support?.faq ||
+            data.snap.support?.knowledgeBase) && (
+            <SnapData
+              label={t`Support`}
+              value={
+                <>
+                  {data.snap.support.contact && (
+                    <ExternalLink href={data.snap.support.contact}>
+                      <Trans>Contact</Trans>
+                    </ExternalLink>
+                  )}
+                  {data.snap.support.faq && (
+                    <ExternalLink href={data.snap.support.faq}>
+                      <Trans>FAQ</Trans>
+                    </ExternalLink>
+                  )}
+                  {data.snap.support.knowledgeBase && (
+                    <ExternalLink href={data.snap.support.knowledgeBase}>
+                      <Trans>Knowledge Base</Trans>
+                    </ExternalLink>
+                  )}
+                </>
               }
             />
           )}
