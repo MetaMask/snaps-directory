@@ -122,6 +122,11 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
               }
             />
           )}
+          {
+            // An empty Box taking full width will divide elements in two rows
+            // only on medium size screens while keeping the full flex
+            // system for every screen.
+          }
           <Box
             display={{ base: 'none', md: 'flex', lg: 'none' }}
             flexBasis="100%"
