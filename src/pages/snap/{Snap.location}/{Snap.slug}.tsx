@@ -21,6 +21,7 @@ import {
   SnapAudits,
   SnapCategory,
   BackButton,
+  SnapDescription,
 } from '../../../components';
 import { ExternalLink } from '../../../components/ExternalLink';
 import type { Fields } from '../../../utils';
@@ -117,7 +118,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             <SnapData
               label={t`Developer`}
               value={
-                <ExternalLink href={data.snap.author.website as string}>
+                <ExternalLink href={data.snap.author.website}>
                   {data.snap.author.name}
                 </ExternalLink>
               }
@@ -203,7 +204,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             </Text>
           </Trans>
         </Text>
-        <Text mt="1">{description}</Text>
+        <SnapDescription allowLinks={true} description={description} mt="1" />
       </Box>
     </Container>
   );
@@ -252,7 +253,10 @@ export const query = graphql`
       name
       snapId
       icon
-      description
+      description {
+        description
+        trusted
+      }
       latestVersion
       website
       category

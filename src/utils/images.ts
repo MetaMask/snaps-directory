@@ -1,3 +1,6 @@
+// Note: This file is intentionally not exported from the package index, as it
+// is intended to be used in the Gatsby build process, and not at runtime.
+
 /* eslint-disable no-restricted-globals */
 
 import Jimp from 'jimp';
