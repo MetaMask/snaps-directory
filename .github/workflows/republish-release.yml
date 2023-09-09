@@ -23,9 +23,6 @@ on:
         type: string
         description: 'The Slack username to use.'
         default: 'MetaMask bot'
-    secrets:
-      SLACK_WEBHOOK_URL:
-        required: false
 
 jobs:
   get-release-tag:
