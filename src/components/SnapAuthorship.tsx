@@ -2,16 +2,14 @@ import { Box, Flex, Text } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 
 import { SnapIcon } from './SnapIcon';
-import { useInstalledSnaps } from '../hooks';
+import { useEthereumProvider } from '../hooks';
 import type { Fields } from '../utils';
 
 export const SnapAuthorship: FunctionComponent<
   Fields<Queries.Snap, 'name' | 'snapId' | 'icon'>
 > = ({ name, snapId, icon }) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_installedSnaps, _updateSnaps, cachedInstalledSnaps] =
-    useInstalledSnaps();
-  const isInstalled = Boolean(cachedInstalledSnaps[snapId]);
+  const { snaps } = useEthereumProvider();
+  const isInstalled = Boolean(snaps[snapId]);
 
   return (
     <Flex alignItems="center" width={{ base: '100%', md: 'auto' }}>
