@@ -5,7 +5,7 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: 'MetaMask Snaps Directory',
     description:
-      'Discover and customize your web3 experience with the MetaMask Snaps directory. Explore various community Snaps to enhance your web3 interactions and unlock new possibilities.',
+      'Explore community-built Snaps to customize your web3 experience via our official directory.',
     siteUrl: 'https://snaps.metamask.io',
     author: 'MetaMask',
   },
