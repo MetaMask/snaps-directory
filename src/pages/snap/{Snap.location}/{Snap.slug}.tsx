@@ -72,7 +72,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
               <Button
                 variant="outline"
                 leftIcon={
-                  <Icon icon="externalLink" width={'24px'} height={'24px'} />
+                  <Icon icon="externalLink" width="24px" />
                 }
                 width={{ base: '100%', md: 'auto' }}
                 marginBottom={{ base: 2, md: 0 }}
@@ -188,8 +188,8 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
           color="gray.muted"
           fontFamily="custom"
           textTransform="uppercase"
-          fontWeight={'medium'}
-          fontSize={'sm'}
+          fontWeight="medium"
+          fontSize="sm"
         >
           <Trans>
             Description by{' '}
@@ -198,8 +198,8 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
               color="black"
               fontFamily="custom"
               textTransform="uppercase"
-              fontWeight={'medium'}
-              fontSize={'sm'}
+              fontWeight="medium"
+              fontSize="sm"
             >
               {name}
             </Text>
