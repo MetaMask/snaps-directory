@@ -36,17 +36,21 @@ const KNOWN_LINKS = [
  * @returns The link text.
  */
 export function getLinkText(url: string, includePath = false) {
-  const { host, pathname } = new URL(url);
+  try {
+    const { host, pathname } = new URL(url);
 
-  const link = KNOWN_LINKS.find((knownLink) => host.endsWith(knownLink.url));
-  if (link) {
-    return link.name;
+    const link = KNOWN_LINKS.find((knownLink) => host.endsWith(knownLink.url));
+    if (link) {
+      return link.name;
+    }
+
+    if (includePath) {
+      const path = pathname === '/' ? '' : pathname;
+      return host + path;
+    }
+
+    return host;
+  } catch {
+    return url;
   }
-
-  if (includePath) {
-    const path = pathname === '/' ? '' : pathname;
-    return host + path;
-  }
-
-  return host;
 }
