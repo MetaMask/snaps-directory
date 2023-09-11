@@ -140,7 +140,6 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
   const { createNode } = actions;
   const { registry, customFetch } = await getRegistry();
 
-  // TODO: Fix types.
   const verifiedSnaps = Object.values(registry.verifiedSnaps);
 
   for (const snap of verifiedSnaps) {
