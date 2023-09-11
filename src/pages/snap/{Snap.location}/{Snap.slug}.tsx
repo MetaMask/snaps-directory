@@ -70,6 +70,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             flexDirection={{ base: 'column', md: 'row' }}
             marginTop={{ base: 4, md: 0 }}
             width={{ base: '100%', md: 'auto' }}
+            gap={{ base: 2, md: 4 }}
           >
             {data.snap.website && (
               <Link
@@ -86,8 +87,6 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
                       width="24px"
                     />
                   }
-                  marginBottom={{ base: 2, md: 0 }}
-                  marginRight={{ base: 0, md: 4 }}
                   width="100%"
                   _hover={{ opacity: '75%' }}
                 >
@@ -195,7 +194,6 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
         <Divider my="6" />
         <Text
           color="gray.muted"
-          fontFamily="custom"
           textTransform="uppercase"
           fontWeight="medium"
           fontSize="sm"
@@ -205,7 +203,6 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             <Text
               as="span"
               color="black"
-              fontFamily="custom"
               textTransform="uppercase"
               fontWeight="medium"
               fontSize="sm"
