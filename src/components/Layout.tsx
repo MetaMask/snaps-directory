@@ -16,7 +16,7 @@ type LayoutProps = {
  * @returns A React component.
  */
 export const Layout: FunctionComponent<LayoutProps> = ({ children }) => (
-  <Flex direction="column" height="100vh" overflowY="scroll">
+  <Flex direction="column" height="100vh">
     <Header flexShrink="0" />
     <Flex as="main" direction="column" flexGrow="1">
       {children}
