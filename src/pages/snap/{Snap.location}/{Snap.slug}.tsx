@@ -24,7 +24,7 @@ import {
   SnapDescription,
 } from '../../../components';
 import { ExternalLink } from '../../../components/ExternalLink';
-import type { Fields } from '../../../utils';
+import { getLinkText, type Fields } from '../../../utils';
 
 type SnapPageProps = {
   data: {
@@ -164,7 +164,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
                 <>
                   {data.snap.support.contact && (
                     <ExternalLink href={data.snap.support.contact}>
-                      <Trans>Contact</Trans>
+                      {getLinkText(data.snap.support.contact, t`Contact`)}
                     </ExternalLink>
                   )}
                   {data.snap.support.faq && (
