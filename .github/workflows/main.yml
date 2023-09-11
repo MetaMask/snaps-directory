@@ -75,3 +75,4 @@ jobs:
       slack-subteam: S042S7RE4AE # @metamask-npm-publishers
     secrets:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      PUBLISH_PAGES_TOKEN: ${{ secrets.PUBLISH_PAGES_TOKEN }}

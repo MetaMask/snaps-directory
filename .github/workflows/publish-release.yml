@@ -21,6 +21,8 @@ on:
     secrets:
       SLACK_WEBHOOK_URL:
         required: false
+      PUBLISH_PAGES_TOKEN:
+        required: true
 
 jobs:
   announce-release:
@@ -92,3 +94,5 @@ jobs:
     uses: ./.github/workflows/publish-site.yml
     with:
       destination_dir: .
+    secrets:
+      PUBLISH_PAGES_TOKEN: ${{ secrets.PUBLISH_PAGES_TOKEN }}

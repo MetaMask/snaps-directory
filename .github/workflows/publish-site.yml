@@ -9,6 +9,9 @@ on:
       ref:
         required: false
         type: string
+    secrets:
+      PUBLISH_PAGES_TOKEN:
+        required: true
 
 jobs:
   publish-site-to-gh-pages:
