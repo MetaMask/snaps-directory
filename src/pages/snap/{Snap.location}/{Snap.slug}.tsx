@@ -46,7 +46,7 @@ type SnapPageProps = {
 };
 
 const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
-  const { name, snapId, icon, description, latestVersion } = data.snap;
+  const { name, snapId, icon, website, description, latestVersion } = data.snap;
 
   return (
     <Container
@@ -55,7 +55,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
       marginTop={{ base: 4, md: 20 }}
     >
       <BackButton />
-      <Box p="6" rounded="2xl" boxShadow="base" background="white">
+      <Box p="6" rounded="3xl" boxShadow="lg" background="white">
         <Flex
           justifyContent="space-between"
           flexDirection={{ base: 'column', md: 'row' }}
@@ -71,10 +71,11 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             {data.snap.website && (
               <Button
                 variant="outline"
-                leftIcon={<Icon icon="externalLink" />}
+                leftIcon={<Icon icon="externalLink" width="24px" />}
                 width={{ base: '100%', md: 'auto' }}
                 marginBottom={{ base: 2, md: 0 }}
                 marginRight={{ base: 0, md: 4 }}
+                _hover={{ opacity: '75%' }}
               >
                 <Link
                   href={data.snap.website}
@@ -89,6 +90,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
               snapId={snapId}
               name={name}
               icon={icon}
+              website={website}
               version={latestVersion}
             />
           </Flex>
@@ -97,7 +99,8 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
         <Flex
           justifyContent={{ base: 'center', md: 'space-between' }}
           flexDirection={{ base: 'column', md: 'row' }}
-          rowGap={{ base: 4, md: 0 }}
+          flexWrap={{ base: 'nowrap', md: 'wrap', lg: 'nowrap' }}
+          rowGap={{ base: 4, lg: 0 }}
         >
           {data.snap.category && (
             <SnapData
@@ -120,6 +123,16 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
               }
             />
           )}
+          {
+            // An empty Box taking full width will divide elements in two rows
+            // only on medium size screens while keeping the full flex
+            // system for every screen.
+          }
+          <Box
+            display={{ base: 'none', md: 'flex', lg: 'none' }}
+            flexBasis="100%"
+            height={0}
+          />
           {data.snap.sourceCode && (
             <SnapData
               label={t`Source Code`}
@@ -169,7 +182,13 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
           )}
         </Flex>
         <Divider my="6" />
-        <Text color="gray.muted" fontFamily="custom" textTransform="uppercase">
+        <Text
+          color="gray.muted"
+          fontFamily="custom"
+          textTransform="uppercase"
+          fontWeight="medium"
+          fontSize="sm"
+        >
           <Trans>
             Description by{' '}
             <Text
@@ -177,6 +196,8 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
               color="black"
               fontFamily="custom"
               textTransform="uppercase"
+              fontWeight="medium"
+              fontSize="sm"
             >
               {name}
             </Text>

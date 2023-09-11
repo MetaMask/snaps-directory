@@ -18,13 +18,14 @@ import { useMemo, useState } from 'react';
 import { useGatsbyPluginFusejs } from 'react-use-fusejs';
 
 import banner from '../assets/images/seo/home.png';
+import type { InstalledSnaps } from '../components';
 import {
   Icon,
   FilterMenu,
   RegistrySnapCategory,
   SNAP_CATEGORY_LABELS,
 } from '../components';
-import { useInstalledSnaps, useShuffledSnaps } from '../hooks';
+import { useEthereumProvider, useShuffledSnaps } from '../hooks';
 import type { Fields } from '../utils';
 
 const SnapsGrid = loadable(async () => import('../components/SnapsGrid'));
@@ -42,7 +43,7 @@ type IndexPageProps = {
 
 type GetSnapsArgs = {
   snaps: IndexSnap[];
-  cachedSnaps: Record<string, { version: string }>;
+  installedSnaps: InstalledSnaps;
   categories: RegistrySnapCategory[];
   searchQuery: string;
   searchResults: { item: Queries.Snap }[];
@@ -54,22 +55,22 @@ type GetSnapsArgs = {
  *
  * @param args - The arguments object.
  * @param args.snaps - The snaps to filter.
- * @param args.cachedSnaps - The cached snaps.
  * @param args.categories - The selected categories.
  * @param args.searchQuery - The search query.
  * @param args.searchResults - The search results.
+ * @param args.installedSnaps - The installed snaps.
  * @returns The snaps to display.
  */
 function getSnaps({
   snaps,
-  cachedSnaps,
   categories,
   searchQuery,
   searchResults,
+  installedSnaps,
 }: GetSnapsArgs) {
   const sortedSnaps = snaps.sort((a, b) => {
-    const isSnapAInstalled = Boolean(cachedSnaps[a.snapId]);
-    const isSnapBInstalled = Boolean(cachedSnaps[b.snapId]);
+    const isSnapAInstalled = Boolean(installedSnaps[a.snapId]);
+    const isSnapBInstalled = Boolean(installedSnaps[b.snapId]);
 
     return Number(isSnapBInstalled) - Number(isSnapAInstalled);
   });
@@ -100,10 +101,10 @@ function getSnaps({
 
 const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
   const [query, setQuery] = useState('');
-  const result = useGatsbyPluginFusejs<Queries.Snap>(query, data.fusejs);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_installedSnaps, _updateSnaps, cachedInstalledSnaps] =
-    useInstalledSnaps();
+  const result = useGatsbyPluginFusejs<Queries.Snap>(query, data.fusejs, {
+    threshold: 0.3,
+  });
+  const { snaps: installedSnaps } = useEthereumProvider();
   const [selectedCategories, setSelectedCategories] = useState<
     RegistrySnapCategory[]
   >(Object.keys(SNAP_CATEGORY_LABELS) as RegistrySnapCategory[]);
@@ -113,12 +114,12 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
     () =>
       getSnaps({
         snaps: shuffledSnaps,
-        cachedSnaps: cachedInstalledSnaps,
         categories: selectedCategories,
         searchQuery: query,
         searchResults: result,
+        installedSnaps,
       }),
-    [shuffledSnaps, cachedInstalledSnaps, selectedCategories, query, result],
+    [shuffledSnaps, installedSnaps, selectedCategories, query, result],
   );
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

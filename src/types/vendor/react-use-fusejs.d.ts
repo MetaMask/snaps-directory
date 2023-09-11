@@ -6,5 +6,8 @@ declare module 'react-use-fusejs' {
       data: Record<string, unknown>;
       index: string;
     },
+    fuseOptions?: {
+      threshold: number;
+    },
   ): { item: Type }[];
 }

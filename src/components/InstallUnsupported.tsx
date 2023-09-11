@@ -19,9 +19,11 @@ export const InstallUnsupported: FunctionComponent = () => {
 
   const button = (
     <Button
-      leftIcon={<Icon icon="metamask" width="20px" />}
+      leftIcon={<Icon icon="metamask" width="24px" />}
       variant="primary"
       onClick={onOpen}
+      width={{ base: '100%', md: 'auto' }}
+      _hover={{ opacity: '75%' }}
     >
       <Trans>Add to MetaMask</Trans>
     </Button>
