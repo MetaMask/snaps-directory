@@ -70,6 +70,15 @@ const config: GatsbyConfig = {
           })),
       },
     },
+    {
+      resolve: `gatsby-plugin-segment-js`,
+      options: {
+        // eslint-disable-next-line no-restricted-globals
+        prodKey: process.env.SEGMENT_PRODUCTION_WRITE_KEY,
+        // eslint-disable-next-line no-restricted-globals
+        devKey: process.env.SEGMENT_DEV_WRITE_KEY,
+      },
+    },
   ],
 };
 

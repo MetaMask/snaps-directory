@@ -5020,6 +5020,7 @@ __metadata:
     gatsby: ^5.12.3
     gatsby-plugin-fusejs: ^2.0.2
     gatsby-plugin-manifest: ^5.12.0
+    gatsby-plugin-segment-js: ^5.0.0
     gatsby-plugin-sharp: ^5.12.0
     gatsby-plugin-sitemap: ^6.12.0
     gatsby-source-filesystem: ^5.12.0
@@ -12091,6 +12092,15 @@ __metadata:
   peerDependencies:
     gatsby: ^5.0.0-next
   checksum: 4f89c4acd4607461796a5c84beadc70176a4186a03da6e85ef132a81cea62fd769071ba8bc8cbd711c3541af5457da198272e94e3216337d1555938010ead4cc
+  languageName: node
+  linkType: hard
+
+"gatsby-plugin-segment-js@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "gatsby-plugin-segment-js@npm:5.0.0"
+  peerDependencies:
+    gatsby: ^2 || ^3 || ^4 || ^5
+  checksum: c3b953d90dfe6075ca8abaca12d6a9f09e6932412054305da03528e599375b6cd71c35d57174eb090293eb6585fe6b80acdf3199bdc796d51668303813f35952
   languageName: node
   linkType: hard
 
