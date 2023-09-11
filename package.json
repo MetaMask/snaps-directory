@@ -40,6 +40,9 @@
       "prettier --write"
     ]
   },
+  "resolutions": {
+    "xml2js": "^0.5.0"
+  },
   "dependencies": {
     "@chakra-ui/anatomy": "^2.2.0",
     "@chakra-ui/gatsby-plugin": "^3.1.3",
