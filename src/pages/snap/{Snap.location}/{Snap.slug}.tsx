@@ -36,6 +36,7 @@ type SnapPageProps = {
       | 'description'
       | 'latestVersion'
       | 'website'
+      | 'onboard'
       | 'category'
       | 'author'
       | 'sourceCode'
@@ -47,7 +48,8 @@ type SnapPageProps = {
 };
 
 const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
-  const { name, snapId, icon, website, description, latestVersion } = data.snap;
+  const { name, snapId, icon, website, onboard, description, latestVersion } =
+    data.snap;
 
   return (
     <Container
@@ -70,30 +72,38 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             width={{ base: '100%', md: 'auto' }}
           >
             {data.snap.website && (
-              <Button
-                variant="outline"
-                leftIcon={<Icon icon="externalLink" width="24px" />}
+              <Link
+                href={data.snap.website}
+                isExternal={true}
+                _hover={{ textDecoration: 'none' }}
                 width={{ base: '100%', md: 'auto' }}
-                marginBottom={{ base: 2, md: 0 }}
-                marginRight={{ base: 0, md: 4 }}
-                _hover={{ opacity: '75%' }}
               >
-                <Link
-                  href={data.snap.website}
-                  isExternal={true}
-                  _hover={{ textDecoration: 'none' }}
+                <Button
+                  variant={onboard ? 'primary' : 'outline'}
+                  leftIcon={
+                    <Icon
+                      icon={onboard ? 'externalLinkInverted' : 'externalLink'}
+                      width="24px"
+                    />
+                  }
+                  marginBottom={{ base: 2, md: 0 }}
+                  marginRight={{ base: 0, md: 4 }}
+                  width="100%"
+                  _hover={{ opacity: '75%' }}
                 >
                   <Trans>Website</Trans>
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             )}
-            <InstallSnapButton
-              snapId={snapId}
-              name={name}
-              icon={icon}
-              website={website}
-              version={latestVersion}
-            />
+            {!onboard && (
+              <InstallSnapButton
+                snapId={snapId}
+                name={name}
+                icon={icon}
+                website={website}
+                version={latestVersion}
+              />
+            )}
           </Flex>
         </Flex>
         <Divider my="6" />
@@ -263,6 +273,7 @@ export const query = graphql`
       }
       latestVersion
       website
+      onboard
       category
       author {
         name
