@@ -51,7 +51,6 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
   const { name, snapId, icon, website, onboard, description, latestVersion } =
     data.snap;
 
-  console.log(onboard);
 
   return (
     <Container
