@@ -12,6 +12,8 @@ on:
     secrets:
       PUBLISH_PAGES_TOKEN:
         required: true
+      SEGMENT_PRODUCTION_WRITE_KEY:
+        required: true
 
 jobs:
   publish-site-to-gh-pages:
