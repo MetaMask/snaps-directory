@@ -42,7 +42,7 @@ export const InstallUnsupportedDesktop: FunctionComponent<
             href="https://metamask.io/download"
             isExternal={true}
           >
-            <Button variant="primary" width="100%">
+            <Button variant="primary" width="100%" _hover={{ opacity: '75%' }}>
               <Trans>Download MetaMask</Trans>
             </Button>
           </Link>

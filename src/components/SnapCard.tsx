@@ -12,12 +12,13 @@ export const SnapCard: FunctionComponent<
     <Link to={gatsbyPath}>
       <Flex
         flexDirection="column"
-        px="5"
+        px="4"
         py="4"
-        rounded="2xl"
-        boxShadow="base"
+        rounded="3xl"
+        boxShadow="lg"
         backgroundColor="white"
         height="167px"
+        _hover={{ backgroundColor: '#F8F8F8' }}
       >
         <Flex flexDirection="column">
           <Box marginBottom="4">

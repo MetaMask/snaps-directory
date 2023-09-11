@@ -55,7 +55,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
       marginTop={{ base: 4, md: 20 }}
     >
       <BackButton />
-      <Box p="6" rounded="2xl" boxShadow="base" background="white">
+      <Box p="6" rounded="3xl" boxShadow="lg" background="white">
         <Flex
           justifyContent="space-between"
           flexDirection={{ base: 'column', md: 'row' }}
@@ -71,10 +71,13 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             {data.snap.website && (
               <Button
                 variant="outline"
-                leftIcon={<Icon icon="externalLink" />}
+                leftIcon={
+                  <Icon icon="externalLink" width={'24px'} height={'24px'} />
+                }
                 width={{ base: '100%', md: 'auto' }}
                 marginBottom={{ base: 2, md: 0 }}
                 marginRight={{ base: 0, md: 4 }}
+                _hover={{ opacity: '75%' }}
               >
                 <Link
                   href={data.snap.website}
@@ -181,7 +184,13 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
           )}
         </Flex>
         <Divider my="6" />
-        <Text color="gray.muted" fontFamily="custom" textTransform="uppercase">
+        <Text
+          color="gray.muted"
+          fontFamily="custom"
+          textTransform="uppercase"
+          fontWeight={'medium'}
+          fontSize={'sm'}
+        >
           <Trans>
             Description by{' '}
             <Text
@@ -189,6 +198,8 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
               color="black"
               fontFamily="custom"
               textTransform="uppercase"
+              fontWeight={'medium'}
+              fontSize={'sm'}
             >
               {name}
             </Text>

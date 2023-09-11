@@ -13,8 +13,10 @@ export const BackButton: FunctionComponent = () => (
     fontWeight="500"
     alignItems="center"
     marginBottom="4"
+    gap={'4px'}
+    _hover={{ textDecoration: 'none', opacity: '75%' }}
   >
-    <Icon icon="back" width="24px" />
+    <Icon icon="back" width="20px" />
     <Trans>Discover Snaps</Trans>
   </Link>
 );

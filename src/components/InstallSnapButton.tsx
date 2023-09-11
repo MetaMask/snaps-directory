@@ -78,13 +78,14 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
         </Button>
       ) : (
         <Button
-          leftIcon={<Icon icon="metamask" width="20px" />}
+          leftIcon={<Icon icon="metamask" width="24px" />}
           variant="primary"
           isDisabled={!provider}
           isLoading={installing}
           loadingText={t`Installing ${name}`}
           onClick={handleInstall}
           width={{ base: '100%', md: 'auto' }}
+          _hover={{ opacity: '75%' }}
         >
           <Trans>Add to MetaMask</Trans>
         </Button>
