@@ -81,16 +81,16 @@ msgstr ""
 msgid "Discover Snaps"
 msgstr ""
 
-#: src/pages/index.tsx
-msgid "Discover snaps to customize your web3 experience via our official directory. <0>Learn more</0> and <1>FAQ</1>."
-msgstr ""
-
 #: src/components/InstallUnsupportedDesktop.tsx
 msgid "Download MetaMask"
 msgstr ""
 
 #: src/components/Icon.tsx
 msgid "Dropdown"
+msgstr ""
+
+#: src/pages/index.tsx
+msgid "Explore community-built Snaps to customize your web3 experience via our official directory. <0>Learn more</0> and <1>FAQ</1>."
 msgstr ""
 
 #: src/components/Icon.tsx

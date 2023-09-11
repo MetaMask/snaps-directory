@@ -157,8 +157,8 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
           </Heading>
           <Text>
             <Trans>
-              Discover snaps to customize your web3 experience via our official
-              directory.{' '}
+              Explore community-built Snaps to customize your web3 experience
+              via our official directory.{' '}
               <Link href="https://metamask.io/snaps/" isExternal={true}>
                 Learn more
               </Link>{' '}
