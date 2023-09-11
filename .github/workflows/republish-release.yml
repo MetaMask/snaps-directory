@@ -7,7 +7,7 @@ on:
         required: false
         type: string
         description: 'The Slack channel to post to.'
-        default: 'metamask-dev'
+        default: 'metamask-snaps'
       slack-icon-url:
         required: false
         type: string
@@ -17,7 +17,7 @@ on:
         required: false
         type: string
         description: 'The Slack subteam to mention.'
-        default: 'S042S7RE4AE' # @metamask-npm-publishers
+        default: 'S05RL9W7H54' # @metamask-npm-publishers
       slack-username:
         required: false
         type: string
