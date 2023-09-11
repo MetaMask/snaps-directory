@@ -7,12 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [1.0.0]
-### Uncategorized
+### Added
+- Generate robots.txt file ([#87](https://github.com/MetaMask/snaps-directory/pull/87))
+
+### Changed
 - Hide install button if snap requires onboarding ([#88](https://github.com/MetaMask/snaps-directory/pull/88))
 - Update copy on the homepage ([#91](https://github.com/MetaMask/snaps-directory/pull/91))
-- Update Slack subteam and channel ([#90](https://github.com/MetaMask/snaps-directory/pull/90))
 - Always show scrollbar ([#89](https://github.com/MetaMask/snaps-directory/pull/89))
-- Generate robots.txt file ([#87](https://github.com/MetaMask/snaps-directory/pull/87))
 
 ## [0.2.1]
 ### Fixed
