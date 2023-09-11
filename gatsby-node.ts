@@ -211,7 +211,6 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
   ({ actions }) => {
     const { createTypes } = actions;
 
-    // Until at least one snap has a knowledge base link we have to do this manually
     createTypes(`
       type Snap implements Node {
         banner: File @link(from: "fields.localFile")
