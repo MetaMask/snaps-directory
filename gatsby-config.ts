@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
@@ -70,6 +71,18 @@ const config: GatsbyConfig = {
           })),
       },
     },
+    ...(process.env.SEGMENT_PRODUCTION_WRITE_KEY ||
+    process.env.SEGMENT_DEV_WRITE_KEY
+      ? [
+          {
+            resolve: 'gatsby-plugin-segment-js',
+            options: {
+              prodKey: process.env.SEGMENT_PRODUCTION_WRITE_KEY,
+              devKey: process.env.SEGMENT_DEV_WRITE_KEY,
+            },
+          },
+        ]
+      : []),
   ],
 };
 
