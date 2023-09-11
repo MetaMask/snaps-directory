@@ -58,6 +58,14 @@ const config = {
 const theme = extendTheme({
   config,
 
+  styles: {
+    global: {
+      body: {
+        overflowY: 'scroll',
+      },
+    },
+  },
+
   semanticTokens: {
     colors: {
       'chakra-body-bg': { _light: '#F8FAFC', _dark: '#24272A' },
