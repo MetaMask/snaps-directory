@@ -15,10 +15,16 @@ export const SnapAuthorship: FunctionComponent<
     <Flex alignItems="center" width={{ base: '100%', md: 'auto' }}>
       <SnapIcon snapName={name} icon={icon} isInstalled={isInstalled} />
       <Box ml="2" overflow="hidden">
-        <Text fontWeight="semibold" isTruncated>
+        <Text fontWeight="medium" isTruncated>
           {name}
         </Text>
-        <Text color="gray.muted" fontFamily="custom" fontSize="xs" isTruncated>
+        <Text
+          color="gray.muted"
+          fontFamily="custom"
+          fontWeight="medium"
+          fontSize="xs"
+          isTruncated
+        >
           {snapId.slice(4)}
         </Text>
       </Box>

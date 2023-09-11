@@ -14,7 +14,13 @@ export const SnapData: FunctionComponent<SnapDataProps> = ({
     flexDirection="column"
     minWidth={{ base: 'auto', md: '220px', lg: 'auto' }}
   >
-    <Text color="gray.muted" fontFamily="custom" textTransform="uppercase">
+    <Text
+      color="gray.muted"
+      fontFamily="custom"
+      fontWeight="medium"
+      fontSize="sm"
+      textTransform="uppercase"
+    >
       {label}
     </Text>
     {value}
