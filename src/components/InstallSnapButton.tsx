@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { Icon } from './Icon';
 import { InstallUnsupported } from './InstallUnsupported';
 import { PostInstallModal } from './PostInstallModal';
-import { useEthereumProvider, useInstalledSnaps } from '../hooks';
+import { useEthereumProvider } from '../hooks';
 
 type InstallSnapButtonProps = {
   snapId: string;
@@ -23,12 +23,11 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
   website,
   version,
 }) => {
-  const provider = useEthereumProvider();
-  const [installedSnaps, updateInstalledSnaps] = useInstalledSnaps();
+  const { provider, snaps, updateSnaps } = useEthereumProvider();
   const [installing, setInstalling] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const isInstalled = Boolean(installedSnaps[snapId]);
+  const isInstalled = Boolean(snaps[snapId]);
 
   const handleInstall = () => {
     if (!provider || installing) {
@@ -49,7 +48,7 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
       .then(() => onOpen())
       .catch((error) => console.error(error))
       .finally(() => {
-        updateInstalledSnaps();
+        updateSnaps();
         setInstalling(false);
       });
   };
