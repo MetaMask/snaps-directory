@@ -95,6 +95,10 @@ export const EthereumProvider: FunctionComponent<EthereumProviderProps> = ({
   }, [provider, updateSnaps]);
 
   useEffect(() => {
+    if (!snaps) {
+      return;
+    }
+
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(snaps));
   }, [snaps]);
 
