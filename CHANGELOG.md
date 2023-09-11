@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [1.0.1]
-### Uncategorized
-- Streamline metadata ([#97](https://github.com/MetaMask/snaps-directory/pull/97))
-- Set overflow-y property on body ([#98](https://github.com/MetaMask/snaps-directory/pull/98))
+### Changed
+- Update metadata ([#97](https://github.com/MetaMask/snaps-directory/pull/97))
+
+### Fixed
+- Fix page not scrolling to top after navigation ([#98](https://github.com/MetaMask/snaps-directory/pull/98))
 
 ## [1.0.0]
 ### Added
