@@ -91,10 +91,10 @@ async function getRegistry() {
   };
 
   const cachedTarballFetch = fetchBuilder.withCache(
-    new FileSystemCache({ cacheDirectory: '.cache/npm/tarballs' }),
+    new FileSystemCache({ cacheDirectory: 'node_modules/.cache/npm/tarballs' }),
   );
 
-  const fetchCachePath = '.cache/npm/fetch';
+  const fetchCachePath = 'node_modules/.cache/npm/fetch';
   const cachedFetch = fetchBuilder.withCache(
     new FileSystemCache({ cacheDirectory: fetchCachePath }),
   );
