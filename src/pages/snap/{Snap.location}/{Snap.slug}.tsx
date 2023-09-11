@@ -233,8 +233,8 @@ type HeadProps = SnapPageProps & {
 };
 
 export const Head: FunctionComponent<HeadProps> = ({ data }) => {
-  const title = `${data.snap.name} - ${data.site.siteMetadata.title}`;
-  const description = `Discover and install ${data.snap.name} on the MetaMask Snaps Directory to enhance your web3 experience. Easily find and install useful Snaps to customize your MetaMask wallet.`;
+  const title = `${data.snap.name} on the MetaMask Snaps Directory`;
+  const description = `Customize your web3 experience with ${data.snap.name}.`;
   const image = `${data.site.siteMetadata.siteUrl}${data.snap.banner.publicURL}`;
 
   return (
@@ -251,7 +251,7 @@ export const Head: FunctionComponent<HeadProps> = ({ data }) => {
       <meta name="og:image:height" content="630" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={data.site.siteMetadata.author} />
-      <meta name="twitter:title" content={title} />
+      <meta name="twitter:title" content={data.snap.name} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
     </>
