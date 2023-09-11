@@ -33,7 +33,11 @@ type SnapNode = NodeInput & {
   icon?: string | undefined;
 };
 
-type VerifiedSnap = SnapsRegistryDatabase['verifiedSnaps'][string];
+type VerifiedSnap = SnapsRegistryDatabase['verifiedSnaps'][string] & {
+  metadata: {
+    onboard?: boolean;
+  };
+};
 
 const REGISTRY_URL = 'https://acl.execution.consensys.io/latest/registry.json';
 
@@ -209,15 +213,9 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
 
     // Until at least one snap has a knowledge base link we have to do this manually
     createTypes(`
-      type SnapSupport {
-        contact: String
-        faq: String
-        knowledgeBase: String
-      }
-
       type Snap implements Node {
         banner: File @link(from: "fields.localFile")
-        support: SnapSupport
+        onboard: Boolean
       }
     `);
   };

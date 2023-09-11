@@ -10,6 +10,7 @@ import backIcon from '../assets/icons/back.svg';
 import checkBlueIcon from '../assets/icons/check-blue.svg';
 import checkIcon from '../assets/icons/check.svg';
 import dropdownIcon from '../assets/icons/dropdown.svg';
+import externalLinkInvertedIcon from '../assets/icons/external-link-inverted.svg';
 import externalLinkMutedIcon from '../assets/icons/external-link-muted.svg';
 import externalLinkIcon from '../assets/icons/external-link.svg';
 import interoperabilityOutlineIcon from '../assets/icons/interoperability-outline.svg';
@@ -83,6 +84,10 @@ const DEFAULT_ICONS = {
   externalLink: {
     alt: defineMessage`External Link`,
     src: externalLinkIcon,
+  },
+  externalLinkInverted: {
+    alt: defineMessage`External Link`,
+    src: externalLinkInvertedIcon,
   },
   externalLinkMuted: {
     alt: defineMessage`External Link`,
