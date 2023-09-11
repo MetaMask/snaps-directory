@@ -20,7 +20,6 @@ const NotFoundPage = () => {
       <Fox />
       <Heading
         as="h1"
-        fontFamily="custom"
         fontWeight="500"
         fontSize={['2xl', '4xl', '5xl']}
         marginY="6"

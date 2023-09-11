@@ -195,7 +195,6 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
         <Divider my="6" />
         <Text
           color="gray.muted"
-          fontFamily="custom"
           textTransform="uppercase"
           fontWeight="medium"
           fontSize="sm"
@@ -205,7 +204,6 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             <Text
               as="span"
               color="black"
-              fontFamily="custom"
               textTransform="uppercase"
               fontWeight="medium"
               fontSize="sm"

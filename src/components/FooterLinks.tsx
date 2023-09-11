@@ -48,7 +48,6 @@ export const FooterLinks: FunctionComponent = () => (
         <Heading
           as="h3"
           fontSize="sm"
-          fontFamily="custom"
           fontWeight="500"
           textTransform="uppercase"
         >
