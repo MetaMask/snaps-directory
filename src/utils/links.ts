@@ -20,6 +20,10 @@ const KNOWN_LINKS = [
     url: 'discord.com',
   },
   {
+    name: 'Discord',
+    url: 'discord.gg',
+  },
+  {
     name: 'Telegram',
     url: 't.me',
   },
@@ -27,30 +31,24 @@ const KNOWN_LINKS = [
 
 /**
  * Get the link text for a given URL. If the URL is a known link, the name of
- * the link will be returned. Otherwise, the host will be returned, optionally
- * with the path.
+ * the link will be returned. Otherwise, either the host will be returned or
+ * a specified fallback value.
  *
  * @param url - The URL to get the link text for.
- * @param includePath - Whether to include the path in the link text. Defaults
- * to false.
+ * @param fallback - An optional fallback value if the url is not well known.
  * @returns The link text.
  */
-export function getLinkText(url: string, includePath = false) {
+export function getLinkText(url: string, fallback?: string) {
   try {
-    const { host, pathname } = new URL(url);
+    const { host } = new URL(url);
 
     const link = KNOWN_LINKS.find((knownLink) => host.endsWith(knownLink.url));
     if (link) {
       return link.name;
     }
 
-    if (includePath) {
-      const path = pathname === '/' ? '' : pathname;
-      return host + path;
-    }
-
-    return host;
+    return fallback ?? host;
   } catch {
-    return url;
+    return fallback ?? url;
   }
 }
