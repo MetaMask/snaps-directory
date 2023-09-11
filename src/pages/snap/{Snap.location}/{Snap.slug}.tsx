@@ -204,7 +204,11 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             </Text>
           </Trans>
         </Text>
-        <SnapDescription description={description} mt="1" />
+        <SnapDescription
+          description={description}
+          mt="1"
+          whiteSpace="pre-wrap"
+        />
       </Box>
     </Container>
   );
