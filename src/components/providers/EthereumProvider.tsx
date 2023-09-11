@@ -58,6 +58,10 @@ async function getSnaps(
  * @returns The cached snaps.
  */
 function getCachedSnaps(): InstalledSnaps {
+  if (typeof localStorage === 'undefined') {
+    return {};
+  }
+
   try {
     const cachedSnaps = localStorage.getItem(LOCALSTORAGE_KEY);
     if (cachedSnaps) {
@@ -95,7 +99,7 @@ export const EthereumProvider: FunctionComponent<EthereumProviderProps> = ({
   }, [provider, updateSnaps]);
 
   useEffect(() => {
-    if (!snaps) {
+    if (!snaps || typeof localStorage === 'undefined') {
       return;
     }
 
