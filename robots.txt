@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://snaps.metamask.io/sitemap-index.xml
+Host: https://snaps.metamask.io
