@@ -71,9 +71,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             {data.snap.website && (
               <Button
                 variant="outline"
-                leftIcon={
-                  <Icon icon="externalLink" width="24px" />
-                }
+                leftIcon={<Icon icon="externalLink" width="24px" />}
                 width={{ base: '100%', md: 'auto' }}
                 marginBottom={{ base: 2, md: 0 }}
                 marginRight={{ base: 0, md: 4 }}
