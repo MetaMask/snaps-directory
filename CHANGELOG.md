@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0]
+### Added
+- Parse links in trusted descriptions ([#71](https://github.com/MetaMask/snaps-directory/pull/71))
+- Add skeleton loader fallback ([#76](https://github.com/MetaMask/snaps-directory/pull/76))
+- Add Segment ([#77](https://github.com/MetaMask/snaps-directory/pull/77))
+
+### Changed
+- Move installed snaps state to Ethereum provider ([#74](https://github.com/MetaMask/snaps-directory/pull/74), [#83](https://github.com/MetaMask/snaps-directory/pull/83))
+- Keep newlines in snap descriptions ([#79](https://github.com/MetaMask/snaps-directory/pull/79))
+- Minor design changes ([#75](https://github.com/MetaMask/snaps-directory/pull/75))
+- Use known URLs for contact links ([#81](https://github.com/MetaMask/snaps-directory/pull/81))
+
 ## [0.1.2]
 ### Fixed
 - Fix installation button responsiveness ([#68](https://github.com/MetaMask/snaps-directory/pull/68))
@@ -26,7 +38,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/MetaMask/snaps-directory/compare/v0.1.2...v0.2.0
 [0.1.2]: https://github.com/MetaMask/snaps-directory/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/MetaMask/snaps-directory/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/MetaMask/snaps-directory/releases/tag/v0.1.0
