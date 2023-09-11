@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0]
+### Added
+- Generate robots.txt file ([#87](https://github.com/MetaMask/snaps-directory/pull/87))
+
+### Changed
+- Hide install button if snap requires onboarding ([#88](https://github.com/MetaMask/snaps-directory/pull/88))
+- Update copy on the homepage ([#91](https://github.com/MetaMask/snaps-directory/pull/91))
+- Always show scrollbar ([#89](https://github.com/MetaMask/snaps-directory/pull/89))
+
 ## [0.2.1]
 ### Fixed
 - Fix deployment missing required tokens ([#85](https://github.com/MetaMask/snaps-directory/pull/85))
@@ -42,7 +51,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/MetaMask/snaps-directory/compare/v0.2.1...v1.0.0
 [0.2.1]: https://github.com/MetaMask/snaps-directory/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/MetaMask/snaps-directory/compare/v0.1.2...v0.2.0
 [0.1.2]: https://github.com/MetaMask/snaps-directory/compare/v0.1.1...v0.1.2
