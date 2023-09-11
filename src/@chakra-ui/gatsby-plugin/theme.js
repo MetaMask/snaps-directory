@@ -216,14 +216,6 @@ const theme = extendTheme({
       }),
     }),
 
-    Heading: {
-      variants: {
-        main: {
-          fontFamily: 'custom',
-        },
-      },
-    },
-
     Link: defineStyleConfig({
       baseStyle: {
         color: 'info.default',
@@ -336,7 +328,6 @@ const theme = extendTheme({
           _active: {
             bg: '#0376C9',
           },
-          fontFamily: 'custom',
         }),
         primary: defineStyle({
           height: '48px',
@@ -348,7 +339,6 @@ const theme = extendTheme({
           color: 'white',
           borderColor: 'info.default',
           padding: '4',
-          fontFamily: 'custom',
           _hover: {
             _disabled: {
               background: 'info.default',
@@ -366,7 +356,6 @@ const theme = extendTheme({
           border: '1.5px solid',
           borderColor: 'info.default',
           padding: '4',
-          fontFamily: 'custom',
         }),
       },
     }),
