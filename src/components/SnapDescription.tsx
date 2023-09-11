@@ -33,27 +33,11 @@ export const SnapDescription: FunctionComponent<SnapDescriptionProps> = ({
 }) => {
   if (allowLinks) {
     return (
-      <Linkify
-        as={Text}
-        options={{ render }}
-        sx={{
-          whiteSpace: 'pre-wrap',
-        }}
-        {...props}
-      >
+      <Linkify as={Text} options={{ render }} {...props}>
         {description.description}
       </Linkify>
     );
   }
 
-  return (
-    <Text
-      sx={{
-        whiteSpace: 'pre-wrap',
-      }}
-      {...props}
-    >
-      {description.description}
-    </Text>
-  );
+  return <Text {...props}>{description.description}</Text>;
 };
