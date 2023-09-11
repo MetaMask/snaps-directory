@@ -24,11 +24,14 @@ import {
   FilterMenu,
   RegistrySnapCategory,
   SNAP_CATEGORY_LABELS,
+  LoadingGrid,
 } from '../components';
 import { useEthereumProvider, useShuffledSnaps } from '../hooks';
 import type { Fields } from '../utils';
 
-const SnapsGrid = loadable(async () => import('../components/SnapsGrid'));
+const SnapsGrid = loadable(async () => import('../components/SnapsGrid'), {
+  fallback: <LoadingGrid />,
+});
 
 type IndexSnap = Fields<
   Queries.Snap,
