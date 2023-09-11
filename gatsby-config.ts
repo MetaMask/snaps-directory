@@ -71,6 +71,14 @@ const config: GatsbyConfig = {
           })),
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://snaps.metamask.io',
+        sitemap: 'https://snaps.metamask.io/sitemap-index.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
     ...(process.env.SEGMENT_PRODUCTION_WRITE_KEY ||
     process.env.SEGMENT_DEV_WRITE_KEY
       ? [
