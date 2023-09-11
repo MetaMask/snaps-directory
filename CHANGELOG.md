@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1]
+### Changed
+- Update metadata ([#97](https://github.com/MetaMask/snaps-directory/pull/97))
+
+### Fixed
+- Fix page not scrolling to top after navigation ([#98](https://github.com/MetaMask/snaps-directory/pull/98))
+
 ## [1.0.0]
 ### Added
 - Generate robots.txt file ([#87](https://github.com/MetaMask/snaps-directory/pull/87))
@@ -51,7 +58,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/MetaMask/snaps-directory/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/MetaMask/snaps-directory/compare/v0.2.1...v1.0.0
 [0.2.1]: https://github.com/MetaMask/snaps-directory/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/MetaMask/snaps-directory/compare/v0.1.2...v0.2.0
