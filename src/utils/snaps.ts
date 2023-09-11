@@ -1,7 +1,13 @@
 import type { MetaMaskInpageProvider } from '@metamask/providers';
 
+export type DeepFields<Type> = Type extends Record<string, unknown>
+  ? Fields<Type, keyof Type>
+  : Type;
+
 export type Fields<Query, Name extends keyof Query> = {
-  [Key in Name]: Query[Key] extends Queries.Maybe<infer Inner> ? Inner : never;
+  [Key in Name]: Query[Key] extends Queries.Maybe<infer Inner>
+    ? DeepFields<Inner>
+    : never;
 };
 
 /**
