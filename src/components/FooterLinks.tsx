@@ -15,6 +15,10 @@ export const FOOTER_LINKS = [
         title: defineMessage`Developer Docs`,
         url: 'https://docs.metamask.io/snaps/',
       },
+      {
+        title: defineMessage`Contribution guidelines`,
+        url: 'https://github.com/MetaMask/snaps/blob/main/docs/contributing.md',
+      },
     ],
   },
   {
