@@ -58,6 +58,14 @@ const config = {
 const theme = extendTheme({
   config,
 
+  styles: {
+    global: {
+      body: {
+        overflowY: 'scroll',
+      },
+    },
+  },
+
   semanticTokens: {
     colors: {
       'chakra-body-bg': { _light: '#F8FAFC', _dark: '#24272A' },
@@ -216,14 +224,6 @@ const theme = extendTheme({
       }),
     }),
 
-    Heading: {
-      variants: {
-        main: {
-          fontFamily: 'custom',
-        },
-      },
-    },
-
     Link: defineStyleConfig({
       baseStyle: {
         color: 'info.default',
@@ -336,7 +336,6 @@ const theme = extendTheme({
           _active: {
             bg: '#0376C9',
           },
-          fontFamily: 'custom',
         }),
         primary: defineStyle({
           height: '48px',
@@ -348,7 +347,6 @@ const theme = extendTheme({
           color: 'white',
           borderColor: 'info.default',
           padding: '4',
-          fontFamily: 'custom',
           _hover: {
             _disabled: {
               background: 'info.default',
@@ -366,7 +364,6 @@ const theme = extendTheme({
           border: '1.5px solid',
           borderColor: 'info.default',
           padding: '4',
-          fontFamily: 'custom',
         }),
       },
     }),
@@ -427,10 +424,9 @@ const theme = extendTheme({
   },
 
   fonts: {
-    heading: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-    body: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+    heading: `"Euclid Circular B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+    body: `"Euclid Circular B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
     code: `SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace`,
-    custom: `"Euclid Circular B", sans-serif`,
   },
 });
 

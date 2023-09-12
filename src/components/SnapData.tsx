@@ -16,7 +16,6 @@ export const SnapData: FunctionComponent<SnapDataProps> = ({
   >
     <Text
       color="gray.muted"
-      fontFamily="custom"
       fontWeight="medium"
       fontSize="sm"
       textTransform="uppercase"

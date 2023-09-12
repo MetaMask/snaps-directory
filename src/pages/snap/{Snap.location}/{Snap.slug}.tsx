@@ -70,6 +70,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             flexDirection={{ base: 'column', md: 'row' }}
             marginTop={{ base: 4, md: 0 }}
             width={{ base: '100%', md: 'auto' }}
+            gap={{ base: 2, md: 4 }}
           >
             {data.snap.website && (
               <Link
@@ -86,8 +87,6 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
                       width="24px"
                     />
                   }
-                  marginBottom={{ base: 2, md: 0 }}
-                  marginRight={{ base: 0, md: 4 }}
                   width="100%"
                   _hover={{ opacity: '75%' }}
                 >
@@ -195,7 +194,6 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
         <Divider my="6" />
         <Text
           color="gray.muted"
-          fontFamily="custom"
           textTransform="uppercase"
           fontWeight="medium"
           fontSize="sm"
@@ -205,7 +203,6 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             <Text
               as="span"
               color="black"
-              fontFamily="custom"
               textTransform="uppercase"
               fontWeight="medium"
               fontSize="sm"
@@ -236,8 +233,8 @@ type HeadProps = SnapPageProps & {
 };
 
 export const Head: FunctionComponent<HeadProps> = ({ data }) => {
-  const title = `${data.snap.name} - ${data.site.siteMetadata.title}`;
-  const description = `Discover and install ${data.snap.name} on the MetaMask Snaps Directory to enhance your web3 experience. Easily find and install useful Snaps to customize your MetaMask wallet.`;
+  const title = `${data.snap.name} on the MetaMask Snaps Directory`;
+  const description = `Customize your web3 experience with ${data.snap.name}.`;
   const image = `${data.site.siteMetadata.siteUrl}${data.snap.banner.publicURL}`;
 
   return (
@@ -254,7 +251,7 @@ export const Head: FunctionComponent<HeadProps> = ({ data }) => {
       <meta name="og:image:height" content="630" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={data.site.siteMetadata.author} />
-      <meta name="twitter:title" content={title} />
+      <meta name="twitter:title" content={data.snap.name} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
     </>

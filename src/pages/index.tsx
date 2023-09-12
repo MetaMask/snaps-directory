@@ -151,7 +151,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
         marginBottom={{ base: 4, md: 6 }}
         gap="4"
       >
-        <Box maxWidth="400px" width="100%">
+        <Box maxWidth="500px" width="100%">
           <Heading as="h2" fontSize="2xl" marginBottom="1">
             <Trans>Discover Snaps</Trans>
           </Heading>
