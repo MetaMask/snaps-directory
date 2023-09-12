@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2]
+### Uncategorized
+- Check if current MetaMask version supports Snaps ([#101](https://github.com/MetaMask/snaps-directory/pull/101))
+- Update README.md ([#94](https://github.com/MetaMask/snaps-directory/pull/94))
+
 ## [1.0.1]
 ### Changed
 - Update metadata ([#97](https://github.com/MetaMask/snaps-directory/pull/97))
@@ -58,7 +63,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.0.2...HEAD
+[1.0.2]: https://github.com/MetaMask/snaps-directory/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/MetaMask/snaps-directory/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/MetaMask/snaps-directory/compare/v0.2.1...v1.0.0
 [0.2.1]: https://github.com/MetaMask/snaps-directory/compare/v0.2.0...v0.2.1
