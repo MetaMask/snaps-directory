@@ -54,7 +54,11 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
       });
   };
 
-  if (!provider || isSupportedVersion === SnapStatus.Unsupported) {
+  if (
+    !provider ||
+    isSupportedVersion === SnapStatus.Unsupported ||
+    isSupportedVersion === SnapStatus.Unknown
+  ) {
     return <InstallUnsupported />;
   }
 
