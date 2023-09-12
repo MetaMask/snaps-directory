@@ -15,6 +15,7 @@ const LOCALSTORAGE_KEY = 'installed-cache';
 export type EthereumProviderContextType = {
   provider: MetaMaskInpageProvider | null;
   snaps: InstalledSnaps;
+  version: string | null;
   updateSnaps: () => void;
 };
 
@@ -22,6 +23,7 @@ export const EthereumProviderContext =
   createContext<EthereumProviderContextType>({
     provider: null,
     snaps: {},
+    version: null,
     updateSnaps: () => undefined,
   });
 
@@ -82,6 +84,7 @@ export const EthereumProvider: FunctionComponent<EthereumProviderProps> = ({
 }) => {
   const [provider, setProvider] = useState<MetaMaskInpageProvider | null>(null);
   const [snaps, setSnaps] = useState<InstalledSnaps | null>(null);
+  const [version, setVersion] = useState<string | null>(null);
   const cachedSnaps = useMemo(() => getCachedSnaps(), []);
 
   const updateSnaps = useCallback(() => {
@@ -93,6 +96,22 @@ export const EthereumProvider: FunctionComponent<EthereumProviderProps> = ({
       .then(setProvider)
       .catch((error) => console.error(error));
   }, []);
+
+  useEffect(() => {
+    if (!provider) {
+      return;
+    }
+
+    provider
+      .request<string>({ method: 'web3_clientVersion' })
+      .then((rawVersion) => {
+        const result = rawVersion?.split('/');
+        if (result?.[0] === 'MetaMask') {
+          setVersion(result?.[1] ?? null);
+        }
+      })
+      .catch(console.error);
+  }, [provider]);
 
   useEffect(() => {
     updateSnaps();
@@ -108,7 +127,7 @@ export const EthereumProvider: FunctionComponent<EthereumProviderProps> = ({
 
   return (
     <EthereumProviderContext.Provider
-      value={{ provider, snaps: snaps ?? cachedSnaps, updateSnaps }}
+      value={{ provider, snaps: snaps ?? cachedSnaps, version, updateSnaps }}
     >
       {children}
     </EthereumProviderContext.Provider>

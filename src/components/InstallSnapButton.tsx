@@ -1,12 +1,12 @@
 import { Button, useDisclosure } from '@chakra-ui/react';
-import { Trans, t } from '@lingui/macro';
+import { t, Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 import { useState } from 'react';
 
 import { Icon } from './Icon';
 import { InstallUnsupported } from './InstallUnsupported';
 import { PostInstallModal } from './PostInstallModal';
-import { useEthereumProvider } from '../hooks';
+import { SnapStatus, useEthereumProvider, useSupportedVersion } from '../hooks';
 
 type InstallSnapButtonProps = {
   snapId: string;
@@ -26,6 +26,7 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
   const { provider, snaps, updateSnaps } = useEthereumProvider();
   const [installing, setInstalling] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const isSupportedVersion = useSupportedVersion();
 
   const isInstalled = Boolean(snaps[snapId]);
 
@@ -53,7 +54,7 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
       });
   };
 
-  if (!provider) {
+  if (!provider || isSupportedVersion === SnapStatus.Unsupported) {
     return <InstallUnsupported />;
   }
 
