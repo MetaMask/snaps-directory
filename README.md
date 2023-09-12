@@ -1,4 +1,4 @@
-![startpage](https://github.com/MetaMask/snaps-directory/assets/34306844/ce34b7d0-ae00-444c-b79c-a26a2ffc8b16)
+![Customize your web3 experience.](https://github.com/MetaMask/snaps-directory/assets/34306844/ce34b7d0-ae00-444c-b79c-a26a2ffc8b16)
 
 # Snaps Directory
 
