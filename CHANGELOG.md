@@ -7,9 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [1.0.2]
-### Uncategorized
+### Fixed
 - Check if current MetaMask version supports Snaps ([#101](https://github.com/MetaMask/snaps-directory/pull/101))
-- Update README.md ([#94](https://github.com/MetaMask/snaps-directory/pull/94))
 
 ## [1.0.1]
 ### Changed
