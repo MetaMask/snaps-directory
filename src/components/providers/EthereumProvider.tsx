@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react';
 
-import { getEthereumProvider } from '../../utils';
+import { getSnapsProvider } from '../../utils';
 
 const LOCALSTORAGE_KEY = 'installed-cache';
 
@@ -89,7 +89,7 @@ export const EthereumProvider: FunctionComponent<EthereumProviderProps> = ({
   }, [provider]);
 
   useEffect(() => {
-    getEthereumProvider()
+    getSnapsProvider()
       .then(setProvider)
       .catch((error) => console.error(error));
   }, []);

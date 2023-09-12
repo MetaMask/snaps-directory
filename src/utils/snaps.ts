@@ -32,12 +32,65 @@ async function hasSnapsSupport(
 }
 
 /**
+ * Check if the current provider is MetaMask by calling `web3_clientVersion`.
+ *
+ * @param provider - The provider to use to check for MetaMask. Defaults to
+ * `window.ethereum`.
+ * @returns True if the provider is MetaMask, false otherwise.
+ */
+async function isMetaMaskProvider(
+  provider: MetaMaskInpageProvider = window.ethereum,
+) {
+  try {
+    const result = await provider.request<string>({
+      method: 'web3_clientVersion',
+    });
+
+    return result?.toLowerCase().includes('metamask');
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Get a MetaMask provider. This will loop through all the detected providers
+ * and return the first one that is MetaMask.
+ */
+export async function getMetaMaskProvider() {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
+  if (await isMetaMaskProvider()) {
+    return window.ethereum;
+  }
+
+  if (window.ethereum?.detected) {
+    for (const provider of window.ethereum.detected) {
+      if (await isMetaMaskProvider(provider)) {
+        return provider;
+      }
+    }
+  }
+
+  if (window.ethereum?.providers) {
+    for (const provider of window.ethereum.providers) {
+      if (await isMetaMaskProvider(provider)) {
+        return provider;
+      }
+    }
+  }
+
+  return null;
+}
+
+/**
  * Get a provider that supports snaps. This will loop through all the detected
  * providers and return the first one that supports snaps.
  *
  * @returns The provider, or `null` if no provider supports snaps.
  */
-export async function getEthereumProvider() {
+export async function getSnapsProvider() {
   if (typeof window === 'undefined') {
     return null;
   }

@@ -115,6 +115,7 @@ msgstr ""
 msgid "Go home"
 msgstr ""
 
+#: src/components/InstallUnsupportedDesktopUpdate.tsx
 #: src/components/InstallUnsupportedMobile.tsx
 msgid "Got it"
 msgstr ""
@@ -201,10 +202,18 @@ msgstr ""
 msgid "To use MetaMask Snaps, you need the extension in your browser."
 msgstr ""
 
+#: src/components/InstallUnsupportedDesktopUpdate.tsx
+msgid "To use MetaMask Snaps, you need the latest version (11.0) of MetaMask in your browser. <0>Learn more.</0>"
+msgstr ""
+
 #: src/components/Icon.tsx
 #: src/components/Icon.tsx
 #: src/components/SnapCategory.tsx
 msgid "Transaction Insights"
+msgstr ""
+
+#: src/components/InstallUnsupportedDesktopUpdate.tsx
+msgid "Update required"
 msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
