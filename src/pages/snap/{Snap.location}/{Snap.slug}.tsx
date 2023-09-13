@@ -143,6 +143,38 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             flexBasis="100%"
             height={0}
           />
+          {
+            // On mobile screens description is displayed in the middle
+            // of the Snap's metadata
+          }
+          <Divider my="2" display={{ base: 'flex', md: 'none' }} />
+          <Text
+            display={{ base: 'block', md: 'none' }}
+            color="gray.muted"
+            textTransform="uppercase"
+            fontWeight="medium"
+            fontSize="sm"
+          >
+            <Trans>
+              Description by{' '}
+              <Text
+                as="span"
+                color="black"
+                textTransform="uppercase"
+                fontWeight="medium"
+                fontSize="sm"
+              >
+                {name}
+              </Text>
+            </Trans>
+          </Text>
+          <SnapDescription
+            description={description}
+            mt="1"
+            whiteSpace="pre-wrap"
+            display={{ base: 'flex', md: 'none' }}
+          />
+          <Divider my="2" display={{ base: 'flex', md: 'none' }} />
           {data.snap.sourceCode && (
             <SnapData
               label={t`Source Code`}
@@ -191,8 +223,9 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             />
           )}
         </Flex>
-        <Divider my="6" />
+        <Divider my="6" display={{ base: 'none', md: 'flex' }} />
         <Text
+          display={{ base: 'none', md: 'block' }}
           color="gray.muted"
           textTransform="uppercase"
           fontWeight="medium"
@@ -212,6 +245,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
           </Trans>
         </Text>
         <SnapDescription
+          display={{ base: 'none', md: 'flex' }}
           description={description}
           mt="1"
           whiteSpace="pre-wrap"
