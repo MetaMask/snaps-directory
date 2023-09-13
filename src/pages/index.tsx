@@ -179,10 +179,6 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
           width="100%"
           marginTop="auto"
         >
-          <FilterMenu
-            selectedCategories={selectedCategories}
-            onToggle={handleToggle}
-          />
           <InputGroup background="white" borderRadius="full">
             <InputLeftElement pointerEvents="none">
               <Icon icon="search" width="20px" />
@@ -193,8 +189,19 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
               placeholder={t`Search snaps...`}
               value={query}
               onChange={handleChange}
+              border="none"
+              boxShadow="md"
+              _focusVisible={{
+                border: 'none',
+                outline: 'none',
+                boxShadow: 'md',
+              }}
             />
           </InputGroup>
+          <FilterMenu
+            selectedCategories={selectedCategories}
+            onToggle={handleToggle}
+          />
         </Stack>
       </Flex>
       <Box>
