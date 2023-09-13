@@ -114,6 +114,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
         >
           {data.snap.category && (
             <SnapData
+              order={{ base: 1, md: 1 }}
               label={t`Category`}
               value={
                 <SnapCategory
@@ -122,9 +123,14 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
               }
             />
           )}
-          <SnapData label={t`Version`} value={latestVersion} />
+          <SnapData
+            order={{ base: 8, md: 2 }}
+            label={t`Version`}
+            value={latestVersion}
+          />
           {data.snap.author && (
             <SnapData
+              order={{ base: 2, md: 3 }}
               label={t`Developer`}
               value={
                 <ExternalLink href={data.snap.author.website}>
@@ -139,6 +145,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             // system for every screen.
           }
           <Box
+            order={{ base: 1, md: 4 }}
             display={{ base: 'none', md: 'flex', lg: 'none' }}
             flexBasis="100%"
             height={0}
@@ -147,9 +154,14 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             // On mobile screens description is displayed in the middle
             // of the Snap's metadata
           }
-          <Divider my="2" display={{ base: 'flex', md: 'none' }} />
+          <Divider
+            my="2"
+            display={{ base: 'flex', md: 'none' }}
+            order={{ base: 4, md: 5 }}
+          />
           <Text
             display={{ base: 'block', md: 'none' }}
+            order={{ base: 5, md: 6 }}
             color="gray.muted"
             textTransform="uppercase"
             fontWeight="medium"
@@ -169,20 +181,27 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             </Trans>
           </Text>
           <SnapDescription
+            order={{ base: 6, md: 7 }}
             description={description}
             mt="1"
             whiteSpace="pre-wrap"
             display={{ base: 'flex', md: 'none' }}
           />
-          <Divider my="2" display={{ base: 'flex', md: 'none' }} />
+          <Divider
+            my="2"
+            display={{ base: 'flex', md: 'none' }}
+            order={{ base: 7, md: 8 }}
+          />
           {data.snap.sourceCode && (
             <SnapData
+              order={{ base: 9, md: 9 }}
               label={t`Source Code`}
               value={<SnapSourceCode url={data.snap.sourceCode} />}
             />
           )}
           {data.snap.audits && (
             <SnapData
+              order={{ base: 10, md: 10 }}
               label={t`Audit`}
               value={
                 <SnapAudits
@@ -200,6 +219,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             data.snap.support?.faq ||
             data.snap.support?.knowledgeBase) && (
             <SnapData
+              order={{ base: 3, md: 11 }}
               label={t`Support`}
               value={
                 <>
