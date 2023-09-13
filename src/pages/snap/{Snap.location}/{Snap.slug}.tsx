@@ -70,7 +70,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             flexDirection={{ base: 'column', md: 'row' }}
             marginTop={{ base: 4, md: 0 }}
             width={{ base: '100%', md: 'auto' }}
-            gap={{ base: 2, md: 4 }}
+            gap={{ base: 4, md: 4 }}
           >
             {data.snap.website && (
               <Link
