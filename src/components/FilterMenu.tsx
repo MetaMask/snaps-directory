@@ -20,7 +20,7 @@ export const FilterMenu: FunctionComponent<FilterMenuProps> = ({
     <Menu closeOnSelect={false}>
       <MenuButton as={FilterButton} />
       <MenuList>
-        <MenuGroup title={t`Categories`}>
+        <MenuGroup marginStart="2" title={t`Categories`}>
           {Object.entries(SNAP_CATEGORY_LABELS).map(
             ([category, { name, icon }]) => (
               <FilterCategory
