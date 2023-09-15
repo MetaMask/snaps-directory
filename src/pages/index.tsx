@@ -14,8 +14,9 @@ import { t, Trans } from '@lingui/macro';
 import loadable from '@loadable/component';
 import { graphql } from 'gatsby';
 import type { ChangeEvent, FunctionComponent } from 'react';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { useGatsbyPluginFusejs } from 'react-use-fusejs';
+import { useRecoilState } from 'recoil';
 
 import banner from '../assets/images/seo/home.png';
 import type { InstalledSnaps } from '../components';
@@ -23,10 +24,10 @@ import {
   Icon,
   FilterMenu,
   RegistrySnapCategory,
-  SNAP_CATEGORY_LABELS,
   LoadingGrid,
 } from '../components';
 import { useEthereumProvider, useShuffledSnaps } from '../hooks';
+import { categoriesState, queryState } from '../state';
 import type { Fields } from '../utils';
 
 const SnapsGrid = loadable(async () => import('../components/SnapsGrid'), {
@@ -103,14 +104,13 @@ function getSnaps({
 }
 
 const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useRecoilState(queryState);
   const result = useGatsbyPluginFusejs<Queries.Snap>(query, data.fusejs, {
     threshold: 0.3,
   });
   const { snaps: installedSnaps } = useEthereumProvider();
-  const [selectedCategories, setSelectedCategories] = useState<
-    RegistrySnapCategory[]
-  >(Object.keys(SNAP_CATEGORY_LABELS) as RegistrySnapCategory[]);
+  const [selectedCategories, setSelectedCategories] =
+    useRecoilState(categoriesState);
   const shuffledSnaps = useShuffledSnaps();
 
   const snaps = useMemo(

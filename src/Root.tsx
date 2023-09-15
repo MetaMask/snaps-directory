@@ -1,6 +1,7 @@
 import { i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
 import type { GatsbyBrowser } from 'gatsby';
+import { RecoilRoot } from 'recoil';
 
 import { EthereumProvider, Layout, SnapsProvider } from './components';
 import { messages } from './locales/en/messages';
@@ -45,10 +46,12 @@ export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
   element,
 }) => {
   return (
-    <I18nProvider i18n={i18n}>
-      <SnapsProvider>
-        <EthereumProvider>{element}</EthereumProvider>
-      </SnapsProvider>
-    </I18nProvider>
+    <RecoilRoot>
+      <I18nProvider i18n={i18n}>
+        <SnapsProvider>
+          <EthereumProvider>{element}</EthereumProvider>
+        </SnapsProvider>
+      </I18nProvider>
+    </RecoilRoot>
   );
 };

@@ -65,6 +65,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-use-fusejs": "^2.0.2",
+    "recoil": "^0.7.7",
     "semver": "^7.5.4"
   },
   "devDependencies": {
