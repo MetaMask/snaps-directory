@@ -13,6 +13,7 @@ import dropdownIcon from '../assets/icons/dropdown.svg';
 import externalLinkInvertedIcon from '../assets/icons/external-link-inverted.svg';
 import externalLinkMutedIcon from '../assets/icons/external-link-muted.svg';
 import externalLinkIcon from '../assets/icons/external-link.svg';
+import filterIcon from '../assets/icons/filter.svg';
 import interoperabilityOutlineIcon from '../assets/icons/interoperability-outline.svg';
 import interoperabilityIcon from '../assets/icons/interoperability.svg';
 import metamaskIcon from '../assets/icons/metamask.svg';
@@ -44,6 +45,10 @@ const DEFAULT_ICONS = {
   dropdown: {
     alt: defineMessage`Dropdown`,
     src: dropdownIcon,
+  },
+  filter: {
+    alt: defineMessage`Filter`,
+    src: filterIcon,
   },
   interoperability: {
     alt: defineMessage`Interoperability`,

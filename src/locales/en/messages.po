@@ -38,6 +38,10 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
+#: src/components/FilterMenu.tsx
+msgid "Categories"
+msgstr ""
+
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Category"
 msgstr ""
@@ -105,6 +109,11 @@ msgstr ""
 
 #: src/components/FooterLinks.tsx
 msgid "Feedback"
+msgstr ""
+
+#: src/components/FilterButton.tsx
+#: src/components/Icon.tsx
+msgid "Filter"
 msgstr ""
 
 #: src/components/FooterLinks.tsx

@@ -365,6 +365,13 @@ const theme = extendTheme({
           borderColor: 'info.default',
           padding: '4',
         }),
+        shadow: defineStyle({
+          background: 'white',
+          boxShadow: 'md',
+          _hover: {
+            opacity: '0.75',
+          },
+        }),
       },
     }),
 
@@ -415,9 +422,17 @@ const theme = extendTheme({
           border: 'none',
           borderRadius: 'lg',
           padding: '1',
+          boxShadow: 'lg',
         },
         item: {
           padding: '2',
+        },
+        groupTitle: {
+          textTransform: 'uppercase',
+          color: 'text.muted',
+          fontSize: 'sm',
+          fontWeight: '500',
+          marginBottom: '1',
         },
       }),
     }),
