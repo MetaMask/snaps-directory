@@ -1,25 +1,57 @@
-import { Menu, MenuButton, MenuGroup, MenuList } from '@chakra-ui/react';
-import { t } from '@lingui/macro';
+import { Menu, MenuButton, MenuGroup, MenuList, Text } from '@chakra-ui/react';
+import { t, Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
 import { FilterButton } from './FilterButton';
 import { FilterCategory } from './FilterCategory';
-import type { RegistrySnapCategory } from './SnapCategory';
-import { SNAP_CATEGORY_LABELS } from './SnapCategory';
+import { FilterItem } from './FilterItem';
+import {
+  SELECT_ALL,
+  SELECT_CATEGORY,
+  SELECT_INSTALLED,
+  useFilter,
+} from '../hooks';
+import type { RegistrySnapCategory } from '../state';
+import { SNAP_CATEGORY_LABELS } from '../state';
 
-export type FilterMenuProps = {
-  selectedCategories: RegistrySnapCategory[];
-  onToggle: (category: RegistrySnapCategory) => void;
-};
+export const FilterMenu: FunctionComponent = () => {
+  const [state, dispatch] = useFilter();
 
-export const FilterMenu: FunctionComponent<FilterMenuProps> = ({
-  selectedCategories,
-  onToggle,
-}) => {
+  const handleClickAll = () => {
+    dispatch({
+      type: SELECT_ALL,
+    });
+  };
+
+  const handleClickInstalled = () => {
+    dispatch({
+      type: SELECT_INSTALLED,
+    });
+  };
+
+  const handleToggle = (category: RegistrySnapCategory) => {
+    dispatch({
+      type: SELECT_CATEGORY,
+      payload: category,
+    });
+  };
+
   return (
     <Menu closeOnSelect={false}>
       <MenuButton as={FilterButton} />
       <MenuList>
+        <MenuGroup marginLeft="2" title={t`Filter`}>
+          <FilterItem checked={state.all} onClick={handleClickAll}>
+            <Text>
+              <Trans>All</Trans>
+            </Text>
+          </FilterItem>
+          <FilterItem checked={state.installed} onClick={handleClickInstalled}>
+            <Text>
+              <Trans>Installed</Trans>
+            </Text>
+          </FilterItem>
+        </MenuGroup>
         <MenuGroup marginLeft="2" title={t`Categories`}>
           {Object.entries(SNAP_CATEGORY_LABELS).map(
             ([category, { name, icon }]) => (
@@ -27,10 +59,10 @@ export const FilterMenu: FunctionComponent<FilterMenuProps> = ({
                 key={name.id}
                 category={category as RegistrySnapCategory}
                 icon={icon}
-                enabled={selectedCategories.includes(
+                checked={state.categories.includes(
                   category as RegistrySnapCategory,
                 )}
-                onToggle={onToggle}
+                onToggle={handleToggle}
               />
             ),
           )}

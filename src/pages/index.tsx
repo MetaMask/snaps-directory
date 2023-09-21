@@ -20,14 +20,10 @@ import { useRecoilState } from 'recoil';
 
 import banner from '../assets/images/seo/home.png';
 import type { InstalledSnaps } from '../components';
-import {
-  Icon,
-  FilterMenu,
-  RegistrySnapCategory,
-  LoadingGrid,
-} from '../components';
-import { useEthereumProvider, useShuffledSnaps } from '../hooks';
-import { categoriesState, queryState } from '../state';
+import { Icon, FilterMenu, LoadingGrid } from '../components';
+import { useEthereumProvider, useShuffledSnaps, useFilter } from '../hooks';
+import type { FilterState, RegistrySnapCategory } from '../state';
+import { queryState } from '../state';
 import type { Fields } from '../utils';
 
 const SnapsGrid = loadable(async () => import('../components/SnapsGrid'), {
@@ -48,7 +44,7 @@ type IndexPageProps = {
 type GetSnapsArgs = {
   snaps: IndexSnap[];
   installedSnaps: InstalledSnaps;
-  categories: RegistrySnapCategory[];
+  filter: FilterState;
   searchQuery: string;
   searchResults: { item: Queries.Snap }[];
 };
@@ -59,7 +55,7 @@ type GetSnapsArgs = {
  *
  * @param args - The arguments object.
  * @param args.snaps - The snaps to filter.
- * @param args.categories - The selected categories.
+ * @param args.filter - The filter state.
  * @param args.searchQuery - The search query.
  * @param args.searchResults - The search results.
  * @param args.installedSnaps - The installed snaps.
@@ -67,39 +63,30 @@ type GetSnapsArgs = {
  */
 function getSnaps({
   snaps,
-  categories,
+  filter,
   searchQuery,
   searchResults,
   installedSnaps,
 }: GetSnapsArgs) {
-  const sortedSnaps = snaps.sort((a, b) => {
-    const isSnapAInstalled = Boolean(installedSnaps[a.snapId]);
-    const isSnapBInstalled = Boolean(installedSnaps[b.snapId]);
-
-    return Number(isSnapBInstalled) - Number(isSnapAInstalled);
-  });
-
   const searchedSnaps =
     searchQuery.length > 0
       ? (searchResults
           .map((searchResult) =>
-            sortedSnaps.find(
-              ({ snapId }) => searchResult.item.snapId === snapId,
-            ),
+            snaps.find(({ snapId }) => searchResult.item.snapId === snapId),
           )
           .filter(Boolean) as IndexSnap[])
-      : sortedSnaps;
+      : snaps;
 
-  // If all or no categories are selected, return all snaps.
-  if (
-    categories.length === 0 ||
-    categories.length === Object.keys(RegistrySnapCategory).length
-  ) {
+  if (filter.all) {
     return searchedSnaps;
   }
 
-  return searchedSnaps.filter((snap) =>
-    categories.includes(snap?.category as RegistrySnapCategory),
+  const filteredSnaps = filter.installed
+    ? searchedSnaps.filter((snap) => Boolean(installedSnaps[snap.snapId]))
+    : searchedSnaps;
+
+  return filteredSnaps.filter((snap) =>
+    filter.categories.includes(snap?.category as RegistrySnapCategory),
   );
 }
 
@@ -109,34 +96,23 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
     threshold: 0.3,
   });
   const { snaps: installedSnaps } = useEthereumProvider();
-  const [selectedCategories, setSelectedCategories] =
-    useRecoilState(categoriesState);
   const shuffledSnaps = useShuffledSnaps();
+  const [filterState] = useFilter();
 
   const snaps = useMemo(
     () =>
       getSnaps({
         snaps: shuffledSnaps,
-        categories: selectedCategories,
+        filter: filterState,
         searchQuery: query,
         searchResults: result,
         installedSnaps,
       }),
-    [shuffledSnaps, installedSnaps, selectedCategories, query, result],
+    [shuffledSnaps, installedSnaps, query, result, filterState],
   );
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
-  };
-
-  const handleToggle = (category: RegistrySnapCategory) => {
-    if (selectedCategories.includes(category)) {
-      return setSelectedCategories(
-        selectedCategories.filter((item) => item !== category),
-      );
-    }
-
-    return setSelectedCategories([...selectedCategories, category]);
   };
 
   return (
@@ -198,10 +174,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
               }}
             />
           </InputGroup>
-          <FilterMenu
-            selectedCategories={selectedCategories}
-            onToggle={handleToggle}
-          />
+          <FilterMenu />
         </Stack>
       </Flex>
       <Box>
