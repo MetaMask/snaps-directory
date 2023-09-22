@@ -1,13 +1,15 @@
+import type { StackProps } from '@chakra-ui/react';
 import { Stack, Tag, TagLabel } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
 import { CloseIcon } from './CloseIcon';
-import { FilterMenu } from './FilterMenu';
 import { FilterTag } from './FilterTag';
 import { UNSELECT_INSTALLED, useFilter } from '../hooks';
 
-export const FilterTags: FunctionComponent = () => {
+export type FilterTagsProps = StackProps;
+
+export const FilterTags: FunctionComponent<FilterTagsProps> = (props) => {
   const [state, dispatch] = useFilter();
 
   const handleClickInstalled = () => {
@@ -17,8 +19,7 @@ export const FilterTags: FunctionComponent = () => {
   };
 
   return (
-    <Stack direction="row" spacing={2}>
-      <FilterMenu />
+    <Stack direction="row" spacing={2} {...props}>
       {state.categories.map((category) => (
         <FilterTag key={category} category={category} />
       ))}

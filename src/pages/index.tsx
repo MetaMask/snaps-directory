@@ -19,7 +19,7 @@ import { useRecoilState } from 'recoil';
 
 import banner from '../assets/images/seo/home.png';
 import type { InstalledSnaps, Snap } from '../components';
-import { Icon, LoadingGrid, FilterTags } from '../components';
+import { Icon, LoadingGrid, FilterTags, FilterMenu } from '../components';
 import { useEthereumProvider, useShuffledSnaps, useFilter } from '../hooks';
 import type { FilterState, RegistrySnapCategory } from '../state';
 import { queryState } from '../state';
@@ -133,14 +133,15 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
           </Trans>
         </Text>
       </Box>
-      <Flex
-        direction={['column', null, 'row']}
-        justifyContent="space-between"
-        marginBottom={{ base: 4, md: 6 }}
-        gap="4"
-      >
-        <FilterTags />
-        <InputGroup background="white" borderRadius="full" maxWidth="300px">
+      <Flex direction="row" marginBottom={{ base: 4, md: 6 }} gap="2">
+        <FilterMenu />
+        <InputGroup
+          background="white"
+          borderRadius="full"
+          maxWidth={['100%', null, '300px']}
+          marginLeft="auto"
+          order={[2, null, 1]}
+        >
           <InputLeftElement pointerEvents="none">
             <Icon icon="search" width="20px" />
           </InputLeftElement>
@@ -160,6 +161,11 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
           />
         </InputGroup>
       </Flex>
+      <FilterTags
+        display={['flex', null, 'none']}
+        flexWrap="wrap"
+        marginBottom="6"
+      />
       <Box>
         <SnapsGrid snaps={snaps} />
       </Box>
