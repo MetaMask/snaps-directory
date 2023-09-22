@@ -90,14 +90,6 @@ function reducer(state: FilterState, action: FilterAction) {
       );
 
       if (categories.length === 0) {
-        if (state.installed) {
-          return {
-            ...state,
-            installed: true,
-            categories: INITIAL_CATEGORIES,
-          };
-        }
-
         return {
           ...state,
           categories: INITIAL_CATEGORIES,

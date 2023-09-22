@@ -1,7 +1,8 @@
-import { Stack, Tag, TagCloseButton, TagLabel } from '@chakra-ui/react';
+import { Stack, Tag, TagLabel } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
+import { CloseIcon } from './CloseIcon';
 import { FilterMenu } from './FilterMenu';
 import { FilterTag } from './FilterTag';
 import { UNSELECT_INSTALLED, useFilter } from '../hooks';
@@ -22,11 +23,15 @@ export const FilterTags: FunctionComponent = () => {
         <FilterTag key={category} category={category} />
       ))}
       {state.installed && (
-        <Tag variant="category">
+        <Tag
+          variant="category"
+          background="success.muted"
+          color="success.default"
+        >
           <TagLabel>
             <Trans>Installed</Trans>
           </TagLabel>
-          <TagCloseButton onClick={handleClickInstalled} />
+          <CloseIcon onClick={handleClickInstalled} />
         </Tag>
       )}
     </Stack>
