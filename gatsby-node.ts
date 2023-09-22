@@ -1,5 +1,5 @@
 /* eslint-disable import/no-nodejs-modules */
-import { detectSnapLocation } from '@metamask/snaps-controllers/dist/snaps/location';
+import { detectSnapLocation } from '@metamask/snaps-controllers';
 import type { SnapsRegistryDatabase } from '@metamask/snaps-registry';
 import type { SnapManifest } from '@metamask/snaps-utils';
 import deepEqual from 'fast-deep-equal';
