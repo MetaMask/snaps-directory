@@ -322,6 +322,15 @@ const theme = extendTheme({
             fontFamily: 'code',
           },
         }),
+
+        category: {
+          container: {
+            lineHeight: '1.5',
+            textTransform: 'none',
+            paddingX: '3',
+            paddingY: '2',
+          },
+        },
       },
     }),
 

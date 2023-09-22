@@ -5,14 +5,8 @@ import type { FunctionComponent } from 'react';
 import { FilterButton } from './FilterButton';
 import { FilterCategory } from './FilterCategory';
 import { FilterItem } from './FilterItem';
-import {
-  SELECT_ALL,
-  SELECT_CATEGORY,
-  SELECT_INSTALLED,
-  useFilter,
-} from '../hooks';
-import type { RegistrySnapCategory } from '../state';
-import { SNAP_CATEGORY_LABELS } from '../state';
+import { SELECT_ALL, SELECT_INSTALLED, useFilter } from '../hooks';
+import { RegistrySnapCategory, SNAP_CATEGORY_LABELS } from '../state';
 
 export const FilterMenu: FunctionComponent = () => {
   const [state, dispatch] = useFilter();
@@ -29,19 +23,19 @@ export const FilterMenu: FunctionComponent = () => {
     });
   };
 
-  const handleToggle = (category: RegistrySnapCategory) => {
-    dispatch({
-      type: SELECT_CATEGORY,
-      payload: category,
-    });
-  };
-
   return (
     <Menu closeOnSelect={false}>
       <MenuButton as={FilterButton} />
       <MenuList>
         <MenuGroup marginLeft="2" title={t`Filter`}>
-          <FilterItem checked={state.all} onClick={handleClickAll}>
+          <FilterItem
+            checked={
+              !state.installed &&
+              state.categories.length ===
+                Object.values(RegistrySnapCategory).length
+            }
+            onClick={handleClickAll}
+          >
             <Text>
               <Trans>All</Trans>
             </Text>
@@ -59,10 +53,6 @@ export const FilterMenu: FunctionComponent = () => {
                 key={name.id}
                 category={category as RegistrySnapCategory}
                 icon={icon}
-                checked={state.categories.includes(
-                  category as RegistrySnapCategory,
-                )}
-                onToggle={handleToggle}
               />
             ),
           )}

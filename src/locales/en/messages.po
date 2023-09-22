@@ -143,6 +143,7 @@ msgid "Installation complete"
 msgstr ""
 
 #: src/components/FilterMenu.tsx
+#: src/components/FilterTags.tsx
 #: src/components/InstallSnapButton.tsx
 msgid "Installed"
 msgstr ""

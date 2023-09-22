@@ -29,7 +29,6 @@ export const SNAP_CATEGORY_LABELS: Record<
 };
 
 export type FilterState = {
-  all: boolean;
   installed: boolean;
   categories: RegistrySnapCategory[];
 };
@@ -39,7 +38,6 @@ export const INITIAL_CATEGORIES = Object.keys(
 ) as RegistrySnapCategory[];
 
 export const INITIAL_FILTER_STATE: FilterState = {
-  all: true,
   installed: false,
   categories: INITIAL_CATEGORIES,
 };
