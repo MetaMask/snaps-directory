@@ -68,6 +68,7 @@ msgid "Continue to {name}'s website to get started with this snap."
 msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Description by <0>{name}</0>"
 msgstr ""
 
