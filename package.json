@@ -55,7 +55,7 @@
     "@loadable/component": "^5.15.3",
     "@metamask/logo": "^3.1.1",
     "@metamask/providers": "^12.0.0",
-    "@metamask/snaps-controllers": "^1.0.2",
+    "@metamask/snaps-controllers": "^2.0.0",
     "framer-motion": "^10.16.2",
     "gatsby": "^5.12.3",
     "linkify-react": "^4.1.1",
