@@ -1,7 +1,7 @@
 import type { MetaMaskInpageProvider } from '@metamask/providers';
 import { useEffect, useState } from 'react';
-import semver from 'semver/preload';
 
+import { useEthereumProvider } from './useEthereumProvider';
 import { getMetaMaskProvider } from '../utils';
 
 export enum SnapStatus {
@@ -18,36 +18,28 @@ export enum SnapStatus {
 export function useSupportedVersion() {
   const [provider, setProvider] = useState<MetaMaskInpageProvider | null>(null);
   const [status, setStatus] = useState<SnapStatus>(SnapStatus.Unknown);
+  const { provider: snapsProvider } = useEthereumProvider();
 
   useEffect(() => {
     getMetaMaskProvider().then(setProvider).catch(console.error);
   }, []);
 
   useEffect(() => {
+    // If the provider isn't detected, it's not MetaMask.
     if (!provider) {
       setStatus(SnapStatus.Unknown);
       return;
     }
 
-    provider
-      .request<string>({
-        method: 'web3_clientVersion',
-      })
-      .then((result) => {
-        if (result) {
-          const version = result.split('/')[1];
+    // If the Snaps provider is detected, we know it supports Snaps.
+    if (snapsProvider) {
+      setStatus(SnapStatus.Supported);
+      return;
+    }
 
-          if (version && semver.gte(version, 'v11.0.0')) {
-            return setStatus(SnapStatus.Supported);
-          }
-
-          return setStatus(SnapStatus.Unsupported);
-        }
-
-        return setStatus(SnapStatus.Unknown);
-      })
-      .catch(console.error);
-  }, [provider]);
+    // Otherwise, it's a version of MetaMask that doesn't support Snaps.
+    setStatus(SnapStatus.Unsupported);
+  }, [provider, snapsProvider]);
 
   return status;
 }

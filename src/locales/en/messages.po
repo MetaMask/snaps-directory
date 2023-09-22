@@ -30,6 +30,10 @@ msgstr ""
 msgid "Add to MetaMask"
 msgstr ""
 
+#: src/components/FilterMenu.tsx
+msgid "All"
+msgstr ""
+
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Audit"
 msgstr ""
@@ -113,6 +117,7 @@ msgid "Feedback"
 msgstr ""
 
 #: src/components/FilterButton.tsx
+#: src/components/FilterMenu.tsx
 #: src/components/Icon.tsx
 msgid "Filter"
 msgstr ""
@@ -138,6 +143,8 @@ msgstr ""
 msgid "Installation complete"
 msgstr ""
 
+#: src/components/FilterMenu.tsx
+#: src/components/FilterTags.tsx
 #: src/components/InstallSnapButton.tsx
 msgid "Installed"
 msgstr ""
@@ -148,7 +155,7 @@ msgstr ""
 
 #: src/components/Icon.tsx
 #: src/components/Icon.tsx
-#: src/components/SnapCategory.tsx
+#: src/state.ts
 msgid "Interoperability"
 msgstr ""
 
@@ -166,7 +173,7 @@ msgstr ""
 
 #: src/components/Icon.tsx
 #: src/components/Icon.tsx
-#: src/components/SnapCategory.tsx
+#: src/state.ts
 msgid "Notifications"
 msgstr ""
 
@@ -218,7 +225,7 @@ msgstr ""
 
 #: src/components/Icon.tsx
 #: src/components/Icon.tsx
-#: src/components/SnapCategory.tsx
+#: src/state.ts
 msgid "Transaction Insights"
 msgstr ""
 

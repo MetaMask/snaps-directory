@@ -141,6 +141,7 @@ const theme = extendTheme({
     },
     success: {
       default: '#579F6E',
+      muted: 'rgba(40, 167, 69, 0.1)',
     },
     gray: {
       40: '#F2F4F6',
@@ -322,6 +323,15 @@ const theme = extendTheme({
             fontFamily: 'code',
           },
         }),
+
+        category: {
+          container: {
+            lineHeight: '1.5',
+            textTransform: 'none',
+            paddingX: '3',
+            paddingY: '2',
+          },
+        },
       },
     }),
 
