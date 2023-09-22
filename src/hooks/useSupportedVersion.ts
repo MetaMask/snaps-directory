@@ -18,7 +18,7 @@ export enum SnapStatus {
 export function useSupportedVersion() {
   const [provider, setProvider] = useState<MetaMaskInpageProvider | null>(null);
   const [status, setStatus] = useState<SnapStatus>(SnapStatus.Unknown);
-  const snapsProvider = useEthereumProvider();
+  const { provider: snapsProvider } = useEthereumProvider();
 
   useEffect(() => {
     getMetaMaskProvider().then(setProvider).catch(console.error);
