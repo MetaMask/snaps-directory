@@ -5,28 +5,38 @@ import type { FunctionComponent } from 'react';
 import { FilterItem } from './FilterItem';
 import type { IconName } from './Icon';
 import { Icon } from './Icon';
+import { SELECT_CATEGORY, UNSELECT_CATEGORY, useFilter } from '../hooks';
 import type { RegistrySnapCategory } from '../state';
 import { SNAP_CATEGORY_LABELS } from '../state';
 
 export type FilterCategoryProps = {
   category: RegistrySnapCategory;
   icon: IconName;
-  checked: boolean;
-  onToggle: (category: RegistrySnapCategory) => void;
 };
 
 export const FilterCategory: FunctionComponent<FilterCategoryProps> = ({
   category,
   icon,
-  checked,
-  onToggle,
 }) => {
+  const [state, dispatch] = useFilter();
+  const isChecked = state.categories.includes(category);
+
   const handleClick = () => {
-    onToggle(category);
+    if (isChecked) {
+      return dispatch({
+        type: UNSELECT_CATEGORY,
+        payload: category,
+      });
+    }
+
+    return dispatch({
+      type: SELECT_CATEGORY,
+      payload: category,
+    });
   };
 
   return (
-    <FilterItem checked={checked} onClick={handleClick}>
+    <FilterItem checked={isChecked} onClick={handleClick}>
       <Text>
         <Trans id={SNAP_CATEGORY_LABELS[category].name.id} />
       </Text>

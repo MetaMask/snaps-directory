@@ -8,7 +8,6 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  Stack,
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import loadable from '@loadable/component';
@@ -19,8 +18,8 @@ import { useGatsbyPluginFusejs } from 'react-use-fusejs';
 import { useRecoilState } from 'recoil';
 
 import banner from '../assets/images/seo/home.png';
-import type { InstalledSnaps } from '../components';
-import { Icon, FilterMenu, LoadingGrid } from '../components';
+import type { InstalledSnaps, Snap } from '../components';
+import { Icon, LoadingGrid, FilterTags, FilterMenu } from '../components';
 import { useEthereumProvider, useShuffledSnaps, useFilter } from '../hooks';
 import type { FilterState, RegistrySnapCategory } from '../state';
 import { queryState } from '../state';
@@ -30,11 +29,6 @@ const SnapsGrid = loadable(async () => import('../components/SnapsGrid'), {
   fallback: <LoadingGrid />,
 });
 
-type IndexSnap = Fields<
-  Queries.Snap,
-  'id' | 'snapId' | 'name' | 'description' | 'icon' | 'category' | 'gatsbyPath'
->;
-
 type IndexPageProps = {
   data: {
     fusejs: Queries.fusejs;
@@ -42,7 +36,7 @@ type IndexPageProps = {
 };
 
 type GetSnapsArgs = {
-  snaps: IndexSnap[];
+  snaps: Snap[];
   installedSnaps: InstalledSnaps;
   filter: FilterState;
   searchQuery: string;
@@ -74,12 +68,8 @@ function getSnaps({
           .map((searchResult) =>
             snaps.find(({ snapId }) => searchResult.item.snapId === snapId),
           )
-          .filter(Boolean) as IndexSnap[])
+          .filter(Boolean) as Snap[])
       : snaps;
-
-  if (filter.all) {
-    return searchedSnaps;
-  }
 
   const filteredSnaps = filter.installed
     ? searchedSnaps.filter((snap) => Boolean(installedSnaps[snap.snapId]))
@@ -121,62 +111,61 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
       paddingTop="0"
       marginTop={{ base: 4, md: 20 }}
     >
-      <Flex
-        direction={['column', null, 'row']}
-        justifyContent="space-between"
-        marginBottom={{ base: 4, md: 6 }}
-        gap="4"
-      >
-        <Box maxWidth="500px" width="100%">
-          <Heading as="h2" fontSize="2xl" marginBottom="1">
-            <Trans>Discover Snaps</Trans>
-          </Heading>
-          <Text>
-            <Trans>
-              Explore community-built Snaps to customize your web3 experience
-              via our official directory.{' '}
-              <Link href="https://metamask.io/snaps/" isExternal={true}>
-                Learn more
-              </Link>{' '}
-              and{' '}
-              <Link
-                href="https://support.metamask.io/hc/en-us/articles/18245938714395"
-                isExternal={true}
-              >
-                FAQ
-              </Link>
-              .
-            </Trans>
-          </Text>
-        </Box>
-        <Stack
-          direction="row"
-          maxWidth={['100%', null, '400px']}
-          width="100%"
-          marginTop="auto"
+      <Box maxWidth="500px" width="100%" marginBottom="8">
+        <Heading as="h2" fontSize="2xl" marginBottom="1">
+          <Trans>Discover Snaps</Trans>
+        </Heading>
+        <Text>
+          <Trans>
+            Explore community-built Snaps to customize your web3 experience via
+            our official directory.{' '}
+            <Link href="https://metamask.io/snaps/" isExternal={true}>
+              Learn more
+            </Link>{' '}
+            and{' '}
+            <Link
+              href="https://support.metamask.io/hc/en-us/articles/18245938714395"
+              isExternal={true}
+            >
+              FAQ
+            </Link>
+            .
+          </Trans>
+        </Text>
+      </Box>
+      <Flex direction="row" marginBottom={{ base: 4, md: 6 }} gap="2">
+        <FilterMenu />
+        <InputGroup
+          background="white"
+          borderRadius="full"
+          maxWidth={['100%', null, '300px']}
+          marginLeft="auto"
+          order={[2, null, 1]}
         >
-          <InputGroup background="white" borderRadius="full">
-            <InputLeftElement pointerEvents="none">
-              <Icon icon="search" width="20px" />
-            </InputLeftElement>
-            <Input
-              type="search"
-              borderRadius="full"
-              placeholder={t`Search snaps...`}
-              value={query}
-              onChange={handleChange}
-              border="none"
-              boxShadow="md"
-              _focusVisible={{
-                border: 'none',
-                outline: 'none',
-                boxShadow: 'md',
-              }}
-            />
-          </InputGroup>
-          <FilterMenu />
-        </Stack>
+          <InputLeftElement pointerEvents="none">
+            <Icon icon="search" width="20px" />
+          </InputLeftElement>
+          <Input
+            type="search"
+            borderRadius="full"
+            placeholder={t`Search snaps...`}
+            value={query}
+            onChange={handleChange}
+            border="none"
+            boxShadow="md"
+            _focusVisible={{
+              border: 'none',
+              outline: 'none',
+              boxShadow: 'md',
+            }}
+          />
+        </InputGroup>
       </Flex>
+      <FilterTags
+        display={['flex', null, 'none']}
+        flexWrap="wrap"
+        marginBottom="6"
+      />
       <Box>
         <SnapsGrid snaps={snaps} />
       </Box>

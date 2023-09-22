@@ -5,6 +5,7 @@ export * from './Container';
 export * from './FilterButton';
 export * from './FilterCategory';
 export * from './FilterMenu';
+export * from './FilterTags';
 export * from './Fox';
 export * from './Header';
 export * from './Icon';

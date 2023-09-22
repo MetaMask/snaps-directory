@@ -1,6 +1,4 @@
-import { useEffect, useReducer } from 'react';
-import { useRecoilState } from 'recoil';
-
+import { createReducer, useRecoilReducer } from './useRecoilReducer';
 import type { FilterState, RegistrySnapCategory } from '../state';
 import {
   filterState,
@@ -18,29 +16,38 @@ export type SelectInstalledAction = {
   type: typeof SELECT_INSTALLED;
 };
 
+export const UNSELECT_INSTALLED = 'UNSELECT_INSTALLED';
+export type UnselectInstalledAction = {
+  type: typeof UNSELECT_INSTALLED;
+};
+
 export const SELECT_CATEGORY = 'SELECT_CATEGORY';
 export type SelectCategoryAction = {
   type: typeof SELECT_CATEGORY;
   payload: RegistrySnapCategory;
 };
 
+export const UNSELECT_CATEGORY = 'UNSELECT_CATEGORY';
+export type UnselectCategoryAction = {
+  type: typeof UNSELECT_CATEGORY;
+  payload: RegistrySnapCategory;
+};
+
 export type FilterAction =
   | SelectAllAction
   | SelectInstalledAction
-  | SelectCategoryAction;
+  | UnselectInstalledAction
+  | SelectCategoryAction
+  | UnselectCategoryAction;
 
 /**
  * A reducer to manage the filter state.
  *
- * The filter state is composed of three parts:
+ * The filter state is composed of two parts:
  *
- * - `all`: A boolean indicating whether all snaps should be shown.
  * - `installed`: A boolean indicating whether only installed snaps should be
  * shown.
  * - `categories`: An array of categories to filter by.
- *
- * The `all` and `installed` properties are mutually exclusive. If `all` is
- * `true`, then `installed` must be `false`, and vice versa.
  *
  * @param state - The current filter state.
  * @param action - The action to perform on the filter state.
@@ -54,17 +61,44 @@ function reducer(state: FilterState, action: FilterAction) {
     case SELECT_INSTALLED:
       return {
         ...state,
-        all: false,
         installed: true,
         categories: INITIAL_CATEGORIES,
       };
 
-    case SELECT_CATEGORY: {
-      const { payload } = action;
+    case UNSELECT_INSTALLED:
       return {
         ...state,
-        all: false,
-        categories: [payload],
+        installed: false,
+      };
+
+    case SELECT_CATEGORY: {
+      const { payload } = action;
+      const categories = state.categories.filter(
+        (category) => category !== payload,
+      );
+
+      return {
+        ...state,
+        categories: [...categories, payload],
+      };
+    }
+
+    case UNSELECT_CATEGORY: {
+      const { payload } = action;
+      const categories = state.categories.filter(
+        (category) => category !== payload,
+      );
+
+      if (categories.length === 0) {
+        return {
+          ...state,
+          categories: INITIAL_CATEGORIES,
+        };
+      }
+
+      return {
+        ...state,
+        categories,
       };
     }
 
@@ -73,34 +107,20 @@ function reducer(state: FilterState, action: FilterAction) {
   }
 }
 
-export type FilterDispatch = (action: FilterAction) => void;
+// The Recoil selector is created here to avoid creating it multiple times.
+const filterReducer = createReducer(filterState, reducer);
 
 /**
  * A hook to manage the filter state.
  *
- * The filter state is composed of three parts:
+ * The filter state is composed of two parts:
  *
- * - `all`: A boolean indicating whether all snaps should be shown.
  * - `installed`: A boolean indicating whether only installed snaps should be
  * shown.
  * - `categories`: An array of categories to filter by.
  *
- * The `all` and `installed` properties are mutually exclusive. If `all` is
- * `true`, then `installed` must be `false`, and vice versa.
- *
  * @returns The state and dispatch functions for the filter state.
  */
 export function useFilter() {
-  const [state, setState] = useRecoilState(filterState);
-  const [reducerState, dispatch] = useReducer(reducer, state);
-
-  useEffect(() => {
-    // To persist the filter state, we need to update the Recoil state whenever
-    // the reducer state changes.
-    setState(reducerState);
-  }, [reducerState, setState]);
-
-  // Note: We return the Recoil state instead of the reducer state so that it's
-  // synchronized with any components that use the hook.
-  return [state, dispatch] as const;
+  return useRecoilReducer(filterState, filterReducer);
 }
