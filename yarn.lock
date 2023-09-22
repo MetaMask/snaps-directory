@@ -4690,7 +4690,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/base-controller@npm:^3.0.0, @metamask/base-controller@npm:^3.2.1":
+"@metamask/base-controller@npm:^3.0.0, @metamask/base-controller@npm:^3.2.0, @metamask/base-controller@npm:^3.2.1":
   version: 3.2.1
   resolution: "@metamask/base-controller@npm:3.2.1"
   dependencies:
@@ -4818,6 +4818,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@metamask/key-tree@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@metamask/key-tree@npm:9.0.0"
+  dependencies:
+    "@metamask/scure-bip39": ^2.1.0
+    "@metamask/utils": ^6.0.1
+    "@noble/ed25519": ^1.6.0
+    "@noble/hashes": ^1.0.0
+    "@noble/secp256k1": ^1.5.5
+    "@scure/base": ^1.0.0
+  checksum: 5c81f07351ca59b37570d52edcc80d60424630b2a8403ed7149c3343c264878ac5d3fc0584a61635ea7ddda4a789295ded1247846606dc529d8e2fd42f6fc61a
+  languageName: node
+  linkType: hard
+
 "@metamask/logo@npm:^3.1.1":
   version: 3.1.1
   resolution: "@metamask/logo@npm:3.1.1"
@@ -4839,7 +4853,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/permission-controller@npm:^4.0.0":
+"@metamask/permission-controller@npm:^4.0.0, @metamask/permission-controller@npm:^4.1.0":
   version: 4.1.1
   resolution: "@metamask/permission-controller@npm:4.1.1"
   dependencies:
@@ -5021,7 +5035,7 @@ __metadata:
     "@metamask/providers": ^12.0.0
     "@metamask/snaps-controllers": ^1.0.2
     "@metamask/snaps-registry": ^2.0.0
-    "@metamask/snaps-utils": ^1.0.2
+    "@metamask/snaps-utils": ^2.0.0
     "@types/loadable__component": ^5.13.5
     "@types/node": ^20.3.3
     "@types/react": ^18.2.14
@@ -5125,6 +5139,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@metamask/snaps-ui@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@metamask/snaps-ui@npm:2.0.0"
+  dependencies:
+    "@metamask/utils": ^8.1.0
+    superstruct: ^1.0.3
+  checksum: 0a8886402aea3aeebc18dd8058f169b7c751f93aac22286a693dbb6f787b10e44f7da9efa40981dde427f2301ce3da11af93e37398157eb75fdce85c53f48dd8
+  languageName: node
+  linkType: hard
+
 "@metamask/snaps-utils@npm:^1.0.2":
   version: 1.0.2
   resolution: "@metamask/snaps-utils@npm:1.0.2"
@@ -5150,6 +5174,35 @@ __metadata:
     superstruct: ^1.0.3
     validate-npm-package-name: ^5.0.0
   checksum: e207652c0ba61970f7a298325a75edbd330fc8f62f2a23a6429dd2448db66b59414794e77389b72d007d5b18c21e6331dcb815d2bbe91851843d8ee0902600d9
+  languageName: node
+  linkType: hard
+
+"@metamask/snaps-utils@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@metamask/snaps-utils@npm:2.0.0"
+  dependencies:
+    "@babel/core": ^7.20.12
+    "@babel/types": ^7.18.7
+    "@metamask/base-controller": ^3.2.0
+    "@metamask/key-tree": ^9.0.0
+    "@metamask/permission-controller": ^4.1.0
+    "@metamask/snaps-registry": ^2.0.0
+    "@metamask/snaps-ui": ^2.0.0
+    "@metamask/utils": ^8.1.0
+    "@noble/hashes": ^1.3.1
+    "@scure/base": ^1.1.1
+    chalk: ^4.1.2
+    cron-parser: ^4.5.0
+    eth-rpc-errors: ^4.0.3
+    fast-deep-equal: ^3.1.3
+    fast-json-stable-stringify: ^2.1.0
+    is-svg: ^4.4.0
+    rfdc: ^1.3.0
+    semver: ^7.5.4
+    ses: ^0.18.7
+    superstruct: ^1.0.3
+    validate-npm-package-name: ^5.0.0
+  checksum: d7cc6c7398f80d10824dcf429246fa7fb729accddad613703fa1cd46ac490e6afe7febf0183ddcddfa995fe9779df5386baa51e5cb7ca9a2a6c33b40293932ee
   languageName: node
   linkType: hard
 
@@ -11507,6 +11560,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-xml-parser@npm:^4.1.3":
+  version: 4.3.0
+  resolution: "fast-xml-parser@npm:4.3.0"
+  dependencies:
+    strnum: ^1.0.5
+  bin:
+    fxparser: src/cli/cli.js
+  checksum: 8cd2262a19a1a5c5ebf782eb17d7d52f4d8192edee49c188feecf6bfaf70046c088edbb6a92f0a6911ba18b8fd2d2c0c3b87f018b297983ef621c1ddfa09c0a0
+  languageName: node
+  linkType: hard
+
 "fastest-levenshtein@npm:^1.0.16":
   version: 1.0.16
   resolution: "fastest-levenshtein@npm:1.0.16"
@@ -14001,6 +14065,15 @@ __metadata:
   dependencies:
     has-tostringtag: ^1.0.0
   checksum: 323b3d04622f78d45077cf89aab783b2f49d24dc641aa89b5ad1a72114cfeff2585efc8c12ef42466dff32bde93d839ad321b26884cf75e5a7892a938b089989
+  languageName: node
+  linkType: hard
+
+"is-svg@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "is-svg@npm:4.4.0"
+  dependencies:
+    fast-xml-parser: ^4.1.3
+  checksum: cd5a0ba1af653e4897721913b0b80de968fa5b19eb1a592412f4672d3a1203935d183c2a9dbf61d68023739ee43d3761ea795ae1a9f618c6098a9e89eacdd256
   languageName: node
   linkType: hard
 
@@ -19874,6 +19947,13 @@ __metadata:
   dependencies:
     escape-string-regexp: ^1.0.2
   checksum: f8d65d33ca2b49aabc66bb41d689dda7b8b9959d320e3a40a2ef4d7079ff2f67ffb72db43f179f48dbf9495c2e33742863feab7a584d180fa62505439162c191
+  languageName: node
+  linkType: hard
+
+"strnum@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "strnum@npm:1.0.5"
+  checksum: 651b2031db5da1bf4a77fdd2f116a8ac8055157c5420f5569f64879133825915ad461513e7202a16d7fec63c54fd822410d0962f8ca12385c4334891b9ae6dd2
   languageName: node
   linkType: hard
 
