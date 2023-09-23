@@ -205,6 +205,33 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
 
     await createNode(node);
   }
+
+  const categories = Object.values(registry.verifiedSnaps).reduce(
+    (result, snap) => {
+      if (snap.metadata.category) {
+        result.add(snap.metadata.category);
+      }
+
+      return result;
+    },
+    new Set<string>(),
+  );
+
+  for (const category of categories) {
+    const node = {
+      name: category,
+      parent: null,
+      children: [],
+      id: createNodeId(`category__${category}`),
+      internal: {
+        type: 'Category',
+        content: JSON.stringify(category),
+        contentDigest: createContentDigest(category),
+      },
+    };
+
+    await createNode(node);
+  }
 };
 
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] =
