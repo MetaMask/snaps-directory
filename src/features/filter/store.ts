@@ -70,6 +70,9 @@ export const filterSlice = createSlice({
         state.categories = INITIAL_CATEGORIES;
       }
     },
+    setCategory: (state, action: PayloadAction<RegistrySnapCategory>) => {
+      state.categories = [action.payload];
+    },
   },
 });
 
@@ -80,6 +83,7 @@ export const {
   filterAll,
   toggleInstalled,
   toggleCategory,
+  setCategory,
 } = filterSlice.actions;
 
 export const getSearchQuery = createSelector(

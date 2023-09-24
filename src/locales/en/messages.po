@@ -59,6 +59,10 @@ msgstr ""
 msgid "Check"
 msgstr ""
 
+#: src/state.ts
+msgid "Connect to non-Ethereum blockchains with MetaMask."
+msgstr ""
+
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Contact"
 msgstr ""
@@ -216,6 +220,14 @@ msgstr ""
 
 #: src/components/Footer.tsx
 msgid "Start exploring blockchain applications in seconds. Trusted by over 30 million users worldwide."
+msgstr ""
+
+#: src/state.ts
+msgid "Stay in the know with web3 notifications directly in MetaMask."
+msgstr ""
+
+#: src/state.ts
+msgid "Stay informed with insights before you confirm transactions in MetaMask."
 msgstr ""
 
 #: src/components/FooterLinks.tsx

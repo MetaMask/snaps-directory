@@ -1,14 +1,18 @@
+import { t } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 import { graphql, navigate } from 'gatsby';
 import type { FunctionComponent } from 'react';
 import { useEffect } from 'react';
 
-import { SELECT_INSTALLED, SET_CATEGORY, useFilter } from '../../hooks';
-import type { RegistrySnapCategory } from '../../state';
+import type { RegistrySnapCategory } from '../../constants';
+import { SNAP_CATEGORY_LABELS } from '../../constants';
+import { setCategory, toggleInstalled } from '../../features';
+import { useDispatch } from '../../hooks';
 import type { Fields } from '../../utils';
 
 export type CategoryInstalledProps = {
   data: {
-    category: Fields<Queries.Category, 'name'>;
+    category: Fields<Queries.Category, 'name' | 'installedBanner'>;
   };
 };
 
@@ -25,17 +29,11 @@ export type CategoryInstalledProps = {
 const CategoryInstalled: FunctionComponent<CategoryInstalledProps> = ({
   data,
 }) => {
-  const [, dispatch] = useFilter();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({
-      type: SELECT_INSTALLED,
-    });
-
-    dispatch({
-      type: SET_CATEGORY,
-      payload: data.category.name as RegistrySnapCategory,
-    });
+    dispatch(toggleInstalled());
+    dispatch(setCategory(data.category.name));
 
     // According to the type definition, `navigate` returns a promise, but in
     // practice it does not.
@@ -46,10 +44,65 @@ const CategoryInstalled: FunctionComponent<CategoryInstalledProps> = ({
   return null;
 };
 
+type HeadProps = CategoryInstalledProps & {
+  data: {
+    site: {
+      siteMetadata: Fields<
+        Queries.SiteSiteMetadata,
+        'title' | 'description' | 'author' | 'siteUrl'
+      >;
+    };
+  };
+};
+
+export const Head: FunctionComponent<HeadProps> = ({ data }) => {
+  const i18n = useLingui();
+
+  const category = data.category.name as RegistrySnapCategory;
+  const { name, description } = SNAP_CATEGORY_LABELS[category];
+  const image = `${data.site.siteMetadata.siteUrl}${data.category.installedBanner.publicURL}`;
+
+  const nameText = i18n._(name);
+  const descriptionText = i18n._(description);
+  const title = t`Installed ${nameText} Snaps on the MetaMask Snaps Directory`;
+
+  return (
+    <>
+      <html lang="en" />
+      <title>{title}</title>
+      <meta name="description" content={descriptionText} />
+      <meta property="og:title" content={nameText} />
+      <meta property="og:site_name" content={data.site.siteMetadata.title} />
+      <meta property="og:description" content={descriptionText} />
+      <meta property="og:type" content="website" />
+      <meta name="og:image" content={image} />
+      <meta name="og:image:width" content="1200" />
+      <meta name="og:image:height" content="630" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content={data.site.siteMetadata.author} />
+      <meta name="twitter:title" content={nameText} />
+      <meta name="twitter:description" content={descriptionText} />
+      <meta name="twitter:image" content={image} />
+    </>
+  );
+};
+
 export const query = graphql`
   query ($id: String) {
     category(id: { eq: $id }) {
       name
+      installedBanner {
+        publicURL
+      }
+    }
+
+    site {
+      siteMetadata {
+        title
+        description
+        author
+        siteUrl
+      }
     }
   }
 `;

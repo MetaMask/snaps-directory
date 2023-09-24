@@ -2,7 +2,8 @@ import { navigate } from 'gatsby';
 import type { FunctionComponent } from 'react';
 import { useEffect } from 'react';
 
-import { SELECT_INSTALLED, useFilter } from '../hooks';
+import { toggleInstalled } from '../features';
+import { useDispatch } from '../hooks';
 import type { Fields } from '../utils';
 
 export type CategoryInstalledProps = {
@@ -20,12 +21,10 @@ export type CategoryInstalledProps = {
  * @returns The rendered component.
  */
 const Installed: FunctionComponent<CategoryInstalledProps> = () => {
-  const [, dispatch] = useFilter();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({
-      type: SELECT_INSTALLED,
-    });
+    dispatch(toggleInstalled());
 
     // According to the type definition, `navigate` returns a promise, but in
     // practice it does not.

@@ -4,10 +4,13 @@
 /* eslint-disable no-restricted-globals */
 
 import Jimp from 'jimp';
+import shuffle from 'lodash/shuffle';
 // eslint-disable-next-line import/no-nodejs-modules
 import { resolve } from 'path';
 import type { OverlayOptions } from 'sharp';
 import sharp from 'sharp';
+
+import type { Fields } from './snaps';
 
 type Font = Awaited<ReturnType<typeof Jimp.loadFont>>;
 
@@ -151,7 +154,7 @@ export async function getIcon(name: string, icon?: string) {
  * @param icon - The icon of the snap. This should be a plain SVG string.
  * @returns The buffer of the generated image.
  */
-export async function generateImage(
+export async function generateSnapImage(
   name: string,
   author?: string,
   icon?: string,
@@ -181,6 +184,195 @@ export async function generateImage(
     input: resolve(__dirname, '../assets/images/seo/badge.png'),
     top: BADGE_Y,
     left: BADGE_X,
+  });
+
+  base.composite(layers);
+  return await base.png().toBuffer();
+}
+
+const SNAP_ICON_OFFSET_X = 239;
+const SNAP_ICON_OFFSET_Y = 78;
+
+const SNAP_COUNT_X = SNAP_ICON_OFFSET_X + 112 * 5;
+const SNAP_COUNT_Y = SNAP_ICON_OFFSET_Y;
+
+/**
+ * Get the Snaps that have an icon.
+ *
+ * @param snaps - The Snaps to filter.
+ * @returns The Snaps that have an icon.
+ */
+export function getSnapsWithIcon(snaps: Fields<Queries.Snap, 'icon'>[]) {
+  return snaps.filter((snap) => Boolean(snap.icon));
+}
+
+/**
+ * Get a round icon for the given Snap icon.
+ *
+ * @param icon - The icon of the Snap.
+ * @param size - The size of the icon.
+ * @returns The buffer of the generated image.
+ */
+export async function getRoundIcon(icon: string, size = 158) {
+  const normalizedImage = decodeURIComponent(
+    icon.replace(/data:image\/svg\+xml;utf8,/gu, ''),
+  );
+
+  const base = sharp(
+    resolve(__dirname, '../assets/images/seo/icon-base.png'),
+  ).resize({
+    width: size,
+    height: size,
+  });
+
+  const snapIcon = sharp(Buffer.from(normalizedImage, 'utf-8'))
+    .resize({
+      width: size,
+      height: size,
+    })
+    .composite([
+      {
+        input: await base.png().toBuffer(),
+        blend: 'dest-in',
+      },
+    ]);
+
+  // Some icons have a transparent background, so we need to add a white-ish
+  // background to them.
+  base.composite([
+    {
+      input: await snapIcon.png().toBuffer(),
+    },
+  ]);
+
+  return await base.png().toBuffer();
+}
+
+/**
+ * Generate an image for the given category. This will render random Snaps in
+ * the category on top of the base image.
+ *
+ * @param snaps - The Snaps in the category.
+ * @returns The buffer of the generated image.
+ */
+export async function generateCategoryImage(
+  snaps: Fields<Queries.Snap, 'icon'>[],
+) {
+  const base = sharp(resolve(__dirname, '../assets/images/seo/category.png'));
+  const layers: OverlayOptions[] = [];
+
+  // Not all Snaps have an icon, so we need to filter them out.
+  const filteredSnaps = getSnapsWithIcon(snaps);
+
+  const randomSnaps = shuffle(filteredSnaps).slice(0, 5);
+  const snapsLength = filteredSnaps.length > 5 ? 6 : filteredSnaps.length;
+  const firstSnapX =
+    1200 / 2 - (snapsLength * 112 + (snapsLength - 1) * 10) / 2;
+
+  for (const [index, { icon }] of randomSnaps.entries()) {
+    const snapIcon = await getRoundIcon(icon);
+
+    layers.push({
+      input: snapIcon,
+      top: SNAP_ICON_OFFSET_Y,
+      left: firstSnapX + 112 * index,
+    });
+  }
+
+  if (filteredSnaps.length > 5) {
+    const count = `+${filteredSnaps.length - 5}`;
+    const [, font] = await getFonts(count, '');
+    const countText = await getText(count, font);
+
+    const textWidth = Jimp.measureText(font, count);
+    const textHeight = Jimp.measureTextHeight(font, count, 200);
+
+    layers.push(
+      {
+        input: resolve(__dirname, '../assets/images/seo/count.png'),
+        top: SNAP_COUNT_Y,
+        left: SNAP_COUNT_X,
+      },
+      {
+        input: countText,
+        top: Math.round(SNAP_COUNT_Y + (158 - textHeight) / 2),
+        left: Math.round(SNAP_COUNT_X + (158 - textWidth) / 2),
+      },
+    );
+  }
+
+  base.composite(layers);
+  return await base.png().toBuffer();
+}
+
+const INSTALLED_FIRST_ROW_ITEMS = 12;
+const INSTALLED_ROWS = 6;
+const INSTALLED_SIZE = 82;
+const INSTALLED_FIRST_Y = -29;
+const INSTALLED_PADDING_X = 24;
+const INSTALLED_PADDING_Y = 38;
+
+/**
+ * Center the given items within the given width, and padding between each item.
+ * This will return the X coordinates of each item.
+ *
+ * @param width - The width to center the items within.
+ * @param padding - The padding between each item.
+ * @param items - The items to center.
+ * @returns The X coordinates of each item.
+ */
+function centerItems(width: number, padding: number, items: number) {
+  const totalWidth = items * width + (items - 1) * padding;
+  const firstX = 1200 / 2 - totalWidth / 2;
+
+  return Array.from({ length: items }, (_, index) => {
+    return firstX + (width + padding) * index;
+  });
+}
+
+/**
+ * Generate an image for the given Snaps. This will render random Snaps on top
+ * of the base image.
+ *
+ * @param snaps - The Snaps to render.
+ */
+export async function generateInstalledImage(
+  snaps: Fields<Queries.Snap, 'icon'>[],
+) {
+  const base = sharp(resolve(__dirname, '../assets/images/seo/installed.png'));
+  const layers: OverlayOptions[] = [];
+
+  // Not all Snaps have an icon, so we need to filter them out.
+  const filteredSnaps = getSnapsWithIcon(snaps);
+
+  for (const index of new Array(INSTALLED_ROWS).fill(0).keys()) {
+    const rowY =
+      INSTALLED_FIRST_Y + (INSTALLED_SIZE + INSTALLED_PADDING_Y) * index;
+    const rowXs = centerItems(
+      INSTALLED_SIZE,
+      INSTALLED_PADDING_X,
+      INSTALLED_FIRST_ROW_ITEMS - index,
+    );
+
+    for (const rowX of rowXs) {
+      const snap = shuffle(filteredSnaps)[0];
+      if (!snap) {
+        break;
+      }
+
+      const snapIcon = await getRoundIcon(snap.icon, INSTALLED_SIZE);
+      layers.push({
+        input: snapIcon,
+        top: rowY,
+        left: rowX,
+      });
+    }
+  }
+
+  layers.push({
+    input: resolve(__dirname, '../assets/images/seo/fox.png'),
+    top: 315,
+    left: 346,
   });
 
   base.composite(layers);
