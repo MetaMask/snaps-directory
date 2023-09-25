@@ -2,9 +2,9 @@ import { Flex, Text, Box } from '@chakra-ui/react';
 import { Link } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
-import { Card } from './Card';
-import { SnapAuthorship } from './SnapAuthorship';
-import type { Fields } from '../utils';
+import { Card } from '../../../components/Card';
+import { SnapAuthorship } from '../../../components/SnapAuthorship';
+import type { Fields } from '../../../utils';
 
 export const SnapCard: FunctionComponent<
   Fields<Queries.Snap, 'name' | 'summary' | 'snapId' | 'icon' | 'gatsbyPath'>

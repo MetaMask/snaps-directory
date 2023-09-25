@@ -1,10 +1,10 @@
 import { i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
 import type { GatsbyBrowser } from 'gatsby';
-import { RecoilRoot } from 'recoil';
 
-import { EthereumProvider, Layout, SnapsProvider } from './components';
+import { Layout, SnapsProvider } from './components';
 import { messages } from './locales/en/messages';
+import { createStore } from './store';
 
 // eslint-disable-next-line import/no-unassigned-import, import/extensions
 import './assets/fonts/fonts.css';
@@ -45,13 +45,14 @@ export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({
 export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
   element,
 }) => {
+  // Store needs to be created here instead of in the SnapsProvider component.
+  // Otherwise, the store will be recreated on every page change, which will
+  // cause the state to be reset.
+  const store = createStore();
+
   return (
-    <RecoilRoot>
-      <I18nProvider i18n={i18n}>
-        <SnapsProvider>
-          <EthereumProvider>{element}</EthereumProvider>
-        </SnapsProvider>
-      </I18nProvider>
-    </RecoilRoot>
+    <SnapsProvider store={store}>
+      <I18nProvider i18n={i18n}>{element}</I18nProvider>
+    </SnapsProvider>
   );
 };

@@ -1,4 +1,3 @@
-export * from './useEthereumProvider';
-export * from './useFilter';
-export * from './useShuffledSnaps';
+export * from './useDispatch';
+export * from './useSelector';
 export * from './useSupportedVersion';

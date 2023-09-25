@@ -1,7 +1,7 @@
 import type { MetaMaskInpageProvider } from '@metamask/providers';
 import { useEffect, useState } from 'react';
 
-import { useEthereumProvider } from './useEthereumProvider';
+import { useGetVersionQuery } from '../features/snaps/api';
 import { getMetaMaskProvider } from '../utils';
 
 export enum SnapStatus {
@@ -18,7 +18,7 @@ export enum SnapStatus {
 export function useSupportedVersion() {
   const [provider, setProvider] = useState<MetaMaskInpageProvider | null>(null);
   const [status, setStatus] = useState<SnapStatus>(SnapStatus.Unknown);
-  const { provider: snapsProvider } = useEthereumProvider();
+  const { data: version } = useGetVersionQuery();
 
   useEffect(() => {
     getMetaMaskProvider().then(setProvider).catch(console.error);
@@ -32,14 +32,14 @@ export function useSupportedVersion() {
     }
 
     // If the Snaps provider is detected, we know it supports Snaps.
-    if (snapsProvider) {
+    if (version) {
       setStatus(SnapStatus.Supported);
       return;
     }
 
     // Otherwise, it's a version of MetaMask that doesn't support Snaps.
     setStatus(SnapStatus.Unsupported);
-  }, [provider, snapsProvider]);
+  }, [provider, version]);
 
   return status;
 }
