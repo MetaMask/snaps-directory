@@ -45,7 +45,7 @@ export type HeadProps = {
 export const Head: FunctionComponent<HeadProps> = ({ data }) => {
   const name = t`Installed Snaps`;
   const title = t`Installed Snaps on the MetaMask Snaps Directory`;
-  const description = t`Browse the list of your installed Snaps on the MetaMask Snaps Directory.`;
+  const description = t`Browse your installed Snaps on the MetaMask Snaps Directory.`;
 
   const image = `${data.site.siteMetadata.siteUrl}${data.file.publicURL}`;
 

@@ -18,7 +18,7 @@ msgid "{name} is now ready to use."
 msgstr ""
 
 #: src/pages/{Category.name}/index.tsx
-msgid "{nameText} on the MetaMask Snaps Directory"
+msgid "{nameText} Snaps on the MetaMask Snaps Directory"
 msgstr ""
 
 #: src/components/FooterCopyright.tsx
@@ -50,8 +50,12 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
+#: src/pages/{Category.name}/installed.tsx
+msgid "Browse your installed {nameText} Snaps on the MetaMask Snaps Directory"
+msgstr ""
+
 #: src/pages/installed.tsx
-msgid "Browse the list of your installed Snaps on the MetaMask Snaps Directory."
+msgid "Browse your installed Snaps on the MetaMask Snaps Directory."
 msgstr ""
 
 #: src/features/filter/Filter.tsx
@@ -163,10 +167,6 @@ msgstr ""
 #: src/features/filter/components/FilterTags.tsx
 #: src/features/filter/Filter.tsx
 msgid "Installed"
-msgstr ""
-
-#: src/pages/{Category.name}/installed.tsx
-msgid "Installed {nameText} Snaps on the MetaMask Snaps Directory"
 msgstr ""
 
 #: src/pages/installed.tsx

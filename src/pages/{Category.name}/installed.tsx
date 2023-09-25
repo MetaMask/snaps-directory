@@ -33,7 +33,7 @@ const CategoryInstalled: FunctionComponent<CategoryInstalledProps> = ({
 
   useEffect(() => {
     dispatch(toggleInstalled());
-    dispatch(setCategory(data.category.name));
+    dispatch(setCategory(data.category.name as RegistrySnapCategory));
 
     // According to the type definition, `navigate` returns a promise, but in
     // practice it does not.
@@ -64,7 +64,7 @@ export const Head: FunctionComponent<HeadProps> = ({ data }) => {
 
   const nameText = i18n._(name);
   const descriptionText = i18n._(description);
-  const title = t`Installed ${nameText} Snaps on the MetaMask Snaps Directory`;
+  const title = t`Browse your installed ${nameText} Snaps on the MetaMask Snaps Directory`;
 
   return (
     <>

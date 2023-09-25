@@ -61,7 +61,7 @@ export const Head: FunctionComponent<HeadProps> = ({ data }) => {
 
   const nameText = i18n._(name);
   const descriptionText = i18n._(description);
-  const title = t`${nameText} on the MetaMask Snaps Directory`;
+  const title = t`${nameText} Snaps on the MetaMask Snaps Directory`;
 
   return (
     <>
