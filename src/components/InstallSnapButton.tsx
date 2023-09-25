@@ -1,6 +1,5 @@
 import { Button, useDisclosure } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
-import { hasProperty } from '@metamask/utils';
 import type { FunctionComponent } from 'react';
 
 import { Icon } from './Icon';
@@ -34,7 +33,7 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
   const handleInstall = () => {
     installSnap({ snapId, version })
       .then((result) => {
-        if (hasProperty(result, 'error')) {
+        if ('error' in result) {
           return;
         }
 
