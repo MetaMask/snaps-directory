@@ -1,6 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 
-import { request } from '../../store';
+import { request } from '../../store/api';
 
 enum SnapsTag {
   InstalledSnaps = 'InstalledSnaps',
