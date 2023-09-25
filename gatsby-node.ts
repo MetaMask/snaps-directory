@@ -12,7 +12,12 @@ import { fetchBuilder, FileSystemCache } from 'node-fetch-cache';
 import path from 'path';
 import semver from 'semver/preload';
 
-import { generateImage } from './src/utils/images';
+import type { Fields } from './src/utils';
+import {
+  generateCategoryImage,
+  generateInstalledImage,
+  generateSnapImage,
+} from './src/utils/images';
 
 type Description = {
   description: string;
@@ -140,6 +145,9 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
   actions,
   createNodeId,
   createContentDigest,
+  getNodesByType,
+  cache,
+  getCache,
 }) => {
   const { createNode } = actions;
   const { registry, customFetch } = await getRegistry();
@@ -205,6 +213,51 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
 
     await createNode(node);
   }
+
+  const categories = Object.values(registry.verifiedSnaps).reduce(
+    (result, snap) => {
+      if (snap.metadata.category) {
+        result.add(snap.metadata.category);
+      }
+
+      return result;
+    },
+    new Set<string>(),
+  );
+
+  for (const category of categories) {
+    const node = {
+      name: category,
+      parent: null,
+      children: [],
+      id: createNodeId(`category__${category}`),
+      internal: {
+        type: 'Category',
+        content: JSON.stringify(category),
+        contentDigest: createContentDigest(category),
+      },
+    };
+
+    await createNode(node);
+  }
+
+  const snaps = getNodesByType('Snap') as unknown as Fields<
+    Queries.Snap,
+    'icon'
+  >[];
+
+  // The SEO banner that is used on the main `/installed` page. This is
+  // statically queried by the name.
+  const installedImage = await generateInstalledImage(snaps);
+  await createFileNodeFromBuffer({
+    buffer: installedImage,
+    name: 'main-installed-banner',
+    ext: '.png',
+    createNode,
+    createNodeId,
+    cache,
+    getCache,
+  });
 };
 
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] =
@@ -216,6 +269,11 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
         banner: File @link(from: "fields.localFile")
         onboard: Boolean
       }
+
+      type Category implements Node {
+        banner: File @link(from: "fields.localFile")
+        installedBanner: File @link(from: "fields.installedLocalFile")
+      }
     `);
   };
 
@@ -225,34 +283,84 @@ export const onCreateNode: GatsbyNode[`onCreateNode`] = async ({
   createNodeId,
   cache,
   getCache,
+  getNodesByType,
 }) => {
-  if (node.internal.type !== 'Snap') {
-    return;
+  if (node.internal.type === 'Snap') {
+    const snapNode = node as unknown as Fields<
+      Queries.Snap,
+      keyof Queries.Snap
+    >;
+
+    const { createNode, createNodeField } = actions;
+    const banner = await generateSnapImage(
+      snapNode.name,
+      snapNode.author?.name,
+      snapNode.icon,
+    );
+
+    const bannerNode = await createFileNodeFromBuffer({
+      buffer: banner,
+      name: 'banner',
+      ext: '.png',
+      parentNodeId: snapNode.id,
+      createNode,
+      createNodeId,
+      cache,
+      getCache,
+    });
+
+    createNodeField({
+      node,
+      name: 'localFile',
+      value: bannerNode.id,
+    });
   }
 
-  const snapNode = node as unknown as SnapNode;
-  const { createNode, createNodeField } = actions;
+  if (node.internal.type === 'Category') {
+    const categoryNode = node as unknown as Fields<
+      Queries.Category,
+      keyof Queries.Category
+    >;
 
-  const banner = await generateImage(
-    snapNode.name,
-    snapNode.author?.name,
-    snapNode.icon,
-  );
+    const { createNode, createNodeField } = actions;
+    const snaps = getNodesByType('Snap').filter(
+      (snap) => snap.category === categoryNode.name,
+    ) as unknown as Fields<Queries.Snap, keyof Queries.Snap>[];
 
-  const bannerNode = await createFileNodeFromBuffer({
-    buffer: banner,
-    name: 'banner',
-    ext: '.png',
-    parentNodeId: snapNode.id,
-    createNode,
-    createNodeId,
-    cache,
-    getCache,
-  });
+    const banner = await generateCategoryImage(snaps);
+    const bannerNode = await createFileNodeFromBuffer({
+      buffer: banner,
+      name: 'banner',
+      ext: '.png',
+      parentNodeId: categoryNode.id,
+      createNode,
+      createNodeId,
+      cache,
+      getCache,
+    });
 
-  createNodeField({
-    node,
-    name: 'localFile',
-    value: bannerNode.id,
-  });
+    createNodeField({
+      node,
+      name: 'localFile',
+      value: bannerNode.id,
+    });
+
+    const installedBanner = await generateInstalledImage(snaps);
+    const installedBannerNode = await createFileNodeFromBuffer({
+      buffer: installedBanner,
+      name: 'installed-banner',
+      ext: '.png',
+      parentNodeId: categoryNode.id,
+      createNode,
+      createNodeId,
+      cache,
+      getCache,
+    });
+
+    createNodeField({
+      node,
+      name: 'installedLocalFile',
+      value: installedBannerNode.id,
+    });
+  }
 };

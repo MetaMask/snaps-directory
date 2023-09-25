@@ -17,6 +17,10 @@ msgstr ""
 msgid "{name} is now ready to use."
 msgstr ""
 
+#: src/pages/{Category.name}/index.tsx
+msgid "{nameText} Snaps on the MetaMask Snaps Directory"
+msgstr ""
+
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
 msgstr ""
@@ -46,6 +50,14 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
+#: src/pages/{Category.name}/installed.tsx
+msgid "Browse your installed {nameText} Snaps on the MetaMask Snaps Directory"
+msgstr ""
+
+#: src/pages/installed.tsx
+msgid "Browse your installed Snaps on the MetaMask Snaps Directory."
+msgstr ""
+
 #: src/features/filter/Filter.tsx
 msgid "Categories"
 msgstr ""
@@ -57,6 +69,10 @@ msgstr ""
 #: src/components/Icon.tsx
 #: src/components/Icon.tsx
 msgid "Check"
+msgstr ""
+
+#: src/constants.ts
+msgid "Connect to non-Ethereum blockchains with MetaMask."
 msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
@@ -153,6 +169,14 @@ msgstr ""
 msgid "Installed"
 msgstr ""
 
+#: src/pages/installed.tsx
+msgid "Installed Snaps"
+msgstr ""
+
+#: src/pages/installed.tsx
+msgid "Installed Snaps on the MetaMask Snaps Directory"
+msgstr ""
+
 #: src/components/InstallSnapButton.tsx
 msgid "Installing {name}"
 msgstr ""
@@ -216,6 +240,14 @@ msgstr ""
 
 #: src/components/Footer.tsx
 msgid "Start exploring blockchain applications in seconds. Trusted by over 30 million users worldwide."
+msgstr ""
+
+#: src/constants.ts
+msgid "Stay in the know with web3 notifications directly in MetaMask."
+msgstr ""
+
+#: src/constants.ts
+msgid "Stay informed with insights before you confirm transactions in MetaMask."
 msgstr ""
 
 #: src/components/FooterLinks.tsx
