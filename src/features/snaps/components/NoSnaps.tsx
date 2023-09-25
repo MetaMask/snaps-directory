@@ -4,13 +4,14 @@ import type { FunctionComponent } from 'react';
 
 import { Fox } from '../../../components';
 import { useDispatch } from '../../../hooks';
-import { filterAll } from '../../filter';
+import { filterAll, resetSearch } from '../../filter';
 
 export const NoSnaps: FunctionComponent = () => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
     dispatch(filterAll());
+    dispatch(resetSearch());
   };
 
   return (

@@ -36,6 +36,10 @@ export const filterSlice = createSlice({
     setSearchResults: (state, action: PayloadAction<SearchResult[]>) => {
       state.searchResults = action.payload;
     },
+    resetSearch: (state) => {
+      state.searchQuery = '';
+      state.searchResults = [];
+    },
     filterAll: (state) => {
       state.installed = false;
       state.categories = INITIAL_CATEGORIES;
@@ -72,6 +76,7 @@ export const filterSlice = createSlice({
 export const {
   setSearchQuery,
   setSearchResults,
+  resetSearch,
   filterAll,
   toggleInstalled,
   toggleCategory,
