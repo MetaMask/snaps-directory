@@ -306,11 +306,10 @@ export async function generateCategoryImage(
 }
 
 const INSTALLED_FIRST_ROW_ITEMS = 12;
-const INSTALLED_ROWS = 6;
+const INSTALLED_ROWS = 4;
 const INSTALLED_SIZE = 82;
 const INSTALLED_FIRST_Y = -29;
-const INSTALLED_PADDING_X = 24;
-const INSTALLED_PADDING_Y = 38;
+const INSTALLED_PADDING = 24;
 
 /**
  * Center the given items within the given width, and padding between each item.
@@ -347,10 +346,10 @@ export async function generateInstalledImage(
 
   for (const index of new Array(INSTALLED_ROWS).fill(0).keys()) {
     const rowY =
-      INSTALLED_FIRST_Y + (INSTALLED_SIZE + INSTALLED_PADDING_Y) * index;
+      INSTALLED_FIRST_Y + (INSTALLED_SIZE + INSTALLED_PADDING) * index;
     const rowXs = centerItems(
       INSTALLED_SIZE,
-      INSTALLED_PADDING_X,
+      INSTALLED_PADDING,
       INSTALLED_FIRST_ROW_ITEMS - index,
     );
 
@@ -369,11 +368,18 @@ export async function generateInstalledImage(
     }
   }
 
-  layers.push({
-    input: resolve(__dirname, '../assets/images/seo/fox.png'),
-    top: 315,
-    left: 346,
-  });
+  layers.push(
+    {
+      input: resolve(__dirname, '../assets/images/seo/gradient.png'),
+      top: 0,
+      left: 0,
+    },
+    {
+      input: resolve(__dirname, '../assets/images/seo/fox.png'),
+      top: 315,
+      left: 346,
+    },
+  );
 
   base.composite(layers);
   return await base.png().toBuffer();

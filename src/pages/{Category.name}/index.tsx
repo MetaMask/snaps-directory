@@ -30,7 +30,7 @@ const Category: FunctionComponent<CategoryProps> = ({ data }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setCategory(data.category.name));
+    dispatch(setCategory(data.category.name as RegistrySnapCategory));
 
     // According to the type definition, `navigate` returns a promise, but in
     // practice it does not.
