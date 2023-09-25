@@ -17,6 +17,10 @@ msgstr ""
 msgid "{name} is now ready to use."
 msgstr ""
 
+#: src/pages/{Category.name}/index.tsx
+msgid "{nameText} on the MetaMask Snaps Directory"
+msgstr ""
+
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
 msgstr ""
@@ -59,7 +63,7 @@ msgstr ""
 msgid "Check"
 msgstr ""
 
-#: src/state.ts
+#: src/constants.ts
 msgid "Connect to non-Ethereum blockchains with MetaMask."
 msgstr ""
 
@@ -157,6 +161,10 @@ msgstr ""
 msgid "Installed"
 msgstr ""
 
+#: src/pages/{Category.name}/installed.tsx
+msgid "Installed {nameText} Snaps on the MetaMask Snaps Directory"
+msgstr ""
+
 #: src/components/InstallSnapButton.tsx
 msgid "Installing {name}"
 msgstr ""
@@ -222,11 +230,11 @@ msgstr ""
 msgid "Start exploring blockchain applications in seconds. Trusted by over 30 million users worldwide."
 msgstr ""
 
-#: src/state.ts
+#: src/constants.ts
 msgid "Stay in the know with web3 notifications directly in MetaMask."
 msgstr ""
 
-#: src/state.ts
+#: src/constants.ts
 msgid "Stay informed with insights before you confirm transactions in MetaMask."
 msgstr ""
 

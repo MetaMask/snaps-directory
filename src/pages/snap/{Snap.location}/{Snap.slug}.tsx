@@ -11,7 +11,6 @@ import { t, Trans } from '@lingui/macro';
 import { graphql } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
-import type { RegistrySnapCategory } from '../../../components';
 import {
   SnapAuthorship,
   Icon,
@@ -24,6 +23,7 @@ import {
   SnapDescription,
 } from '../../../components';
 import { ExternalLink } from '../../../components/ExternalLink';
+import type { RegistrySnapCategory } from '../../../constants';
 import { getLinkText, type Fields } from '../../../utils';
 
 type SnapPageProps = {
