@@ -4995,6 +4995,7 @@ __metadata:
     "@metamask/snaps-controllers": ^2.0.0
     "@metamask/snaps-registry": ^2.0.0
     "@metamask/snaps-utils": ^2.0.0
+    "@metamask/utils": ^8.1.0
     "@reduxjs/toolkit": ^1.9.6
     "@types/node": ^20.3.3
     "@types/react": ^18.2.14
