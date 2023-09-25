@@ -50,6 +50,10 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
+#: src/pages/installed.tsx
+msgid "Browse the list of your installed Snaps on the MetaMask Snaps Directory."
+msgstr ""
+
 #: src/features/filter/Filter.tsx
 msgid "Categories"
 msgstr ""
@@ -163,6 +167,14 @@ msgstr ""
 
 #: src/pages/{Category.name}/installed.tsx
 msgid "Installed {nameText} Snaps on the MetaMask Snaps Directory"
+msgstr ""
+
+#: src/pages/installed.tsx
+msgid "Installed Snaps"
+msgstr ""
+
+#: src/pages/installed.tsx
+msgid "Installed Snaps on the MetaMask Snaps Directory"
 msgstr ""
 
 #: src/components/InstallSnapButton.tsx

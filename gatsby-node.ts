@@ -145,6 +145,9 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
   actions,
   createNodeId,
   createContentDigest,
+  getNodesByType,
+  cache,
+  getCache,
 }) => {
   const { createNode } = actions;
   const { registry, customFetch } = await getRegistry();
@@ -237,6 +240,24 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
 
     await createNode(node);
   }
+
+  const snaps = getNodesByType('Snap') as unknown as Fields<
+    Queries.Snap,
+    'icon'
+  >[];
+
+  // The SEO banner that is used on the main `/installed` page. This is
+  // statically queried by the name.
+  const installedImage = await generateInstalledImage(snaps);
+  await createFileNodeFromBuffer({
+    buffer: installedImage,
+    name: 'main-installed-banner',
+    ext: '.png',
+    createNode,
+    createNodeId,
+    cache,
+    getCache,
+  });
 };
 
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] =
