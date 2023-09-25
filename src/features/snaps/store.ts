@@ -10,11 +10,11 @@ export type Snap = Fields<
 >;
 
 export type SnapsState = {
-  snaps: Snap[];
+  snaps: Snap[] | null;
 };
 
 const initialState: SnapsState = {
-  snaps: [],
+  snaps: null,
 };
 
 export const snapsSlice = createSlice({

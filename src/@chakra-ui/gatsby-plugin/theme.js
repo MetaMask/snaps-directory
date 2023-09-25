@@ -113,6 +113,7 @@ const theme = extendTheme({
         },
       },
       gray: {
+        light: '#F1F1F1',
         muted: {
           default: '#878787',
           _dark: '#3B4046',

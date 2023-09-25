@@ -4,7 +4,7 @@ import { createSelector, createSlice } from '@reduxjs/toolkit';
 import { RegistrySnapCategory } from '../../constants';
 import type { ApplicationState } from '../../store';
 import type { Snap } from '../snaps';
-import { snapsApi } from '../snaps/api';
+import { snapsApi } from '../snaps';
 
 export type SearchResult = { item: Snap };
 
@@ -35,6 +35,10 @@ export const filterSlice = createSlice({
     },
     setSearchResults: (state, action: PayloadAction<SearchResult[]>) => {
       state.searchResults = action.payload;
+    },
+    resetSearch: (state) => {
+      state.searchQuery = '';
+      state.searchResults = [];
     },
     filterAll: (state) => {
       state.installed = false;
@@ -72,6 +76,7 @@ export const filterSlice = createSlice({
 export const {
   setSearchQuery,
   setSearchResults,
+  resetSearch,
   filterAll,
   toggleInstalled,
   toggleCategory,
@@ -109,6 +114,10 @@ export const getFilteredSnaps = createSelector(
   ({ filter, snaps: snapsState, ...state }) => {
     const { searchQuery, searchResults, installed, categories } = filter;
     const { snaps } = snapsState;
+
+    if (!snaps) {
+      return null;
+    }
 
     const { data: installedSnaps = {} } =
       snapsApi.endpoints.getInstalledSnaps.select(undefined)(state);

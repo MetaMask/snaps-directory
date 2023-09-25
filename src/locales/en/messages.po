@@ -30,6 +30,10 @@ msgstr ""
 msgid "Add to MetaMask"
 msgstr ""
 
+#: src/features/snaps/components/NoSnaps.tsx
+msgid "Adjust your search or display all available Snaps by clicking below."
+msgstr ""
+
 #: src/features/filter/Filter.tsx
 msgid "All"
 msgstr ""
@@ -171,6 +175,10 @@ msgstr ""
 msgid "MetaMask Snaps is in open beta and only supported via our extension clients on desktop such as <0>Chrome</0> or <1>Firefox</1>."
 msgstr ""
 
+#: src/features/snaps/components/NoSnaps.tsx
+msgid "No Snaps found"
+msgstr ""
+
 #: src/components/Icon.tsx
 #: src/components/Icon.tsx
 #: src/constants.ts
@@ -191,6 +199,10 @@ msgstr ""
 
 #: src/features/filter/components/FilterSearch.tsx
 msgid "Search snaps..."
+msgstr ""
+
+#: src/features/snaps/components/NoSnaps.tsx
+msgid "See everything"
 msgstr ""
 
 #: src/components/Icon.tsx
