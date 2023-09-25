@@ -30,7 +30,7 @@ msgstr ""
 msgid "Add to MetaMask"
 msgstr ""
 
-#: src/components/FilterMenu.tsx
+#: src/features/filter/Filter.tsx
 msgid "All"
 msgstr ""
 
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
-#: src/components/FilterMenu.tsx
+#: src/features/filter/Filter.tsx
 msgid "Categories"
 msgstr ""
 
@@ -116,9 +116,9 @@ msgstr ""
 msgid "Feedback"
 msgstr ""
 
-#: src/components/FilterButton.tsx
-#: src/components/FilterMenu.tsx
 #: src/components/Icon.tsx
+#: src/features/filter/components/FilterButton.tsx
+#: src/features/filter/Filter.tsx
 msgid "Filter"
 msgstr ""
 
@@ -143,9 +143,9 @@ msgstr ""
 msgid "Installation complete"
 msgstr ""
 
-#: src/components/FilterMenu.tsx
-#: src/components/FilterTags.tsx
 #: src/components/InstallSnapButton.tsx
+#: src/features/filter/components/FilterTags.tsx
+#: src/features/filter/Filter.tsx
 msgid "Installed"
 msgstr ""
 
@@ -155,7 +155,7 @@ msgstr ""
 
 #: src/components/Icon.tsx
 #: src/components/Icon.tsx
-#: src/state.ts
+#: src/constants.ts
 msgid "Interoperability"
 msgstr ""
 
@@ -173,7 +173,7 @@ msgstr ""
 
 #: src/components/Icon.tsx
 #: src/components/Icon.tsx
-#: src/state.ts
+#: src/constants.ts
 msgid "Notifications"
 msgstr ""
 
@@ -189,7 +189,7 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: src/pages/index.tsx
+#: src/features/filter/components/FilterSearch.tsx
 msgid "Search snaps..."
 msgstr ""
 
@@ -225,7 +225,7 @@ msgstr ""
 
 #: src/components/Icon.tsx
 #: src/components/Icon.tsx
-#: src/state.ts
+#: src/constants.ts
 msgid "Transaction Insights"
 msgstr ""
 

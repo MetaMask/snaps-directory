@@ -1,18 +1,15 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import shuffle from 'lodash/shuffle';
 import type { FunctionComponent, ReactNode } from 'react';
-import { createContext, useMemo } from 'react';
+import { useEffect } from 'react';
+import { Provider } from 'react-redux';
 
-import type { Fields } from '../../utils';
-
-export type Snap = Fields<
-  Queries.Snap,
-  'id' | 'snapId' | 'name' | 'summary' | 'icon' | 'category' | 'gatsbyPath'
->;
-
-export const SnapsProviderContext = createContext<Snap[]>([]);
+import type { Snap } from '../features';
+import { setSnaps } from '../features';
+import type { createStore } from '../store';
 
 export type SnapsProviderProps = {
+  store: ReturnType<typeof createStore>;
   children: ReactNode;
 };
 
@@ -23,6 +20,7 @@ type SnapsQueryData = {
 };
 
 export const SnapsProvider: FunctionComponent<SnapsProviderProps> = ({
+  store,
   children,
 }) => {
   const { allSnap } = useStaticQuery<SnapsQueryData>(graphql`
@@ -41,11 +39,10 @@ export const SnapsProvider: FunctionComponent<SnapsProviderProps> = ({
     }
   `);
 
-  const shuffledSnaps = useMemo(() => shuffle(allSnap.nodes), [allSnap.nodes]);
+  useEffect(() => {
+    const shuffledSnaps = shuffle(allSnap.nodes);
+    store.dispatch(setSnaps(shuffledSnaps));
+  }, [store, allSnap.nodes]);
 
-  return (
-    <SnapsProviderContext.Provider value={shuffledSnaps}>
-      {children}
-    </SnapsProviderContext.Provider>
-  );
+  return <Provider store={store}>{children}</Provider>;
 };

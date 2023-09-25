@@ -2,7 +2,7 @@ import { forwardRef, IconButton } from '@chakra-ui/react';
 import { t } from '@lingui/macro';
 import type { FunctionComponent, ReactNode } from 'react';
 
-import { Icon } from './Icon';
+import { Icon } from '../../../components';
 
 export type FilterButtonProps = {
   children: ReactNode;

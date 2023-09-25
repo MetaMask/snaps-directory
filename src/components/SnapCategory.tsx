@@ -2,8 +2,8 @@ import { Text } from '@chakra-ui/react';
 import { Trans } from '@lingui/react';
 import type { FunctionComponent } from 'react';
 
-import type { RegistrySnapCategory } from '../state';
-import { SNAP_CATEGORY_LABELS } from '../state';
+import { SNAP_CATEGORY_LABELS } from '../constants';
+import type { RegistrySnapCategory } from '../features';
 
 export type SnapCategoryProps = {
   category: RegistrySnapCategory;
