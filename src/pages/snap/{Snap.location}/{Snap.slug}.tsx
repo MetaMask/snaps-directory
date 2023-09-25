@@ -185,7 +185,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             description={description}
             mt="1"
             whiteSpace="pre-wrap"
-            display={{ base: 'flex', md: 'none' }}
+            display={{ base: 'block', md: 'none' }}
           />
           <Divider
             my="2"
@@ -265,7 +265,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
           </Trans>
         </Text>
         <SnapDescription
-          display={{ base: 'none', md: 'flex' }}
+          display={{ base: 'none', md: 'block' }}
           description={description}
           mt="1"
           whiteSpace="pre-wrap"
