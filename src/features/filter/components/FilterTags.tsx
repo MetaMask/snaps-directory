@@ -3,27 +3,28 @@ import { Stack, Tag, TagLabel } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
-import { CloseIcon } from './CloseIcon';
 import { FilterTag } from './FilterTag';
-import { UNSELECT_INSTALLED, useFilter } from '../hooks';
+import { CloseIcon } from '../../../components';
+import { useDispatch, useSelector } from '../../../hooks';
+import { getCategories, getInstalled, toggleInstalled } from '../store';
 
 export type FilterTagsProps = StackProps;
 
 export const FilterTags: FunctionComponent<FilterTagsProps> = (props) => {
-  const [state, dispatch] = useFilter();
+  const dispatch = useDispatch();
+  const installed = useSelector(getInstalled);
+  const categories = useSelector(getCategories);
 
   const handleClickInstalled = () => {
-    dispatch({
-      type: UNSELECT_INSTALLED,
-    });
+    dispatch(toggleInstalled());
   };
 
   return (
     <Stack direction="row" spacing={2} {...props}>
-      {state.categories.map((category) => (
+      {categories.map((category) => (
         <FilterTag key={category} category={category} />
       ))}
-      {state.installed && (
+      {installed && (
         <Tag
           variant="category"
           background="success.muted"

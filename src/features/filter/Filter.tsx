@@ -2,26 +2,29 @@ import { Menu, MenuButton, MenuGroup, MenuList, Text } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
-import { FilterButton } from './FilterButton';
-import { FilterCategory } from './FilterCategory';
-import { FilterItem } from './FilterItem';
-import { FilterTags } from './FilterTags';
-import { SELECT_ALL, SELECT_INSTALLED, useFilter } from '../hooks';
-import { RegistrySnapCategory, SNAP_CATEGORY_LABELS } from '../state';
+import {
+  FilterButton,
+  FilterCategory,
+  FilterItem,
+  FilterSearch,
+  FilterTags,
+} from './components';
+import type { RegistrySnapCategory } from './store';
+import { filterAll, getAll, getInstalled, toggleInstalled } from './store';
+import { SNAP_CATEGORY_LABELS } from '../../constants';
+import { useDispatch, useSelector } from '../../hooks';
 
-export const FilterMenu: FunctionComponent = () => {
-  const [state, dispatch] = useFilter();
+export const Filter: FunctionComponent = () => {
+  const dispatch = useDispatch();
+  const all = useSelector(getAll);
+  const installed = useSelector(getInstalled);
 
   const handleClickAll = () => {
-    dispatch({
-      type: SELECT_ALL,
-    });
+    dispatch(filterAll());
   };
 
   const handleClickInstalled = () => {
-    dispatch({
-      type: SELECT_INSTALLED,
-    });
+    dispatch(toggleInstalled());
   };
 
   return (
@@ -30,22 +33,12 @@ export const FilterMenu: FunctionComponent = () => {
         <MenuButton as={FilterButton} order={[3, null, 0]} />
         <MenuList width="275px">
           <MenuGroup marginLeft="2" title={t`Filter`}>
-            <FilterItem
-              checked={
-                !state.installed &&
-                state.categories.length ===
-                  Object.values(RegistrySnapCategory).length
-              }
-              onClick={handleClickAll}
-            >
+            <FilterItem checked={all} onClick={handleClickAll}>
               <Text>
                 <Trans>All</Trans>
               </Text>
             </FilterItem>
-            <FilterItem
-              checked={state.installed}
-              onClick={handleClickInstalled}
-            >
+            <FilterItem checked={installed} onClick={handleClickInstalled}>
               <Text>
                 <Trans>Installed</Trans>
               </Text>
@@ -65,6 +58,7 @@ export const FilterMenu: FunctionComponent = () => {
         </MenuList>
       </Menu>
       <FilterTags display={['none', null, 'flex']} />
+      <FilterSearch />
     </>
   );
 };

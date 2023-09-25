@@ -1,12 +1,12 @@
 import { Button, useDisclosure } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
-import { useState } from 'react';
 
 import { Icon } from './Icon';
 import { InstallUnsupported } from './InstallUnsupported';
 import { PostInstallModal } from './PostInstallModal';
-import { SnapStatus, useEthereumProvider, useSupportedVersion } from '../hooks';
+import { useGetInstalledSnapsQuery, useInstallSnapMutation } from '../features';
+import { SnapStatus, useSupportedVersion } from '../hooks';
 
 type InstallSnapButtonProps = {
   snapId: string;
@@ -23,39 +23,22 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
   website,
   version,
 }) => {
-  const { provider, snaps, updateSnaps } = useEthereumProvider();
-  const [installing, setInstalling] = useState(false);
+  const { data: installedSnaps } = useGetInstalledSnapsQuery();
+  const [installSnap, { isLoading }] = useInstallSnapMutation();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const isSupportedVersion = useSupportedVersion();
 
-  const isInstalled = Boolean(snaps[snapId]);
+  const isInstalled = Boolean(installedSnaps?.[snapId]);
 
   const handleInstall = () => {
-    if (!provider || installing) {
-      return;
-    }
-
-    setInstalling(true);
-    provider
-      .request({
-        method: 'wallet_requestSnaps',
-        params: {
-          [snapId]: {
-            version,
-          },
-        },
+    installSnap({ snapId, version })
+      .then(() => {
+        onOpen();
       })
-      // TODO: Notify user of failure.
-      .then(() => onOpen())
-      .catch((error) => console.error(error))
-      .finally(() => {
-        updateSnaps();
-        setInstalling(false);
-      });
+      .catch(console.error);
   };
 
   if (
-    !provider ||
     isSupportedVersion === SnapStatus.Unsupported ||
     isSupportedVersion === SnapStatus.Unknown
   ) {
@@ -85,8 +68,7 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
         <Button
           leftIcon={<Icon icon="metamask" width="24px" />}
           variant="primary"
-          isDisabled={!provider}
-          isLoading={installing}
+          isLoading={isLoading}
           loadingText={t`Installing ${name}`}
           onClick={handleInstall}
           width={{ base: '100%', md: 'auto' }}

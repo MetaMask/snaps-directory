@@ -2,7 +2,7 @@ import type { MenuItemProps } from '@chakra-ui/react';
 import { MenuItem, Stack } from '@chakra-ui/react';
 import type { FunctionComponent, ReactNode } from 'react';
 
-import { Icon } from './Icon';
+import { Icon } from '../../../components';
 
 export type FilterItemProps = MenuItemProps & {
   checked: boolean;

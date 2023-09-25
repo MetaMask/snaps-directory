@@ -2,14 +2,14 @@ import { Box, Flex, Text } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 
 import { SnapIcon } from './SnapIcon';
-import { useEthereumProvider } from '../hooks';
+import { useGetInstalledSnapsQuery } from '../features';
 import type { Fields } from '../utils';
 
 export const SnapAuthorship: FunctionComponent<
   Fields<Queries.Snap, 'name' | 'snapId' | 'icon'>
 > = ({ name, snapId, icon }) => {
-  const { snaps } = useEthereumProvider();
-  const isInstalled = Boolean(snaps[snapId]);
+  const { data: installedSnaps } = useGetInstalledSnapsQuery();
+  const isInstalled = Boolean(installedSnaps?.[snapId]);
 
   return (
     <Flex alignItems="center" width={{ base: '100%', md: 'auto' }}>
