@@ -4,7 +4,7 @@ import { createSelector, createSlice } from '@reduxjs/toolkit';
 import { RegistrySnapCategory } from '../../constants';
 import type { ApplicationState } from '../../store';
 import type { Snap } from '../snaps';
-import { snapsApi } from '../snaps';
+import { getInstalledSnaps } from '../snaps';
 
 export type SearchResult = { item: Snap };
 
@@ -115,16 +115,14 @@ export const getCategory = (category: RegistrySnapCategory) =>
 
 export const getFilteredSnaps = createSelector(
   (state: ApplicationState) => state,
-  ({ filter, snaps: snapsState, ...state }) => {
+  (state) => {
+    const { filter, snaps: snapsState } = state;
     const { searchQuery, searchResults, installed, categories } = filter;
     const { snaps } = snapsState;
 
     if (!snaps) {
       return null;
     }
-
-    const { data: installedSnaps = {} } =
-      snapsApi.endpoints.getInstalledSnaps.select(undefined)(state);
 
     const searchedSnaps =
       searchQuery.length > 0
@@ -135,6 +133,7 @@ export const getFilteredSnaps = createSelector(
             .filter(Boolean) as Snap[])
         : snaps;
 
+    const installedSnaps = getInstalledSnaps(state);
     const filteredSnaps = installed
       ? searchedSnaps.filter((snap) => Boolean(installedSnaps[snap.snapId]))
       : searchedSnaps;

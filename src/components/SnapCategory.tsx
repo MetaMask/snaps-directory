@@ -3,7 +3,7 @@ import { Trans } from '@lingui/react';
 import type { FunctionComponent } from 'react';
 
 import { SNAP_CATEGORY_LABELS } from '../constants';
-import type { RegistrySnapCategory } from '../features';
+import type { RegistrySnapCategory } from '../constants';
 
 export type SnapCategoryProps = {
   category: RegistrySnapCategory;

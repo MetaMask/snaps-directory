@@ -1,4 +1,6 @@
 import type { MetaMaskInpageProvider } from '@metamask/providers';
+import type { SnapsRegistryDatabase } from '@metamask/snaps-registry';
+import semver from 'semver/preload';
 
 export type DeepFields<Type> = Type extends Record<string, unknown>
   ? Fields<Type, keyof Type>
@@ -116,4 +118,26 @@ export async function getSnapsProvider() {
   }
 
   return null;
+}
+
+export type VerifiedSnap = SnapsRegistryDatabase['verifiedSnaps'][string];
+
+/**
+ * Get the latest version of the given Snap.
+ *
+ * @param snap - The Snap to get the latest version for.
+ * @returns The latest version of the Snap.
+ */
+export function getLatestSnapVersion(snap: VerifiedSnap) {
+  const [latest] = Object.keys(snap.versions).sort((a, b) => {
+    return semver.compare(b, a);
+  });
+
+  // This should never happen. The validation in the registry ensures that
+  // there is always at least one version.
+  if (!latest) {
+    throw new Error(`No latest version found for snap: ${snap.id}.`);
+  }
+
+  return latest;
 }

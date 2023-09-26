@@ -4,8 +4,8 @@ import type { FunctionComponent } from 'react';
 
 import { CloseIcon } from '../../../components';
 import { SNAP_CATEGORY_LABELS } from '../../../constants';
+import type { RegistrySnapCategory } from '../../../constants';
 import { useDispatch } from '../../../hooks';
-import type { RegistrySnapCategory } from '../store';
 import { toggleCategory } from '../store';
 
 export type FilterTagProps = {

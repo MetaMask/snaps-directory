@@ -3,6 +3,9 @@ import { defineMessage } from '@lingui/macro';
 
 import type { IconName } from './components';
 
+export const SNAPS_REGISTRY_URL =
+  'https://acl.execution.metamask.io/latest/registry.json';
+
 export enum RegistrySnapCategory {
   Interoperability = 'interoperability',
   Notifications = 'notifications',
