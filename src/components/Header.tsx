@@ -21,7 +21,11 @@ export const Header: FunctionComponent<HeaderProps> = (props) => (
       <Link to="/">
         <Stack direction="row" alignItems="center" gap="2">
           <Logo />
-          <Tag fontSize="0.65rem">
+          <Tag
+            fontSize="0.65rem"
+            color="gray.muted"
+            background="background.alternative"
+          >
             <Trans>Open Beta</Trans>
           </Tag>
         </Stack>
