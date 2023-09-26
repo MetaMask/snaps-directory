@@ -7,19 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [1.1.0]
-### Uncategorized
+### Added
+- Add more filtering options ([#111](https://github.com/MetaMask/snaps-directory/pull/111))
+- Add category tags and update filter behaviour ([#116](https://github.com/MetaMask/snaps-directory/pull/116))
 - Add URLs to enable filters ([#117](https://github.com/MetaMask/snaps-directory/pull/117))
 - Add empty state to main page ([#120](https://github.com/MetaMask/snaps-directory/pull/120))
-- Fix snap descriptions containing links ([#119](https://github.com/MetaMask/snaps-directory/pull/119))
-- Swap out Recoil for Redux + RTK Query ([#118](https://github.com/MetaMask/snaps-directory/pull/118))
-- Move description in the middle of metadata on mobile screens ([#105](https://github.com/MetaMask/snaps-directory/pull/105))
-- Add category tags and update filter behaviour ([#116](https://github.com/MetaMask/snaps-directory/pull/116))
-- Add more filtering options ([#111](https://github.com/MetaMask/snaps-directory/pull/111))
-- Update MetaMask detection to support Flask ([#114](https://github.com/MetaMask/snaps-directory/pull/114))
-- Bump MetaMask dependencies ([#112](https://github.com/MetaMask/snaps-directory/pull/112))
+
+### Changed
 - Persist search query and selected categories ([#100](https://github.com/MetaMask/snaps-directory/pull/100))
 - Update filter button and search style ([#106](https://github.com/MetaMask/snaps-directory/pull/106))
-- Bump @metamask/eslint-config from 12.1.0 to 12.2.0 ([#107](https://github.com/MetaMask/snaps-directory/pull/107))
+- Move description in the middle of metadata on mobile screens ([#105](https://github.com/MetaMask/snaps-directory/pull/105), [#119](https://github.com/MetaMask/snaps-directory/pull/119))
+
+### Fixed
+- Update MetaMask detection to support Flask ([#114](https://github.com/MetaMask/snaps-directory/pull/114))
 
 ## [1.0.2]
 ### Fixed
