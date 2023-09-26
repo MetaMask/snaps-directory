@@ -6,6 +6,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0]
+### Added
+- Add more filtering options ([#111](https://github.com/MetaMask/snaps-directory/pull/111))
+- Add category tags and update filter behaviour ([#116](https://github.com/MetaMask/snaps-directory/pull/116))
+- Add URLs to enable filters ([#117](https://github.com/MetaMask/snaps-directory/pull/117))
+- Add empty state to main page ([#120](https://github.com/MetaMask/snaps-directory/pull/120))
+
+### Changed
+- Persist search query and selected categories ([#100](https://github.com/MetaMask/snaps-directory/pull/100))
+- Update filter button and search style ([#106](https://github.com/MetaMask/snaps-directory/pull/106))
+- Move description in the middle of metadata on mobile screens ([#105](https://github.com/MetaMask/snaps-directory/pull/105), [#119](https://github.com/MetaMask/snaps-directory/pull/119))
+
+### Fixed
+- Update MetaMask detection to support Flask ([#114](https://github.com/MetaMask/snaps-directory/pull/114))
+
 ## [1.0.2]
 ### Fixed
 - Check if current MetaMask version supports Snaps ([#101](https://github.com/MetaMask/snaps-directory/pull/101))
@@ -62,7 +77,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.0.2...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/MetaMask/snaps-directory/compare/v1.0.2...v1.1.0
 [1.0.2]: https://github.com/MetaMask/snaps-directory/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/MetaMask/snaps-directory/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/MetaMask/snaps-directory/compare/v0.2.1...v1.0.0
