@@ -59,29 +59,30 @@ export const Head: FunctionComponent<HeadProps> = ({ data }) => {
   const i18n = useLingui();
 
   const category = data.category.name as RegistrySnapCategory;
-  const { name, description } = SNAP_CATEGORY_LABELS[category];
+  const { name } = SNAP_CATEGORY_LABELS[category];
   const image = `${data.site.siteMetadata.siteUrl}${data.category.installedBanner.publicURL}`;
 
   const nameText = i18n._(name);
-  const descriptionText = i18n._(description);
-  const title = t`Browse your installed ${nameText} Snaps on the MetaMask Snaps Directory`;
+  const title = t`Installed ${nameText} Snaps on the MetaMask Snaps Directory`;
+  const ogTitle = t`Installed ${nameText} Snaps`;
+  const ogDescription = t`Browse your installed ${nameText} Snaps on the MetaMask Snaps Directory`;
 
   return (
     <>
       <html lang="en" />
       <title>{title}</title>
-      <meta name="description" content={descriptionText} />
-      <meta property="og:title" content={nameText} />
+      <meta name="description" content={ogDescription} />
+      <meta property="og:title" content={ogTitle} />
       <meta property="og:site_name" content={data.site.siteMetadata.title} />
-      <meta property="og:description" content={descriptionText} />
+      <meta property="og:description" content={ogDescription} />
       <meta property="og:type" content="website" />
       <meta name="og:image" content={image} />
       <meta name="og:image:width" content="1200" />
       <meta name="og:image:height" content="630" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={data.site.siteMetadata.author} />
-      <meta name="twitter:title" content={nameText} />
-      <meta name="twitter:description" content={descriptionText} />
+      <meta name="twitter:title" content={ogTitle} />
+      <meta name="twitter:description" content={ogDescription} />
       <meta name="twitter:image" content={image} />
     </>
   );

@@ -169,6 +169,14 @@ msgstr ""
 msgid "Installed"
 msgstr ""
 
+#: src/pages/{Category.name}/installed.tsx
+msgid "Installed {nameText} Snaps"
+msgstr ""
+
+#: src/pages/{Category.name}/installed.tsx
+msgid "Installed {nameText} Snaps on the MetaMask Snaps Directory"
+msgstr ""
+
 #: src/pages/installed.tsx
 msgid "Installed Snaps"
 msgstr ""
