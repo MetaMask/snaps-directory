@@ -11,7 +11,6 @@ import fetch from 'node-fetch';
 import { fetchBuilder, FileSystemCache } from 'node-fetch-cache';
 import path from 'path';
 
-import { SNAPS_REGISTRY_URL } from './src/constants';
 import type { Fields } from './src/utils';
 import { getLatestSnapVersion } from './src/utils';
 import {
@@ -44,6 +43,8 @@ type VerifiedSnap = SnapsRegistryDatabase['verifiedSnaps'][string] & {
     onboard?: boolean;
   };
 };
+
+const REGISTRY_URL = 'https://acl.execution.consensys.io/latest/registry.json';
 
 /**
  * Normalize the description to ensure it ends with a period. This also replaces
@@ -107,13 +108,13 @@ async function getRegistry() {
     new FileSystemCache({ cacheDirectory: fetchCachePath }),
   );
 
-  const registry: SnapsRegistryDatabase = await fetch(SNAPS_REGISTRY_URL, {
+  const registry: SnapsRegistryDatabase = await fetch(REGISTRY_URL, {
     headers,
   }).then(async (response) => response.json());
 
-  const cachedRegistry = await cachedFetch(SNAPS_REGISTRY_URL, {
-    headers,
-  }).then(async (response: any) => response.json());
+  const cachedRegistry = await cachedFetch(REGISTRY_URL, { headers }).then(
+    async (response: any) => response.json(),
+  );
 
   // If the registry has changed, we need to clear the fetch cache to ensure
   // that we get the latest tarballs.
