@@ -9,8 +9,8 @@ import {
   FilterSearch,
   FilterTags,
 } from './components';
-import type { RegistrySnapCategory } from './store';
 import { filterAll, getAll, getInstalled, toggleInstalled } from './store';
+import type { RegistrySnapCategory } from '../../constants';
 import { SNAP_CATEGORY_LABELS } from '../../constants';
 import { useDispatch, useSelector } from '../../hooks';
 

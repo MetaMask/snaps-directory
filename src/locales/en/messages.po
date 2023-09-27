@@ -87,6 +87,10 @@ msgstr ""
 msgid "Continue to {name}'s website to get started with this snap."
 msgstr ""
 
+#: src/components/Icon.tsx
+msgid "Dark Mode"
+msgstr ""
+
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Description by <0>{name}</0>"
@@ -200,6 +204,10 @@ msgid "Knowledge Base"
 msgstr ""
 
 #: src/components/Icon.tsx
+msgid "Light Mode"
+msgstr ""
+
+#: src/components/Icon.tsx
 msgid "MetaMask"
 msgstr ""
 
@@ -273,6 +281,10 @@ msgstr ""
 
 #: src/components/InstallUnsupportedDesktopUpdate.tsx
 msgid "To use MetaMask Snaps, you need the latest version (11.0) of MetaMask in your browser. <0>Learn more.</0>"
+msgstr ""
+
+#: src/components/ColorModeToggle.tsx
+msgid "Toggle color mode"
 msgstr ""
 
 #: src/components/Icon.tsx

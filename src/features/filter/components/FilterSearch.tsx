@@ -36,7 +36,7 @@ export const FilterSearch: FunctionComponent = () => {
 
   return (
     <InputGroup
-      background="white"
+      background="background.header"
       borderRadius="full"
       maxWidth={['100%', null, '300px']}
       marginLeft="auto"

@@ -9,6 +9,7 @@ import { forwardRef } from 'react';
 import backIcon from '../assets/icons/back.svg';
 import checkBlueIcon from '../assets/icons/check-blue.svg';
 import checkIcon from '../assets/icons/check.svg';
+import darkModeIcon from '../assets/icons/dark-mode.svg';
 import dropdownIcon from '../assets/icons/dropdown.svg';
 import externalLinkInvertedIcon from '../assets/icons/external-link-inverted.svg';
 import externalLinkMutedIcon from '../assets/icons/external-link-muted.svg';
@@ -16,6 +17,7 @@ import externalLinkIcon from '../assets/icons/external-link.svg';
 import filterIcon from '../assets/icons/filter.svg';
 import interoperabilityOutlineIcon from '../assets/icons/interoperability-outline.svg';
 import interoperabilityIcon from '../assets/icons/interoperability.svg';
+import lightModeIcon from '../assets/icons/light-mode.svg';
 import metamaskIcon from '../assets/icons/metamask.svg';
 import notificationsOutlineIcon from '../assets/icons/notifications-outline.svg';
 import notificationsIcon from '../assets/icons/notifications.svg';
@@ -37,6 +39,14 @@ const DEFAULT_ICONS = {
   checkBlue: {
     alt: defineMessage`Check`,
     src: checkBlueIcon,
+  },
+  darkMode: {
+    alt: defineMessage`Dark Mode`,
+    src: darkModeIcon,
+  },
+  lightMode: {
+    alt: defineMessage`Light Mode`,
+    src: lightModeIcon,
   },
   metamask: {
     alt: defineMessage`MetaMask`,
