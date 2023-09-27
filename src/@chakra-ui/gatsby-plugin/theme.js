@@ -45,7 +45,7 @@ const {
 /* eslint-enable @typescript-eslint/unbound-method */
 
 const config = {
-  initialColorMode: 'light',
+  initialColorMode: 'system',
   useSystemColorMode: true,
 };
 
