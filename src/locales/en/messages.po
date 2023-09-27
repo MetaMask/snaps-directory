@@ -285,6 +285,14 @@ msgstr ""
 msgid "Update required"
 msgstr ""
 
+#: src/components/InstallSnapButton.tsx
+msgid "Update Snap"
+msgstr ""
+
+#: src/components/InstallSnapButton.tsx
+msgid "Updating {name}"
+msgstr ""
+
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Version"
 msgstr ""

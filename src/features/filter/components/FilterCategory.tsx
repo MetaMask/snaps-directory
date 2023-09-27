@@ -6,8 +6,8 @@ import { FilterItem } from './FilterItem';
 import type { IconName } from '../../../components';
 import { Icon } from '../../../components';
 import { SNAP_CATEGORY_LABELS } from '../../../constants';
+import type { RegistrySnapCategory } from '../../../constants';
 import { useDispatch, useSelector } from '../../../hooks';
-import type { RegistrySnapCategory } from '../store';
 import { getCategory, toggleCategory } from '../store';
 
 export type FilterCategoryProps = {

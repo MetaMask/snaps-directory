@@ -10,9 +10,9 @@ import type { RequestInfo, RequestInit } from 'node-fetch';
 import fetch from 'node-fetch';
 import { fetchBuilder, FileSystemCache } from 'node-fetch-cache';
 import path from 'path';
-import semver from 'semver/preload';
 
 import type { Fields } from './src/utils';
+import { getLatestSnapVersion } from './src/utils';
 import {
   generateCategoryImage,
   generateInstalledImage,
@@ -159,16 +159,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       continue;
     }
 
-    const latestVersion = Object.keys(snap.versions).reduce(
-      (result, version) => {
-        if (result === null || semver.gt(version, result)) {
-          return version;
-        }
-
-        return result;
-      },
-    );
-
+    const latestVersion = getLatestSnapVersion(snap);
     const location = detectSnapLocation(snap.id, {
       versionRange: latestVersion as any,
       fetch: customFetch as any,
