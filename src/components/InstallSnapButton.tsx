@@ -56,7 +56,6 @@ const InstallButton: FunctionComponent<InstallButtonProps> = ({
         loadingText={t`Updating ${name}`}
         onClick={handleInstall}
         width={{ base: '100%', md: 'auto' }}
-        _hover={{ opacity: '75%' }}
       >
         <Trans>Update Snap</Trans>
       </Button>
@@ -84,7 +83,6 @@ const InstallButton: FunctionComponent<InstallButtonProps> = ({
       loadingText={t`Installing ${name}`}
       onClick={handleInstall}
       width={{ base: '100%', md: 'auto' }}
-      _hover={{ opacity: '75%' }}
     >
       <Trans>Add to MetaMask</Trans>
     </Button>

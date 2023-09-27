@@ -88,7 +88,6 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
                     />
                   }
                   width="100%"
-                  _hover={{ opacity: '75%' }}
                 >
                   <Trans>Website</Trans>
                 </Button>

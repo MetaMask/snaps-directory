@@ -23,7 +23,6 @@ export const InstallUnsupported: FunctionComponent = () => {
       variant="primary"
       onClick={onOpen}
       width={{ base: '100%', md: 'auto' }}
-      _hover={{ opacity: '75%' }}
     >
       <Trans>Add to MetaMask</Trans>
     </Button>
