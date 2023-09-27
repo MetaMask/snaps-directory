@@ -25,12 +25,7 @@ export const InstallUnsupportedDesktopUpdate: FunctionComponent<
         </Link>
       </Trans>
     </Text>
-    <Button
-      onClick={onClose}
-      variant="primary"
-      width="100%"
-      _hover={{ opacity: '75%' }}
-    >
+    <Button onClick={onClose} variant="primary" width="100%">
       <Trans>Got it</Trans>
     </Button>
   </>

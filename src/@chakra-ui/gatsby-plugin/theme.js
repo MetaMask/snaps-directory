@@ -308,6 +308,12 @@ const theme = extendTheme({
     }),
 
     Button: defineStyleConfig({
+      baseStyle: defineStyle({
+        _hover: {
+          opacity: '0.75',
+        },
+      }),
+
       variants: {
         solid: defineStyle({
           bg: '#24272A',
