@@ -4,7 +4,6 @@
 
 import {
   tagAnatomy,
-  formAnatomy,
   tabsAnatomy,
   modalAnatomy,
   switchAnatomy,
@@ -23,11 +22,6 @@ const {
   definePartsStyle: defineTagPartsStyle,
   defineMultiStyleConfig: defineTagMultiStyleConfig,
 } = createMultiStyleConfigHelpers(tagAnatomy.keys);
-
-const {
-  definePartsStyle: defineFormPartsStyle,
-  defineMultiStyleConfig: defineFormMultiStyleConfig,
-} = createMultiStyleConfigHelpers(formAnatomy.keys);
 
 const {
   definePartsStyle: defineTabsPartsStyle,
@@ -52,7 +46,7 @@ const {
 
 const config = {
   initialColorMode: 'light',
-  useSystemColorMode: false,
+  useSystemColorMode: true,
 };
 
 const theme = extendTheme({
@@ -68,7 +62,7 @@ const theme = extendTheme({
 
   semanticTokens: {
     colors: {
-      'chakra-body-bg': { _light: '#F8FAFC', _dark: '#24272A' },
+      'chakra-body-bg': { _light: '#F8FAFC', _dark: '#141618' },
       text: {
         default: '#24272A',
         _dark: '#9FA6AE',
@@ -84,12 +78,24 @@ const theme = extendTheme({
           default: '#535A61',
           _dark: '#D6D9DC',
         },
+        muted: {
+          default: '#BBC0C5',
+          _dark: '#D6D9DC',
+        },
       },
       background: {
         alternative: { default: '#F5F5F5', _dark: '#1D1F22' },
         hover: {
           default: '#FAFBFC',
-          _dark: '#141618',
+          _dark: '#2F3338',
+        },
+        header: {
+          default: '#FFFFFF',
+          _dark: '#1D1F23',
+        },
+        menu: {
+          default: '#FFFFFF',
+          _dark: '#282B2E',
         },
       },
       info: {
@@ -113,10 +119,23 @@ const theme = extendTheme({
         },
       },
       gray: {
-        light: '#F1F1F1',
+        light: {
+          default: '#F1F1F1',
+          _dark: '#1A1C1F',
+        },
         muted: {
           default: '#878787',
-          _dark: '#3B4046',
+          _dark: '#D6D9DC',
+        },
+      },
+      tag: {
+        category: {
+          default: 'info.muted',
+          _dark: 'rgba(16, 152, 252, 0.15)',
+        },
+        muted: {
+          default: '#F5F5F5',
+          _dark: '#141618',
         },
       },
     },
@@ -134,7 +153,6 @@ const theme = extendTheme({
       alternative: '#535A61',
       success: '#579F6E',
       error: '#D34C46',
-      muted: '#BBC0C5',
     },
     error: {
       default: '#D34C46',
@@ -166,64 +184,6 @@ const theme = extendTheme({
       baseStyle: {
         opacity: 1,
       },
-    }),
-
-    Form: defineFormMultiStyleConfig({
-      baseStyle: defineFormPartsStyle({
-        container: {
-          label: {
-            fontSize: 'xs',
-            marginBottom: 1,
-          },
-          input: {
-            marginBottom: 4,
-            borderColor: 'border.default',
-            outline: 'none',
-            fontSize: 'sm',
-            _active: {
-              borderColor: 'border.active',
-              outline: 'none',
-              boxShadow: 'none',
-            },
-            _focusVisible: {
-              borderColor: 'border.active',
-              outline: 'none',
-              boxShadow: 'none',
-            },
-          },
-          textarea: {
-            marginBottom: 4,
-            borderColor: 'border.default',
-            outline: 'none',
-            fontSize: 'sm',
-            _active: {
-              borderColor: 'border.active',
-              outline: 'none',
-              boxShadow: 'none',
-            },
-            _focusVisible: {
-              borderColor: 'border.active',
-              outline: 'none',
-              boxShadow: 'none',
-            },
-          },
-          select: {
-            borderColor: 'border.default',
-            outline: 'none',
-            fontSize: 'sm',
-            _active: {
-              borderColor: 'border.active',
-              outline: 'none',
-              boxShadow: 'none',
-            },
-            _focusVisible: {
-              borderColor: 'border.active',
-              outline: 'none',
-              boxShadow: 'none',
-            },
-          },
-        },
-      }),
     }),
 
     Link: defineStyleConfig({
@@ -291,12 +251,15 @@ const theme = extendTheme({
 
     Text: defineStyleConfig({
       baseStyle: {
-        color: 'black',
+        color: {
+          default: 'black',
+          _dark: 'white',
+        },
       },
 
       variants: {
         muted: {
-          color: 'gray.muted',
+          color: 'text.muted',
         },
       },
     }),
@@ -325,14 +288,22 @@ const theme = extendTheme({
           },
         }),
 
-        category: {
+        category: defineTagPartsStyle({
           container: {
             lineHeight: '1.5',
             textTransform: 'none',
             paddingX: '3',
             paddingY: '2',
+            background: 'tag.category',
           },
-        },
+        }),
+
+        muted: defineTagPartsStyle({
+          container: {
+            backgroundColor: 'tag.muted',
+            color: 'gray.muted',
+          },
+        }),
       },
     }),
 
@@ -377,7 +348,7 @@ const theme = extendTheme({
           padding: '4',
         }),
         shadow: defineStyle({
-          background: 'white',
+          background: 'background.header',
           boxShadow: 'md',
           _hover: {
             opacity: '0.75',
@@ -406,7 +377,7 @@ const theme = extendTheme({
         minimal: defineModalPartsStyle({
           dialog: {
             padding: '6',
-            background: 'white',
+            background: 'chakra-body-bg',
             borderRadius: '3xl',
           },
 
@@ -434,9 +405,14 @@ const theme = extendTheme({
           borderRadius: 'lg',
           padding: '1',
           boxShadow: 'lg',
+          background: 'background.menu',
         },
         item: {
           padding: '2',
+          background: 'none',
+          _hover: {
+            background: 'background.alternative',
+          },
         },
         groupTitle: {
           textTransform: 'uppercase',

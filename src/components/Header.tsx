@@ -4,6 +4,7 @@ import { Trans } from '@lingui/macro';
 import { Link } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
+import { ColorModeToggle } from './ColorModeToggle';
 import { Logo } from './Logo';
 
 type HeaderProps = BoxProps;
@@ -15,21 +16,20 @@ export const Header: FunctionComponent<HeaderProps> = (props) => (
     display="flex"
     flexDirection="row"
     justifyContent="space-between"
-    background="white"
+    background="background.header"
   >
     <Container maxWidth="7xl">
-      <Link to="/">
-        <Stack direction="row" alignItems="center" gap="2">
-          <Logo />
-          <Tag
-            fontSize="0.65rem"
-            color="gray.muted"
-            background="background.alternative"
-          >
-            <Trans>Open Beta</Trans>
-          </Tag>
-        </Stack>
-      </Link>
+      <Stack direction="row" alignItems="center" gap="2">
+        <Link to="/">
+          <Stack direction="row" alignItems="center" gap="2">
+            <Logo />
+            <Tag variant="muted" fontSize="0.65rem">
+              <Trans>Open Beta</Trans>
+            </Tag>
+          </Stack>
+        </Link>
+        <ColorModeToggle />
+      </Stack>
     </Container>
   </Box>
 );

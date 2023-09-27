@@ -12,9 +12,9 @@ export const Card: FunctionComponent<CardProps> = ({ children }) => (
     py="4"
     rounded="3xl"
     boxShadow="lg"
-    backgroundColor="white"
+    background="background.header"
     height="167px"
-    _hover={{ backgroundColor: '#F8F8F8' }}
+    _hover={{ backgroundColor: 'background.hover' }}
   >
     {children}
   </Flex>

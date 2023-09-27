@@ -1,12 +1,12 @@
 import type { BoxProps } from '@chakra-ui/react';
-import { Box, Container, Flex, Image, Text } from '@chakra-ui/react';
+import { Box, Container, Flex, Text } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
 import { FooterCopyright } from './FooterCopyright';
 import { FooterLinks } from './FooterLinks';
 import { FooterTerms } from './FooterTerms';
-import metamaskLogo from '../assets/metamask-logo.svg';
+import { MetaMaskLogo } from './MetaMaskLogo';
 
 export type FooterProps = BoxProps;
 
@@ -14,7 +14,7 @@ export const Footer: FunctionComponent<FooterProps> = (props) => (
   <Box
     {...props}
     as="footer"
-    background="white"
+    background="background.header"
     marginTop={{ base: 4, md: 20 }}
   >
     <Container maxWidth="7xl" paddingY="12">
@@ -24,7 +24,7 @@ export const Footer: FunctionComponent<FooterProps> = (props) => (
         gap="4"
       >
         <Box>
-          <Image src={metamaskLogo} alt="MetaMask" marginBottom="4" />
+          <MetaMaskLogo marginBottom="4" />
           <Text
             variant="muted"
             display="block"
