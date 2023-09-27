@@ -65,8 +65,6 @@ export const getUpdateAvailable = (snapId: string) =>
         return false;
       }
 
-      console.log(installedVersion, snap);
-
       return semver.gt(snap.latestVersion, installedVersion);
     },
   );
