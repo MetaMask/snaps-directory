@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Drawer,
   DrawerBody,
@@ -6,14 +7,13 @@ import {
   DrawerOverlay,
   Flex,
   Heading,
-  Image,
   Link,
   Text,
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
-import desktopImage from '../assets/images/desktop-only.svg';
+import DesktopImage from '../assets/images/desktop-only.svg';
 
 export type InstallUnsupportedMobileProps = {
   isOpen: boolean;
@@ -44,12 +44,13 @@ export const InstallUnsupportedMobile: FunctionComponent<
             paddingTop={4}
             paddingBottom={6}
           >
-            <Image
-              src={desktopImage}
-              alt={t`Desktop only`}
-              maxWidth="18.75rem"
-              width="100%"
-            />
+            <Box maxWidth="18.75rem">
+              <DesktopImage
+                role="img"
+                aria-label={t`Desktop only`}
+                width="100%"
+              />
+            </Box>
             <Heading as="h3" fontSize="2xl" marginTop={4}>
               <Trans>Desktop only</Trans>
             </Heading>
