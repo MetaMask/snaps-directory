@@ -31,7 +31,7 @@ export const FilterCategory: FunctionComponent<FilterCategoryProps> = ({
         <Trans id={SNAP_CATEGORY_LABELS[category].name.id} />
       </Text>
       <Box flexGrow={1} />
-      <Icon width="2rem" />
+      <Icon width="2rem" fill="info.default" />
     </FilterItem>
   );
 };
