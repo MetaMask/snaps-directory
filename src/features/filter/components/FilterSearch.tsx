@@ -38,12 +38,12 @@ export const FilterSearch: FunctionComponent = () => {
     <InputGroup
       background="background.header"
       borderRadius="full"
-      maxWidth={['100%', null, '300px']}
+      maxWidth={['100%', null, '18.75rem']}
       marginLeft="auto"
       order={[2, null, 1]}
     >
       <InputLeftElement pointerEvents="none">
-        <SearchIcon width="20px" />
+        <SearchIcon width="1.25rem" />
       </InputLeftElement>
       <Input
         type="search"

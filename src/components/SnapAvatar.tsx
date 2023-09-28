@@ -38,11 +38,11 @@ export const SnapAvatar: FunctionComponent<SnapIconProps> = ({
         margin="1"
       />
       <SnapIcon
-        width="24px"
-        height="24px"
+        width="1.5rem"
+        height="1.5rem"
         position="absolute"
-        bottom="0px"
-        right="0px"
+        bottom="0"
+        right="0"
         fill={isInstalled ? '#0376C9' : '#6A737D'}
       />
     </Box>

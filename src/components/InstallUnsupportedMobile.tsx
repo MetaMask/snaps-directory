@@ -47,7 +47,7 @@ export const InstallUnsupportedMobile: FunctionComponent<
             <Image
               src={desktopImage}
               alt={t`Desktop only`}
-              maxWidth="300px"
+              maxWidth="18.75rem"
               width="100%"
             />
             <Heading as="h3" fontSize="2xl" marginTop={4}>

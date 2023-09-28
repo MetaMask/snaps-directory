@@ -19,7 +19,7 @@ export const FilterButton: FunctionComponent<FilterButtonProps> = forwardRef<
     isRound={true}
     aria-label={t`Filter`}
     height="auto"
-    icon={<FilterIcon width="20px" />}
+    icon={<FilterIcon width="1.25rem" />}
     flexShrink="0"
   />
 ));

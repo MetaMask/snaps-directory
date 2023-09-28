@@ -12,6 +12,6 @@ export const ExternalLink: FunctionComponent<ExternalLinkProps> = ({
 }) => (
   <Link {...props} isExternal={true} display="inline-flex" alignItems="center">
     {children}
-    <ExternalLinkIcon width="20px" marginLeft="0.5" fill="currentColor" />
+    <ExternalLinkIcon width="1.25rem" marginLeft="0.5" fill="currentColor" />
   </Link>
 );

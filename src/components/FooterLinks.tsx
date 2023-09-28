@@ -38,7 +38,7 @@ export const FOOTER_LINKS = [
 
 export const FooterLinks: FunctionComponent = () => (
   <Flex
-    width={['100%', '336px']}
+    width={['100%', '21rem']}
     maxWidth="100%"
     gap={['12', '24']}
     marginBottom="12"

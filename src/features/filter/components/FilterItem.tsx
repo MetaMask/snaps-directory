@@ -14,7 +14,7 @@ export const FilterItem: FunctionComponent<FilterItemProps> = ({
   children,
   ...props
 }) => (
-  <MenuItem height="48px" borderRadius="md" {...props}>
+  <MenuItem height="3rem" borderRadius="md" {...props}>
     <Stack direction="row" alignItems="center" gap="2" width="100%">
       {/* TODO: Blue icon. */}
       <CheckThinIcon

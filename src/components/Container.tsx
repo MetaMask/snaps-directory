@@ -6,7 +6,7 @@ export type ContainerProps = {
 };
 
 export const Container: FunctionComponent<ContainerProps> = ({ children }) => (
-  <Box maxWidth="1000px" width="100%" marginX="auto">
+  <Box maxWidth="62.5rem" width="100%" marginX="auto">
     {children}
   </Box>
 );

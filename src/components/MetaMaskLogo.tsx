@@ -18,7 +18,7 @@ export const MetaMaskLogo: FunctionComponent<MetaMaskLogoProps> = (props) => {
 
   const SVG = colorMode === 'light' ? logo : logoDark;
   return (
-    <Box height="40px" {...props}>
+    <Box height="2.5rem" {...props}>
       <SVG role="img" aria-label="MetaMask" />
     </Box>
   );

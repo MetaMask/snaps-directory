@@ -32,7 +32,7 @@ export const Filter: FunctionComponent = () => {
     <>
       <Menu closeOnSelect={false}>
         <MenuButton as={FilterButton} order={[3, null, 0]} />
-        <MenuList width="275px">
+        <MenuList width="17.188rem">
           <MenuGroup marginLeft="2" title={t`Filter`}>
             <FilterItem checked={all} onClick={handleClickAll}>
               <Text>

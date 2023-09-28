@@ -50,7 +50,7 @@ const InstallButton: FunctionComponent<InstallButtonProps> = ({
   if (updateAvailable) {
     return (
       <Button
-        leftIcon={<MetaMaskIcon width="24px" />}
+        leftIcon={<MetaMaskIcon width="1.5rem" />}
         variant="primary"
         isLoading={isLoading}
         loadingText={t`Updating ${name}`}
@@ -65,7 +65,7 @@ const InstallButton: FunctionComponent<InstallButtonProps> = ({
   if (isInstalled) {
     return (
       <Button
-        leftIcon={<CheckIcon width="20px" />}
+        leftIcon={<CheckIcon width="1.25rem" />}
         variant="primary"
         isDisabled={true}
         width={{ base: '100%', md: 'auto' }}
@@ -77,7 +77,7 @@ const InstallButton: FunctionComponent<InstallButtonProps> = ({
 
   return (
     <Button
-      leftIcon={<MetaMaskIcon width="24px" />}
+      leftIcon={<MetaMaskIcon width="1.5rem" />}
       variant="primary"
       isLoading={isLoading}
       loadingText={t`Installing ${name}`}

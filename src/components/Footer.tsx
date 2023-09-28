@@ -28,7 +28,7 @@ export const Footer: FunctionComponent<FooterProps> = (props) => (
           <Text
             variant="muted"
             display="block"
-            maxWidth="480px"
+            maxWidth="30rem"
             marginBottom={['12', null, '24']}
           >
             <Trans>

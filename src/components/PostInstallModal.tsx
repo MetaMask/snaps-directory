@@ -98,7 +98,7 @@ export const PostInstallModal: FunctionComponent<PostInstallModalProps> = ({
                         {normalizeUrl(website)}
                       </Box>
                       {/* TODO: Muted icon */}
-                      <ExternalLinkIcon marginLeft="2" width="20px" />
+                      <ExternalLinkIcon marginLeft="2" width="1.25rem" />
                     </Flex>
                   </Link>
                 </>
