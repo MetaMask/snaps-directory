@@ -24,6 +24,7 @@ export const Header: FunctionComponent<HeaderProps> = (props) => (
     top="0"
     left="0"
     width="100%"
+    zIndex={999999}
   >
     <Container maxWidth="7xl">
       <Stack direction="row" alignItems="center" gap="2">
