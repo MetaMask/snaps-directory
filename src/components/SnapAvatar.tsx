@@ -36,6 +36,13 @@ export const SnapAvatar: FunctionComponent<SnapIconProps> = ({
         color="text.alternative"
         size="md"
         margin="1"
+        sx={{
+          img: {
+            // This solves an issue where the avatar is slightly bigger than the
+            // Snap icon, causing it to render a weird border.
+            transform: 'scale(1.01)',
+          },
+        }}
       />
       <SnapIcon
         width="1.5rem"
