@@ -44,6 +44,10 @@ export const semanticTokens: SemanticTokens = {
         _dark: '#2F3338',
       },
       header: {
+        default: 'rgba(255, 255, 255, 0.75)',
+        _dark: '#1D1F23',
+      },
+      card: {
         default: '#FFFFFF',
         _dark: '#1D1F23',
       },
