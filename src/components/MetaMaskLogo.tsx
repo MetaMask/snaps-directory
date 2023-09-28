@@ -2,8 +2,7 @@ import type { BoxProps } from '@chakra-ui/react';
 import { Box, useColorMode } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 
-import logoDark from '../assets/metamask-logo-dark.svg';
-import logo from '../assets/metamask-logo.svg';
+import Logo from '../assets/metamask-logo.svg';
 
 export type MetaMaskLogoProps = BoxProps;
 
@@ -16,10 +15,10 @@ export type MetaMaskLogoProps = BoxProps;
 export const MetaMaskLogo: FunctionComponent<MetaMaskLogoProps> = (props) => {
   const { colorMode } = useColorMode();
 
-  const SVG = colorMode === 'light' ? logo : logoDark;
+  const fill = colorMode === 'light' ? '#161616' : 'white';
   return (
     <Box height="2.5rem" {...props}>
-      <SVG role="img" aria-label="MetaMask" />
+      <Logo role="img" aria-label="MetaMask" fill={fill} />
     </Box>
   );
 };
