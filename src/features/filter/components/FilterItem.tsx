@@ -2,7 +2,7 @@ import type { MenuItemProps } from '@chakra-ui/react';
 import { MenuItem, Stack } from '@chakra-ui/react';
 import type { FunctionComponent, ReactNode } from 'react';
 
-import { Icon } from '../../../components';
+import { CheckThinIcon } from '../../../components';
 
 export type FilterItemProps = MenuItemProps & {
   checked: boolean;
@@ -16,9 +16,10 @@ export const FilterItem: FunctionComponent<FilterItemProps> = ({
 }) => (
   <MenuItem height="48px" borderRadius="md" {...props}>
     <Stack direction="row" alignItems="center" gap="2" width="100%">
-      <Icon
-        icon="checkBlue"
-        width="20px"
+      {/* TODO: Blue icon. */}
+      <CheckThinIcon
+        width="0.831rem"
+        height="0.573rem"
         visibility={checked ? 'initial' : 'hidden'}
       />
       {children}

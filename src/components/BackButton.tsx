@@ -3,7 +3,7 @@ import { Trans } from '@lingui/macro';
 import { Link as GatsbyLink } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
-import { Icon } from './Icon';
+import { BackIcon } from './icons';
 
 export const BackButton: FunctionComponent = () => (
   <Link
@@ -16,7 +16,7 @@ export const BackButton: FunctionComponent = () => (
     gap={'4px'}
     _hover={{ textDecoration: 'none', opacity: '75%' }}
   >
-    <Icon icon="back" width="20px" />
+    <BackIcon width="20px" />
     <Trans>Discover Snaps</Trans>
   </Link>
 );

@@ -1,7 +1,7 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 
-import { SnapIcon } from './SnapIcon';
+import { SnapAvatar } from './SnapAvatar';
 import { useGetInstalledSnapsQuery } from '../features';
 import type { Fields } from '../utils';
 
@@ -13,7 +13,7 @@ export const SnapAuthorship: FunctionComponent<
 
   return (
     <Flex alignItems="center" width={{ base: '100%', md: 'auto' }}>
-      <SnapIcon snapName={name} icon={icon} isInstalled={isInstalled} />
+      <SnapAvatar snapName={name} icon={icon} isInstalled={isInstalled} />
       <Box ml="2" overflow="hidden">
         <Text fontWeight="medium" isTruncated>
           {name}

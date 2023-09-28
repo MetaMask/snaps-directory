@@ -2,7 +2,7 @@ import { Button, useDisclosure } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
-import { Icon } from './Icon';
+import { CheckIcon, MetaMaskIcon } from './icons';
 import { InstallUnsupported } from './InstallUnsupported';
 import { PostInstallModal } from './PostInstallModal';
 import {
@@ -50,7 +50,7 @@ const InstallButton: FunctionComponent<InstallButtonProps> = ({
   if (updateAvailable) {
     return (
       <Button
-        leftIcon={<Icon icon="metamask" width="24px" />}
+        leftIcon={<MetaMaskIcon width="24px" />}
         variant="primary"
         isLoading={isLoading}
         loadingText={t`Updating ${name}`}
@@ -65,7 +65,7 @@ const InstallButton: FunctionComponent<InstallButtonProps> = ({
   if (isInstalled) {
     return (
       <Button
-        leftIcon={<Icon icon="check" width="20px" />}
+        leftIcon={<CheckIcon width="20px" />}
         variant="primary"
         isDisabled={true}
         width={{ base: '100%', md: 'auto' }}
@@ -77,7 +77,7 @@ const InstallButton: FunctionComponent<InstallButtonProps> = ({
 
   return (
     <Button
-      leftIcon={<Icon icon="metamask" width="24px" />}
+      leftIcon={<MetaMaskIcon width="24px" />}
       variant="primary"
       isLoading={isLoading}
       loadingText={t`Installing ${name}`}

@@ -46,7 +46,7 @@ msgstr ""
 msgid "Audit"
 msgstr ""
 
-#: src/components/Icon.tsx
+#: src/components/icons/index.ts
 msgid "Back"
 msgstr ""
 
@@ -66,9 +66,13 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: src/components/Icon.tsx
-#: src/components/Icon.tsx
+#: src/components/icons/index.ts
+#: src/components/icons/index.ts
 msgid "Check"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Close"
 msgstr ""
 
 #: src/constants.ts
@@ -85,10 +89,6 @@ msgstr ""
 
 #: src/components/PostInstallModal.tsx
 msgid "Continue to {name}'s website to get started with this snap."
-msgstr ""
-
-#: src/components/Icon.tsx
-msgid "Dark Mode"
 msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
@@ -118,18 +118,24 @@ msgstr ""
 msgid "Download MetaMask"
 msgstr ""
 
-#: src/components/Icon.tsx
+#: src/components/icons/index.ts
 msgid "Dropdown"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Enable dark mode"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Enable light mode"
 msgstr ""
 
 #: src/pages/index.tsx
 msgid "Explore community-built Snaps to customize your web3 experience via our official directory. <0>Learn more</0> and <1>FAQ</1>."
 msgstr ""
 
-#: src/components/Icon.tsx
-#: src/components/Icon.tsx
-#: src/components/Icon.tsx
-msgid "External Link"
+#: src/components/icons/index.ts
+msgid "External link"
 msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
@@ -140,7 +146,7 @@ msgstr ""
 msgid "Feedback"
 msgstr ""
 
-#: src/components/Icon.tsx
+#: src/components/icons/index.ts
 #: src/features/filter/components/FilterButton.tsx
 #: src/features/filter/Filter.tsx
 msgid "Filter"
@@ -193,8 +199,7 @@ msgstr ""
 msgid "Installing {name}"
 msgstr ""
 
-#: src/components/Icon.tsx
-#: src/components/Icon.tsx
+#: src/components/icons/index.ts
 #: src/constants.ts
 msgid "Interoperability"
 msgstr ""
@@ -203,11 +208,7 @@ msgstr ""
 msgid "Knowledge Base"
 msgstr ""
 
-#: src/components/Icon.tsx
-msgid "Light Mode"
-msgstr ""
-
-#: src/components/Icon.tsx
+#: src/components/icons/index.ts
 msgid "MetaMask"
 msgstr ""
 
@@ -219,8 +220,7 @@ msgstr ""
 msgid "No Snaps found"
 msgstr ""
 
-#: src/components/Icon.tsx
-#: src/components/Icon.tsx
+#: src/components/icons/index.ts
 #: src/constants.ts
 msgid "Notifications"
 msgstr ""
@@ -233,7 +233,7 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr ""
 
-#: src/components/Icon.tsx
+#: src/components/icons/index.ts
 msgid "Search"
 msgstr ""
 
@@ -245,8 +245,7 @@ msgstr ""
 msgid "See everything"
 msgstr ""
 
-#: src/components/Icon.tsx
-#: src/components/Icon.tsx
+#: src/components/icons/index.ts
 msgid "Snap"
 msgstr ""
 
@@ -287,8 +286,10 @@ msgstr ""
 msgid "Toggle color mode"
 msgstr ""
 
-#: src/components/Icon.tsx
-#: src/components/Icon.tsx
+#: src/components/icons/index.ts
+msgid "Transaction insights"
+msgstr ""
+
 #: src/constants.ts
 msgid "Transaction Insights"
 msgstr ""

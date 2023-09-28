@@ -1,11 +1,11 @@
-import type { ImageProps } from '@chakra-ui/react';
-import { Image, useColorMode } from '@chakra-ui/react';
+import type { BoxProps } from '@chakra-ui/react';
+import { Box, useColorMode } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 
 import logoDark from '../assets/metamask-logo-dark.svg';
 import logo from '../assets/metamask-logo.svg';
 
-export type MetaMaskLogoProps = ImageProps;
+export type MetaMaskLogoProps = BoxProps;
 
 /**
  * Render the MetaMask logo.
@@ -16,6 +16,10 @@ export type MetaMaskLogoProps = ImageProps;
 export const MetaMaskLogo: FunctionComponent<MetaMaskLogoProps> = (props) => {
   const { colorMode } = useColorMode();
 
-  const src = colorMode === 'light' ? logo : logoDark;
-  return <Image src={src} alt="MetaMask" height="40px" {...props} />;
+  const SVG = colorMode === 'light' ? logo : logoDark;
+  return (
+    <Box height="40px" {...props}>
+      <SVG role="img" aria-label="MetaMask" />
+    </Box>
+  );
 };

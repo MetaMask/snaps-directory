@@ -33,7 +33,12 @@ export const FilterTags: FunctionComponent<FilterTagsProps> = (props) => {
           <TagLabel>
             <Trans>Installed</Trans>
           </TagLabel>
-          <CloseIcon onClick={handleClickInstalled} />
+          <CloseIcon
+            onClick={handleClickInstalled}
+            cursor="pointer"
+            marginLeft="1.5"
+            width="0.6875rem"
+          />
         </Tag>
       )}
     </Stack>

@@ -2,7 +2,7 @@ import type { BoxProps } from '@chakra-ui/react';
 import { Avatar, Box } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 
-import { Icon } from './Icon';
+import { SnapIcon } from './icons';
 
 export type SnapIconProps = BoxProps & {
   snapName: string;
@@ -20,7 +20,7 @@ export type SnapIconProps = BoxProps & {
  * @param props.isInstalled - Whether the snap is installed or not.
  * @returns The Snap icon component.
  */
-export const SnapIcon: FunctionComponent<SnapIconProps> = ({
+export const SnapAvatar: FunctionComponent<SnapIconProps> = ({
   snapName,
   icon,
   isInstalled,
@@ -37,13 +37,13 @@ export const SnapIcon: FunctionComponent<SnapIconProps> = ({
         size="md"
         margin="1"
       />
-      <Icon
-        icon={isInstalled ? 'snap' : 'snapMuted'}
+      <SnapIcon
         width="24px"
         height="24px"
         position="absolute"
         bottom="0px"
         right="0px"
+        fill={isInstalled ? '#0376C9' : '#6A737D'}
       />
     </Box>
   );

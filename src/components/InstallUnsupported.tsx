@@ -2,7 +2,7 @@ import { Button, useDisclosure } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
-import { Icon } from './Icon';
+import { MetaMaskIcon } from './icons';
 import { InstallUnsupportedDesktop } from './InstallUnsupportedDesktop';
 import { InstallUnsupportedMobile } from './InstallUnsupportedMobile';
 
@@ -19,7 +19,7 @@ export const InstallUnsupported: FunctionComponent = () => {
 
   const button = (
     <Button
-      leftIcon={<Icon icon="metamask" width="24px" />}
+      leftIcon={<MetaMaskIcon width="24px" />}
       variant="primary"
       onClick={onOpen}
       width={{ base: '100%', md: 'auto' }}
