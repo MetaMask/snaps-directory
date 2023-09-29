@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.1]
+### Uncategorized
+- Fix margin around logo on Safari ([#140](https://github.com/MetaMask/snaps-directory/pull/140))
+
 ## [1.2.0]
 ### Added
 - Add dark mode ([#126](https://github.com/MetaMask/snaps-directory/pull/126))
@@ -94,7 +98,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.2.1...HEAD
+[1.2.1]: https://github.com/MetaMask/snaps-directory/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/MetaMask/snaps-directory/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/MetaMask/snaps-directory/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/MetaMask/snaps-directory/compare/v1.0.2...v1.1.0
