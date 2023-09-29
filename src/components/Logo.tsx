@@ -13,7 +13,7 @@ export const Logo: FunctionComponent = () => {
 
   const fill = colorMode === 'light' ? '#161616' : 'white';
   return (
-    <Box height="1.5rem">
+    <Box width="11.95rem" height="1.5rem">
       <SvgLogo
         width="100%"
         height="100%"
