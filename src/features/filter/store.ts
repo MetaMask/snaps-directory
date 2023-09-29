@@ -8,11 +8,25 @@ import { getInstalledSnaps } from '../snaps';
 
 export type SearchResult = { item: Snap };
 
+export enum Order {
+  Random = 'random',
+  Alphabetical = 'name',
+}
+
+export const SORT_FUNCTIONS = {
+  // Snaps are randomly sorted by default, so this is a no-op.
+  [Order.Random]: (snaps: Snap[]) => snaps,
+
+  [Order.Alphabetical]: (snaps: Snap[]) =>
+    snaps.concat().sort((a, b) => a.name.localeCompare(b.name)),
+};
+
 export type FilterState = {
   searchQuery: string;
   searchResults: SearchResult[];
   installed: boolean;
   categories: RegistrySnapCategory[];
+  order: Order;
 };
 
 const INITIAL_CATEGORIES = Object.values(
@@ -24,6 +38,7 @@ const initialState: FilterState = {
   searchResults: [],
   installed: false,
   categories: INITIAL_CATEGORIES,
+  order: Order.Random,
 };
 
 export const filterSlice = createSlice({
@@ -73,6 +88,9 @@ export const filterSlice = createSlice({
     setCategory: (state, action: PayloadAction<RegistrySnapCategory>) => {
       state.categories = [action.payload];
     },
+    setOrder: (state, action: PayloadAction<Order>) => {
+      state.order = action.payload;
+    },
   },
 });
 
@@ -84,6 +102,7 @@ export const {
   toggleInstalled,
   toggleCategory,
   setCategory,
+  setOrder,
 } = filterSlice.actions;
 
 export const getSearchQuery = createSelector(
@@ -113,25 +132,33 @@ export const getCategory = (category: RegistrySnapCategory) =>
     ({ categories }) => categories.includes(category),
   );
 
+export const getOrder = createSelector(
+  (state: ApplicationState) => state.filter,
+  ({ order }) => order,
+);
+
 export const getFilteredSnaps = createSelector(
   (state: ApplicationState) => state,
   (state) => {
     const { filter, snaps: snapsState } = state;
-    const { searchQuery, searchResults, installed, categories } = filter;
+    const { searchQuery, searchResults, installed, categories, order } = filter;
     const { snaps } = snapsState;
 
     if (!snaps) {
       return null;
     }
 
+    const sortedSnaps = SORT_FUNCTIONS[order](snaps);
     const searchedSnaps =
       searchQuery.length > 0
         ? (searchResults
             .map((searchResult) =>
-              snaps.find(({ snapId }) => searchResult.item.snapId === snapId),
+              sortedSnaps.find(
+                ({ snapId }) => searchResult.item.snapId === snapId,
+              ),
             )
             .filter(Boolean) as Snap[])
-        : snaps;
+        : sortedSnaps;
 
     const installedSnaps = getInstalledSnaps(state);
     const filteredSnaps = installed
