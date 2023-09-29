@@ -13,7 +13,6 @@ import type { FunctionComponent } from 'react';
 
 import {
   SnapAuthorship,
-  Icon,
   SnapData,
   InstallSnapButton,
   SnapSourceCode,
@@ -21,6 +20,7 @@ import {
   SnapCategory,
   BackButton,
   SnapDescription,
+  ExternalLinkIcon,
 } from '../../../components';
 import { ExternalLink } from '../../../components/ExternalLink';
 import type { RegistrySnapCategory } from '../../../constants';
@@ -82,9 +82,10 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
                 <Button
                   variant={onboard ? 'primary' : 'outline'}
                   leftIcon={
-                    <Icon
-                      icon={onboard ? 'externalLinkInverted' : 'externalLink'}
-                      width="24px"
+                    <ExternalLinkIcon
+                      // icon={onboard ? 'externalLinkInverted' : 'externalLink'}
+                      width="1.5rem"
+                      fill="currentColor"
                     />
                   }
                   width="100%"

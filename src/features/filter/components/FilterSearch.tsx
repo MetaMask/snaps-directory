@@ -5,7 +5,7 @@ import type { FunctionComponent, ChangeEvent } from 'react';
 import { useEffect } from 'react';
 import { useGatsbyPluginFusejs } from 'react-use-fusejs';
 
-import { Icon } from '../../../components';
+import { SearchIcon } from '../../../components';
 import { useDispatch, useSelector } from '../../../hooks';
 import type { Snap } from '../../snaps';
 import { getSearchQuery, setSearchQuery, setSearchResults } from '../store';
@@ -38,12 +38,12 @@ export const FilterSearch: FunctionComponent = () => {
     <InputGroup
       background="background.header"
       borderRadius="full"
-      maxWidth={['100%', null, '300px']}
+      maxWidth={['100%', null, '18.75rem']}
       marginLeft="auto"
       order={[2, null, 1]}
     >
       <InputLeftElement pointerEvents="none">
-        <Icon icon="search" width="20px" />
+        <SearchIcon width="1.25rem" />
       </InputLeftElement>
       <Input
         type="search"

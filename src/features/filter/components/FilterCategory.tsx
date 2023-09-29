@@ -3,8 +3,7 @@ import { Trans } from '@lingui/react';
 import type { FunctionComponent } from 'react';
 
 import { FilterItem } from './FilterItem';
-import type { IconName } from '../../../components';
-import { Icon } from '../../../components';
+import type { IconProps } from '../../../components/icons/Icon';
 import { SNAP_CATEGORY_LABELS } from '../../../constants';
 import type { RegistrySnapCategory } from '../../../constants';
 import { useDispatch, useSelector } from '../../../hooks';
@@ -12,12 +11,12 @@ import { getCategory, toggleCategory } from '../store';
 
 export type FilterCategoryProps = {
   category: RegistrySnapCategory;
-  icon: IconName;
+  icon: FunctionComponent<IconProps>;
 };
 
 export const FilterCategory: FunctionComponent<FilterCategoryProps> = ({
   category,
-  icon,
+  icon: Icon,
 }) => {
   const dispatch = useDispatch();
   const checked = useSelector(getCategory(category));
@@ -32,7 +31,7 @@ export const FilterCategory: FunctionComponent<FilterCategoryProps> = ({
         <Trans id={SNAP_CATEGORY_LABELS[category].name.id} />
       </Text>
       <Box flexGrow={1} />
-      <Icon icon={icon} width="32px" />
+      <Icon width="2rem" fill="info.default" />
     </FilterItem>
   );
 };

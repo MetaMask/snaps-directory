@@ -9,6 +9,7 @@ import {
   FilterSearch,
   FilterTags,
 } from './components';
+import { SNAP_CATEGORY_ICONS } from './constants';
 import { filterAll, getAll, getInstalled, toggleInstalled } from './store';
 import type { RegistrySnapCategory } from '../../constants';
 import { SNAP_CATEGORY_LABELS } from '../../constants';
@@ -31,7 +32,7 @@ export const Filter: FunctionComponent = () => {
     <>
       <Menu closeOnSelect={false}>
         <MenuButton as={FilterButton} order={[3, null, 0]} />
-        <MenuList width="275px">
+        <MenuList width="17.188rem">
           <MenuGroup marginLeft="2" title={t`Filter`}>
             <FilterItem checked={all} onClick={handleClickAll}>
               <Text>
@@ -46,11 +47,11 @@ export const Filter: FunctionComponent = () => {
           </MenuGroup>
           <MenuGroup marginLeft="2" title={t`Categories`}>
             {Object.entries(SNAP_CATEGORY_LABELS).map(
-              ([category, { name, icon }]) => (
+              ([category, { name }]) => (
                 <FilterCategory
                   key={name.id}
                   category={category as RegistrySnapCategory}
-                  icon={icon}
+                  icon={SNAP_CATEGORY_ICONS[category as RegistrySnapCategory]}
                 />
               ),
             )}

@@ -13,7 +13,7 @@ const IndexPage: FunctionComponent = () => (
     paddingTop="0"
     marginTop={{ base: 4, md: 20 }}
   >
-    <Box maxWidth="500px" width="100%" marginBottom="8">
+    <Box maxWidth="31.25rem" width="100%" marginBottom="8">
       <Heading as="h2" fontSize="2xl" marginBottom="1">
         <Trans>Discover Snaps</Trans>
       </Heading>

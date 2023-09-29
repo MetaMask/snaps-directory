@@ -24,7 +24,12 @@ export const FilterTag: FunctionComponent<FilterTagProps> = ({ category }) => {
       <TagLabel>
         <Trans id={SNAP_CATEGORY_LABELS[category].name.id} />
       </TagLabel>
-      <CloseIcon onClick={handleClick} />
+      <CloseIcon
+        onClick={handleClick}
+        cursor="pointer"
+        marginLeft="1.5"
+        width="0.6875rem"
+      />
     </Tag>
   );
 };

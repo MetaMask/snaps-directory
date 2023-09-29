@@ -16,7 +16,7 @@ export const SnapData: FunctionComponent<SnapDataProps> = ({
   <Flex
     order={order}
     flexDirection="column"
-    minWidth={{ base: 'auto', md: '220px', lg: 'auto' }}
+    minWidth={{ base: 'auto', md: '13.75rem', lg: 'auto' }}
   >
     <Text
       color="gray.muted"

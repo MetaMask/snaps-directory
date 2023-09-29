@@ -2,7 +2,7 @@ import { IconButton, useColorMode } from '@chakra-ui/react';
 import { t } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
-import { Icon } from './Icon';
+import { DarkModeIcon, LightModeIcon } from './icons';
 
 export const ColorModeToggle: FunctionComponent = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -13,10 +13,11 @@ export const ColorModeToggle: FunctionComponent = () => {
       aria-label={t`Toggle color mode`}
       variant="clear"
       icon={
-        <Icon
-          icon={colorMode === 'dark' ? 'lightMode' : 'darkMode'}
-          width="24px"
-        />
+        colorMode === 'light' ? (
+          <DarkModeIcon width="1.5rem" fill="#D6D9DC" />
+        ) : (
+          <LightModeIcon width="1.5rem" fill="#D6D9DC" />
+        )
       }
       onClick={toggleColorMode}
     />

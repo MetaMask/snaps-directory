@@ -2,7 +2,7 @@ import type { BoxProps } from '@chakra-ui/react';
 import { Avatar, Box } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 
-import { Icon } from './Icon';
+import { SnapIcon } from './icons';
 
 export type SnapIconProps = BoxProps & {
   snapName: string;
@@ -20,7 +20,7 @@ export type SnapIconProps = BoxProps & {
  * @param props.isInstalled - Whether the snap is installed or not.
  * @returns The Snap icon component.
  */
-export const SnapIcon: FunctionComponent<SnapIconProps> = ({
+export const SnapAvatar: FunctionComponent<SnapIconProps> = ({
   snapName,
   icon,
   isInstalled,
@@ -36,14 +36,21 @@ export const SnapIcon: FunctionComponent<SnapIconProps> = ({
         color="text.alternative"
         size="md"
         margin="1"
+        sx={{
+          img: {
+            // This solves an issue where the avatar is slightly bigger than the
+            // Snap icon, causing it to render a weird border.
+            transform: 'scale(1.01)',
+          },
+        }}
       />
-      <Icon
-        icon={isInstalled ? 'snap' : 'snapMuted'}
-        width="24px"
-        height="24px"
+      <SnapIcon
+        width="1.5rem"
+        height="1.5rem"
         position="absolute"
-        bottom="0px"
-        right="0px"
+        bottom="0"
+        right="0"
+        fill={isInstalled ? '#0376C9' : '#6A737D'}
       />
     </Box>
   );

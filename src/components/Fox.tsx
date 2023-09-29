@@ -32,5 +32,5 @@ export const Fox: FunctionComponent = () => {
     };
   }, [ref]);
 
-  return <Box ref={callback} width="300px" height="200px" />;
+  return <Box ref={callback} width="18.75rem" height="12.5rem" />;
 };

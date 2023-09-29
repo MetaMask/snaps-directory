@@ -13,8 +13,8 @@ import {
 import { Trans } from '@lingui/macro';
 import type { FunctionComponent, ReactNode } from 'react';
 
-import { Icon } from './Icon';
-import { SnapIcon } from './SnapIcon';
+import { ExternalLinkIcon } from './icons';
+import { SnapAvatar } from './SnapAvatar';
 
 export type PostInstallModalProps = {
   isOpen: boolean;
@@ -70,7 +70,7 @@ export const PostInstallModal: FunctionComponent<PostInstallModalProps> = ({
         <ModalContent>
           <ModalBody>
             <Center flexDirection="column">
-              <SnapIcon
+              <SnapAvatar
                 snapName={name}
                 icon={icon}
                 isInstalled={true}
@@ -97,11 +97,8 @@ export const PostInstallModal: FunctionComponent<PostInstallModalProps> = ({
                       >
                         {normalizeUrl(website)}
                       </Box>
-                      <Icon
-                        icon="externalLinkMuted"
-                        marginLeft="2"
-                        width="20px"
-                      />
+                      {/* TODO: Muted icon */}
+                      <ExternalLinkIcon marginLeft="2" width="1.25rem" />
                     </Flex>
                   </Link>
                 </>

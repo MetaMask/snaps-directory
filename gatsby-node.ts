@@ -355,3 +355,61 @@ export const onCreateNode: GatsbyNode[`onCreateNode`] = async ({
     });
   }
 };
+
+/**
+ * Modify the Webpack configuration to handle SVGs using SVGR. This makes it
+ * possible to import SVGs as React components.
+ *
+ * To do this we need to remove SVG from the default file-loader and add a new
+ * rule for SVGs that uses `@svgr/webpack`.
+ *
+ * @param args - The Gatsby arguments.
+ * @param args.actions - The Gatsby actions.
+ * @param args.getConfig - A function to get the current Webpack configuration.
+ */
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
+  actions,
+  getConfig,
+}) => {
+  const { replaceWebpackConfig } = actions;
+
+  const config = getConfig();
+  const rules = config.module.rules.map((rule: Record<string, unknown>) => {
+    if (String(rule.test).includes('svg|')) {
+      return {
+        ...rule,
+        test: /\.(ico|jpg|jpeg|png|gif|webp|avif)(\?.*)?$/u,
+      };
+    }
+
+    return rule;
+  });
+
+  replaceWebpackConfig({
+    ...config,
+    module: {
+      ...config.module,
+      rules: [
+        ...rules,
+        {
+          test: /\.svg$/u,
+          issuer: /\.tsx?$/u,
+          use: [
+            {
+              loader: '@svgr/webpack',
+              options: {
+                svgo: true,
+                svgoConfig: {
+                  plugins: ['removeTitle', 'removeDesc'],
+                },
+                svgProps: {
+                  accessibilityRole: 'image',
+                },
+              },
+            },
+          ],
+        },
+      ],
+    },
+  });
+};

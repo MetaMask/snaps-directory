@@ -2,7 +2,7 @@ import { forwardRef, IconButton } from '@chakra-ui/react';
 import { t } from '@lingui/macro';
 import type { FunctionComponent, ReactNode } from 'react';
 
-import { Icon } from '../../../components';
+import { FilterIcon } from '../../../components';
 
 export type FilterButtonProps = {
   children: ReactNode;
@@ -19,7 +19,7 @@ export const FilterButton: FunctionComponent<FilterButtonProps> = forwardRef<
     isRound={true}
     aria-label={t`Filter`}
     height="auto"
-    icon={<Icon icon="filter" width="20px" />}
+    icon={<FilterIcon width="1.25rem" />}
     flexShrink="0"
   />
 ));

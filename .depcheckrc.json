@@ -5,6 +5,7 @@
     "@lavamoat/preinstall-always-fail",
     "@lingui/cli",
     "@metamask/auto-changelog",
+    "@svgr/webpack",
     "@types/*",
     "@yarnpkg/*",
     "clipanion",
