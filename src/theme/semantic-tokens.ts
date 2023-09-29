@@ -13,10 +13,6 @@ export type SemanticTokens = {
  */
 export const semanticTokens: SemanticTokens = {
   colors: {
-    'chakra-body-bg': {
-      default: '#F8FAFC',
-      _dark: '#141618',
-    },
     text: {
       default: '#24272A',
       _dark: '#9FA6AE',
@@ -38,6 +34,10 @@ export const semanticTokens: SemanticTokens = {
       },
     },
     background: {
+      body: {
+        default: '#F8FAFC',
+        _dark: '#141618',
+      },
       alternative: { default: '#F5F5F5', _dark: '#1D1F22' },
       hover: {
         default: '#FAFBFC',
