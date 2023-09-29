@@ -26,7 +26,6 @@ export const request: BaseQueryFn<Request> = async ({ method, params }) => {
 
     return { data };
   } catch (error: any) {
-    console.error(error);
     return { error };
   }
 };
