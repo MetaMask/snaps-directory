@@ -7,15 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [1.2.0]
-### Uncategorized
-- Add sticky header ([#134](https://github.com/MetaMask/snaps-directory/pull/134))
-- Refactor theme to separate folders and files ([#128](https://github.com/MetaMask/snaps-directory/pull/128))
-- Render all icons as SVGs ([#133](https://github.com/MetaMask/snaps-directory/pull/133))
-- Bump @metamask/snaps-controllers from 2.0.0 to 2.0.1 ([#132](https://github.com/MetaMask/snaps-directory/pull/132))
-- Bump @metamask/auto-changelog from 3.2.0 to 3.3.0 ([#129](https://github.com/MetaMask/snaps-directory/pull/129))
-- Add hover to all buttons ([#127](https://github.com/MetaMask/snaps-directory/pull/127))
+### Added
 - Add dark mode ([#126](https://github.com/MetaMask/snaps-directory/pull/126))
+- Add sticky header ([#134](https://github.com/MetaMask/snaps-directory/pull/134))
+- Add hover state to all buttons ([#127](https://github.com/MetaMask/snaps-directory/pull/127))
+
+### Changed
 - Show update button when a new version is available ([#125](https://github.com/MetaMask/snaps-directory/pull/125))
+- Render all icons as SVGs ([#133](https://github.com/MetaMask/snaps-directory/pull/133))
+- Bump `@metamask/snaps-controllers` from `2.0.0` to `2.0.1` ([#132](https://github.com/MetaMask/snaps-directory/pull/132))
+- Bump `@metamask/auto-changelog` from `3.2.0` to `3.3.0` ([#129](https://github.com/MetaMask/snaps-directory/pull/129))
 
 ## [1.1.1]
 ### Changed
