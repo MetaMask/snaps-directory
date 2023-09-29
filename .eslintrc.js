@@ -54,6 +54,14 @@ module.exports = {
         '@metamask/eslint-config-nodejs',
       ],
     },
+
+    {
+      files: ['./src/theme/**/*.ts'],
+      rules: {
+        '@typescript-eslint/naming-convention': 'off',
+        '@typescript-eslint/unbound-method': 'off',
+      },
+    },
   ],
 
   ignorePatterns: [
