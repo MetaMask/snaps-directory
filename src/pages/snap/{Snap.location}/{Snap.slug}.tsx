@@ -58,7 +58,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
       marginTop={{ base: 4, md: 20 }}
     >
       <BackButton />
-      <Box p="6" rounded="3xl" boxShadow="lg" background="background.header">
+      <Box p="6" rounded="3xl" boxShadow="lg" background="background.card">
         <Flex
           justifyContent="space-between"
           flexDirection={{ base: 'column', md: 'row' }}

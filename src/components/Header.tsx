@@ -17,6 +17,14 @@ export const Header: FunctionComponent<HeaderProps> = (props) => (
     flexDirection="row"
     justifyContent="space-between"
     background="background.header"
+    backdropFilter="auto"
+    backdropBlur="1.25rem"
+    backdropSaturate="180%"
+    position="fixed"
+    top="0"
+    left="0"
+    width="100%"
+    zIndex={999999}
   >
     <Container maxWidth="7xl">
       <Stack direction="row" alignItems="center" gap="2">

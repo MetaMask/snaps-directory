@@ -14,7 +14,7 @@ export const Footer: FunctionComponent<FooterProps> = (props) => (
   <Box
     {...props}
     as="footer"
-    background="background.header"
+    background="background.card"
     marginTop={{ base: 4, md: 20 }}
   >
     <Container maxWidth="7xl" paddingY="12">

@@ -12,7 +12,7 @@ export const Card: FunctionComponent<CardProps> = ({ children }) => (
     py="4"
     rounded="3xl"
     boxShadow="lg"
-    background="background.header"
+    background="background.card"
     height="10.438rem"
     _hover={{ backgroundColor: 'background.hover' }}
   >
