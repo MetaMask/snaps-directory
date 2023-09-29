@@ -1,5 +1,6 @@
 {
   "ignores": [
+    "@babel/core",
     "@chakra-ui/gatsby-plugin",
     "@lavamoat/allow-scripts",
     "@lavamoat/preinstall-always-fail",
@@ -8,6 +9,7 @@
     "@svgr/webpack",
     "@types/*",
     "@yarnpkg/*",
+    "babel-jest",
     "clipanion",
     "gatsby-plugin-*",
     "gatsby-transformer-*",

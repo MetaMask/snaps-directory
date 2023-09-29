@@ -88,7 +88,7 @@ describe('request', () => {
     });
   });
 
-  it('returns `undefined` if the provider is not available', async () => {
+  it('returns `null` if the provider is not available', async () => {
     Object.defineProperty(globalThis, 'window', {
       writable: true,
       value: {},
@@ -97,7 +97,7 @@ describe('request', () => {
     expect(
       await request({ method: 'foo' }, {} as BaseQueryApi, {}),
     ).toStrictEqual({
-      data: undefined,
+      data: null,
     });
   });
 });

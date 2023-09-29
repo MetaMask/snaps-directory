@@ -22,7 +22,12 @@ module.exports = {
   collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  collectCoverageFrom: ['./src/**/*.ts'],
+  collectCoverageFrom: [
+    './src/**/*.ts',
+    './src/**/*.tsx',
+    '!./src/**/*.d.ts',
+    '!./src/locales/**',
+  ],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: 'coverage',
@@ -41,10 +46,10 @@ module.exports = {
   // An object that configures minimum threshold enforcement for coverage results
   coverageThreshold: {
     global: {
-      branches: 35.71,
-      functions: 13.04,
-      lines: 27.1,
-      statements: 27.12,
+      branches: 23.07,
+      functions: 9.09,
+      lines: 29.1,
+      statements: 29.02,
     },
   },
 
@@ -85,7 +90,9 @@ module.exports = {
   // ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-  // moduleNameMapper: {},
+  moduleNameMapper: {
+    '^.+\\.svg$': '<rootDir>/src/__mocks__/svg.tsx',
+  },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
@@ -97,7 +104,7 @@ module.exports = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  preset: 'ts-jest',
+  // preset: 'ts-jest',
 
   // Run tests from one or more projects
   // projects: undefined,
