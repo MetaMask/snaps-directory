@@ -9,7 +9,7 @@ describe('404 page', () => {
     const { queryByText } = render(<NotFoundPage />);
     expect(
       queryByText("The page you're looking for can't be found."),
-    ).toBeDefined();
+    ).not.toBeNull();
   });
 
   describe('Head', () => {
@@ -17,7 +17,7 @@ describe('404 page', () => {
       const { queryByText } = render(<Head data={getMockSiteMetadata()} />);
       expect(
         queryByText('Page not found - MetaMask Snaps Directory'),
-      ).toBeDefined();
+      ).not.toBeNull();
     });
   });
 });

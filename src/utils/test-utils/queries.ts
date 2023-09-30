@@ -151,3 +151,32 @@ export function getMockSnap({
     },
   };
 }
+
+export type GetMockCategoryArgs = {
+  name?: RegistrySnapCategory;
+  banner?: Fields<Queries.File, 'publicURL'>;
+};
+
+/**
+ * Get mock category data in the shape of a GraphQL query response.
+ *
+ * @param args - The arguments.
+ * @param args.name - The name.
+ * @param args.banner - The banner.
+ * @returns The mock category data.
+ */
+export function getMockCategory({
+  name = RegistrySnapCategory.TransactionInsights,
+  banner = {
+    publicURL: 'https://example.com/banner.png',
+  },
+}: GetMockCategoryArgs = {}): {
+  category: Fields<Queries.Category, 'name' | 'banner'>;
+} {
+  return {
+    category: {
+      name,
+      banner: banner as Fields<Queries.File, keyof Queries.File>,
+    },
+  };
+}

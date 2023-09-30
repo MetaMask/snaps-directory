@@ -44,7 +44,7 @@ describe('Snap page', () => {
       );
       expect(
         queryByText('Foo Snap on the MetaMask Snaps Directory'),
-      ).toBeDefined();
+      ).not.toBeNull();
     });
   });
 });

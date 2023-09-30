@@ -130,7 +130,7 @@ describe('getMetaMaskProvider', () => {
       },
     });
 
-    expect(await getMetaMaskProvider()).toBeDefined();
+    expect(await getMetaMaskProvider()).not.toBeNull();
   });
 
   it('returns the provider if it is in the `window.ethereum.detected` array', async () => {
@@ -207,7 +207,7 @@ describe('getSnapsProvider', () => {
       },
     });
 
-    expect(await getSnapsProvider()).toBeDefined();
+    expect(await getSnapsProvider()).not.toBeNull();
   });
 
   it('returns the provider if it is in the `window.ethereum.detected` array', async () => {
