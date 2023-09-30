@@ -155,6 +155,7 @@ export function getMockSnap({
 export type GetMockCategoryArgs = {
   name?: RegistrySnapCategory;
   banner?: Fields<Queries.File, 'publicURL'>;
+  installedBanner?: Fields<Queries.File, 'publicURL'>;
 };
 
 /**
@@ -163,6 +164,7 @@ export type GetMockCategoryArgs = {
  * @param args - The arguments.
  * @param args.name - The name.
  * @param args.banner - The banner.
+ * @param args.installedBanner - The installed banner.
  * @returns The mock category data.
  */
 export function getMockCategory({
@@ -170,13 +172,20 @@ export function getMockCategory({
   banner = {
     publicURL: 'https://example.com/banner.png',
   },
+  installedBanner = {
+    publicURL: 'https://example.com/installed-banner.png',
+  },
 }: GetMockCategoryArgs = {}): {
-  category: Fields<Queries.Category, 'name' | 'banner'>;
+  category: Fields<Queries.Category, 'name' | 'banner' | 'installedBanner'>;
 } {
   return {
     category: {
       name,
       banner: banner as Fields<Queries.File, keyof Queries.File>,
+      installedBanner: installedBanner as Fields<
+        Queries.File,
+        keyof Queries.File
+      >,
     },
   };
 }
