@@ -25,7 +25,7 @@
     "lint:misc": "prettier '**/*.json' '**/*.md' '!CHANGELOG.md' '**/*.yml' '!.yarnrc.yml' --ignore-path .gitignore --no-error-on-unmatched-pattern",
     "serve": "gatsby serve",
     "start": "yarn lang:compile && gatsby develop",
-    "test": "jest --passWithNoTests && jest-it-up",
+    "test": "yarn lang:compile && jest --passWithNoTests && jest-it-up",
     "test:watch": "jest --watch",
     "typecheck": "tsc --noEmit"
   },

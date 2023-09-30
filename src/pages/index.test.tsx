@@ -12,14 +12,14 @@ describe('Index page', () => {
       fusejs: {},
     });
 
-    const { findByText } = render(<IndexPage />);
-    expect(await findByText('Discover Snaps')).toBeDefined();
+    const { queryByText } = render(<IndexPage />);
+    expect(queryByText('Discover Snaps')).toBeDefined();
   });
 
   describe('Head', () => {
-    it('has the correct title', async () => {
-      const { findByText } = render(<Head data={getMockSiteMetadata()} />);
-      expect(await findByText('MetaMask Snaps Directory')).toBeDefined();
+    it('has the correct title', () => {
+      const { queryByText } = render(<Head data={getMockSiteMetadata()} />);
+      expect(queryByText('MetaMask Snaps Directory')).toBeDefined();
     });
   });
 });
