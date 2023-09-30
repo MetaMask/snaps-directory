@@ -7,34 +7,32 @@ import banner from '../assets/images/seo/home.png';
 import { Fox } from '../components';
 import type { Fields } from '../utils';
 
-const NotFoundPage = () => {
-  return (
-    <Container
-      display="flex"
-      flexDirection="column"
-      marginY="12"
-      alignItems="center"
-      textAlign="center"
-      maxWidth="container.md"
+const NotFoundPage: FunctionComponent = () => (
+  <Container
+    display="flex"
+    flexDirection="column"
+    marginY="12"
+    alignItems="center"
+    textAlign="center"
+    maxWidth="container.md"
+  >
+    <Fox />
+    <Heading
+      as="h1"
+      fontWeight="500"
+      fontSize={['2xl', '4xl', '5xl']}
+      marginY="6"
+      lineHeight="116%"
     >
-      <Fox />
-      <Heading
-        as="h1"
-        fontWeight="500"
-        fontSize={['2xl', '4xl', '5xl']}
-        marginY="6"
-        lineHeight="116%"
-      >
-        <Trans>The page you&apos;re looking for can&apos;t be found.</Trans>
-      </Heading>
-      <Link to="/">
-        <Button variant="primary">
-          <Trans>Go home</Trans>
-        </Button>
-      </Link>
-    </Container>
-  );
-};
+      <Trans>The page you&apos;re looking for can&apos;t be found.</Trans>
+    </Heading>
+    <Link to="/">
+      <Button variant="primary">
+        <Trans>Go home</Trans>
+      </Button>
+    </Link>
+  </Container>
+);
 
 type HeadProps = {
   data: {

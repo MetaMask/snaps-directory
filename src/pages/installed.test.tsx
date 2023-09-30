@@ -4,7 +4,7 @@ import { navigate } from 'gatsby';
 import Installed, { Head } from './installed';
 import { getInstalled } from '../features';
 import { createStore } from '../store';
-import { render } from '../utils';
+import { render } from '../utils/test-utils';
 
 describe('Installed page', () => {
   it('renders', () => {

@@ -2,7 +2,7 @@ import { describe } from '@jest/globals';
 import { useStaticQuery } from 'gatsby';
 
 import IndexPage, { Head } from '.';
-import { render, getMock } from '../utils';
+import { render, getMock } from '../utils/test-utils';
 import { getMockSiteMetadata } from '../utils/test-utils/queries';
 
 describe('Index page', () => {
