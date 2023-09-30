@@ -46,10 +46,10 @@ module.exports = {
   // An object that configures minimum threshold enforcement for coverage results
   coverageThreshold: {
     global: {
-      branches: 23.07,
-      functions: 9.67,
-      lines: 29.76,
-      statements: 29.68,
+      branches: 32.71,
+      functions: 35.84,
+      lines: 44.36,
+      statements: 44.15,
     },
   },
 
@@ -92,6 +92,7 @@ module.exports = {
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
     '^.+\\.svg$': '<rootDir>/src/__mocks__/svg.tsx',
+    '^.+\\.png': '<rootDir>/src/__mocks__/file.ts',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

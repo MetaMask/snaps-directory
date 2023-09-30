@@ -1,3 +1,4 @@
+import { ChakraProvider } from '@chakra-ui/react';
 import { i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
 import { render as renderComponent } from '@testing-library/react';
@@ -10,6 +11,14 @@ import { createStore } from '../../store';
 i18n.load('en', messages);
 i18n.activate('en');
 
+Object.assign(globalThis, 'window', {
+  matchMedia: () => ({
+    matches: false,
+    addListener: jest.fn(),
+    removeEventListener: jest.fn(),
+  }),
+});
+
 /**
  * Render a React element, wrapped in the necessary providers.
  *
@@ -21,7 +30,9 @@ export function render(element: ReactElement, store = createStore()) {
   return renderComponent(element, {
     wrapper: ({ children }) => (
       <Provider store={store}>
-        <I18nProvider i18n={i18n}>{children}</I18nProvider>
+        <I18nProvider i18n={i18n}>
+          <ChakraProvider>{children}</ChakraProvider>
+        </I18nProvider>
       </Provider>
     ),
   });
