@@ -1,6 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
+import type { RenderHookResult } from '@testing-library/react';
 import {
   render as renderComponent,
   renderHook as renderHookTest,
@@ -59,7 +60,10 @@ export function render(element: ReactElement, store = createStore()) {
  * @param store - The store to use. Defaults to a new store.
  * @returns The rendered hook.
  */
-export function renderHook(hook: () => unknown, store = createStore()) {
+export function renderHook<Result>(
+  hook: () => Result,
+  store = createStore(),
+): RenderHookResult<Result, never> {
   return renderHookTest(() => hook(), {
     wrapper: ({ children }) => wrapChildren(children, store),
   });
