@@ -47,9 +47,9 @@ module.exports = {
   coverageThreshold: {
     global: {
       branches: 23.07,
-      functions: 9.09,
-      lines: 29.1,
-      statements: 29.02,
+      functions: 9.67,
+      lines: 29.76,
+      statements: 29.68,
     },
   },
 
@@ -151,7 +151,7 @@ module.exports = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  // testEnvironment: "jest-environment-node",
+  testEnvironment: 'jest-environment-jsdom',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -189,7 +189,10 @@ module.exports = {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  // transform: undefined,
+  transform: {
+    '^.+\\.tsx?$': 'babel-jest',
+    '^.+\\.m?jsx?$': 'babel-jest',
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [

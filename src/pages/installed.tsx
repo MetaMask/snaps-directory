@@ -27,7 +27,7 @@ const Installed: FunctionComponent = () => {
     navigate('/');
   }, [dispatch]);
 
-  return null;
+  return <>foo</>;
 };
 
 export type HeadProps = {
