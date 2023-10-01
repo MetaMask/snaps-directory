@@ -46,7 +46,7 @@ describe('Category page', () => {
         queryByText(
           'Transaction Insights Snaps on the MetaMask Snaps Directory',
         ),
-      ).not.toBeNull();
+      ).toBeInTheDocument();
     });
   });
 });

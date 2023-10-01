@@ -21,7 +21,7 @@ describe('Snap page', () => {
       <SnapPage data={getMockSnap({ name: 'Foo Snap', onboard: true })} />,
     );
 
-    expect(queryByText('Add to MetaMask')).toBeNull();
+    expect(queryByText('Add to MetaMask')).not.toBeInTheDocument();
   });
 
   it('does not render the support section if the Snap has no support links', async () => {
@@ -29,7 +29,7 @@ describe('Snap page', () => {
       <SnapPage data={getMockSnap({ name: 'Foo Snap', support: {} })} />,
     );
 
-    expect(queryByText('Contact')).toBeNull();
+    expect(queryByText('Contact')).not.toBeInTheDocument();
   });
 
   describe('Head', () => {
@@ -44,7 +44,7 @@ describe('Snap page', () => {
       );
       expect(
         queryByText('Foo Snap on the MetaMask Snaps Directory'),
-      ).not.toBeNull();
+      ).toBeInTheDocument();
     });
   });
 });

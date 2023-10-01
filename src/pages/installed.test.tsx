@@ -44,7 +44,7 @@ describe('Installed page', () => {
       const { queryByText } = render(<Head data={data} />);
       expect(
         queryByText('Installed Snaps on the MetaMask Snaps Directory'),
-      ).not.toBeNull();
+      ).toBeInTheDocument();
     });
   });
 });

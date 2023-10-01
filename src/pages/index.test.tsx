@@ -13,13 +13,13 @@ describe('Index page', () => {
     });
 
     const { queryByText } = render(<IndexPage />);
-    expect(queryByText('Discover Snaps')).not.toBeNull();
+    expect(queryByText('Discover Snaps')).toBeInTheDocument();
   });
 
   describe('Head', () => {
     it('has the correct title', () => {
       const { queryByText } = render(<Head data={getMockSiteMetadata()} />);
-      expect(queryByText('MetaMask Snaps Directory')).not.toBeNull();
+      expect(queryByText('MetaMask Snaps Directory')).toBeInTheDocument();
     });
   });
 });

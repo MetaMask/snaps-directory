@@ -1,4 +1,4 @@
-import { jest } from '@jest/globals';
+import { expect, jest } from '@jest/globals';
 import type { MetaMaskInpageProvider } from '@metamask/providers';
 import { when } from 'jest-when';
 
@@ -31,11 +31,19 @@ export function getRequestMethodMock(methods: Methods) {
       when<Promise<unknown>, unknown[]>(fn)
         .calledWith({ method })
         .mockRejectedValue(result);
+
+      when<Promise<unknown>, unknown[]>(fn)
+        .calledWith({ method, params: expect.anything() })
+        .mockRejectedValue(result);
       continue;
     }
 
     when<Promise<unknown>, unknown[]>(fn)
       .calledWith({ method })
+      .mockResolvedValue(result);
+
+    when<Promise<unknown>, unknown[]>(fn)
+      .calledWith({ method, params: expect.anything() })
       .mockResolvedValue(result);
   }
 

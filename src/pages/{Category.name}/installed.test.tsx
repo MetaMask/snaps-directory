@@ -55,7 +55,7 @@ describe('Category installed page', () => {
         queryByText(
           'Installed Transaction Insights Snaps on the MetaMask Snaps Directory',
         ),
-      ).not.toBeNull();
+      ).toBeInTheDocument();
     });
   });
 });
