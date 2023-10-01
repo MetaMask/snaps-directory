@@ -417,6 +417,15 @@ describe('filterSlice', () => {
         snaps: {
           snaps: [fooSnap, barSnap, bazSnap],
         },
+        snapsApi: {
+          queries: {
+            'getInstalledSnaps(undefined)': getMockQueryResponse({
+              [fooSnap.snapId]: {
+                version: fooSnap.latestVersion,
+              },
+            }),
+          },
+        },
       });
 
       expect(getFilteredSnaps(state)).toStrictEqual([
