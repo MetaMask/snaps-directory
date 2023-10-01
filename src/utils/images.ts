@@ -3,6 +3,8 @@
 
 /* eslint-disable no-restricted-globals */
 
+// eslint-disable-next-line import/no-nodejs-modules
+import assert from 'assert';
 import Jimp from 'jimp';
 import shuffle from 'lodash/shuffle';
 // eslint-disable-next-line import/no-nodejs-modules
@@ -355,9 +357,7 @@ export async function generateInstalledImage(
 
     for (const rowX of rowXs) {
       const snap = shuffle(filteredSnaps)[0];
-      if (!snap) {
-        break;
-      }
+      assert(snap);
 
       const snapIcon = await getRoundIcon(snap.icon, INSTALLED_SIZE);
       layers.push({

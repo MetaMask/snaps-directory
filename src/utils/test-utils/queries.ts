@@ -67,7 +67,7 @@ export type MockSnap = Fields<
 export type GetMockSnapArgs = {
   id?: string;
   name?: string;
-  icon?: string;
+  icon?: string | null;
   snapId?: string;
   description?: Fields<Queries.SnapDescription, 'description' | 'trusted'>;
   summary?: string;
@@ -146,7 +146,7 @@ export function getMockSnap({
     snap: {
       id,
       name,
-      icon,
+      icon: icon as string,
       snapId,
       description,
       summary,

@@ -82,3 +82,6 @@ node_modules/
 public
 src/gatsby-types.d.ts
 src/locales/*/messages.mjs
+
+# jest-image-snapshot
+__diff_output__/
