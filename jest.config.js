@@ -49,9 +49,9 @@ module.exports = {
   coverageThreshold: {
     global: {
       branches: 89.03,
-      functions: 90.9,
-      lines: 81.36,
-      statements: 81.35,
+      functions: 92.2,
+      lines: 82.65,
+      statements: 82.63,
     },
   },
 
@@ -94,7 +94,7 @@ module.exports = {
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
     '^.+\\.svg$': '<rootDir>/src/__mocks__/svg.tsx',
-    '^.+\\.png': '<rootDir>/src/__mocks__/file.ts',
+    '^.+\\.(png|css)': '<rootDir>/src/__mocks__/file.ts',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
