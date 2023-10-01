@@ -30,6 +30,7 @@ export const Icon: FunctionComponent<IconProps> = ({
   return (
     <Box
       {...props}
+      as="span"
       sx={{
         '& > svg': {
           fill,
