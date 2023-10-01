@@ -46,10 +46,12 @@ export function getMockSiteMetadata({
 
 export type MockSnap = Fields<
   Queries.Snap,
+  | 'id'
   | 'name'
   | 'icon'
   | 'snapId'
   | 'description'
+  | 'summary'
   | 'latestVersion'
   | 'website'
   | 'onboard'
@@ -59,13 +61,16 @@ export type MockSnap = Fields<
   | 'audits'
   | 'banner'
   | 'support'
+  | 'gatsbyPath'
 >;
 
 export type GetMockSnapArgs = {
+  id?: string;
   name?: string;
   icon?: string;
   snapId?: string;
   description?: Fields<Queries.SnapDescription, 'description' | 'trusted'>;
+  summary?: string;
   latestVersion?: string;
   website?: string;
   onboard?: boolean;
@@ -77,16 +82,19 @@ export type GetMockSnapArgs = {
   support?: Partial<
     Fields<Queries.SnapSupport, 'contact' | 'faq' | 'knowledgeBase'>
   >;
+  gatsbyPath?: string;
 };
 
 /**
  * Get mock snap data in the shape of a GraphQL query response.
  *
  * @param args - The arguments.
+ * @param args.id - The ID.
  * @param args.name - The name.
  * @param args.icon - The icon.
  * @param args.snapId - The snap ID.
  * @param args.description - The description.
+ * @param args.summary - The summary.
  * @param args.latestVersion - The latest version.
  * @param args.website - The website.
  * @param args.onboard - Whether the snap is onboarded.
@@ -96,9 +104,11 @@ export type GetMockSnapArgs = {
  * @param args.audits - The audits.
  * @param args.banner - The banner.
  * @param args.support - The support page URL.
+ * @param args.gatsbyPath - The Gatsby path.
  * @returns The mock snap data.
  */
 export function getMockSnap({
+  id = 'id',
   name = 'Snap',
   icon = 'https://example.com/icon.png',
   snapId = 'snap-id',
@@ -106,6 +116,7 @@ export function getMockSnap({
     description: 'Description',
     trusted: true,
   },
+  summary = 'Summary',
   latestVersion = '1.0.0',
   website = 'https://example.com',
   onboard = false,
@@ -129,13 +140,16 @@ export function getMockSnap({
     faq: 'https://example.com/faq',
     knowledgeBase: 'https://example.com/knowledge-base',
   },
+  gatsbyPath = `/snap/${snapId}`,
 }: GetMockSnapArgs = {}): { snap: MockSnap } {
   return {
     snap: {
+      id,
       name,
       icon,
       snapId,
       description,
+      summary,
       latestVersion,
       website,
       onboard,
@@ -148,6 +162,7 @@ export function getMockSnap({
         Queries.SnapSupport,
         keyof Queries.SnapSupport
       >,
+      gatsbyPath,
     },
   };
 }
