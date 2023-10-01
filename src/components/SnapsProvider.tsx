@@ -10,7 +10,7 @@ import type { createStore } from '../store';
 
 export type SnapsProviderProps = {
   store: ReturnType<typeof createStore>;
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 type SnapsQueryData = {
