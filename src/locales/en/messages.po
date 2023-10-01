@@ -147,7 +147,6 @@ msgid "Feedback"
 msgstr ""
 
 #: src/components/icons/index.ts
-#: src/features/filter/components/FilterButton.tsx
 #: src/features/filter/Filter.tsx
 msgid "Filter"
 msgstr ""
@@ -227,6 +226,10 @@ msgstr ""
 
 #: src/components/Header.tsx
 msgid "Open Beta"
+msgstr ""
+
+#: src/features/filter/components/FilterButton.tsx
+msgid "Open filter menu"
 msgstr ""
 
 #: src/components/FooterCopyright.tsx
