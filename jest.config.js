@@ -28,6 +28,7 @@ module.exports = {
     '!./src/**/*.d.ts',
     '!./src/locales/**',
     '!./src/utils/test-utils/**',
+    '!./src/!(pages)/**/index.{ts,tsx}',
   ],
 
   // The directory where Jest should output its coverage files
