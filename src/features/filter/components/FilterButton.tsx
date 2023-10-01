@@ -5,7 +5,7 @@ import type { FunctionComponent, ReactNode } from 'react';
 import { FilterIcon } from '../../../components';
 
 export type FilterButtonProps = {
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 export const FilterButton: FunctionComponent<FilterButtonProps> = forwardRef<
@@ -14,6 +14,7 @@ export const FilterButton: FunctionComponent<FilterButtonProps> = forwardRef<
 >((props, ref) => (
   <IconButton
     ref={ref}
+    data-testid="filter-button"
     {...props}
     variant="shadow"
     isRound={true}
