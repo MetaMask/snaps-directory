@@ -2,7 +2,10 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import type { NoInfer } from '@reduxjs/toolkit/src/tsHelpers';
 import type { CombinedState, PreloadedState } from 'redux';
 
-import { snapsSlice, filterSlice, snapsApi } from '../features';
+// Imported separately to avoid circular dependencies.
+import { filterSlice } from '../features/filter/store';
+import { snapsApi } from '../features/snaps/api';
+import { snapsSlice } from '../features/snaps/store';
 
 const reducer = combineReducers({
   filter: filterSlice.reducer,
