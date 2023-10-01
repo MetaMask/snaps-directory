@@ -20,6 +20,7 @@ export const NoSnaps: FunctionComponent = () => {
       paddingY="6rem"
       background="gray.light"
       borderRadius="3xl"
+      data-testid="no-snaps"
     >
       <Center flexDirection="column" gap="4" maxWidth="19.375rem">
         <Fox />

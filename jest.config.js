@@ -46,10 +46,10 @@ module.exports = {
   // An object that configures minimum threshold enforcement for coverage results
   coverageThreshold: {
     global: {
-      branches: 68.98,
-      functions: 65.68,
-      lines: 67.75,
-      statements: 67.74,
+      branches: 72.34,
+      functions: 68.04,
+      lines: 70.03,
+      statements: 70,
     },
   },
 
@@ -143,7 +143,7 @@ module.exports = {
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  // setupFilesAfterEnv: [],
+  setupFilesAfterEnv: ['@testing-library/jest-dom'],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
