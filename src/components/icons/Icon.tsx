@@ -5,7 +5,7 @@ import { useLingui } from '@lingui/react';
 import type { FunctionComponent } from 'react';
 
 export type IconProps = BoxProps & {
-  as?: As;
+  as: As;
   label?: MessageDescriptor;
   fill?: string;
 };
@@ -30,6 +30,7 @@ export const Icon: FunctionComponent<IconProps> = ({
   return (
     <Box
       {...props}
+      as="span"
       sx={{
         '& > svg': {
           fill,
@@ -37,7 +38,7 @@ export const Icon: FunctionComponent<IconProps> = ({
       }}
     >
       <Box
-        as={as ?? 'svg'}
+        as={as}
         aria-label={label && i18n._(label)}
         width="100%"
         height="100%"
@@ -48,5 +49,5 @@ export const Icon: FunctionComponent<IconProps> = ({
 
 export const wrapIcon =
   (IconComponent: FunctionComponent, label: MessageDescriptor) =>
-  ({ as, ...props }: IconProps) =>
+  (props: Omit<IconProps, 'as'>) =>
     <Icon as={IconComponent} label={label} {...props} />;

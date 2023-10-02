@@ -19,7 +19,7 @@ export type Fields<Query, Name extends keyof Query> = {
  * `window.ethereum`.
  * @returns True if the provider supports snaps, false otherwise.
  */
-async function hasSnapsSupport(
+export async function hasSnapsSupport(
   provider: MetaMaskInpageProvider = window.ethereum,
 ) {
   try {
@@ -40,7 +40,7 @@ async function hasSnapsSupport(
  * `window.ethereum`.
  * @returns True if the provider is MetaMask, false otherwise.
  */
-async function isMetaMaskProvider(
+export async function isMetaMaskProvider(
   provider: MetaMaskInpageProvider = window.ethereum,
 ) {
   try {
@@ -136,7 +136,7 @@ export function getLatestSnapVersion(snap: VerifiedSnap) {
   // This should never happen. The validation in the registry ensures that
   // there is always at least one version.
   if (!latest) {
-    throw new Error(`No latest version found for snap: ${snap.id}.`);
+    throw new Error(`No latest version found for Snap: ${snap.id}.`);
   }
 
   return latest;

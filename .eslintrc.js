@@ -49,9 +49,11 @@ module.exports = {
 
     {
       files: ['*.test.ts', '*.test.tsx', '*.test.js'],
+      plugins: ['eslint-plugin-jest-dom'],
       extends: [
         '@metamask/eslint-config-jest',
         '@metamask/eslint-config-nodejs',
+        'plugin:jest-dom/recommended',
       ],
     },
 

@@ -23,6 +23,7 @@ export const InstallUnsupported: FunctionComponent = () => {
       variant="primary"
       onClick={onOpen}
       width={{ base: '100%', md: 'auto' }}
+      data-testid="install-unsupported-button"
     >
       <Trans>Add to MetaMask</Trans>
     </Button>

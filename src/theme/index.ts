@@ -12,7 +12,8 @@ const config: ThemeConfig = {
   useSystemColorMode: true,
 };
 
-export const theme = extendTheme({
+// Extracted into a separate variable for testing purposes.
+export const themeConfig = {
   colors,
   components,
   config,
@@ -21,4 +22,6 @@ export const theme = extendTheme({
   styles: {
     global,
   },
-});
+};
+
+export const theme = extendTheme(themeConfig);

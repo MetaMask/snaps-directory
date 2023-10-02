@@ -5,7 +5,7 @@ import type { FunctionComponent, ReactNode } from 'react';
 import { FilterIcon } from '../../../components';
 
 export type FilterButtonProps = {
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 export const FilterButton: FunctionComponent<FilterButtonProps> = forwardRef<
@@ -14,10 +14,11 @@ export const FilterButton: FunctionComponent<FilterButtonProps> = forwardRef<
 >((props, ref) => (
   <IconButton
     ref={ref}
+    data-testid="filter-button"
     {...props}
     variant="shadow"
     isRound={true}
-    aria-label={t`Filter`}
+    aria-label={t`Open filter menu`}
     height="auto"
     icon={<FilterIcon width="1.25rem" />}
     flexShrink="0"

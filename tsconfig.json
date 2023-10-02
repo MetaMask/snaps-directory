@@ -11,6 +11,7 @@
     "noUncheckedIndexedAccess": true,
     "strict": true,
     "target": "es2020",
+    "types": ["@testing-library/jest-dom"],
     "jsx": "preserve"
   },
   "include": [
@@ -19,6 +20,7 @@
     "gatsby-config.ts",
     "gatsby-browser.tsx",
     "gatsby-ssr.tsx",
+    "jest.setup.ts",
     "lingui.config.ts"
   ],
   "exclude": ["./dist/**/*"]

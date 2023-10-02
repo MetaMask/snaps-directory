@@ -19,14 +19,14 @@ export type Request = {
 export const request: BaseQueryFn<Request> = async ({ method, params }) => {
   try {
     const provider = await getSnapsProvider();
-    const data = await provider?.request({
-      method,
-      params,
-    } as RequestArguments);
+    const data =
+      (await provider?.request({
+        method,
+        params,
+      } as RequestArguments)) ?? null;
 
     return { data };
   } catch (error: any) {
-    console.error(error);
     return { error };
   }
 };

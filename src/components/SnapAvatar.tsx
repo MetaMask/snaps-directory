@@ -51,6 +51,7 @@ export const SnapAvatar: FunctionComponent<SnapIconProps> = ({
         bottom="0"
         right="0"
         fill={isInstalled ? '#0376C9' : '#6A737D'}
+        data-testid="snap-icon"
       />
     </Box>
   );

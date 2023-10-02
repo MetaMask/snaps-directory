@@ -30,10 +30,10 @@ export const Filter: FunctionComponent = () => {
 
   return (
     <>
-      <Menu closeOnSelect={false}>
+      <Menu closeOnSelect={false} isLazy={true}>
         <MenuButton as={FilterButton} order={[3, null, 0]} />
         <MenuList width="17.188rem">
-          <MenuGroup marginLeft="2" title={t`Filter`}>
+          <MenuGroup marginLeft="2" title={t`Filter`} data-testid="menu-group">
             <FilterItem checked={all} onClick={handleClickAll}>
               <Text>
                 <Trans>All</Trans>
@@ -45,7 +45,11 @@ export const Filter: FunctionComponent = () => {
               </Text>
             </FilterItem>
           </MenuGroup>
-          <MenuGroup marginLeft="2" title={t`Categories`}>
+          <MenuGroup
+            marginLeft="2"
+            title={t`Categories`}
+            data-testid="menu-group"
+          >
             {Object.entries(SNAP_CATEGORY_LABELS).map(
               ([category, { name }]) => (
                 <FilterCategory

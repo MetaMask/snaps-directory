@@ -1,6 +1,6 @@
 import { Link, Text } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
-import { useMemo } from 'react';
+import { Fragment, useMemo } from 'react';
 
 import { ExternalLink } from './ExternalLink';
 import type { Fields } from '../utils';
@@ -55,16 +55,12 @@ export const SnapAudits: FunctionComponent<SnapAuditsProps> = ({ audits }) => {
           <Text key={`auditor-${auditor}`}>
             {auditor}
             {reports.map((report, index) => (
-              <>
+              <Fragment key={`audit-report-${auditor}-${report}`}>
                 {' '}
-                <Link
-                  isExternal={true}
-                  key={`audit-report-${auditor}-${report}`}
-                  href={report}
-                >
+                <Link isExternal={true} href={report}>
                   [{index + 1}]
                 </Link>
-              </>
+              </Fragment>
             ))}
           </Text>
         );
