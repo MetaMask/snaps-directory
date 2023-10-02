@@ -10,14 +10,8 @@ import {
   FilterTags,
 } from './components';
 import { FilterOrder } from './components/FilterOrder';
-import { SNAP_CATEGORY_ICONS } from './constants';
-import {
-  filterAll,
-  getAll,
-  getInstalled,
-  Order,
-  toggleInstalled,
-} from './store';
+import { Order, SNAP_CATEGORY_ICONS } from './constants';
+import { filterAll, getAll, getInstalled, toggleInstalled } from './store';
 import type { RegistrySnapCategory } from '../../constants';
 import { SNAP_CATEGORY_LABELS } from '../../constants';
 import { useDispatch, useSelector } from '../../hooks';

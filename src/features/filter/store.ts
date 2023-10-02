@@ -1,17 +1,13 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 
+import { Order } from './constants';
 import { RegistrySnapCategory } from '../../constants';
 import type { ApplicationState } from '../../store';
 import type { Snap } from '../snaps';
 import { getInstalledSnaps } from '../snaps';
 
 export type SearchResult = { item: Snap };
-
-export enum Order {
-  Random = 'random',
-  Alphabetical = 'name',
-}
 
 export const SORT_FUNCTIONS = {
   // Snaps are randomly sorted by default, so this is a no-op.

@@ -4,8 +4,8 @@ import type { FunctionComponent } from 'react';
 
 import { FilterItem } from './FilterItem';
 import { useDispatch, useSelector } from '../../../hooks';
+import type { Order } from '../constants';
 import { SNAP_ORDER_LABELS } from '../constants';
-import type { Order } from '../store';
 import { getOrder, setOrder } from '../store';
 
 export type FilterOrderProps = {

@@ -1,11 +1,10 @@
 import { defineMessage } from '@lingui/macro';
 
-import { Order } from './store';
 import {
   InteroperabilityIcon,
   NotificationsIcon,
   TransactionInsightsIcon,
-} from '../../components';
+} from '../../components/icons';
 import { RegistrySnapCategory } from '../../constants';
 
 export const SNAP_CATEGORY_ICONS = {
@@ -13,6 +12,11 @@ export const SNAP_CATEGORY_ICONS = {
   [RegistrySnapCategory.Notifications]: NotificationsIcon,
   [RegistrySnapCategory.TransactionInsights]: TransactionInsightsIcon,
 };
+
+export enum Order {
+  Random = 'random',
+  Alphabetical = 'name',
+}
 
 export const SNAP_ORDER_LABELS = {
   [Order.Random]: defineMessage`Random`,
