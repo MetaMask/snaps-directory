@@ -1,3 +1,4 @@
+import { beforeEach } from '@jest/globals';
 import { act } from 'react-dom/test-utils';
 
 import {
@@ -19,6 +20,10 @@ import {
 } from '../../utils/test-utils';
 
 describe('snapsApi', () => {
+  beforeEach(() => {
+    jest.spyOn(analytics, 'track').mockImplementation();
+  });
+
   describe('getVersion', () => {
     it('returns the version', async () => {
       Object.assign(globalThis, 'window', {
@@ -176,7 +181,7 @@ describe('snapsApi', () => {
         }),
       });
 
-      const spy = jest.spyOn(analytics, 'track');
+      const spy = jest.spyOn(analytics, 'track').mockImplementation();
       const { result } = await act(() =>
         renderHook(() => useInstallSnapMutation()),
       );
@@ -217,7 +222,7 @@ describe('snapsApi', () => {
         }),
       });
 
-      const spy = jest.spyOn(analytics, 'track');
+      const spy = jest.spyOn(analytics, 'track').mockImplementation();
       const { result } = await act(() =>
         renderHook(() => useInstallSnapMutation()),
       );
@@ -255,7 +260,7 @@ describe('snapsApi', () => {
         }),
       });
 
-      const spy = jest.spyOn(analytics, 'track');
+      const spy = jest.spyOn(analytics, 'track').mockImplementation();
       const { result } = await act(() =>
         renderHook(() => useInstallSnapMutation()),
       );
@@ -293,7 +298,7 @@ describe('snapsApi', () => {
         }),
       });
 
-      const spy = jest.spyOn(analytics, 'track');
+      const spy = jest.spyOn(analytics, 'track').mockImplementation();
       const { result } = await act(() =>
         renderHook(() => useInstallSnapMutation()),
       );
@@ -345,7 +350,7 @@ describe('snapsApi', () => {
         },
       });
 
-      const spy = jest.spyOn(analytics, 'track');
+      const spy = jest.spyOn(analytics, 'track').mockImplementation();
       const { result } = await act(() =>
         renderHook(() => useInstallSnapMutation(), store),
       );

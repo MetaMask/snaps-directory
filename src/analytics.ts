@@ -71,8 +71,8 @@ export type SnapEvent =
  * Track Snaps Directory events.
  *
  * @param event - The event to track.
+ * @param event.type - The type of event to track.
  */
-export function track(event: SnapEvent): void {
-  // TODO: Implement Segment.
-  console.log(event);
+export function track({ type, ...data }: SnapEvent): void {
+  window.analytics.track(type, data);
 }
