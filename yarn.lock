@@ -5096,6 +5096,7 @@ __metadata:
     "@metamask/snaps-controllers": ^2.0.0
     "@metamask/snaps-registry": ^2.0.0
     "@metamask/snaps-utils": ^2.0.0
+    "@metamask/utils": ^8.1.0
     "@reduxjs/toolkit": ^1.9.6
     "@svgr/webpack": ^8.1.0
     "@testing-library/jest-dom": ^6.1.3
@@ -5352,24 +5353,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/hashes@npm:1.3.1":
-  version: 1.3.1
-  resolution: "@noble/hashes@npm:1.3.1"
-  checksum: 7fdefc0f7a0c1ec27acc6ff88841793e3f93ec4ce6b8a6a12bfc0dd70ae6b7c4c82fe305fdfeda1735d5ad4a9eebe761e6693b3d355689c559e91242f4bc95b1
-  languageName: node
-  linkType: hard
-
-"@noble/hashes@npm:^1.0.0, @noble/hashes@npm:^1.3.1, @noble/hashes@npm:~1.3.0, @noble/hashes@npm:~1.3.1":
+"@noble/hashes@npm:1.3.2":
   version: 1.3.2
   resolution: "@noble/hashes@npm:1.3.2"
   checksum: fe23536b436539d13f90e4b9be843cc63b1b17666a07634a2b1259dded6f490be3d050249e6af98076ea8f2ea0d56f578773c2197f2aa0eeaa5fba5bc18ba474
   languageName: node
   linkType: hard
 
-"@noble/hashes@npm:~1.1.1":
-  version: 1.1.5
-  resolution: "@noble/hashes@npm:1.1.5"
-  checksum: de3f095a7ac1cbf5b4b3d09f193288d4f2eec35fbadf2ed9fd7e47d8a3042fef410052ba62dc0296a185f994c11192f5357fdb1bd9178c905efd82e946c53b00
+"@noble/hashes@patch:@noble/hashes@npm%3A1.3.2#./.yarn/patches/@noble-hashes-npm-1.3.2-1e619f9da0.patch::locator=%40metamask%2Fsnaps-directory%40workspace%3A.":
+  version: 1.3.2
+  resolution: "@noble/hashes@patch:@noble/hashes@npm%3A1.3.2#./.yarn/patches/@noble-hashes-npm-1.3.2-1e619f9da0.patch::version=1.3.2&hash=3bec85&locator=%40metamask%2Fsnaps-directory%40workspace%3A."
+  checksum: af760f0c6aa312e66f72288a0d464d9d2e7612f5c543c46cbf4b97af04ac9b97ac5afe07f97678536b059c90d1f6a10adcde663b40ce114d7115f8b9dce21e91
   languageName: node
   linkType: hard
 

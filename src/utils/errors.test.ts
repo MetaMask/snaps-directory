@@ -1,4 +1,4 @@
-import { formatErrorMessage, getErrorMessage, hasProperty } from './errors';
+import { formatErrorMessage, getErrorMessage } from './errors';
 
 describe('formatErrorMessage', () => {
   it('capitalizes the first letter of the message', () => {
@@ -8,16 +8,6 @@ describe('formatErrorMessage', () => {
   it('adds a period at the end if the message does not have one', () => {
     expect(formatErrorMessage('foo')).toBe('Foo.');
     expect(formatErrorMessage('foo.')).toBe('Foo.');
-  });
-});
-
-describe('hasProperty', () => {
-  it('returns true if the object has the property', () => {
-    expect(hasProperty({ foo: 'bar' }, 'foo')).toBe(true);
-  });
-
-  it('returns false if the object does not have the property', () => {
-    expect(hasProperty({ foo: 'bar' }, 'bar')).toBe(false);
   });
 });
 

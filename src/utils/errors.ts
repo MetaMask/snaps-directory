@@ -1,3 +1,5 @@
+import { hasProperty, isObject } from '@metamask/utils';
+
 /**
  * Format an error message. This function capitalizes the first letter of the
  * message and adds a period at the end if it doesn't already have one.
@@ -16,20 +18,6 @@ export function formatErrorMessage(message: string) {
 }
 
 /**
- * Check if an object has a property.
- *
- * @param object - The object to check.
- * @param property - The property to check for.
- * @returns Whether the object has the property.
- */
-export function hasProperty<Type extends object, Property extends string>(
-  object: Type,
-  property: Property,
-): object is Type & Record<Property, unknown> {
-  return Object.prototype.hasOwnProperty.call(object, property);
-}
-
-/**
  * Get the error message from an unknown error type.
  *
  * - If the error is an object with a `message` property, return the message.
@@ -40,8 +28,7 @@ export function hasProperty<Type extends object, Property extends string>(
  */
 export function getErrorMessage(error: unknown) {
   if (
-    typeof error === 'object' &&
-    error !== null &&
+    isObject(error) &&
     hasProperty(error, 'message') &&
     typeof error.message === 'string'
   ) {
