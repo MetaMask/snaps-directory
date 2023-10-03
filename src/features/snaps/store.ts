@@ -2,7 +2,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 import semver from 'semver/preload';
 
-import { snapsApi } from './api';
+import { getInstalledSnaps } from './api';
 import type { ApplicationState } from '../../store';
 import type { Fields } from '../../utils';
 
@@ -41,11 +41,6 @@ export const { setSnaps } = snapsSlice.actions;
 export const getSnaps = createSelector(
   (state: ApplicationState) => state.snaps,
   ({ snaps }) => snaps,
-);
-
-export const getInstalledSnaps = createSelector(
-  (state: ApplicationState) => state,
-  (state) => snapsApi.endpoints.getInstalledSnaps.select()(state).data ?? {},
 );
 
 export const getUpdateAvailable = (snapId: string) =>
