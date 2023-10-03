@@ -64,7 +64,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             width={{ base: '100%', md: 'auto' }}
             gap={{ base: 4, md: 4 }}
           >
-            {data.snap.website && (
+            {website && (
               <SnapWebsiteButton
                 snapId={snapId}
                 website={website}
