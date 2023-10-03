@@ -7,11 +7,12 @@ export enum SnapEventType {
   InstallationFailed = 'Snap Installation Failed',
   InstallationRejected = 'Snap Installation Rejected',
   Update = 'Snap Update Clicked',
+  Website = 'Snap Website Clicked',
 }
 
 /**
- * Snap install event, which is tracked when the user clicks the install button
- * for a Snap.
+ * Snap install event, which is triggered when the user clicks the install
+ * button for a Snap.
  */
 export type SnapInstallEvent = {
   type: SnapEventType.Install;
@@ -20,7 +21,7 @@ export type SnapInstallEvent = {
 };
 
 /**
- * Snap installed event, which is tracked when a Snap is installed.
+ * Snap installed event, which is triggered when a Snap is installed.
  */
 export type SnapInstalledEvent = {
   type: SnapEventType.Installed;
@@ -29,7 +30,7 @@ export type SnapInstalledEvent = {
 };
 
 /**
- * Snap installation failed event, which is tracked when a Snap fails to
+ * Snap installation failed event, which is triggered when a Snap fails to
  * install, for any reason.
  */
 export type SnapInstallationFailedEvent = {
@@ -40,7 +41,7 @@ export type SnapInstallationFailedEvent = {
 };
 
 /**
- * Snap installation rejected event, which is tracked when a Snap installation
+ * Snap installation rejected event, which is triggered when a Snap installation
  * is rejected by the user.
  */
 export type SnapInstallationRejectedEvent = {
@@ -50,7 +51,7 @@ export type SnapInstallationRejectedEvent = {
 };
 
 /**
- * Snap update event, which is tracked when the user clicks the update button
+ * Snap update event, which is triggered when the user clicks the update button
  * for a Snap.
  */
 export type SnapUpdateEvent = {
@@ -60,19 +61,38 @@ export type SnapUpdateEvent = {
   newVersion: string;
 };
 
+/**
+ * The origin of the {@link SnapWebsiteEvent}.
+ */
+export enum SnapWebsiteOrigin {
+  Modal = 'modal',
+  Button = 'button',
+}
+
+/**
+ * Snap website event, which is triggered when the user clicks the website
+ * button for a Snap, either in the modal or on the Snap's page.
+ */
+export type SnapWebsiteEvent = {
+  type: SnapEventType.Website;
+  snapId: string;
+  origin: SnapWebsiteOrigin;
+};
+
 export type SnapEvent =
   | SnapInstallEvent
   | SnapInstalledEvent
   | SnapInstallationFailedEvent
   | SnapInstallationRejectedEvent
-  | SnapUpdateEvent;
+  | SnapUpdateEvent
+  | SnapWebsiteEvent;
 
 /**
  * Track Snaps Directory events.
  *
- * @param event - The event to track.
- * @param event.type - The type of event to track.
+ * @param event - The event to trigger.
+ * @param event.type - The type of event to trigger.
  */
 export function track({ type, ...data }: SnapEvent): void {
-  window.analytics.track(type, data);
+  window.analytics?.track(type, data);
 }

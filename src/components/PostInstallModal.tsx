@@ -1,9 +1,6 @@
 import {
-  Box,
   Center,
-  Flex,
   Heading,
-  Link,
   Modal,
   ModalBody,
   ModalContent,
@@ -13,13 +10,14 @@ import {
 import { Trans } from '@lingui/macro';
 import type { FunctionComponent, ReactNode } from 'react';
 
-import { ExternalLinkIcon } from './icons';
+import { PostInstallSnapWebsiteButton } from './PostInstallSnapWebsiteButton';
 import { SnapAvatar } from './SnapAvatar';
 
 export type PostInstallModalProps = {
   isOpen: boolean;
   onClose: () => void;
 
+  snapId: string;
   name: string;
   icon: string;
   website?: string;
@@ -28,27 +26,12 @@ export type PostInstallModalProps = {
 };
 
 /**
- * Normalize a URL to its host and pathname.
- *
- * @param value - The URL to normalize.
- * @returns The normalized URL.
- */
-function normalizeUrl(value: string): string {
-  try {
-    const url = new URL(value);
-    const path = url.pathname === '/' ? '' : url.pathname;
-    return url.host + path;
-  } catch {
-    return value;
-  }
-}
-
-/**
  * A modal that is shown after a Snap is installed.
  *
  * @param props - The component props.
  * @param props.isOpen - Whether the modal is open.
  * @param props.onClose - A function to close the modal.
+ * @param props.snapId - The ID of the Snap.
  * @param props.name - The name of the Snap.
  * @param props.icon - The icon of the Snap.
  * @param props.website - The website of the Snap.
@@ -58,6 +41,7 @@ function normalizeUrl(value: string): string {
 export const PostInstallModal: FunctionComponent<PostInstallModalProps> = ({
   isOpen,
   onClose,
+  snapId,
   name,
   icon,
   website,
@@ -87,20 +71,10 @@ export const PostInstallModal: FunctionComponent<PostInstallModalProps> = ({
                       snap.
                     </Trans>
                   </Text>
-                  <Link variant="box" href={website} isExternal={true}>
-                    <Flex justifyContent="space-between" alignItems="center">
-                      <Box
-                        as="span"
-                        overflow="hidden"
-                        textOverflow="ellipsis"
-                        whiteSpace="nowrap"
-                      >
-                        {normalizeUrl(website)}
-                      </Box>
-                      {/* TODO: Muted icon */}
-                      <ExternalLinkIcon marginLeft="2" width="1.25rem" />
-                    </Flex>
-                  </Link>
+                  <PostInstallSnapWebsiteButton
+                    snapId={snapId}
+                    website={website}
+                  />
                 </>
               ) : (
                 <Text variant="muted" textAlign="center">

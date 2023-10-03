@@ -10,6 +10,7 @@ describe('PostInstallModal', () => {
       <PostInstallModal
         isOpen={false}
         onClose={jest.fn()}
+        snapId={snap.snapId}
         name={snap.name}
         icon={snap.icon}
       >
@@ -26,6 +27,7 @@ describe('PostInstallModal', () => {
       <PostInstallModal
         isOpen={true}
         onClose={jest.fn()}
+        snapId={snap.snapId}
         name={snap.name}
         icon={snap.icon}
       >
@@ -34,39 +36,5 @@ describe('PostInstallModal', () => {
     );
 
     expect(queryByText('Installation complete')).toBeInTheDocument();
-  });
-
-  it('normalizes the Snap URL', () => {
-    const { snap } = getMockSnap();
-    const { queryByText } = render(
-      <PostInstallModal
-        isOpen={true}
-        onClose={jest.fn()}
-        name={snap.name}
-        icon={snap.icon}
-        website="https://example.com/foo"
-      >
-        <Text>Foo</Text>
-      </PostInstallModal>,
-    );
-
-    expect(queryByText('example.com/foo')).toBeInTheDocument();
-  });
-
-  it('shows the raw URL if it cannot be parsed', () => {
-    const { snap } = getMockSnap();
-    const { queryByText } = render(
-      <PostInstallModal
-        isOpen={true}
-        onClose={jest.fn()}
-        name={snap.name}
-        icon={snap.icon}
-        website="foo"
-      >
-        <Text>Foo</Text>
-      </PostInstallModal>,
-    );
-
-    expect(queryByText('foo')).toBeInTheDocument();
   });
 });
