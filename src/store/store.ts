@@ -47,10 +47,12 @@ export function createStore(
   // This saves the notifications state to localStorage, so we can persist it
   // across page loads.
   store.subscribe(() => {
-    localStorage.setItem(
-      'notifications',
-      JSON.stringify(store.getState().notifications),
-    );
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem(
+        'notifications',
+        JSON.stringify(store.getState().notifications),
+      );
+    }
   });
 
   return store;
