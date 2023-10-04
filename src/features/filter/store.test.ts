@@ -1,3 +1,4 @@
+import { Order } from './constants';
 import {
   filterAll,
   filterSlice,
@@ -9,6 +10,7 @@ import {
   getSearchQuery,
   resetSearch,
   setCategory,
+  setOrder,
   setSearchQuery,
   setSearchResults,
   toggleCategory,
@@ -171,6 +173,17 @@ describe('filterSlice', () => {
     });
   });
 
+  describe('setOrder', () => {
+    it('sets the order', () => {
+      const state = filterSlice.reducer(
+        filterSlice.getInitialState(),
+        setOrder(Order.Alphabetical),
+      );
+
+      expect(state.order).toBe(Order.Alphabetical);
+    });
+  });
+
   describe('getSearchQuery', () => {
     it('gets the search query', () => {
       const state = getMockState({
@@ -293,6 +306,7 @@ describe('filterSlice', () => {
           searchResults: [],
           installed: false,
           categories: [],
+          order: Order.Random,
         },
         snaps: {
           snaps: null,
@@ -317,6 +331,7 @@ describe('filterSlice', () => {
             RegistrySnapCategory.Notifications,
             RegistrySnapCategory.TransactionInsights,
           ],
+          order: Order.Random,
         },
         snaps: {
           snaps: [fooSnap, barSnap, bazSnap],
@@ -367,6 +382,7 @@ describe('filterSlice', () => {
             RegistrySnapCategory.Notifications,
             RegistrySnapCategory.TransactionInsights,
           ],
+          order: Order.Random,
         },
         snaps: {
           snaps: [fooSnap, barSnap, bazSnap],
@@ -413,6 +429,7 @@ describe('filterSlice', () => {
             RegistrySnapCategory.Notifications,
             RegistrySnapCategory.TransactionInsights,
           ],
+          order: Order.Random,
         },
         snaps: {
           snaps: [fooSnap, barSnap, bazSnap],
@@ -450,6 +467,7 @@ describe('filterSlice', () => {
             RegistrySnapCategory.Notifications,
             RegistrySnapCategory.TransactionInsights,
           ],
+          order: Order.Random,
         },
         snaps: {
           snaps: [fooSnap, barSnap, bazSnap],
@@ -493,6 +511,7 @@ describe('filterSlice', () => {
             RegistrySnapCategory.Notifications,
             RegistrySnapCategory.TransactionInsights,
           ],
+          order: Order.Random,
         },
         snaps: {
           snaps: [fooSnap, barSnap, bazSnap],
@@ -515,6 +534,59 @@ describe('filterSlice', () => {
       });
 
       expect(getFilteredSnaps(state)).toStrictEqual([fooSnap, bazSnap]);
+    });
+
+    it('sorts the Snaps alphabetically', () => {
+      const { snap: fooSnap } = getMockSnap({
+        snapId: 'foo-snap',
+        name: 'Foo',
+      });
+      const { snap: barSnap } = getMockSnap({
+        snapId: 'bar-snap',
+        name: 'Bar',
+      });
+      const { snap: bazSnap } = getMockSnap({
+        snapId: 'baz-snap',
+        name: 'Baz',
+      });
+
+      const state = getMockState({
+        filter: {
+          searchQuery: '',
+          searchResults: [],
+          installed: false,
+          categories: [
+            RegistrySnapCategory.Interoperability,
+            RegistrySnapCategory.Notifications,
+            RegistrySnapCategory.TransactionInsights,
+          ],
+          order: Order.Alphabetical,
+        },
+        snaps: {
+          snaps: [fooSnap, barSnap, bazSnap],
+        },
+        snapsApi: {
+          queries: {
+            'getInstalledSnaps(undefined)': getMockQueryResponse({
+              [fooSnap.snapId]: {
+                version: fooSnap.latestVersion,
+              },
+              [barSnap.snapId]: {
+                version: barSnap.latestVersion,
+              },
+              [bazSnap.snapId]: {
+                version: bazSnap.latestVersion,
+              },
+            }),
+          },
+        },
+      });
+
+      expect(getFilteredSnaps(state)).toStrictEqual([
+        barSnap,
+        bazSnap,
+        fooSnap,
+      ]);
     });
   });
 });

@@ -9,7 +9,8 @@ import {
   FilterSearch,
   FilterTags,
 } from './components';
-import { SNAP_CATEGORY_ICONS } from './constants';
+import { FilterOrder } from './components/FilterOrder';
+import { Order, SNAP_CATEGORY_ICONS } from './constants';
 import { filterAll, getAll, getInstalled, toggleInstalled } from './store';
 import type { RegistrySnapCategory } from '../../constants';
 import { SNAP_CATEGORY_LABELS } from '../../constants';
@@ -59,6 +60,11 @@ export const Filter: FunctionComponent = () => {
                 />
               ),
             )}
+          </MenuGroup>
+          <MenuGroup marginLeft="2" title={t`Sort`}>
+            {Object.values(Order).map((order) => (
+              <FilterOrder key={order} order={order} />
+            ))}
           </MenuGroup>
         </MenuList>
       </Menu>

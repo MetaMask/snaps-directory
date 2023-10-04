@@ -42,6 +42,10 @@ msgstr ""
 msgid "All"
 msgstr ""
 
+#: src/features/filter/constants.tsx
+msgid "Alphabetical"
+msgstr ""
+
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Audit"
 msgstr ""
@@ -236,6 +240,10 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr ""
 
+#: src/features/filter/constants.tsx
+msgid "Random"
+msgstr ""
+
 #: src/components/icons/index.ts
 msgid "Search"
 msgstr ""
@@ -250,6 +258,10 @@ msgstr ""
 
 #: src/components/icons/index.ts
 msgid "Snap"
+msgstr ""
+
+#: src/features/filter/Filter.tsx
+msgid "Sort"
 msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
