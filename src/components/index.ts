@@ -17,3 +17,4 @@ export * from './SnapAvatar';
 export * from './SnapAuthorship';
 export * from './SnapSourceCode';
 export * from './SnapsProvider';
+export * from './SnapWebsiteButton';

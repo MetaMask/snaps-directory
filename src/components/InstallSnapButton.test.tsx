@@ -1,11 +1,17 @@
+import { beforeEach } from '@jest/globals';
 import { act } from '@testing-library/react';
 
 import { InstallSnapButton } from './InstallSnapButton';
+import * as analytics from '../analytics';
 import { setSnaps } from '../features';
 import { createStore } from '../store';
 import { getMockSnap, getRequestMethodMock, render } from '../utils/test-utils';
 
 describe('InstallSnapButton', () => {
+  beforeEach(() => {
+    jest.spyOn(analytics, 'track').mockImplementation();
+  });
+
   it('renders', async () => {
     Object.assign(globalThis, 'window', {
       ethereum: getRequestMethodMock({

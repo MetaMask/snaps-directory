@@ -1,10 +1,4 @@
-import {
-  getInstalledSnaps,
-  getSnaps,
-  getUpdateAvailable,
-  setSnaps,
-  snapsSlice,
-} from './store';
+import { getSnaps, getUpdateAvailable, setSnaps, snapsSlice } from './store';
 import {
   getMockQueryResponse,
   getMockSnap,
@@ -34,29 +28,6 @@ describe('snapsSlice', () => {
       });
 
       expect(getSnaps(state)).toStrictEqual([getMockSnap().snap]);
-    });
-  });
-
-  describe('getInstalledSnaps', () => {
-    it('selects the installed snaps', () => {
-      const { snap } = getMockSnap();
-      const state = getMockState({
-        snapsApi: {
-          queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
-              [snap.snapId]: {
-                version: snap.latestVersion,
-              },
-            }),
-          },
-        },
-      });
-
-      expect(getInstalledSnaps(state)).toStrictEqual({
-        [snap.snapId]: {
-          version: snap.latestVersion,
-        },
-      });
     });
   });
 

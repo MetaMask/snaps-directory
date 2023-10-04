@@ -1,12 +1,4 @@
-import {
-  Box,
-  Button,
-  Container,
-  Divider,
-  Flex,
-  Link,
-  Text,
-} from '@chakra-ui/react';
+import { Box, Container, Divider, Flex, Text } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import { graphql } from 'gatsby';
 import type { FunctionComponent } from 'react';
@@ -20,7 +12,7 @@ import {
   SnapCategory,
   BackButton,
   SnapDescription,
-  ExternalLinkIcon,
+  SnapWebsiteButton,
 } from '../../../components';
 import { ExternalLink } from '../../../components/ExternalLink';
 import type { RegistrySnapCategory } from '../../../constants';
@@ -72,27 +64,12 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             width={{ base: '100%', md: 'auto' }}
             gap={{ base: 4, md: 4 }}
           >
-            {data.snap.website && (
-              <Link
-                href={data.snap.website}
-                isExternal={true}
-                _hover={{ textDecoration: 'none' }}
-                width={{ base: '100%', md: 'auto' }}
-              >
-                <Button
-                  variant={onboard ? 'primary' : 'outline'}
-                  leftIcon={
-                    <ExternalLinkIcon
-                      // icon={onboard ? 'externalLinkInverted' : 'externalLink'}
-                      width="1.5rem"
-                      fill="currentColor"
-                    />
-                  }
-                  width="100%"
-                >
-                  <Trans>Website</Trans>
-                </Button>
-              </Link>
+            {website && (
+              <SnapWebsiteButton
+                snapId={snapId}
+                website={website}
+                onboard={onboard}
+              />
             )}
             {!onboard && (
               <InstallSnapButton

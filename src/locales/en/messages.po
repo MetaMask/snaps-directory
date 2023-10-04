@@ -314,7 +314,7 @@ msgid "Version"
 msgstr ""
 
 #: src/components/FooterLinks.tsx
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/components/SnapWebsiteButton.tsx
 msgid "Website"
 msgstr ""
 
