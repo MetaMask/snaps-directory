@@ -3,7 +3,17 @@ import ModelViewer from '@metamask/logo';
 import type { FunctionComponent } from 'react';
 import { useCallback, useEffect, useState } from 'react';
 
-export const Fox: FunctionComponent = () => {
+const FOX_RATIO = 0.75;
+
+export type FoxProps = {
+  width?: number;
+  height?: number;
+};
+
+export const Fox: FunctionComponent<FoxProps> = ({
+  width = 300,
+  height = width * FOX_RATIO,
+}) => {
   const [ref, setRef] = useState<HTMLElement | null>(null);
   const callback = useCallback<(node: HTMLElement | null) => void>((node) => {
     if (node !== null) {
@@ -18,8 +28,8 @@ export const Fox: FunctionComponent = () => {
 
     const viewer = new ModelViewer({
       pxNotRatio: true,
-      width: 300,
-      height: 200,
+      width,
+      height,
       followMouse: true,
     });
 
@@ -32,5 +42,11 @@ export const Fox: FunctionComponent = () => {
     };
   }, [ref]);
 
-  return <Box ref={callback} width="18.75rem" height="12.5rem" />;
+  return (
+    <Box
+      ref={callback}
+      width={`${width / 16}rem`}
+      height={`${height / 16}rem`}
+    />
+  );
 };

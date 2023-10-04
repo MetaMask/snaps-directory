@@ -352,6 +352,15 @@ describe('theme', () => {
                 "default": "#878787",
               },
             },
+            "icon": Object {
+              "alternative": Object {
+                "_dark": "#141618",
+                "default": "#F2F4F6",
+              },
+              "muted": Object {
+                "default": "#6A737D",
+              },
+            },
             "info": Object {
               "default": Object {
                 "_dark": "#1098FC",

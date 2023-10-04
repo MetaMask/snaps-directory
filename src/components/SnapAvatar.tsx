@@ -8,6 +8,8 @@ export type SnapIconProps = BoxProps & {
   snapName: string;
   isInstalled: boolean;
   icon?: string | undefined;
+  size?: string;
+  badgeSize?: string;
 };
 
 /**
@@ -18,12 +20,16 @@ export type SnapIconProps = BoxProps & {
  * @param props.snapName - The name of the snap.
  * @param props.icon - The SVG icon defined in the snap's manifest.
  * @param props.isInstalled - Whether the snap is installed or not.
+ * @param props.size - The size of the icon.
+ * @param props.badgeSize - The size of the badge.
  * @returns The Snap icon component.
  */
 export const SnapAvatar: FunctionComponent<SnapIconProps> = ({
   snapName,
   icon,
   isInstalled,
+  size = '3rem',
+  badgeSize = '1.5rem',
   ...props
 }) => {
   return (
@@ -35,6 +41,8 @@ export const SnapAvatar: FunctionComponent<SnapIconProps> = ({
         background="white"
         color="text.alternative"
         size="md"
+        width={size}
+        height={size}
         margin="1"
         sx={{
           img: {
@@ -45,8 +53,8 @@ export const SnapAvatar: FunctionComponent<SnapIconProps> = ({
         }}
       />
       <SnapIcon
-        width="1.5rem"
-        height="1.5rem"
+        width={badgeSize}
+        height={badgeSize}
         position="absolute"
         bottom="0"
         right="0"

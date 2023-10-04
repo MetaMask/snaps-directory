@@ -7,10 +7,16 @@ import { InstallUnsupported } from './InstallUnsupported';
 import { PostInstallModal } from './PostInstallModal';
 import {
   getUpdateAvailable,
+  removeAcknowledgedUpdate,
   useGetInstalledSnapsQuery,
   useInstallSnapMutation,
 } from '../features';
-import { SnapStatus, useSelector, useSupportedVersion } from '../hooks';
+import {
+  SnapStatus,
+  useDispatch,
+  useSelector,
+  useSupportedVersion,
+} from '../hooks';
 
 export type InstallSnapButtonProps = {
   snapId: string;
@@ -101,6 +107,7 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
   const { isOpen, onOpen, onClose } = useDisclosure();
   const isSupportedVersion = useSupportedVersion();
   const updateAvailable = useSelector(getUpdateAvailable(snapId));
+  const dispatch = useDispatch();
 
   const isInstalled = Boolean(installedSnaps?.[snapId]);
 
@@ -111,6 +118,7 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
           return;
         }
 
+        dispatch(removeAcknowledgedUpdate(snapId));
         onOpen();
       })
       .catch(console.error);
@@ -127,6 +135,7 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
     <PostInstallModal
       isOpen={isOpen}
       onClose={onClose}
+      snapId={snapId}
       name={name}
       icon={icon}
       website={website}

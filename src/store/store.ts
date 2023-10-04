@@ -4,11 +4,13 @@ import type { CombinedState, PreloadedState } from 'redux';
 
 // Imported separately to avoid circular dependencies.
 import { filterSlice } from '../features/filter/store';
+import { notificationsSlice } from '../features/notifications/store';
 import { snapsApi } from '../features/snaps/api';
 import { snapsSlice } from '../features/snaps/store';
 
 const reducer = combineReducers({
   filter: filterSlice.reducer,
+  notifications: notificationsSlice.reducer,
   snaps: snapsSlice.reducer,
   snapsApi: snapsApi.reducer,
 });
@@ -41,6 +43,15 @@ export function createStore(
       }),
     )
     .catch(console.error);
+
+  // This saves the notifications state to localStorage, so we can persist it
+  // across page loads.
+  store.subscribe(() => {
+    localStorage.setItem(
+      'notifications',
+      JSON.stringify(store.getState().notifications),
+    );
+  });
 
   return store;
 }

@@ -6,6 +6,7 @@ import type { FunctionComponent } from 'react';
 
 import { ColorModeToggle } from './ColorModeToggle';
 import { Logo } from './Logo';
+import { Notifications } from '../features';
 
 type HeaderProps = BoxProps;
 
@@ -37,6 +38,7 @@ export const Header: FunctionComponent<HeaderProps> = (props) => (
           </Stack>
         </Link>
         <ColorModeToggle />
+        <Notifications />
       </Stack>
     </Container>
   </Box>

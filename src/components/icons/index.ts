@@ -5,6 +5,7 @@ import BaseCheckThinIcon from './check-thin.svg';
 import BaseCheckIcon from './check.svg';
 import BaseCloseIcon from './close.svg';
 import BaseDarkModeIcon from './dark-mode.svg';
+import BaseDotIcon from './dot.svg';
 import BaseDropdownIcon from './dropdown.svg';
 import BaseExternalLinkIcon from './external-link.svg';
 import BaseFilterIcon from './filter.svg';
@@ -28,6 +29,11 @@ export const CheckThinIcon = wrapIcon(BaseCheckThinIcon, defineMessage`Check`);
 export const DarkModeIcon = wrapIcon(
   BaseDarkModeIcon,
   defineMessage`Enable dark mode`,
+);
+
+export const DotIcon = wrapIcon(
+  BaseDotIcon,
+  defineMessage`Unread notification`,
 );
 
 export const DropdownIcon = wrapIcon(BaseDropdownIcon, defineMessage`Dropdown`);
@@ -64,3 +70,5 @@ export const TransactionInsightsIcon = wrapIcon(
   BaseTransactionInsightsIcon,
   defineMessage`Transaction insights`,
 );
+
+export type { IconProps } from './Icon';

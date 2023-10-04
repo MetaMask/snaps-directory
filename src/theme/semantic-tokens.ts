@@ -96,6 +96,15 @@ export const semanticTokens: SemanticTokens = {
         _dark: '#141618',
       },
     },
+    icon: {
+      alternative: {
+        default: '#F2F4F6',
+        _dark: '#141618',
+      },
+      muted: {
+        default: '#6A737D',
+      },
+    },
   },
 
   borders: {
