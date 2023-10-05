@@ -50,7 +50,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
       paddingTop="0"
       marginTop={{ base: 4, md: 20 }}
     >
-      <NotificationAcknowledger snapId={snapId} />
+      <NotificationAcknowledger snapId={snapId} version={latestVersion} />
       <BackButton />
       <Box p="6" rounded="3xl" boxShadow="lg" background="background.card">
         <Flex
