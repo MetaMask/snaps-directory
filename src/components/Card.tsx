@@ -12,10 +12,10 @@ export const Card: FunctionComponent<CardProps> = ({ children, ...props }) => (
     px="4"
     py="4"
     rounded="3xl"
-    boxShadow="lg"
     background="background.card"
     height="10.438rem"
-    _hover={{ backgroundColor: 'background.hover' }}
+    transitionDuration="normal"
+    _hover={{ opacity: '0.75' }}
     {...props}
   >
     {children}

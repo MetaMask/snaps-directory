@@ -313,7 +313,7 @@ describe('theme', () => {
               },
               "body": Object {
                 "_dark": "#141618",
-                "default": "#F8FAFC",
+                "default": "#F8F8F8",
               },
               "card": Object {
                 "_dark": "#1D1F23",
@@ -350,6 +350,15 @@ describe('theme', () => {
               "muted": Object {
                 "_dark": "#D6D9DC",
                 "default": "#878787",
+              },
+            },
+            "icon": Object {
+              "alternative": Object {
+                "_dark": "#141618",
+                "default": "#F2F4F6",
+              },
+              "muted": Object {
+                "default": "#6A737D",
               },
             },
             "info": Object {
@@ -392,6 +401,10 @@ describe('theme', () => {
                 },
               },
             },
+          },
+          "shadows": Object {
+            "lg": "0px 2px 40px 0px #0000001A",
+            "md": "0px 2px 16px 0px #0000001A",
           },
         },
         "styles": Object {

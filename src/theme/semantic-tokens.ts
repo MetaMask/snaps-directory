@@ -35,7 +35,7 @@ export const semanticTokens: SemanticTokens = {
     },
     background: {
       body: {
-        default: '#F8FAFC',
+        default: '#F8F8F8',
         _dark: '#141618',
       },
       alternative: { default: '#F5F5F5', _dark: '#1D1F22' },
@@ -96,6 +96,15 @@ export const semanticTokens: SemanticTokens = {
         _dark: '#141618',
       },
     },
+    icon: {
+      alternative: {
+        default: '#F2F4F6',
+        _dark: '#141618',
+      },
+      muted: {
+        default: '#6A737D',
+      },
+    },
   },
 
   borders: {
@@ -103,5 +112,10 @@ export const semanticTokens: SemanticTokens = {
       default: '1px solid #D6D9DC',
       _dark: '1px solid #3B4046',
     },
+  },
+
+  shadows: {
+    md: '0px 2px 16px 0px #0000001A',
+    lg: '0px 2px 40px 0px #0000001A',
   },
 };

@@ -63,3 +63,16 @@ export const getUpdateAvailable = (snapId: string) =>
       return semver.gt(snap.latestVersion, installedVersion);
     },
   );
+
+export const getUpdatableSnaps = createSelector(
+  (state: ApplicationState) => ({
+    snapIds: Object.keys(getInstalledSnaps(state)).filter((snapId) =>
+      getUpdateAvailable(snapId)(state),
+    ),
+    snaps: getSnaps(state),
+  }),
+  ({ snapIds, snaps }) =>
+    snapIds
+      .map((snapId) => snaps?.find((item) => item.snapId === snapId))
+      .filter(Boolean) as Snap[],
+);

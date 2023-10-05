@@ -1,4 +1,10 @@
-import { getSnaps, getUpdateAvailable, setSnaps, snapsSlice } from './store';
+import {
+  getSnaps,
+  getUpdatableSnaps,
+  getUpdateAvailable,
+  setSnaps,
+  snapsSlice,
+} from './store';
 import {
   getMockQueryResponse,
   getMockSnap,
@@ -124,6 +130,30 @@ describe('snapsSlice', () => {
       });
 
       expect(getUpdateAvailable(snap.snapId)(state)).toBe(true);
+    });
+  });
+
+  describe('getUpdatableSnaps', () => {
+    it('returns all Snaps that have an update available', () => {
+      const fooSnap = getMockSnap({ snapId: 'foo-snap' }).snap;
+      const barSnap = getMockSnap({ snapId: 'bar-snap' }).snap;
+
+      const state = getMockState({
+        snaps: {
+          snaps: [fooSnap, barSnap],
+        },
+        snapsApi: {
+          queries: {
+            'getInstalledSnaps(undefined)': getMockQueryResponse({
+              [barSnap.snapId]: {
+                version: '0.1.0',
+              },
+            }),
+          },
+        },
+      });
+
+      expect(getUpdatableSnaps(state)).toStrictEqual([barSnap]);
     });
   });
 });

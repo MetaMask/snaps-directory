@@ -219,6 +219,10 @@ msgstr ""
 msgid "MetaMask Snaps is in open beta and only supported via our extension clients on desktop such as <0>Chrome</0> or <1>Firefox</1>."
 msgstr ""
 
+#: src/features/notifications/components/NoNotifications.tsx
+msgid "No notifications"
+msgstr ""
+
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "No Snaps found"
 msgstr ""
@@ -234,6 +238,10 @@ msgstr ""
 
 #: src/features/filter/components/FilterButton.tsx
 msgid "Open filter menu"
+msgstr ""
+
+#: src/features/notifications/components/NotificationsButton.tsx
+msgid "Open notifications menu"
 msgstr ""
 
 #: src/components/FooterCopyright.tsx
@@ -309,6 +317,10 @@ msgstr ""
 msgid "Transaction Insights"
 msgstr ""
 
+#: src/components/icons/index.ts
+msgid "Unread notification"
+msgstr ""
+
 #: src/components/InstallUnsupportedDesktopUpdate.tsx
 msgid "Update required"
 msgstr ""
@@ -317,12 +329,20 @@ msgstr ""
 msgid "Update Snap"
 msgstr ""
 
+#: src/features/notifications/components/NoNotifications.tsx
+msgid "Updates for your installed Snaps will be displayed here when available."
+msgstr ""
+
 #: src/components/InstallSnapButton.tsx
 msgid "Updating {name}"
 msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Version"
+msgstr ""
+
+#: src/features/notifications/components/Notification.tsx
+msgid "Version {0} update available"
 msgstr ""
 
 #: src/components/FooterLinks.tsx

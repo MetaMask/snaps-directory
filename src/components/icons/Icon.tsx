@@ -1,5 +1,5 @@
-import type { As, BoxProps } from '@chakra-ui/react';
-import { Box } from '@chakra-ui/react';
+import type { As, BoxProps, ComponentWithAs } from '@chakra-ui/react';
+import { Box, forwardRef } from '@chakra-ui/react';
 import type { MessageDescriptor } from '@lingui/core';
 import { useLingui } from '@lingui/react';
 import type { FunctionComponent } from 'react';
@@ -19,35 +19,38 @@ export type IconProps = BoxProps & {
  * @param props.fill - The fill color of the SVG component.
  * @returns A React component.
  */
-export const Icon: FunctionComponent<IconProps> = ({
-  as,
-  label,
-  fill,
-  ...props
-}) => {
-  const i18n = useLingui();
+export const Icon: ComponentWithAs<As, IconProps> = forwardRef(
+  ({ as, label, fill, ...props }, ref) => {
+    const i18n = useLingui();
 
-  return (
-    <Box
-      {...props}
-      as="span"
-      sx={{
-        '& > svg': {
-          fill,
-        },
-      }}
-    >
+    return (
       <Box
-        as={as}
-        aria-label={label && i18n._(label)}
-        width="100%"
-        height="100%"
-      />
-    </Box>
-  );
-};
+        ref={ref}
+        {...props}
+        as="span"
+        display="block"
+        sx={{
+          ...props.sx,
+          '& > svg': {
+            fill,
+          },
+        }}
+      >
+        <Box
+          as={as}
+          aria-label={label && i18n._(label)}
+          width="100%"
+          height="100%"
+        />
+      </Box>
+    );
+  },
+);
 
-export const wrapIcon =
-  (IconComponent: FunctionComponent, label: MessageDescriptor) =>
-  (props: Omit<IconProps, 'as'>) =>
-    <Icon as={IconComponent} label={label} {...props} />;
+export const wrapIcon = (
+  IconComponent: FunctionComponent,
+  label: MessageDescriptor,
+) =>
+  forwardRef((props: Omit<IconProps, 'as'>, ref) => (
+    <Icon ref={ref} as={IconComponent} label={label} {...props} />
+  ));

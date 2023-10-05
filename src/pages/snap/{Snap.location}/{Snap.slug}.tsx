@@ -16,6 +16,7 @@ import {
 } from '../../../components';
 import { ExternalLink } from '../../../components/ExternalLink';
 import type { RegistrySnapCategory } from '../../../constants';
+import { NotificationAcknowledger } from '../../../features/notifications/components';
 import { getLinkText, type Fields } from '../../../utils';
 
 type SnapPageProps = {
@@ -49,8 +50,9 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
       paddingTop="0"
       marginTop={{ base: 4, md: 20 }}
     >
+      <NotificationAcknowledger snapId={snapId} version={latestVersion} />
       <BackButton />
-      <Box p="6" rounded="3xl" boxShadow="lg" background="background.card">
+      <Box p="6" rounded="3xl" background="background.card">
         <Flex
           justifyContent="space-between"
           flexDirection={{ base: 'column', md: 'row' }}
