@@ -341,6 +341,10 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
+#: src/features/notifications/components/Notification.tsx
+msgid "Version {0} update available"
+msgstr ""
+
 #: src/components/FooterLinks.tsx
 #: src/components/SnapWebsiteButton.tsx
 msgid "Website"

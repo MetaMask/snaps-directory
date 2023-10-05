@@ -113,4 +113,9 @@ export const semanticTokens: SemanticTokens = {
       _dark: '1px solid #3B4046',
     },
   },
+
+  shadows: {
+    md: '0px 2px 16px 0px #0000001A',
+    lg: '0px 2px 40px 0px #0000001A',
+  },
 };

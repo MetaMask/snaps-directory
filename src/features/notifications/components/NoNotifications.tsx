@@ -5,18 +5,12 @@ import type { FunctionComponent } from 'react';
 import { Fox } from '../../../components';
 
 export const NoNotifications: FunctionComponent = () => (
-  <Center
-    flexDirection="column"
-    gap="1"
-    maxWidth="18.75rem"
-    marginX="16"
-    marginY="4.813rem"
-  >
-    <Fox width={135} />
+  <Center flexDirection="column" gap="1" maxWidth="17.188rem" margin="10">
+    <Fox width={200} />
     <Heading
       as="h3"
-      fontSize="lg"
-      fontWeight="500"
+      fontSize="2xl"
+      fontWeight="600"
       color="gray.muted"
       marginTop="3"
     >
