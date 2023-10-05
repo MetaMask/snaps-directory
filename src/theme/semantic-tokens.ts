@@ -35,7 +35,7 @@ export const semanticTokens: SemanticTokens = {
     },
     background: {
       body: {
-        default: '#F8FAFC',
+        default: '#F8F8F8',
         _dark: '#141618',
       },
       alternative: { default: '#F5F5F5', _dark: '#1D1F22' },

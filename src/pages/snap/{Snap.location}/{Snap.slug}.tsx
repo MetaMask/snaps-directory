@@ -52,7 +52,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
     >
       <NotificationAcknowledger snapId={snapId} version={latestVersion} />
       <BackButton />
-      <Box p="6" rounded="3xl" boxShadow="lg" background="background.card">
+      <Box p="6" rounded="3xl" background="background.card">
         <Flex
           justifyContent="space-between"
           flexDirection={{ base: 'column', md: 'row' }}
