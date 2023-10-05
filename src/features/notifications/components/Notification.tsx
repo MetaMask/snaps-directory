@@ -1,4 +1,5 @@
 import { Box, Heading, MenuItem, Stack, Text } from '@chakra-ui/react';
+import { Trans } from '@lingui/macro';
 import { Link } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
@@ -35,7 +36,7 @@ export const Notification: FunctionComponent<NotificationProps> = ({
                 {snap.name}
               </Heading>
               <Text lineHeight="150%" fontSize="sm">
-                Version {snap.latestVersion} update available
+                <Trans>Version {snap.latestVersion} update available</Trans>
               </Text>
             </Box>
             {!acknowledged && <DotIcon />}
