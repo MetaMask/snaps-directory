@@ -32,7 +32,11 @@ export const Header: FunctionComponent<HeaderProps> = (props) => (
         <Link to="/">
           <Stack direction="row" alignItems="center" gap="2">
             <Logo />
-            <Tag variant="muted" fontSize="0.65rem">
+            <Tag
+              variant="muted"
+              fontSize="0.65rem"
+              display={{ base: 'none', sm: 'flex' }}
+            >
               <Trans>Open Beta</Trans>
             </Tag>
           </Stack>

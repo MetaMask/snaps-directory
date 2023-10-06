@@ -40,8 +40,8 @@ export const semanticTokens: SemanticTokens = {
       },
       alternative: { default: '#F5F5F5', _dark: '#1D1F22' },
       hover: {
-        default: '#FAFBFC',
-        _dark: '#2F3338',
+        default: '#EEEEEE',
+        _dark: '#33373E',
       },
       header: {
         default: 'rgba(255, 255, 255, 0.75)',
