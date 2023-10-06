@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0]
+### Added
+- Add notifications menu for Snaps with available updates ([#155](https://github.com/MetaMask/snaps-directory/pull/155), [#158](https://github.com/MetaMask/snaps-directory/pull/158))
+- Add sort option to filter menu ([#146](https://github.com/MetaMask/snaps-directory/pull/146))
+- Add custom Segment events ([#151](https://github.com/MetaMask/snaps-directory/pull/151))
+
+### Fixed
+- Fix minor design issues ([#158](https://github.com/MetaMask/snaps-directory/pull/158))
+
 ## [1.2.1]
 ### Fixed
 - Fix margin around logo on Safari ([#140](https://github.com/MetaMask/snaps-directory/pull/140))
@@ -98,7 +107,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.2.1...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/MetaMask/snaps-directory/compare/v1.2.1...v1.3.0
 [1.2.1]: https://github.com/MetaMask/snaps-directory/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/MetaMask/snaps-directory/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/MetaMask/snaps-directory/compare/v1.1.0...v1.1.1
