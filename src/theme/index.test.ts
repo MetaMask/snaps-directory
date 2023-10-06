@@ -324,8 +324,8 @@ describe('theme', () => {
                 "default": "rgba(255, 255, 255, 0.75)",
               },
               "hover": Object {
-                "_dark": "#2F3338",
-                "default": "#FAFBFC",
+                "_dark": "#33373E",
+                "default": "#EEEEEE",
               },
               "menu": Object {
                 "_dark": "#282B2E",

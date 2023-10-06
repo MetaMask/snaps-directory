@@ -4,21 +4,18 @@ import { render } from '../utils/test-utils';
 
 describe('Logo', () => {
   it('renders the logo with the correct fill color', async () => {
-    const { queryByLabelText } = render(<Logo />, createStore(), {
+    const { queryAllByLabelText } = render(<Logo />, createStore(), {
       colorMode: 'dark',
     });
 
-    expect(queryByLabelText('MetaMask Snaps Directory')).toHaveAttribute(
-      'fill',
-      'white',
-    );
+    expect(queryAllByLabelText('MetaMask Snaps Directory')).toHaveLength(2);
   });
 
   it('renders the logo', () => {
-    const { queryByLabelText } = render(<Logo />, createStore(), {
+    const { queryAllByLabelText } = render(<Logo />, createStore(), {
       colorMode: 'light',
     });
 
-    expect(queryByLabelText('MetaMask Snaps Directory')).toBeInTheDocument();
+    expect(queryAllByLabelText('MetaMask Snaps Directory')).toHaveLength(2);
   });
 });

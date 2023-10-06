@@ -1,5 +1,6 @@
 import { Text } from '@chakra-ui/react';
 import { expect } from '@jest/globals';
+import { act } from '@testing-library/react';
 import assert from 'assert';
 import { useStaticQuery } from 'gatsby';
 
@@ -7,7 +8,7 @@ import { wrapPageElement, wrapRootElement } from './Root';
 import { getMock, render } from './utils/test-utils';
 
 describe('wrapPageElement', () => {
-  it('wraps an element in a Layout component', () => {
+  it('wraps an element in a Layout component', async () => {
     assert(wrapPageElement);
     const element = wrapPageElement(
       // @ts-expect-error: - We don't need to provide all of the props.
@@ -17,7 +18,9 @@ describe('wrapPageElement', () => {
       {},
     );
 
-    const { queryByText } = render(element);
+    const { queryByText } = await act(
+      async () => await act(() => render(element)),
+    );
 
     expect(queryByText('Foo')).toBeInTheDocument();
   });
