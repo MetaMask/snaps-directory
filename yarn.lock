@@ -4898,12 +4898,12 @@ __metadata:
   linkType: hard
 
 "@metamask/logo@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "@metamask/logo@npm:3.1.1"
+  version: 3.1.2
+  resolution: "@metamask/logo@npm:3.1.2"
   dependencies:
     gl-mat4: 1.1.4
     gl-vec3: 1.0.3
-  checksum: 37989c642d1f9cc6925d5cb60d972577450a39dae42c652cee94a6f5077c20d3645c555e3a9fe44aec328fcf170b26cb457c3a589e08517c4767ed3214eca920
+  checksum: 788bd7fac605519da26fb84e12b2666028324bf1dafb6d4cf805d74b757d0e42cdd43095d0d43df761669f02183a239906ff1209daf70b32b91c1647e0bd68c2
   languageName: node
   linkType: hard
 
