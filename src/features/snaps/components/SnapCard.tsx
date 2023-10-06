@@ -20,7 +20,7 @@ export const SnapCard: FunctionComponent<
             display="-webkit-box"
             overflow="hidden"
             sx={{
-              WebkitLineClamp: 3,
+              WebkitLineClamp: 2,
               WebkitBoxOrient: 'vertical',
             }}
           >
