@@ -15,7 +15,7 @@ export const Card: FunctionComponent<CardProps> = ({ children, ...props }) => (
     background="background.card"
     height="10.438rem"
     transitionDuration="normal"
-    _hover={{ opacity: '0.75' }}
+    _hover={{ background: 'background.hover' }}
     {...props}
   >
     {children}
