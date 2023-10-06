@@ -7,20 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [1.3.0]
-### Uncategorized
-- Fix header and other minor style fixes ([#158](https://github.com/MetaMask/snaps-directory/pull/158))
-- Bump @metamask/logo from 3.1.1 to 3.1.2 ([#157](https://github.com/MetaMask/snaps-directory/pull/157))
-- Add notifications menu for Snaps with available updates ([#155](https://github.com/MetaMask/snaps-directory/pull/155))
-- Bump @metamask/base-controller from 3.2.2 to 3.2.3 ([#156](https://github.com/MetaMask/snaps-directory/pull/156))
+### Added
+- Add notifications menu for Snaps with available updates ([#155](https://github.com/MetaMask/snaps-directory/pull/155), [#158](https://github.com/MetaMask/snaps-directory/pull/158))
 - Add sort option to filter menu ([#146](https://github.com/MetaMask/snaps-directory/pull/146))
-- Bump @metamask/scure-bip39 from 2.1.0 to 2.1.1 ([#153](https://github.com/MetaMask/snaps-directory/pull/153))
-- Bump postcss from 8.4.29 to 8.4.31 ([#154](https://github.com/MetaMask/snaps-directory/pull/154))
-- Bump @metamask/snaps-controllers from 2.0.1 to 2.0.2 ([#152](https://github.com/MetaMask/snaps-directory/pull/152))
-- Implement custom Segment events ([#151](https://github.com/MetaMask/snaps-directory/pull/151))
-- Bump @metamask/approval-controller from 3.5.1 to 3.5.2 ([#147](https://github.com/MetaMask/snaps-directory/pull/147))
-- Bump @metamask/base-controller from 3.2.1 to 3.2.2 ([#148](https://github.com/MetaMask/snaps-directory/pull/148))
-- Add tests ([#143](https://github.com/MetaMask/snaps-directory/pull/143))
-- Bump graphql from 16.8.0 to 16.8.1 ([#142](https://github.com/MetaMask/snaps-directory/pull/142))
+- Add custom Segment events ([#151](https://github.com/MetaMask/snaps-directory/pull/151))
+
+### Fixed
+- Fix minor design issues ([#158](https://github.com/MetaMask/snaps-directory/pull/158))
 
 ## [1.2.1]
 ### Fixed
