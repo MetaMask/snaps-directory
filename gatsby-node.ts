@@ -152,7 +152,9 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
   const { createNode } = actions;
   const { registry, customFetch } = await getRegistry();
 
-  const verifiedSnaps = Object.values(registry.verifiedSnaps);
+  const verifiedSnaps = Object.values(registry.verifiedSnaps).filter((snap) =>
+    Boolean(snap.metadata.category),
+  );
 
   for (const snap of verifiedSnaps) {
     if (snap.id.endsWith('example-snap')) {
