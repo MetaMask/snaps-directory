@@ -29,6 +29,10 @@ msgstr ""
 msgid "About"
 msgstr ""
 
+#: src/constants.ts
+msgid "Account Management"
+msgstr ""
+
 #: src/components/InstallSnapButton.tsx
 #: src/components/InstallUnsupported.tsx
 msgid "Add to MetaMask"
@@ -209,6 +213,10 @@ msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Knowledge Base"
+msgstr ""
+
+#: src/constants.ts
+msgid "Manage your accounts and keys with MetaMask."
 msgstr ""
 
 #: src/components/icons/index.ts
