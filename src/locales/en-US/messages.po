@@ -27,7 +27,7 @@ msgstr ""
 
 #: src/components/FooterLinks.tsx
 msgid "About"
-msgstr ""
+msgstr "<<<<<<< HEAD"
 
 #: src/features/snap/permissions.tsx
 msgid "Access the Ethereum provider"
@@ -35,6 +35,10 @@ msgstr ""
 
 #: src/features/snap/permissions.tsx
 msgid "Access the internet"
+msgstr ""
+
+#: src/constants.ts
+msgid "Account Management"
 msgstr ""
 
 #: src/components/icons/index.ts
@@ -50,6 +54,7 @@ msgstr ""
 msgid "Add to MetaMask"
 msgstr ""
 
+#: src/components/icons/index.ts
 #: src/components/icons/index.ts
 msgid "Add user"
 msgstr ""
@@ -471,7 +476,7 @@ msgstr ""
 
 #: src/components/icons/index.ts
 msgid "Live"
-msgstr ""
+msgstr "<<<<<<< HEAD"
 
 #: src/features/snap/permissions.tsx
 msgid "Manage {name} accounts"
@@ -483,6 +488,14 @@ msgstr ""
 
 #: src/features/snap/permissions.tsx
 msgid "Manage accounts (Unknown network \"m/44'/{coinType}'\")"
+msgstr ""
+
+#: src/constants.ts
+msgid "Manage Your Accounts"
+msgstr ""
+
+#: src/constants.ts
+msgid "Manage your accounts and keys with MetaMask."
 msgstr ""
 
 #: src/components/icons/index.ts
@@ -595,6 +608,7 @@ msgstr ""
 msgid "See address, account balance, activity and suggest transactions to approve"
 msgstr ""
 
+#: src/constants.ts
 #: src/constants.ts
 #: src/constants.ts
 #: src/constants.ts

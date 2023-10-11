@@ -1,13 +1,19 @@
 import { defineMessage } from '@lingui/macro';
+import type { FunctionComponent } from 'react';
 
 import {
   InteroperabilityIcon,
   NotificationsCategoryIcon,
+  AddUserIcon,
   TransactionInsightsIcon,
 } from '../../components/icons';
 import { RegistrySnapCategory } from '../../constants';
 
-export const SNAP_CATEGORY_ICONS = {
+export const SNAP_CATEGORY_ICONS: Record<
+  RegistrySnapCategory,
+  FunctionComponent
+> = {
+  [RegistrySnapCategory.AccountManagement]: AddUserIcon,
   [RegistrySnapCategory.Interoperability]: InteroperabilityIcon,
   [RegistrySnapCategory.Notifications]: NotificationsCategoryIcon,
   [RegistrySnapCategory.TransactionInsights]: TransactionInsightsIcon,
