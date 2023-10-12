@@ -1,6 +1,9 @@
 /* eslint-disable import/no-nodejs-modules */
 import { detectSnapLocation } from '@metamask/snaps-controllers';
-import type { SnapsRegistryDatabase } from '@metamask/snaps-registry';
+import type {
+  SnapsRegistryDatabase,
+  VerifiedSnap,
+} from '@metamask/snaps-registry';
 import type { SnapManifest } from '@metamask/snaps-utils';
 import deepEqual from 'fast-deep-equal';
 import { rm } from 'fs/promises';
@@ -36,12 +39,6 @@ type SnapNode = NodeInput & {
   slug: string;
   latestVersion: string;
   icon?: string | undefined;
-};
-
-type VerifiedSnap = SnapsRegistryDatabase['verifiedSnaps'][string] & {
-  metadata: {
-    onboard?: boolean;
-  };
 };
 
 const REGISTRY_URL = 'https://acl.execution.consensys.io/latest/registry.json';
@@ -152,15 +149,11 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
   const { createNode } = actions;
   const { registry, customFetch } = await getRegistry();
 
-  const verifiedSnaps = Object.values(registry.verifiedSnaps).filter((snap) =>
-    Boolean(snap.metadata.category),
-  );
+  const verifiedSnaps = Object.values(registry.verifiedSnaps)
+    .filter((snap) => Boolean(snap.metadata.category))
+    .filter((snap) => snap.metadata.hidden !== true);
 
   for (const snap of verifiedSnaps) {
-    if (snap.id.endsWith('example-snap')) {
-      continue;
-    }
-
     const latestVersion = getLatestSnapVersion(snap);
     const location = detectSnapLocation(snap.id, {
       versionRange: latestVersion as any,
