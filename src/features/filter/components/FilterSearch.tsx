@@ -24,6 +24,7 @@ export const FilterSearch: FunctionComponent = () => {
   const searchQuery = useSelector(getSearchQuery);
   const searchResults = useGatsbyPluginFusejs<Snap>(searchQuery, fusejs, {
     threshold: 0.3,
+    distance: 300,
   });
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
