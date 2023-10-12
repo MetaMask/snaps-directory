@@ -7,13 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [1.3.1]
-### Uncategorized
-- Bump `@metamask/snaps-controllers` and `@metamask/snaps-utils` ([#168](https://github.com/MetaMask/snaps-directory/pull/168))
-- Increase search distance ([#167](https://github.com/MetaMask/snaps-directory/pull/167))
-- Bump @metamask/providers from 13.0.0 to 13.1.0 ([#165](https://github.com/MetaMask/snaps-directory/pull/165))
+### Changed
 - Hide Snaps with hidden field ([#166](https://github.com/MetaMask/snaps-directory/pull/166))
 - Hide Snaps without a category ([#160](https://github.com/MetaMask/snaps-directory/pull/160))
-- Bump @metamask/rpc-errors from 6.0.0 to 6.1.0 ([#163](https://github.com/MetaMask/snaps-directory/pull/163))
+
+### Fixed
+- Increase search distance ([#167](https://github.com/MetaMask/snaps-directory/pull/167))
 
 ## [1.3.0]
 ### Added
