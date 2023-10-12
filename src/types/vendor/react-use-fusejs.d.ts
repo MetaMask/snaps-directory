@@ -8,6 +8,7 @@ declare module 'react-use-fusejs' {
     },
     fuseOptions?: {
       threshold: number;
+      distance: number;
     },
   ): { item: Type }[];
 }
