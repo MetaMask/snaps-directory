@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.1]
+### Changed
+- Hide Snaps with hidden field ([#166](https://github.com/MetaMask/snaps-directory/pull/166))
+- Hide Snaps without a category ([#160](https://github.com/MetaMask/snaps-directory/pull/160))
+
+### Fixed
+- Increase search distance ([#167](https://github.com/MetaMask/snaps-directory/pull/167))
+
 ## [1.3.0]
 ### Added
 - Add notifications menu for Snaps with available updates ([#155](https://github.com/MetaMask/snaps-directory/pull/155), [#158](https://github.com/MetaMask/snaps-directory/pull/158))
@@ -107,7 +115,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.3.1...HEAD
+[1.3.1]: https://github.com/MetaMask/snaps-directory/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/MetaMask/snaps-directory/compare/v1.2.1...v1.3.0
 [1.2.1]: https://github.com/MetaMask/snaps-directory/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/MetaMask/snaps-directory/compare/v1.1.1...v1.2.0
