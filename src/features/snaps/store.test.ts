@@ -1,15 +1,15 @@
 import {
+  getMockQueryResponse,
+  getMockSnap,
+  getMockState,
+} from '../../utils/test-utils';
+import {
   getSnaps,
   getUpdatableSnaps,
   getUpdateAvailable,
   setSnaps,
   snapsSlice,
 } from './store';
-import {
-  getMockQueryResponse,
-  getMockSnap,
-  getMockState,
-} from '../../utils/test-utils';
 
 describe('snapsSlice', () => {
   describe('setSnaps', () => {

@@ -4,9 +4,9 @@ import Linkify from 'linkify-react';
 import type { IntermediateRepresentation } from 'linkifyjs';
 import type { FunctionComponent } from 'react';
 
-import { ExternalLink } from './ExternalLink';
 import type { Fields } from '../utils';
 import { getLinkText } from '../utils';
+import { ExternalLink } from './ExternalLink';
 
 export type SnapDescriptionProps = TextProps & {
   description: Fields<Queries.SnapDescription, 'description' | 'trusted'>;

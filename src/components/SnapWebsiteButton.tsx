@@ -2,8 +2,8 @@ import { Button, Link } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
-import { ExternalLinkIcon } from './icons';
 import { SnapEventType, SnapWebsiteOrigin, track } from '../analytics';
+import { ExternalLinkIcon } from './icons';
 
 export type SnapWebsiteButtonProps = {
   snapId: string;

@@ -1,7 +1,7 @@
-import { useDispatch } from './useDispatch';
 import { getInstalled, toggleInstalled } from '../features';
 import { createStore } from '../store';
 import { renderHook } from '../utils/test-utils';
+import { useDispatch } from './useDispatch';
 
 describe('useDispatch', () => {
   it('dispatches an action to the store', () => {

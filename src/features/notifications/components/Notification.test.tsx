@@ -1,8 +1,8 @@
 import { Menu } from '@chakra-ui/react';
 
-import { Notification } from './Notification';
 import { createStore } from '../../../store';
 import { getMockSnap, render } from '../../../utils/test-utils';
+import { Notification } from './Notification';
 
 describe('Notification', () => {
   it('renders', () => {

@@ -1,11 +1,11 @@
 import { expect } from '@jest/globals';
 import { act } from '@testing-library/react';
 
-import { FilterTags } from './FilterTags';
 import { RegistrySnapCategory } from '../../../constants';
 import { createStore } from '../../../store';
 import { render } from '../../../utils/test-utils';
 import { setCategory, toggleInstalled } from '../store';
+import { FilterTags } from './FilterTags';
 
 describe('FilterTags', () => {
   it('renders the selected filters', async () => {

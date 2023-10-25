@@ -1,7 +1,6 @@
 import { describe } from '@jest/globals';
 import { navigate } from 'gatsby';
 
-import CategoryInstalledPage, { Head } from './installed';
 import { RegistrySnapCategory } from '../../constants';
 import { getCategories, getInstalled } from '../../features';
 import { createStore } from '../../store';
@@ -10,6 +9,7 @@ import {
   getMockCategory,
   getMockSiteMetadata,
 } from '../../utils/test-utils/queries';
+import CategoryInstalledPage, { Head } from './installed';
 
 describe('Category installed page', () => {
   it('renders', async () => {

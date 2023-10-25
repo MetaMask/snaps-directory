@@ -1,5 +1,5 @@
-import { SnapData } from './SnapData';
 import { render } from '../utils/test-utils';
+import { SnapData } from './SnapData';
 
 describe('SnapData', () => {
   it('renders', () => {

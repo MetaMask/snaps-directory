@@ -1,3 +1,9 @@
+import { RegistrySnapCategory } from '../../constants';
+import {
+  getMockQueryResponse,
+  getMockSnap,
+  getMockState,
+} from '../../utils/test-utils';
 import { Order } from './constants';
 import {
   filterAll,
@@ -16,12 +22,6 @@ import {
   toggleCategory,
   toggleInstalled,
 } from './store';
-import { RegistrySnapCategory } from '../../constants';
-import {
-  getMockQueryResponse,
-  getMockSnap,
-  getMockState,
-} from '../../utils/test-utils';
 
 describe('filterSlice', () => {
   describe('setSearchQuery', () => {

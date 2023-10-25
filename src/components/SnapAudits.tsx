@@ -2,8 +2,8 @@ import { Link, Text } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 import { Fragment, useMemo } from 'react';
 
-import { ExternalLink } from './ExternalLink';
 import type { Fields } from '../utils';
+import { ExternalLink } from './ExternalLink';
 
 export type SnapAuditsProps = {
   audits: Fields<Queries.SnapAudits, 'auditor' | 'report'>[];

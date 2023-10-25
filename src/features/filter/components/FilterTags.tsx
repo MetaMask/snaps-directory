@@ -3,10 +3,10 @@ import { Stack, Tag, TagLabel } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
-import { FilterTag } from './FilterTag';
 import { CloseIcon } from '../../../components';
 import { useDispatch, useSelector } from '../../../hooks';
 import { getCategories, getInstalled, toggleInstalled } from '../store';
+import { FilterTag } from './FilterTag';
 
 export type FilterTagsProps = StackProps;
 

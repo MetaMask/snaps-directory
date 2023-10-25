@@ -2,11 +2,11 @@ import { Text } from '@chakra-ui/react';
 import { useLingui } from '@lingui/react';
 import type { FunctionComponent } from 'react';
 
-import { FilterItem } from './FilterItem';
 import { useDispatch, useSelector } from '../../../hooks';
 import type { Order } from '../constants';
 import { SNAP_ORDER_LABELS } from '../constants';
 import { getOrder, setOrder } from '../store';
+import { FilterItem } from './FilterItem';
 
 export type FilterOrderProps = {
   order: Order;

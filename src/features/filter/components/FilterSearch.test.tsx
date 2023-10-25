@@ -2,10 +2,10 @@ import { fireEvent } from '@testing-library/react';
 import Fuse from 'fuse.js';
 import { useStaticQuery } from 'gatsby';
 
-import { FilterSearch } from './FilterSearch';
 import { createStore } from '../../../store';
 import { getMock, getMockSnap, render } from '../../../utils/test-utils';
 import { getSearchQuery } from '../store';
+import { FilterSearch } from './FilterSearch';
 
 describe('FilterSearch', () => {
   it('renders', () => {

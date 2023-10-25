@@ -1,5 +1,5 @@
-import { SnapAudits } from './SnapAudits';
 import { render } from '../utils/test-utils';
+import { SnapAudits } from './SnapAudits';
 
 describe('SnapAudits', () => {
   it('renders the auditor', () => {

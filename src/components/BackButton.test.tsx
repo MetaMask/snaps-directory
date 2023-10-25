@@ -1,5 +1,5 @@
-import { BackButton } from './BackButton';
 import { render } from '../utils/test-utils';
+import { BackButton } from './BackButton';
 
 describe('BackButton', () => {
   it('renders', () => {

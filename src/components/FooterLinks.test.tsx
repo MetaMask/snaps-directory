@@ -1,5 +1,5 @@
-import { FooterLinks } from './FooterLinks';
 import { render } from '../utils/test-utils';
+import { FooterLinks } from './FooterLinks';
 
 describe('FooterLinks', () => {
   it('renders', () => {

@@ -1,8 +1,8 @@
 import { Box, useColorMode } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 
-import SmallLogo from './icons/metamask.svg';
 import SvgLogo from '../assets/logo.svg';
+import SmallLogo from './icons/metamask.svg';
 
 /**
  * Render the Snaps Directory logo.

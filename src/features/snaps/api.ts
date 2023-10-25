@@ -1,11 +1,11 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { createApi } from '@reduxjs/toolkit/query/react';
 
-import { getUpdateAvailable } from './store';
 import { SnapEventType, track } from '../../analytics';
 import type { ApplicationState } from '../../store';
 import { request } from '../../store/api';
 import { getErrorMessage } from '../../utils';
+import { getUpdateAvailable } from './store';
 
 enum SnapsTag {
   InstalledSnaps = 'InstalledSnaps',

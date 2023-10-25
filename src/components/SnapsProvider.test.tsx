@@ -1,9 +1,9 @@
 import { Text } from '@chakra-ui/react';
 import { useStaticQuery } from 'gatsby';
 
-import { SnapsProvider } from './SnapsProvider';
 import { createStore } from '../store';
 import { getMock, getMockSnap, render } from '../utils/test-utils';
+import { SnapsProvider } from './SnapsProvider';
 
 describe('SnapsProvider', () => {
   it('renders children', () => {

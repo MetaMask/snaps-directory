@@ -1,8 +1,8 @@
 import { Text } from '@chakra-ui/react';
 import { act } from '@testing-library/react';
 
-import { Layout } from './Layout';
 import { render } from '../utils/test-utils';
+import { Layout } from './Layout';
 
 describe('Layout', () => {
   it('renders the children', async () => {

@@ -1,7 +1,7 @@
 import { act } from '@testing-library/react';
 
-import { InstallUnsupportedMobile } from './InstallUnsupportedMobile';
 import { render } from '../utils/test-utils';
+import { InstallUnsupportedMobile } from './InstallUnsupportedMobile';
 
 describe('InstallUnsupportedMobile', () => {
   it('renders a drawer when open', async () => {

@@ -1,7 +1,7 @@
 import { Menu, Text } from '@chakra-ui/react';
 
-import { FilterItem } from './FilterItem';
 import { render } from '../../../utils/test-utils';
+import { FilterItem } from './FilterItem';
 
 describe('FilterItem', () => {
   it('renders', () => {

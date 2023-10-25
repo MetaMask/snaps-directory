@@ -1,5 +1,5 @@
-import { ExternalLink } from './ExternalLink';
 import { render } from '../utils/test-utils';
+import { ExternalLink } from './ExternalLink';
 
 describe('ExternalLink', () => {
   it('renders', () => {

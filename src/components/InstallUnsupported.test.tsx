@@ -1,7 +1,7 @@
 import { act } from '@testing-library/react';
 
-import { InstallUnsupported } from './InstallUnsupported';
 import { render } from '../utils/test-utils';
+import { InstallUnsupported } from './InstallUnsupported';
 
 describe('InstallUnsupported', () => {
   it('renders', async () => {

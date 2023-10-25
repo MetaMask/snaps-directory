@@ -1,11 +1,11 @@
 import { beforeEach } from '@jest/globals';
 import { act } from '@testing-library/react';
 
-import { InstallSnapButton } from './InstallSnapButton';
 import * as analytics from '../analytics';
 import { setSnaps } from '../features';
 import { createStore } from '../store';
 import { getMockSnap, getRequestMethodMock, render } from '../utils/test-utils';
+import { InstallSnapButton } from './InstallSnapButton';
 
 describe('InstallSnapButton', () => {
   beforeEach(() => {

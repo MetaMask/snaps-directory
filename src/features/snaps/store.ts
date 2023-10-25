@@ -2,9 +2,9 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 import semver from 'semver/preload';
 
-import { getInstalledSnaps } from './api';
 import type { ApplicationState } from '../../store';
 import type { Fields } from '../../utils';
+import { getInstalledSnaps } from './api';
 
 export type Snap = Fields<
   Queries.Snap,

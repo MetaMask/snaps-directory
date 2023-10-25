@@ -1,6 +1,6 @@
+import { render } from '../../utils/test-utils';
 import { wrapIcon } from './Icon';
 import MetaMaskIcon from './metamask.svg';
-import { render } from '../../utils/test-utils';
 
 describe('wrapIcon', () => {
   it('wraps an SVG icon component', () => {

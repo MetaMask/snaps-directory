@@ -1,11 +1,11 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 
-import { Order } from './constants';
 import { RegistrySnapCategory } from '../../constants';
 import type { ApplicationState } from '../../store';
 import type { Snap } from '../snaps';
 import { getInstalledSnaps } from '../snaps';
+import { Order } from './constants';
 
 export type SearchResult = { item: Snap };
 

@@ -2,11 +2,11 @@ import { expect } from '@jest/globals';
 import { act } from '@testing-library/react';
 import { useStaticQuery } from 'gatsby';
 
-import { Filter } from './Filter';
-import { setCategory, toggleInstalled } from './store';
 import { RegistrySnapCategory } from '../../constants';
 import { createStore } from '../../store';
 import { getMock, render } from '../../utils/test-utils';
+import { Filter } from './Filter';
+import { setCategory, toggleInstalled } from './store';
 
 describe('Filter', () => {
   it('renders the enabled categories', async () => {

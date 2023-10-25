@@ -1,7 +1,6 @@
 import { afterEach } from '@jest/globals';
 import { act } from '@testing-library/react';
 
-import { NotificationAcknowledger } from './NotificationAcknowledger';
 import { createStore } from '../../../store';
 import {
   getMockSnap,
@@ -9,6 +8,7 @@ import {
   render,
 } from '../../../utils/test-utils';
 import { getAcknowledgedUpdates } from '../store';
+import { NotificationAcknowledger } from './NotificationAcknowledger';
 
 describe('NotificationAcknowledger', () => {
   afterEach(() => {

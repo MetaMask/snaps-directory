@@ -1,12 +1,12 @@
 import { act } from '@testing-library/react';
 
-import { NotificationsButton } from './NotificationsButton';
 import { createStore } from '../../../store';
 import {
   getMockSnap,
   getRequestMethodMock,
   render,
 } from '../../../utils/test-utils';
+import { NotificationsButton } from './NotificationsButton';
 
 describe('NotificationsButton', () => {
   it('renders', async () => {

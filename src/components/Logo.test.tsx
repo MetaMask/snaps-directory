@@ -1,6 +1,6 @@
-import { Logo } from './Logo';
 import { createStore } from '../store';
 import { render } from '../utils/test-utils';
+import { Logo } from './Logo';
 
 describe('Logo', () => {
   it('renders the logo with the correct fill color', async () => {

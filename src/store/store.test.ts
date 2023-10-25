@@ -1,7 +1,7 @@
 import { afterEach } from '@jest/globals';
 
-import { createStore } from './store';
 import { acknowledgeUpdate } from '../features';
+import { createStore } from './store';
 
 describe('createStore', () => {
   afterEach(() => {

@@ -2,6 +2,9 @@ import { Menu, MenuButton, MenuGroup, MenuList, Text } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
+import type { RegistrySnapCategory } from '../../constants';
+import { SNAP_CATEGORY_LABELS } from '../../constants';
+import { useDispatch, useSelector } from '../../hooks';
 import {
   FilterButton,
   FilterCategory,
@@ -12,9 +15,6 @@ import {
 import { FilterOrder } from './components/FilterOrder';
 import { Order, SNAP_CATEGORY_ICONS } from './constants';
 import { filterAll, getAll, getInstalled, toggleInstalled } from './store';
-import type { RegistrySnapCategory } from '../../constants';
-import { SNAP_CATEGORY_LABELS } from '../../constants';
-import { useDispatch, useSelector } from '../../hooks';
 
 export const Filter: FunctionComponent = () => {
   const dispatch = useDispatch();

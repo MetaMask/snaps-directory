@@ -1,5 +1,5 @@
-import { FooterCopyright } from './FooterCopyright';
 import { render } from '../utils/test-utils';
+import { FooterCopyright } from './FooterCopyright';
 
 describe('FooterCopyright', () => {
   it('renders', () => {

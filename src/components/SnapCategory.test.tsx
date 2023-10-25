@@ -1,6 +1,6 @@
-import { SnapCategory } from './SnapCategory';
 import { RegistrySnapCategory } from '../constants';
 import { render } from '../utils/test-utils';
+import { SnapCategory } from './SnapCategory';
 
 describe('SnapCategory', () => {
   it('renders the correct category name', () => {

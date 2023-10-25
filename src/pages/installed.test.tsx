@@ -1,10 +1,10 @@
 import { describe } from '@jest/globals';
 import { navigate } from 'gatsby';
 
-import Installed, { Head } from './installed';
 import { getInstalled } from '../features';
 import { createStore } from '../store';
 import { render } from '../utils/test-utils';
+import Installed, { Head } from './installed';
 
 describe('Installed page', () => {
   it('renders', () => {

@@ -1,12 +1,12 @@
 import { describe } from '@jest/globals';
 import { act } from 'react-dom/test-utils';
 
-import SnapPage, { Head } from './{Snap.slug}';
 import {
   render,
   getMockSiteMetadata,
   getMockSnap,
 } from '../../../utils/test-utils';
+import SnapPage, { Head } from './{Snap.slug}';
 
 describe('Snap page', () => {
   it('renders', async () => {

@@ -1,5 +1,5 @@
-import { Footer } from './Footer';
 import { render } from '../utils/test-utils';
+import { Footer } from './Footer';
 
 describe('Footer', () => {
   it('renders', () => {

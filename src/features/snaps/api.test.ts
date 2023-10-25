@@ -1,13 +1,6 @@
 import { beforeEach } from '@jest/globals';
 import { act } from 'react-dom/test-utils';
 
-import {
-  getInstalledSnap,
-  getInstalledSnaps,
-  useGetInstalledSnapsQuery,
-  useGetVersionQuery,
-  useInstallSnapMutation,
-} from './api';
 import * as analytics from '../../analytics';
 import { SnapEventType } from '../../analytics';
 import { createStore } from '../../store';
@@ -18,6 +11,13 @@ import {
   getRequestMethodMock,
   renderHook,
 } from '../../utils/test-utils';
+import {
+  getInstalledSnap,
+  getInstalledSnaps,
+  useGetInstalledSnapsQuery,
+  useGetVersionQuery,
+  useInstallSnapMutation,
+} from './api';
 
 describe('snapsApi', () => {
   beforeEach(() => {

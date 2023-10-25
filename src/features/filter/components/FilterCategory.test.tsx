@@ -2,12 +2,12 @@ import { Menu } from '@chakra-ui/react';
 import { expect } from '@jest/globals';
 import { act } from '@testing-library/react';
 
-import { FilterCategory } from './FilterCategory';
 import { TransactionInsightsIcon } from '../../../components';
 import { RegistrySnapCategory } from '../../../constants';
 import { createStore } from '../../../store';
 import { render } from '../../../utils/test-utils';
 import { getCategory } from '../store';
+import { FilterCategory } from './FilterCategory';
 
 describe('FilterCategory', () => {
   it('renders', () => {

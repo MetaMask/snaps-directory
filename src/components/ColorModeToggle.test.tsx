@@ -1,7 +1,7 @@
 import { act } from '@testing-library/react';
 
-import { ColorModeToggle } from './ColorModeToggle';
 import { render } from '../utils/test-utils';
+import { ColorModeToggle } from './ColorModeToggle';
 
 describe('ColorModeToggle', () => {
   it('renders', () => {

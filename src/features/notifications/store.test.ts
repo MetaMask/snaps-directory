@@ -1,6 +1,11 @@
 import { afterEach } from '@jest/globals';
 
 import {
+  getMockQueryResponse,
+  getMockSnap,
+  getMockState,
+} from '../../utils/test-utils';
+import {
   acknowledgeUpdate,
   getAcknowledgedUpdates,
   getUnacknowledgedUpdates,
@@ -8,11 +13,6 @@ import {
   notificationsSlice,
   removeAcknowledgedUpdate,
 } from './store';
-import {
-  getMockQueryResponse,
-  getMockSnap,
-  getMockState,
-} from '../../utils/test-utils';
 
 describe('notificationsSlice', () => {
   describe('initialState', () => {

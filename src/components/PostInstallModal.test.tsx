@@ -1,7 +1,7 @@
 import { Text } from '@chakra-ui/react';
 
-import { PostInstallModal } from './PostInstallModal';
 import { getMockSnap, render } from '../utils/test-utils';
+import { PostInstallModal } from './PostInstallModal';
 
 describe('PostInstallModal', () => {
   it('renders the children', () => {

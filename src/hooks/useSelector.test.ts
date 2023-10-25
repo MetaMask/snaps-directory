@@ -1,9 +1,9 @@
 import { act } from 'react-dom/test-utils';
 
-import { useSelector } from './useSelector';
 import { getInstalled, toggleInstalled } from '../features';
 import { createStore } from '../store';
 import { renderHook } from '../utils/test-utils';
+import { useSelector } from './useSelector';
 
 describe('useSelector', () => {
   it('selects a value from the store', async () => {

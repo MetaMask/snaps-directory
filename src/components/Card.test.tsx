@@ -1,7 +1,7 @@
 import { Text } from '@chakra-ui/react';
 
-import { Card } from './Card';
 import { render } from '../utils/test-utils';
+import { Card } from './Card';
 
 describe('Card', () => {
   it('renders the children', () => {

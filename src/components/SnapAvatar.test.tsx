@@ -1,7 +1,7 @@
 import { act } from '@testing-library/react';
 
-import { SnapAvatar } from './SnapAvatar';
 import { getMockSnap, render } from '../utils/test-utils';
+import { SnapAvatar } from './SnapAvatar';
 
 describe('SnapAvatar', () => {
   it('renders', async () => {

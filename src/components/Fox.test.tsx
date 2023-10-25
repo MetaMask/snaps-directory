@@ -1,5 +1,5 @@
-import { Fox } from './Fox';
 import { render } from '../utils/test-utils';
+import { Fox } from './Fox';
 
 describe('Fox', () => {
   it('adds the fox to the DOM', () => {

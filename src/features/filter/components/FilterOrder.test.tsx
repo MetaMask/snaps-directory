@@ -1,11 +1,11 @@
 import { Menu } from '@chakra-ui/react';
 import { act } from '@testing-library/react';
 
-import { FilterOrder } from './FilterOrder';
 import { createStore } from '../../../store';
 import { render } from '../../../utils/test-utils';
 import { Order } from '../constants';
 import { getOrder } from '../store';
+import { FilterOrder } from './FilterOrder';
 
 describe('FilterOrder', () => {
   it('renders', () => {

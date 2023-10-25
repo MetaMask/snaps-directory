@@ -2,9 +2,6 @@ import { Button, useDisclosure } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
-import { CheckIcon, MetaMaskIcon } from './icons';
-import { InstallUnsupported } from './InstallUnsupported';
-import { PostInstallModal } from './PostInstallModal';
 import {
   getUpdateAvailable,
   removeAcknowledgedUpdate,
@@ -17,6 +14,9 @@ import {
   useSelector,
   useSupportedVersion,
 } from '../hooks';
+import { CheckIcon, MetaMaskIcon } from './icons';
+import { InstallUnsupported } from './InstallUnsupported';
+import { PostInstallModal } from './PostInstallModal';
 
 export type InstallSnapButtonProps = {
   snapId: string;

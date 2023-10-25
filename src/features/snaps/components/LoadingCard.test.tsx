@@ -1,5 +1,5 @@
-import { LoadingCard } from './LoadingCard';
 import { render } from '../../../utils/test-utils';
+import { LoadingCard } from './LoadingCard';
 
 describe('LoadingCard', () => {
   it('renders', () => {

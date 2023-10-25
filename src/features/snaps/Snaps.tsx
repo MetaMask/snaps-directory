@@ -1,9 +1,9 @@
 import { SimpleGrid } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 
-import { LoadingGrid, NoSnaps, SnapCard } from './components';
 import { useSelector } from '../../hooks';
 import { getFilteredSnaps } from '../filter';
+import { LoadingGrid, NoSnaps, SnapCard } from './components';
 
 export const Snaps: FunctionComponent = () => {
   const snaps = useSelector(getFilteredSnaps);

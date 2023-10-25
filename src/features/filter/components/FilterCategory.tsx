@@ -2,12 +2,12 @@ import { Box, Text } from '@chakra-ui/react';
 import { Trans } from '@lingui/react';
 import type { FunctionComponent } from 'react';
 
-import { FilterItem } from './FilterItem';
 import type { IconProps } from '../../../components/icons/Icon';
 import { SNAP_CATEGORY_LABELS } from '../../../constants';
 import type { RegistrySnapCategory } from '../../../constants';
 import { useDispatch, useSelector } from '../../../hooks';
 import { getCategory, toggleCategory } from '../store';
+import { FilterItem } from './FilterItem';
 
 export type FilterCategoryProps = {
   category: RegistrySnapCategory;

@@ -1,9 +1,9 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 
-import { SnapAvatar } from './SnapAvatar';
 import { useGetInstalledSnapsQuery } from '../features';
 import type { Fields } from '../utils';
+import { SnapAvatar } from './SnapAvatar';
 
 export const SnapAuthorship: FunctionComponent<
   Fields<Queries.Snap, 'name' | 'snapId' | 'icon'>

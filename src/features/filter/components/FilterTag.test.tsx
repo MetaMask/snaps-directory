@@ -1,10 +1,10 @@
 import { act } from '@testing-library/react';
 
-import { FilterTag } from './FilterTag';
 import { RegistrySnapCategory } from '../../../constants';
 import { createStore } from '../../../store';
 import { render } from '../../../utils/test-utils';
 import { getCategory } from '../store';
+import { FilterTag } from './FilterTag';
 
 describe('FilterTag', () => {
   it('renders', () => {

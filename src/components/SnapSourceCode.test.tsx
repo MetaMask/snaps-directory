@@ -1,5 +1,5 @@
-import { SnapSourceCode } from './SnapSourceCode';
 import { render } from '../utils/test-utils';
+import { SnapSourceCode } from './SnapSourceCode';
 
 describe('SnapSourceCode', () => {
   it('renders the host', () => {

@@ -1,7 +1,7 @@
 import { act } from '@testing-library/react';
 
-import { InstallUnsupportedDesktopUpdate } from './InstallUnsupportedDesktopUpdate';
 import { render } from '../utils/test-utils';
+import { InstallUnsupportedDesktopUpdate } from './InstallUnsupportedDesktopUpdate';
 
 describe('InstallUnsupportedDesktopUpdate', () => {
   it('renders a modal when open', async () => {

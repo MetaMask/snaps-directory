@@ -4,9 +4,9 @@ import { Trans } from '@lingui/macro';
 import { Link } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
+import { Notifications } from '../features';
 import { ColorModeToggle } from './ColorModeToggle';
 import { Logo } from './Logo';
-import { Notifications } from '../features';
 
 type HeaderProps = BoxProps;
 

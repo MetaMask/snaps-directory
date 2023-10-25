@@ -1,5 +1,5 @@
-import { SnapDescription } from './SnapDescription';
 import { render } from '../utils/test-utils';
+import { SnapDescription } from './SnapDescription';
 
 describe('SnapDescription', () => {
   it('renders links in trusted descriptions', () => {

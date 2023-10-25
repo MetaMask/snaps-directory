@@ -1,13 +1,13 @@
 import { Menu } from '@chakra-ui/react';
 import { act } from '@testing-library/react';
 
-import { NotificationsList } from './NotificationsList';
 import { createStore } from '../../../store';
 import {
   getMockSnap,
   getRequestMethodMock,
   render,
 } from '../../../utils/test-utils';
+import { NotificationsList } from './NotificationsList';
 
 describe('NotificationsList', () => {
   it('renders all notifications', async () => {

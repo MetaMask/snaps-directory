@@ -1,7 +1,7 @@
 import { Text } from '@chakra-ui/react';
 
-import { Container } from './Container';
 import { render } from '../utils/test-utils';
+import { Container } from './Container';
 
 describe('Container', () => {
   it('renders the children', () => {

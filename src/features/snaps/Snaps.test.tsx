@@ -1,9 +1,9 @@
 import { describe, it, expect } from '@jest/globals';
 import { act } from 'react-dom/test-utils';
 
-import { Snaps } from './Snaps';
 import { createStore } from '../../store';
 import { getMockSnap, render } from '../../utils/test-utils';
+import { Snaps } from './Snaps';
 
 describe('Snaps', () => {
   it('renders the loading grid when Snaps are not loaded', () => {

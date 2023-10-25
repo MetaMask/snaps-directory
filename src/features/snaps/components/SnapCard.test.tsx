@@ -1,7 +1,7 @@
 import { act } from '@testing-library/react';
 
-import { SnapCard } from './SnapCard';
 import { getMockSnap, render } from '../../../utils/test-utils';
+import { SnapCard } from './SnapCard';
 
 describe('SnapCard', () => {
   it('renders', async () => {

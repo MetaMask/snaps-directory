@@ -12,9 +12,9 @@ import {
 import { Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
+import { SnapStatus, useSupportedVersion } from '../hooks';
 import { Fox } from './Fox';
 import { InstallUnsupportedDesktopUpdate } from './InstallUnsupportedDesktopUpdate';
-import { SnapStatus, useSupportedVersion } from '../hooks';
 
 export type InstallUnsupportedDesktopProps = {
   isOpen: boolean;

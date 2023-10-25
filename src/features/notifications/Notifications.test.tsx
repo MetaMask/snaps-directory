@@ -1,7 +1,7 @@
 import { act } from '@testing-library/react';
 
-import { Notifications } from './Notifications';
 import { render } from '../../utils/test-utils';
+import { Notifications } from './Notifications';
 
 describe('Notifications', () => {
   it('renders a menu', async () => {

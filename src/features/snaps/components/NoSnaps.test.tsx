@@ -1,6 +1,5 @@
 import { act } from '@testing-library/react';
 
-import { NoSnaps } from './NoSnaps';
 import { createStore } from '../../../store';
 import { render } from '../../../utils/test-utils';
 import {
@@ -9,6 +8,7 @@ import {
   setSearchQuery,
   toggleInstalled,
 } from '../../filter';
+import { NoSnaps } from './NoSnaps';
 
 describe('NoSnaps', () => {
   it('renders', () => {

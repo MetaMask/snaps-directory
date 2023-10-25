@@ -1,5 +1,5 @@
-import { NoNotifications } from './NoNotifications';
 import { render } from '../../../utils/test-utils';
+import { NoNotifications } from './NoNotifications';
 
 describe('NoNotifications', () => {
   it('renders', () => {

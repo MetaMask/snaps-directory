@@ -1,5 +1,5 @@
-import { FilterButton } from './FilterButton';
 import { render } from '../../../utils/test-utils';
+import { FilterButton } from './FilterButton';
 
 describe('FilterButton', () => {
   it('renders', () => {

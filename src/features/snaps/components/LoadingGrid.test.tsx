@@ -1,5 +1,5 @@
-import { LoadingGrid } from './LoadingGrid';
 import { render } from '../../../utils/test-utils';
+import { LoadingGrid } from './LoadingGrid';
 
 describe('LoadingGrid', () => {
   it('renders six loading cards', () => {

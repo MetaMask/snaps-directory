@@ -1,7 +1,7 @@
 import { act } from 'react-dom/test-utils';
 
-import { SnapStatus, useSupportedVersion } from './useSupportedVersion';
 import { renderHook, getRequestMethodMock } from '../utils/test-utils';
+import { SnapStatus, useSupportedVersion } from './useSupportedVersion';
 
 describe('useSupportedVersion', () => {
   it('returns `Unknown` if the provider is not detected', async () => {

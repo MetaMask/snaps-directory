@@ -1,9 +1,9 @@
 import { beforeEach } from '@jest/globals';
 
-import { SnapWebsiteButton } from './SnapWebsiteButton';
 import { SnapEventType, SnapWebsiteOrigin } from '../analytics';
 import * as analytics from '../analytics';
 import { render } from '../utils/test-utils';
+import { SnapWebsiteButton } from './SnapWebsiteButton';
 
 describe('SnapWebsiteButton', () => {
   beforeEach(() => {

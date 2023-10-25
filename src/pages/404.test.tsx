@@ -1,8 +1,8 @@
 import { describe } from '@jest/globals';
 
-import NotFoundPage, { Head } from './404';
 import { render } from '../utils/test-utils';
 import { getMockSiteMetadata } from '../utils/test-utils/queries';
+import NotFoundPage, { Head } from './404';
 
 describe('404 page', () => {
   it('renders', () => {
