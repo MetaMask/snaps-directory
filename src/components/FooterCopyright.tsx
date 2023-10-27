@@ -9,7 +9,7 @@ export const FooterCopyright: FunctionComponent<FooterCopyrightProps> = (
   props,
 ) => (
   <Box {...props}>
-    <Text variant="muted" fontSize="xs">
+    <Text color="gray.muted" fontSize="xs">
       <Trans>
         &copy;{new Date().getFullYear()} MetaMask. All rights reserved.
       </Trans>{' '}

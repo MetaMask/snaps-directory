@@ -3,7 +3,7 @@ import { Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
 export const FooterTerms: FunctionComponent = () => (
-  <Text variant="muted" fontSize="xs" marginBottom="6">
+  <Text color="gray.muted" fontSize="xs" marginBottom="6">
     <Trans>
       You acknowledge that any Snap that you install is a Third Party Service,
       unless otherwise identified, as defined in the{' '}

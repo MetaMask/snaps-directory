@@ -26,7 +26,7 @@ export const Footer: FunctionComponent<FooterProps> = (props) => (
         <Box>
           <MetaMaskLogo marginBottom="4" />
           <Text
-            variant="muted"
+            color="gray.muted"
             display="block"
             maxWidth="30rem"
             marginBottom={['12', null, '24']}
