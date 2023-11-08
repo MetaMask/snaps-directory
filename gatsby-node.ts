@@ -174,7 +174,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
     );
 
     const downloadsJson = await customFetch(
-      `https://api.npmjs.org/downloads/point/last-month/${slug}`,
+      `https://api.npmjs.org/downloads/point/last-year/${slug}`,
     ).then(async (response: any) => response.json());
 
     const { downloads } = downloadsJson;
