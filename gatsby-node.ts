@@ -127,7 +127,7 @@ async function getRegistry() {
    * @param options - The fetch options.
    * @returns The fetch response.
    */
-  const customFetch = (url: RequestInfo, options: RequestInit | undefined) => {
+  const customFetch = (url: RequestInfo, options?: RequestInit) => {
     if (url.toString().endsWith('.tgz')) {
       return cachedTarballFetch(url, options);
     }
@@ -173,6 +173,12 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       snap.metadata.summary ?? manifest.description,
     );
 
+    const downloadsJson = await customFetch(
+      `https://api.npmjs.org/downloads/point/last-month/${slug}`,
+    ).then(async (response: any) => response.json());
+
+    const { downloads } = downloadsJson;
+
     const content = {
       ...snap.metadata,
       snapId: snap.id,
@@ -183,6 +189,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       slug,
       latestVersion,
       icon,
+      downloads,
     };
 
     const node: SnapNode = {
