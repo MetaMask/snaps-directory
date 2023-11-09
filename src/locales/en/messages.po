@@ -244,6 +244,10 @@ msgstr ""
 msgid "Open notifications menu"
 msgstr ""
 
+#: src/features/filter/constants.tsx
+msgid "Popularity"
+msgstr ""
+
 #: src/components/FooterCopyright.tsx
 msgid "Privacy Policy"
 msgstr ""

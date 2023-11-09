@@ -15,6 +15,9 @@ export const SORT_FUNCTIONS = {
 
   [Order.Alphabetical]: (snaps: Snap[]) =>
     snaps.concat().sort((a, b) => a.name.localeCompare(b.name)),
+
+  [Order.Popularity]: (snaps: Snap[]) =>
+    snaps.concat().sort((a, b) => b.downloads - a.downloads),
 };
 
 export type FilterState = {

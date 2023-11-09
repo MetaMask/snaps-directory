@@ -34,6 +34,7 @@ export const SnapsProvider: FunctionComponent<SnapsProviderProps> = ({
           latestVersion
           category
           gatsbyPath(filePath: "/snap/{Snap.location}/{Snap.slug}")
+          downloads
         }
       }
     }
