@@ -62,6 +62,7 @@ export type MockSnap = Fields<
   | 'banner'
   | 'support'
   | 'gatsbyPath'
+  | 'downloads'
 >;
 
 export type GetMockSnapArgs = {
@@ -83,6 +84,7 @@ export type GetMockSnapArgs = {
     Fields<Queries.SnapSupport, 'contact' | 'faq' | 'knowledgeBase'>
   >;
   gatsbyPath?: string;
+  downloads?: number;
 };
 
 /**
@@ -105,6 +107,7 @@ export type GetMockSnapArgs = {
  * @param args.banner - The banner.
  * @param args.support - The support page URL.
  * @param args.gatsbyPath - The Gatsby path.
+ * @param args.downloads - The number of downloads.
  * @returns The mock snap data.
  */
 export function getMockSnap({
@@ -141,6 +144,7 @@ export function getMockSnap({
     knowledgeBase: 'https://example.com/knowledge-base',
   },
   gatsbyPath = `/snap/${snapId}`,
+  downloads = 0,
 }: GetMockSnapArgs = {}): { snap: MockSnap } {
   return {
     snap: {
@@ -163,6 +167,7 @@ export function getMockSnap({
         keyof Queries.SnapSupport
       >,
       gatsbyPath,
+      downloads,
     },
   };
 }

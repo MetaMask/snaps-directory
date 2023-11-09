@@ -588,5 +588,61 @@ describe('filterSlice', () => {
         fooSnap,
       ]);
     });
+
+    it('sorts the Snaps by popularity', () => {
+      const { snap: fooSnap } = getMockSnap({
+        snapId: 'foo-snap',
+        name: 'Foo',
+        downloads: 100,
+      });
+      const { snap: barSnap } = getMockSnap({
+        snapId: 'bar-snap',
+        name: 'Bar',
+        downloads: 300,
+      });
+      const { snap: bazSnap } = getMockSnap({
+        snapId: 'baz-snap',
+        name: 'Baz',
+        downloads: 5,
+      });
+
+      const state = getMockState({
+        filter: {
+          searchQuery: '',
+          searchResults: [],
+          installed: false,
+          categories: [
+            RegistrySnapCategory.Interoperability,
+            RegistrySnapCategory.Notifications,
+            RegistrySnapCategory.TransactionInsights,
+          ],
+          order: Order.Popularity,
+        },
+        snaps: {
+          snaps: [fooSnap, barSnap, bazSnap],
+        },
+        snapsApi: {
+          queries: {
+            'getInstalledSnaps(undefined)': getMockQueryResponse({
+              [fooSnap.snapId]: {
+                version: fooSnap.latestVersion,
+              },
+              [barSnap.snapId]: {
+                version: barSnap.latestVersion,
+              },
+              [bazSnap.snapId]: {
+                version: bazSnap.latestVersion,
+              },
+            }),
+          },
+        },
+      });
+
+      expect(getFilteredSnaps(state)).toStrictEqual([
+        barSnap,
+        fooSnap,
+        bazSnap,
+      ]);
+    });
   });
 });
