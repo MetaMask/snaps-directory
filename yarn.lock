@@ -4991,8 +4991,8 @@ __metadata:
   linkType: hard
 
 "@metamask/snaps-controllers@npm:^3.0.0":
-  version: 3.2.0
-  resolution: "@metamask/snaps-controllers@npm:3.2.0"
+  version: 3.3.0
+  resolution: "@metamask/snaps-controllers@npm:3.3.0"
   dependencies:
     "@metamask/approval-controller": ^4.0.0
     "@metamask/base-controller": ^3.2.0
@@ -5003,9 +5003,9 @@ __metadata:
     "@metamask/post-message-stream": ^7.0.0
     "@metamask/rpc-errors": ^6.1.0
     "@metamask/snaps-registry": ^2.1.0
-    "@metamask/snaps-rpc-methods": ^3.2.0
+    "@metamask/snaps-rpc-methods": ^3.3.0
     "@metamask/snaps-ui": ^3.1.0
-    "@metamask/snaps-utils": ^3.2.0
+    "@metamask/snaps-utils": ^3.3.0
     "@metamask/utils": ^8.1.0
     "@xstate/fsm": ^2.0.0
     concat-stream: ^2.0.0
@@ -5017,11 +5017,11 @@ __metadata:
     readable-web-to-node-stream: ^3.0.2
     tar-stream: ^3.1.6
   peerDependencies:
-    "@metamask/snaps-execution-environments": ^3.1.0
+    "@metamask/snaps-execution-environments": ^3.2.0
   peerDependenciesMeta:
     "@metamask/snaps-execution-environments":
       optional: true
-  checksum: b007cfc9ace68040aa535dcce64327dd32bae7c9f5d5256ecee40293ea8510e56923e3bae52afdd5623851746c1a2cb4868a196307e91015c08efe70cf46639e
+  checksum: 96671b0f6d5e42f87fb3697da5f7eb0b315bea5dd281cc4a7f11567a5f68dccf5534cb0c03c41f1073527dbd645d112058140d32890c8f925882a99f0b8f029c
   languageName: node
   linkType: hard
 
@@ -5130,19 +5130,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/snaps-rpc-methods@npm:^3.2.0":
-  version: 3.2.1
-  resolution: "@metamask/snaps-rpc-methods@npm:3.2.1"
+"@metamask/snaps-rpc-methods@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@metamask/snaps-rpc-methods@npm:3.3.0"
   dependencies:
     "@metamask/key-tree": ^9.0.0
     "@metamask/permission-controller": ^5.0.0
     "@metamask/rpc-errors": ^6.1.0
     "@metamask/snaps-ui": ^3.1.0
-    "@metamask/snaps-utils": ^3.2.0
+    "@metamask/snaps-utils": ^3.3.0
     "@metamask/utils": ^8.1.0
     "@noble/hashes": ^1.3.1
     superstruct: ^1.0.3
-  checksum: 82307f12939cc074f3521b708b4d5bfdadc8d25d52e402d1abf7c7e9d28245bcf7518243dbbf7c269c1df3e1570410f5b10abe91c4b5ec0723b7d3af55baa64d
+  checksum: 5f830b22db427b4109411632fdd5108ff9c151a819bba35b9bfd0ac6cc70ff581407c91b2ffb34ee0f624869d65054bfde88396e2df13d3052262e29dabbaa05
   languageName: node
   linkType: hard
 
@@ -5157,7 +5157,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/snaps-utils@npm:^3.0.0, @metamask/snaps-utils@npm:^3.2.0":
+"@metamask/snaps-utils@npm:^3.0.0, @metamask/snaps-utils@npm:^3.3.0":
   version: 3.3.0
   resolution: "@metamask/snaps-utils@npm:3.3.0"
   dependencies:
