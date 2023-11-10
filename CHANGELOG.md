@@ -7,26 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [1.4.0]
-### Uncategorized
-- Remove vulnerable babel/traverse ([#200](https://github.com/MetaMask/snaps-directory/pull/200))
-- Bump @metamask/snaps-utils from 3.2.0 to 3.3.0 ([#199](https://github.com/MetaMask/snaps-directory/pull/199))
-- Bump @metamask/providers from 13.1.0 to 14.0.0 ([#197](https://github.com/MetaMask/snaps-directory/pull/197))
+### Added
 - Add popularity sorting option ([#193](https://github.com/MetaMask/snaps-directory/pull/193))
-- Bump @metamask/json-rpc-engine from 7.2.0 to 7.3.0 ([#195](https://github.com/MetaMask/snaps-directory/pull/195))
-- Bump @metamask/utils from 8.2.0 to 8.2.1 ([#194](https://github.com/MetaMask/snaps-directory/pull/194))
-- Search using descriptions ([#192](https://github.com/MetaMask/snaps-directory/pull/192))
-- Bump @metamask/auto-changelog from 3.4.2 to 3.4.3 ([#191](https://github.com/MetaMask/snaps-directory/pull/191))
-- Bump @metamask/snaps-rpc-methods from 3.2.0 to 3.2.1 ([#190](https://github.com/MetaMask/snaps-directory/pull/190))
-- Bump @metamask/snaps-controllers from 3.1.1 to 3.2.0 ([#186](https://github.com/MetaMask/snaps-directory/pull/186))
-- Bump @metamask/snaps-utils from 3.1.0 to 3.2.0 ([#188](https://github.com/MetaMask/snaps-directory/pull/188))
-- Bump @metamask/snaps-ui from 3.0.1 to 3.1.0 ([#189](https://github.com/MetaMask/snaps-directory/pull/189))
+
+### Changed
 - Update footer text colour ([#183](https://github.com/MetaMask/snaps-directory/pull/183))
-- Bump @metamask/snaps-controllers from 3.0.0 to 3.1.1 ([#185](https://github.com/MetaMask/snaps-directory/pull/185))
-- Bump @metamask/object-multiplex from 1.2.0 to 1.3.0 ([#181](https://github.com/MetaMask/snaps-directory/pull/181))
-- Bump @metamask/auto-changelog from 3.4.0 to 3.4.2 ([#182](https://github.com/MetaMask/snaps-directory/pull/182))
-- Bump @metamask/auto-changelog from 3.3.0 to 3.4.0 ([#171](https://github.com/MetaMask/snaps-directory/pull/171))
-- Bump @metamask/json-rpc-engine from 7.1.1 to 7.2.0 ([#172](https://github.com/MetaMask/snaps-directory/pull/172))
-- Bump @metamask/utils from 8.1.0 to 8.2.0 ([#174](https://github.com/MetaMask/snaps-directory/pull/174))
+- Search using descriptions ([#192](https://github.com/MetaMask/snaps-directory/pull/192))
 
 ## [1.3.1]
 ### Changed
