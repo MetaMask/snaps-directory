@@ -27,7 +27,7 @@ describe('FilterOrder', () => {
       store,
     );
 
-    expect(getOrder(store.getState())).toBe(Order.Random);
+    expect(getOrder(store.getState())).toBe(Order.Popularity);
 
     const button = getByText('Alphabetical');
     act(() => button.click());
