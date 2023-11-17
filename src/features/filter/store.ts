@@ -37,7 +37,7 @@ const initialState: FilterState = {
   searchResults: [],
   installed: false,
   categories: INITIAL_CATEGORIES,
-  order: Order.Random,
+  order: Order.Popularity,
 };
 
 export const filterSlice = createSlice({
