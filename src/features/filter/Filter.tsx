@@ -62,11 +62,9 @@ export const Filter: FunctionComponent = () => {
             )}
           </MenuGroup>
           <MenuGroup marginLeft="2" title={t`Sort`}>
-            {Object.values(Order)
-              .filter((order) => order !== Order.Random)
-              .map((order) => (
-                <FilterOrder key={order} order={order} />
-              ))}
+            {Object.values(Order).map((order) => (
+              <FilterOrder key={order} order={order} />
+            ))}
           </MenuGroup>
         </MenuList>
       </Menu>

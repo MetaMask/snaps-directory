@@ -11,11 +11,11 @@ describe('FilterOrder', () => {
   it('renders', () => {
     const { queryByText } = render(
       <Menu>
-        <FilterOrder order={Order.Random} />
+        <FilterOrder order={Order.Popularity} />
       </Menu>,
     );
 
-    expect(queryByText('Random')).toBeInTheDocument();
+    expect(queryByText('Popularity')).toBeInTheDocument();
   });
 
   it('sets the order when clicked', () => {

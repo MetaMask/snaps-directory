@@ -10,9 +10,6 @@ import { getInstalledSnaps } from '../snaps';
 export type SearchResult = { item: Snap };
 
 export const SORT_FUNCTIONS = {
-  // Snaps are randomly sorted by default, so this is a no-op.
-  [Order.Random]: (snaps: Snap[]) => snaps,
-
   [Order.Alphabetical]: (snaps: Snap[]) =>
     snaps.concat().sort((a, b) => a.name.localeCompare(b.name)),
 
