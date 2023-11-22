@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.0]
+### Uncategorized
+- Bump @metamask/snaps-utils from 3.3.0 to 5.0.0 ([#216](https://github.com/MetaMask/snaps-directory/pull/216))
+- Bump @metamask/snaps-controllers from 3.3.0 to 3.4.1 ([#215](https://github.com/MetaMask/snaps-directory/pull/215))
+- Sort by popularity as default ([#206](https://github.com/MetaMask/snaps-directory/pull/206))
+- Bump `sharp` ([#207](https://github.com/MetaMask/snaps-directory/pull/207))
+- Bump @metamask/providers from 14.0.0 to 14.0.1 ([#204](https://github.com/MetaMask/snaps-directory/pull/204))
+
 ## [1.4.0]
 ### Added
 - Add popularity sorting option ([#193](https://github.com/MetaMask/snaps-directory/pull/193))
@@ -123,7 +131,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.4.0...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.5.0...HEAD
+[1.5.0]: https://github.com/MetaMask/snaps-directory/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/MetaMask/snaps-directory/compare/v1.3.1...v1.4.0
 [1.3.1]: https://github.com/MetaMask/snaps-directory/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/MetaMask/snaps-directory/compare/v1.2.1...v1.3.0
