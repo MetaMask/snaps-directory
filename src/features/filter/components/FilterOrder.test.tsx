@@ -11,11 +11,11 @@ describe('FilterOrder', () => {
   it('renders', () => {
     const { queryByText } = render(
       <Menu>
-        <FilterOrder order={Order.Random} />
+        <FilterOrder order={Order.Popularity} />
       </Menu>,
     );
 
-    expect(queryByText('Random')).toBeInTheDocument();
+    expect(queryByText('Popularity')).toBeInTheDocument();
   });
 
   it('sets the order when clicked', () => {
@@ -27,7 +27,7 @@ describe('FilterOrder', () => {
       store,
     );
 
-    expect(getOrder(store.getState())).toBe(Order.Random);
+    expect(getOrder(store.getState())).toBe(Order.Popularity);
 
     const button = getByText('Alphabetical');
     act(() => button.click());

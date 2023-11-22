@@ -14,13 +14,11 @@ export const SNAP_CATEGORY_ICONS = {
 };
 
 export enum Order {
-  Random = 'random',
-  Alphabetical = 'name',
   Popularity = 'popularity',
+  Alphabetical = 'name',
 }
 
 export const SNAP_ORDER_LABELS = {
-  [Order.Random]: defineMessage`Random`,
   [Order.Alphabetical]: defineMessage`Alphabetical`,
   [Order.Popularity]: defineMessage`Popularity`,
 };

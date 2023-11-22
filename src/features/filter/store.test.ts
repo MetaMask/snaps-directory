@@ -306,7 +306,7 @@ describe('filterSlice', () => {
           searchResults: [],
           installed: false,
           categories: [],
-          order: Order.Random,
+          order: Order.Popularity,
         },
         snaps: {
           snaps: null,
@@ -331,7 +331,7 @@ describe('filterSlice', () => {
             RegistrySnapCategory.Notifications,
             RegistrySnapCategory.TransactionInsights,
           ],
-          order: Order.Random,
+          order: Order.Popularity,
         },
         snaps: {
           snaps: [fooSnap, barSnap, bazSnap],
@@ -382,7 +382,7 @@ describe('filterSlice', () => {
             RegistrySnapCategory.Notifications,
             RegistrySnapCategory.TransactionInsights,
           ],
-          order: Order.Random,
+          order: Order.Popularity,
         },
         snaps: {
           snaps: [fooSnap, barSnap, bazSnap],
@@ -429,7 +429,7 @@ describe('filterSlice', () => {
             RegistrySnapCategory.Notifications,
             RegistrySnapCategory.TransactionInsights,
           ],
-          order: Order.Random,
+          order: Order.Popularity,
         },
         snaps: {
           snaps: [fooSnap, barSnap, bazSnap],
@@ -467,7 +467,7 @@ describe('filterSlice', () => {
             RegistrySnapCategory.Notifications,
             RegistrySnapCategory.TransactionInsights,
           ],
-          order: Order.Random,
+          order: Order.Popularity,
         },
         snaps: {
           snaps: [fooSnap, barSnap, bazSnap],
@@ -511,7 +511,7 @@ describe('filterSlice', () => {
             RegistrySnapCategory.Notifications,
             RegistrySnapCategory.TransactionInsights,
           ],
-          order: Order.Random,
+          order: Order.Popularity,
         },
         snaps: {
           snaps: [fooSnap, barSnap, bazSnap],

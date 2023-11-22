@@ -252,10 +252,6 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr ""
 
-#: src/features/filter/constants.tsx
-msgid "Random"
-msgstr ""
-
 #: src/components/icons/index.ts
 msgid "Search"
 msgstr ""
