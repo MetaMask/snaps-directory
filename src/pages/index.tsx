@@ -5,7 +5,7 @@ import { graphql, Link as GatsbyLink } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
 import banner from '../assets/images/seo/home.png';
-import { RegistrySnapCategory } from '../constants';
+import { RegistrySnapCategory, SNAP_CATEGORY_LINKS } from '../constants';
 import { FilteredSnaps } from '../features';
 import type { Fields } from '../utils';
 
@@ -17,25 +17,28 @@ const GROUPS = [
     linkText: defineMessage`Explore All Snaps`,
   },
   {
-    header: defineMessage`Use MetaMask Beyond Ethereum`,
+    header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Interoperability].header,
     category: RegistrySnapCategory.Interoperability,
     limit: 6,
-    link: '/interoperability',
-    linkText: defineMessage`See All Interoperability Snaps`,
+    link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Interoperability].link,
+    linkText:
+      SNAP_CATEGORY_LINKS[RegistrySnapCategory.Interoperability].linkText,
   },
   {
-    header: defineMessage`Stay Secure With Insights`,
+    header:
+      SNAP_CATEGORY_LINKS[RegistrySnapCategory.TransactionInsights].header,
     category: RegistrySnapCategory.TransactionInsights,
     limit: 6,
-    link: '/transaction-insights',
-    linkText: defineMessage`See All Transaction Insight Snaps`,
+    link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.TransactionInsights].link,
+    linkText:
+      SNAP_CATEGORY_LINKS[RegistrySnapCategory.TransactionInsights].linkText,
   },
   {
-    header: defineMessage`See All Notification Snaps`,
+    header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Notifications].header,
     category: RegistrySnapCategory.Notifications,
     limit: 6,
-    link: '/notifications',
-    linkText: defineMessage`See All Notification Snaps`,
+    link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Notifications].link,
+    linkText: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Notifications].linkText,
   },
 ];
 

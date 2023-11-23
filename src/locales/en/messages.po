@@ -114,7 +114,7 @@ msgid "Developer Docs"
 msgstr ""
 
 #: src/components/BackButton.tsx
-#: src/pages/index.tsx
+#: src/pages/browse.tsx
 msgid "Discover Snaps"
 msgstr ""
 
@@ -135,6 +135,10 @@ msgid "Enable light mode"
 msgstr ""
 
 #: src/pages/index.tsx
+msgid "Explore All Snaps"
+msgstr ""
+
+#: src/pages/browse.tsx
 msgid "Explore community-built Snaps to customize your web3 experience via our official directory. <0>Learn more</0> and <1>FAQ</1>."
 msgstr ""
 
@@ -219,6 +223,10 @@ msgstr ""
 msgid "MetaMask Snaps is in open beta and only supported via our extension clients on desktop such as <0>Chrome</0> or <1>Firefox</1>."
 msgstr ""
 
+#: src/pages/index.tsx
+msgid "Most Popular"
+msgstr ""
+
 #: src/features/notifications/components/NoNotifications.tsx
 msgid "No notifications"
 msgstr ""
@@ -260,6 +268,19 @@ msgstr ""
 msgid "Search snaps..."
 msgstr ""
 
+#: src/pages/index.tsx
+msgid "See All Interoperability Snaps"
+msgstr ""
+
+#: src/pages/index.tsx
+#: src/pages/index.tsx
+msgid "See All Notification Snaps"
+msgstr ""
+
+#: src/pages/index.tsx
+msgid "See All Transaction Insight Snaps"
+msgstr ""
+
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "See everything"
 msgstr ""
@@ -286,6 +307,10 @@ msgstr ""
 
 #: src/constants.ts
 msgid "Stay informed with insights before you confirm transactions in MetaMask."
+msgstr ""
+
+#: src/pages/index.tsx
+msgid "Stay Secure With Insights"
 msgstr ""
 
 #: src/components/FooterLinks.tsx
@@ -337,12 +362,20 @@ msgstr ""
 msgid "Updating {name}"
 msgstr ""
 
+#: src/pages/index.tsx
+msgid "Use MetaMask Beyond Ethereum"
+msgstr ""
+
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Version"
 msgstr ""
 
 #: src/features/notifications/components/Notification.tsx
 msgid "Version {0} update available"
+msgstr ""
+
+#: src/features/snaps/components/SnapCard.tsx
+msgid "View"
 msgstr ""
 
 #: src/components/FooterLinks.tsx

@@ -1,6 +1,15 @@
-import { Box, Container, Divider, Flex, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Container,
+  Divider,
+  Flex,
+  Heading,
+  Link,
+  Text,
+} from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
-import { graphql } from 'gatsby';
+import { useLingui } from '@lingui/react';
+import { graphql, Link as GatsbyLink } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
 import {
@@ -15,7 +24,11 @@ import {
   SnapWebsiteButton,
 } from '../../../components';
 import { ExternalLink } from '../../../components/ExternalLink';
-import type { RegistrySnapCategory } from '../../../constants';
+import {
+  SNAP_CATEGORY_LINKS,
+  type RegistrySnapCategory,
+} from '../../../constants';
+import { FilteredSnaps } from '../../../features';
 import { NotificationAcknowledger } from '../../../features/notifications/components';
 import { getLinkText, type Fields } from '../../../utils';
 
@@ -41,8 +54,18 @@ type SnapPageProps = {
 };
 
 const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
-  const { name, snapId, icon, website, onboard, description, latestVersion } =
-    data.snap;
+  const i18n = useLingui();
+
+  const {
+    name,
+    snapId,
+    icon,
+    website,
+    onboard,
+    description,
+    latestVersion,
+    category,
+  } = data.snap;
 
   return (
     <Container
@@ -250,6 +273,33 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
           whiteSpace="pre-wrap"
         />
       </Box>
+
+      <Divider my="12" />
+      <Flex
+        width="100%"
+        marginBottom="4"
+        flexDirection="row"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <Heading as="h2" fontSize="2xl">
+          <Trans>Related Snaps</Trans>
+        </Heading>
+        <Link
+          as={GatsbyLink}
+          to={SNAP_CATEGORY_LINKS[category as RegistrySnapCategory].link}
+          variant="landing"
+        >
+          {i18n._(
+            SNAP_CATEGORY_LINKS[category as RegistrySnapCategory].linkText,
+          )}
+        </Link>
+      </Flex>
+      <FilteredSnaps
+        limit={3}
+        category={category as RegistrySnapCategory}
+        excluded={[snapId]}
+      />
     </Container>
   );
 };

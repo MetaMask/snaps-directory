@@ -12,12 +12,14 @@ export type FilteredSnapsProps = {
   order?: Order;
   category?: RegistrySnapCategory | null;
   limit?: number;
+  excluded?: string[];
 };
 
 export const FilteredSnaps: FunctionComponent<FilteredSnapsProps> = ({
   order,
   category,
   limit,
+  excluded = [],
 }) => {
   const snaps = useSelector(getSnaps);
 
@@ -26,7 +28,9 @@ export const FilteredSnaps: FunctionComponent<FilteredSnapsProps> = ({
   }
 
   const filteredSnaps = snaps.filter(
-    (snap) => !category || snap.category === category,
+    (snap) =>
+      !excluded.includes(snap.snapId) &&
+      (!category || snap.category === category),
   );
 
   const sortedSnaps = SORT_FUNCTIONS[order ?? Order.Popularity](filteredSnaps);
