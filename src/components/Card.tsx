@@ -11,7 +11,7 @@ export const Card: FunctionComponent<CardProps> = ({ children, ...props }) => (
     flexDirection="column"
     px="4"
     py="4"
-    rounded="3xl"
+    rounded="lg"
     background="background.card"
     height="9.125rem"
     transitionDuration="normal"

@@ -1,51 +1,79 @@
-import { Box, Container, Heading, Text, Flex, Link } from '@chakra-ui/react';
-import { Trans } from '@lingui/macro';
-import { graphql } from 'gatsby';
+import { Container, Divider, Flex, Heading, Link } from '@chakra-ui/react';
+import { defineMessage } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
+import { graphql, Link as GatsbyLink } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
 import banner from '../assets/images/seo/home.png';
-import { FilterTags, Filter, Snaps } from '../features';
+import { RegistrySnapCategory } from '../constants';
+import { FilteredSnaps } from '../features';
 import type { Fields } from '../utils';
 
-const IndexPage: FunctionComponent = () => (
-  <Container
-    maxWidth="container.xl"
-    paddingTop="0"
-    marginTop={{ base: 4, md: 20 }}
-  >
-    <Box maxWidth="31.25rem" width="100%" marginBottom="8">
-      <Heading as="h2" fontSize="2xl" marginBottom="1">
-        <Trans>Discover Snaps</Trans>
-      </Heading>
-      <Text>
-        <Trans>
-          Explore community-built Snaps to customize your web3 experience via
-          our official directory.{' '}
-          <Link href="https://metamask.io/snaps/" isExternal={true}>
-            Learn more
-          </Link>{' '}
-          and{' '}
-          <Link
-            href="https://support.metamask.io/hc/en-us/articles/18245938714395"
-            isExternal={true}
+const GROUPS = [
+  {
+    header: defineMessage`Most Popular`,
+    limit: 6,
+    link: '/browse',
+    linkText: defineMessage`Explore All Snaps`,
+  },
+  {
+    header: defineMessage`Use MetaMask Beyond Ethereum`,
+    category: RegistrySnapCategory.Interoperability,
+    limit: 6,
+    link: '/interoperability',
+    linkText: defineMessage`See All Interoperability Snaps`,
+  },
+  {
+    header: defineMessage`Stay Secure With Insights`,
+    category: RegistrySnapCategory.TransactionInsights,
+    limit: 6,
+    link: '/transaction-insights',
+    linkText: defineMessage`See All Transaction Insight Snaps`,
+  },
+  {
+    header: defineMessage`See All Notification Snaps`,
+    category: RegistrySnapCategory.Notifications,
+    limit: 6,
+    link: '/notifications',
+    linkText: defineMessage`See All Notification Snaps`,
+  },
+];
+
+const IndexPage: FunctionComponent = () => {
+  const i18n = useLingui();
+
+  return (
+    <Container
+      maxWidth="container.xl"
+      paddingTop="0"
+      marginTop={{ base: 4, md: 20 }}
+      display="flex"
+      flexDirection="column"
+    >
+      {GROUPS.map(({ header, limit, category, link, linkText }) => (
+        <>
+          <Flex
+            width="100%"
+            marginBottom="8"
+            flexDirection="row"
+            justifyContent="space-between"
+            alignItems="center"
           >
-            FAQ
-          </Link>
-          .
-        </Trans>
-      </Text>
-    </Box>
-    <Flex direction="row" marginBottom={{ base: 4, md: 6 }} gap="2">
-      <Filter />
-    </Flex>
-    <FilterTags
-      display={['flex', null, 'none']}
-      flexWrap="wrap"
-      marginBottom="6"
-    />
-    <Snaps />
-  </Container>
-);
+            <Heading as="h2" fontSize="2xl">
+              {i18n._(header)}
+            </Heading>
+            <Link as={GatsbyLink} to={link} variant="landing">
+              {i18n._(linkText)}
+            </Link>
+          </Flex>
+          <FilteredSnaps limit={limit} category={category ?? null} />
+
+          <Divider mt="12" mb="8" />
+        </>
+      ))}
+    </Container>
+  );
+};
 
 type HeadProps = {
   data: {

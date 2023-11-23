@@ -53,5 +53,18 @@ export const Button = defineStyleConfig({
         opacity: '0.75',
       },
     }),
+    small: defineStyle({
+      fontSize: 'sm',
+      height: '26px',
+      borderRadius: '36px',
+      background: 'white',
+      borderColor: 'info.default',
+      color: 'gray.muted',
+      textTransform: 'uppercase',
+      _hover: {
+        color: 'white',
+        background: 'info.default',
+      },
+    }),
   },
 });
