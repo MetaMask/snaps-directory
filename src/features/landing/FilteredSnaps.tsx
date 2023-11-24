@@ -9,7 +9,7 @@ import { getSnaps } from '../snaps';
 import { LoadingGrid, SnapCard } from '../snaps/components';
 
 export type FilteredSnapsProps = {
-  order?: Order;
+  order?: Order | null;
   category?: RegistrySnapCategory | null;
   limit?: number;
   excluded?: string[];

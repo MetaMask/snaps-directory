@@ -1,5 +1,13 @@
-import { Container, Divider, Flex, Heading, Link } from '@chakra-ui/react';
-import { defineMessage } from '@lingui/macro';
+import {
+  Box,
+  Container,
+  Divider,
+  Flex,
+  Heading,
+  Link,
+  Text,
+} from '@chakra-ui/react';
+import { defineMessage, Trans } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { graphql, Link as GatsbyLink } from 'gatsby';
 import type { FunctionComponent } from 'react';
@@ -7,6 +15,7 @@ import type { FunctionComponent } from 'react';
 import banner from '../assets/images/seo/home.png';
 import { RegistrySnapCategory, SNAP_CATEGORY_LINKS } from '../constants';
 import { FilteredSnaps } from '../features';
+import { Order } from '../features/filter/constants';
 import type { Fields } from '../utils';
 
 const GROUPS = [
@@ -23,6 +32,7 @@ const GROUPS = [
     link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Interoperability].link,
     linkText:
       SNAP_CATEGORY_LINKS[RegistrySnapCategory.Interoperability].linkText,
+    order: Order.RandomConsistent,
   },
   {
     header:
@@ -32,13 +42,15 @@ const GROUPS = [
     link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.TransactionInsights].link,
     linkText:
       SNAP_CATEGORY_LINKS[RegistrySnapCategory.TransactionInsights].linkText,
+    order: Order.RandomConsistent,
   },
   {
     header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Notifications].header,
     category: RegistrySnapCategory.Notifications,
-    limit: 6,
+    limit: 3,
     link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Notifications].link,
     linkText: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Notifications].linkText,
+    order: Order.RandomConsistent,
   },
 ];
 
@@ -53,27 +65,58 @@ const IndexPage: FunctionComponent = () => {
       display="flex"
       flexDirection="column"
     >
-      {GROUPS.map(({ header, limit, category, link, linkText }) => (
-        <>
-          <Flex
-            width="100%"
-            marginBottom="8"
-            flexDirection="row"
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Heading as="h2" fontSize="2xl">
-              {i18n._(header)}
-            </Heading>
-            <Link as={GatsbyLink} to={link} variant="landing">
-              {i18n._(linkText)}
+      <Box maxWidth="31.25rem" width="100%">
+        <Heading as="h2" fontSize="4xl" marginBottom="1">
+          <Trans>Discover Snaps</Trans>
+        </Heading>
+        <Text>
+          <Trans>
+            Explore community-built Snaps to customize your web3 experience via
+            our official directory.{' '}
+            <Link href="https://metamask.io/snaps/" isExternal={true}>
+              Learn more
+            </Link>{' '}
+            and{' '}
+            <Link
+              href="https://support.metamask.io/hc/en-us/articles/18245938714395"
+              isExternal={true}
+            >
+              FAQ
             </Link>
-          </Flex>
-          <FilteredSnaps limit={limit} category={category ?? null} />
+            .
+          </Trans>
+        </Text>
+      </Box>
 
-          <Divider mt="12" mb="8" />
-        </>
-      ))}
+      <Divider my="8" />
+
+      {GROUPS.map(
+        ({ header, limit, category, link, linkText, order }, index) => (
+          <>
+            <Flex
+              width="100%"
+              marginBottom="8"
+              flexDirection="row"
+              justifyContent="space-between"
+              alignItems="center"
+            >
+              <Heading as="h2" fontSize="2xl" fontWeight="600">
+                {i18n._(header)}
+              </Heading>
+              <Link as={GatsbyLink} to={link} variant="landing">
+                {i18n._(linkText)}
+              </Link>
+            </Flex>
+            <FilteredSnaps
+              limit={limit}
+              category={category ?? null}
+              order={order ?? null}
+            />
+
+            {index !== GROUPS.length - 1 && <Divider mt="12" mb="8" />}
+          </>
+        ),
+      )}
     </Container>
   );
 };

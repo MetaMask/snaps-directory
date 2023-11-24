@@ -163,6 +163,10 @@ msgstr ""
 msgid "Get in touch"
 msgstr ""
 
+#: src/constants.ts
+msgid "Get Notified Directly In MetaMask"
+msgstr ""
+
 #: src/pages/404.tsx
 msgid "Go home"
 msgstr ""
@@ -260,6 +264,10 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr ""
 
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+msgid "Related Snaps"
+msgstr ""
+
 #: src/components/icons/index.ts
 msgid "Search"
 msgstr ""
@@ -268,16 +276,15 @@ msgstr ""
 msgid "Search snaps..."
 msgstr ""
 
-#: src/pages/index.tsx
+#: src/constants.ts
 msgid "See All Interoperability Snaps"
 msgstr ""
 
-#: src/pages/index.tsx
-#: src/pages/index.tsx
+#: src/constants.ts
 msgid "See All Notification Snaps"
 msgstr ""
 
-#: src/pages/index.tsx
+#: src/constants.ts
 msgid "See All Transaction Insight Snaps"
 msgstr ""
 
@@ -309,7 +316,7 @@ msgstr ""
 msgid "Stay informed with insights before you confirm transactions in MetaMask."
 msgstr ""
 
-#: src/pages/index.tsx
+#: src/constants.ts
 msgid "Stay Secure With Insights"
 msgstr ""
 
@@ -362,7 +369,7 @@ msgstr ""
 msgid "Updating {name}"
 msgstr ""
 
-#: src/pages/index.tsx
+#: src/constants.ts
 msgid "Use MetaMask Beyond Ethereum"
 msgstr ""
 

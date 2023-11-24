@@ -35,7 +35,7 @@ const Category: FunctionComponent<CategoryProps> = ({ data }) => {
     // According to the type definition, `navigate` returns a promise, but in
     // practice it does not.
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    navigate('/');
+    navigate('/browse', { replace: true });
   }, [data.category.name, dispatch]);
 
   return null;

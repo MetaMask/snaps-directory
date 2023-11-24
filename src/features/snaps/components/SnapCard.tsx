@@ -20,7 +20,12 @@ export const SnapCard: FunctionComponent<
 
   return (
     <Card height="unset" background="unset" p="2">
-      <Flex height="48px" flexDirection="row" justifyContent="space-between">
+      <Flex
+        height="48px"
+        flexDirection="row"
+        justifyContent="space-between"
+        gap="2"
+      >
         <Flex alignItems="center" width={{ base: '100%', md: 'auto' }}>
           <SnapAvatar
             size="2.75rem"

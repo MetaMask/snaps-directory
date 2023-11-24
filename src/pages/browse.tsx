@@ -1,5 +1,4 @@
-import { Box, Container, Heading, Text, Flex, Link } from '@chakra-ui/react';
-import { Trans } from '@lingui/macro';
+import { Container, Flex, Divider } from '@chakra-ui/react';
 import { graphql } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
@@ -13,28 +12,6 @@ const IndexPage: FunctionComponent = () => (
     paddingTop="0"
     marginTop={{ base: 4, md: 20 }}
   >
-    <Box maxWidth="31.25rem" width="100%" marginBottom="8">
-      <Heading as="h2" fontSize="2xl" marginBottom="1">
-        <Trans>Discover Snaps</Trans>
-      </Heading>
-      <Text>
-        <Trans>
-          Explore community-built Snaps to customize your web3 experience via
-          our official directory.{' '}
-          <Link href="https://metamask.io/snaps/" isExternal={true}>
-            Learn more
-          </Link>{' '}
-          and{' '}
-          <Link
-            href="https://support.metamask.io/hc/en-us/articles/18245938714395"
-            isExternal={true}
-          >
-            FAQ
-          </Link>
-          .
-        </Trans>
-      </Text>
-    </Box>
     <Flex direction="row" marginBottom={{ base: 4, md: 6 }} gap="2">
       <Filter />
     </Flex>
@@ -43,6 +20,9 @@ const IndexPage: FunctionComponent = () => (
       flexWrap="wrap"
       marginBottom="6"
     />
+
+    <Divider my="8" />
+
     <Snaps />
   </Container>
 );

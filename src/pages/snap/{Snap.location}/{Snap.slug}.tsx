@@ -29,6 +29,7 @@ import {
   type RegistrySnapCategory,
 } from '../../../constants';
 import { FilteredSnaps } from '../../../features';
+import { Order } from '../../../features/filter/constants';
 import { NotificationAcknowledger } from '../../../features/notifications/components';
 import { getLinkText, type Fields } from '../../../utils';
 
@@ -298,6 +299,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
       <FilteredSnaps
         limit={3}
         category={category as RegistrySnapCategory}
+        order={Order.Random}
         excluded={[snapId]}
       />
     </Container>

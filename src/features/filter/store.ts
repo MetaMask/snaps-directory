@@ -1,5 +1,6 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
+import shuffle from 'lodash/shuffle';
 
 import { Order } from './constants';
 import { RegistrySnapCategory } from '../../constants';
@@ -10,6 +11,12 @@ import { getInstalledSnaps } from '../snaps';
 export type SearchResult = { item: Snap };
 
 export const SORT_FUNCTIONS = {
+  // This will be a random shuffle every call
+  [Order.Random]: (snaps: Snap[]) => shuffle(snaps),
+
+  // This will be consistently random for a session
+  [Order.RandomConsistent]: (snaps: Snap[]) => snaps,
+
   [Order.Alphabetical]: (snaps: Snap[]) =>
     snaps.concat().sort((a, b) => a.name.localeCompare(b.name)),
 
