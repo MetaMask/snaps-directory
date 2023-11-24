@@ -114,7 +114,7 @@ msgid "Developer Docs"
 msgstr ""
 
 #: src/components/BackButton.tsx
-#: src/pages/browse.tsx
+#: src/pages/index.tsx
 msgid "Discover Snaps"
 msgstr ""
 
@@ -138,7 +138,7 @@ msgstr ""
 msgid "Explore All Snaps"
 msgstr ""
 
-#: src/pages/browse.tsx
+#: src/pages/index.tsx
 msgid "Explore community-built Snaps to customize your web3 experience via our official directory. <0>Learn more</0> and <1>FAQ</1>."
 msgstr ""
 

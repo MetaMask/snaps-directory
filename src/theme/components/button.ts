@@ -61,7 +61,8 @@ export const Button = defineStyleConfig({
       borderColor: 'info.default',
       color: 'gray.muted',
       textTransform: 'uppercase',
-      _hover: {
+      transitionDuration: 'normal',
+      _groupHover: {
         color: 'white',
         background: 'info.default',
       },
