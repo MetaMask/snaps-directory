@@ -1,31 +1,56 @@
-import { Container, Flex, Divider } from '@chakra-ui/react';
+import { Container, Flex, Divider, Heading, Link } from '@chakra-ui/react';
+import { Trans } from '@lingui/macro';
 import { graphql } from 'gatsby';
 import type { FunctionComponent } from 'react';
+import { useDispatch } from 'react-redux';
 
 import banner from '../assets/images/seo/home.png';
-import { FilterTags, Filter, Snaps } from '../features';
+import { FilterTags, Filter, Snaps, resetFilters } from '../features';
 import type { Fields } from '../utils';
 
-const IndexPage: FunctionComponent = () => (
-  <Container
-    maxWidth="container.xl"
-    paddingTop="0"
-    marginTop={{ base: 4, md: 20 }}
-  >
-    <Flex direction="row" marginBottom={{ base: 4, md: 6 }} gap="2">
-      <Filter />
-    </Flex>
-    <FilterTags
-      display={['flex', null, 'none']}
-      flexWrap="wrap"
-      marginBottom="6"
-    />
+const IndexPage: FunctionComponent = () => {
+  const dispatch = useDispatch();
 
-    <Divider my="8" />
+  const handleResetFilter = () => {
+    dispatch(resetFilters());
+  };
 
-    <Snaps />
-  </Container>
-);
+  return (
+    <Container
+      maxWidth="container.xl"
+      paddingTop="0"
+      marginTop={{ base: 4, md: 20 }}
+    >
+      <Flex direction="row" marginBottom={{ base: 4, md: 6 }} gap="2">
+        <Filter />
+      </Flex>
+      <FilterTags
+        display={['flex', null, 'none']}
+        flexWrap="wrap"
+        marginBottom="6"
+      />
+
+      <Divider my="8" />
+
+      <Flex
+        width="100%"
+        marginBottom="8"
+        flexDirection="row"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <Heading as="h2" fontSize="2xl" fontWeight="600">
+          <Trans>Explore Snaps</Trans>
+        </Heading>
+        <Link onClick={handleResetFilter} variant="landing">
+          <Trans>See All</Trans>
+        </Link>
+      </Flex>
+
+      <Snaps />
+    </Container>
+  );
+};
 
 type HeadProps = {
   data: {

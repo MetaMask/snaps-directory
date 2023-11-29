@@ -142,6 +142,10 @@ msgstr ""
 msgid "Explore community-built Snaps to customize your web3 experience via our official directory. <0>Learn more</0> and <1>FAQ</1>."
 msgstr ""
 
+#: src/pages/browse.tsx
+msgid "Explore Snaps"
+msgstr ""
+
 #: src/components/icons/index.ts
 msgid "External link"
 msgstr ""
@@ -279,6 +283,10 @@ msgstr ""
 
 #: src/features/filter/components/FilterSearch.tsx
 msgid "Search snaps..."
+msgstr ""
+
+#: src/pages/browse.tsx
+msgid "See All"
 msgstr ""
 
 #: src/constants.ts
