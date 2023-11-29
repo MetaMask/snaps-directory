@@ -18,9 +18,11 @@ export enum Order {
   Alphabetical = 'name',
   Random = 'random',
   RandomConsistent = 'randomConsistent',
+  Latest = 'latest',
 }
 
 export const SNAP_ORDER_LABELS = {
   [Order.Alphabetical]: defineMessage`Alphabetical`,
   [Order.Popularity]: defineMessage`Popularity`,
+  [Order.Latest]: defineMessage`Latest`,
 };

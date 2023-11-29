@@ -173,6 +173,14 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       snap.metadata.summary ?? manifest.description,
     );
 
+    const registryJson = await customFetch(
+      `https://registry.npmjs.org/${slug}`,
+    ).then(async (response: any) => response.json());
+
+    const { time } = registryJson;
+
+    const lastUpdated = new Date(time[latestVersion]).getTime();
+
     const downloadsJson = await customFetch(
       `https://api.npmjs.org/downloads/point/last-year/${slug}`,
     ).then(async (response: any) => response.json());
@@ -190,6 +198,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       latestVersion,
       icon,
       downloads,
+      lastUpdated,
     };
 
     const node: SnapNode = {

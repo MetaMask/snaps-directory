@@ -17,6 +17,7 @@ export type Snap = Fields<
   | 'gatsbyPath'
   | 'latestVersion'
   | 'downloads'
+  | 'lastUpdated'
 >;
 
 export type SnapsState = {

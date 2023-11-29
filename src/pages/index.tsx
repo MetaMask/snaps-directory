@@ -52,6 +52,13 @@ const GROUPS = [
     linkText: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Notifications].linkText,
     order: Order.RandomConsistent,
   },
+  {
+    header: defineMessage`Latest`,
+    limit: 3,
+    link: '/latest',
+    linkText: defineMessage`See Latest`,
+    order: Order.Latest,
+  },
 ];
 
 const IndexPage: FunctionComponent = () => {

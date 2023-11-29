@@ -22,6 +22,9 @@ export const SORT_FUNCTIONS = {
 
   [Order.Popularity]: (snaps: Snap[]) =>
     snaps.concat().sort((a, b) => b.downloads - a.downloads),
+
+  [Order.Latest]: (snaps: Snap[]) =>
+    snaps.concat().sort((a, b) => b.lastUpdated - a.lastUpdated),
 };
 
 export type FilterState = {
