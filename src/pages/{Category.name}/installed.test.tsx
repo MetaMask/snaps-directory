@@ -42,7 +42,7 @@ describe('Category installed page', () => {
 
   it('redirects to the main page', () => {
     render(<CategoryInstalledPage data={getMockCategory()} />);
-    expect(navigate).toHaveBeenCalledWith('/');
+    expect(navigate).toHaveBeenCalledWith('/explore', { replace: true });
   });
 
   describe('Head', () => {

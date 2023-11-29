@@ -5,11 +5,23 @@ import type { FunctionComponent } from 'react';
 import { useDispatch } from 'react-redux';
 
 import banner from '../assets/images/seo/home.png';
-import { FilterTags, Filter, Snaps, resetFilters } from '../features';
+import {
+  FilterTags,
+  Filter,
+  Snaps,
+  resetFilters,
+  getAll,
+  getSearchQuery,
+} from '../features';
+import { useSelector } from '../hooks';
 import type { Fields } from '../utils';
 
 const ExplorePage: FunctionComponent = () => {
   const dispatch = useDispatch();
+  const allSnapsShown = useSelector(getAll);
+  const searchQuery = useSelector(getSearchQuery);
+
+  const showResetFilter = !allSnapsShown || searchQuery.length > 0;
 
   const handleResetFilter = () => {
     dispatch(resetFilters());
@@ -42,9 +54,11 @@ const ExplorePage: FunctionComponent = () => {
         <Heading as="h2" fontSize="2xl" fontWeight="600">
           <Trans>Explore Snaps</Trans>
         </Heading>
-        <Link onClick={handleResetFilter} variant="landing">
-          <Trans>See All</Trans>
-        </Link>
+        {showResetFilter && (
+          <Link onClick={handleResetFilter} variant="landing">
+            <Trans>See All</Trans>
+          </Link>
+        )}
       </Flex>
 
       <Snaps />

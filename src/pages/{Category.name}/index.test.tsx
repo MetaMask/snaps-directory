@@ -33,7 +33,7 @@ describe('Category page', () => {
 
   it('redirects to the main page', () => {
     render(<CategoryPage data={getMockCategory()} />);
-    expect(navigate).toHaveBeenCalledWith('/');
+    expect(navigate).toHaveBeenCalledWith('/explore', { replace: true });
   });
 
   describe('Head', () => {

@@ -8,6 +8,7 @@ import {
   getFilteredSnaps,
   getInstalled,
   getSearchQuery,
+  resetFilters,
   resetSearch,
   setCategory,
   setOrder,
@@ -181,6 +182,17 @@ describe('filterSlice', () => {
       );
 
       expect(state.order).toBe(Order.Alphabetical);
+    });
+  });
+
+  describe('resetFilters', () => {
+    it('resets to the initial state', () => {
+      const state = filterSlice.reducer(
+        filterSlice.getInitialState(),
+        resetFilters(),
+      );
+
+      expect(state).toBe(filterSlice.getInitialState());
     });
   });
 
@@ -629,6 +641,166 @@ describe('filterSlice', () => {
               },
               [barSnap.snapId]: {
                 version: barSnap.latestVersion,
+              },
+              [bazSnap.snapId]: {
+                version: bazSnap.latestVersion,
+              },
+            }),
+          },
+        },
+      });
+
+      expect(getFilteredSnaps(state)).toStrictEqual([
+        barSnap,
+        fooSnap,
+        bazSnap,
+      ]);
+    });
+
+    it('sorts the Snaps consistently random', () => {
+      const { snap: fooSnap } = getMockSnap({
+        snapId: 'foo-snap',
+        name: 'Foo',
+      });
+      const { snap: barSnap } = getMockSnap({
+        snapId: 'bar-snap',
+        name: 'Bar',
+      });
+      const { snap: bazSnap } = getMockSnap({
+        snapId: 'baz-snap',
+        name: 'Baz',
+      });
+
+      const state = getMockState({
+        filter: {
+          searchQuery: '',
+          searchResults: [],
+          installed: false,
+          categories: [
+            RegistrySnapCategory.Interoperability,
+            RegistrySnapCategory.Notifications,
+            RegistrySnapCategory.TransactionInsights,
+          ],
+          order: Order.RandomConsistent,
+        },
+        snaps: {
+          snaps: [fooSnap, barSnap, bazSnap],
+        },
+        snapsApi: {
+          queries: {
+            'getInstalledSnaps(undefined)': getMockQueryResponse({
+              [fooSnap.snapId]: {
+                version: fooSnap.latestVersion,
+              },
+              [barSnap.snapId]: {
+                version: barSnap.latestVersion,
+              },
+              [bazSnap.snapId]: {
+                version: bazSnap.latestVersion,
+              },
+            }),
+          },
+        },
+      });
+
+      expect(getFilteredSnaps(state)).toStrictEqual([
+        fooSnap,
+        barSnap,
+        bazSnap,
+      ]);
+    });
+
+    it('sorts the Snaps randomly', () => {
+      const { snap: fooSnap } = getMockSnap({
+        snapId: 'foo-snap',
+        name: 'Foo',
+      });
+      const { snap: barSnap } = getMockSnap({
+        snapId: 'bar-snap',
+        name: 'Bar',
+      });
+      const { snap: bazSnap } = getMockSnap({
+        snapId: 'baz-snap',
+        name: 'Baz',
+      });
+
+      const state = getMockState({
+        filter: {
+          searchQuery: '',
+          searchResults: [],
+          installed: false,
+          categories: [
+            RegistrySnapCategory.Interoperability,
+            RegistrySnapCategory.Notifications,
+            RegistrySnapCategory.TransactionInsights,
+          ],
+          order: Order.Random,
+        },
+        snaps: {
+          snaps: [fooSnap, barSnap, bazSnap],
+        },
+        snapsApi: {
+          queries: {
+            'getInstalledSnaps(undefined)': getMockQueryResponse({
+              [fooSnap.snapId]: {
+                version: fooSnap.latestVersion,
+              },
+              [barSnap.snapId]: {
+                version: barSnap.latestVersion,
+              },
+              [bazSnap.snapId]: {
+                version: bazSnap.latestVersion,
+              },
+            }),
+          },
+        },
+      });
+
+      expect(getFilteredSnaps(state)).toStrictEqual(
+        expect.arrayContaining([barSnap, fooSnap, bazSnap]),
+      );
+    });
+
+    it('sorts the Snaps by latest', () => {
+      const { snap: fooSnap } = getMockSnap({
+        snapId: 'foo-snap',
+        name: 'Foo',
+        lastUpdated: 1701260892,
+      });
+      const { snap: barSnap } = getMockSnap({
+        snapId: 'bar-snap',
+        name: 'Bar',
+        lastUpdated: 1801260892,
+      });
+      const { snap: bazSnap } = getMockSnap({
+        snapId: 'baz-snap',
+        name: 'Baz',
+        lastUpdated: 1601260892,
+      });
+
+      const state = getMockState({
+        filter: {
+          searchQuery: '',
+          searchResults: [],
+          installed: false,
+          categories: [
+            RegistrySnapCategory.Interoperability,
+            RegistrySnapCategory.Notifications,
+            RegistrySnapCategory.TransactionInsights,
+          ],
+          order: Order.Latest,
+        },
+        snaps: {
+          snaps: [fooSnap, barSnap, bazSnap],
+        },
+        snapsApi: {
+          queries: {
+            'getInstalledSnaps(undefined)': getMockQueryResponse({
+              [barSnap.snapId]: {
+                version: barSnap.latestVersion,
+              },
+              [fooSnap.snapId]: {
+                version: fooSnap.latestVersion,
               },
               [bazSnap.snapId]: {
                 version: bazSnap.latestVersion,
