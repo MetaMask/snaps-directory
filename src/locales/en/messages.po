@@ -219,6 +219,11 @@ msgstr ""
 msgid "Knowledge Base"
 msgstr ""
 
+#: src/features/filter/constants.tsx
+#: src/pages/index.tsx
+msgid "Latest"
+msgstr ""
+
 #: src/components/icons/index.ts
 msgid "MetaMask"
 msgstr ""
@@ -290,6 +295,10 @@ msgstr ""
 
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "See everything"
+msgstr ""
+
+#: src/pages/index.tsx
+msgid "See Latest"
 msgstr ""
 
 #: src/components/icons/index.ts

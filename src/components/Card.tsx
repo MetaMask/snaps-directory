@@ -13,7 +13,7 @@ export const Card: FunctionComponent<CardProps> = ({ children, ...props }) => (
     py="4"
     rounded="lg"
     transitionDuration="normal"
-    _hover={{ background: 'background.hover' }}
+    _hover={{ background: 'background.default' }}
     {...props}
   >
     {children}

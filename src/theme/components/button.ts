@@ -55,11 +55,12 @@ export const Button = defineStyleConfig({
     }),
     small: defineStyle({
       fontSize: 'sm',
+      fontWeight: '500',
       height: '26px',
       borderRadius: '36px',
-      background: 'white',
+      background: 'background.default',
       borderColor: 'info.default',
-      color: 'gray.muted',
+      color: 'console',
       textTransform: 'uppercase',
       transitionDuration: 'normal',
       _groupHover: {
