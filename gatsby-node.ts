@@ -245,7 +245,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
 
   const snaps = getNodesByType('Snap') as unknown as Fields<
     Queries.Snap,
-    'icon'
+    'icon' | 'lastUpdated'
   >[];
 
   // The SEO banner that is used on the main `/installed` page. This is
@@ -254,6 +254,22 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
   await createFileNodeFromBuffer({
     buffer: installedImage,
     name: 'main-installed-banner',
+    ext: '.png',
+    createNode,
+    createNodeId,
+    cache,
+    getCache,
+  });
+
+  // The SEO banner that is used on the main `/latest` page. This is
+  // statically queried by the name.
+  const latestImage = await generateCategoryImage(
+    [...snaps].sort((a, b) => b.lastUpdated - a.lastUpdated).slice(0, 6),
+    6,
+  );
+  await createFileNodeFromBuffer({
+    buffer: latestImage,
+    name: 'latest-banner',
     ext: '.png',
     createNode,
     createNodeId,

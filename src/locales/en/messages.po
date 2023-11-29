@@ -142,7 +142,7 @@ msgstr ""
 msgid "Explore community-built Snaps to customize your web3 experience via our official directory. <0>Learn more</0> and <1>FAQ</1>."
 msgstr ""
 
-#: src/pages/browse.tsx
+#: src/pages/explore.tsx
 msgid "Explore Snaps"
 msgstr ""
 
@@ -285,7 +285,7 @@ msgstr ""
 msgid "Search snaps..."
 msgstr ""
 
-#: src/pages/browse.tsx
+#: src/pages/explore.tsx
 msgid "See All"
 msgstr ""
 
