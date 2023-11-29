@@ -19,7 +19,6 @@ import {
   SnapSourceCode,
   SnapAudits,
   SnapCategory,
-  BackButton,
   SnapDescription,
   SnapWebsiteButton,
 } from '../../../components';
@@ -75,7 +74,6 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
       marginTop={{ base: 4, md: 20 }}
     >
       <NotificationAcknowledger snapId={snapId} version={latestVersion} />
-      <BackButton />
       <Box p="6" rounded="3xl" background="background.card">
         <Flex
           justifyContent="space-between"
