@@ -23,7 +23,7 @@ const GROUPS = [
   {
     header: defineMessage`Most Popular`,
     limit: 6,
-    link: '/browse',
+    link: '/explore',
     linkText: defineMessage`Explore All Snaps`,
   },
   {

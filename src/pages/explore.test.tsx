@@ -1,17 +1,17 @@
 import { describe } from '@jest/globals';
 import { useStaticQuery } from 'gatsby';
 
-import IndexPage, { Head } from './browse';
+import ExplorePage, { Head } from './explore';
 import { render, getMock, getMockSiteMetadata } from '../utils/test-utils';
 
-describe('Index page', () => {
+describe('Explore page', () => {
   it('renders', async () => {
     const mock = getMock(useStaticQuery);
     mock.mockReturnValue({
       fusejs: {},
     });
 
-    const { queryByText } = render(<IndexPage />);
+    const { queryByText } = render(<ExplorePage />);
     expect(queryByText('Discover Snaps')).toBeInTheDocument();
   });
 

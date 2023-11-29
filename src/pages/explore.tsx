@@ -8,7 +8,7 @@ import banner from '../assets/images/seo/home.png';
 import { FilterTags, Filter, Snaps, resetFilters } from '../features';
 import type { Fields } from '../utils';
 
-const IndexPage: FunctionComponent = () => {
+const ExplorePage: FunctionComponent = () => {
   const dispatch = useDispatch();
 
   const handleResetFilter = () => {
@@ -105,4 +105,4 @@ export const query = graphql`
   }
 `;
 
-export default IndexPage;
+export default ExplorePage;
