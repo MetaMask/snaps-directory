@@ -10,12 +10,13 @@ import {
 import { defineMessage, Trans } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { graphql, Link as GatsbyLink } from 'gatsby';
-import type { FunctionComponent } from 'react';
+import { useEffect, type FunctionComponent } from 'react';
 
 import banner from '../assets/images/seo/home.png';
 import { RegistrySnapCategory, SNAP_CATEGORY_LINKS } from '../constants';
-import { FilteredSnaps } from '../features';
+import { FilteredSnaps, resetFilters } from '../features';
 import { Order } from '../features/filter/constants';
+import { useDispatch } from '../hooks';
 import type { Fields } from '../utils';
 
 const GROUPS = [
@@ -63,6 +64,11 @@ const GROUPS = [
 
 const IndexPage: FunctionComponent = () => {
   const i18n = useLingui();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(resetFilters());
+  }, [dispatch]);
 
   return (
     <Container

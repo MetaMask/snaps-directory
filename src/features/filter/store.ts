@@ -97,6 +97,9 @@ export const filterSlice = createSlice({
     setOrder: (state, action: PayloadAction<Order>) => {
       state.order = action.payload;
     },
+    resetFilters: () => {
+      return initialState;
+    },
   },
 });
 
@@ -109,6 +112,7 @@ export const {
   toggleCategory,
   setCategory,
   setOrder,
+  resetFilters,
 } = filterSlice.actions;
 
 export const getSearchQuery = createSelector(
