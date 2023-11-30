@@ -48,8 +48,8 @@ describe('Explore page', () => {
     store.dispatch(setSnaps([fooSnap, barSnap, bazSnap]));
     store.dispatch(setCategory(RegistrySnapCategory.Interoperability));
 
-    const { queryByText, getByText } = await act(() =>
-      render(<ExplorePage />, store),
+    const { queryByText, getByText } = await act(
+      async () => await act(() => render(<ExplorePage />, store)),
     );
 
     expect(queryByText('Foo Snap')).toBeInTheDocument();
@@ -58,7 +58,7 @@ describe('Explore page', () => {
 
     const button = getByText('See All');
 
-    act(() => button.click());
+    await act(async () => act(() => button.click()));
 
     expect(queryByText('Foo Snap')).toBeInTheDocument();
     expect(queryByText('Bar Snap')).toBeInTheDocument();
