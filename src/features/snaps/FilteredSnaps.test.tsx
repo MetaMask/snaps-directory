@@ -2,10 +2,10 @@ import { describe } from '@jest/globals';
 import { act } from '@testing-library/react';
 
 import { FilteredSnaps } from './FilteredSnaps';
+import { setSnaps } from './store';
 import { RegistrySnapCategory } from '../../constants';
 import { createStore } from '../../store';
 import { getMockSnap, render } from '../../utils/test-utils';
-import { setSnaps } from '../snaps';
 
 describe('FilteredSnaps', () => {
   it('renders', async () => {

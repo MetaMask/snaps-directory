@@ -1,31 +1,14 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
-import shuffle from 'lodash/shuffle';
 
 import { Order } from './constants';
+import { SORT_FUNCTIONS } from './sort';
 import { RegistrySnapCategory } from '../../constants';
 import type { ApplicationState } from '../../store';
 import type { Snap } from '../snaps';
 import { getInstalledSnaps } from '../snaps';
 
 export type SearchResult = { item: Snap };
-
-export const SORT_FUNCTIONS = {
-  // This will be a random shuffle every call
-  [Order.Random]: (snaps: Snap[]) => shuffle(snaps),
-
-  // This will be consistently random for a session
-  [Order.DeterministicRandom]: (snaps: Snap[]) => snaps,
-
-  [Order.Alphabetical]: (snaps: Snap[]) =>
-    snaps.concat().sort((a, b) => a.name.localeCompare(b.name)),
-
-  [Order.Popularity]: (snaps: Snap[]) =>
-    snaps.concat().sort((a, b) => b.downloads - a.downloads),
-
-  [Order.Latest]: (snaps: Snap[]) =>
-    snaps.concat().sort((a, b) => b.lastUpdated - a.lastUpdated),
-};
 
 export type FilterState = {
   searchQuery: string;

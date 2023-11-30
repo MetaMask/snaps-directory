@@ -120,11 +120,7 @@ const IndexPage: FunctionComponent = () => {
                 {i18n._(linkText)}
               </Link>
             </Flex>
-            <FilteredSnaps
-              limit={limit}
-              category={category ?? null}
-              order={order ?? null}
-            />
+            <FilteredSnaps limit={limit} category={category} order={order} />
 
             {index !== GROUPS.length - 1 && <Divider mt="12" mb="8" />}
           </>
