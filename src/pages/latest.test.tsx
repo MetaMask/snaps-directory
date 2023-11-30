@@ -1,27 +1,28 @@
 import { describe } from '@jest/globals';
 import { navigate } from 'gatsby';
 
-import Installed, { Head } from './installed';
-import { getInstalled } from '../features';
+import Latest, { Head } from './latest';
+import { getOrder } from '../features';
+import { Order } from '../features/filter/constants';
 import { createStore } from '../store';
 import { render } from '../utils/test-utils';
 
-describe('Installed page', () => {
+describe('Latest page', () => {
   it('renders', () => {
-    expect(() => render(<Installed />)).not.toThrow();
+    expect(() => render(<Latest />)).not.toThrow();
   });
 
-  it('enables the installed filter', () => {
+  it('sets the order', () => {
     const store = createStore();
-    expect(getInstalled(store.getState())).toBe(false);
+    expect(getOrder(store.getState())).toBe(Order.Popularity);
 
-    render(<Installed />, store);
+    render(<Latest />, store);
 
-    expect(getInstalled(store.getState())).toBe(true);
+    expect(getOrder(store.getState())).toBe(Order.Latest);
   });
 
   it('redirects to the main page', () => {
-    render(<Installed />);
+    render(<Latest />);
     expect(navigate).toHaveBeenCalledWith('/explore', { replace: true });
   });
 
@@ -43,7 +44,7 @@ describe('Installed page', () => {
 
       const { queryByText } = render(<Head data={data} />);
       expect(
-        queryByText('Installed Snaps on the MetaMask Snaps Directory'),
+        queryByText('Latest Snaps on the MetaMask Snaps Directory'),
       ).toBeInTheDocument();
     });
   });

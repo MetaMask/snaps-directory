@@ -68,6 +68,21 @@ describe('theme', () => {
                 "background": "background.header",
                 "boxShadow": "md",
               },
+              "small": Object {
+                "_groupHover": Object {
+                  "background": "info.default",
+                  "color": "white",
+                },
+                "background": "background.default",
+                "borderColor": "info.default",
+                "borderRadius": "36px",
+                "color": "console",
+                "fontSize": "sm",
+                "fontWeight": "500",
+                "height": "26px",
+                "textTransform": "uppercase",
+                "transitionDuration": "normal",
+              },
               "solid": Object {
                 "_active": Object {
                   "bg": "#0376C9",
@@ -110,6 +125,10 @@ describe('theme', () => {
                 "paddingX": "4",
                 "paddingY": "3",
                 "width": "100%",
+              },
+              "landing": Object {
+                "color": "info.default",
+                "fontWeight": "500",
               },
               "navigation-active": Object {
                 "background": "background.alternative",
@@ -317,6 +336,10 @@ describe('theme', () => {
               },
               "card": Object {
                 "_dark": "#1D1F23",
+                "default": "#FFFFFF",
+              },
+              "default": Object {
+                "_dark": "#24272A",
                 "default": "#FFFFFF",
               },
               "header": Object {

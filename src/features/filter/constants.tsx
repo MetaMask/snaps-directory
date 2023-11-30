@@ -16,9 +16,13 @@ export const SNAP_CATEGORY_ICONS = {
 export enum Order {
   Popularity = 'popularity',
   Alphabetical = 'name',
+  Random = 'random',
+  DeterministicRandom = 'deterministicRandom',
+  Latest = 'latest',
 }
 
 export const SNAP_ORDER_LABELS = {
   [Order.Alphabetical]: defineMessage`Alphabetical`,
   [Order.Popularity]: defineMessage`Popularity`,
+  [Order.Latest]: defineMessage`Latest`,
 };

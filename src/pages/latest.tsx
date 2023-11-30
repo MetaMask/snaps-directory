@@ -3,23 +3,24 @@ import { graphql, navigate } from 'gatsby';
 import type { FunctionComponent } from 'react';
 import { useEffect } from 'react';
 
-import { toggleInstalled } from '../features';
+import { setOrder } from '../features';
+import { Order } from '../features/filter/constants';
 import { useDispatch } from '../hooks';
 import type { Fields } from '../utils';
 
 /**
- * This page is used to redirect to the main page, and only showing installed
+ * This page is used to redirect to the main page, and showing the latest
  * snaps.
  *
- * This page is reachable at `/installed`.
+ * This page is reachable at `/latest`.
  *
  * @returns The rendered component.
  */
-const Installed: FunctionComponent = () => {
+const Latest: FunctionComponent = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(toggleInstalled());
+    dispatch(setOrder(Order.Latest));
 
     // According to the type definition, `navigate` returns a promise, but in
     // practice it does not.
@@ -43,9 +44,9 @@ export type HeadProps = {
 };
 
 export const Head: FunctionComponent<HeadProps> = ({ data }) => {
-  const name = t`Installed Snaps`;
-  const title = t`Installed Snaps on the MetaMask Snaps Directory`;
-  const description = t`Browse your installed Snaps on the MetaMask Snaps Directory.`;
+  const name = t`Latest Snaps`;
+  const title = t`Latest Snaps on the MetaMask Snaps Directory`;
+  const description = t`Explore the latest community-built Snaps to customize your web3 experience.`;
 
   const image = `${data.site.siteMetadata.siteUrl}${data.file.publicURL}`;
 
@@ -72,7 +73,7 @@ export const Head: FunctionComponent<HeadProps> = ({ data }) => {
 
 export const query = graphql`
   query {
-    file(name: { eq: "main-installed-banner" }) {
+    file(name: { eq: "latest-banner" }) {
       publicURL
     }
     site {
@@ -86,4 +87,4 @@ export const query = graphql`
   }
 `;
 
-export default Installed;
+export default Latest;

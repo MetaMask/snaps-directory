@@ -255,10 +255,12 @@ export async function getRoundIcon(icon: string, size = 158) {
  * the category on top of the base image.
  *
  * @param snaps - The Snaps in the category.
+ * @param countLimit - The amount of snaps to show before showing the count graphic.
  * @returns The buffer of the generated image.
  */
 export async function generateCategoryImage(
   snaps: Fields<Queries.Snap, 'icon'>[],
+  countLimit = 5,
 ) {
   const base = sharp(resolve(__dirname, '../assets/images/seo/category.png'));
   const layers: OverlayOptions[] = [];
@@ -266,8 +268,9 @@ export async function generateCategoryImage(
   // Not all Snaps have an icon, so we need to filter them out.
   const filteredSnaps = getSnapsWithIcon(snaps);
 
-  const randomSnaps = shuffle(filteredSnaps).slice(0, 5);
-  const snapsLength = filteredSnaps.length > 5 ? 6 : filteredSnaps.length;
+  const randomSnaps = shuffle(filteredSnaps).slice(0, countLimit);
+  const snapsLength =
+    filteredSnaps.length > countLimit ? 6 : filteredSnaps.length;
   const firstSnapX =
     1200 / 2 - (snapsLength * 112 + (snapsLength - 1) * 10) / 2;
 
@@ -281,7 +284,7 @@ export async function generateCategoryImage(
     });
   }
 
-  if (filteredSnaps.length > 5) {
+  if (filteredSnaps.length > countLimit) {
     const count = `+${filteredSnaps.length - 5}`;
     const [, font] = await getFonts(count, '');
     const countText = await getText(count, font);

@@ -63,6 +63,7 @@ export type MockSnap = Fields<
   | 'support'
   | 'gatsbyPath'
   | 'downloads'
+  | 'lastUpdated'
 >;
 
 export type GetMockSnapArgs = {
@@ -85,6 +86,7 @@ export type GetMockSnapArgs = {
   >;
   gatsbyPath?: string;
   downloads?: number;
+  lastUpdated?: number;
 };
 
 /**
@@ -108,6 +110,7 @@ export type GetMockSnapArgs = {
  * @param args.support - The support page URL.
  * @param args.gatsbyPath - The Gatsby path.
  * @param args.downloads - The number of downloads.
+ * @param args.lastUpdated - A unix timestamp of the last update to the snap.
  * @returns The mock snap data.
  */
 export function getMockSnap({
@@ -145,6 +148,7 @@ export function getMockSnap({
   },
   gatsbyPath = `/snap/${snapId}`,
   downloads = 0,
+  lastUpdated = 1701260892,
 }: GetMockSnapArgs = {}): { snap: MockSnap } {
   return {
     snap: {
@@ -168,6 +172,7 @@ export function getMockSnap({
       >,
       gatsbyPath,
       downloads,
+      lastUpdated,
     },
   };
 }
