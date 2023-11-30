@@ -17,7 +17,7 @@ export const SnapCard: FunctionComponent<
     <Link to={gatsbyPath}>
       <Card p="2" role="group">
         <Flex
-          height="48px"
+          height="3rem"
           flexDirection="row"
           justifyContent="space-between"
           gap="2"
