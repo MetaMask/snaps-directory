@@ -65,7 +65,7 @@ export const Filter: FunctionComponent = () => {
             {Object.values(Order)
               .filter(
                 (order) =>
-                  order !== Order.Random && order !== Order.RandomConsistent,
+                  order !== Order.Random && order !== Order.DeterministicRandom,
               )
               .map((order) => (
                 <FilterOrder key={order} order={order} />

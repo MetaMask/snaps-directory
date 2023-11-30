@@ -33,7 +33,7 @@ const GROUPS = [
     link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Interoperability].link,
     linkText:
       SNAP_CATEGORY_LINKS[RegistrySnapCategory.Interoperability].linkText,
-    order: Order.RandomConsistent,
+    order: Order.DeterministicRandom,
   },
   {
     header:
@@ -43,7 +43,7 @@ const GROUPS = [
     link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.TransactionInsights].link,
     linkText:
       SNAP_CATEGORY_LINKS[RegistrySnapCategory.TransactionInsights].linkText,
-    order: Order.RandomConsistent,
+    order: Order.DeterministicRandom,
   },
   {
     header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Notifications].header,
@@ -51,7 +51,7 @@ const GROUPS = [
     limit: 3,
     link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Notifications].link,
     linkText: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Notifications].linkText,
-    order: Order.RandomConsistent,
+    order: Order.DeterministicRandom,
   },
   {
     header: defineMessage`Latest`,

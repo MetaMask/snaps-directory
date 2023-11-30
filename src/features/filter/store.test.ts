@@ -188,7 +188,13 @@ describe('filterSlice', () => {
   describe('resetFilters', () => {
     it('resets to the initial state', () => {
       const state = filterSlice.reducer(
-        filterSlice.getInitialState(),
+        {
+          installed: true,
+          searchQuery: 'foo',
+          searchResults: [],
+          categories: [RegistrySnapCategory.Interoperability],
+          order: Order.Latest,
+        },
         resetFilters(),
       );
 
@@ -657,7 +663,7 @@ describe('filterSlice', () => {
       ]);
     });
 
-    it('sorts the Snaps consistently random', () => {
+    it('sorts the Snaps deterministically random', () => {
       const { snap: fooSnap } = getMockSnap({
         snapId: 'foo-snap',
         name: 'Foo',
@@ -681,7 +687,7 @@ describe('filterSlice', () => {
             RegistrySnapCategory.Notifications,
             RegistrySnapCategory.TransactionInsights,
           ],
-          order: Order.RandomConsistent,
+          order: Order.DeterministicRandom,
         },
         snaps: {
           snaps: [fooSnap, barSnap, bazSnap],

@@ -17,7 +17,7 @@ export enum Order {
   Popularity = 'popularity',
   Alphabetical = 'name',
   Random = 'random',
-  RandomConsistent = 'randomConsistent',
+  DeterministicRandom = 'deterministicRandom',
   Latest = 'latest',
 }
 

@@ -15,7 +15,7 @@ export const SORT_FUNCTIONS = {
   [Order.Random]: (snaps: Snap[]) => shuffle(snaps),
 
   // This will be consistently random for a session
-  [Order.RandomConsistent]: (snaps: Snap[]) => snaps,
+  [Order.DeterministicRandom]: (snaps: Snap[]) => snaps,
 
   [Order.Alphabetical]: (snaps: Snap[]) =>
     snaps.concat().sort((a, b) => a.name.localeCompare(b.name)),
