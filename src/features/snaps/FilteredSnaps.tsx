@@ -18,7 +18,7 @@ export const FilteredSnaps: FunctionComponent<FilteredSnapsProps> = ({
   order,
   category,
   limit,
-  excluded = [],
+  excluded,
 }) => {
   const snaps = useSelector(
     getSnapsByFilter({
