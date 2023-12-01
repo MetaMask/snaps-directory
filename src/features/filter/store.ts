@@ -2,20 +2,13 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 
 import { Order } from './constants';
+import { SORT_FUNCTIONS } from './sort';
 import { RegistrySnapCategory } from '../../constants';
 import type { ApplicationState } from '../../store';
 import type { Snap } from '../snaps';
 import { getInstalledSnaps } from '../snaps';
 
 export type SearchResult = { item: Snap };
-
-export const SORT_FUNCTIONS = {
-  [Order.Alphabetical]: (snaps: Snap[]) =>
-    snaps.concat().sort((a, b) => a.name.localeCompare(b.name)),
-
-  [Order.Popularity]: (snaps: Snap[]) =>
-    snaps.concat().sort((a, b) => b.downloads - a.downloads),
-};
 
 export type FilterState = {
   searchQuery: string;
@@ -87,6 +80,9 @@ export const filterSlice = createSlice({
     setOrder: (state, action: PayloadAction<Order>) => {
       state.order = action.payload;
     },
+    resetFilters: () => {
+      return initialState;
+    },
   },
 });
 
@@ -99,6 +95,7 @@ export const {
   toggleCategory,
   setCategory,
   setOrder,
+  resetFilters,
 } = filterSlice.actions;
 
 export const getSearchQuery = createSelector(

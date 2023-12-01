@@ -173,6 +173,14 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       snap.metadata.summary ?? manifest.description,
     );
 
+    const registryJson = await customFetch(
+      `https://registry.npmjs.org/${slug}`,
+    ).then(async (response: any) => response.json());
+
+    const { time } = registryJson;
+
+    const lastUpdated = new Date(time[latestVersion]).getTime();
+
     const downloadsJson = await customFetch(
       `https://api.npmjs.org/downloads/point/last-year/${slug}`,
     ).then(async (response: any) => response.json());
@@ -190,6 +198,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       latestVersion,
       icon,
       downloads,
+      lastUpdated,
     };
 
     const node: SnapNode = {
@@ -236,7 +245,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
 
   const snaps = getNodesByType('Snap') as unknown as Fields<
     Queries.Snap,
-    'icon'
+    'icon' | 'lastUpdated'
   >[];
 
   // The SEO banner that is used on the main `/installed` page. This is
@@ -245,6 +254,22 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
   await createFileNodeFromBuffer({
     buffer: installedImage,
     name: 'main-installed-banner',
+    ext: '.png',
+    createNode,
+    createNodeId,
+    cache,
+    getCache,
+  });
+
+  // The SEO banner that is used on the main `/latest` page. This is
+  // statically queried by the name.
+  const latestImage = await generateCategoryImage(
+    [...snaps].sort((a, b) => b.lastUpdated - a.lastUpdated).slice(0, 6),
+    6,
+  );
+  await createFileNodeFromBuffer({
+    buffer: latestImage,
+    name: 'latest-banner',
     ext: '.png',
     createNode,
     createNodeId,

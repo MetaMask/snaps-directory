@@ -135,7 +135,19 @@ msgid "Enable light mode"
 msgstr ""
 
 #: src/pages/index.tsx
+msgid "Explore All Snaps"
+msgstr ""
+
+#: src/pages/index.tsx
 msgid "Explore community-built Snaps to customize your web3 experience via our official directory. <0>Learn more</0> and <1>FAQ</1>."
+msgstr ""
+
+#: src/pages/explore.tsx
+msgid "Explore Snaps"
+msgstr ""
+
+#: src/pages/latest.tsx
+msgid "Explore the latest community-built Snaps to customize your web3 experience."
 msgstr ""
 
 #: src/components/icons/index.ts
@@ -157,6 +169,10 @@ msgstr ""
 
 #: src/components/FooterLinks.tsx
 msgid "Get in touch"
+msgstr ""
+
+#: src/constants.ts
+msgid "Get Notified Directly In MetaMask"
 msgstr ""
 
 #: src/pages/404.tsx
@@ -211,12 +227,29 @@ msgstr ""
 msgid "Knowledge Base"
 msgstr ""
 
+#: src/features/filter/constants.tsx
+#: src/pages/index.tsx
+msgid "Latest"
+msgstr ""
+
+#: src/pages/latest.tsx
+msgid "Latest Snaps"
+msgstr ""
+
+#: src/pages/latest.tsx
+msgid "Latest Snaps on the MetaMask Snaps Directory"
+msgstr ""
+
 #: src/components/icons/index.ts
 msgid "MetaMask"
 msgstr ""
 
 #: src/components/InstallUnsupportedMobile.tsx
 msgid "MetaMask Snaps is in open beta and only supported via our extension clients on desktop such as <0>Chrome</0> or <1>Firefox</1>."
+msgstr ""
+
+#: src/pages/index.tsx
+msgid "Most Popular"
 msgstr ""
 
 #: src/features/notifications/components/NoNotifications.tsx
@@ -252,6 +285,10 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr ""
 
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+msgid "Related Snaps"
+msgstr ""
+
 #: src/components/icons/index.ts
 msgid "Search"
 msgstr ""
@@ -260,8 +297,28 @@ msgstr ""
 msgid "Search snaps..."
 msgstr ""
 
+#: src/pages/explore.tsx
+msgid "See All"
+msgstr ""
+
+#: src/constants.ts
+msgid "See All Interoperability Snaps"
+msgstr ""
+
+#: src/constants.ts
+msgid "See All Notification Snaps"
+msgstr ""
+
+#: src/constants.ts
+msgid "See All Transaction Insight Snaps"
+msgstr ""
+
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "See everything"
+msgstr ""
+
+#: src/pages/index.tsx
+msgid "See Latest"
 msgstr ""
 
 #: src/components/icons/index.ts
@@ -286,6 +343,10 @@ msgstr ""
 
 #: src/constants.ts
 msgid "Stay informed with insights before you confirm transactions in MetaMask."
+msgstr ""
+
+#: src/constants.ts
+msgid "Stay Secure With Insights"
 msgstr ""
 
 #: src/components/FooterLinks.tsx
@@ -337,12 +398,20 @@ msgstr ""
 msgid "Updating {name}"
 msgstr ""
 
+#: src/constants.ts
+msgid "Use MetaMask Beyond Ethereum"
+msgstr ""
+
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Version"
 msgstr ""
 
 #: src/features/notifications/components/Notification.tsx
 msgid "Version {0} update available"
+msgstr ""
+
+#: src/features/snaps/components/SnapCard.tsx
+msgid "View"
 msgstr ""
 
 #: src/components/FooterLinks.tsx

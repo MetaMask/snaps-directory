@@ -3,8 +3,11 @@ import { createSelector, createSlice } from '@reduxjs/toolkit';
 import semver from 'semver/preload';
 
 import { getInstalledSnaps } from './api';
+import type { RegistrySnapCategory } from '../../constants';
 import type { ApplicationState } from '../../store';
 import type { Fields } from '../../utils';
+import { Order } from '../filter/constants';
+import { SORT_FUNCTIONS } from '../filter/sort';
 
 export type Snap = Fields<
   Queries.Snap,
@@ -17,6 +20,7 @@ export type Snap = Fields<
   | 'gatsbyPath'
   | 'latestVersion'
   | 'downloads'
+  | 'lastUpdated'
 >;
 
 export type SnapsState = {
@@ -43,6 +47,50 @@ export const getSnaps = createSelector(
   (state: ApplicationState) => state.snaps,
   ({ snaps }) => snaps,
 );
+
+type GetFilteredSnapsOptions = {
+  order?: Order | undefined;
+  category?: RegistrySnapCategory | undefined;
+  limit?: number | undefined;
+  excluded?: string[] | undefined;
+};
+
+/**
+ * Get Snaps based on the given filter options.
+ *
+ * @param options - The options to use when filtering the Snaps.
+ * @param options.order - The order to sort the Snaps by. Defaults to
+ * `Order.Popularity`.
+ * @param options.category - The category to filter the Snaps by. Only Snaps
+ * with the given category will be returned. If not provided, all Snaps will be
+ * returned.
+ * @param options.limit - The maximum number of Snaps to return. If not
+ * provided, all Snaps will be returned.
+ * @param options.excluded - An array of Snap IDs to exclude from the results.
+ * @returns A selector that returns the filtered Snaps.
+ */
+export const getSnapsByFilter = ({
+  order = Order.Popularity,
+  category,
+  limit,
+  excluded = [],
+}: GetFilteredSnapsOptions) =>
+  createSelector(
+    (state: ApplicationState) => getSnaps(state),
+    (snaps) => {
+      if (!snaps) {
+        return null;
+      }
+
+      const filteredSnaps = snaps.filter(
+        (snap) =>
+          !excluded.includes(snap.snapId) &&
+          (!category || snap.category === category),
+      );
+
+      return SORT_FUNCTIONS[order](filteredSnaps).slice(0, limit);
+    },
+  );
 
 export const getUpdateAvailable = (snapId: string) =>
   createSelector(

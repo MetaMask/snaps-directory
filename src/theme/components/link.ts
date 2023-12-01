@@ -27,5 +27,10 @@ export const Link = defineStyleConfig({
       border: '1px solid',
       borderColor: 'border.default',
     },
+
+    landing: {
+      color: 'info.default',
+      fontWeight: '500',
+    },
   },
 });
