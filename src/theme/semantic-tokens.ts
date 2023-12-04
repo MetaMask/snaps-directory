@@ -59,6 +59,10 @@ export const semanticTokens: SemanticTokens = {
         default: '#FFFFFF',
         _dark: '#282B2E',
       },
+      avatar: {
+        default: '#f2f4f6',
+        _dark: '#141618',
+      },
     },
     info: {
       default: {
