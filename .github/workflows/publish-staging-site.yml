@@ -17,7 +17,6 @@ jobs:
   publish-site-to-gh-pages:
     name: Publish staging site to GitHub Pages
     runs-on: ubuntu-latest
-    environment: github-pages
     steps:
       - name: Ensure `destination_dir` is not empty
         if: ${{ inputs.destination_dir == '' }}
