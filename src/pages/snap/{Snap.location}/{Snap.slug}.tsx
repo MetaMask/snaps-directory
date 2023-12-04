@@ -273,33 +273,37 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
         />
       </Box>
 
-      <Divider my="12" />
-      <Flex
-        width="100%"
-        marginBottom="4"
-        flexDirection="row"
-        justifyContent="space-between"
-        alignItems="center"
-      >
-        <Heading as="h2" fontSize="2xl">
-          <Trans>Related Snaps</Trans>
-        </Heading>
-        <Link
-          as={GatsbyLink}
-          to={SNAP_CATEGORY_LINKS[category as RegistrySnapCategory].link}
-          variant="landing"
-        >
-          {i18n._(
-            SNAP_CATEGORY_LINKS[category as RegistrySnapCategory].linkText,
-          )}
-        </Link>
-      </Flex>
-      <FilteredSnaps
-        limit={3}
-        category={category as RegistrySnapCategory}
-        order={Order.Random}
-        excluded={[snapId]}
-      />
+      {category && (
+        <>
+          <Divider my="12" />
+          <Flex
+            width="100%"
+            marginBottom="4"
+            flexDirection="row"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Heading as="h2" fontSize="2xl">
+              <Trans>Related Snaps</Trans>
+            </Heading>
+            <Link
+              as={GatsbyLink}
+              to={SNAP_CATEGORY_LINKS[category as RegistrySnapCategory].link}
+              variant="landing"
+            >
+              {i18n._(
+                SNAP_CATEGORY_LINKS[category as RegistrySnapCategory].linkText,
+              )}
+            </Link>
+          </Flex>
+          <FilteredSnaps
+            limit={3}
+            category={category as RegistrySnapCategory}
+            order={Order.Random}
+            excluded={[snapId]}
+          />
+        </>
+      )}
     </Container>
   );
 };
