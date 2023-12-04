@@ -13,6 +13,7 @@ on:
 jobs:
   publish-site-to-gh-pages:
     name: Publish staging site to GitHub Pages
+    environment: staging
     runs-on: ubuntu-latest
     steps:
       - name: Ensure `destination_dir` is not empty
