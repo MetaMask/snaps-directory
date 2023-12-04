@@ -23,12 +23,22 @@ jobs:
     name: Build, lint, and test
     uses: ./.github/workflows/build-lint-test.yml
 
+  publish-staging-pr:
+    name: Publish pull request staging site
+    if: github.event_name == 'pull_request'
+    uses: ./.github/workflows/publish-staging.yml
+    with:
+      destination_dir: pr/${{ github.event.pull_request.number }}
+    secrets:
+      PUBLISH_STAGING_PAGES_TOKEN: ${{ secrets.PUBLISH_STAGING_PAGES_TOKEN }}
+
   all-jobs-completed:
     name: All jobs completed
     runs-on: ubuntu-latest
     needs:
       - check-workflows
       - build-lint-test
+      - publish-staging-pr
     outputs:
       PASSED: ${{ steps.set-output.outputs.PASSED }}
     steps:
@@ -48,6 +58,15 @@ jobs:
           if [[ $passed != "true" ]]; then
             exit 1
           fi
+
+  publish-staging-main:
+    name: Publish main staging site
+    if: github.event_name == 'push'
+    uses: ./.github/workflows/publish-staging.yml
+    with:
+      destination_dir: main
+    secrets:
+      PUBLISH_STAGING_PAGES_TOKEN: ${{ secrets.PUBLISH_STAGING_PAGES_TOKEN }}
 
   is-release:
     # Filtering by `push` events ensures that we only release from the `main` branch, which is a

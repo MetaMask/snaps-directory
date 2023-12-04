@@ -41,6 +41,8 @@ type SnapNode = NodeInput & {
   icon?: string | undefined;
 };
 
+// eslint-disable-next-line no-restricted-globals
+const IS_STAGING = process.env.STAGING === 'true';
 const REGISTRY_URL = 'https://acl.execution.consensys.io/latest/registry.json';
 
 /**
@@ -150,8 +152,8 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
   const { registry, customFetch } = await getRegistry();
 
   const verifiedSnaps = Object.values(registry.verifiedSnaps)
-    .filter((snap) => Boolean(snap.metadata.category))
-    .filter((snap) => snap.metadata.hidden !== true);
+    .filter((snap) => IS_STAGING || Boolean(snap.metadata.category))
+    .filter((snap) => IS_STAGING || snap.metadata.hidden !== true);
 
   for (const snap of verifiedSnaps) {
     const latestVersion = getLatestSnapVersion(snap);
