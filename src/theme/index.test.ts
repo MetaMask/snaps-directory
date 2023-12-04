@@ -330,6 +330,10 @@ describe('theme', () => {
                 "_dark": "#1D1F22",
                 "default": "#F5F5F5",
               },
+              "avatar": Object {
+                "_dark": "#141618",
+                "default": "#f2f4f6",
+              },
               "body": Object {
                 "_dark": "#141618",
                 "default": "#F8F8F8",
