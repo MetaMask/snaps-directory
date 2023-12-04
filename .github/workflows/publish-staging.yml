@@ -1,50 +1,46 @@
-name: Publish staging site to GitHub Pages
+name: Publish staging site
 
 on:
   workflow_call:
-    inputs:
-      destination_dir:
-        required: true
-        type: string
-      ref:
-        required: false
-        type: string
     secrets:
       PUBLISH_STAGING_PAGES_TOKEN:
         required: true
 
 jobs:
-  publish-site-to-gh-pages:
-    name: Publish staging site to GitHub Pages
+  publish-pull-request:
+    name: Publish pull request
+    if: github.event_name == 'pull_request'
+    uses: ./.github/workflows/publish-staging-site.yml
+    with:
+      destination_dir: pr/${{ github.event.pull_request.number }}
+    secrets:
+      PUBLISH_STAGING_PAGES_TOKEN: ${{ secrets.PUBLISH_STAGING_PAGES_TOKEN }}
+
+  comment-on-pull-request:
+    name: Comment on pull request with link to site
     runs-on: ubuntu-latest
-    environment: github-pages
+    needs: publish-pull-request
     permissions:
-      contents: write
+      contents: read
+      pull-requests: write
     steps:
-      - name: Ensure `destination_dir` is not empty
-        if: ${{ inputs.destination_dir == '' }}
-        run: exit 1
-      - name: Checkout the repository
-        uses: actions/checkout@v3
+      - name: Comment on pull request
+        uses: actions/github-script@v6
         with:
-          ref: ${{ inputs.ref || github.sha }}
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'yarn'
-      - name: Install npm dependencies
-        run: yarn --immutable
-      - name: Run build script
-        run: yarn build
-        env:
-          STAGING: true
-          STAGING_PATH_PREFIX: snaps-directory-staging/${{ inputs.destination_dir }}
-          PREFIX_PATHS: true
-      - name: Deploy to `${{ inputs.destination_dir }}` directory of `gh-pages` branch
-        uses: peaceiris/actions-gh-pages@de7ea6f8efb354206b205ef54722213d99067935
-        with:
-          personal_token: ${{ secrets.PUBLISH_STAGING_PAGES_TOKEN }}
-          external_repository: MetaMask/snaps-directory-staging
-          publish_dir: ./public
-          destination_dir: ${{ inputs.destination_dir }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `Staging website successfully published:\n\nhttps://metamask.github.io/snaps-directory-staging/pr/${context.issue.number}/`,
+            });
+
+  publish-main-branch:
+    name: Publish main branch
+    if: github.event_name == 'push'
+    uses: ./.github/workflows/publish-staging-site.yml
+    with:
+      destination_dir: main
+    secrets:
+      PUBLISH_STAGING_PAGES_TOKEN: ${{ secrets.PUBLISH_STAGING_PAGES_TOKEN }}

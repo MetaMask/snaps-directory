@@ -12,4 +12,7 @@
 
 ## Contributing
 
+The staging version of the directory can be found at
+[metamask.github.io/snaps-directory-staging](https://metamask.github.io/snaps-directory-staging/main).
+
 Please follow our [contributing guidelines](https://github.com/MetaMask/snaps/blob/main/docs/contributing.md).
