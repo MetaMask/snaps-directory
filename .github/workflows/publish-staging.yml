@@ -45,6 +45,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@de7ea6f8efb354206b205ef54722213d99067935
         with:
           personal_token: ${{ secrets.PUBLISH_STAGING_PAGES_TOKEN }}
-          external_repository: MetaMask/snaps-directory-staging
+          external_repository: Mrtenz/snaps-directory-staging
           publish_dir: ./public
           destination_dir: ${{ inputs.destination_dir }}
