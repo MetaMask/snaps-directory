@@ -6,9 +6,6 @@ on:
       destination_dir:
         required: true
         type: string
-      ref:
-        required: false
-        type: string
     secrets:
       PUBLISH_STAGING_PAGES_TOKEN:
         required: true
@@ -23,8 +20,6 @@ jobs:
         run: exit 1
       - name: Checkout the repository
         uses: actions/checkout@v3
-        with:
-          ref: ${{ inputs.ref || github.sha }}
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
