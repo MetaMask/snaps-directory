@@ -3,7 +3,7 @@ import type { GatsbyConfig } from 'gatsby';
 
 const IS_STAGING = process.env.STAGING === 'true';
 const STAGING_PATH_PREFIX = IS_STAGING
-  ? `/${process.env.STAGING_PATH_PREFIX?.replace(/^\//u, '')}`
+  ? `/${process.env.STAGING_PATH_PREFIX}`
   : '';
 
 const config: GatsbyConfig = {
