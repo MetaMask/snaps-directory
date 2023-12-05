@@ -268,8 +268,7 @@ describe('theme', () => {
                 "container": Object {
                   "background": "tag.category",
                   "lineHeight": "1.5",
-                  "paddingX": "3",
-                  "paddingY": "2",
+                  "padding": "3",
                   "textTransform": "none",
                 },
               },
