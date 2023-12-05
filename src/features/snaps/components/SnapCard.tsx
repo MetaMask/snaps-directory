@@ -47,6 +47,7 @@ export const SnapCard: FunctionComponent<SnapCardProps> = ({
             alignItems="center"
             width={{ base: '100%', md: 'auto' }}
             gap="2"
+            overflow="hidden"
           >
             <SnapAvatar
               size="2.75rem"
@@ -55,15 +56,11 @@ export const SnapCard: FunctionComponent<SnapCardProps> = ({
               icon={icon}
               isInstalled={isInstalled}
             />
-            <Box>
+            <Box overflow="hidden">
               <Text
                 fontWeight="medium"
                 display="-webkit-box"
-                overflow="hidden"
-                sx={{
-                  WebkitLineClamp: 1,
-                  WebkitBoxOrient: 'vertical',
-                }}
+                isTruncated={true}
               >
                 {name}
               </Text>
@@ -71,12 +68,7 @@ export const SnapCard: FunctionComponent<SnapCardProps> = ({
                 color="gray.muted"
                 fontWeight="medium"
                 fontSize="xs"
-                display="-webkit-box"
-                overflow="hidden"
-                sx={{
-                  WebkitLineClamp: 1,
-                  WebkitBoxOrient: 'vertical',
-                }}
+                isTruncated={true}
               >
                 {summary}
               </Text>
