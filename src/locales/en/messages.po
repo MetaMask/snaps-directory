@@ -293,8 +293,8 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: src/features/filter/components/FilterSearch.tsx
-msgid "Search snaps..."
+#: src/features/filter/components/FilterSearchInput.tsx
+msgid "Search Snaps"
 msgstr ""
 
 #: src/pages/explore.tsx
@@ -307,6 +307,10 @@ msgstr ""
 
 #: src/constants.ts
 msgid "See All Notification Snaps"
+msgstr ""
+
+#: src/features/filter/components/FilterSearch.tsx
+msgid "See all results"
 msgstr ""
 
 #: src/constants.ts

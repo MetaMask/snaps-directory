@@ -6,7 +6,6 @@ import {
   FilterButton,
   FilterCategory,
   FilterItem,
-  FilterSearch,
   FilterTags,
 } from './components';
 import { FilterOrder } from './components/FilterOrder';
@@ -74,7 +73,6 @@ export const Filter: FunctionComponent = () => {
         </MenuList>
       </Menu>
       <FilterTags display={['none', null, 'flex']} />
-      <FilterSearch />
     </>
   );
 };

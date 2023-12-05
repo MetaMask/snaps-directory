@@ -7,15 +7,36 @@ import { Card, SnapAvatar } from '../../../components';
 import type { Fields } from '../../../utils';
 import { useGetInstalledSnapsQuery } from '../api';
 
-export const SnapCard: FunctionComponent<
-  Fields<Queries.Snap, 'name' | 'summary' | 'snapId' | 'icon' | 'gatsbyPath'>
-> = ({ name, summary, snapId, icon, gatsbyPath }) => {
+export type SnapCardProps = Fields<
+  Queries.Snap,
+  'name' | 'summary' | 'snapId' | 'icon' | 'gatsbyPath'
+> & {
+  onClick?: () => void;
+};
+
+export const SnapCard: FunctionComponent<SnapCardProps> = ({
+  name,
+  summary,
+  snapId,
+  icon,
+  gatsbyPath,
+  onClick = () => undefined,
+}) => {
   const { data: installedSnaps } = useGetInstalledSnapsQuery();
   const isInstalled = Boolean(installedSnaps?.[snapId]);
 
   return (
-    <Link to={gatsbyPath}>
-      <Card p="2" role="group">
+    <Link to={gatsbyPath} onClick={onClick}>
+      <Card
+        padding="2"
+        _hover={{
+          background: 'background.default',
+          '& button': {
+            background: 'info.default',
+            color: 'white',
+          },
+        }}
+      >
         <Flex
           height="3rem"
           flexDirection="row"

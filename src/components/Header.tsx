@@ -6,7 +6,7 @@ import type { FunctionComponent } from 'react';
 
 import { ColorModeToggle } from './ColorModeToggle';
 import { Logo } from './Logo';
-import { Notifications } from '../features';
+import { FilterSearch, Notifications } from '../features';
 
 type HeaderProps = BoxProps;
 
@@ -28,7 +28,12 @@ export const Header: FunctionComponent<HeaderProps> = (props) => (
     zIndex="sticky"
   >
     <Container maxWidth="7xl">
-      <Stack direction="row" alignItems="center" gap="2">
+      <Stack
+        direction="row"
+        alignItems="center"
+        gap="2"
+        justifyContent="space-between"
+      >
         <Link to="/">
           <Stack direction="row" alignItems="center" gap="2">
             <Logo />
@@ -41,8 +46,11 @@ export const Header: FunctionComponent<HeaderProps> = (props) => (
             </Tag>
           </Stack>
         </Link>
-        <ColorModeToggle />
-        <Notifications />
+        <Stack direction="row" gap="2">
+          <FilterSearch />
+          <ColorModeToggle />
+          <Notifications />
+        </Stack>
       </Stack>
     </Container>
   </Box>
