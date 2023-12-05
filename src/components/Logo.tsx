@@ -18,7 +18,7 @@ export const Logo: FunctionComponent = () => {
       <Box
         width="11.95rem"
         height="1.5rem"
-        display={{ base: 'none', sm: 'block' }}
+        display={{ base: 'none', md: 'block' }}
       >
         <SvgLogo
           width="100%"
@@ -31,7 +31,7 @@ export const Logo: FunctionComponent = () => {
       <Box
         width="1.603rem"
         height="1.5rem"
-        display={{ base: 'block', sm: 'none' }}
+        display={{ base: 'block', md: 'none' }}
       >
         <SmallLogo
           width="100%"

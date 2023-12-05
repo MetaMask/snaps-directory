@@ -31,7 +31,7 @@ export const Header: FunctionComponent<HeaderProps> = (props) => (
       <Stack
         direction="row"
         alignItems="center"
-        gap="2"
+        gap="3"
         justifyContent="space-between"
       >
         <Link to="/">
@@ -40,7 +40,7 @@ export const Header: FunctionComponent<HeaderProps> = (props) => (
             <Tag
               variant="muted"
               fontSize="0.65rem"
-              display={{ base: 'none', sm: 'flex' }}
+              display={{ base: 'none', md: 'flex' }}
             >
               <Trans>Open Beta</Trans>
             </Tag>
