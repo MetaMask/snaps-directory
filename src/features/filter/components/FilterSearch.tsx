@@ -7,18 +7,21 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
+import { navigate } from 'gatsby';
 import type { FunctionComponent, ChangeEvent } from 'react';
 import { useEffect, useState } from 'react';
 
 import { FilterSearchInput } from './FilterSearchInput';
-import { useSearchResults, useSelector } from '../../../hooks';
+import { useDispatch, useSearchResults, useSelector } from '../../../hooks';
 import { getSnapsById } from '../../snaps';
 import { SnapCard } from '../../snaps/components';
+import { setSearchQuery, setSearchResults } from '../store';
 
 export const FilterSearch: FunctionComponent = () => {
   const [query, setQuery] = useState('');
   const results = useSearchResults(query);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const dispatch = useDispatch();
 
   const snaps = useSelector(
     getSnapsById(results.map((result) => result.snapId)),
@@ -30,6 +33,17 @@ export const FilterSearch: FunctionComponent = () => {
 
   const handleClose = () => {
     onClose();
+  };
+
+  const handleAll = () => {
+    dispatch(setSearchQuery(query));
+    dispatch(setSearchResults(results));
+    onClose();
+
+    // According to the type definition, `navigate` returns a promise, but in
+    // practice it does not.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    navigate('/explore', { replace: true });
   };
 
   useEffect(() => {
@@ -63,6 +77,7 @@ export const FilterSearch: FunctionComponent = () => {
             fontWeight="500"
             textAlign="center"
             paddingY="4"
+            onClick={handleAll}
           >
             <Trans>See all results</Trans>
           </Link>

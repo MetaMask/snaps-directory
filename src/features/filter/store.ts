@@ -8,11 +8,9 @@ import type { ApplicationState } from '../../store';
 import type { Snap } from '../snaps';
 import { getInstalledSnaps } from '../snaps';
 
-export type SearchResult = { item: Snap };
-
 export type FilterState = {
   searchQuery: string;
-  searchResults: SearchResult[];
+  searchResults: Snap[];
   installed: boolean;
   categories: RegistrySnapCategory[];
   order: Order;
@@ -37,7 +35,7 @@ export const filterSlice = createSlice({
     setSearchQuery: (state, action: PayloadAction<string>) => {
       state.searchQuery = action.payload;
     },
-    setSearchResults: (state, action: PayloadAction<SearchResult[]>) => {
+    setSearchResults: (state, action: PayloadAction<Snap[]>) => {
       state.searchResults = action.payload;
     },
     resetSearch: (state) => {
@@ -146,9 +144,7 @@ export const getFilteredSnaps = createSelector(
       searchQuery.length > 0
         ? (searchResults
             .map((searchResult) =>
-              sortedSnaps.find(
-                ({ snapId }) => searchResult.item.snapId === snapId,
-              ),
+              sortedSnaps.find(({ snapId }) => searchResult.snapId === snapId),
             )
             .filter(Boolean) as Snap[])
         : sortedSnaps;

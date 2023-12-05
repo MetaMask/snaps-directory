@@ -289,6 +289,10 @@ msgstr ""
 msgid "Related Snaps"
 msgstr ""
 
+#: src/pages/explore.tsx
+msgid "Results for \"{searchQuery}\""
+msgstr ""
+
 #: src/components/icons/index.ts
 msgid "Search"
 msgstr ""

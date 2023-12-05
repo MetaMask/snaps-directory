@@ -52,7 +52,11 @@ const ExplorePage: FunctionComponent = () => {
         alignItems="center"
       >
         <Heading as="h2" fontSize="2xl" fontWeight="600">
-          <Trans>Explore Snaps</Trans>
+          {searchQuery ? (
+            <Trans>Results for &quot;{searchQuery}&quot;</Trans>
+          ) : (
+            <Trans>Explore Snaps</Trans>
+          )}
         </Heading>
         {showResetFilter && (
           <Link onClick={handleResetFilter} variant="landing">
