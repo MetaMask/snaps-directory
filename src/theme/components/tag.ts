@@ -32,8 +32,7 @@ export const Tag = defineMultiStyleConfig({
       container: {
         lineHeight: '1.5',
         textTransform: 'none',
-        paddingX: '3',
-        paddingY: '2',
+        padding: '3',
         background: 'tag.category',
       },
     }),
