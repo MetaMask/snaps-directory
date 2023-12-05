@@ -57,11 +57,7 @@ export const SnapCard: FunctionComponent<SnapCardProps> = ({
               isInstalled={isInstalled}
             />
             <Box overflow="hidden">
-              <Text
-                fontWeight="medium"
-                display="-webkit-box"
-                isTruncated={true}
-              >
+              <Text fontWeight="medium" isTruncated={true}>
                 {name}
               </Text>
               <Text
