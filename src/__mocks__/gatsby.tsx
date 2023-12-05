@@ -16,7 +16,7 @@ export const Link: FunctionComponent<LinkProps> = ({
   children,
   ...rest
 }) => (
-  <a href={to} {...rest}>
+  <a href="#" {...rest}>
     {children}
   </a>
 );

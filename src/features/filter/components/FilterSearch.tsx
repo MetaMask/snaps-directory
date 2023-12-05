@@ -1,5 +1,4 @@
 import {
-  Box,
   Link,
   Menu,
   MenuButton,
@@ -31,6 +30,12 @@ export const FilterSearch: FunctionComponent = () => {
     setQuery(event.target.value);
   };
 
+  const handleClick = () => {
+    if (query && snaps.length > 0) {
+      onOpen();
+    }
+  };
+
   const handleAll = () => {
     dispatch(setSearchQuery(query));
     dispatch(setSearchResults(results));
@@ -51,34 +56,34 @@ export const FilterSearch: FunctionComponent = () => {
   }, [snaps.length, query, onOpen, onClose]);
 
   return (
-    <Box>
-      <Menu isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
-        <MenuButton
-          as={FilterSearchInput}
-          query={query}
-          onFormChange={handleChange}
-        />
-        <MenuList
-          background="background.alternative"
-          maxWidth="23.875rem"
-          padding="1"
-          boxShadow="xl"
+    <Menu isLazy={true} isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
+      <MenuButton
+        as={FilterSearchInput}
+        query={query}
+        onFormChange={handleChange}
+        onFormClick={handleClick}
+      />
+      <MenuList
+        background="background.alternative"
+        maxWidth="23.875rem"
+        padding="1"
+        boxShadow="xl"
+      >
+        {snaps.slice(0, 5).map((snap) => (
+          <SnapCard key={`${snap.snapId}`} {...snap} onClick={onClose} />
+        ))}
+        <Link
+          href="#"
+          display="block"
+          fontSize="md"
+          fontWeight="500"
+          textAlign="center"
+          paddingY="4"
+          onClick={handleAll}
         >
-          {snaps.slice(0, 5).map((snap) => (
-            <SnapCard key={`${snap.snapId}`} {...snap} onClick={onClose} />
-          ))}
-          <Link
-            display="block"
-            fontSize="md"
-            fontWeight="500"
-            textAlign="center"
-            paddingY="4"
-            onClick={handleAll}
-          >
-            <Trans>See all results</Trans>
-          </Link>
-        </MenuList>
-      </Menu>
-    </Box>
+          <Trans>See all results</Trans>
+        </Link>
+      </MenuList>
+    </Menu>
   );
 };
