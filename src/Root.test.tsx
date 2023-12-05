@@ -9,6 +9,11 @@ import { getMock, render } from './utils/test-utils';
 
 describe('wrapPageElement', () => {
   it('wraps an element in a Layout component', async () => {
+    const mock = getMock(useStaticQuery);
+    mock.mockReturnValue({
+      fusejs: {},
+    });
+
     assert(wrapPageElement);
     const element = wrapPageElement(
       // @ts-expect-error: - We don't need to provide all of the props.

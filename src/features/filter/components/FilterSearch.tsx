@@ -31,10 +31,6 @@ export const FilterSearch: FunctionComponent = () => {
     setQuery(event.target.value);
   };
 
-  const handleClose = () => {
-    onClose();
-  };
-
   const handleAll = () => {
     dispatch(setSearchQuery(query));
     dispatch(setSearchResults(results));
@@ -56,7 +52,7 @@ export const FilterSearch: FunctionComponent = () => {
 
   return (
     <Box>
-      <Menu isOpen={isOpen} onOpen={onOpen} onClose={handleClose}>
+      <Menu isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
         <MenuButton
           as={FilterSearchInput}
           query={query}

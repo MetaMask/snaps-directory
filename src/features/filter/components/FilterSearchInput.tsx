@@ -18,6 +18,9 @@ export type FilterSearchInputProps = {
 };
 
 export const FilterSearchInput: FunctionComponent<FilterSearchInputProps> =
+  // This component must be a forwardRef because it is used as the `as` prop of
+  // `MenuButton`. The `MenuButton` component will pass a ref to this component
+  // so that it can be used to position the menu.
   forwardRef(({ query, onFormChange }, ref) => (
     <InputGroup background="background.card" borderRadius="full" ref={ref}>
       <InputLeftElement pointerEvents="none">

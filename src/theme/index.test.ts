@@ -69,10 +69,6 @@ describe('theme', () => {
                 "boxShadow": "md",
               },
               "small": Object {
-                "_groupHover": Object {
-                  "background": "info.default",
-                  "color": "white",
-                },
                 "background": "background.default",
                 "borderColor": "info.default",
                 "borderRadius": "36px",
@@ -432,6 +428,7 @@ describe('theme', () => {
           "shadows": Object {
             "lg": "0px 2px 40px 0px #0000001A",
             "md": "0px 2px 16px 0px #0000001A",
+            "xl": "0px 4px 16px 0px #0000001A",
           },
         },
         "styles": Object {

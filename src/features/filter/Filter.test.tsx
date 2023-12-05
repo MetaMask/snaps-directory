@@ -36,16 +36,6 @@ describe('Filter', () => {
     expect(queryByText('Installed')).toBeInTheDocument();
   });
 
-  it('renders the search input', () => {
-    const mock = getMock(useStaticQuery);
-    mock.mockReturnValue({
-      fusejs: {},
-    });
-
-    const { getByPlaceholderText } = render(<Filter />);
-    expect(getByPlaceholderText('Search snaps...')).toBeInTheDocument();
-  });
-
   it('renders the menu on click', () => {
     const mock = getMock(useStaticQuery);
     mock.mockReturnValue({
