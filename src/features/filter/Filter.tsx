@@ -31,7 +31,7 @@ export const Filter: FunctionComponent = () => {
   return (
     <>
       <Menu closeOnSelect={false} isLazy={true}>
-        <MenuButton as={FilterButton} order={[3, null, 0]} />
+        <MenuButton as={FilterButton} />
         <MenuList width="17.188rem" boxShadow="md">
           <MenuGroup marginLeft="2" title={t`Filter`} data-testid="menu-group">
             <FilterItem checked={all} onClick={handleClickAll}>
@@ -72,7 +72,7 @@ export const Filter: FunctionComponent = () => {
           </MenuGroup>
         </MenuList>
       </Menu>
-      <FilterTags display={['none', null, 'flex']} />
+      <FilterTags />
     </>
   );
 };
