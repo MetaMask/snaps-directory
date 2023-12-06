@@ -1,6 +1,6 @@
 import { Container, Flex, Divider, Heading, Link } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
-import { graphql } from 'gatsby';
+import { graphql, withPrefix } from 'gatsby';
 import type { FunctionComponent } from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -76,7 +76,7 @@ type HeadProps = {
 };
 
 export const Head: FunctionComponent<HeadProps> = ({ data }) => {
-  const image = `${data.site.siteMetadata.siteUrl}${banner}`;
+  const image = `${data.site.siteMetadata.siteUrl}${withPrefix(banner)}`;
 
   return (
     <>

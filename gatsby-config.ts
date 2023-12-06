@@ -6,12 +6,16 @@ const STAGING_PATH_PREFIX = IS_STAGING
   ? `/${process.env.STAGING_PATH_PREFIX}`
   : '';
 
+const SITE_URL = IS_STAGING
+  ? `https://metamask.github.io`
+  : 'https://snaps.metamask.io';
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: 'MetaMask Snaps Directory',
     description:
       'Explore community-built Snaps to customize your web3 experience via our official directory.',
-    siteUrl: 'https://snaps.metamask.io',
+    siteUrl: SITE_URL,
     author: 'MetaMask',
   },
   graphqlTypegen: true,
