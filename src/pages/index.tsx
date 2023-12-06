@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import { defineMessage, Trans } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
-import { graphql, Link as GatsbyLink } from 'gatsby';
+import { graphql, Link as GatsbyLink, withPrefix } from 'gatsby';
 import { useEffect, type FunctionComponent } from 'react';
 
 import banner from '../assets/images/seo/home.png';
@@ -142,7 +142,7 @@ type HeadProps = {
 };
 
 export const Head: FunctionComponent<HeadProps> = ({ data }) => {
-  const image = `${data.site.siteMetadata.siteUrl}${banner}`;
+  const image = `${data.site.siteMetadata.siteUrl}${withPrefix(banner)}`;
 
   return (
     <>

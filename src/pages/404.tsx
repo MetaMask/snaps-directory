@@ -1,6 +1,6 @@
 import { Container, Heading, Button } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
-import { graphql, Link } from 'gatsby';
+import { graphql, Link, withPrefix } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
 import banner from '../assets/images/seo/home.png';
@@ -47,7 +47,7 @@ type HeadProps = {
 
 export const Head: FunctionComponent<HeadProps> = ({ data }) => {
   const title = `Page not found - ${data.site.siteMetadata.title}`;
-  const image = `${data.site.siteMetadata.siteUrl}${banner}`;
+  const image = `${data.site.siteMetadata.siteUrl}${withPrefix(banner)}`;
 
   return (
     <>
