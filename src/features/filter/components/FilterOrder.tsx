@@ -9,7 +9,7 @@ import { SNAP_ORDER_LABELS } from '../constants';
 import { getOrder, setOrder } from '../store';
 
 export type FilterOrderProps = {
-  order: Order;
+  order: Order.Popularity | Order.Alphabetical | Order.Latest;
 };
 
 export const FilterOrder: FunctionComponent<FilterOrderProps> = ({ order }) => {

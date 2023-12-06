@@ -15,6 +15,20 @@ import type { RegistrySnapCategory } from '../../constants';
 import { SNAP_CATEGORY_LABELS } from '../../constants';
 import { useDispatch, useSelector } from '../../hooks';
 
+/**
+ * Get a subset of the Order enum, excluding the given values.
+ *
+ * @param excluded - The values to exclude.
+ * @returns The subset of the Order enum.
+ */
+function getOrders<Excluded extends Order>(
+  excluded: Excluded[],
+): Exclude<Order, Excluded>[] {
+  return Object.values(Order).filter(
+    (order) => !excluded.includes(order as Excluded),
+  ) as Exclude<Order, Excluded>[];
+}
+
 export const Filter: FunctionComponent = () => {
   const dispatch = useDispatch();
   const all = useSelector(getAll);
@@ -61,14 +75,13 @@ export const Filter: FunctionComponent = () => {
             )}
           </MenuGroup>
           <MenuGroup marginLeft="2" title={t`Sort`}>
-            {Object.values(Order)
-              .filter(
-                (order) =>
-                  order !== Order.Random && order !== Order.DeterministicRandom,
-              )
-              .map((order) => (
-                <FilterOrder key={order} order={order} />
-              ))}
+            {getOrders([
+              Order.Random,
+              Order.DeterministicRandom,
+              Order.Search,
+            ]).map((order) => (
+              <FilterOrder key={order} order={order} />
+            ))}
           </MenuGroup>
         </MenuList>
       </Menu>

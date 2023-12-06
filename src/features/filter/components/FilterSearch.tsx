@@ -40,7 +40,7 @@ export const FilterSearch: FunctionComponent = () => {
   const handleAll = () => {
     dispatch(setSearchQuery(query));
     dispatch(setSearchResults(results));
-    dispatch(setOrder(Order.DeterministicRandom));
+    dispatch(setOrder(Order.Search));
     onClose();
 
     // According to the type definition, `navigate` returns a promise, but in
