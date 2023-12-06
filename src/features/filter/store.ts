@@ -158,6 +158,13 @@ export const getFilteredSnaps = createSelector(
       ? searchedSnaps.filter((snap) => Boolean(installedSnaps[snap.snapId]))
       : searchedSnaps;
 
+    const allSelected = getAll(state);
+    // In staging we also show snaps without categories
+    // eslint-disable-next-line no-restricted-globals
+    if (process.env.GATSBY_STAGING === 'true' && allSelected) {
+      return filteredSnaps;
+    }
+
     return filteredSnaps.filter((snap) =>
       categories.includes(snap?.category as RegistrySnapCategory),
     );
