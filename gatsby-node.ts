@@ -1,10 +1,14 @@
 /* eslint-disable import/no-nodejs-modules */
-import { detectSnapLocation } from '@metamask/snaps-controllers';
+import { detectSnapLocation, getSnapFiles } from '@metamask/snaps-controllers';
 import type {
   SnapsRegistryDatabase,
   VerifiedSnap,
 } from '@metamask/snaps-registry';
-import type { SnapManifest } from '@metamask/snaps-utils';
+import {
+  getLocalizedSnapManifest,
+  getValidatedLocalizationFiles,
+  type SnapManifest,
+} from '@metamask/snaps-utils';
 import deepEqual from 'fast-deep-equal';
 import { rm } from 'fs/promises';
 import type { GatsbyNode, NodeInput } from 'gatsby';
@@ -162,13 +166,29 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       fetch: customFetch as any,
     });
 
-    const { result: manifest } = await location.manifest();
-    const { iconPath } = manifest.source.location.npm;
+    const { result: rawManifest } = await location.manifest();
+    const { iconPath } = rawManifest.source.location.npm;
     const icon = iconPath
       ? `data:image/svg+xml;utf8,${encodeURIComponent(
           (await location.fetch(iconPath)).toString(),
         )}`
       : undefined;
+
+    const localizationFiles = await getSnapFiles(
+      location,
+      rawManifest.source.locales,
+    );
+
+    const validatedLocalizationFiles = getValidatedLocalizationFiles(
+      localizationFiles,
+    ).map((file) => file.result);
+
+    // For now, just use the English translation
+    const manifest = getLocalizedSnapManifest(
+      rawManifest,
+      'en',
+      validatedLocalizationFiles,
+    );
 
     const [snapLocation, slug] = snap.id.split(':') as [string, string];
     const summary = normalizeDescription(
