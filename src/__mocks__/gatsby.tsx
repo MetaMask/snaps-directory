@@ -6,6 +6,8 @@ export const navigate = jest.fn();
 
 export const useStaticQuery = jest.fn();
 
+export const withPrefix = jest.fn().mockImplementation((path) => path);
+
 type LinkProps = {
   to: string;
   children: ReactNode;
