@@ -7,14 +7,15 @@ import {
 } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
 import { navigate } from 'gatsby';
-import type { FunctionComponent, ChangeEvent } from 'react';
+import type { ChangeEvent, FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
 
 import { FilterSearchInput } from './FilterSearchInput';
 import { useDispatch, useSearchResults, useSelector } from '../../../hooks';
 import { getSnapsById } from '../../snaps';
 import { SnapCard } from '../../snaps/components';
-import { setSearchQuery, setSearchResults } from '../store';
+import { Order } from '../constants';
+import { setOrder, setSearchQuery, setSearchResults } from '../store';
 
 export const FilterSearch: FunctionComponent = () => {
   const [query, setQuery] = useState('');
@@ -39,6 +40,7 @@ export const FilterSearch: FunctionComponent = () => {
   const handleAll = () => {
     dispatch(setSearchQuery(query));
     dispatch(setSearchResults(results));
+    dispatch(setOrder(Order.DeterministicRandom));
     onClose();
 
     // According to the type definition, `navigate` returns a promise, but in

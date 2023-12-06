@@ -6,7 +6,7 @@ import { SORT_FUNCTIONS } from './sort';
 import { RegistrySnapCategory } from '../../constants';
 import type { ApplicationState } from '../../store';
 import type { Snap } from '../snaps';
-import { getInstalledSnaps } from '../snaps';
+import { getInstalledSnaps, getSnapsById } from '../snaps';
 
 export type FilterState = {
   searchQuery: string;
@@ -139,20 +139,17 @@ export const getFilteredSnaps = createSelector(
       return null;
     }
 
-    const sortedSnaps = SORT_FUNCTIONS[order](snaps);
     const searchedSnaps =
       searchQuery.length > 0
-        ? (searchResults
-            .map((searchResult) =>
-              sortedSnaps.find(({ snapId }) => searchResult.snapId === snapId),
-            )
-            .filter(Boolean) as Snap[])
-        : sortedSnaps;
+        ? getSnapsById(searchResults.map((snap) => snap.snapId))(state)
+        : snaps;
+
+    const sortedSnaps = SORT_FUNCTIONS[order](searchedSnaps);
 
     const installedSnaps = getInstalledSnaps(state);
     const filteredSnaps = installed
-      ? searchedSnaps.filter((snap) => Boolean(installedSnaps[snap.snapId]))
-      : searchedSnaps;
+      ? sortedSnaps.filter((snap) => Boolean(installedSnaps[snap.snapId]))
+      : sortedSnaps;
 
     const allSelected = getAll(state);
     // In staging we also show snaps without categories
