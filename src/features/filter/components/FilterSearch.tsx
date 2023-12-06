@@ -62,6 +62,7 @@ export const FilterSearch: FunctionComponent = () => {
         query={query}
         onFormChange={handleChange}
         onFormClick={handleClick}
+        onFormSubmit={handleAll}
       />
       <MenuList
         background="background.alternative"
