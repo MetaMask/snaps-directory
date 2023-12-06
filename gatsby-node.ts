@@ -46,7 +46,7 @@ type SnapNode = NodeInput & {
 };
 
 // eslint-disable-next-line no-restricted-globals
-const IS_STAGING = process.env.STAGING === 'true';
+const IS_STAGING = process.env.GATSBY_STAGING === 'true';
 const REGISTRY_URL = 'https://acl.execution.metamask.io/latest/registry.json';
 
 /**
