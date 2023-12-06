@@ -4,7 +4,7 @@ import { useStaticQuery } from 'gatsby';
 
 import ExplorePage, { Head } from './explore';
 import { RegistrySnapCategory } from '../constants';
-import { setCategory, setSnaps } from '../features';
+import { setCategory, setSearchQuery, setSnaps } from '../features';
 import { createStore } from '../store';
 import {
   render,
@@ -22,6 +22,19 @@ describe('Explore page', () => {
 
     const { queryByText } = render(<ExplorePage />);
     expect(queryByText('Explore Snaps')).toBeInTheDocument();
+  });
+
+  it('renders the search query in the heading', async () => {
+    const mock = getMock(useStaticQuery);
+    mock.mockReturnValue({
+      fusejs: {},
+    });
+
+    const store = createStore();
+    store.dispatch(setSearchQuery('foo'));
+
+    const { queryByText } = render(<ExplorePage />, store);
+    expect(queryByText('Results for "foo"')).toBeInTheDocument();
   });
 
   it('resets filters when see all is clicked', async () => {

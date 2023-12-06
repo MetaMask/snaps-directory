@@ -7,22 +7,48 @@ import { Card, SnapAvatar } from '../../../components';
 import type { Fields } from '../../../utils';
 import { useGetInstalledSnapsQuery } from '../api';
 
-export const SnapCard: FunctionComponent<
-  Fields<Queries.Snap, 'name' | 'summary' | 'snapId' | 'icon' | 'gatsbyPath'>
-> = ({ name, summary, snapId, icon, gatsbyPath }) => {
+export type SnapCardProps = Fields<
+  Queries.Snap,
+  'name' | 'summary' | 'snapId' | 'icon' | 'gatsbyPath'
+> & {
+  onClick?: () => void;
+};
+
+export const SnapCard: FunctionComponent<SnapCardProps> = ({
+  name,
+  summary,
+  snapId,
+  icon,
+  gatsbyPath,
+  onClick = () => undefined,
+}) => {
   const { data: installedSnaps } = useGetInstalledSnapsQuery();
   const isInstalled = Boolean(installedSnaps?.[snapId]);
 
   return (
-    <Link to={gatsbyPath}>
-      <Card p="2" role="group">
+    <Link to={gatsbyPath} onClick={onClick}>
+      <Card
+        padding="2"
+        _hover={{
+          background: 'background.default',
+          '& button': {
+            background: 'info.default',
+            color: 'white',
+          },
+        }}
+      >
         <Flex
           height="3rem"
           flexDirection="row"
           justifyContent="space-between"
           gap="2"
         >
-          <Flex alignItems="center" width={{ base: '100%', md: 'auto' }}>
+          <Flex
+            alignItems="center"
+            width={{ base: '100%', md: 'auto' }}
+            gap="2"
+            overflow="hidden"
+          >
             <SnapAvatar
               size="2.75rem"
               badgeSize="1.25rem"
@@ -30,20 +56,15 @@ export const SnapCard: FunctionComponent<
               icon={icon}
               isInstalled={isInstalled}
             />
-            <Box ml="2" overflow="hidden">
-              <Text fontWeight="medium" isTruncated>
+            <Box overflow="hidden">
+              <Text fontWeight="medium" isTruncated={true}>
                 {name}
               </Text>
               <Text
                 color="gray.muted"
                 fontWeight="medium"
                 fontSize="xs"
-                display="-webkit-box"
-                overflow="hidden"
-                sx={{
-                  WebkitLineClamp: 1,
-                  WebkitBoxOrient: 'vertical',
-                }}
+                isTruncated={true}
               >
                 {summary}
               </Text>

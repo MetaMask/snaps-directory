@@ -12,6 +12,7 @@ beforeEach(() => {
     // safely ignore this error, since Gatsby will render the Head component
     // in the <head> tag.
     if (
+      typeof error === 'string' &&
       error.includes('cannot appear as a child of') &&
       args[0] === '<html>' &&
       args[1] === 'div'
@@ -20,7 +21,10 @@ beforeEach(() => {
     }
 
     // Require tests to be wrapped in act(...).
-    if (error.includes('was not wrapped in act(...).')) {
+    if (
+      typeof error === 'string' &&
+      error.includes('was not wrapped in act(...).')
+    ) {
       originalConsoleError(error, ...args);
       throw new Error('Test was not wrapped in act(...).');
     }

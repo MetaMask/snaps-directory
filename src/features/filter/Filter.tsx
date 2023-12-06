@@ -6,7 +6,6 @@ import {
   FilterButton,
   FilterCategory,
   FilterItem,
-  FilterSearch,
   FilterTags,
 } from './components';
 import { FilterOrder } from './components/FilterOrder';
@@ -15,6 +14,20 @@ import { filterAll, getAll, getInstalled, toggleInstalled } from './store';
 import type { RegistrySnapCategory } from '../../constants';
 import { SNAP_CATEGORY_LABELS } from '../../constants';
 import { useDispatch, useSelector } from '../../hooks';
+
+/**
+ * Get a subset of the Order enum, excluding the given values.
+ *
+ * @param excluded - The values to exclude.
+ * @returns The subset of the Order enum.
+ */
+function getOrders<Excluded extends Order>(
+  excluded: Excluded[],
+): Exclude<Order, Excluded>[] {
+  return Object.values(Order).filter(
+    (order) => !excluded.includes(order as Excluded),
+  ) as Exclude<Order, Excluded>[];
+}
 
 export const Filter: FunctionComponent = () => {
   const dispatch = useDispatch();
@@ -32,7 +45,7 @@ export const Filter: FunctionComponent = () => {
   return (
     <>
       <Menu closeOnSelect={false} isLazy={true}>
-        <MenuButton as={FilterButton} order={[3, null, 0]} />
+        <MenuButton as={FilterButton} />
         <MenuList width="17.188rem" boxShadow="md">
           <MenuGroup marginLeft="2" title={t`Filter`} data-testid="menu-group">
             <FilterItem checked={all} onClick={handleClickAll}>
@@ -62,19 +75,17 @@ export const Filter: FunctionComponent = () => {
             )}
           </MenuGroup>
           <MenuGroup marginLeft="2" title={t`Sort`}>
-            {Object.values(Order)
-              .filter(
-                (order) =>
-                  order !== Order.Random && order !== Order.DeterministicRandom,
-              )
-              .map((order) => (
-                <FilterOrder key={order} order={order} />
-              ))}
+            {getOrders([
+              Order.Random,
+              Order.DeterministicRandom,
+              Order.Search,
+            ]).map((order) => (
+              <FilterOrder key={order} order={order} />
+            ))}
           </MenuGroup>
         </MenuList>
       </Menu>
-      <FilterTags display={['none', null, 'flex']} />
-      <FilterSearch />
+      <FilterTags />
     </>
   );
 };

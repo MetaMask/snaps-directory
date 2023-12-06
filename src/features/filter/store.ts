@@ -6,13 +6,11 @@ import { SORT_FUNCTIONS } from './sort';
 import { RegistrySnapCategory } from '../../constants';
 import type { ApplicationState } from '../../store';
 import type { Snap } from '../snaps';
-import { getInstalledSnaps } from '../snaps';
-
-export type SearchResult = { item: Snap };
+import { getInstalledSnaps, getSnapsById } from '../snaps';
 
 export type FilterState = {
   searchQuery: string;
-  searchResults: SearchResult[];
+  searchResults: Snap[];
   installed: boolean;
   categories: RegistrySnapCategory[];
   order: Order;
@@ -37,7 +35,7 @@ export const filterSlice = createSlice({
     setSearchQuery: (state, action: PayloadAction<string>) => {
       state.searchQuery = action.payload;
     },
-    setSearchResults: (state, action: PayloadAction<SearchResult[]>) => {
+    setSearchResults: (state, action: PayloadAction<Snap[]>) => {
       state.searchResults = action.payload;
     },
     resetSearch: (state) => {
@@ -141,22 +139,17 @@ export const getFilteredSnaps = createSelector(
       return null;
     }
 
-    const sortedSnaps = SORT_FUNCTIONS[order](snaps);
     const searchedSnaps =
       searchQuery.length > 0
-        ? (searchResults
-            .map((searchResult) =>
-              sortedSnaps.find(
-                ({ snapId }) => searchResult.item.snapId === snapId,
-              ),
-            )
-            .filter(Boolean) as Snap[])
-        : sortedSnaps;
+        ? getSnapsById(searchResults.map((snap) => snap.snapId))(state)
+        : snaps;
+
+    const sortedSnaps = SORT_FUNCTIONS[order](searchedSnaps);
 
     const installedSnaps = getInstalledSnaps(state);
     const filteredSnaps = installed
-      ? searchedSnaps.filter((snap) => Boolean(installedSnaps[snap.snapId]))
-      : searchedSnaps;
+      ? sortedSnaps.filter((snap) => Boolean(installedSnaps[snap.snapId]))
+      : sortedSnaps;
 
     const allSelected = getAll(state);
     // In staging we also show snaps without categories

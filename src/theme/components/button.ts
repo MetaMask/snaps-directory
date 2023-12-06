@@ -63,10 +63,6 @@ export const Button = defineStyleConfig({
       color: 'console',
       textTransform: 'uppercase',
       transitionDuration: 'normal',
-      _groupHover: {
-        color: 'white',
-        background: 'info.default',
-      },
     }),
   },
 });

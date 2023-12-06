@@ -92,6 +92,19 @@ export const getSnapsByFilter = ({
     },
   );
 
+export const getSnapsById = (snapIds: string[]) => {
+  return createSelector(
+    (state: ApplicationState) => getSnaps(state),
+    (snaps) => {
+      if (!snaps) {
+        return [];
+      }
+
+      return snaps.filter((snap) => snapIds.includes(snap.snapId));
+    },
+  );
+};
+
 export const getUpdateAvailable = (snapId: string) =>
   createSelector(
     (state: ApplicationState) => ({

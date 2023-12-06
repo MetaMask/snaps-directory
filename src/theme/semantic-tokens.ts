@@ -125,5 +125,6 @@ export const semanticTokens: SemanticTokens = {
   shadows: {
     md: '0px 2px 16px 0px #0000001A',
     lg: '0px 2px 40px 0px #0000001A',
+    xl: '0px 4px 16px 0px #0000001A',
   },
 };

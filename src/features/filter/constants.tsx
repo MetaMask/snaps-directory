@@ -19,6 +19,7 @@ export enum Order {
   Random = 'random',
   DeterministicRandom = 'deterministicRandom',
   Latest = 'latest',
+  Search = 'search',
 }
 
 export const SNAP_ORDER_LABELS = {

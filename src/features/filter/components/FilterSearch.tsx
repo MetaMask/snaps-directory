@@ -1,65 +1,92 @@
-import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
-import { t } from '@lingui/macro';
-import { graphql, useStaticQuery } from 'gatsby';
-import type { FunctionComponent, ChangeEvent } from 'react';
-import { useEffect } from 'react';
-import { useGatsbyPluginFusejs } from 'react-use-fusejs';
+import {
+  Link,
+  Menu,
+  MenuButton,
+  MenuList,
+  useDisclosure,
+} from '@chakra-ui/react';
+import { Trans } from '@lingui/macro';
+import { navigate } from 'gatsby';
+import type { ChangeEvent, FunctionComponent } from 'react';
+import { useEffect, useState } from 'react';
 
-import { SearchIcon } from '../../../components';
-import { useDispatch, useSelector } from '../../../hooks';
-import type { Snap } from '../../snaps';
-import { getSearchQuery, setSearchQuery, setSearchResults } from '../store';
+import { FilterSearchInput } from './FilterSearchInput';
+import { useDispatch, useSearchResults, useSelector } from '../../../hooks';
+import { getSnapsById } from '../../snaps';
+import { SnapCard } from '../../snaps/components';
+import { Order } from '../constants';
+import { setOrder, setSearchQuery, setSearchResults } from '../store';
 
 export const FilterSearch: FunctionComponent = () => {
-  const { fusejs } = useStaticQuery<{ fusejs: Queries.fusejs }>(graphql`
-    query {
-      fusejs {
-        index
-        data
-      }
-    }
-  `);
-
+  const [query, setQuery] = useState('');
+  const results = useSearchResults(query);
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const dispatch = useDispatch();
-  const searchQuery = useSelector(getSearchQuery);
-  const searchResults = useGatsbyPluginFusejs<Snap>(searchQuery, fusejs, {
-    threshold: 0.3,
-    distance: 300,
-  });
+
+  const snaps = useSelector(
+    getSnapsById(results.map((result) => result.snapId)),
+  );
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    dispatch(setSearchQuery(event.target.value));
+    setQuery(event.target.value);
+  };
+
+  const handleClick = () => {
+    if (query && snaps.length > 0) {
+      onOpen();
+    }
+  };
+
+  const handleAll = () => {
+    dispatch(setSearchQuery(query));
+    dispatch(setSearchResults(results));
+    dispatch(setOrder(Order.Search));
+    onClose();
+
+    // According to the type definition, `navigate` returns a promise, but in
+    // practice it does not.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    navigate('/explore', { replace: true });
   };
 
   useEffect(() => {
-    dispatch(setSearchResults(searchResults));
-  }, [dispatch, searchResults]);
+    if (snaps.length > 0) {
+      return onOpen();
+    }
+
+    return onClose();
+  }, [snaps.length, query, onOpen, onClose]);
 
   return (
-    <InputGroup
-      background="background.card"
-      borderRadius="full"
-      maxWidth={['100%', null, '18.75rem']}
-      marginLeft="auto"
-      order={[2, null, 1]}
-    >
-      <InputLeftElement pointerEvents="none">
-        <SearchIcon width="1.25rem" />
-      </InputLeftElement>
-      <Input
-        type="search"
-        borderRadius="full"
-        placeholder={t`Search snaps...`}
-        value={searchQuery}
-        onChange={handleChange}
-        border="none"
-        boxShadow="md"
-        _focusVisible={{
-          border: 'none',
-          outline: 'none',
-          boxShadow: 'md',
-        }}
+    <Menu isLazy={true} isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
+      <MenuButton
+        as={FilterSearchInput}
+        query={query}
+        onFormChange={handleChange}
+        onFormClick={handleClick}
+        onFormSubmit={handleAll}
       />
-    </InputGroup>
+      <MenuList
+        background="background.alternative"
+        maxWidth="23.875rem"
+        padding="1"
+        boxShadow="xl"
+      >
+        {snaps.slice(0, 5).map((snap) => (
+          <SnapCard key={`${snap.snapId}`} {...snap} onClick={onClose} />
+        ))}
+        <Link
+          href="#"
+          display="block"
+          fontSize="md"
+          fontWeight="500"
+          textAlign="center"
+          paddingY="4"
+          onClick={handleAll}
+        >
+          <Trans>See all results</Trans>
+        </Link>
+      </MenuList>
+    </Menu>
   );
 };

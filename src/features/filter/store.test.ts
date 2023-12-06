@@ -436,14 +436,7 @@ describe('filterSlice', () => {
       const state = getMockState({
         filter: {
           searchQuery: 'foo',
-          searchResults: [
-            {
-              item: fooSnap,
-            },
-            {
-              item: barSnap,
-            },
-          ],
+          searchResults: [fooSnap, barSnap],
           installed: false,
           categories: [
             RegistrySnapCategory.Interoperability,
