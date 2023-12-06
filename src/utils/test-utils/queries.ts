@@ -76,7 +76,7 @@ export type GetMockSnapArgs = {
   latestVersion?: string;
   website?: string;
   onboard?: boolean;
-  category?: RegistrySnapCategory;
+  category?: RegistrySnapCategory | undefined;
   author?: Fields<Queries.SnapAuthor, 'name' | 'website'>;
   sourceCode?: string;
   audits?: Fields<Queries.SnapAudits, 'auditor' | 'report'>[];
