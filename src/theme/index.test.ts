@@ -344,7 +344,7 @@ describe('theme', () => {
                 "default": "#535A61",
               },
               "default": Object {
-                "_dark": "#9FA6AE",
+                "_dark": "#FFFFFF",
                 "default": "#24272A",
               },
               "muted": Object {
