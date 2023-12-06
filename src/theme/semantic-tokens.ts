@@ -16,7 +16,7 @@ export const semanticTokens: SemanticTokens = {
     text: {
       default: {
         default: '#24272A',
-        _dark: '#9FA6AE',
+        _dark: '#FFFFFF',
       },
       alternative: {
         default: '#535A61',
