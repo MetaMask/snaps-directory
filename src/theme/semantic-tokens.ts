@@ -14,8 +14,14 @@ export type SemanticTokens = {
 export const semanticTokens: SemanticTokens = {
   colors: {
     text: {
-      default: '#24272A',
-      _dark: '#9FA6AE',
+      default: {
+        default: '#24272A',
+        _dark: '#9FA6AE',
+      },
+      alternative: {
+        default: '#535A61',
+        _dark: '#D6D9DC',
+      },
       tab: {
         default: '#535A61',
         _dark: '#FFFFFF',
@@ -38,26 +44,25 @@ export const semanticTokens: SemanticTokens = {
         default: '#F8F8F8',
         _dark: '#141618',
       },
-      alternative: { default: '#F5F5F5', _dark: '#1D1F22' },
       default: {
         default: '#FFFFFF',
         _dark: '#24272A',
       },
+      'default-hover': {
+        default: '#FAFAFA',
+        _dark: '#282B2E',
+      },
+      header: {
+        // These colours should be the same as `background.default`, but with
+        // different opacity values.
+        default: '#FFFFFFC0',
+        _dark: '#24272A80',
+      },
+      alternative: { default: '#F2F4F6', _dark: '#141618' },
+      'alternative-hover': { default: '#EDEFF1', _dark: '#191B1D' },
       hover: {
         default: '#EEEEEE',
         _dark: '#33373E',
-      },
-      header: {
-        default: 'rgba(255, 255, 255, 0.75)',
-        _dark: 'rgba(29, 31, 35, 0.5)',
-      },
-      card: {
-        default: '#FFFFFF',
-        _dark: '#1D1F23',
-      },
-      menu: {
-        default: '#FFFFFF',
-        _dark: '#282B2E',
       },
       avatar: {
         default: '#f2f4f6',
@@ -70,38 +75,14 @@ export const semanticTokens: SemanticTokens = {
         _dark: '#1098FC',
       },
       muted: {
-        default: 'rgba(3, 118, 201, 0.1)',
-        _dark: '#141618',
+        default: '#0376C91A',
+        _dark: '#1098FC26',
       },
     },
     border: {
-      default: {
+      muted: {
         default: '#D6D9DC',
         _dark: '#3B4046',
-      },
-      active: {
-        default: '#24272A',
-        _dark: 'rgba(255, 255, 255, 0.06)',
-      },
-    },
-    gray: {
-      light: {
-        default: '#F1F1F1',
-        _dark: '#1A1C1F',
-      },
-      muted: {
-        default: '#878787',
-        _dark: '#D6D9DC',
-      },
-    },
-    tag: {
-      category: {
-        default: 'info.muted',
-        _dark: 'rgba(16, 152, 252, 0.15)',
-      },
-      muted: {
-        default: '#F5F5F5',
-        _dark: '#141618',
       },
     },
     icon: {

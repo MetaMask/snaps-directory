@@ -11,18 +11,18 @@ export const Menu = defineMultiStyleConfig({
       borderRadius: 'lg',
       padding: '1',
       boxShadow: 'lg',
-      background: 'background.menu',
+      background: 'background.default',
     },
     item: {
       padding: '2',
       background: 'none',
       _hover: {
-        background: 'background.alternative',
+        background: 'background.default-hover',
       },
     },
     groupTitle: {
       textTransform: 'uppercase',
-      color: 'text.muted',
+      color: 'text.alternative',
       fontSize: 'sm',
       fontWeight: '500',
       marginBottom: '1',

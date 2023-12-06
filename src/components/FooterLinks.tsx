@@ -64,7 +64,7 @@ export const FooterLinks: FunctionComponent = () => (
                 href={url}
                 _hover={{ textDecoration: 'none' }}
                 isExternal={true}
-                color="gray.muted"
+                color="text.alternative"
               >
                 <Trans id={linkTitle.id} />
               </Link>

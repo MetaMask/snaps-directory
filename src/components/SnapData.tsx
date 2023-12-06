@@ -19,10 +19,11 @@ export const SnapData: FunctionComponent<SnapDataProps> = ({
     minWidth={{ base: 'auto', md: '13.75rem', lg: 'auto' }}
   >
     <Text
-      color="gray.muted"
+      color="text.alternative"
       fontWeight="medium"
       fontSize="sm"
       textTransform="uppercase"
+      marginBottom="1"
     >
       {label}
     </Text>

@@ -35,6 +35,6 @@ describe('PostInstallModal', () => {
       </PostInstallModal>,
     );
 
-    expect(queryByText('Installation complete')).toBeInTheDocument();
+    expect(queryByText('Installed')).toBeInTheDocument();
   });
 });

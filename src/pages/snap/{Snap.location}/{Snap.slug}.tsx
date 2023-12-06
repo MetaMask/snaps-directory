@@ -74,7 +74,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
       marginTop={{ base: 4, md: 20 }}
     >
       <NotificationAcknowledger snapId={snapId} version={latestVersion} />
-      <Box p="6" rounded="3xl" background="background.card">
+      <Box>
         <Flex
           justifyContent="space-between"
           flexDirection={{ base: 'column', md: 'row' }}
@@ -163,7 +163,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
           <Text
             display={{ base: 'block', md: 'none' }}
             order={{ base: 5, md: 6 }}
-            color="gray.muted"
+            color="text.alternative"
             textTransform="uppercase"
             fontWeight="medium"
             fontSize="sm"
@@ -172,7 +172,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
               Description by{' '}
               <Text
                 as="span"
-                color="text.muted"
+                color="text.default"
                 textTransform="uppercase"
                 fontWeight="medium"
                 fontSize="sm"
@@ -247,7 +247,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
         <Divider my="6" display={{ base: 'none', md: 'flex' }} />
         <Text
           display={{ base: 'none', md: 'block' }}
-          color="gray.muted"
+          color="text.alternative"
           textTransform="uppercase"
           fontWeight="medium"
           fontSize="sm"
@@ -256,7 +256,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             Description by{' '}
             <Text
               as="span"
-              color="text.muted"
+              color="text.default"
               textTransform="uppercase"
               fontWeight="medium"
               fontSize="sm"
@@ -268,7 +268,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
         <SnapDescription
           display={{ base: 'none', md: 'block' }}
           description={description}
-          mt="1"
+          marginTop="2"
           whiteSpace="pre-wrap"
         />
       </Box>

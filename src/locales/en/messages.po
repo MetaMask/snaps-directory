@@ -50,6 +50,10 @@ msgstr ""
 msgid "Audit"
 msgstr ""
 
+#: src/components/InstallUnsupportedMobile.tsx
+msgid "Available on desktop"
+msgstr ""
+
 #: src/components/icons/index.ts
 msgid "Back"
 msgstr ""
@@ -92,7 +96,7 @@ msgid "Contact Us"
 msgstr ""
 
 #: src/components/PostInstallModal.tsx
-msgid "Continue to {name}'s website to get started with this snap."
+msgid "Continue to <0>{name}</0>'s website to get started with this snap."
 msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
@@ -100,7 +104,6 @@ msgstr ""
 msgid "Description by <0>{name}</0>"
 msgstr ""
 
-#: src/components/InstallUnsupportedMobile.tsx
 #: src/components/InstallUnsupportedMobile.tsx
 msgid "Desktop only"
 msgstr ""
@@ -188,11 +191,8 @@ msgstr ""
 msgid "Install MetaMask"
 msgstr ""
 
-#: src/components/PostInstallModal.tsx
-msgid "Installation complete"
-msgstr ""
-
 #: src/components/InstallSnapButton.tsx
+#: src/components/PostInstallModal.tsx
 #: src/features/filter/components/FilterTags.tsx
 #: src/features/filter/Filter.tsx
 msgid "Installed"
@@ -245,7 +245,7 @@ msgid "MetaMask"
 msgstr ""
 
 #: src/components/InstallUnsupportedMobile.tsx
-msgid "MetaMask Snaps is in open beta and only supported via our extension clients on desktop such as <0>Chrome</0> or <1>Firefox</1>."
+msgid "MetaMask Snaps is in open beta and only supported via our extension clients on desktop such as <0>Brave</0>, <1>Chrome</1>, or <2>Firefox</2>."
 msgstr ""
 
 #: src/pages/index.tsx

@@ -30,7 +30,7 @@ export const SnapCard: FunctionComponent<SnapCardProps> = ({
       <Card
         padding="2"
         _hover={{
-          background: 'background.default',
+          background: 'background.default-hover',
           '& button': {
             background: 'info.default',
             color: 'white',
@@ -60,12 +60,7 @@ export const SnapCard: FunctionComponent<SnapCardProps> = ({
               <Text fontWeight="medium" isTruncated={true}>
                 {name}
               </Text>
-              <Text
-                color="gray.muted"
-                fontWeight="medium"
-                fontSize="xs"
-                isTruncated={true}
-              >
+              <Text color="text.alternative" fontSize="xs" isTruncated={true}>
                 {summary}
               </Text>
             </Box>

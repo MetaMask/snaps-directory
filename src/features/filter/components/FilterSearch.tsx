@@ -66,12 +66,7 @@ export const FilterSearch: FunctionComponent = () => {
         onFormClick={handleClick}
         onFormSubmit={handleAll}
       />
-      <MenuList
-        background="background.alternative"
-        maxWidth="23.875rem"
-        padding="1"
-        boxShadow="xl"
-      >
+      <MenuList maxWidth="23.875rem" padding="1" boxShadow="xl">
         {snaps.slice(0, 5).map((snap) => (
           <SnapCard key={`${snap.snapId}`} {...snap} onClick={onClose} />
         ))}

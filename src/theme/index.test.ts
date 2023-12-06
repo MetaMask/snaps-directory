@@ -11,18 +11,9 @@ describe('theme', () => {
             "default": "#D34C46",
             "muted": "rgba(215, 56, 71, 0.1)",
           },
-          "gray": Object {
-            "40": "#F2F4F6",
-          },
           "success": Object {
             "default": "#579F6E",
             "muted": "rgba(40, 167, 69, 0.1)",
-          },
-          "text": Object {
-            "alternative": "#535A61",
-            "error": "#D34C46",
-            "success": "#579F6E",
-            "white": "#FFFFFF",
           },
         },
         "components": Object {
@@ -33,6 +24,13 @@ describe('theme', () => {
               },
             },
             "variants": Object {
+              "filter": Object {
+                "_hover": Object {
+                  "background": "background.alternative-hover",
+                  "opacity": 1,
+                },
+                "background": "background.alternative",
+              },
               "outline": Object {
                 "background": "transparent",
                 "border": "1.5px solid",
@@ -61,15 +59,8 @@ describe('theme', () => {
                 "lineHeight": "157%",
                 "padding": "4",
               },
-              "shadow": Object {
-                "_hover": Object {
-                  "opacity": "0.75",
-                },
-                "background": "background.header",
-                "boxShadow": "md",
-              },
               "small": Object {
-                "background": "background.default",
+                "background": "background.alternative",
                 "borderColor": "info.default",
                 "borderRadius": "36px",
                 "color": "console",
@@ -107,6 +98,12 @@ describe('theme', () => {
               "opacity": 1,
             },
           },
+          "Heading": Object {
+            "baseStyle": Object {
+              "color": "text.default",
+              "fontWeight": "500",
+            },
+          },
           "Link": Object {
             "baseStyle": Object {
               "color": "info.default",
@@ -115,7 +112,7 @@ describe('theme', () => {
               "box": Object {
                 "backgroundColor": "background.alternative",
                 "border": "1px solid",
-                "borderColor": "border.default",
+                "borderColor": "border.muted",
                 "borderRadius": "lg",
                 "display": "block",
                 "paddingX": "4",
@@ -140,7 +137,7 @@ describe('theme', () => {
           "Menu": Object {
             "baseStyle": Object {
               "groupTitle": Object {
-                "color": "text.muted",
+                "color": "text.alternative",
                 "fontSize": "sm",
                 "fontWeight": "500",
                 "marginBottom": "1",
@@ -148,13 +145,13 @@ describe('theme', () => {
               },
               "item": Object {
                 "_hover": Object {
-                  "background": "background.alternative",
+                  "background": "background.default-hover",
                 },
                 "background": "none",
                 "padding": "2",
               },
               "list": Object {
-                "background": "background.menu",
+                "background": "background.default",
                 "border": "none",
                 "borderRadius": "lg",
                 "boxShadow": "lg",
@@ -206,46 +203,6 @@ describe('theme', () => {
               "borderRadius": "lg",
             },
           },
-          "Tabs": Object {
-            "parts": Array [
-              "root",
-              "tab",
-              "tablist",
-              "tabpanel",
-              "tabpanels",
-              "indicator",
-            ],
-            "variants": Object {
-              "line": Object {
-                "tab": Object {
-                  "& + &": Object {
-                    "marginLeft": "4",
-                  },
-                  "_selected": Object {
-                    "borderBottom": "2px solid",
-                    "borderColor": "border.active",
-                    "color": "text.tab.selected",
-                  },
-                  "background": "none",
-                  "color": "text.tab",
-                  "fontSize": "xs",
-                  "fontWeight": "600",
-                  "marginY": "3",
-                  "outline": "none",
-                  "paddingBottom": "0.5",
-                  "paddingTop": "0",
-                  "paddingX": "0",
-                  "textTransform": "uppercase",
-                },
-                "tablist": Object {
-                  "background": "background.alternative",
-                  "borderBottom": "1px solid",
-                  "borderColor": "border.default",
-                  "paddingX": "4",
-                },
-              },
-            },
-          },
           "Tag": Object {
             "baseStyle": Object {
               "container": Object {
@@ -266,7 +223,7 @@ describe('theme', () => {
             "variants": Object {
               "category": Object {
                 "container": Object {
-                  "background": "tag.category",
+                  "background": "info.muted",
                   "lineHeight": "1.5",
                   "padding": "3",
                   "textTransform": "none",
@@ -283,18 +240,16 @@ describe('theme', () => {
               },
               "muted": Object {
                 "container": Object {
-                  "backgroundColor": "tag.muted",
-                  "color": "gray.muted",
+                  "backgroundColor": "background.alternative",
+                  "color": "text.alternative",
                 },
               },
             },
           },
           "Text": Object {
             "baseStyle": Object {
-              "color": Object {
-                "_dark": "white",
-                "default": "black",
-              },
+              "color": "text.default",
+              "lineHeight": "base",
             },
             "variants": Object {
               "muted": Object {
@@ -322,8 +277,12 @@ describe('theme', () => {
           "colors": Object {
             "background": Object {
               "alternative": Object {
-                "_dark": "#1D1F22",
-                "default": "#F5F5F5",
+                "_dark": "#141618",
+                "default": "#F2F4F6",
+              },
+              "alternative-hover": Object {
+                "_dark": "#191B1D",
+                "default": "#EDEFF1",
               },
               "avatar": Object {
                 "_dark": "#141618",
@@ -333,45 +292,27 @@ describe('theme', () => {
                 "_dark": "#141618",
                 "default": "#F8F8F8",
               },
-              "card": Object {
-                "_dark": "#1D1F23",
-                "default": "#FFFFFF",
-              },
               "default": Object {
                 "_dark": "#24272A",
                 "default": "#FFFFFF",
               },
+              "default-hover": Object {
+                "_dark": "#282B2E",
+                "default": "#FAFAFA",
+              },
               "header": Object {
-                "_dark": "rgba(29, 31, 35, 0.5)",
-                "default": "rgba(255, 255, 255, 0.75)",
+                "_dark": "#24272A80",
+                "default": "#FFFFFFC0",
               },
               "hover": Object {
                 "_dark": "#33373E",
                 "default": "#EEEEEE",
               },
-              "menu": Object {
-                "_dark": "#282B2E",
-                "default": "#FFFFFF",
-              },
             },
             "border": Object {
-              "active": Object {
-                "_dark": "rgba(255, 255, 255, 0.06)",
-                "default": "#24272A",
-              },
-              "default": Object {
+              "muted": Object {
                 "_dark": "#3B4046",
                 "default": "#D6D9DC",
-              },
-            },
-            "gray": Object {
-              "light": Object {
-                "_dark": "#1A1C1F",
-                "default": "#F1F1F1",
-              },
-              "muted": Object {
-                "_dark": "#D6D9DC",
-                "default": "#878787",
               },
             },
             "icon": Object {
@@ -389,27 +330,23 @@ describe('theme', () => {
                 "default": "#0376C9",
               },
               "muted": Object {
-                "_dark": "#141618",
-                "default": "rgba(3, 118, 201, 0.1)",
-              },
-            },
-            "tag": Object {
-              "category": Object {
-                "_dark": "rgba(16, 152, 252, 0.15)",
-                "default": "info.muted",
-              },
-              "muted": Object {
-                "_dark": "#141618",
-                "default": "#F5F5F5",
+                "_dark": "#1098FC26",
+                "default": "#0376C91A",
               },
             },
             "text": Object {
-              "_dark": "#9FA6AE",
+              "alternative": Object {
+                "_dark": "#D6D9DC",
+                "default": "#535A61",
+              },
               "console": Object {
                 "_dark": "#D6D9DC",
                 "default": "#535A61",
               },
-              "default": "#24272A",
+              "default": Object {
+                "_dark": "#9FA6AE",
+                "default": "#24272A",
+              },
               "muted": Object {
                 "_dark": "#D6D9DC",
                 "default": "#BBC0C5",
@@ -433,7 +370,7 @@ describe('theme', () => {
         "styles": Object {
           "global": Object {
             "body": Object {
-              "background": "background.body",
+              "background": "background.default",
               "overflowY": "scroll",
             },
           },
