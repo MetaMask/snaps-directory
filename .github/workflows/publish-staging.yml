@@ -47,14 +47,14 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 comment_id: comment.id,
-                body: `Staging website successfully republished:\n\nhttps://metamask.github.io/snaps-directory-staging/pr/${context.issue.number}/`,
+                body: `Commit \`${{ github.sha }}\` successfully pushed to staging website:\n\nhttps://metamask.github.io/snaps-directory-staging/pr/${context.issue.number}/`,
               });
             } else {
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: context.issue.number,
-                body: `Staging website successfully published:\n\nhttps://metamask.github.io/snaps-directory-staging/pr/${context.issue.number}/`,
+                body: `Commit \`${{ github.sha }}\` successfully pushed to staging website:\n\nhttps://metamask.github.io/snaps-directory-staging/pr/${context.issue.number}/`,
               });
             }
 
