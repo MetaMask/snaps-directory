@@ -174,10 +174,6 @@ msgstr ""
 msgid "Get in touch"
 msgstr ""
 
-#: src/constants.ts
-msgid "Get Notified Directly In MetaMask"
-msgstr ""
-
 #: src/pages/404.tsx
 msgid "Go home"
 msgstr ""
@@ -185,6 +181,14 @@ msgstr ""
 #: src/components/InstallUnsupportedDesktopUpdate.tsx
 #: src/components/InstallUnsupportedMobile.tsx
 msgid "Got it"
+msgstr ""
+
+#: src/constants.ts
+msgid "Guard Your Wallet"
+msgstr ""
+
+#: src/constants.ts
+msgid "Guard your wallet with transaction insights and safety tools."
 msgstr ""
 
 #: src/components/InstallUnsupportedDesktop.tsx
@@ -346,15 +350,7 @@ msgid "Start exploring blockchain applications in seconds. Trusted by over 30 mi
 msgstr ""
 
 #: src/constants.ts
-msgid "Stay in the know with web3 notifications directly in MetaMask."
-msgstr ""
-
-#: src/constants.ts
-msgid "Stay informed with insights before you confirm transactions in MetaMask."
-msgstr ""
-
-#: src/constants.ts
-msgid "Stay Secure With Insights"
+msgid "Stay in the know with web3 notifications and chat directly in MetaMask."
 msgstr ""
 
 #: src/components/FooterLinks.tsx
@@ -420,6 +416,10 @@ msgstr ""
 
 #: src/features/snaps/components/SnapCard.tsx
 msgid "View"
+msgstr ""
+
+#: src/constants.ts
+msgid "Web3 Notifications and Chat"
 msgstr ""
 
 #: src/components/FooterLinks.tsx
