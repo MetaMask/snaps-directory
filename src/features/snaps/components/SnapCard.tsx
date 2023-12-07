@@ -38,6 +38,10 @@ export const SnapCard: FunctionComponent<SnapCardProps> = ({
             background: 'info.default',
             color: 'white',
           },
+          '& .card-image': {
+            filter: 'blur(60px) contrast(0.9) saturate(1.3)',
+            transform: 'scale(1.3)',
+          },
         }}
       >
         {image && <SnapCardImage name={name} icon={icon} />}

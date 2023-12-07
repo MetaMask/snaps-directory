@@ -34,9 +34,11 @@ export const SnapCardImage: FunctionComponent<SnapCardImageProps> = ({
       zIndex="1"
     />
     <Box
+      className="card-image"
       position="absolute"
       width="100%"
       height="100%"
+      transitionDuration="normal"
       sx={{
         background: `url("${icon}") center center / cover no-repeat, lightgray 50% / cover no-repeat`,
         filter: 'blur(55px) contrast(0.9) saturate(1.3)',
