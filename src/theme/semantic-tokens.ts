@@ -22,28 +22,8 @@ export const semanticTokens: SemanticTokens = {
         default: '#535A61',
         _dark: '#D6D9DC',
       },
-      tab: {
-        default: '#535A61',
-        _dark: '#FFFFFF',
-        selected: {
-          default: '#24272A',
-          _dark: '#FFFFFF',
-        },
-      },
-      console: {
-        default: '#535A61',
-        _dark: '#D6D9DC',
-      },
-      muted: {
-        default: '#BBC0C5',
-        _dark: '#D6D9DC',
-      },
     },
     background: {
-      body: {
-        default: '#F8F8F8',
-        _dark: '#141618',
-      },
       default: {
         default: '#FFFFFF',
         _dark: '#24272A',
@@ -60,14 +40,6 @@ export const semanticTokens: SemanticTokens = {
       },
       alternative: { default: '#F2F4F6', _dark: '#141618' },
       'alternative-hover': { default: '#EDEFF1', _dark: '#191B1D' },
-      hover: {
-        default: '#EEEEEE',
-        _dark: '#33373E',
-      },
-      avatar: {
-        default: '#f2f4f6',
-        _dark: '#141618',
-      },
     },
     info: {
       default: {

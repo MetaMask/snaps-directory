@@ -252,12 +252,12 @@ msgstr ""
 msgid "Most Popular"
 msgstr ""
 
-#: src/features/notifications/components/NoNotifications.tsx
-msgid "No notifications"
-msgstr ""
-
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "No Snaps found"
+msgstr ""
+
+#: src/features/notifications/components/NoNotifications.tsx
+msgid "No updates"
 msgstr ""
 
 #: src/components/icons/index.ts

@@ -18,7 +18,6 @@ export const NoSnaps: FunctionComponent = () => {
     <Center
       flexDirection="column"
       paddingY="6rem"
-      background="background.alternative"
       borderRadius="3xl"
       data-testid="no-snaps"
     >

@@ -19,7 +19,7 @@ export const NoNotifications: FunctionComponent = () => (
       color="text.alternative"
       marginTop="3"
     >
-      <Trans>No notifications</Trans>
+      <Trans>No updates</Trans>
     </Heading>
     <Text color="text.alternative" textAlign="center">
       <Trans>
