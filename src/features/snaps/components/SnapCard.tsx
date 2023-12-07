@@ -46,6 +46,7 @@ export const SnapCard: FunctionComponent<SnapCardProps> = ({
           <Flex
             alignItems="center"
             width={{ base: '100%', md: 'auto' }}
+            height="fit-content"
             gap="2"
             overflow="hidden"
           >
