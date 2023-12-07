@@ -20,11 +20,11 @@ export const SNAP_CATEGORY_LABELS: Record<
   },
   [RegistrySnapCategory.Notifications]: {
     name: defineMessage`Notifications`,
-    description: defineMessage`Stay in the know with web3 notifications directly in MetaMask.`,
+    description: defineMessage`Stay in the know with web3 notifications and chat directly in MetaMask.`,
   },
   [RegistrySnapCategory.TransactionInsights]: {
     name: defineMessage`Transaction Insights`,
-    description: defineMessage`Stay informed with insights before you confirm transactions in MetaMask.`,
+    description: defineMessage`Guard your wallet with transaction insights and safety tools.`,
   },
 };
 
@@ -42,12 +42,12 @@ export const SNAP_CATEGORY_LINKS: Record<
     linkText: defineMessage`See All Interoperability Snaps`,
   },
   [RegistrySnapCategory.Notifications]: {
-    header: defineMessage`Get Notified Directly In MetaMask`,
+    header: defineMessage`Web3 Notifications and Chat`,
     link: '/notifications',
     linkText: defineMessage`See All Notification Snaps`,
   },
   [RegistrySnapCategory.TransactionInsights]: {
-    header: defineMessage`Stay Secure With Insights`,
+    header: defineMessage`Guard Your Wallet`,
     link: '/transaction-insights',
     linkText: defineMessage`See All Transaction Insight Snaps`,
   },
