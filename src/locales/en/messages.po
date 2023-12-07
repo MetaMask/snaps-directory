@@ -187,6 +187,10 @@ msgstr ""
 msgid "Got it"
 msgstr ""
 
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+msgid "Identifier"
+msgstr ""
+
 #: src/components/InstallUnsupportedDesktop.tsx
 msgid "Install MetaMask"
 msgstr ""
@@ -263,6 +267,10 @@ msgstr ""
 #: src/components/icons/index.ts
 #: src/constants.ts
 msgid "Notifications"
+msgstr ""
+
+#: src/components/SnapWebsiteButton.tsx
+msgid "Open"
 msgstr ""
 
 #: src/components/Header.tsx
@@ -410,10 +418,6 @@ msgstr ""
 msgid "Use MetaMask Beyond Ethereum"
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
-msgid "Version"
-msgstr ""
-
 #: src/features/notifications/components/Notification.tsx
 msgid "Version {0} update available"
 msgstr ""
@@ -423,7 +427,6 @@ msgid "View"
 msgstr ""
 
 #: src/components/FooterLinks.tsx
-#: src/components/SnapWebsiteButton.tsx
 msgid "Website"
 msgstr ""
 

@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 
 import { SnapAvatar } from './SnapAvatar';
@@ -12,20 +12,18 @@ export const SnapAuthorship: FunctionComponent<
   const isInstalled = Boolean(installedSnaps?.[snapId]);
 
   return (
-    <Flex alignItems="center" width={{ base: '100%', md: 'auto' }}>
-      <SnapAvatar snapName={name} icon={icon} isInstalled={isInstalled} />
-      <Box ml="2" overflow="hidden">
-        <Text fontWeight="medium" isTruncated>
+    <Flex alignItems="center">
+      <SnapAvatar
+        snapName={name}
+        icon={icon}
+        size="3.5rem"
+        isInstalled={isInstalled}
+        marginRight="4"
+      />
+      <Box overflow="hidden">
+        <Heading as="h3" fontSize="5xl" isTruncated>
           {name}
-        </Text>
-        <Text
-          color="text.alternative"
-          fontWeight="medium"
-          fontSize="xs"
-          isTruncated
-        >
-          {snapId.slice(4)}
-        </Text>
+        </Heading>
       </Box>
     </Flex>
   );

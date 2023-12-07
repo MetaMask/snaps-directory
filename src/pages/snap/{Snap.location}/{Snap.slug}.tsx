@@ -5,6 +5,7 @@ import {
   Flex,
   Heading,
   Link,
+  Tag,
   Text,
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
@@ -27,7 +28,7 @@ import {
   SNAP_CATEGORY_LINKS,
   type RegistrySnapCategory,
 } from '../../../constants';
-import { FilteredSnaps } from '../../../features';
+import { FilteredSnaps, useGetInstalledSnapsQuery } from '../../../features';
 import { Order } from '../../../features/filter/constants';
 import { NotificationAcknowledger } from '../../../features/notifications/components';
 import { getLinkText, type Fields } from '../../../utils';
@@ -67,6 +68,9 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
     category,
   } = data.snap;
 
+  const { data: installedSnaps } = useGetInstalledSnapsQuery();
+  const isInstalled = Boolean(installedSnaps?.[snapId]);
+
   return (
     <Container
       maxWidth="container.xl"
@@ -88,13 +92,6 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             width={{ base: '100%', md: 'auto' }}
             gap={{ base: 4, md: 4 }}
           >
-            {website && (
-              <SnapWebsiteButton
-                snapId={snapId}
-                website={website}
-                onboard={onboard}
-              />
-            )}
             {!onboard && (
               <InstallSnapButton
                 snapId={snapId}
@@ -104,14 +101,18 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
                 version={latestVersion}
               />
             )}
+            {(isInstalled || onboard) && website && (
+              <SnapWebsiteButton snapId={snapId} website={website} />
+            )}
           </Flex>
         </Flex>
-        <Divider my="6" />
+        <Divider marginY="6" />
         <Flex
           justifyContent={{ base: 'center', md: 'space-between' }}
           flexDirection={{ base: 'column', md: 'row' }}
           flexWrap={{ base: 'nowrap', md: 'wrap', lg: 'nowrap' }}
           rowGap={{ base: 4, lg: 0 }}
+          marginBottom="12"
         >
           {data.snap.category && (
             <SnapData
@@ -126,8 +127,14 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
           )}
           <SnapData
             order={{ base: 8, md: 2 }}
-            label={t`Version`}
-            value={latestVersion}
+            label={t`Identifier`}
+            value={
+              <Tag variant="muted" textTransform="none">
+                <ExternalLink href={website} color="inherit">
+                  {snapId.replace(/^npm:/u, '')}
+                </ExternalLink>
+              </Tag>
+            }
           />
           {data.snap.author && (
             <SnapData
@@ -155,11 +162,6 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             // On mobile screens description is displayed in the middle
             // of the Snap's metadata
           }
-          <Divider
-            my="2"
-            display={{ base: 'flex', md: 'none' }}
-            order={{ base: 4, md: 5 }}
-          />
           <Text
             display={{ base: 'block', md: 'none' }}
             order={{ base: 5, md: 6 }}
@@ -187,11 +189,6 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             mt="1"
             whiteSpace="pre-wrap"
             display={{ base: 'block', md: 'none' }}
-          />
-          <Divider
-            my="2"
-            display={{ base: 'flex', md: 'none' }}
-            order={{ base: 7, md: 8 }}
           />
           {data.snap.sourceCode && (
             <SnapData
@@ -244,7 +241,6 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             />
           )}
         </Flex>
-        <Divider my="6" display={{ base: 'none', md: 'flex' }} />
         <Text
           display={{ base: 'none', md: 'block' }}
           color="text.alternative"
