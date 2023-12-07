@@ -45,15 +45,17 @@ export const SnapAvatar: FunctionComponent<SnapIconProps> = ({
         height={size}
         margin="1"
       />
-      <SnapIcon
-        width={badgeSize}
-        height={badgeSize}
-        position="absolute"
-        bottom="0"
-        right="0"
-        fill={isInstalled ? '#0376C9' : '#6A737D'}
-        data-testid="snap-icon"
-      />
+      {isInstalled && (
+        <SnapIcon
+          width={badgeSize}
+          height={badgeSize}
+          position="absolute"
+          bottom="0"
+          right="0"
+          fill="info.default"
+          data-testid="snap-icon"
+        />
+      )}
     </Box>
   );
 };
