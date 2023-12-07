@@ -39,7 +39,8 @@ export const SnapCardImage: FunctionComponent<SnapCardImageProps> = ({
       height="100%"
       sx={{
         background: `url("${icon}") center center / cover no-repeat, lightgray 50% / cover no-repeat`,
-        filter: 'blur(55px)',
+        filter: 'blur(55px) contrast(0.9) saturate(1.3)',
+        transform: 'scale(1.25)',
       }}
     />
   </Flex>
