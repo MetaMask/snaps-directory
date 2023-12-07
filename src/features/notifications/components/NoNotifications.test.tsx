@@ -5,6 +5,6 @@ describe('NoNotifications', () => {
   it('renders', () => {
     const { queryByText } = render(<NoNotifications />);
 
-    expect(queryByText('No notifications')).toBeInTheDocument();
+    expect(queryByText('No updates')).toBeInTheDocument();
   });
 });

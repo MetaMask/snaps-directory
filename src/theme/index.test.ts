@@ -67,7 +67,6 @@ describe('theme', () => {
                 "fontSize": "sm",
                 "fontWeight": "500",
                 "height": "26px",
-                "textTransform": "uppercase",
                 "transitionDuration": "normal",
               },
               "solid": Object {
@@ -284,14 +283,6 @@ describe('theme', () => {
                 "_dark": "#191B1D",
                 "default": "#EDEFF1",
               },
-              "avatar": Object {
-                "_dark": "#141618",
-                "default": "#f2f4f6",
-              },
-              "body": Object {
-                "_dark": "#141618",
-                "default": "#F8F8F8",
-              },
               "default": Object {
                 "_dark": "#24272A",
                 "default": "#FFFFFF",
@@ -303,10 +294,6 @@ describe('theme', () => {
               "header": Object {
                 "_dark": "#24272A80",
                 "default": "#FFFFFFC0",
-              },
-              "hover": Object {
-                "_dark": "#33373E",
-                "default": "#EEEEEE",
               },
             },
             "border": Object {
@@ -339,25 +326,9 @@ describe('theme', () => {
                 "_dark": "#D6D9DC",
                 "default": "#535A61",
               },
-              "console": Object {
-                "_dark": "#D6D9DC",
-                "default": "#535A61",
-              },
               "default": Object {
                 "_dark": "#FFFFFF",
                 "default": "#24272A",
-              },
-              "muted": Object {
-                "_dark": "#D6D9DC",
-                "default": "#BBC0C5",
-              },
-              "tab": Object {
-                "_dark": "#FFFFFF",
-                "default": "#535A61",
-                "selected": Object {
-                  "_dark": "#FFFFFF",
-                  "default": "#24272A",
-                },
               },
             },
           },

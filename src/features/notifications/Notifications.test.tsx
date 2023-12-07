@@ -20,6 +20,6 @@ describe('Notifications', () => {
     const button = getByLabelText('Open notifications menu');
     act(() => button?.click());
 
-    expect(queryByText('No notifications')).toBeInTheDocument();
+    expect(queryByText('No updates')).toBeInTheDocument();
   });
 });
