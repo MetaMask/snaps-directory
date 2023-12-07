@@ -60,7 +60,7 @@ export const Button = defineStyleConfig({
       borderRadius: '36px',
       background: 'background.alternative',
       borderColor: 'info.default',
-      color: 'console',
+      color: 'text.alternative',
       transitionDuration: 'normal',
     }),
   },
