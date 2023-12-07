@@ -1,18 +1,11 @@
-import {
-  Box,
-  Container,
-  Divider,
-  Flex,
-  Heading,
-  Link,
-  Text,
-} from '@chakra-ui/react';
-import { defineMessage, Trans } from '@lingui/macro';
+import { Container, Divider, Flex, Heading, Link } from '@chakra-ui/react';
+import { defineMessage } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { graphql, Link as GatsbyLink, withPrefix } from 'gatsby';
 import { useEffect, type FunctionComponent } from 'react';
 
 import banner from '../assets/images/seo/home.png';
+import { Banner } from '../components';
 import { RegistrySnapCategory, SNAP_CATEGORY_LINKS } from '../constants';
 import { FilteredSnaps, resetFilters } from '../features';
 import { Order } from '../features/filter/constants';
@@ -74,33 +67,11 @@ const IndexPage: FunctionComponent = () => {
     <Container
       maxWidth="container.xl"
       paddingTop="0"
-      marginTop={{ base: 4, md: 20 }}
+      marginTop="4"
       display="flex"
       flexDirection="column"
     >
-      <Box maxWidth="31.25rem" width="100%">
-        <Heading as="h2" fontSize="4xl" marginBottom="1">
-          <Trans>Discover Snaps</Trans>
-        </Heading>
-        <Text>
-          <Trans>
-            Explore community-built Snaps to customize your web3 experience via
-            our official directory.{' '}
-            <Link href="https://metamask.io/snaps/" isExternal={true}>
-              Learn more
-            </Link>{' '}
-            and{' '}
-            <Link
-              href="https://support.metamask.io/hc/en-us/articles/18245938714395"
-              isExternal={true}
-            >
-              FAQ
-            </Link>
-            .
-          </Trans>
-        </Text>
-      </Box>
-
+      <Banner />
       <Divider my="8" />
 
       {GROUPS.map(
