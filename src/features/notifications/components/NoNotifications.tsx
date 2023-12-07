@@ -12,13 +12,7 @@ export const NoNotifications: FunctionComponent = () => (
     margin={['auto', '4', '10']}
   >
     <Fox width={200} />
-    <Heading
-      as="h3"
-      fontSize="2xl"
-      fontWeight="500"
-      color="text.alternative"
-      marginTop="3"
-    >
+    <Heading as="h3" fontSize="2xl" color="text.alternative" marginTop="3">
       <Trans>No updates</Trans>
     </Heading>
     <Text color="text.alternative" textAlign="center">
