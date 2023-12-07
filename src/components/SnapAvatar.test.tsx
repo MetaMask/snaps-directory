@@ -17,9 +17,7 @@ describe('SnapAvatar', () => {
     );
 
     expect(queryByText('F')).toBeInTheDocument();
-    expect(queryByTestId('snap-icon')?.querySelector('svg')).toHaveStyle({
-      fill: '#6A737D',
-    });
+    expect(queryByTestId('snap-icon')).not.toBeInTheDocument();
   });
 
   it('renders an installed Snap', async () => {
@@ -31,8 +29,6 @@ describe('SnapAvatar', () => {
     );
 
     expect(queryByText('F')).toBeInTheDocument();
-    expect(queryByTestId('snap-icon')?.querySelector('svg')).toHaveStyle({
-      fill: '#0376C9',
-    });
+    expect(queryByTestId('snap-icon')).toBeInTheDocument();
   });
 });
