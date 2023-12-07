@@ -1,5 +1,6 @@
 export * from './icons';
 export * from './BackButton';
+export * from './Banner';
 export * from './Card';
 export * from './Container';
 export * from './Fox';
