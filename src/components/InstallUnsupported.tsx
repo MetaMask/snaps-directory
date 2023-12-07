@@ -19,7 +19,7 @@ export const InstallUnsupported: FunctionComponent = () => {
 
   const button = (
     <Button
-      leftIcon={<MetaMaskIcon width="1.5rem" />}
+      leftIcon={<MetaMaskIcon width="1.3rem" />}
       variant="primary"
       onClick={onOpen}
       width={{ base: '100%', md: 'auto' }}

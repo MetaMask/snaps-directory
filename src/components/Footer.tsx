@@ -14,7 +14,7 @@ export const Footer: FunctionComponent<FooterProps> = (props) => (
   <Box
     {...props}
     as="footer"
-    background="background.card"
+    background="background.alternative"
     marginTop={{ base: 4, md: 20 }}
   >
     <Container maxWidth="7xl" paddingY="12">
@@ -26,7 +26,7 @@ export const Footer: FunctionComponent<FooterProps> = (props) => (
         <Box>
           <MetaMaskLogo marginBottom="4" />
           <Text
-            color="gray.muted"
+            color="text.alternative"
             display="block"
             maxWidth="30rem"
             marginBottom={['12', null, '24']}

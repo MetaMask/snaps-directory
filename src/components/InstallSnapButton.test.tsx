@@ -83,7 +83,7 @@ describe('InstallSnapButton', () => {
       },
     });
 
-    expect(queryByText('Installation complete')).toBeInTheDocument();
+    expect(queryByText('Installed')).toBeInTheDocument();
   });
 
   it('does not show the modal if the installation failed', async () => {

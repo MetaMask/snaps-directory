@@ -1,4 +1,4 @@
-import { Text } from '@chakra-ui/react';
+import { Box, Tag } from '@chakra-ui/react';
 import { Trans } from '@lingui/react';
 import type { FunctionComponent } from 'react';
 
@@ -12,7 +12,9 @@ export type SnapCategoryProps = {
 export const SnapCategory: FunctionComponent<SnapCategoryProps> = ({
   category,
 }) => (
-  <Text>
-    <Trans id={SNAP_CATEGORY_LABELS[category].name.id} />
-  </Text>
+  <Box>
+    <Tag textTransform="none">
+      <Trans id={SNAP_CATEGORY_LABELS[category].name.id} />
+    </Tag>
+  </Box>
 );

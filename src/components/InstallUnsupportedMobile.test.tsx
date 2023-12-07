@@ -9,6 +9,6 @@ describe('InstallUnsupportedMobile', () => {
       render(<InstallUnsupportedMobile isOpen={true} onClose={jest.fn()} />),
     );
 
-    expect(queryByText('Desktop only')).toBeInTheDocument();
+    expect(queryByText('Available on desktop')).toBeInTheDocument();
   });
 });

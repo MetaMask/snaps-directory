@@ -12,16 +12,10 @@ export const NoNotifications: FunctionComponent = () => (
     margin={['auto', '4', '10']}
   >
     <Fox width={200} />
-    <Heading
-      as="h3"
-      fontSize="2xl"
-      fontWeight="600"
-      color="gray.muted"
-      marginTop="3"
-    >
-      <Trans>No notifications</Trans>
+    <Heading as="h3" fontSize="2xl" color="text.alternative" marginTop="3">
+      <Trans>No updates</Trans>
     </Heading>
-    <Text color="gray.muted" textAlign="center">
+    <Text color="text.alternative" textAlign="center">
       <Trans>
         Updates for your installed Snaps will be displayed here when available.
       </Trans>

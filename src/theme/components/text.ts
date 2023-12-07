@@ -2,10 +2,8 @@ import { defineStyleConfig } from '@chakra-ui/react';
 
 export const Text = defineStyleConfig({
   baseStyle: {
-    color: {
-      default: 'black',
-      _dark: 'white',
-    },
+    color: 'text.default',
+    lineHeight: 'base',
   },
 
   variants: {

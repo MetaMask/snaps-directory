@@ -46,11 +46,11 @@ export const Button = defineStyleConfig({
       borderColor: 'info.default',
       padding: '4',
     }),
-    shadow: defineStyle({
-      background: 'background.header',
-      boxShadow: 'md',
+    filter: defineStyle({
+      background: 'background.alternative',
       _hover: {
-        opacity: '0.75',
+        background: 'background.alternative-hover',
+        opacity: 1,
       },
     }),
     small: defineStyle({
@@ -58,10 +58,9 @@ export const Button = defineStyleConfig({
       fontWeight: '500',
       height: '26px',
       borderRadius: '36px',
-      background: 'background.default',
+      background: 'background.alternative',
       borderColor: 'info.default',
-      color: 'console',
-      textTransform: 'uppercase',
+      color: 'text.alternative',
       transitionDuration: 'normal',
     }),
   },

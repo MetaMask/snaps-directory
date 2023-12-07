@@ -45,7 +45,7 @@ const ExplorePage: FunctionComponent = () => {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Heading as="h2" fontSize="2xl" fontWeight="600">
+        <Heading as="h2" fontSize="2xl">
           {searchQuery ? (
             <Trans>Results for &quot;{searchQuery}&quot;</Trans>
           ) : (

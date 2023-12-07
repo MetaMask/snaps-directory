@@ -25,7 +25,7 @@ export const Link = defineStyleConfig({
       borderRadius: 'lg',
       backgroundColor: 'background.alternative',
       border: '1px solid',
-      borderColor: 'border.default',
+      borderColor: 'border.muted',
     },
 
     landing: {

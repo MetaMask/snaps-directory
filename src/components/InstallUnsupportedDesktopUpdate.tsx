@@ -13,7 +13,7 @@ export const InstallUnsupportedDesktopUpdate: FunctionComponent<
     <Heading as="h3" fontSize="lg" marginTop="6" marginBottom="4">
       <Trans>Update required</Trans>
     </Heading>
-    <Text variant="muted" marginBottom="4">
+    <Text color="text.alternative" marginBottom="4">
       <Trans>
         To use MetaMask Snaps, you need the latest version (11.0) of MetaMask in
         your browser.{' '}
