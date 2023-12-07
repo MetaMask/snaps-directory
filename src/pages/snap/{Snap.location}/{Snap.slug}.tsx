@@ -301,6 +301,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             category={category as RegistrySnapCategory}
             order={Order.Random}
             excluded={[snapId]}
+            images={true}
           />
         </>
       )}

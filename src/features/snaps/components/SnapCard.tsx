@@ -3,6 +3,7 @@ import { Trans } from '@lingui/macro';
 import { Link } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
+import { SnapCardImage } from './SnapCardImage';
 import { Card, SnapAvatar } from '../../../components';
 import type { Fields } from '../../../utils';
 import { useGetInstalledSnapsQuery } from '../api';
@@ -11,6 +12,7 @@ export type SnapCardProps = Fields<
   Queries.Snap,
   'name' | 'summary' | 'snapId' | 'icon' | 'gatsbyPath'
 > & {
+  image?: boolean | undefined;
   onClick?: () => void;
 };
 
@@ -20,6 +22,7 @@ export const SnapCard: FunctionComponent<SnapCardProps> = ({
   snapId,
   icon,
   gatsbyPath,
+  image,
   onClick = () => undefined,
 }) => {
   const { data: installedSnaps } = useGetInstalledSnapsQuery();
@@ -37,6 +40,7 @@ export const SnapCard: FunctionComponent<SnapCardProps> = ({
           },
         }}
       >
+        {image && <SnapCardImage name={name} icon={icon} />}
         <Flex
           height="3rem"
           flexDirection="row"

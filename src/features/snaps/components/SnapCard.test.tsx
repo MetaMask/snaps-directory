@@ -31,4 +31,13 @@ describe('SnapCard', () => {
 
     expect(onClick).toHaveBeenCalled();
   });
+
+  it('renders an image', async () => {
+    const { snap } = getMockSnap();
+    const { getByTestId } = await act(() =>
+      render(<SnapCard {...snap} image={true} />),
+    );
+
+    expect(getByTestId('snap-card-image')).toBeInTheDocument();
+  });
 });
