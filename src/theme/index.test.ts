@@ -63,7 +63,7 @@ describe('theme', () => {
                 "background": "background.alternative",
                 "borderColor": "info.default",
                 "borderRadius": "36px",
-                "color": "console",
+                "color": "text.alternative",
                 "fontSize": "sm",
                 "fontWeight": "500",
                 "height": "26px",
