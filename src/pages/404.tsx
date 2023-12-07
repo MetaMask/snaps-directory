@@ -19,7 +19,6 @@ const NotFoundPage: FunctionComponent = () => (
     <Fox />
     <Heading
       as="h1"
-      fontWeight="500"
       fontSize={['2xl', '4xl', '5xl']}
       marginY="6"
       lineHeight="116%"

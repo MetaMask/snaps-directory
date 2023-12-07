@@ -113,7 +113,7 @@ const IndexPage: FunctionComponent = () => {
               justifyContent="space-between"
               alignItems="center"
             >
-              <Heading as="h2" fontSize="2xl" fontWeight="500">
+              <Heading as="h2" fontSize="2xl">
                 {i18n._(header)}
               </Heading>
               <Link as={GatsbyLink} to={link} variant="landing">

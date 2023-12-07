@@ -23,12 +23,7 @@ export const NoSnaps: FunctionComponent = () => {
     >
       <Center flexDirection="column" gap="4" maxWidth="19.375rem">
         <Fox />
-        <Heading
-          as="h3"
-          fontSize="2xl"
-          fontWeight="500"
-          color="text.alternative"
-        >
+        <Heading as="h3" fontSize="2xl" color="text.alternative">
           <Trans>No Snaps found</Trans>
         </Heading>
         <Text fontSize="md" color="text.alternative" textAlign="center">
