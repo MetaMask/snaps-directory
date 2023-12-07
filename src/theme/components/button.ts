@@ -61,7 +61,6 @@ export const Button = defineStyleConfig({
       background: 'background.alternative',
       borderColor: 'info.default',
       color: 'console',
-      textTransform: 'uppercase',
       transitionDuration: 'normal',
     }),
   },
