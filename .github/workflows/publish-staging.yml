@@ -25,16 +25,37 @@ jobs:
       pull-requests: write
     steps:
       - name: Comment on pull request
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            github.rest.issues.createComment({
+            const { data } = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: `Staging website successfully published:\n\nhttps://metamask.github.io/snaps-directory-staging/pr/${context.issue.number}/`,
             });
+
+            const comment = data.find(
+              (comment) =>
+                comment.user.login === 'github-actions[bot]' &&
+                comment.body.includes('successfully pushed to staging website'),
+            );
+
+            if (comment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: comment.id,
+                body: `Commit \`${{ github.event.pull_request.head.sha }}\` successfully pushed to staging website:\n\nhttps://metamask.github.io/snaps-directory-staging/pr/${context.issue.number}/`,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: `Commit \`${{ github.event.pull_request.head.sha }}\` successfully pushed to staging website:\n\nhttps://metamask.github.io/snaps-directory-staging/pr/${context.issue.number}/`,
+              });
+            }
 
   publish-main-branch:
     name: Publish main branch
