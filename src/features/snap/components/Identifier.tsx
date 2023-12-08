@@ -5,18 +5,21 @@ import { ExternalLink } from '../../../components';
 
 export type IdentifierProps = {
   snapId: string;
-  website: string;
 };
 
-export const Identifier: FunctionComponent<IdentifierProps> = ({
-  snapId,
-  website,
-}) => (
-  <Box>
-    <Tag variant="muted" textTransform="none">
-      <ExternalLink href={website} color="inherit">
-        {snapId.replace(/^npm:/u, '')}
-      </ExternalLink>
-    </Tag>
-  </Box>
-);
+const NPM_URL = 'https://npmjs.com/package/';
+
+export const Identifier: FunctionComponent<IdentifierProps> = ({ snapId }) => {
+  const id = snapId.replace(/^npm:/u, '');
+  const url = `${NPM_URL}${id}`;
+
+  return (
+    <Box>
+      <Tag variant="muted" textTransform="none">
+        <ExternalLink href={url} color="inherit">
+          {id}
+        </ExternalLink>
+      </Tag>
+    </Box>
+  );
+};

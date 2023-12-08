@@ -7,13 +7,13 @@ import { ExternalLink } from '../../../components';
 import type { Fields } from '../../../utils';
 
 export type MetadataItemsProps = {
-  snap: Fields<Queries.Snap, 'snapId' | 'author' | 'website'>;
+  snap: Fields<Queries.Snap, 'snapId' | 'author'>;
 };
 
 export const MetadataItems: FunctionComponent<MetadataItemsProps> = ({
   snap,
 }) => {
-  const { snapId, website, author } = snap;
+  const { snapId, author } = snap;
 
   return (
     <>
@@ -26,10 +26,7 @@ export const MetadataItems: FunctionComponent<MetadataItemsProps> = ({
         />
       )}
 
-      <Data
-        label={t`Identifier`}
-        value={<Identifier snapId={snapId} website={website} />}
-      />
+      <Data label={t`Identifier`} value={<Identifier snapId={snapId} />} />
     </>
   );
 };
