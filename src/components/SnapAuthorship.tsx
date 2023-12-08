@@ -19,6 +19,7 @@ export const SnapAuthorship: FunctionComponent<
         size="3.5rem"
         isInstalled={isInstalled}
         marginRight="4"
+        background="none"
       />
       <Box overflow="hidden">
         <Heading as="h3" fontSize={['3xl', null, '5xl']} isTruncated>
