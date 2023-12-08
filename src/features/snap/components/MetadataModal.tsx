@@ -44,7 +44,7 @@ export const MetadataModal: FunctionComponent<MetadataModalProps> = ({
             value={<SourceCode url={sourceCode} />}
           />
           <Data
-            label={t`Audited`}
+            label={t`Audit`}
             value={
               <Audits
                 audits={

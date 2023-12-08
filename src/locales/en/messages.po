@@ -47,7 +47,7 @@ msgid "Alphabetical"
 msgstr ""
 
 #: src/features/snap/components/MetadataModal.tsx
-msgid "Audited"
+msgid "Audit"
 msgstr ""
 
 #: src/components/InstallUnsupportedMobile.tsx

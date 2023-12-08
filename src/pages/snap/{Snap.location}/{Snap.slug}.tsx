@@ -68,53 +68,56 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
       />
       <Container maxWidth="container.xl" paddingTop="0" marginTop="20">
         <NotificationAcknowledger snapId={snapId} version={latestVersion} />
-        <Box>
-          <Flex justifyContent="space-between" alignItems="center">
-            <Authorship name={name} icon={icon} snapId={snapId} />
-            <Flex alignItems="center" marginTop="4" gap="4">
-              {!onboard && (
-                <InstallSnapButton
-                  snapId={snapId}
-                  name={name}
-                  icon={icon}
-                  website={website}
-                  version={latestVersion}
-                />
-              )}
-              {(isInstalled || onboard) && website && (
-                <SnapWebsiteButton snapId={snapId} website={website} />
-              )}
-            </Flex>
+        <Flex
+          flexDirection={['column', null, 'row']}
+          justifyContent="space-between"
+          alignItems="center"
+          gap="6"
+        >
+          <Authorship name={name} icon={icon} snapId={snapId} />
+          <Flex alignItems="center" gap="4" width={['100%', null, 'auto']}>
+            {!onboard && (
+              <InstallSnapButton
+                snapId={snapId}
+                name={name}
+                icon={icon}
+                website={website}
+                version={latestVersion}
+              />
+            )}
+            {(isInstalled || onboard) && website && (
+              <SnapWebsiteButton snapId={snapId} website={website} />
+            )}
           </Flex>
+        </Flex>
 
-          <Divider marginY="6" />
-          <Metadata snap={data.snap} />
+        <Divider marginY="6" />
+        <Metadata snap={data.snap} />
 
-          <Text
-            color="text.alternative"
-            textTransform="uppercase"
-            fontWeight="medium"
-            fontSize="sm"
-          >
-            <Trans>
-              Description by{' '}
-              <Text
-                as="span"
-                color="text.default"
-                textTransform="uppercase"
-                fontWeight="medium"
-                fontSize="sm"
-              >
-                {name}
-              </Text>
-            </Trans>
-          </Text>
-          <Description
-            description={description}
-            marginTop="2"
-            whiteSpace="pre-wrap"
-          />
-        </Box>
+        <Text
+          color="text.alternative"
+          textTransform="uppercase"
+          fontWeight="medium"
+          fontSize="sm"
+        >
+          <Trans>
+            Description by{' '}
+            <Text
+              as="span"
+              color="text.default"
+              textTransform="uppercase"
+              fontWeight="medium"
+              fontSize="sm"
+            >
+              {name}
+            </Text>
+          </Trans>
+        </Text>
+        <Description
+          description={description}
+          marginTop="2"
+          whiteSpace="pre-wrap"
+        />
 
         {category && (
           <>
