@@ -12,13 +12,17 @@ export const SnapAuthorship: FunctionComponent<
   const isInstalled = Boolean(installedSnaps?.[snapId]);
 
   return (
-    <Flex alignItems="center" overflow="hidden">
+    <Flex
+      alignItems="center"
+      overflow="hidden"
+      flexDirection={['column', null, 'row']}
+      gap="4"
+    >
       <SnapAvatar
         snapName={name}
         icon={icon}
-        size="3.5rem"
+        size={['6rem', null, '3.5rem']}
         isInstalled={isInstalled}
-        marginRight="4"
         background="none"
       />
       <Box overflow="hidden">

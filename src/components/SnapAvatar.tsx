@@ -1,4 +1,4 @@
-import type { BoxProps } from '@chakra-ui/react';
+import type { BoxProps, ResponsiveValue } from '@chakra-ui/react';
 import { Avatar, Box } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 
@@ -8,7 +8,7 @@ export type SnapIconProps = BoxProps & {
   snapName: string;
   isInstalled: boolean;
   icon?: string | undefined;
-  size?: string;
+  size?: ResponsiveValue<string>;
   badgeSize?: string;
   background?: string;
 };
