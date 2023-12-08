@@ -1,4 +1,11 @@
-import { Menu, MenuButton, MenuGroup, MenuList, Text } from '@chakra-ui/react';
+import {
+  Menu,
+  MenuButton,
+  MenuGroup,
+  MenuList,
+  Text,
+  Stack,
+} from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
@@ -43,7 +50,7 @@ export const Filter: FunctionComponent = () => {
   };
 
   return (
-    <>
+    <Stack direction="row" spacing={2} flexWrap="wrap">
       <Menu closeOnSelect={false} isLazy={true}>
         <MenuButton as={FilterButton} />
         <MenuList width="17.188rem" boxShadow="md">
@@ -86,6 +93,6 @@ export const Filter: FunctionComponent = () => {
         </MenuList>
       </Menu>
       <FilterTags />
-    </>
+    </Stack>
   );
 };

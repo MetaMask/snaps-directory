@@ -1,5 +1,4 @@
-import type { StackProps } from '@chakra-ui/react';
-import { Stack, Tag, TagLabel } from '@chakra-ui/react';
+import { Tag, TagLabel } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { hasProperty } from '@metamask/utils';
@@ -17,9 +16,7 @@ import {
   toggleInstalled,
 } from '../store';
 
-export type FilterTagsProps = StackProps;
-
-export const FilterTags: FunctionComponent<FilterTagsProps> = (props) => {
+export const FilterTags: FunctionComponent = () => {
   const i18n = useLingui();
   const dispatch = useDispatch();
   const installed = useSelector(getInstalled);
@@ -31,7 +28,7 @@ export const FilterTags: FunctionComponent<FilterTagsProps> = (props) => {
   };
 
   return (
-    <Stack direction="row" spacing={2} {...props}>
+    <>
       {hasProperty(SNAP_ORDER_LABELS, order) && (
         <Tag
           variant="category"
@@ -68,6 +65,6 @@ export const FilterTags: FunctionComponent<FilterTagsProps> = (props) => {
           />
         </Tag>
       )}
-    </Stack>
+    </>
   );
 };
