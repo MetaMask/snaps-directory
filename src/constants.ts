@@ -39,16 +39,16 @@ export const SNAP_CATEGORY_LINKS: Record<
   [RegistrySnapCategory.Interoperability]: {
     header: defineMessage`Use MetaMask Beyond Ethereum`,
     link: '/interoperability',
-    linkText: defineMessage`See All Interoperability Snaps`,
+    linkText: defineMessage`See All`,
   },
   [RegistrySnapCategory.Notifications]: {
     header: defineMessage`Get Notified Directly In MetaMask`,
     link: '/notifications',
-    linkText: defineMessage`See All Notification Snaps`,
+    linkText: defineMessage`See All`,
   },
   [RegistrySnapCategory.TransactionInsights]: {
     header: defineMessage`Stay Secure With Insights`,
     link: '/transaction-insights',
-    linkText: defineMessage`See All Transaction Insight Snaps`,
+    linkText: defineMessage`See All`,
   },
 };
