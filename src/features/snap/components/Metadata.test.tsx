@@ -7,7 +7,7 @@ describe('Metadata', () => {
     const { queryByText } = render(<Metadata snap={snap} />);
 
     expect(queryByText('Category')).toBeInTheDocument();
-    expect(queryByText('Transaction Insights')).toBeInTheDocument();
+    expect(queryByText('Security')).toBeInTheDocument();
   });
 
   it('renders the developer', () => {
