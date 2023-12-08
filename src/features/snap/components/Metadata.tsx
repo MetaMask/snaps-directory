@@ -2,10 +2,11 @@ import { Flex, Link, useDisclosure } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
+import { Category } from './Category';
 import { Data } from './Data';
 import { MetadataItems } from './MetadataItems';
 import { MetadataModal } from './MetadataModal';
-import { ExternalLink, SnapCategory } from '../../../components';
+import { ExternalLink } from '../../../components';
 import type { RegistrySnapCategory } from '../../../constants';
 import { type Fields, getLinkText } from '../../../utils';
 
@@ -42,7 +43,7 @@ export const Metadata: FunctionComponent<MetadataProps> = ({ snap }) => {
         {category && (
           <Data
             label={t`Category`}
-            value={<SnapCategory category={category as RegistrySnapCategory} />}
+            value={<Category category={category as RegistrySnapCategory} />}
           />
         )}
 

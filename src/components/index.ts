@@ -11,7 +11,6 @@ export * from './InstallUnsupportedMobile';
 export * from './Layout';
 export * from './Logo';
 export * from './PostInstallModal';
-export * from './SnapCategory';
 export * from './SnapAvatar';
 export * from './SnapsProvider';
 export * from './SnapWebsiteButton';
