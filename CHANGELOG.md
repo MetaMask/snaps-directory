@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.6.0]
+### Changed
+- Redesign the directory experience ([#219](https://github.com/MetaMask/snaps-directory/pull/219), [#223](https://github.com/MetaMask/snaps-directory/pull/223), [#226](https://github.com/MetaMask/snaps-directory/pull/226), [#237](https://github.com/MetaMask/snaps-directory/pull/237), [#238](https://github.com/MetaMask/snaps-directory/pull/238), [#241](https://github.com/MetaMask/snaps-directory/pull/241), [#239](https://github.com/MetaMask/snaps-directory/pull/239), [#242](https://github.com/MetaMask/snaps-directory/pull/242), [#246](https://github.com/MetaMask/snaps-directory/pull/246), [#248](https://github.com/MetaMask/snaps-directory/pull/248), [#249](https://github.com/MetaMask/snaps-directory/pull/249), [#227](https://github.com/MetaMask/snaps-directory/pull/227), [#230](https://github.com/MetaMask/snaps-directory/pull/230), [#251](https://github.com/MetaMask/snaps-directory/pull/251). [#252](https://github.com/MetaMask/snaps-directory/pull/252))
+  - Update landing page.
+  - Improve look and feel of profile pages.
+  - Move search bar to the header.
+  - Add related Snaps to profile pages.
+  - Add option to sort by latest Snaps.
+  - Change colours to match MetaMask design system.
+
 ## [1.5.0]
 ### Changed
 - Sort by popularity as default ([#206](https://github.com/MetaMask/snaps-directory/pull/206))
@@ -127,7 +137,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.5.0...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.6.0...HEAD
+[1.6.0]: https://github.com/MetaMask/snaps-directory/compare/v1.5.0...v1.6.0
 [1.5.0]: https://github.com/MetaMask/snaps-directory/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/MetaMask/snaps-directory/compare/v1.3.1...v1.4.0
 [1.3.1]: https://github.com/MetaMask/snaps-directory/compare/v1.3.0...v1.3.1
