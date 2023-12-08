@@ -19,11 +19,11 @@ export const SNAP_CATEGORY_LABELS: Record<
     description: defineMessage`Connect to non-Ethereum blockchains with MetaMask.`,
   },
   [RegistrySnapCategory.Notifications]: {
-    name: defineMessage`Notifications`,
-    description: defineMessage`Stay in the know with web3 notifications and chat directly in MetaMask.`,
+    name: defineMessage`Communication`,
+    description: defineMessage`Stay in the know with notifications and chat directly in MetaMask.`,
   },
   [RegistrySnapCategory.TransactionInsights]: {
-    name: defineMessage`Transaction Insights`,
+    name: defineMessage`Security`,
     description: defineMessage`Guard your wallet with transaction insights and safety tools.`,
   },
 };
@@ -42,7 +42,7 @@ export const SNAP_CATEGORY_LINKS: Record<
     linkText: defineMessage`See All`,
   },
   [RegistrySnapCategory.Notifications]: {
-    header: defineMessage`Web3 Notifications and Chat`,
+    header: defineMessage`Notifications and Chat`,
     link: '/notifications',
     linkText: defineMessage`See All`,
   },

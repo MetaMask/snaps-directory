@@ -84,6 +84,10 @@ msgid "Close"
 msgstr ""
 
 #: src/constants.ts
+msgid "Communication"
+msgstr ""
+
+#: src/constants.ts
 msgid "Connect to non-Ethereum blockchains with MetaMask."
 msgstr ""
 
@@ -269,8 +273,11 @@ msgid "No updates"
 msgstr ""
 
 #: src/components/icons/index.ts
-#: src/constants.ts
 msgid "Notifications"
+msgstr ""
+
+#: src/constants.ts
+msgid "Notifications and Chat"
 msgstr ""
 
 #: src/components/SnapWebsiteButton.tsx
@@ -314,6 +321,10 @@ msgid "Search Snaps"
 msgstr ""
 
 #: src/constants.ts
+msgid "Security"
+msgstr ""
+
+#: src/constants.ts
 #: src/constants.ts
 #: src/constants.ts
 #: src/pages/explore.tsx
@@ -349,7 +360,7 @@ msgid "Start exploring blockchain applications in seconds. Trusted by over 30 mi
 msgstr ""
 
 #: src/constants.ts
-msgid "Stay in the know with web3 notifications and chat directly in MetaMask."
+msgid "Stay in the know with notifications and chat directly in MetaMask."
 msgstr ""
 
 #: src/components/FooterLinks.tsx
@@ -375,10 +386,6 @@ msgstr ""
 
 #: src/components/icons/index.ts
 msgid "Transaction insights"
-msgstr ""
-
-#: src/constants.ts
-msgid "Transaction Insights"
 msgstr ""
 
 #: src/components/icons/index.ts
@@ -411,10 +418,6 @@ msgstr ""
 
 #: src/features/snaps/components/SnapCard.tsx
 msgid "View"
-msgstr ""
-
-#: src/constants.ts
-msgid "Web3 Notifications and Chat"
 msgstr ""
 
 #: src/components/FooterLinks.tsx
