@@ -15,7 +15,7 @@ describe('SnapWebsiteButton', () => {
       <SnapWebsiteButton snapId="test" website="https://example.com" />,
     );
 
-    expect(queryByText('Website')).toBeInTheDocument();
+    expect(queryByText('Open')).toBeInTheDocument();
   });
 
   it('triggers an event when clicked', () => {
@@ -23,7 +23,7 @@ describe('SnapWebsiteButton', () => {
       <SnapWebsiteButton snapId="test" website="https://example.com" />,
     );
 
-    const link = getByText('Website');
+    const link = getByText('Open');
     link.click();
 
     expect(analytics.track).toHaveBeenCalledWith({
