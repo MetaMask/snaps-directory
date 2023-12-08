@@ -38,7 +38,6 @@ export const SnapAvatar: FunctionComponent<SnapIconProps> = ({
         src={icon as string}
         name={snapName.slice(0, 1).toUpperCase()}
         fontSize="md"
-        background="background.alternative"
         color="text.alternative"
         size="md"
         width={size}
