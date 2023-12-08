@@ -18,6 +18,7 @@ const GROUPS = [
     limit: 6,
     link: '/explore',
     linkText: defineMessage`Explore All Snaps`,
+    images: true,
   },
   {
     header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Interoperability].header,
@@ -75,7 +76,7 @@ const IndexPage: FunctionComponent = () => {
       <Divider my="8" />
 
       {GROUPS.map(
-        ({ header, limit, category, link, linkText, order }, index) => (
+        ({ header, limit, category, link, linkText, order, images }, index) => (
           <>
             <Flex
               width="100%"
@@ -91,7 +92,12 @@ const IndexPage: FunctionComponent = () => {
                 {i18n._(linkText)}
               </Link>
             </Flex>
-            <FilteredSnaps limit={limit} category={category} order={order} />
+            <FilteredSnaps
+              limit={limit}
+              category={category}
+              order={order}
+              images={images}
+            />
 
             {index !== GROUPS.length - 1 && <Divider mt="12" mb="8" />}
           </>
