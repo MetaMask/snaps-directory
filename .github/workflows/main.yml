@@ -38,7 +38,6 @@ jobs:
     needs:
       - check-workflows
       - build-lint-test
-      - publish-staging
     outputs:
       PASSED: ${{ steps.set-output.outputs.PASSED }}
     steps:
