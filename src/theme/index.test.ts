@@ -170,7 +170,7 @@ describe('theme', () => {
           "Modal": Object {
             "baseStyle": Object {
               "dialog": Object {
-                "bg": "chakra-body-bg",
+                "backgroundColor": "background.default",
               },
             },
             "parts": Array [
@@ -188,7 +188,7 @@ describe('theme', () => {
                   "padding": "0",
                 },
                 "dialog": Object {
-                  "background": "chakra-body-bg",
+                  "backgroundColor": "background.default",
                   "borderRadius": "3xl",
                   "padding": "6",
                 },
