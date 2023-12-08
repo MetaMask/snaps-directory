@@ -19,12 +19,12 @@ export const SNAP_CATEGORY_LABELS: Record<
     description: defineMessage`Connect to non-Ethereum blockchains with MetaMask.`,
   },
   [RegistrySnapCategory.Notifications]: {
-    name: defineMessage`Notifications`,
-    description: defineMessage`Stay in the know with web3 notifications directly in MetaMask.`,
+    name: defineMessage`Communication`,
+    description: defineMessage`Stay in the know with notifications and chat directly in MetaMask.`,
   },
   [RegistrySnapCategory.TransactionInsights]: {
-    name: defineMessage`Transaction Insights`,
-    description: defineMessage`Stay informed with insights before you confirm transactions in MetaMask.`,
+    name: defineMessage`Security`,
+    description: defineMessage`Guard your wallet with transaction insights and safety tools.`,
   },
 };
 
@@ -39,16 +39,16 @@ export const SNAP_CATEGORY_LINKS: Record<
   [RegistrySnapCategory.Interoperability]: {
     header: defineMessage`Use MetaMask Beyond Ethereum`,
     link: '/interoperability',
-    linkText: defineMessage`See All Interoperability Snaps`,
+    linkText: defineMessage`See All`,
   },
   [RegistrySnapCategory.Notifications]: {
-    header: defineMessage`Get Notified Directly In MetaMask`,
+    header: defineMessage`Notifications and Chat`,
     link: '/notifications',
-    linkText: defineMessage`See All Notification Snaps`,
+    linkText: defineMessage`See All`,
   },
   [RegistrySnapCategory.TransactionInsights]: {
-    header: defineMessage`Stay Secure With Insights`,
+    header: defineMessage`Guard Your Wallet`,
     link: '/transaction-insights',
-    linkText: defineMessage`See All Transaction Insight Snaps`,
+    linkText: defineMessage`See All`,
   },
 };

@@ -8,6 +8,6 @@ describe('SnapCategory', () => {
       <SnapCategory category={RegistrySnapCategory.TransactionInsights} />,
     );
 
-    expect(queryByText('Transaction Insights')).toBeInTheDocument();
+    expect(queryByText('Security')).toBeInTheDocument();
   });
 });

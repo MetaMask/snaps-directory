@@ -62,13 +62,18 @@ export const NotificationsIcon = wrapIcon(
   defineMessage`Notifications`,
 );
 
+export const NotificationsCategoryIcon = wrapIcon(
+  BaseNotificationsIcon,
+  defineMessage`Communication`,
+);
+
 export const SearchIcon = wrapIcon(BaseSearchIcon, defineMessage`Search`);
 
 export const SnapIcon = wrapIcon(BaseSnapIcon, defineMessage`Snap`);
 
 export const TransactionInsightsIcon = wrapIcon(
   BaseTransactionInsightsIcon,
-  defineMessage`Transaction insights`,
+  defineMessage`Security`,
 );
 
 export type { IconProps } from './Icon';

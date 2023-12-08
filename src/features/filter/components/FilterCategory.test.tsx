@@ -20,8 +20,8 @@ describe('FilterCategory', () => {
       </Menu>,
     );
 
-    expect(queryByText('Transaction Insights')).toBeInTheDocument();
-    expect(queryByLabelText('Transaction insights')).toBeInTheDocument();
+    expect(queryByText('Security')).toBeInTheDocument();
+    expect(queryByLabelText('Security')).toBeInTheDocument();
   });
 
   it('toggles the category when clicked', () => {
@@ -40,7 +40,7 @@ describe('FilterCategory', () => {
       getCategory(RegistrySnapCategory.TransactionInsights)(store.getState()),
     ).toBe(true);
 
-    const button = getByText('Transaction Insights');
+    const button = getByText('Security');
     act(() => button.click());
 
     expect(

@@ -15,7 +15,7 @@ import type { Fields } from '../utils';
 const GROUPS = [
   {
     header: defineMessage`Most Popular`,
-    limit: 6,
+    limit: 3,
     link: '/explore',
     linkText: defineMessage`Explore All Snaps`,
     images: true,
@@ -88,7 +88,7 @@ const IndexPage: FunctionComponent = () => {
               <Heading as="h2" fontSize="2xl">
                 {i18n._(header)}
               </Heading>
-              <Link as={GatsbyLink} to={link} variant="landing">
+              <Link as={GatsbyLink} to={link} variant="landing" flexShrink="0">
                 {i18n._(linkText)}
               </Link>
             </Flex>

@@ -13,16 +13,16 @@ describe('FilterTags', () => {
     store.dispatch(setCategory(RegistrySnapCategory.TransactionInsights));
 
     const { queryByText } = render(<FilterTags />, store);
-    expect(queryByText('Transaction Insights')).toBeInTheDocument();
+    expect(queryByText('Security')).toBeInTheDocument();
     expect(queryByText('Interoperability')).not.toBeInTheDocument();
-    expect(queryByText('Notifications')).not.toBeInTheDocument();
+    expect(queryByText('Communication')).not.toBeInTheDocument();
     expect(queryByText('Installed')).not.toBeInTheDocument();
 
     await act(() =>
       store.dispatch(setCategory(RegistrySnapCategory.Interoperability)),
     );
 
-    expect(queryByText('Transaction Insights')).not.toBeInTheDocument();
+    expect(queryByText('Security')).not.toBeInTheDocument();
     expect(queryByText('Interoperability')).toBeInTheDocument();
 
     await act(() => store.dispatch(toggleInstalled()));

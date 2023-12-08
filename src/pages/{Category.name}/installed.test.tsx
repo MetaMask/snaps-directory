@@ -52,9 +52,7 @@ describe('Category installed page', () => {
       );
 
       expect(
-        queryByText(
-          'Installed Transaction Insights Snaps on the MetaMask Snaps Directory',
-        ),
+        queryByText('Installed Security Snaps on the MetaMask Snaps Directory'),
       ).toBeInTheDocument();
     });
   });
