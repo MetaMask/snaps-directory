@@ -2,14 +2,14 @@ import { defineMessage } from '@lingui/macro';
 
 import {
   InteroperabilityIcon,
-  NotificationsIcon,
+  NotificationsCategoryIcon,
   TransactionInsightsIcon,
 } from '../../components/icons';
 import { RegistrySnapCategory } from '../../constants';
 
 export const SNAP_CATEGORY_ICONS = {
   [RegistrySnapCategory.Interoperability]: InteroperabilityIcon,
-  [RegistrySnapCategory.Notifications]: NotificationsIcon,
+  [RegistrySnapCategory.Notifications]: NotificationsCategoryIcon,
   [RegistrySnapCategory.TransactionInsights]: TransactionInsightsIcon,
 };
 

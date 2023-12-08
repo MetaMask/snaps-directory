@@ -12,7 +12,7 @@ describe('FilterTag', () => {
       <FilterTag category={RegistrySnapCategory.TransactionInsights} />,
     );
 
-    expect(queryByText('Transaction Insights')).toBeInTheDocument();
+    expect(queryByText('Security')).toBeInTheDocument();
   });
 
   it('toggles the category when clicked', () => {

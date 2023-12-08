@@ -43,9 +43,7 @@ describe('Category page', () => {
       );
 
       expect(
-        queryByText(
-          'Transaction Insights Snaps on the MetaMask Snaps Directory',
-        ),
+        queryByText('Security Snaps on the MetaMask Snaps Directory'),
       ).toBeInTheDocument();
     });
   });

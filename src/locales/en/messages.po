@@ -83,6 +83,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
+#: src/components/icons/index.ts
 #: src/constants.ts
 msgid "Communication"
 msgstr ""
@@ -320,6 +321,7 @@ msgstr ""
 msgid "Search Snaps"
 msgstr ""
 
+#: src/components/icons/index.ts
 #: src/constants.ts
 msgid "Security"
 msgstr ""
@@ -382,10 +384,6 @@ msgstr ""
 
 #: src/components/ColorModeToggle.tsx
 msgid "Toggle color mode"
-msgstr ""
-
-#: src/components/icons/index.ts
-msgid "Transaction insights"
 msgstr ""
 
 #: src/components/icons/index.ts
