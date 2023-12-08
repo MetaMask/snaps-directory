@@ -129,11 +129,13 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             order={{ base: 8, md: 2 }}
             label={t`Identifier`}
             value={
-              <Tag variant="muted" textTransform="none">
-                <ExternalLink href={website} color="inherit">
-                  {snapId.replace(/^npm:/u, '')}
-                </ExternalLink>
-              </Tag>
+              <Box>
+                <Tag variant="muted" textTransform="none">
+                  <ExternalLink href={website} color="inherit">
+                    {snapId.replace(/^npm:/u, '')}
+                  </ExternalLink>
+                </Tag>
+              </Box>
             }
           />
           {data.snap.author && (

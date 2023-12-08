@@ -12,7 +12,7 @@ export const SnapAuthorship: FunctionComponent<
   const isInstalled = Boolean(installedSnaps?.[snapId]);
 
   return (
-    <Flex alignItems="center">
+    <Flex alignItems="center" overflow="hidden">
       <SnapAvatar
         snapName={name}
         icon={icon}
@@ -21,7 +21,7 @@ export const SnapAuthorship: FunctionComponent<
         marginRight="4"
       />
       <Box overflow="hidden">
-        <Heading as="h3" fontSize="5xl" isTruncated>
+        <Heading as="h3" fontSize={['3xl', null, '5xl']} isTruncated>
           {name}
         </Heading>
       </Box>
