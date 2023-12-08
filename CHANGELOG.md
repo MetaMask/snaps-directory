@@ -7,32 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [1.6.0]
-### Uncategorized
-- Refactor Snap metadata ([#249](https://github.com/MetaMask/snaps-directory/pull/249))
-- Fix responsiveness on profile page header ([#248](https://github.com/MetaMask/snaps-directory/pull/248))
-- Add sorting tag and tweak copy ([#246](https://github.com/MetaMask/snaps-directory/pull/246))
-- Update Snap details page header and CTA ([#242](https://github.com/MetaMask/snaps-directory/pull/242))
-- Bump @metamask/snaps-sdk from 1.2.0 to 1.3.0 ([#233](https://github.com/MetaMask/snaps-directory/pull/233))
-- Bump @metamask/snaps-registry from 2.1.1 to 3.0.0 ([#244](https://github.com/MetaMask/snaps-directory/pull/244))
-- Stop requiring staging builds to allow merging ([#245](https://github.com/MetaMask/snaps-directory/pull/245))
-- Add fallback images to Snap cards ([#239](https://github.com/MetaMask/snaps-directory/pull/239))
-- Fix grid alignment ([#241](https://github.com/MetaMask/snaps-directory/pull/241))
-- Update home page banner ([#238](https://github.com/MetaMask/snaps-directory/pull/238))
-- Standardise colours and other theme values ([#230](https://github.com/MetaMask/snaps-directory/pull/230))
-- Only show Snap icon if the Snap is installed ([#237](https://github.com/MetaMask/snaps-directory/pull/237))
-- Update staging comment if there is one ([#232](https://github.com/MetaMask/snaps-directory/pull/232))
-- Fix banners in staging ([#231](https://github.com/MetaMask/snaps-directory/pull/231))
-- Move search bar to header ([#227](https://github.com/MetaMask/snaps-directory/pull/227))
-- Show uncategorized snaps in staging ([#229](https://github.com/MetaMask/snaps-directory/pull/229))
-- Support localized manifests ([#228](https://github.com/MetaMask/snaps-directory/pull/228))
-- Remove snap avatar scaling ([#226](https://github.com/MetaMask/snaps-directory/pull/226))
-- Update registry URL ([#225](https://github.com/MetaMask/snaps-directory/pull/225))
-- Bump @adobe/css-tools from 4.3.1 to 4.3.2 ([#224](https://github.com/MetaMask/snaps-directory/pull/224))
-- Publish staging site to separate repo ([#222](https://github.com/MetaMask/snaps-directory/pull/222))
-- Add new background color for Snap Avatar ([#223](https://github.com/MetaMask/snaps-directory/pull/223))
-- Landing Page ([#219](https://github.com/MetaMask/snaps-directory/pull/219))
-- Bump @metamask/snaps-registry from 2.1.0 to 2.1.1 ([#220](https://github.com/MetaMask/snaps-directory/pull/220))
-- Bump @metamask/providers from 14.0.1 to 14.0.2 ([#218](https://github.com/MetaMask/snaps-directory/pull/218))
+### Changed
+- Redesign the directory experience ([#219](https://github.com/MetaMask/snaps-directory/pull/219), [#223](https://github.com/MetaMask/snaps-directory/pull/223), [#226](https://github.com/MetaMask/snaps-directory/pull/226), [#237](https://github.com/MetaMask/snaps-directory/pull/237), [#238](https://github.com/MetaMask/snaps-directory/pull/238), [#241](https://github.com/MetaMask/snaps-directory/pull/241), [#239](https://github.com/MetaMask/snaps-directory/pull/239), [#242](https://github.com/MetaMask/snaps-directory/pull/242), [#246](https://github.com/MetaMask/snaps-directory/pull/246), [#248](https://github.com/MetaMask/snaps-directory/pull/248), [#249](https://github.com/MetaMask/snaps-directory/pull/249), [#227](https://github.com/MetaMask/snaps-directory/pull/227), [#230](https://github.com/MetaMask/snaps-directory/pull/230))
+  - Add a landing page
+  - Improve look and feel of profile pages
+  - Add a search bar
+  - Add related Snaps to profile pages
+  - Add sorting by latest
+  - Change coloring to match MetaMask DS
 
 ## [1.5.0]
 ### Changed
