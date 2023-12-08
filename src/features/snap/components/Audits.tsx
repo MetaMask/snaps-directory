@@ -2,8 +2,8 @@ import { Link, Text } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 import { Fragment, useMemo } from 'react';
 
-import { ExternalLink } from './ExternalLink';
-import type { Fields } from '../utils';
+import { ExternalLink } from '../../../components';
+import type { Fields } from '../../../utils';
 
 export type SnapAuditsProps = {
   audits: Fields<Queries.SnapAudits, 'auditor' | 'report'>[];
@@ -37,7 +37,7 @@ function getAudits(audits: Fields<Queries.SnapAudits, 'auditor' | 'report'>[]) {
   }, {});
 }
 
-export const SnapAudits: FunctionComponent<SnapAuditsProps> = ({ audits }) => {
+export const Audits: FunctionComponent<SnapAuditsProps> = ({ audits }) => {
   const groupedAudits = useMemo(() => getAudits(audits), [audits]);
 
   return (

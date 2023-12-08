@@ -46,8 +46,8 @@ msgstr ""
 msgid "Alphabetical"
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
-msgid "Audit"
+#: src/features/snap/components/MetadataModal.tsx
+msgid "Audited"
 msgstr ""
 
 #: src/components/InstallUnsupportedMobile.tsx
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/Metadata.tsx
 msgid "Category"
 msgstr ""
 
@@ -92,7 +92,7 @@ msgstr ""
 msgid "Connect to non-Ethereum blockchains with MetaMask."
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/Metadata.tsx
 msgid "Contact"
 msgstr ""
 
@@ -105,7 +105,6 @@ msgid "Continue to <0>{name}</0>'s website to get started with this snap."
 msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Description by <0>{name}</0>"
 msgstr ""
 
@@ -113,7 +112,7 @@ msgstr ""
 msgid "Desktop only"
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/MetadataItems.tsx
 msgid "Developer"
 msgstr ""
 
@@ -162,7 +161,7 @@ msgstr ""
 msgid "External link"
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/Metadata.tsx
 msgid "FAQ"
 msgstr ""
 
@@ -196,7 +195,7 @@ msgstr ""
 msgid "Guard your wallet with transaction insights and safety tools."
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/MetadataItems.tsx
 msgid "Identifier"
 msgstr ""
 
@@ -236,7 +235,7 @@ msgstr ""
 msgid "Interoperability"
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/Metadata.tsx
 msgid "Knowledge Base"
 msgstr ""
 
@@ -305,7 +304,7 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/RelatedSnaps.tsx
 msgid "Related Snaps"
 msgstr ""
 
@@ -337,6 +336,10 @@ msgstr ""
 msgid "See all results"
 msgstr ""
 
+#: src/features/snap/components/Metadata.tsx
+msgid "See Details"
+msgstr ""
+
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "See everything"
 msgstr ""
@@ -353,7 +356,7 @@ msgstr ""
 msgid "Sort"
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/MetadataModal.tsx
 msgid "Source Code"
 msgstr ""
 
@@ -366,7 +369,7 @@ msgid "Stay in the know with notifications and chat directly in MetaMask."
 msgstr ""
 
 #: src/components/FooterLinks.tsx
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/Metadata.tsx
 msgid "Support"
 msgstr ""
 
@@ -408,6 +411,10 @@ msgstr ""
 
 #: src/constants.ts
 msgid "Use MetaMask Beyond Ethereum"
+msgstr ""
+
+#: src/features/snap/components/MetadataModal.tsx
+msgid "Version"
 msgstr ""
 
 #: src/features/notifications/components/Notification.tsx

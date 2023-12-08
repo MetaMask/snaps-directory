@@ -1,11 +1,11 @@
 import { Box, Flex, Heading } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 
-import { SnapAvatar } from './SnapAvatar';
-import { useGetInstalledSnapsQuery } from '../features';
-import type { Fields } from '../utils';
+import { SnapAvatar } from '../../../components';
+import type { Fields } from '../../../utils';
+import { useGetInstalledSnapsQuery } from '../../snaps';
 
-export const SnapAuthorship: FunctionComponent<
+export const Authorship: FunctionComponent<
   Fields<Queries.Snap, 'name' | 'snapId' | 'icon'>
 > = ({ name, snapId, icon }) => {
   const { data: installedSnaps } = useGetInstalledSnapsQuery();
