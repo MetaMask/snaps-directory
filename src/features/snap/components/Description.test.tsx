@@ -1,10 +1,10 @@
-import { SnapDescription } from './SnapDescription';
-import { render } from '../utils/test-utils';
+import { Description } from './Description';
+import { render } from '../../../utils/test-utils';
 
-describe('SnapDescription', () => {
+describe('Description', () => {
   it('renders links in trusted descriptions', () => {
     const { queryByText } = render(
-      <SnapDescription
+      <Description
         description={{
           description: 'This is a link: https://example.com',
           trusted: true,
@@ -18,7 +18,7 @@ describe('SnapDescription', () => {
 
   it('does not render links in untrusted descriptions', () => {
     const { queryByText } = render(
-      <SnapDescription
+      <Description
         description={{
           description: 'This is a link: https://example.com',
           trusted: false,
