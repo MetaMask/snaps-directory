@@ -1,4 +1,11 @@
-import { Box, Container, Divider, Flex, SimpleGrid } from '@chakra-ui/react';
+import {
+  Box,
+  Container,
+  Divider,
+  Flex,
+  Stack,
+  StackDivider,
+} from '@chakra-ui/react';
 import { graphql } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
@@ -93,18 +100,20 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
           </Flex>
         </Flex>
 
-        <Divider marginY="6" />
+        <Divider marginY="8" />
         <Metadata snap={data.snap} />
+        <Divider marginTop="8" marginBottom="12" />
 
-        <SimpleGrid
-          columns={[1, null, null, 2]}
+        <Stack
+          direction={['column', null, null, 'row']}
+          divider={<StackDivider />}
           marginTop="2"
           marginBottom="12"
           spacing="8"
         >
           <Description name={name} description={description} />
           <Permissions snap={data.snap} permissions={permissions} />
-        </SimpleGrid>
+        </Stack>
 
         {category && (
           <>
