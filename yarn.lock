@@ -4979,6 +4979,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@metamask/slip44@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@metamask/slip44@npm:3.1.0"
+  checksum: 63de4b85448990bde7760704d2f646ff33b34b22799b570c0bb1f7f08b1ebea9784495759611979ca4a5872094b093b63c28c6f6d94aa614cbd692576fcb134f
+  languageName: node
+  linkType: hard
+
 "@metamask/snaps-controllers@npm:^3.0.0":
   version: 3.4.1
   resolution: "@metamask/snaps-controllers@npm:3.4.1"
@@ -5043,6 +5050,7 @@ __metadata:
     "@metamask/eslint-config-typescript": ^12.0.0
     "@metamask/logo": ^3.1.1
     "@metamask/providers": ^14.0.0
+    "@metamask/slip44": ^3.1.0
     "@metamask/snaps-controllers": ^3.0.0
     "@metamask/snaps-registry": ^3.0.0
     "@metamask/snaps-sdk": ^1.3.0

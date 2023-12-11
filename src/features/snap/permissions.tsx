@@ -1,5 +1,6 @@
 import type { MessageDescriptor } from '@lingui/core';
 import { defineMessage } from '@lingui/macro';
+import slip44 from '@metamask/slip44';
 import type { InitialPermissions } from '@metamask/snaps-sdk';
 import type { FunctionComponent } from 'react';
 
@@ -59,6 +60,43 @@ type PermissionFunction<Permission extends PermissionsKey> = (
 type PermissionsMap = {
   [Key in PermissionsKey]: PermissionFunction<Key>;
 };
+
+/**
+ * Get the label to use for a network.
+ *
+ * @param networkId - The ID of the network to get the name for.
+ * @param fallback - The fallback name to use if the network is unknown.
+ * @returns The label for the network, or the fallback if the network is
+ * unknown.
+ */
+function getNetworkLabel(networkId: string, fallback: MessageDescriptor) {
+  const name = slip44[networkId as keyof typeof slip44]?.name;
+  if (name) {
+    return defineMessage`Manage ${name} accounts`;
+  }
+
+  return fallback;
+}
+
+/**
+ * Get the label to use for a network.
+ *
+ * @param networkId - The ID of the network to get the name for.
+ * @param fallback - The fallback name to use if the network is unknown.
+ * @returns The label for the network, or the fallback if the network is
+ * unknown.
+ */
+function getPublicKeyNetworkLabel(
+  networkId: string,
+  fallback: MessageDescriptor,
+) {
+  const name = slip44[networkId as keyof typeof slip44]?.name;
+  if (name) {
+    return defineMessage`View your public key for ${name}`;
+  }
+
+  return fallback;
+}
 
 // TODO: Add `eth_accounts` permission.
 // TODO: Add `snap_getLocale` permission.
@@ -160,27 +198,59 @@ export const SNAP_PERMISSIONS: PermissionsMap = {
     icon: MessagesIcon,
     weight: 4,
   }),
-  snap_getBip32Entropy: ({ name }) => ({
-    // TODO: Get network name.
-    label: defineMessage`Manage $1 accounts`,
-    description: defineMessage`Allow ${name} to manage accounts and assets on the requested network. These accounts are derived and backed up using your secret recovery phrase (without revealing it). With the power to derive keys, ${name} can support a variety of blockchain protocols beyond Ethereum (EVMs).`,
-    icon: KeyIcon,
-    weight: 1,
-  }),
-  snap_getBip44Entropy: ({ name }) => ({
-    // TODO: Get network name.
-    label: defineMessage`Manage $1 accounts`,
-    description: defineMessage`Allow ${name} to manage accounts and assets on the requested network. These accounts are derived and backed up using your secret recovery phrase (without revealing it). With the power to derive keys, ${name} can support a variety of blockchain protocols beyond Ethereum (EVMs).`,
-    icon: KeyIcon,
-    weight: 1,
-  }),
-  snap_getBip32PublicKey: ({ name }) => ({
-    // TODO: Get network name.
-    label: defineMessage`View your public key for $1`,
-    description: defineMessage`Allow ${name} to view your public keys (and addresses) for $1. This does not grant any control of accounts or assets.`,
-    icon: SecuritySearchIcon,
-    weight: 2,
-  }),
+  snap_getBip32Entropy: ({ name }, permission) => {
+    return permission.map(({ path, curve }) => {
+      const purpose = path[1];
+      const coinType = path[2] as string;
+      const isBip44 =
+        curve === 'secp256k1' && purpose === `44'` && coinType?.endsWith(`'`);
+
+      const fallback = defineMessage`Manage accounts (Unknown network "m/${purpose}/${coinType}")`;
+      const label = isBip44
+        ? getNetworkLabel(coinType.slice(0, -1), fallback)
+        : fallback;
+
+      return {
+        label,
+        description: defineMessage`Allow ${name} to manage accounts and assets on the requested network. These accounts are derived and backed up using your secret recovery phrase (without revealing it). With the power to derive keys, ${name} can support a variety of blockchain protocols beyond Ethereum (EVMs).`,
+        icon: KeyIcon,
+        weight: 1,
+      };
+    });
+  },
+  snap_getBip44Entropy: ({ name }, permission) => {
+    return permission.map(({ coinType }) => {
+      const fallback = defineMessage`Manage accounts (Unknown network "m/44'/${coinType}'")`;
+      const label = getNetworkLabel(String(coinType), fallback);
+
+      return {
+        label,
+        description: defineMessage`Allow ${name} to manage accounts and assets on the requested network. These accounts are derived and backed up using your secret recovery phrase (without revealing it). With the power to derive keys, ${name} can support a variety of blockchain protocols beyond Ethereum (EVMs).`,
+        icon: KeyIcon,
+        weight: 1,
+      };
+    });
+  },
+  snap_getBip32PublicKey: ({ name }, permission) => {
+    return permission.map(({ path, curve }) => {
+      const purpose = path[1];
+      const coinType = path[2] as string;
+      const isBip44 =
+        curve === 'secp256k1' && purpose === `44'` && coinType?.endsWith(`'`);
+
+      const fallback = defineMessage`View your public key (Unknown network "m/${purpose}/${coinType}")`;
+      const label = isBip44
+        ? getPublicKeyNetworkLabel(coinType.slice(0, -1), fallback)
+        : fallback;
+
+      return {
+        label,
+        description: defineMessage`Allow ${name} to view your public keys (and addresses) for $1. This does not grant any control of accounts or assets.`,
+        icon: SecuritySearchIcon,
+        weight: 2,
+      };
+    });
+  },
   snap_getEntropy: ({ name }) => ({
     label: defineMessage`Derive arbitrary keys unique to ${name}`,
     description: defineMessage`Allow ${name} to derive arbitrary keys unique to ${name}, without exposing them. These keys are separate from your MetaMask account(s) and not related to your private keys or Secret Recovery Phrase. Other snaps cannot access this information.`,

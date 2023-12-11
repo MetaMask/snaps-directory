@@ -40,7 +40,7 @@ export const Fox: FunctionComponent<FoxProps> = ({
       viewer.stopAnimation();
       ref.removeChild(viewer.container);
     };
-  }, [ref]);
+  }, [ref, width, height]);
 
   return (
     <Box
