@@ -438,8 +438,15 @@ msgid "Live"
 msgstr ""
 
 #: src/features/snap/permissions.tsx
+msgid "Manage {name} accounts"
+msgstr ""
+
 #: src/features/snap/permissions.tsx
-msgid "Manage $1 accounts"
+msgid "Manage accounts (Unknown network \"m/{purpose}/{coinType}\")"
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Manage accounts (Unknown network \"m/44'/{coinType}'\")"
 msgstr ""
 
 #: src/components/icons/index.ts
@@ -678,7 +685,11 @@ msgid "View"
 msgstr ""
 
 #: src/features/snap/permissions.tsx
-msgid "View your public key for $1"
+msgid "View your public key (Unknown network \"m/{purpose}/{coinType}\")"
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "View your public key for {name}"
 msgstr ""
 
 #: src/components/FooterLinks.tsx
