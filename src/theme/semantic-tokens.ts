@@ -59,7 +59,7 @@ export const semanticTokens: SemanticTokens = {
         _dark: '#1098FC',
       },
       muted: {
-        default: '#0376C91A',
+        default: '#037DD61A',
         _dark: '#1098FC26',
       },
     },

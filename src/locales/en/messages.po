@@ -29,9 +29,25 @@ msgstr ""
 msgid "About"
 msgstr ""
 
+#: src/features/snap/permissions.tsx
+msgid "Access the internet"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Add"
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Add and control Ethereum accounts"
+msgstr ""
+
 #: src/components/InstallSnapButton.tsx
 #: src/components/InstallUnsupported.tsx
 msgid "Add to MetaMask"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Add user"
 msgstr ""
 
 #: src/features/snaps/components/NoSnaps.tsx
@@ -40,6 +56,91 @@ msgstr ""
 
 #: src/features/filter/Filter.tsx
 msgid "All"
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow {name} to access low-level execution environments via WebAssembly."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow {name} to access the internet. This can be used to both send and receive data with third-party servers."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow {name} to add or remove Ethereum accounts, then transact and sign with these accounts."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow {name} to decode transactions and show insights within the MetaMask UI. This can be used for anti-phishing and security solutions."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow {name} to derive arbitrary keys unique to {name}, without exposing them. These keys are separate from your MetaMask account(s) and not related to your private keys or Secret Recovery Phrase. Other snaps cannot access this information."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow {name} to display MetaMask popups with custom text, input field, and buttons to approve or reject an action. Can be used to create e.g., alerts, confirmations, and opt-in flows for a Snap."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow {name} to display notifications within MetaMask. A short notification text can be triggered by a Snap for actionable or time-sensitive information."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow {name} to fetch and display address and domain lookups in different parts of the MetaMask UI."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+#: src/features/snap/permissions.tsx
+msgid "Allow {name} to manage accounts and assets on the requested network. These accounts are derived and backed up using your secret recovery phrase (without revealing it). With the power to derive keys, {name} can support a variety of blockchain protocols beyond Ethereum (EVMs)."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow {name} to perform actions that run periodically at fixed times, dates, or intervals. This can be used to trigger time-sensitive interactions or notifications."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow {name} to see the origin (URI) of websites that suggest transactions. This can be used for anti-phishing and security solutions."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow {name} to store, update, and retrieve data securely with encryption. Other Snaps cannot access this information."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow {name} to view your public keys (and addresses) for $1. This does not grant any control of accounts or assets."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow {origin} to communicate with {name}"
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow {origin} to send messages to {name} and receive a response from {name}."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow other Snaps to communicate directly with {name}"
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow other Snaps to send messages to {name} and receive a response from {name}."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow requests for adding and controlling Ethereum accounts"
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow the Snap to interact with {snapId}."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow websites to communicate with {name}"
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow websites to send messages to website and receive a response from {name}."
 msgstr ""
 
 #: src/features/filter/constants.tsx
@@ -80,12 +181,20 @@ msgid "Check"
 msgstr ""
 
 #: src/components/icons/index.ts
+msgid "Clock"
+msgstr ""
+
+#: src/components/icons/index.ts
 msgid "Close"
 msgstr ""
 
 #: src/components/icons/index.ts
 #: src/constants.ts
 msgid "Communication"
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Connect to {snapId}"
 msgstr ""
 
 #: src/constants.ts
@@ -106,6 +215,10 @@ msgstr ""
 
 #: src/features/banner/components/create-snap-banner/CreateSnapBanner.tsx
 msgid "Create your own Snap"
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Derive arbitrary keys unique to {name}"
 msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
@@ -137,6 +250,14 @@ msgstr ""
 msgid "Discover Snaps"
 msgstr ""
 
+#: src/features/snap/permissions.tsx
+msgid "Display dialog windows in MetaMask"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Document code"
+msgstr ""
+
 #: src/features/banner/components/create-snap-banner/CreateSnapBanner.tsx
 msgid "Documentation"
 msgstr ""
@@ -155,6 +276,14 @@ msgstr ""
 
 #: src/components/icons/index.ts
 msgid "Enable light mode"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Ethereum"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Explore"
 msgstr ""
 
 #: src/pages/index.tsx
@@ -185,9 +314,17 @@ msgstr ""
 msgid "Feedback"
 msgstr ""
 
+#: src/features/snap/permissions.tsx
+msgid "Fetch and display transaction insights"
+msgstr ""
+
 #: src/components/icons/index.ts
 #: src/features/filter/Filter.tsx
 msgid "Filter"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Flash"
 msgstr ""
 
 #: src/features/banner/components/faq-banner/FaqBanner.tsx
@@ -196,6 +333,10 @@ msgstr ""
 
 #: src/components/FooterLinks.tsx
 msgid "Get in touch"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Global"
 msgstr ""
 
 #: src/pages/404.tsx
@@ -213,6 +354,14 @@ msgstr ""
 
 #: src/constants.ts
 msgid "Guard your wallet with transaction insights and safety tools."
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Hierarchy"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Home"
 msgstr ""
 
 #: src/features/snap/components/MetadataItems.tsx
@@ -255,6 +404,10 @@ msgstr ""
 msgid "Interoperability"
 msgstr ""
 
+#: src/components/icons/index.ts
+msgid "Key"
+msgstr ""
+
 #: src/features/snap/components/Metadata.tsx
 msgid "Knowledge Base"
 msgstr ""
@@ -272,8 +425,25 @@ msgstr ""
 msgid "Latest Snaps on the MetaMask Snaps Directory"
 msgstr ""
 
+#: src/features/snap/permissions.tsx
+msgid "Let {name} receive requests to add or remove accounts, plus sign and transact on behalf of these accounts."
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Link"
+msgstr ""
+
 #: src/components/icons/index.ts
 msgid "Live"
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+#: src/features/snap/permissions.tsx
+msgid "Manage $1 accounts"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Messages"
 msgstr ""
 
 #: src/components/icons/index.ts
@@ -294,6 +464,10 @@ msgstr ""
 
 #: src/features/notifications/components/NoNotifications.tsx
 msgid "No updates"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Notification"
 msgstr ""
 
 #: src/components/icons/index.ts
@@ -321,6 +495,10 @@ msgstr ""
 msgid "Open notifications menu"
 msgstr ""
 
+#: src/features/snap/components/Permissions.tsx
+msgid "Permissions"
+msgstr ""
+
 #: src/features/filter/constants.tsx
 msgid "Popularity"
 msgstr ""
@@ -329,12 +507,24 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr ""
 
+#: src/features/snap/permissions.tsx
+msgid "Provide domain and address lookups"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Question"
+msgstr ""
+
 #: src/features/snap/components/RelatedSnaps.tsx
 msgid "Related Snaps"
 msgstr ""
 
 #: src/pages/explore.tsx
 msgid "Results for \"{searchQuery}\""
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Schedule and execute periodic actions"
 msgstr ""
 
 #: src/components/icons/index.ts
@@ -348,6 +538,14 @@ msgstr ""
 #: src/components/icons/index.ts
 #: src/constants.ts
 msgid "Security"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Security key"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Security search"
 msgstr ""
 
 #: src/constants.ts
@@ -373,6 +571,14 @@ msgstr ""
 msgid "See Latest"
 msgstr ""
 
+#: src/features/snap/permissions.tsx
+msgid "See the origins of websites that suggest transactions"
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Show notifications"
+msgstr ""
+
 #: src/components/icons/index.ts
 msgid "Snap"
 msgstr ""
@@ -385,6 +591,10 @@ msgstr ""
 msgid "Source Code"
 msgstr ""
 
+#: src/components/icons/index.ts
+msgid "Speedometer"
+msgstr ""
+
 #: src/components/Footer.tsx
 msgid "Start exploring blockchain applications in seconds. Trusted by over 30 million users worldwide."
 msgstr ""
@@ -393,14 +603,30 @@ msgstr ""
 msgid "Stay in the know with notifications and chat directly in MetaMask."
 msgstr ""
 
+#: src/features/snap/permissions.tsx
+msgid "Store and manage its data on your device"
+msgstr ""
+
 #: src/components/FooterLinks.tsx
 #: src/features/banner/components/faq-banner/FaqBanner.tsx
 #: src/features/snap/components/Metadata.tsx
 msgid "Support"
 msgstr ""
 
+#: src/features/snap/permissions.tsx
+msgid "Support for WebAssembly"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Tag"
+msgstr ""
+
 #: src/pages/404.tsx
 msgid "The page you're looking for can't be found."
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Timer"
 msgstr ""
 
 #: src/components/InstallUnsupportedDesktop.tsx
@@ -449,6 +675,10 @@ msgstr ""
 
 #: src/features/snaps/components/SnapCard.tsx
 msgid "View"
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "View your public key for $1"
 msgstr ""
 
 #: src/components/FooterLinks.tsx

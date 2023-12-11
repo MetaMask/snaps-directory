@@ -6,5 +6,6 @@ export * from './Identifier';
 export * from './Metadata';
 export * from './MetadataItems';
 export * from './MetadataModal';
+export * from './Permissions';
 export * from './RelatedSnaps';
 export * from './SourceCode';
