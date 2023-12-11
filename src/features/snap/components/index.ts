@@ -2,6 +2,7 @@ export * from './Audits';
 export * from './Authorship';
 export * from './Data';
 export * from './Description';
+export * from './DescriptionText';
 export * from './Identifier';
 export * from './Metadata';
 export * from './MetadataItems';
