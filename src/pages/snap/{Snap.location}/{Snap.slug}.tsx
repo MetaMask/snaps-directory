@@ -1,18 +1,17 @@
-import { Box, Container, Divider, Flex, Heading, Text } from '@chakra-ui/react';
-import { Trans } from '@lingui/macro';
+import { Box, Container, Divider, Flex, SimpleGrid } from '@chakra-ui/react';
 import { graphql } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
 import { InstallSnapButton, SnapWebsiteButton } from '../../../components';
 import { type RegistrySnapCategory } from '../../../constants';
 import {
-  Description,
   useGetInstalledSnapsQuery,
   Authorship,
   RelatedSnaps,
   Metadata,
   NotificationAcknowledger,
   Permissions,
+  Description,
 } from '../../../features';
 import type { Fields } from '../../../utils';
 
@@ -97,35 +96,15 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
         <Divider marginY="6" />
         <Metadata snap={data.snap} />
 
-        <Heading
-          as="h4"
-          color="text.alternative"
-          textTransform="uppercase"
-          fontWeight="medium"
-          fontSize="sm"
-        >
-          <Trans>
-            Description by{' '}
-            <Text
-              as="span"
-              color="text.default"
-              textTransform="uppercase"
-              fontWeight="medium"
-              fontSize="sm"
-            >
-              {name}
-            </Text>
-          </Trans>
-        </Heading>
-
-        <Description
-          description={description}
+        <SimpleGrid
+          columns={[1, null, null, 2]}
           marginTop="2"
           marginBottom="12"
-          whiteSpace="pre-wrap"
-        />
-
-        <Permissions snap={data.snap} permissions={permissions} />
+          spacing="8"
+        >
+          <Description name={name} description={description} />
+          <Permissions snap={data.snap} permissions={permissions} />
+        </SimpleGrid>
 
         {category && (
           <>
