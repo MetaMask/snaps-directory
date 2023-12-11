@@ -1,4 +1,4 @@
-import { Box, Container, Divider, Flex, Text } from '@chakra-ui/react';
+import { Box, Container, Divider, Flex, Heading, Text } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
 import { graphql } from 'gatsby';
 import type { FunctionComponent } from 'react';
@@ -11,8 +11,9 @@ import {
   Authorship,
   RelatedSnaps,
   Metadata,
+  NotificationAcknowledger,
+  Permissions,
 } from '../../../features';
-import { NotificationAcknowledger } from '../../../features/notifications/components';
 import type { Fields } from '../../../utils';
 
 type SnapPageProps = {
@@ -32,6 +33,7 @@ type SnapPageProps = {
       | 'audits'
       | 'banner'
       | 'support'
+      | 'permissions'
     >;
   };
 };
@@ -46,6 +48,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
     description,
     latestVersion,
     category,
+    permissions,
   } = data.snap;
 
   const { data: installedSnaps } = useGetInstalledSnapsQuery();
@@ -94,7 +97,8 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
         <Divider marginY="6" />
         <Metadata snap={data.snap} />
 
-        <Text
+        <Heading
+          as="h4"
           color="text.alternative"
           textTransform="uppercase"
           fontWeight="medium"
@@ -112,12 +116,16 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
               {name}
             </Text>
           </Trans>
-        </Text>
+        </Heading>
+
         <Description
           description={description}
           marginTop="2"
+          marginBottom="12"
           whiteSpace="pre-wrap"
         />
+
+        <Permissions snap={data.snap} permissions={permissions} />
 
         {category && (
           <>
@@ -201,6 +209,7 @@ export const query = graphql`
         faq
         knowledgeBase
       }
+      permissions
     }
 
     site {

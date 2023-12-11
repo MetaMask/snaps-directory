@@ -13,6 +13,7 @@ import deepEqual from 'fast-deep-equal';
 import { rm } from 'fs/promises';
 import type { GatsbyNode, NodeInput } from 'gatsby';
 import { createFileNodeFromBuffer } from 'gatsby-source-filesystem';
+import { GraphQLJSONObject } from 'graphql-type-json';
 import type { RequestInfo, RequestInit } from 'node-fetch';
 import fetch from 'node-fetch';
 import { fetchBuilder, FileSystemCache } from 'node-fetch-cache';
@@ -43,6 +44,7 @@ type SnapNode = NodeInput & {
   slug: string;
   latestVersion: string;
   icon?: string | undefined;
+  permissionsJson: string;
 };
 
 // eslint-disable-next-line no-restricted-globals
@@ -221,6 +223,12 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       icon,
       downloads,
       lastUpdated,
+
+      // We need to stringify the permissions because Gatsby doesn't support
+      // JSON objects in GraphQL out of the box. This field is turned into a
+      // JSON object in the `createResolvers` function. The `permissionsJson`
+      // field should not be used directly.
+      permissionsJson: JSON.stringify(manifest.initialPermissions),
     };
 
     const node: SnapNode = {
@@ -300,6 +308,14 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
   });
 };
 
+/**
+ * Create the schema customization for the Snap and Category nodes. This adds
+ * the `banner` field to the Snap and Category nodes.
+ *
+ * @param args - The Gatsby arguments.
+ * @param args.actions - The Gatsby actions.
+ * @see https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/#creating-type-definitions
+ */
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] =
   ({ actions }) => {
     const { createTypes } = actions;
@@ -317,6 +333,17 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
     `);
   };
 
+/**
+ * Create the banner images for the Snap and Category nodes.
+ *
+ * @param args - The Gatsby arguments.
+ * @param args.node - The node that was created.
+ * @param args.actions - The Gatsby actions.
+ * @param args.createNodeId - A function to create a node ID.
+ * @param args.cache - The Gatsby cache.
+ * @param args.getCache - A function to get the Gatsby cache.
+ * @param args.getNodesByType - A function to get nodes by type.
+ */
 export const onCreateNode: GatsbyNode[`onCreateNode`] = async ({
   node,
   actions,
@@ -403,6 +430,31 @@ export const onCreateNode: GatsbyNode[`onCreateNode`] = async ({
       value: installedBannerNode.id,
     });
   }
+};
+
+/**
+ * Create the resolvers for the Snap node. This adds the `permissions` field to
+ * the Snap node.
+ *
+ * @param args - The Gatsby arguments.
+ * @param args.createResolvers - The Gatsby createResolvers function.
+ */
+export const createResolvers: GatsbyNode['createResolvers'] = ({
+  // eslint-disable-next-line @typescript-eslint/no-shadow
+  createResolvers,
+}) => {
+  createResolvers({
+    Snap: {
+      permissions: {
+        // Using `GraphQLJSONObject` here allows us to query the permissions
+        // object in GraphQL, without having to specify the fields.
+        type: GraphQLJSONObject,
+        resolve: ({ permissionsJson }: SnapNode) => {
+          return JSON.parse(permissionsJson);
+        },
+      },
+    },
+  });
 };
 
 /**
