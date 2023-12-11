@@ -496,7 +496,7 @@ msgid "Open notifications menu"
 msgstr ""
 
 #: src/features/snap/components/Permissions.tsx
-msgid "Permissions"
+msgid "Permissions requested by <0>{0}</0>"
 msgstr ""
 
 #: src/features/filter/constants.tsx
@@ -683,6 +683,10 @@ msgstr ""
 
 #: src/components/FooterLinks.tsx
 msgid "Website"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Wifi"
 msgstr ""
 
 #: src/components/FooterTerms.tsx
