@@ -32,9 +32,19 @@ export const Permissions: FunctionComponent<PermissionsProps> = ({
         textTransform="uppercase"
         fontWeight="medium"
         fontSize="sm"
-        marginBottom="2"
       >
-        <Trans>Permissions</Trans>
+        <Trans>
+          Permissions requested by{' '}
+          <Text
+            as="span"
+            color="text.default"
+            textTransform="uppercase"
+            fontWeight="medium"
+            fontSize="sm"
+          >
+            {snap.name}
+          </Text>
+        </Trans>
       </Heading>
       <UnorderedList
         display="flex"
