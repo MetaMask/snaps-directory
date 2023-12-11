@@ -32,6 +32,7 @@ export const Permissions: FunctionComponent<PermissionsProps> = ({
         textTransform="uppercase"
         fontWeight="medium"
         fontSize="sm"
+        marginBottom="2"
       >
         <Trans>
           Permissions requested by{' '}
