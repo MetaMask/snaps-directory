@@ -1,10 +1,10 @@
-import { Description } from './Description';
+import { DescriptionText } from './DescriptionText';
 import { render } from '../../../utils/test-utils';
 
-describe('Description', () => {
+describe('DescriptionText', () => {
   it('renders links in trusted descriptions', () => {
     const { queryByText } = render(
-      <Description
+      <DescriptionText
         description={{
           description: 'This is a link: https://example.com',
           trusted: true,
@@ -18,7 +18,7 @@ describe('Description', () => {
 
   it('does not render links in untrusted descriptions', () => {
     const { queryByText } = render(
-      <Description
+      <DescriptionText
         description={{
           description: 'This is a link: https://example.com',
           trusted: false,
