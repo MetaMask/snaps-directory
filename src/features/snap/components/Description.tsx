@@ -16,7 +16,7 @@ export const Description: FunctionComponent<DescriptionProps> = ({
   description,
   allowLinks = description.trusted,
 }) => (
-  <Box>
+  <Box flex="50%">
     <Heading
       as="h4"
       color="text.alternative"
