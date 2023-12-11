@@ -38,6 +38,7 @@ import BaseTagIcon from './tag.svg';
 import BaseTimerIcon from './timer.svg';
 import BaseTransactionInsightsIcon from './transaction-insights.svg';
 import BaseUserCircleAddIcon from './user-circle-add.svg';
+import BaseWifiIcon from './wifi.svg';
 
 export const AddSquareIcon = wrapIcon(BaseAddSquareIcon, defineMessage`Add`);
 
@@ -159,5 +160,7 @@ export const UserCircleAddIcon = wrapIcon(
   BaseUserCircleAddIcon,
   defineMessage`Add user`,
 );
+
+export const WifiIcon = wrapIcon(BaseWifiIcon, defineMessage`Wifi`);
 
 export type { IconProps } from './Icon';

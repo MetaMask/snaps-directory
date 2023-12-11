@@ -5,6 +5,7 @@ import type { FunctionComponent } from 'react';
 
 import type { IconProps } from '../../components';
 import {
+  WifiIcon,
   SearchIcon,
   UserCircleAddIcon,
   HierarchyIcon,
@@ -86,8 +87,7 @@ export const SNAP_PERMISSIONS: PermissionsMap = {
   'endowment:network-access': ({ name }) => ({
     label: defineMessage`Access the internet`,
     description: defineMessage`Allow ${name} to access the internet. This can be used to both send and receive data with third-party servers.`,
-    // TODO: Use `wifi` icon.
-    icon: ClockIcon,
+    icon: WifiIcon,
     weight: 3,
   }),
   'endowment:rpc': ({ name }, permission) => {
