@@ -1,6 +1,8 @@
 import { i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
 import type { GatsbyBrowser } from 'gatsby';
+import { createPublicClient, http } from 'viem';
+import { WagmiConfig, createConfig, mainnet } from 'wagmi';
 
 import { Layout, SnapsProvider } from './components';
 import { messages } from './locales/en/messages';
@@ -30,6 +32,14 @@ export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({
   return <Layout>{element}</Layout>;
 };
 
+const config = createConfig({
+  autoConnect: true,
+  publicClient: createPublicClient({
+    chain: mainnet,
+    transport: http(),
+  }),
+});
+
 /**
  * Wrap every page in the specified components. This can be used to wrap the
  * root in provider components. Layout components should be specified in the
@@ -51,8 +61,10 @@ export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
   const store = createStore();
 
   return (
-    <SnapsProvider store={store}>
-      <I18nProvider i18n={i18n}>{element}</I18nProvider>
-    </SnapsProvider>
+    <WagmiConfig config={config}>
+      <SnapsProvider store={store}>
+        <I18nProvider i18n={i18n}>{element}</I18nProvider>
+      </SnapsProvider>
+    </WagmiConfig>
   );
 };

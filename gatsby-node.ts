@@ -127,7 +127,7 @@ async function getRegistry() {
    * @param options - The fetch options.
    * @returns The fetch response.
    */
-  const customFetch = (url: RequestInfo, options?: RequestInit) => {
+  const customFetch = async (url: RequestInfo, options?: RequestInit) => {
     if (url.toString().endsWith('.tgz')) {
       return cachedTarballFetch(url, options);
     }
