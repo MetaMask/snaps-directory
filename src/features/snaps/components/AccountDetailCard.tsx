@@ -13,6 +13,8 @@ import {
 } from '@chakra-ui/react';
 import { useEnsName } from 'wagmi';
 
+import { renderShortAddress } from '../../../utils/address';
+
 type AccountProps = {
   address: string | undefined;
 };
@@ -38,7 +40,7 @@ const AccountDetailCard = (account: AccountProps) => {
           />
           <Box mt={1}>
             <Text fontSize="2xl" fontWeight="bold" mt={4}>
-              {data ?? account.address}
+              {data ?? renderShortAddress(account.address)}
             </Text>
           </Box>
           <Box mt={1}>
