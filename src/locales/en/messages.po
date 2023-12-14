@@ -51,6 +51,10 @@ msgid "Audit"
 msgstr ""
 
 #: src/components/icons/index.ts
+msgid "Auditor"
+msgstr ""
+
+#: src/components/icons/index.ts
 msgid "Back"
 msgstr ""
 
@@ -105,6 +109,7 @@ msgstr ""
 msgid "Desktop only"
 msgstr ""
 
+#: src/components/icons/index.ts
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Developer"
 msgstr ""
@@ -287,6 +292,10 @@ msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Related Snaps"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Reviewer"
 msgstr ""
 
 #: src/components/icons/index.ts
