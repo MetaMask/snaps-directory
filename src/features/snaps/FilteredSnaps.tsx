@@ -12,6 +12,7 @@ export type FilteredSnapsProps = {
   category?: RegistrySnapCategory | undefined;
   limit?: number | undefined;
   excluded?: string[] | undefined;
+  images?: boolean | undefined;
 };
 
 export const FilteredSnaps: FunctionComponent<FilteredSnapsProps> = ({
@@ -19,6 +20,7 @@ export const FilteredSnaps: FunctionComponent<FilteredSnapsProps> = ({
   category,
   limit,
   excluded,
+  images,
 }) => {
   const snaps = useSelector(
     getSnapsByFilter({
@@ -34,9 +36,9 @@ export const FilteredSnaps: FunctionComponent<FilteredSnapsProps> = ({
   }
 
   return (
-    <SimpleGrid columns={[1, null, 2, 3]} spacing={4}>
+    <SimpleGrid columns={[1, null, 2, 3]} spacing={4} marginX="-0.5rem">
       {snaps.map((snap, index) => (
-        <SnapCard key={`${snap.id}-${index}`} {...snap} />
+        <SnapCard key={`${snap.id}-${index}`} image={images} {...snap} />
       ))}
     </SimpleGrid>
   );

@@ -32,16 +32,15 @@ export const Tag = defineMultiStyleConfig({
       container: {
         lineHeight: '1.5',
         textTransform: 'none',
-        paddingX: '3',
-        paddingY: '2',
-        background: 'tag.category',
+        padding: '3',
+        background: 'info.muted',
       },
     }),
 
     muted: definePartsStyle({
       container: {
-        backgroundColor: 'tag.muted',
-        color: 'gray.muted',
+        backgroundColor: 'background.alternative',
+        color: 'text.alternative',
       },
     }),
   },

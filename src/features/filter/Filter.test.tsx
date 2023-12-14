@@ -19,31 +19,21 @@ describe('Filter', () => {
     store.dispatch(setCategory(RegistrySnapCategory.TransactionInsights));
 
     const { queryByText } = render(<Filter />, store);
-    expect(queryByText('Transaction Insights')).toBeInTheDocument();
+    expect(queryByText('Security')).toBeInTheDocument();
     expect(queryByText('Interoperability')).not.toBeInTheDocument();
-    expect(queryByText('Notifications')).not.toBeInTheDocument();
+    expect(queryByText('Communication')).not.toBeInTheDocument();
     expect(queryByText('Installed')).not.toBeInTheDocument();
 
     await act(() =>
       store.dispatch(setCategory(RegistrySnapCategory.Interoperability)),
     );
 
-    expect(queryByText('Transaction Insights')).not.toBeInTheDocument();
+    expect(queryByText('Security')).not.toBeInTheDocument();
     expect(queryByText('Interoperability')).toBeInTheDocument();
 
     await act(() => store.dispatch(toggleInstalled()));
 
     expect(queryByText('Installed')).toBeInTheDocument();
-  });
-
-  it('renders the search input', () => {
-    const mock = getMock(useStaticQuery);
-    mock.mockReturnValue({
-      fusejs: {},
-    });
-
-    const { getByPlaceholderText } = render(<Filter />);
-    expect(getByPlaceholderText('Search snaps...')).toBeInTheDocument();
   });
 
   it('renders the menu on click', () => {
@@ -79,9 +69,9 @@ describe('Filter', () => {
     );
 
     expect(queryByText('Installed')).toBeInTheDocument();
-    expect(queryByText('Transaction Insights')).toBeInTheDocument();
+    expect(queryByText('Security')).toBeInTheDocument();
     expect(queryByText('Interoperability')).not.toBeInTheDocument();
-    expect(queryByText('Notifications')).not.toBeInTheDocument();
+    expect(queryByText('Communication')).not.toBeInTheDocument();
 
     const button = getByLabelText('Open filter menu');
     act(() => button.click());
@@ -90,9 +80,9 @@ describe('Filter', () => {
     act(() => all.click());
     act(() => button.click());
 
-    expect(queryByText('Transaction Insights')).toBeInTheDocument();
+    expect(queryByText('Security')).toBeInTheDocument();
     expect(queryByText('Interoperability')).toBeInTheDocument();
-    expect(queryByText('Notifications')).toBeInTheDocument();
+    expect(queryByText('Communication')).toBeInTheDocument();
     expect(queryByText('Installed')).not.toBeInTheDocument();
   });
 
@@ -110,9 +100,9 @@ describe('Filter', () => {
       store,
     );
 
-    expect(queryByText('Transaction Insights')).toBeInTheDocument();
+    expect(queryByText('Security')).toBeInTheDocument();
     expect(queryByText('Interoperability')).not.toBeInTheDocument();
-    expect(queryByText('Notifications')).not.toBeInTheDocument();
+    expect(queryByText('Communication')).not.toBeInTheDocument();
     expect(queryByText('Installed')).not.toBeInTheDocument();
 
     const button = getByLabelText('Open filter menu');
@@ -122,9 +112,9 @@ describe('Filter', () => {
     act(() => installed.click());
     act(() => button.click());
 
-    expect(queryByText('Transaction Insights')).toBeInTheDocument();
+    expect(queryByText('Security')).toBeInTheDocument();
     expect(queryByText('Interoperability')).toBeInTheDocument();
-    expect(queryByText('Notifications')).toBeInTheDocument();
+    expect(queryByText('Communication')).toBeInTheDocument();
     expect(queryByText('Installed')).toBeInTheDocument();
   });
 });

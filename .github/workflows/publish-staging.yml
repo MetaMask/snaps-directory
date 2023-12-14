@@ -1,0 +1,67 @@
+name: Publish staging site
+
+on:
+  workflow_call:
+    secrets:
+      PUBLISH_STAGING_PAGES_TOKEN:
+        required: true
+
+jobs:
+  publish-pull-request:
+    name: Publish pull request
+    if: github.event_name == 'pull_request'
+    uses: ./.github/workflows/publish-staging-site.yml
+    with:
+      destination_dir: pr/${{ github.event.pull_request.number }}
+    secrets:
+      PUBLISH_STAGING_PAGES_TOKEN: ${{ secrets.PUBLISH_STAGING_PAGES_TOKEN }}
+
+  comment-on-pull-request:
+    name: Comment on pull request with link to site
+    runs-on: ubuntu-latest
+    needs: publish-pull-request
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Comment on pull request
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { data } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const comment = data.find(
+              (comment) =>
+                comment.user.login === 'github-actions[bot]' &&
+                comment.body.includes('successfully pushed to staging website'),
+            );
+
+            if (comment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: comment.id,
+                body: `Commit \`${{ github.event.pull_request.head.sha }}\` successfully pushed to staging website:\n\nhttps://metamask.github.io/snaps-directory-staging/pr/${context.issue.number}/`,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: `Commit \`${{ github.event.pull_request.head.sha }}\` successfully pushed to staging website:\n\nhttps://metamask.github.io/snaps-directory-staging/pr/${context.issue.number}/`,
+              });
+            }
+
+  publish-main-branch:
+    name: Publish main branch
+    if: github.event_name == 'push'
+    uses: ./.github/workflows/publish-staging-site.yml
+    with:
+      destination_dir: main
+    secrets:
+      PUBLISH_STAGING_PAGES_TOKEN: ${{ secrets.PUBLISH_STAGING_PAGES_TOKEN }}

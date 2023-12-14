@@ -16,7 +16,7 @@ export const FilterButton: FunctionComponent<FilterButtonProps> = forwardRef<
     ref={ref}
     data-testid="filter-button"
     {...props}
-    variant="shadow"
+    variant="filter"
     isRound={true}
     aria-label={t`Open filter menu`}
     height="auto"

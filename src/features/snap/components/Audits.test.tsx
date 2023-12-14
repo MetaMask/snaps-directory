@@ -1,10 +1,10 @@
-import { SnapAudits } from './SnapAudits';
-import { render } from '../utils/test-utils';
+import { Audits } from './Audits';
+import { render } from '../../../utils/test-utils';
 
-describe('SnapAudits', () => {
+describe('Audits', () => {
   it('renders the auditor', () => {
     const { queryByText } = render(
-      <SnapAudits
+      <Audits
         audits={[
           {
             auditor: 'foo',
@@ -19,7 +19,7 @@ describe('SnapAudits', () => {
 
   it('renders a single report', () => {
     const { queryByText } = render(
-      <SnapAudits
+      <Audits
         audits={[
           {
             auditor: 'foo',
@@ -34,7 +34,7 @@ describe('SnapAudits', () => {
 
   it('renders multiple reports', () => {
     const { queryByText } = render(
-      <SnapAudits
+      <Audits
         audits={[
           {
             auditor: 'bar',

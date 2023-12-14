@@ -13,6 +13,7 @@ import { Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
 import { Fox } from './Fox';
+import { MetaMaskIcon } from './icons';
 import { InstallUnsupportedDesktopUpdate } from './InstallUnsupportedDesktopUpdate';
 import { SnapStatus, useSupportedVersion } from '../hooks';
 
@@ -37,10 +38,14 @@ export const InstallUnsupportedDesktop: FunctionComponent<
               <InstallUnsupportedDesktopUpdate onClose={onClose} />
             ) : (
               <>
-                <Heading as="h3" fontSize="lg" marginTop="6" marginBottom="4">
+                <Heading as="h3" fontSize="2xl" marginTop="3" marginBottom="4">
                   <Trans>Install MetaMask</Trans>
                 </Heading>
-                <Text variant="muted" marginBottom="4">
+                <Text
+                  color="text.alternative"
+                  marginBottom="4"
+                  textAlign="center"
+                >
                   <Trans>
                     To use MetaMask Snaps, you need the extension in your
                     browser.
@@ -52,7 +57,11 @@ export const InstallUnsupportedDesktop: FunctionComponent<
                   href="https://metamask.io/download"
                   isExternal={true}
                 >
-                  <Button variant="primary" width="100%">
+                  <Button
+                    leftIcon={<MetaMaskIcon width="1.3rem" />}
+                    variant="primary"
+                    width="100%"
+                  >
                     <Trans>Download MetaMask</Trans>
                   </Button>
                 </Link>

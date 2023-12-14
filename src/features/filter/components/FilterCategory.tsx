@@ -3,7 +3,7 @@ import { Trans } from '@lingui/react';
 import type { FunctionComponent } from 'react';
 
 import { FilterItem } from './FilterItem';
-import type { IconProps } from '../../../components/icons/Icon';
+import type { IconProps } from '../../../components';
 import { SNAP_CATEGORY_LABELS } from '../../../constants';
 import type { RegistrySnapCategory } from '../../../constants';
 import { useDispatch, useSelector } from '../../../hooks';

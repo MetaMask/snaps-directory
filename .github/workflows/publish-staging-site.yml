@@ -1,0 +1,44 @@
+name: Publish staging site to GitHub Pages
+
+on:
+  workflow_call:
+    inputs:
+      destination_dir:
+        required: true
+        type: string
+    secrets:
+      PUBLISH_STAGING_PAGES_TOKEN:
+        required: true
+
+jobs:
+  publish-site-to-gh-pages:
+    name: Publish staging site to GitHub Pages
+    environment: staging
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ensure `destination_dir` is not empty
+        if: ${{ inputs.destination_dir == '' }}
+        run: exit 1
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+      - name: Install npm dependencies
+        run: yarn --immutable
+      - name: Run build script
+        run: yarn build
+        env:
+          GATSBY_STAGING: true
+          STAGING_PATH_PREFIX: snaps-directory-staging/${{ inputs.destination_dir }}
+          PREFIX_PATHS: true
+      - name: Deploy to `${{ inputs.destination_dir }}` directory of `gh-pages` branch
+        uses: peaceiris/actions-gh-pages@de7ea6f8efb354206b205ef54722213d99067935
+        with:
+          personal_token: ${{ secrets.PUBLISH_STAGING_PAGES_TOKEN }}
+          external_repository: MetaMask/snaps-directory-staging
+          publish_branch: main
+          publish_dir: ./public
+          destination_dir: ${{ inputs.destination_dir }}

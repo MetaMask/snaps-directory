@@ -4,9 +4,9 @@ import Linkify from 'linkify-react';
 import type { IntermediateRepresentation } from 'linkifyjs';
 import type { FunctionComponent } from 'react';
 
-import { ExternalLink } from './ExternalLink';
-import type { Fields } from '../utils';
-import { getLinkText } from '../utils';
+import { ExternalLink } from '../../../components';
+import type { Fields } from '../../../utils';
+import { getLinkText } from '../../../utils';
 
 export type SnapDescriptionProps = TextProps & {
   description: Fields<Queries.SnapDescription, 'description' | 'trusted'>;
@@ -26,7 +26,7 @@ function render({ attributes, content }: IntermediateRepresentation) {
   return <ExternalLink href={href}>{getLinkText(content)}</ExternalLink>;
 }
 
-export const SnapDescription: FunctionComponent<SnapDescriptionProps> = ({
+export const Description: FunctionComponent<SnapDescriptionProps> = ({
   description,
   allowLinks = description.trusted,
   ...props

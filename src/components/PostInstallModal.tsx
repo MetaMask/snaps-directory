@@ -1,6 +1,7 @@
 import {
   Center,
   Heading,
+  Link,
   Modal,
   ModalBody,
   ModalContent,
@@ -59,16 +60,24 @@ export const PostInstallModal: FunctionComponent<PostInstallModalProps> = ({
                 icon={icon}
                 isInstalled={true}
                 marginBottom="4"
+                size="3.438rem"
               />
-              <Heading as="h3" fontSize="lg" marginBottom="4">
-                <Trans>Installation complete</Trans>
+              <Heading as="h3" fontSize="2xl" marginBottom="4">
+                <Trans>Installed</Trans>
               </Heading>
               {website ? (
                 <>
-                  <Text variant="muted" textAlign="center" marginBottom="4">
+                  <Text
+                    color="text.alternative"
+                    textAlign="center"
+                    marginBottom="4"
+                  >
                     <Trans>
-                      Continue to {name}&apos;s website to get started with this
-                      snap.
+                      Continue to{' '}
+                      <Link href={website} isExternal={true}>
+                        {name}
+                      </Link>
+                      &apos;s website to get started with this snap.
                     </Trans>
                   </Text>
                   <PostInstallSnapWebsiteButton
@@ -77,7 +86,7 @@ export const PostInstallModal: FunctionComponent<PostInstallModalProps> = ({
                   />
                 </>
               ) : (
-                <Text variant="muted" textAlign="center">
+                <Text color="text.alternative" textAlign="center">
                   <Trans>{name} is now ready to use.</Trans>
                 </Text>
               )}

@@ -1,4 +1,4 @@
-import type { BoxProps } from '@chakra-ui/react';
+import type { BoxProps, ResponsiveValue } from '@chakra-ui/react';
 import { Avatar, Box } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 
@@ -8,8 +8,9 @@ export type SnapIconProps = BoxProps & {
   snapName: string;
   isInstalled: boolean;
   icon?: string | undefined;
-  size?: string;
+  size?: ResponsiveValue<string>;
   badgeSize?: string;
+  background?: string;
 };
 
 /**
@@ -22,6 +23,7 @@ export type SnapIconProps = BoxProps & {
  * @param props.isInstalled - Whether the snap is installed or not.
  * @param props.size - The size of the icon.
  * @param props.badgeSize - The size of the badge.
+ * @param props.background - The background color of the icon.
  * @returns The Snap icon component.
  */
 export const SnapAvatar: FunctionComponent<SnapIconProps> = ({
@@ -30,6 +32,7 @@ export const SnapAvatar: FunctionComponent<SnapIconProps> = ({
   isInstalled,
   size = '3rem',
   badgeSize = '1.5rem',
+  background = 'background.alternative',
   ...props
 }) => {
   return (
@@ -38,29 +41,24 @@ export const SnapAvatar: FunctionComponent<SnapIconProps> = ({
         src={icon as string}
         name={snapName.slice(0, 1).toUpperCase()}
         fontSize="md"
-        background="white"
+        background={background}
         color="text.alternative"
         size="md"
         width={size}
         height={size}
         margin="1"
-        sx={{
-          img: {
-            // This solves an issue where the avatar is slightly bigger than the
-            // Snap icon, causing it to render a weird border.
-            transform: 'scale(1.01)',
-          },
-        }}
       />
-      <SnapIcon
-        width={badgeSize}
-        height={badgeSize}
-        position="absolute"
-        bottom="0"
-        right="0"
-        fill={isInstalled ? '#0376C9' : '#6A737D'}
-        data-testid="snap-icon"
-      />
+      {isInstalled && (
+        <SnapIcon
+          width={badgeSize}
+          height={badgeSize}
+          position="absolute"
+          bottom="0"
+          right="0"
+          fill="info.default"
+          data-testid="snap-icon"
+        />
+      )}
     </Box>
   );
 };

@@ -5,7 +5,7 @@ import type { SystemStyleInterpolation } from '@chakra-ui/react';
  */
 export const global: SystemStyleInterpolation = {
   body: {
-    background: 'background.body',
+    background: 'background.default',
     overflowY: 'scroll',
   },
 };

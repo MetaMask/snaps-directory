@@ -1,12 +1,11 @@
 import { Container, Flex, Divider, Heading, Link } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
-import { graphql } from 'gatsby';
+import { graphql, withPrefix } from 'gatsby';
 import type { FunctionComponent } from 'react';
 import { useDispatch } from 'react-redux';
 
 import banner from '../assets/images/seo/home.png';
 import {
-  FilterTags,
   Filter,
   Snaps,
   resetFilters,
@@ -36,11 +35,6 @@ const ExplorePage: FunctionComponent = () => {
       <Flex direction="row" marginBottom={{ base: 4, md: 6 }} gap="2">
         <Filter />
       </Flex>
-      <FilterTags
-        display={['flex', null, 'none']}
-        flexWrap="wrap"
-        marginBottom="6"
-      />
 
       <Divider my="8" />
 
@@ -51,8 +45,12 @@ const ExplorePage: FunctionComponent = () => {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Heading as="h2" fontSize="2xl" fontWeight="600">
-          <Trans>Explore Snaps</Trans>
+        <Heading as="h2" fontSize="2xl">
+          {searchQuery ? (
+            <Trans>Results for &quot;{searchQuery}&quot;</Trans>
+          ) : (
+            <Trans>Explore Snaps</Trans>
+          )}
         </Heading>
         {showResetFilter && (
           <Link onClick={handleResetFilter} variant="landing">
@@ -78,7 +76,7 @@ type HeadProps = {
 };
 
 export const Head: FunctionComponent<HeadProps> = ({ data }) => {
-  const image = `${data.site.siteMetadata.siteUrl}${banner}`;
+  const image = `${data.site.siteMetadata.siteUrl}${withPrefix(banner)}`;
 
   return (
     <>

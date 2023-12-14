@@ -13,7 +13,7 @@ import {
 import { t, Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
-import DesktopImage from '../assets/images/desktop-only.svg';
+import { MetaMaskIcon } from './icons';
 
 export type InstallUnsupportedMobileProps = {
   isOpen: boolean;
@@ -36,32 +36,35 @@ export const InstallUnsupportedMobile: FunctionComponent<
     <Drawer placement="bottom" onClose={onClose} isOpen={isOpen} size="lg">
       <DrawerOverlay />
       <DrawerContent borderTopRadius="3rem">
-        <DrawerBody>
+        <DrawerBody padding="6">
           <Flex
             justifyContent="center"
             alignItems="center"
             flexDirection="column"
-            paddingTop={4}
-            paddingBottom={6}
           >
             <Box maxWidth="18.75rem">
-              <DesktopImage
+              <MetaMaskIcon
                 role="img"
                 aria-label={t`Desktop only`}
                 width="100%"
+                maxWidth="9.5rem"
               />
             </Box>
-            <Heading as="h3" fontSize="2xl" marginTop={4}>
-              <Trans>Desktop only</Trans>
+            <Heading as="h3" fontSize="xl" marginTop={4}>
+              <Trans>Available on desktop</Trans>
             </Heading>
-            <Text variant="muted" textAlign="center" marginTop={4}>
+            <Text color="text.alternative" textAlign="center" marginTop={4}>
               <Trans>
                 MetaMask Snaps is in open beta and only supported via our
                 extension clients on desktop such as{' '}
+                <Link href="https://brave.com/" isExternal={true}>
+                  Brave
+                </Link>
+                ,{' '}
                 <Link href="https://www.google.com/chrome/" isExternal={true}>
                   Chrome
-                </Link>{' '}
-                or{' '}
+                </Link>
+                , or{' '}
                 <Link
                   href="https://www.mozilla.org/firefox/new/"
                   isExternal={true}

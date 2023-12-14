@@ -378,6 +378,56 @@ describe('filterSlice', () => {
       ]);
     });
 
+    it('returns uncategorized snaps in a staging environment', () => {
+      // eslint-disable-next-line n/no-process-env
+      process.env.GATSBY_STAGING = 'true';
+
+      const { snap: fooSnap } = getMockSnap({ snapId: 'foo-snap' });
+      const { snap: barSnap } = getMockSnap({ snapId: 'bar-snap' });
+      const { snap: bazSnap } = getMockSnap({
+        snapId: 'baz-snap',
+        category: undefined,
+      });
+
+      const state = getMockState({
+        filter: {
+          searchQuery: '',
+          searchResults: [],
+          installed: false,
+          categories: [
+            RegistrySnapCategory.Interoperability,
+            RegistrySnapCategory.Notifications,
+            RegistrySnapCategory.TransactionInsights,
+          ],
+          order: Order.Popularity,
+        },
+        snaps: {
+          snaps: [fooSnap, barSnap, bazSnap],
+        },
+        snapsApi: {
+          queries: {
+            'getInstalledSnaps(undefined)': getMockQueryResponse({
+              [fooSnap.snapId]: {
+                version: fooSnap.latestVersion,
+              },
+              [barSnap.snapId]: {
+                version: barSnap.latestVersion,
+              },
+              [bazSnap.snapId]: {
+                version: bazSnap.latestVersion,
+              },
+            }),
+          },
+        },
+      });
+
+      expect(getFilteredSnaps(state)).toStrictEqual([
+        fooSnap,
+        barSnap,
+        bazSnap,
+      ]);
+    });
+
     it('returns the Snaps based on the search results', () => {
       const { snap: fooSnap } = getMockSnap({ snapId: 'foo-snap' });
       const { snap: barSnap } = getMockSnap({ snapId: 'bar-snap' });
@@ -386,14 +436,7 @@ describe('filterSlice', () => {
       const state = getMockState({
         filter: {
           searchQuery: 'foo',
-          searchResults: [
-            {
-              item: fooSnap,
-            },
-            {
-              item: barSnap,
-            },
-          ],
+          searchResults: [fooSnap, barSnap],
           installed: false,
           categories: [
             RegistrySnapCategory.Interoperability,

@@ -32,7 +32,7 @@ export const Notification: FunctionComponent<NotificationProps> = ({
           />
           <Stack direction="row" justifyContent="space-between" flexGrow="1">
             <Box>
-              <Heading as="h3" fontSize="sm" fontWeight="500" lineHeight="150%">
+              <Heading as="h3" fontSize="sm" lineHeight="150%">
                 {snap.name}
               </Heading>
               <Text lineHeight="150%" fontSize="sm">

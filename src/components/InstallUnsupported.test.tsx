@@ -34,12 +34,12 @@ describe('InstallUnsupported', () => {
       render(<InstallUnsupported />),
     );
 
-    expect(queryByText('Desktop only')).not.toBeInTheDocument();
+    expect(queryByText('Available on desktop')).not.toBeInTheDocument();
 
     act(() => {
       getByTestId('install-unsupported-button').click();
     });
 
-    expect(queryByText('Desktop only')).toBeInTheDocument();
+    expect(queryByText('Available on desktop')).toBeInTheDocument();
   });
 });

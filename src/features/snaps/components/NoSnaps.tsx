@@ -18,16 +18,15 @@ export const NoSnaps: FunctionComponent = () => {
     <Center
       flexDirection="column"
       paddingY="6rem"
-      background="gray.light"
       borderRadius="3xl"
       data-testid="no-snaps"
     >
       <Center flexDirection="column" gap="4" maxWidth="19.375rem">
         <Fox />
-        <Heading as="h3" fontSize="lg" fontWeight="600" color="gray.muted">
+        <Heading as="h3" fontSize="2xl" color="text.alternative">
           <Trans>No Snaps found</Trans>
         </Heading>
-        <Text color="gray.muted" textAlign="center">
+        <Text fontSize="md" color="text.alternative" textAlign="center">
           <Trans>
             Adjust your search or display all available Snaps by clicking below.
           </Trans>

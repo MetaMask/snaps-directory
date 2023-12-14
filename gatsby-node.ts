@@ -1,10 +1,14 @@
 /* eslint-disable import/no-nodejs-modules */
-import { detectSnapLocation } from '@metamask/snaps-controllers';
+import { detectSnapLocation, getSnapFiles } from '@metamask/snaps-controllers';
 import type {
   SnapsRegistryDatabase,
   VerifiedSnap,
 } from '@metamask/snaps-registry';
-import type { SnapManifest } from '@metamask/snaps-utils';
+import {
+  getLocalizedSnapManifest,
+  getValidatedLocalizationFiles,
+  type SnapManifest,
+} from '@metamask/snaps-utils';
 import deepEqual from 'fast-deep-equal';
 import { rm } from 'fs/promises';
 import type { GatsbyNode, NodeInput } from 'gatsby';
@@ -41,7 +45,9 @@ type SnapNode = NodeInput & {
   icon?: string | undefined;
 };
 
-const REGISTRY_URL = 'https://acl.execution.consensys.io/latest/registry.json';
+// eslint-disable-next-line no-restricted-globals
+const IS_STAGING = process.env.GATSBY_STAGING === 'true';
+const REGISTRY_URL = 'https://acl.execution.metamask.io/latest/registry.json';
 
 /**
  * Normalize the description to ensure it ends with a period. This also replaces
@@ -150,8 +156,8 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
   const { registry, customFetch } = await getRegistry();
 
   const verifiedSnaps = Object.values(registry.verifiedSnaps)
-    .filter((snap) => Boolean(snap.metadata.category))
-    .filter((snap) => snap.metadata.hidden !== true);
+    .filter((snap) => IS_STAGING || Boolean(snap.metadata.category))
+    .filter((snap) => IS_STAGING || snap.metadata.hidden !== true);
 
   for (const snap of verifiedSnaps) {
     const latestVersion = getLatestSnapVersion(snap);
@@ -160,13 +166,29 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       fetch: customFetch as any,
     });
 
-    const { result: manifest } = await location.manifest();
-    const { iconPath } = manifest.source.location.npm;
+    const { result: rawManifest } = await location.manifest();
+    const { iconPath } = rawManifest.source.location.npm;
     const icon = iconPath
       ? `data:image/svg+xml;utf8,${encodeURIComponent(
           (await location.fetch(iconPath)).toString(),
         )}`
       : undefined;
+
+    const localizationFiles = await getSnapFiles(
+      location,
+      rawManifest.source.locales,
+    );
+
+    const validatedLocalizationFiles = getValidatedLocalizationFiles(
+      localizationFiles,
+    ).map((file) => file.result);
+
+    // For now, just use the English translation
+    const manifest = getLocalizedSnapManifest(
+      rawManifest,
+      'en',
+      validatedLocalizationFiles,
+    );
 
     const [snapLocation, slug] = snap.id.split(':') as [string, string];
     const summary = normalizeDescription(

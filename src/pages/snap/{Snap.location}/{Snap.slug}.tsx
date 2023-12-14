@@ -1,36 +1,19 @@
-import {
-  Box,
-  Container,
-  Divider,
-  Flex,
-  Heading,
-  Link,
-  Text,
-} from '@chakra-ui/react';
-import { t, Trans } from '@lingui/macro';
-import { useLingui } from '@lingui/react';
-import { graphql, Link as GatsbyLink } from 'gatsby';
+import { Box, Container, Divider, Flex, Text } from '@chakra-ui/react';
+import { Trans } from '@lingui/macro';
+import { graphql } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
+import { InstallSnapButton, SnapWebsiteButton } from '../../../components';
+import { type RegistrySnapCategory } from '../../../constants';
 import {
-  SnapAuthorship,
-  SnapData,
-  InstallSnapButton,
-  SnapSourceCode,
-  SnapAudits,
-  SnapCategory,
-  SnapDescription,
-  SnapWebsiteButton,
-} from '../../../components';
-import { ExternalLink } from '../../../components/ExternalLink';
-import {
-  SNAP_CATEGORY_LINKS,
-  type RegistrySnapCategory,
-} from '../../../constants';
-import { FilteredSnaps } from '../../../features';
-import { Order } from '../../../features/filter/constants';
+  Description,
+  useGetInstalledSnapsQuery,
+  Authorship,
+  RelatedSnaps,
+  Metadata,
+} from '../../../features';
 import { NotificationAcknowledger } from '../../../features/notifications/components';
-import { getLinkText, type Fields } from '../../../utils';
+import type { Fields } from '../../../utils';
 
 type SnapPageProps = {
   data: {
@@ -54,8 +37,6 @@ type SnapPageProps = {
 };
 
 const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
-  const i18n = useLingui();
-
   const {
     name,
     snapId,
@@ -67,34 +48,34 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
     category,
   } = data.snap;
 
+  const { data: installedSnaps } = useGetInstalledSnapsQuery();
+  const isInstalled = Boolean(installedSnaps?.[snapId]);
+
   return (
-    <Container
-      maxWidth="container.xl"
-      paddingTop="0"
-      marginTop={{ base: 4, md: 20 }}
-    >
-      <NotificationAcknowledger snapId={snapId} version={latestVersion} />
-      <Box p="6" rounded="3xl" background="background.card">
+    <Box position="relative">
+      <Box
+        pointerEvents="none"
+        position="absolute"
+        top="-50%"
+        width="100%"
+        height="75%"
+        sx={{
+          background: `url("${icon}") no-repeat center center`,
+          backgroundSize: 'cover',
+          filter: 'blur(96px) saturate(1.2)',
+          opacity: '0.25',
+        }}
+      />
+      <Container maxWidth="container.xl" paddingTop="0" marginTop="20">
+        <NotificationAcknowledger snapId={snapId} version={latestVersion} />
         <Flex
+          flexDirection={['column', null, 'row']}
           justifyContent="space-between"
-          flexDirection={{ base: 'column', md: 'row' }}
           alignItems="center"
+          gap="6"
         >
-          <SnapAuthorship name={name} icon={icon} snapId={snapId} />
-          <Flex
-            alignItems="center"
-            flexDirection={{ base: 'column', md: 'row' }}
-            marginTop={{ base: 4, md: 0 }}
-            width={{ base: '100%', md: 'auto' }}
-            gap={{ base: 4, md: 4 }}
-          >
-            {website && (
-              <SnapWebsiteButton
-                snapId={snapId}
-                website={website}
-                onboard={onboard}
-              />
-            )}
+          <Authorship name={name} icon={icon} snapId={snapId} />
+          <Flex alignItems="center" gap="4" width={['100%', null, 'auto']}>
             {!onboard && (
               <InstallSnapButton
                 snapId={snapId}
@@ -104,150 +85,17 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
                 version={latestVersion}
               />
             )}
+            {(isInstalled || onboard) && website && (
+              <SnapWebsiteButton snapId={snapId} website={website} />
+            )}
           </Flex>
         </Flex>
-        <Divider my="6" />
-        <Flex
-          justifyContent={{ base: 'center', md: 'space-between' }}
-          flexDirection={{ base: 'column', md: 'row' }}
-          flexWrap={{ base: 'nowrap', md: 'wrap', lg: 'nowrap' }}
-          rowGap={{ base: 4, lg: 0 }}
-        >
-          {data.snap.category && (
-            <SnapData
-              order={{ base: 1, md: 1 }}
-              label={t`Category`}
-              value={
-                <SnapCategory
-                  category={data.snap.category as RegistrySnapCategory}
-                />
-              }
-            />
-          )}
-          <SnapData
-            order={{ base: 8, md: 2 }}
-            label={t`Version`}
-            value={latestVersion}
-          />
-          {data.snap.author && (
-            <SnapData
-              order={{ base: 2, md: 3 }}
-              label={t`Developer`}
-              value={
-                <ExternalLink href={data.snap.author.website}>
-                  {data.snap.author.name}
-                </ExternalLink>
-              }
-            />
-          )}
-          {
-            // An empty Box taking full width will divide elements in two rows
-            // only on medium size screens while keeping the full flex
-            // system for every screen.
-          }
-          <Box
-            order={{ base: 1, md: 4 }}
-            display={{ base: 'none', md: 'flex', lg: 'none' }}
-            flexBasis="100%"
-            height={0}
-          />
-          {
-            // On mobile screens description is displayed in the middle
-            // of the Snap's metadata
-          }
-          <Divider
-            my="2"
-            display={{ base: 'flex', md: 'none' }}
-            order={{ base: 4, md: 5 }}
-          />
-          <Text
-            display={{ base: 'block', md: 'none' }}
-            order={{ base: 5, md: 6 }}
-            color="gray.muted"
-            textTransform="uppercase"
-            fontWeight="medium"
-            fontSize="sm"
-          >
-            <Trans>
-              Description by{' '}
-              <Text
-                as="span"
-                color="text.muted"
-                textTransform="uppercase"
-                fontWeight="medium"
-                fontSize="sm"
-              >
-                {name}
-              </Text>
-            </Trans>
-          </Text>
-          <SnapDescription
-            order={{ base: 6, md: 7 }}
-            description={description}
-            mt="1"
-            whiteSpace="pre-wrap"
-            display={{ base: 'block', md: 'none' }}
-          />
-          <Divider
-            my="2"
-            display={{ base: 'flex', md: 'none' }}
-            order={{ base: 7, md: 8 }}
-          />
-          {data.snap.sourceCode && (
-            <SnapData
-              order={{ base: 9, md: 9 }}
-              label={t`Source Code`}
-              value={<SnapSourceCode url={data.snap.sourceCode} />}
-            />
-          )}
-          {data.snap.audits && (
-            <SnapData
-              order={{ base: 10, md: 10 }}
-              label={t`Audit`}
-              value={
-                <SnapAudits
-                  audits={
-                    data.snap.audits as Fields<
-                      Queries.SnapAudits,
-                      'auditor' | 'report'
-                    >[]
-                  }
-                />
-              }
-            />
-          )}
-          {(data.snap.support?.contact ||
-            data.snap.support?.faq ||
-            data.snap.support?.knowledgeBase) && (
-            <SnapData
-              order={{ base: 3, md: 11 }}
-              label={t`Support`}
-              value={
-                <>
-                  {data.snap.support.contact && (
-                    <ExternalLink href={data.snap.support.contact}>
-                      {getLinkText(data.snap.support.contact, t`Contact`)}
-                    </ExternalLink>
-                  )}
-                  {data.snap.support.faq && (
-                    <ExternalLink href={data.snap.support.faq}>
-                      <Trans>FAQ</Trans>
-                    </ExternalLink>
-                  )}
-                  {data.snap.support.knowledgeBase && (
-                    <ExternalLink href={data.snap.support.knowledgeBase}>
-                      <Trans>Knowledge Base</Trans>
-                    </ExternalLink>
-                  )}
-                </>
-              }
-            />
-          )}
-        </Flex>
-        <Divider my="6" display={{ base: 'none', md: 'flex' }} />
+
+        <Divider marginY="6" />
+        <Metadata snap={data.snap} />
+
         <Text
-          display={{ base: 'none', md: 'block' }}
-          color="gray.muted"
+          color="text.alternative"
           textTransform="uppercase"
           fontWeight="medium"
           fontSize="sm"
@@ -256,7 +104,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             Description by{' '}
             <Text
               as="span"
-              color="text.muted"
+              color="text.default"
               textTransform="uppercase"
               fontWeight="medium"
               fontSize="sm"
@@ -265,42 +113,23 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
             </Text>
           </Trans>
         </Text>
-        <SnapDescription
-          display={{ base: 'none', md: 'block' }}
+        <Description
           description={description}
-          mt="1"
+          marginTop="2"
           whiteSpace="pre-wrap"
         />
-      </Box>
 
-      <Divider my="12" />
-      <Flex
-        width="100%"
-        marginBottom="4"
-        flexDirection="row"
-        justifyContent="space-between"
-        alignItems="center"
-      >
-        <Heading as="h2" fontSize="2xl">
-          <Trans>Related Snaps</Trans>
-        </Heading>
-        <Link
-          as={GatsbyLink}
-          to={SNAP_CATEGORY_LINKS[category as RegistrySnapCategory].link}
-          variant="landing"
-        >
-          {i18n._(
-            SNAP_CATEGORY_LINKS[category as RegistrySnapCategory].linkText,
-          )}
-        </Link>
-      </Flex>
-      <FilteredSnaps
-        limit={3}
-        category={category as RegistrySnapCategory}
-        order={Order.Random}
-        excluded={[snapId]}
-      />
-    </Container>
+        {category && (
+          <>
+            <Divider my="12" />
+            <RelatedSnaps
+              snapId={snapId}
+              category={category as RegistrySnapCategory}
+            />
+          </>
+        )}
+      </Container>
+    </Box>
   );
 };
 

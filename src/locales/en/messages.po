@@ -46,12 +46,16 @@ msgstr ""
 msgid "Alphabetical"
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/MetadataModal.tsx
 msgid "Audit"
 msgstr ""
 
 #: src/components/icons/index.ts
 msgid "Auditor"
+msgstr ""
+
+#: src/components/InstallUnsupportedMobile.tsx
+msgid "Available on desktop"
 msgstr ""
 
 #: src/components/icons/index.ts
@@ -70,7 +74,7 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/Metadata.tsx
 msgid "Category"
 msgstr ""
 
@@ -83,11 +87,16 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
+#: src/components/icons/index.ts
+#: src/constants.ts
+msgid "Communication"
+msgstr ""
+
 #: src/constants.ts
 msgid "Connect to non-Ethereum blockchains with MetaMask."
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/Metadata.tsx
 msgid "Contact"
 msgstr ""
 
@@ -96,21 +105,19 @@ msgid "Contact Us"
 msgstr ""
 
 #: src/components/PostInstallModal.tsx
-msgid "Continue to {name}'s website to get started with this snap."
+msgid "Continue to <0>{name}</0>'s website to get started with this snap."
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Description by <0>{name}</0>"
 msgstr ""
 
 #: src/components/InstallUnsupportedMobile.tsx
-#: src/components/InstallUnsupportedMobile.tsx
 msgid "Desktop only"
 msgstr ""
 
 #: src/components/icons/index.ts
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/MetadataItems.tsx
 msgid "Developer"
 msgstr ""
 
@@ -119,7 +126,7 @@ msgid "Developer Docs"
 msgstr ""
 
 #: src/components/BackButton.tsx
-#: src/pages/index.tsx
+#: src/components/Banner.tsx
 msgid "Discover Snaps"
 msgstr ""
 
@@ -143,10 +150,6 @@ msgstr ""
 msgid "Explore All Snaps"
 msgstr ""
 
-#: src/pages/index.tsx
-msgid "Explore community-built Snaps to customize your web3 experience via our official directory. <0>Learn more</0> and <1>FAQ</1>."
-msgstr ""
-
 #: src/pages/explore.tsx
 msgid "Explore Snaps"
 msgstr ""
@@ -155,11 +158,15 @@ msgstr ""
 msgid "Explore the latest community-built Snaps to customize your web3 experience."
 msgstr ""
 
+#: src/components/Banner.tsx
+msgid "Explore, install, and use community-built features in MetaMask. <0>Learn more</0> and <1>FAQ</1>."
+msgstr ""
+
 #: src/components/icons/index.ts
 msgid "External link"
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/Metadata.tsx
 msgid "FAQ"
 msgstr ""
 
@@ -176,10 +183,6 @@ msgstr ""
 msgid "Get in touch"
 msgstr ""
 
-#: src/constants.ts
-msgid "Get Notified Directly In MetaMask"
-msgstr ""
-
 #: src/pages/404.tsx
 msgid "Go home"
 msgstr ""
@@ -189,15 +192,24 @@ msgstr ""
 msgid "Got it"
 msgstr ""
 
+#: src/constants.ts
+msgid "Guard Your Wallet"
+msgstr ""
+
+#: src/constants.ts
+msgid "Guard your wallet with transaction insights and safety tools."
+msgstr ""
+
+#: src/features/snap/components/MetadataItems.tsx
+msgid "Identifier"
+msgstr ""
+
 #: src/components/InstallUnsupportedDesktop.tsx
 msgid "Install MetaMask"
 msgstr ""
 
-#: src/components/PostInstallModal.tsx
-msgid "Installation complete"
-msgstr ""
-
 #: src/components/InstallSnapButton.tsx
+#: src/components/PostInstallModal.tsx
 #: src/features/filter/components/FilterTags.tsx
 #: src/features/filter/Filter.tsx
 msgid "Installed"
@@ -228,7 +240,7 @@ msgstr ""
 msgid "Interoperability"
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/Metadata.tsx
 msgid "Knowledge Base"
 msgstr ""
 
@@ -250,24 +262,31 @@ msgid "MetaMask"
 msgstr ""
 
 #: src/components/InstallUnsupportedMobile.tsx
-msgid "MetaMask Snaps is in open beta and only supported via our extension clients on desktop such as <0>Chrome</0> or <1>Firefox</1>."
+msgid "MetaMask Snaps is in open beta and only supported via our extension clients on desktop such as <0>Brave</0>, <1>Chrome</1>, or <2>Firefox</2>."
 msgstr ""
 
 #: src/pages/index.tsx
 msgid "Most Popular"
 msgstr ""
 
-#: src/features/notifications/components/NoNotifications.tsx
-msgid "No notifications"
-msgstr ""
-
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "No Snaps found"
 msgstr ""
 
+#: src/features/notifications/components/NoNotifications.tsx
+msgid "No updates"
+msgstr ""
+
 #: src/components/icons/index.ts
-#: src/constants.ts
 msgid "Notifications"
+msgstr ""
+
+#: src/constants.ts
+msgid "Notifications and Chat"
+msgstr ""
+
+#: src/components/SnapWebsiteButton.tsx
+msgid "Open"
 msgstr ""
 
 #: src/components/Header.tsx
@@ -290,8 +309,12 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/RelatedSnaps.tsx
 msgid "Related Snaps"
+msgstr ""
+
+#: src/pages/explore.tsx
+msgid "Results for \"{searchQuery}\""
 msgstr ""
 
 #: src/components/icons/index.ts
@@ -302,24 +325,28 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: src/features/filter/components/FilterSearch.tsx
-msgid "Search snaps..."
+#: src/features/filter/components/FilterSearchInput.tsx
+msgid "Search Snaps"
 msgstr ""
 
+#: src/components/icons/index.ts
+#: src/constants.ts
+msgid "Security"
+msgstr ""
+
+#: src/constants.ts
+#: src/constants.ts
+#: src/constants.ts
 #: src/pages/explore.tsx
 msgid "See All"
 msgstr ""
 
-#: src/constants.ts
-msgid "See All Interoperability Snaps"
+#: src/features/filter/components/FilterSearch.tsx
+msgid "See all results"
 msgstr ""
 
-#: src/constants.ts
-msgid "See All Notification Snaps"
-msgstr ""
-
-#: src/constants.ts
-msgid "See All Transaction Insight Snaps"
+#: src/features/snap/components/Metadata.tsx
+msgid "See Details"
 msgstr ""
 
 #: src/features/snaps/components/NoSnaps.tsx
@@ -338,7 +365,7 @@ msgstr ""
 msgid "Sort"
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/MetadataModal.tsx
 msgid "Source Code"
 msgstr ""
 
@@ -347,19 +374,11 @@ msgid "Start exploring blockchain applications in seconds. Trusted by over 30 mi
 msgstr ""
 
 #: src/constants.ts
-msgid "Stay in the know with web3 notifications directly in MetaMask."
-msgstr ""
-
-#: src/constants.ts
-msgid "Stay informed with insights before you confirm transactions in MetaMask."
-msgstr ""
-
-#: src/constants.ts
-msgid "Stay Secure With Insights"
+msgid "Stay in the know with notifications and chat directly in MetaMask."
 msgstr ""
 
 #: src/components/FooterLinks.tsx
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/Metadata.tsx
 msgid "Support"
 msgstr ""
 
@@ -377,14 +396,6 @@ msgstr ""
 
 #: src/components/ColorModeToggle.tsx
 msgid "Toggle color mode"
-msgstr ""
-
-#: src/components/icons/index.ts
-msgid "Transaction insights"
-msgstr ""
-
-#: src/constants.ts
-msgid "Transaction Insights"
 msgstr ""
 
 #: src/components/icons/index.ts
@@ -411,7 +422,7 @@ msgstr ""
 msgid "Use MetaMask Beyond Ethereum"
 msgstr ""
 
-#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+#: src/features/snap/components/MetadataModal.tsx
 msgid "Version"
 msgstr ""
 
@@ -424,7 +435,6 @@ msgid "View"
 msgstr ""
 
 #: src/components/FooterLinks.tsx
-#: src/components/SnapWebsiteButton.tsx
 msgid "Website"
 msgstr ""
 

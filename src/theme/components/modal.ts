@@ -7,15 +7,15 @@ const { definePartsStyle, defineMultiStyleConfig } =
 export const Modal = defineMultiStyleConfig({
   baseStyle: definePartsStyle({
     dialog: {
-      bg: 'chakra-body-bg',
+      backgroundColor: 'background.default',
     },
   }),
 
   variants: {
     minimal: definePartsStyle({
       dialog: {
+        backgroundColor: 'background.default',
         padding: '6',
-        background: 'chakra-body-bg',
         borderRadius: '3xl',
       },
 
