@@ -36,8 +36,6 @@ export const Carousel: FunctionComponent<CarouselProps> = ({
     return () => clearInterval(id);
   }, [current, items.length, interval]);
 
-  console.log(currentItem, items);
-
   return (
     <CarouselContext.Provider value={{ current, items: items.length }}>
       <Box position="relative" height="100%">

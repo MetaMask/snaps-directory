@@ -26,7 +26,13 @@ export const SnapsRow: FunctionComponent<SnapsRowProps> = ({
   snaps,
   delay = 0,
 }) => {
-  const shuffledSnaps = useMemo(() => shuffle(snaps).slice(0, 20), [snaps]);
+  const shuffledSnaps = useMemo(
+    () =>
+      shuffle(snaps)
+        .filter((snap) => snap.icon)
+        .slice(0, 20),
+    [snaps],
+  );
 
   return (
     <Flex direction="row" gap="4">
