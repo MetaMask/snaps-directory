@@ -28,6 +28,7 @@ export const Base: FunctionComponent<BaseProps> = ({
     _hover={{
       opacity: '0.8',
       '& button': {
+        opacity: 1,
         background: 'info.default',
         color: 'white',
         '.chakra-button__icon': {
