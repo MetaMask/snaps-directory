@@ -128,9 +128,17 @@ msgstr ""
 msgid "Developers"
 msgstr ""
 
+#: src/features/banner/components/explore-banner/ExploreBanner.tsx
+msgid "Discover"
+msgstr ""
+
 #: src/components/BackButton.tsx
 #: src/components/Banner.tsx
 msgid "Discover Snaps"
+msgstr ""
+
+#: src/features/banner/components/create-snap-banner/CreateSnapBanner.tsx
+msgid "Documentation"
 msgstr ""
 
 #: src/components/InstallUnsupportedDesktop.tsx
@@ -297,6 +305,7 @@ msgid "Notifications and Chat"
 msgstr ""
 
 #: src/components/SnapWebsiteButton.tsx
+#: src/features/banner/components/faq-banner/FaqBanner.tsx
 msgid "Open"
 msgstr ""
 
@@ -438,9 +447,6 @@ msgstr ""
 msgid "Version {0} update available"
 msgstr ""
 
-#: src/features/banner/components/create-snap-banner/CreateSnapBanner.tsx
-#: src/features/banner/components/explore-banner/ExploreBanner.tsx
-#: src/features/banner/components/faq-banner/FaqBanner.tsx
 #: src/features/snaps/components/SnapCard.tsx
 msgid "View"
 msgstr ""

@@ -2,6 +2,7 @@ import { Button, Heading } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
+import { ExternalLinkIcon } from '../../../../components';
 import { Announcement } from '../Announcement';
 import { Base } from '../Base';
 
@@ -14,15 +15,19 @@ export const FaqBanner: FunctionComponent = () => (
       <Trans>Support</Trans>
     </Announcement>
     <Heading
-      fontSize="5xl"
+      fontSize={['2xl', '3xl', '4xl', '5xl']}
       sx={{
         textWrap: 'balance',
       }}
     >
       <Trans>Frequently Asked Questions</Trans>
     </Heading>
-    <Button variant="small" marginLeft="auto">
-      <Trans>View</Trans>
+    <Button
+      variant="small"
+      marginLeft="auto"
+      rightIcon={<ExternalLinkIcon width="1rem" fill="text.alternative" />}
+    >
+      <Trans>Open</Trans>
     </Button>
   </Base>
 );

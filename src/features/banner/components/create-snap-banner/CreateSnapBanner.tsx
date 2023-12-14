@@ -2,7 +2,7 @@ import { Button, Heading } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
-import { MetaMaskIcon } from '../../../../components';
+import { ExternalLinkIcon, MetaMaskIcon } from '../../../../components';
 import { Announcement } from '../Announcement';
 import { Base } from '../Base';
 
@@ -16,15 +16,20 @@ export const CreateSnapBanner: FunctionComponent = () => (
     </Announcement>
     <Heading
       zIndex="1"
-      fontSize="5xl"
+      fontSize={['2xl', '3xl', '4xl', '5xl']}
       sx={{
         textWrap: 'balance',
       }}
     >
       <Trans>Create your own Snap</Trans>
     </Heading>
-    <Button variant="small" marginLeft="auto" zIndex="1">
-      <Trans>View</Trans>
+    <Button
+      variant="small"
+      marginLeft="auto"
+      zIndex="1"
+      rightIcon={<ExternalLinkIcon width="1rem" fill="text.alternative" />}
+    >
+      <Trans>Documentation</Trans>
     </Button>
     <MetaMaskIcon
       position="absolute"

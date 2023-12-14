@@ -1,11 +1,8 @@
-import { Box, Flex } from '@chakra-ui/react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { Box } from '@chakra-ui/react';
 import type { FunctionComponent, ReactNode } from 'react';
 import { createContext, useEffect, useState, Children } from 'react';
 
 import { Navigation } from './Navigation';
-
-const MotionFlex = motion(Flex);
 
 type CarouselProps = {
   interval?: number;
@@ -39,24 +36,12 @@ export const Carousel: FunctionComponent<CarouselProps> = ({
     return () => clearInterval(id);
   }, [current, items.length, interval]);
 
+  console.log(currentItem, items);
+
   return (
     <CarouselContext.Provider value={{ current, items: items.length }}>
       <Box position="relative" height="100%">
-        {/* Ideally, we'd use `popLayout` as mode, but it's causing random
-            issues with the layout after some time. */}
-        <AnimatePresence initial={false} mode="sync">
-          <MotionFlex
-            key={current}
-            height="100%"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: 0.2 } }}
-            exit={{ opacity: 0 }}
-            position="absolute"
-            width="100%"
-          >
-            {currentItem}
-          </MotionFlex>
-        </AnimatePresence>
+        {currentItem}
         <Navigation
           current={current}
           items={items.length}

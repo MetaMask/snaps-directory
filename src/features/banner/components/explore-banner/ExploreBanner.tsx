@@ -31,7 +31,7 @@ export const ExploreBanner: FunctionComponent<ExploreBannerProps> = ({
       <Trans>Open Beta Live</Trans>
     </Announcement>
     <Heading
-      fontSize="5xl"
+      fontSize={['2xl', '3xl', '4xl', '5xl']}
       zIndex="1"
       sx={{
         textWrap: 'balance',
@@ -40,7 +40,7 @@ export const ExploreBanner: FunctionComponent<ExploreBannerProps> = ({
       Explore, install, and use community-built features in MetaMask
     </Heading>
     <Button variant="small" marginLeft="auto" zIndex="1">
-      <Trans>View</Trans>
+      <Trans>Discover</Trans>
     </Button>
 
     <Box

@@ -30,6 +30,11 @@ export const Base: FunctionComponent<BaseProps> = ({
       '& button': {
         background: 'info.default',
         color: 'white',
+        '.chakra-button__icon': {
+          svg: {
+            fill: 'white',
+          },
+        },
       },
     }}
   >
