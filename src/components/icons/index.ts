@@ -1,10 +1,12 @@
 import { defineMessage } from '@lingui/macro';
 
+import BaseAuditorIcon from './auditor.svg';
 import BaseBackIcon from './back.svg';
 import BaseCheckThinIcon from './check-thin.svg';
 import BaseCheckIcon from './check.svg';
 import BaseCloseIcon from './close.svg';
 import BaseDarkModeIcon from './dark-mode.svg';
+import BaseDeveloperIcon from './developer.svg';
 import BaseDotIcon from './dot.svg';
 import BaseDropdownIcon from './dropdown.svg';
 import BaseExternalLinkIcon from './external-link.svg';
@@ -14,6 +16,7 @@ import BaseInteroperabilityIcon from './interoperability.svg';
 import BaseLightModeIcon from './light-mode.svg';
 import BaseMetaMaskIcon from './metamask.svg';
 import BaseNotificationsIcon from './notifications.svg';
+import BaseReviewerIcon from './reviewer.svg';
 import BaseSearchIcon from './search.svg';
 import BaseSnapIcon from './snap.svg';
 import BaseTransactionInsightsIcon from './transaction-insights.svg';
@@ -69,6 +72,14 @@ export const SnapIcon = wrapIcon(BaseSnapIcon, defineMessage`Snap`);
 export const TransactionInsightsIcon = wrapIcon(
   BaseTransactionInsightsIcon,
   defineMessage`Transaction insights`,
+);
+
+export const AuditorIcon = wrapIcon(BaseAuditorIcon, defineMessage`Auditor`);
+export const ReviewerIcon = wrapIcon(BaseReviewerIcon, defineMessage`Reviewer`);
+
+export const DeveloperIcon = wrapIcon(
+  BaseDeveloperIcon,
+  defineMessage`Developer`,
 );
 
 export type { IconProps } from './Icon';
