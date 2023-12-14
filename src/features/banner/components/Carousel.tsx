@@ -23,7 +23,7 @@ export const CarouselContext = createContext<CarouselContextType>({
 });
 
 export const Carousel: FunctionComponent<CarouselProps> = ({
-  interval = 10000,
+  interval = 15000,
   children,
 }) => {
   const [current, setCurrent] = useState(0);
@@ -42,13 +42,17 @@ export const Carousel: FunctionComponent<CarouselProps> = ({
   return (
     <CarouselContext.Provider value={{ current, items: items.length }}>
       <Box position="relative" height="100%">
-        <AnimatePresence initial={false} mode="popLayout">
+        {/* Ideally, we'd use `popLayout` as mode, but it's causing random
+            issues with the layout after some time. */}
+        <AnimatePresence initial={false} mode="sync">
           <MotionFlex
             key={current}
             height="100%"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 0.2 } }}
             exit={{ opacity: 0 }}
+            position="absolute"
+            width="100%"
           >
             {currentItem}
           </MotionFlex>

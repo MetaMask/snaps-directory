@@ -26,6 +26,11 @@ export const CreateSnapBanner: FunctionComponent = () => (
     <Button variant="small" marginLeft="auto" zIndex="1">
       <Trans>View</Trans>
     </Button>
-    <MetaMaskIcon position="absolute" width="12rem" bottom="-3rem" zIndex="0" />
+    <MetaMaskIcon
+      position="absolute"
+      width="14rem"
+      bottom="-3.75rem"
+      zIndex="0"
+    />
   </Base>
 );
