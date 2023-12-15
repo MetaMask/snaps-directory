@@ -24,9 +24,7 @@ export const Carousel: FunctionComponent<CarouselProps> = ({
   children,
 }) => {
   const [current, setCurrent] = useState(0);
-
   const items = Children.toArray(children);
-  const currentItem = items[current];
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -39,7 +37,21 @@ export const Carousel: FunctionComponent<CarouselProps> = ({
   return (
     <CarouselContext.Provider value={{ current, items: items.length }}>
       <Box position="relative" height="100%">
-        {currentItem}
+        {items.map((item, index) => (
+          <Box
+            key={index}
+            position="absolute"
+            top={0}
+            left={0}
+            right={0}
+            bottom={0}
+            opacity={index === current ? 1 : 0}
+            transition="opacity 0.5s"
+            pointerEvents={index === current ? 'auto' : 'none'}
+          >
+            {item}
+          </Box>
+        ))}
         <Navigation
           current={current}
           items={items.length}

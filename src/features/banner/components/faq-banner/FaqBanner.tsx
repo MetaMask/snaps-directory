@@ -14,12 +14,7 @@ export const FaqBanner: FunctionComponent = () => (
     <Announcement variant="error">
       <Trans>Support</Trans>
     </Announcement>
-    <Heading
-      fontSize={['2xl', '3xl', '4xl', '5xl']}
-      sx={{
-        textWrap: 'balance',
-      }}
-    >
+    <Heading fontSize={['3xl', '4xl', '5xl']}>
       <Trans>Frequently Asked Questions</Trans>
     </Heading>
     <Button
