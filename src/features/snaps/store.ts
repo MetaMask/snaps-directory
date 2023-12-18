@@ -15,6 +15,7 @@ export type Snap = Fields<
   | 'snapId'
   | 'name'
   | 'summary'
+  | 'description'
   | 'icon'
   | 'category'
   | 'gatsbyPath'
