@@ -18,6 +18,7 @@ export const Button = defineStyleConfig({
         bg: '#0376C9',
       },
     }),
+
     primary: defineStyle({
       height: '48px',
       borderRadius: '30px',
@@ -34,6 +35,7 @@ export const Button = defineStyleConfig({
         },
       },
     }),
+
     outline: defineStyle({
       height: '48px',
       borderRadius: '30px',
@@ -46,6 +48,7 @@ export const Button = defineStyleConfig({
       borderColor: 'info.default',
       padding: '4',
     }),
+
     filter: defineStyle({
       background: 'background.alternative',
       _hover: {
@@ -53,6 +56,7 @@ export const Button = defineStyleConfig({
         opacity: 1,
       },
     }),
+
     small: defineStyle({
       fontSize: 'sm',
       fontWeight: '500',
@@ -62,6 +66,19 @@ export const Button = defineStyleConfig({
       borderColor: 'info.default',
       color: 'text.alternative',
       transitionDuration: 'normal',
+      _hover: {
+        '.chakra-button__icon': {
+          svg: {
+            fill: 'white',
+          },
+        },
+      },
+      '.chakra-button__icon': {
+        marginLeft: '1',
+        svg: {
+          transitionDuration: 'normal',
+        },
+      },
     }),
   },
 });

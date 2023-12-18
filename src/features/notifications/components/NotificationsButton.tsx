@@ -34,7 +34,7 @@ export const NotificationsButton: ComponentWithAs<
                 fillOpacity: 1,
               },
               '& > svg > path': {
-                fill: 'icon.muted',
+                fill: 'text.alternative',
               },
             }}
           />

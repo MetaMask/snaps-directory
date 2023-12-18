@@ -22,6 +22,9 @@ export const semanticTokens: SemanticTokens = {
         default: '#535A61',
         _dark: '#D6D9DC',
       },
+      muted: {
+        default: '#24272A1A',
+      },
     },
     background: {
       default: {
@@ -32,6 +35,10 @@ export const semanticTokens: SemanticTokens = {
         default: '#FAFAFA',
         _dark: '#282B2E',
       },
+      'default-hover-muted': {
+        default: '#FAFAFA00',
+        _dark: '#282B2E00',
+      },
       header: {
         // These colours should be the same as `background.default`, but with
         // different opacity values.
@@ -40,6 +47,11 @@ export const semanticTokens: SemanticTokens = {
       },
       alternative: { default: '#F2F4F6', _dark: '#141618' },
       'alternative-hover': { default: '#EDEFF1', _dark: '#191B1D' },
+    },
+    primary: {
+      inverse: {
+        default: '#FCFCFC',
+      },
     },
     info: {
       default: {
@@ -51,6 +63,32 @@ export const semanticTokens: SemanticTokens = {
         _dark: '#1098FC26',
       },
     },
+    success: {
+      default: {
+        default: '#28A745',
+        _dark: '#28A745',
+      },
+      muted: {
+        default: '#28A7451A',
+        _dark: '#28A74515',
+      },
+    },
+    error: {
+      default: {
+        default: '#D73847',
+        _dark: '#D73847',
+      },
+      muted: {
+        default: '#D738471A',
+        _dark: '#D738471A',
+      },
+    },
+    default: {
+      default: {
+        default: '#F2F4F6',
+        _dark: '#F2F4F6',
+      },
+    },
     border: {
       muted: {
         default: '#D6D9DC',
@@ -58,12 +96,21 @@ export const semanticTokens: SemanticTokens = {
       },
     },
     icon: {
+      default: {
+        default: '#24272A',
+        _dark: 'white',
+      },
       alternative: {
         default: '#F2F4F6',
         _dark: '#141618',
       },
+      'alternative-muted': {
+        default: '#6A737D33',
+        _dark: '#14161833',
+      },
       muted: {
-        default: '#6A737D',
+        default: '#BBC0C5',
+        _dark: '#9FA6AE',
       },
     },
   },

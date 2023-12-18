@@ -16,7 +16,7 @@ export const ColorModeToggle: FunctionComponent = () => {
         colorMode === 'light' ? (
           <DarkModeIcon width="2.25rem" />
         ) : (
-          <LightModeIcon width="2.25rem" />
+          <LightModeIcon width="2.25rem" fill="text.alternative" />
         )
       }
       onClick={toggleColorMode}
