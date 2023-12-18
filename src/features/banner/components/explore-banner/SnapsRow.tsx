@@ -35,7 +35,7 @@ export const SnapsRow: FunctionComponent<SnapsRowProps> = ({
   );
 
   return (
-    <Flex direction="row" gap="4">
+    <Flex direction="row" gap="4" data-testid="snaps-row">
       {shuffledSnaps.map((snap, index) => (
         <Image
           key={`${snap.snapId}-${index}`}

@@ -39,7 +39,7 @@ export const Base: FunctionComponent<BaseProps> = ({
       },
     }}
   >
-    <Link to={to} external={external}>
+    <Link to={to} external={external} data-testid="banner-link">
       <Flex
         direction="column"
         height="100%"

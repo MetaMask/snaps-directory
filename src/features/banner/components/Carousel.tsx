@@ -39,6 +39,7 @@ export const Carousel: FunctionComponent<CarouselProps> = ({
       <Box position="relative" height="100%">
         {items.map((item, index) => (
           <Box
+            data-testid={`slide-${index}`}
             key={index}
             position="absolute"
             top={0}

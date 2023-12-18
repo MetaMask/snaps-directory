@@ -29,6 +29,7 @@ export const Navigation: FunctionComponent<NavigationProps> = ({
     >
       {new Array(items).fill(null).map((_, index) => (
         <NavigationButton
+          data-testid={`navigation-${index}`}
           index={index}
           current={current === index}
           onChange={onChange}

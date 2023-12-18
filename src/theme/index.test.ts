@@ -60,6 +60,19 @@ describe('theme', () => {
                 "padding": "4",
               },
               "small": Object {
+                ".chakra-button__icon": Object {
+                  "marginLeft": "1",
+                  "svg": Object {
+                    "transitionDuration": "normal",
+                  },
+                },
+                "_hover": Object {
+                  ".chakra-button__icon": Object {
+                    "svg": Object {
+                      "fill": "white",
+                    },
+                  },
+                },
                 "background": "background.alternative",
                 "borderColor": "info.default",
                 "borderRadius": "36px",
@@ -237,10 +250,43 @@ describe('theme', () => {
                   "fontWeight": "normal",
                 },
               },
+              "default": Object {
+                "container": Object {
+                  "background": "background.alternative",
+                  "borderRadius": "1.25rem",
+                  "color": "text.alternative",
+                  "gap": "2",
+                  "paddingX": "4",
+                  "paddingY": "2",
+                  "textTransform": "none",
+                },
+              },
+              "error": Object {
+                "container": Object {
+                  "background": "error.muted",
+                  "borderRadius": "1.25rem",
+                  "color": "error.default",
+                  "gap": "2",
+                  "paddingX": "4",
+                  "paddingY": "2",
+                  "textTransform": "none",
+                },
+              },
               "muted": Object {
                 "container": Object {
                   "backgroundColor": "background.alternative",
                   "color": "text.alternative",
+                },
+              },
+              "success": Object {
+                "container": Object {
+                  "background": "success.muted",
+                  "borderRadius": "1.25rem",
+                  "color": "success.default",
+                  "gap": "2",
+                  "paddingX": "4",
+                  "paddingY": "2",
+                  "textTransform": "none",
                 },
               },
             },
@@ -291,6 +337,10 @@ describe('theme', () => {
                 "_dark": "#282B2E",
                 "default": "#FAFAFA",
               },
+              "default-hover-muted": Object {
+                "_dark": "#282B2E00",
+                "default": "#FAFAFA00",
+              },
               "header": Object {
                 "_dark": "#24272A80",
                 "default": "#FFFFFFC0",
@@ -302,13 +352,38 @@ describe('theme', () => {
                 "default": "#D6D9DC",
               },
             },
+            "default": Object {
+              "default": Object {
+                "_dark": "#F2F4F6",
+                "default": "#F2F4F6",
+              },
+            },
+            "error": Object {
+              "default": Object {
+                "_dark": "#D73847",
+                "default": "#D73847",
+              },
+              "muted": Object {
+                "_dark": "#D738471A",
+                "default": "#D738471A",
+              },
+            },
             "icon": Object {
               "alternative": Object {
                 "_dark": "#141618",
                 "default": "#F2F4F6",
               },
+              "alternative-muted": Object {
+                "_dark": "#14161833",
+                "default": "#6A737D33",
+              },
+              "default": Object {
+                "_dark": "white",
+                "default": "#24272A",
+              },
               "muted": Object {
-                "default": "#6A737D",
+                "_dark": "#9FA6AE",
+                "default": "#BBC0C5",
               },
             },
             "info": Object {
@@ -321,6 +396,21 @@ describe('theme', () => {
                 "default": "#0376C91A",
               },
             },
+            "primary": Object {
+              "inverse": Object {
+                "default": "#FCFCFC",
+              },
+            },
+            "success": Object {
+              "default": Object {
+                "_dark": "#28A745",
+                "default": "#28A745",
+              },
+              "muted": Object {
+                "_dark": "#28A74515",
+                "default": "#28A7451A",
+              },
+            },
             "text": Object {
               "alternative": Object {
                 "_dark": "#D6D9DC",
@@ -329,6 +419,9 @@ describe('theme', () => {
               "default": Object {
                 "_dark": "#FFFFFF",
                 "default": "#24272A",
+              },
+              "muted": Object {
+                "default": "#24272A1A",
               },
             },
           },

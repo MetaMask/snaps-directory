@@ -11,8 +11,11 @@ describe('Index page', () => {
       fusejs: {},
     });
 
-    const { queryByText } = render(<IndexPage />);
-    expect(queryByText('Discover Snaps')).toBeInTheDocument();
+    const { queryByText } = render(
+      <IndexPage data={{ allSnap: { nodes: [] } }} />,
+    );
+
+    expect(queryByText('Most Popular')).toBeInTheDocument();
   });
 
   describe('Head', () => {

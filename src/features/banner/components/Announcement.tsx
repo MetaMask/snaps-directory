@@ -45,6 +45,7 @@ export const Announcement: FunctionComponent<AnnouncementProps> = ({
     <Tag variant={variant} paddingLeft="3">
       {live && (
         <Box
+          data-testid="live-icon"
           width="0.75rem"
           height="0.75rem"
           background={`${variant}.default`}
