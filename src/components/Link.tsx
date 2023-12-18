@@ -1,7 +1,20 @@
 import { Link as ChakraLink } from '@chakra-ui/react';
-import type { AnchorProps } from '@reach/router';
 import { Link as GatsbyLink } from 'gatsby';
-import type { FunctionComponent, ReactNode } from 'react';
+import type {
+  AnchorHTMLAttributes,
+  DetailedHTMLProps,
+  FunctionComponent,
+  ReactNode,
+} from 'react';
+
+/**
+ * `AnchorProps` from `@reach/router`, copied to avoid needing to install
+ * `@reach/router` as a dependency.
+ */
+type AnchorProps = Omit<
+  DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>,
+  'href'
+>;
 
 export type LinkProps = Omit<AnchorProps, 'ref' | 'onClick' | 'color'> & {
   to: string;
