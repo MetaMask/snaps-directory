@@ -9,6 +9,7 @@ export * from './Header';
 export * from './InstallSnapButton';
 export * from './InstallUnsupportedMobile';
 export * from './Layout';
+export * from './Link';
 export * from './Logo';
 export * from './PostInstallModal';
 export * from './SnapAvatar';

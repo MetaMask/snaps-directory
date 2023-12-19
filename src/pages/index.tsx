@@ -2,12 +2,11 @@ import { Container, Divider, Flex, Heading, Link } from '@chakra-ui/react';
 import { defineMessage } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { graphql, Link as GatsbyLink, withPrefix } from 'gatsby';
-import { useEffect, type FunctionComponent } from 'react';
+import { useEffect, type FunctionComponent, Fragment } from 'react';
 
 import banner from '../assets/images/seo/home.png';
-import { Banner } from '../components';
 import { RegistrySnapCategory, SNAP_CATEGORY_LINKS } from '../constants';
-import { FilteredSnaps, resetFilters } from '../features';
+import { Banner, FilteredSnaps, resetFilters } from '../features';
 import { Order } from '../features/filter/constants';
 import { useDispatch } from '../hooks';
 import type { Fields } from '../utils';
@@ -56,7 +55,15 @@ const GROUPS = [
   },
 ];
 
-const IndexPage: FunctionComponent = () => {
+export type IndexPageProps = {
+  data: {
+    allSnap: {
+      nodes: Fields<Queries.Snap, 'snapId' | 'icon'>[];
+    };
+  };
+};
+
+const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
   const i18n = useLingui();
   const dispatch = useDispatch();
 
@@ -72,12 +79,12 @@ const IndexPage: FunctionComponent = () => {
       display="flex"
       flexDirection="column"
     >
-      <Banner />
+      <Banner snaps={data.allSnap.nodes} />
       <Divider my="8" />
 
       {GROUPS.map(
         ({ header, limit, category, link, linkText, order, images }, index) => (
-          <>
+          <Fragment key={`group-${index}`}>
             <Flex
               width="100%"
               marginBottom="8"
@@ -100,7 +107,7 @@ const IndexPage: FunctionComponent = () => {
             />
 
             {index !== GROUPS.length - 1 && <Divider mt="12" mb="8" />}
-          </>
+          </Fragment>
         ),
       )}
     </Container>
@@ -155,6 +162,13 @@ export const query = graphql`
         description
         author
         siteUrl
+      }
+    }
+
+    allSnap {
+      nodes {
+        snapId
+        icon
       }
     }
   }

@@ -104,6 +104,10 @@ msgstr ""
 msgid "Continue to <0>{name}</0>'s website to get started with this snap."
 msgstr ""
 
+#: src/features/banner/components/create-snap-banner/CreateSnapBanner.tsx
+msgid "Create your own Snap"
+msgstr ""
+
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Description by <0>{name}</0>"
 msgstr ""
@@ -120,9 +124,21 @@ msgstr ""
 msgid "Developer Docs"
 msgstr ""
 
+#: src/features/banner/components/create-snap-banner/CreateSnapBanner.tsx
+msgid "Developers"
+msgstr ""
+
+#: src/features/banner/components/explore-banner/ExploreBanner.tsx
+msgid "Discover"
+msgstr ""
+
 #: src/components/BackButton.tsx
 #: src/components/Banner.tsx
 msgid "Discover Snaps"
+msgstr ""
+
+#: src/features/banner/components/create-snap-banner/CreateSnapBanner.tsx
+msgid "Documentation"
 msgstr ""
 
 #: src/components/InstallUnsupportedDesktop.tsx
@@ -172,6 +188,10 @@ msgstr ""
 #: src/components/icons/index.ts
 #: src/features/filter/Filter.tsx
 msgid "Filter"
+msgstr ""
+
+#: src/features/banner/components/faq-banner/FaqBanner.tsx
+msgid "Frequently Asked Questions"
 msgstr ""
 
 #: src/components/FooterLinks.tsx
@@ -253,6 +273,10 @@ msgid "Latest Snaps on the MetaMask Snaps Directory"
 msgstr ""
 
 #: src/components/icons/index.ts
+msgid "Live"
+msgstr ""
+
+#: src/components/icons/index.ts
 msgid "MetaMask"
 msgstr ""
 
@@ -281,11 +305,12 @@ msgid "Notifications and Chat"
 msgstr ""
 
 #: src/components/SnapWebsiteButton.tsx
+#: src/features/banner/components/faq-banner/FaqBanner.tsx
 msgid "Open"
 msgstr ""
 
-#: src/components/Header.tsx
-msgid "Open Beta"
+#: src/features/banner/components/explore-banner/ExploreBanner.tsx
+msgid "Open Beta Live"
 msgstr ""
 
 #: src/features/filter/components/FilterButton.tsx
@@ -369,6 +394,7 @@ msgid "Stay in the know with notifications and chat directly in MetaMask."
 msgstr ""
 
 #: src/components/FooterLinks.tsx
+#: src/features/banner/components/faq-banner/FaqBanner.tsx
 #: src/features/snap/components/Metadata.tsx
 msgid "Support"
 msgstr ""

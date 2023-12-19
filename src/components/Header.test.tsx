@@ -11,10 +11,10 @@ describe('Header', () => {
       fusejs: {},
     });
 
-    const { queryByText } = await act(
+    const { queryByPlaceholderText } = await act(
       async () => await act(() => render(<Header />)),
     );
 
-    expect(queryByText('Open Beta')).toBeInTheDocument();
+    expect(queryByPlaceholderText('Search Snaps')).toBeInTheDocument();
   });
 });
