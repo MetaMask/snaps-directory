@@ -9,6 +9,7 @@ import {
   getValidatedLocalizationFiles,
   type SnapManifest,
 } from '@metamask/snaps-utils';
+import cryptoBrowserify from 'crypto-browserify';
 import deepEqual from 'fast-deep-equal';
 import { rm } from 'fs/promises';
 import type { GatsbyNode, NodeInput } from 'gatsby';
@@ -133,7 +134,7 @@ async function getRegistry() {
    * @param options - The fetch options.
    * @returns The fetch response.
    */
-  const customFetch = (url: RequestInfo, options?: RequestInit) => {
+  const customFetch = async (url: RequestInfo, options?: RequestInit) => {
     if (url.toString().endsWith('.tgz')) {
       return cachedTarballFetch(url, options);
     }
@@ -433,6 +434,14 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
 
     return rule;
   });
+
+  if (
+    config?.externals &&
+    typeof config.externals[0] === 'object' &&
+    !Array.isArray(config.externals[0])
+  ) {
+    config.externals[0]['node:crypto'] = cryptoBrowserify;
+  }
 
   replaceWebpackConfig({
     ...config,

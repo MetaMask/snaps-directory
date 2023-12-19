@@ -1,7 +1,14 @@
 import { beforeEach } from '@jest/globals';
 import { toMatchImageSnapshot } from 'jest-image-snapshot';
+// eslint-disable-next-line import/no-nodejs-modules
+import { TextEncoder, TextDecoder } from 'util';
 
 expect.extend({ toMatchImageSnapshot });
+
+// eslint-disable-next-line no-restricted-globals
+global.TextEncoder = TextEncoder as unknown as typeof globalThis.TextEncoder;
+// eslint-disable-next-line no-restricted-globals
+global.TextDecoder = TextDecoder as unknown as typeof globalThis.TextDecoder;
 
 beforeEach(() => {
   const originalConsoleError = console.error;

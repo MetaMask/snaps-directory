@@ -1,5 +1,4 @@
 import { Text } from '@chakra-ui/react';
-import { expect } from '@jest/globals';
 import { act } from '@testing-library/react';
 import assert from 'assert';
 import { useStaticQuery } from 'gatsby';
