@@ -74,10 +74,11 @@ export function parseDeclarationFile(path: string) {
     .map((fn) => {
       assert(fn);
 
-      const signature = fn.getSignature();
-      const paramsName = signature.getParameters()?.[0]?.getName();
+      const params = fn.getParameters()?.[0];
+      const paramsName = params?.getName();
       assert(paramsName);
 
+      const signature = fn.getSignature();
       const paramsTags = signature
         .getJsDocTags()
         .filter((tag) => tag.getName() === 'param')
@@ -89,6 +90,18 @@ export function parseDeclarationFile(path: string) {
           name: getTag(tag, 'parameterName'),
           description: getDescription(tag),
         }));
+
+      const paramMembers = params
+        ?.getTypeNode()
+        ?.asKind(SyntaxKind.TypeLiteral)
+        ?.getMembers()
+        .map((member) => {
+          const propertySignature = member.asKind(SyntaxKind.PropertySignature);
+          return {
+            name: propertySignature?.getName(),
+            type: propertySignature?.getType().getText(),
+          };
+        });
 
       const returnTag = signature
         .getJsDocTags()
@@ -106,6 +119,7 @@ export function parseDeclarationFile(path: string) {
           name: paramsName,
           type: fn.getParameters()?.[0]?.getType().getText(),
           descriptions: paramsTags,
+          members: paramMembers,
         },
         response: {
           type: unwrapPromise(fn.getReturnType()),

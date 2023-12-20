@@ -27,7 +27,7 @@ export function installSnap(
  */
 export type SnapInterface = {
   /**
-   * The handler for the `foo` method.
+   * The handler for the `signMessage` method.
    *
    * @param params - The request parameters.
    * @param params.bar - The `bar` parameter.

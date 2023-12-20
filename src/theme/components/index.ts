@@ -6,6 +6,7 @@ import { Link } from './link';
 import { Menu } from './menu';
 import { Modal } from './modal';
 import { Skeleton } from './skeleton';
+import { Tabs } from './tab';
 import { Tag } from './tag';
 import { Text } from './text';
 
@@ -20,4 +21,5 @@ export const components = {
   Skeleton,
   Tag,
   Text,
+  Tabs,
 };
