@@ -15,11 +15,13 @@ import type { GatsbyNode, NodeInput } from 'gatsby';
 import { createFileNodeFromBuffer } from 'gatsby-source-filesystem';
 import type { RequestInfo, RequestInit } from 'node-fetch';
 import fetch from 'node-fetch';
+// @ts-expect-error - TODO: Add types for this package.
 import { fetchBuilder, FileSystemCache } from 'node-fetch-cache';
-import path from 'path';
+import path, { resolve } from 'path';
 
 import type { Fields } from './src/utils';
 import { getLatestSnapVersion } from './src/utils';
+import { parseDeclarationFile } from './src/utils/documentation';
 import {
   generateCategoryImage,
   generateInstalledImage,
@@ -155,6 +157,14 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
   const { createNode } = actions;
   const { registry, customFetch } = await getRegistry();
 
+  // Create a GraphQL node for a declaration file. This is used to generate
+  // documentation.
+  const methods = parseDeclarationFile(
+    // TODO: Fetch the declaration file from the Snap.
+    // eslint-disable-next-line no-restricted-globals
+    resolve(__dirname, 'src/utils/documentation', 'snap.d.ts'),
+  );
+
   const verifiedSnaps = Object.values(registry.verifiedSnaps)
     .filter((snap) => IS_STAGING || Boolean(snap.metadata.category))
     .filter((snap) => IS_STAGING || snap.metadata.hidden !== true);
@@ -221,6 +231,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       icon,
       downloads,
       lastUpdated,
+      methods,
     };
 
     const node: SnapNode = {
