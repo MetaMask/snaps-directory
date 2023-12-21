@@ -8,4 +8,7 @@ export const global: SystemStyleInterpolation = {
     background: 'background.default',
     overflowY: 'scroll',
   },
+  iframe: {
+    display: 'none',
+  },
 };
