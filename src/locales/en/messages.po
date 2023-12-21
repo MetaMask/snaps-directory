@@ -219,6 +219,10 @@ msgstr ""
 msgid "Identifier"
 msgstr ""
 
+#: src/components/icons/index.ts
+msgid "Info"
+msgstr ""
+
 #: src/components/InstallUnsupportedDesktop.tsx
 msgid "Install MetaMask"
 msgstr ""
@@ -371,6 +375,10 @@ msgstr ""
 
 #: src/pages/index.tsx
 msgid "See Latest"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Simulate"
 msgstr ""
 
 #: src/components/icons/index.ts

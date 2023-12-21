@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Flex,
   Link,
   List,
@@ -11,19 +12,42 @@ import {
   Text,
   Th,
   Thead,
+  Tooltip,
   Tr,
 } from '@chakra-ui/react';
 import { useState, type FunctionComponent } from 'react';
 
+import { Simulation } from './Simulation';
+import { SimulationInputs } from './SimulationInputs';
+import { InfoIcon } from '../../../components';
+import type { Fields } from '../../../utils';
+
 export type DocumentationProps = {
-  methods: Queries.SnapMethods[];
+  methods: Fields<
+    Queries.SnapMethods,
+    'name' | 'params' | 'description' | 'response'
+  >[];
 };
 
 export const Documentation: FunctionComponent<DocumentationProps> = ({
   methods,
 }) => {
   const [selectedMethodIndex, setSelectedMethodIndex] = useState(0);
+  const [enableSimulation, setEnableSimulation] = useState(false);
+
   const selectedMethod = methods[selectedMethodIndex];
+  if (!selectedMethod) {
+    return null;
+  }
+
+  const handleNavigate = (index: number) => {
+    setEnableSimulation(false);
+    setSelectedMethodIndex(index);
+  };
+
+  const handleEnableSimulation = () => {
+    setEnableSimulation((previousState) => !previousState);
+  };
 
   return (
     <Flex flexDirection="row" gap="12">
@@ -40,7 +64,8 @@ export const Documentation: FunctionComponent<DocumentationProps> = ({
         <List>
           {methods.map((method, index) => (
             <Box key={method.name} mb="2">
-              <Link onClick={() => setSelectedMethodIndex(index)}>
+              {/* TODO: Don't use arrow function in props. */}
+              <Link onClick={() => handleNavigate(index)}>
                 <Tag
                   variant="documentation"
                   bg={selectedMethodIndex === index ? undefined : 'none'}
@@ -58,7 +83,7 @@ export const Documentation: FunctionComponent<DocumentationProps> = ({
 
       <Box width="1px" background="border.muted"></Box>
 
-      <Flex flexDirection="column" gap="12">
+      <Flex flexDirection="column" gap="12" flex="1">
         <Box>
           <Text
             color="text.muted"
@@ -92,10 +117,7 @@ export const Documentation: FunctionComponent<DocumentationProps> = ({
                         {member?.type}
                       </Tag>
                     </Td>
-                    <Td whiteSpace="normal">
-                      Lorem ipsum super long parameter description that might
-                      even be long enough to break the line a little bit
-                    </Td>
+                    <Td whiteSpace="normal"></Td>
                   </Tr>
                 ))}
               </Tbody>
@@ -112,10 +134,38 @@ export const Documentation: FunctionComponent<DocumentationProps> = ({
           >
             Return Value
           </Text>
-          <Tag variant="documentation" color="info.default">
-            {selectedMethod?.response?.type}
-          </Tag>
+          <Flex flexDirection="row" gap="2">
+            <Tag variant="documentation" color="info.default">
+              {selectedMethod?.response?.type}
+            </Tag>
+            {!enableSimulation && (
+              <Button variant="small" onClick={handleEnableSimulation}>
+                Simulate
+              </Button>
+            )}
+          </Flex>
         </Box>
+        {enableSimulation && (
+          <Box>
+            <Flex alignItems="middle" marginBottom="2" gap="1">
+              <Text
+                color="text.muted"
+                fontWeight="medium"
+                fontSize="sm"
+                textTransform="uppercase"
+              >
+                Simulation
+              </Text>
+              <Tooltip label="Enter values to simulate a return value.">
+                <InfoIcon />
+              </Tooltip>
+            </Flex>
+            <Flex gap="2">
+              <SimulationInputs method={selectedMethod} />
+              <Simulation />
+            </Flex>
+          </Box>
+        )}
       </Flex>
     </Flex>
   );

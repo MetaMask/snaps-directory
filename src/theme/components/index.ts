@@ -2,6 +2,7 @@ import { Button } from './button';
 import { Container } from './container';
 import { Divider } from './divider';
 import { Heading } from './heading';
+import { Input } from './input';
 import { Link } from './link';
 import { Menu } from './menu';
 import { Modal } from './modal';
@@ -16,6 +17,7 @@ export const components = {
   Container,
   Divider,
   Heading,
+  Input,
   Link,
   Menu,
   Modal,

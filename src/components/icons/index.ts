@@ -10,12 +10,14 @@ import BaseDropdownIcon from './dropdown.svg';
 import BaseExternalLinkIcon from './external-link.svg';
 import BaseFilterIcon from './filter.svg';
 import { wrapIcon } from './Icon';
+import BaseInfoIcon from './info.svg';
 import BaseInteroperabilityIcon from './interoperability.svg';
 import BaseLightModeIcon from './light-mode.svg';
 import BaseLiveIcon from './live.svg';
 import BaseMetaMaskIcon from './metamask.svg';
 import BaseNotificationsIcon from './notifications.svg';
 import BaseSearchIcon from './search.svg';
+import BaseSimulateIcon from './simulate.svg';
 import BaseSnapIcon from './snap.svg';
 import BaseTransactionInsightsIcon from './transaction-insights.svg';
 
@@ -46,6 +48,8 @@ export const ExternalLinkIcon = wrapIcon(
 
 export const FilterIcon = wrapIcon(BaseFilterIcon, defineMessage`Filter`);
 
+export const InfoIcon = wrapIcon(BaseInfoIcon, defineMessage`Info`);
+
 export const InteroperabilityIcon = wrapIcon(
   BaseInteroperabilityIcon,
   defineMessage`Interoperability`,
@@ -71,6 +75,8 @@ export const NotificationsCategoryIcon = wrapIcon(
 );
 
 export const SearchIcon = wrapIcon(BaseSearchIcon, defineMessage`Search`);
+
+export const SimulateIcon = wrapIcon(BaseSimulateIcon, defineMessage`Simulate`);
 
 export const SnapIcon = wrapIcon(BaseSnapIcon, defineMessage`Snap`);
 
