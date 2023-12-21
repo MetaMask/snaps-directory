@@ -142,7 +142,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
               />
             </TabPanel>
             <TabPanel>
-              <Documentation methods={methods} />
+              <Documentation snapId={snapId} methods={methods} />
             </TabPanel>
           </TabPanels>
         </Tabs>

@@ -17,6 +17,7 @@ import type { RequestInfo, RequestInit } from 'node-fetch';
 import fetch from 'node-fetch';
 // @ts-expect-error - TODO: Add types for this package.
 import { fetchBuilder, FileSystemCache } from 'node-fetch-cache';
+import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
 import path, { resolve } from 'path';
 
 import type { Fields } from './src/utils';
@@ -471,5 +472,14 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
         },
       ],
     },
+    resolve: {
+      ...config.resolve,
+      fallback: {
+        ...config.resolve.fallback,
+        fs: false,
+        assert: false,
+      },
+    },
+    plugins: [...config.plugins, new NodePolyfillPlugin()],
   });
 };

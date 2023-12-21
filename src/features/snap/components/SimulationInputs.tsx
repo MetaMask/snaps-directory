@@ -1,11 +1,12 @@
 import { Box, Flex, FormControl, FormLabel } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
-import { useState } from 'react';
 
 import { MethodInput } from './MethodInput';
 import type { Fields } from '../../../utils';
 
 export type SimulationProps = {
+  state: Record<string, string | number | boolean>;
+  onChange: (name: string, value: string | number | boolean) => void;
   method: Fields<
     Queries.SnapMethods,
     'name' | 'params' | 'description' | 'response'
@@ -18,19 +19,10 @@ export type SimulationProps = {
 };
 
 export const SimulationInputs: FunctionComponent<SimulationProps> = ({
+  state,
   method,
+  onChange,
 }) => {
-  const [state, setState] = useState<Record<string, string | number | boolean>>(
-    {},
-  );
-
-  const handleChange = (name: string, value: string | number | boolean) => {
-    setState((previousState) => ({
-      ...previousState,
-      [name]: value,
-    }));
-  };
-
   return (
     <Box flex="1">
       {method.params.members.map((member) => {
@@ -64,7 +56,7 @@ export const SimulationInputs: FunctionComponent<SimulationProps> = ({
                     'name' | 'type'
                   >
                 }
-                onChange={handleChange}
+                onChange={onChange}
               />
             </Flex>
           </FormControl>

@@ -18,11 +18,11 @@ import {
 import { useState, type FunctionComponent } from 'react';
 
 import { Simulation } from './Simulation';
-import { SimulationInputs } from './SimulationInputs';
 import { InfoIcon } from '../../../components';
 import type { Fields } from '../../../utils';
 
 export type DocumentationProps = {
+  snapId: string;
   methods: Fields<
     Queries.SnapMethods,
     'name' | 'params' | 'description' | 'response'
@@ -30,6 +30,7 @@ export type DocumentationProps = {
 };
 
 export const Documentation: FunctionComponent<DocumentationProps> = ({
+  snapId,
   methods,
 }) => {
   const [selectedMethodIndex, setSelectedMethodIndex] = useState(0);
@@ -161,10 +162,7 @@ export const Documentation: FunctionComponent<DocumentationProps> = ({
                 <InfoIcon />
               </Tooltip>
             </Flex>
-            <Flex gap="2">
-              <SimulationInputs method={selectedMethod} />
-              <Simulation />
-            </Flex>
+            <Simulation snapId={snapId} method={selectedMethod} />
           </Box>
         )}
       </Flex>
