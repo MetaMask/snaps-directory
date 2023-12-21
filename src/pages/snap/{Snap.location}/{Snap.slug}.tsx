@@ -234,14 +234,11 @@ export const query = graphql`
         description
         params {
           name
-          type
-          descriptions {
-            name
-            description
-          }
           members {
             name
             type
+            description
+            optional
           }
         }
         response {

@@ -106,18 +106,19 @@ export const Documentation: FunctionComponent<DocumentationProps> = ({
                 </Tr>
               </Thead>
               <Tbody>
-                {selectedMethod?.params?.members.map((member) => (
+                {selectedMethod?.params?.members?.map((member) => (
                   <Tr key={member?.name}>
                     <Td>
                       <Tag variant="documentation" mr="1">
                         {member?.name}
+                        {member?.optional && '?'}
                       </Tag>
                       :
                       <Tag variant="documentation" ml="1">
                         {member?.type}
                       </Tag>
                     </Td>
-                    <Td whiteSpace="normal"></Td>
+                    <Td whiteSpace="normal">{member?.description}</Td>
                   </Tr>
                 ))}
               </Tbody>

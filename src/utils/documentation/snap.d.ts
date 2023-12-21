@@ -30,21 +30,29 @@ export type SnapInterface = {
    * The handler for the `signMessage` method.
    *
    * @param params - The request parameters.
-   * @param params.bar - The `bar` parameter.
-   * @returns The response to the JSON-RPC request.
+   * @param params.message - The `message` parameter.
+   * @param params.path - The `path` parameter.
+   * @param params.curve - The `curve` parameter.
+   * @returns The signed message in hexadecimal.
    */
   signMessage(params: {
-    foo: number;
-    bar?: string;
-    baz: boolean;
-  }): Promise<{ bar: string }>;
+    message: string;
+    path: string[];
+    curve?: string | undefined;
+  }): Promise<string>;
 
   /**
-   * The handler for the `bar` method.
+   * The handler for the `getPublicKey` method.
    *
    * @param params - The request parameters.
-   * @param params.bar - The `bar` parameter.
-   * @returns The response to the JSON-RPC request.
+   * @param params.path - The `path` parameter.
+   * @param params.curve - The `curve` parameter.
+   * @param params.compressed - The `compressed` parameter.
+   * @returns The public key in hexadecimal.
    */
-  bar(params: { bar: number }): Promise<{ bar: number }>;
+  getPublicKey(params: {
+    path: string[];
+    curve?: string | undefined;
+    compressed?: boolean | undefined;
+  }): Promise<string>;
 };

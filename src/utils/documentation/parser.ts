@@ -54,7 +54,7 @@ export function unwrapPromise(type: Type) {
  * @returns The methods as an array.
  */
 export function parseDeclarationFile(path: string) {
-  const project = new Project();
+  const project = new Project({ compilerOptions: { strict: true } });
   const file = project.addSourceFileAtPath(path);
 
   const snap = file.getTypeAlias('SnapInterface');
@@ -97,9 +97,22 @@ export function parseDeclarationFile(path: string) {
         ?.getMembers()
         .map((member) => {
           const propertySignature = member.asKind(SyntaxKind.PropertySignature);
+          const name = propertySignature?.getName();
+          const propertyType = propertySignature?.getType();
+          const isUnionWithUndefined =
+            propertyType
+              ?.getUnionTypes()
+              .some((unionType) => unionType.isUndefined()) ?? false;
           return {
-            name: propertySignature?.getName(),
-            type: propertySignature?.getType().getText(),
+            name,
+            // This currently also remove null, we should fix that.
+            type: propertyType?.getNonNullableType().getText(),
+            optional:
+              isUnionWithUndefined ||
+              propertySignature?.getQuestionTokenNode() !== undefined,
+            description: paramsTags.find(
+              (tag) => tag.name === `${paramsName}.${name}`,
+            )?.description,
           };
         });
 
