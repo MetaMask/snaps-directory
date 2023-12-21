@@ -1,4 +1,18 @@
-import { Box, Flex, Link, List, ListItem, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Link,
+  List,
+  Table,
+  TableContainer,
+  Tag,
+  Tbody,
+  Td,
+  Text,
+  Th,
+  Thead,
+  Tr,
+} from '@chakra-ui/react';
 import { useState, type FunctionComponent } from 'react';
 
 export type DocumentationProps = {
@@ -12,36 +26,97 @@ export const Documentation: FunctionComponent<DocumentationProps> = ({
   const selectedMethod = methods[selectedMethodIndex];
 
   return (
-    <Flex flexDirection="row" gap="4">
+    <Flex flexDirection="row" gap="12">
       <Box>
-        <Text>onRpcRequest</Text>
-        <List ml="4">
+        <Text
+          color="text.muted"
+          fontWeight="medium"
+          fontSize="sm"
+          textTransform="uppercase"
+          marginBottom="1"
+        >
+          Method
+        </Text>
+        <List>
           {methods.map((method, index) => (
-            <Link
-              key={method.name}
-              onClick={() => setSelectedMethodIndex(index)}
-            >
-              <ListItem>{method.name}</ListItem>
-            </Link>
+            <Box key={method.name} mb="2">
+              <Link onClick={() => setSelectedMethodIndex(index)}>
+                <Tag
+                  variant="documentation"
+                  bg={selectedMethodIndex === index ? undefined : 'none'}
+                  color={
+                    selectedMethodIndex === index ? undefined : 'icon.muted'
+                  }
+                >
+                  {method.name}
+                </Tag>
+              </Link>
+            </Box>
           ))}
         </List>
       </Box>
 
-      <Box>
-        <Text fontWeight="medium">{selectedMethod?.name}</Text>
-        <Text>{selectedMethod?.description}</Text>
-        <Text fontWeight="medium">Parameters</Text>
+      <Box width="1px" background="border.muted"></Box>
+
+      <Flex flexDirection="column" gap="12">
         <Box>
-          {selectedMethod?.params?.members.map((member) => (
-            <Text key={member?.name}>
-              {member?.name} - {member?.type}
-            </Text>
-          ))}
+          <Text
+            color="text.muted"
+            fontWeight="medium"
+            fontSize="sm"
+            textTransform="uppercase"
+            marginBottom="1"
+          >
+            Method Description
+          </Text>
+          <Text>{selectedMethod?.description}</Text>
         </Box>
-        <Text fontWeight="medium">Returns</Text>
-        <Text>{selectedMethod?.response?.description}</Text>
-        <Text>{selectedMethod?.response?.type}</Text>
-      </Box>
+        <Box>
+          <TableContainer>
+            <Table variant="simple">
+              <Thead>
+                <Tr>
+                  <Th>Parameter</Th>
+                  <Th>Parameter Description</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                {selectedMethod?.params?.members.map((member) => (
+                  <Tr key={member?.name}>
+                    <Td>
+                      <Tag variant="documentation" mr="1">
+                        {member?.name}
+                      </Tag>
+                      :
+                      <Tag variant="documentation" ml="1">
+                        {member?.type}
+                      </Tag>
+                    </Td>
+                    <Td whiteSpace="normal">
+                      Lorem ipsum super long parameter description that might
+                      even be long enough to break the line a little bit
+                    </Td>
+                  </Tr>
+                ))}
+              </Tbody>
+            </Table>
+          </TableContainer>
+        </Box>
+        <Box>
+          <Text
+            color="text.muted"
+            fontWeight="medium"
+            fontSize="sm"
+            textTransform="uppercase"
+            marginBottom="1"
+          >
+            Return Value
+          </Text>
+          <Tag variant="documentation" color="info.default">
+            {selectedMethod?.response?.type}
+          </Tag>
+        </Box>
+      </Flex>
     </Flex>
   );
 };

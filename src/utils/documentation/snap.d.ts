@@ -33,7 +33,7 @@ export type SnapInterface = {
    * @param params.bar - The `bar` parameter.
    * @returns The response to the JSON-RPC request.
    */
-  signMessage(params: { bar: string }): Promise<{ bar: string }>;
+  signMessage(params: { foo: number; bar?: string }): Promise<{ bar: string }>;
 
   /**
    * The handler for the `bar` method.

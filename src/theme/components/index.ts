@@ -7,6 +7,7 @@ import { Menu } from './menu';
 import { Modal } from './modal';
 import { Skeleton } from './skeleton';
 import { Tabs } from './tab';
+import { Table } from './table';
 import { Tag } from './tag';
 import { Text } from './text';
 
@@ -22,4 +23,5 @@ export const components = {
   Tag,
   Text,
   Tabs,
+  Table,
 };

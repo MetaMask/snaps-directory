@@ -60,6 +60,17 @@ export const Tag = defineMultiStyleConfig({
       },
     }),
 
+    documentation: definePartsStyle({
+      container: {
+        color: 'text.default',
+        background: 'background.alternative',
+        borderRadius: '0px',
+        fontWeight: 'normal',
+        fontFamily: 'code',
+        textTransform: 'none',
+      },
+    }),
+
     category: definePartsStyle({
       container: {
         lineHeight: '1.5',
