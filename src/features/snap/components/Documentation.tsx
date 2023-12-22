@@ -15,11 +15,12 @@ import {
   Tooltip,
   Tr,
 } from '@chakra-ui/react';
-import { useState, type FunctionComponent } from 'react';
+import { useState, type FunctionComponent, useEffect } from 'react';
 
 import { Simulation } from './Simulation';
 import { InfoIcon } from '../../../components';
 import type { Fields } from '../../../utils';
+import { parseDeclarationSourceCode } from '../../../utils/documentation';
 
 export type DocumentationProps = {
   snapId: string;
@@ -31,10 +32,33 @@ export type DocumentationProps = {
 
 export const Documentation: FunctionComponent<DocumentationProps> = ({
   snapId,
-  methods,
+  methods: initialMethods,
 }) => {
   const [selectedMethodIndex, setSelectedMethodIndex] = useState(0);
   const [enableSimulation, setEnableSimulation] = useState(false);
+
+  const [methods, setMethods] = useState(initialMethods);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      /**
+       * Fetches the latest Snap declaration file and parses it.
+       * @returns The parsed methods available in the declaration file.
+       */
+      async function getMethods() {
+        const response = await fetch('http://localhost:8080/snap.d.ts');
+        const sourceCode = await response.text();
+
+        return parseDeclarationSourceCode(sourceCode);
+      }
+
+      getMethods()
+        .then((newMethods) => setMethods(newMethods))
+        .catch((error) => console.error(error));
+    }, 2000);
+
+    return () => clearInterval(id);
+  }, []);
 
   const selectedMethod = methods[selectedMethodIndex];
   if (!selectedMethod) {

@@ -1,5 +1,5 @@
 import { assert } from '@metamask/utils';
-import type { JSDocTagInfo, Type } from 'ts-morph';
+import type { JSDocTagInfo, SourceFile, Type } from 'ts-morph';
 import { Project, SyntaxKind } from 'ts-morph';
 
 /**
@@ -48,6 +48,21 @@ export function unwrapPromise(type: Type) {
 }
 
 /**
+ * Parse Snap declaration source code into a format usable by Gatsby.
+ *
+ * @param sourceCode - The source code of the declaration file.
+ * @returns The methods as an array.
+ */
+export function parseDeclarationSourceCode(sourceCode: string) {
+  const project = new Project({
+    compilerOptions: { strict: true },
+    useInMemoryFileSystem: true,
+  });
+  const file = project.createSourceFile('snap.d.ts', sourceCode);
+  return parseDeclarationSourceFile(file);
+}
+
+/**
  * Parse a Snap declaration file into a format usable by Gatsby.
  *
  * @param path - The path to the declaration file.
@@ -56,7 +71,16 @@ export function unwrapPromise(type: Type) {
 export function parseDeclarationFile(path: string) {
   const project = new Project({ compilerOptions: { strict: true } });
   const file = project.addSourceFileAtPath(path);
+  return parseDeclarationSourceFile(file);
+}
 
+/**
+ * Parse SourceFile into a format usable by Gatsby.
+ *
+ * @param file - The declaration file as a SourceFile.
+ * @returns The methods as an array.
+ */
+function parseDeclarationSourceFile(file: SourceFile) {
   const snap = file.getTypeAlias('SnapInterface');
   if (!snap) {
     return null;

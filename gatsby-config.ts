@@ -93,6 +93,7 @@ const config: GatsbyConfig = {
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
+    { resolve: 'ts-parsing' },
     ...(process.env.SEGMENT_PRODUCTION_WRITE_KEY ||
     process.env.SEGMENT_DEV_WRITE_KEY
       ? [
