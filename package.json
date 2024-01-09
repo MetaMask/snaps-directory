@@ -61,7 +61,7 @@
     "@lingui/react": "^4.4.2",
     "@metamask/logo": "^3.1.1",
     "@metamask/providers": "^14.0.0",
-    "@metamask/snaps-controllers": "^3.0.0",
+    "@metamask/snaps-controllers": "^4.0.0",
     "@metamask/utils": "^8.1.0",
     "@reduxjs/toolkit": "^1.9.6",
     "framer-motion": "^10.16.2",
