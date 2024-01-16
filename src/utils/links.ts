@@ -42,7 +42,7 @@ export function getLinkText(url: string, fallback?: string) {
   try {
     const { host } = new URL(url);
 
-    const link = KNOWN_LINKS.find((knownLink) => host.endsWith(knownLink.url));
+    const link = KNOWN_LINKS.find((knownLink) => host === knownLink.url);
     if (link) {
       return link.name;
     }
