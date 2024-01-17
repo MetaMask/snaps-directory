@@ -242,6 +242,10 @@ msgstr ""
 msgid "Continue to <0>{name}</0>'s website to get started with this snap."
 msgstr ""
 
+#: src/constants.ts
+msgid "Create an Ethereum Account"
+msgstr ""
+
 #: src/features/banner/components/create-snap-banner/CreateSnapBanner.tsx
 msgid "Create your own Snap"
 msgstr ""
@@ -504,10 +508,6 @@ msgstr ""
 
 #: src/features/snap/permissions.tsx
 msgid "Manage accounts (Unknown network \"m/44'/{coinType}'\")"
-msgstr ""
-
-#: src/constants.ts
-msgid "Manage Your Accounts"
 msgstr ""
 
 #: src/constants.ts
