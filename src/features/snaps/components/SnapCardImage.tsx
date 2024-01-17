@@ -27,6 +27,7 @@ export const SnapCardImage: FunctionComponent<SnapCardImageProps> = ({
       name={name.slice(0, 1).toUpperCase()}
       fontSize="md"
       color="text.alternative"
+      background="background.alternative"
       size="md"
       width="6rem"
       height="6rem"
