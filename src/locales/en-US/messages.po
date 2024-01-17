@@ -25,6 +25,10 @@ msgstr ""
 msgid "©{0} MetaMask. All rights reserved."
 msgstr ""
 
+#: src/features/snap/components/MetadataModal.tsx
+msgid "<0>{name}</0> uses code that isn't viewable by the public. Critical parts of the codebase were audited for security, but later versions of the code may not be. Make sure you trust <1>{0}</1> before installing and using <2>{name}</2>."
+msgstr ""
+
 #: src/components/FooterLinks.tsx
 msgid "About"
 msgstr "<<<<<<< HEAD"
@@ -442,6 +446,10 @@ msgid "Key"
 msgstr ""
 
 #: src/features/snap/components/Metadata.tsx
+msgid "Key Recovery"
+msgstr ""
+
+#: src/features/snap/components/Metadata.tsx
 msgid "Knowledge Base"
 msgstr ""
 
@@ -740,7 +748,7 @@ msgstr ""
 
 #: src/features/snaps/components/SnapCard.tsx
 msgid "View"
-msgstr ""
+msgstr "<<<<<<< HEAD"
 
 #: src/features/snap/permissions.tsx
 msgid "View your preferred language"
@@ -752,6 +760,10 @@ msgstr ""
 
 #: src/features/snap/permissions.tsx
 msgid "View your public key for {name}"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Warning"
 msgstr ""
 
 #: src/components/FooterLinks.tsx

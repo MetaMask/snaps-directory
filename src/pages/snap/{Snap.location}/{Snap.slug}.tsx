@@ -40,6 +40,7 @@ type SnapPageProps = {
       | 'banner'
       | 'support'
       | 'permissions'
+      | 'privateCode'
     >;
   };
 };
@@ -196,8 +197,10 @@ export const query = graphql`
         contact
         faq
         knowledgeBase
+        keyRecovery
       }
       permissions
+      privateCode
     }
 
     site {

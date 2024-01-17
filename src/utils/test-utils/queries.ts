@@ -67,6 +67,7 @@ export type MockSnap = Fields<
   | 'downloads'
   | 'lastUpdated'
   | 'permissions'
+  | 'privateCode'
 >;
 
 export type GetMockSnapArgs = {
@@ -85,12 +86,16 @@ export type GetMockSnapArgs = {
   audits?: Fields<Queries.SnapAudits, 'auditor' | 'report'>[];
   banner?: Fields<Queries.File, 'publicURL'>;
   support?: Partial<
-    Fields<Queries.SnapSupport, 'contact' | 'faq' | 'knowledgeBase'>
+    Fields<
+      Queries.SnapSupport,
+      'contact' | 'faq' | 'knowledgeBase' | 'keyRecovery'
+    >
   >;
   gatsbyPath?: string;
   downloads?: number;
   lastUpdated?: number;
   permissions?: InitialPermissions;
+  privateCode?: boolean;
 };
 
 /**
@@ -116,6 +121,8 @@ export type GetMockSnapArgs = {
  * @param args.downloads - The number of downloads.
  * @param args.lastUpdated - A unix timestamp of the last update to the snap.
  * @param args.permissions - The Snap's initial permissions.
+ * @param args.privateCode - Whether the Snap's source code is (partially)
+ * private.
  * @returns The mock snap data.
  */
 export function getMockSnap({
@@ -150,6 +157,7 @@ export function getMockSnap({
     contact: 'https://example.com/contact',
     faq: 'https://example.com/faq',
     knowledgeBase: 'https://example.com/knowledge-base',
+    keyRecovery: 'https://example.com/key-recovery',
   },
   gatsbyPath = `/snap/${snapId}`,
   downloads = 0,
@@ -159,6 +167,7 @@ export function getMockSnap({
       dapps: true,
     },
   },
+  privateCode = false,
 }: GetMockSnapArgs = {}): { snap: MockSnap } {
   return {
     snap: {
@@ -184,6 +193,7 @@ export function getMockSnap({
       downloads,
       lastUpdated,
       permissions,
+      privateCode,
     },
   };
 }

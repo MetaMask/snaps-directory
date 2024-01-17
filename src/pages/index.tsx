@@ -20,6 +20,15 @@ const GROUPS = [
     images: true,
   },
   {
+    header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.AccountManagement].header,
+    category: RegistrySnapCategory.AccountManagement,
+    limit: 3,
+    link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.AccountManagement].link,
+    linkText:
+      SNAP_CATEGORY_LINKS[RegistrySnapCategory.AccountManagement].linkText,
+    order: Order.DeterministicRandom,
+  },
+  {
     header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Interoperability].header,
     category: RegistrySnapCategory.Interoperability,
     limit: 6,

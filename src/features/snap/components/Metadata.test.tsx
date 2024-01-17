@@ -17,4 +17,11 @@ describe('Metadata', () => {
     expect(queryByText('Developer')).toBeInTheDocument();
     expect(queryByText('Author')).toBeInTheDocument();
   });
+
+  it('renders the key recovery link', () => {
+    const { snap } = getMockSnap();
+    const { queryByText } = render(<Metadata snap={snap} />);
+
+    expect(queryByText('Key Recovery')).toBeInTheDocument();
+  });
 });

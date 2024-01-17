@@ -324,6 +324,11 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
       type Snap implements Node {
         banner: File @link(from: "fields.localFile")
         onboard: Boolean
+        privateCode: Boolean
+      }
+
+      type SnapSupport {
+        keyRecovery: String
       }
 
       type Category implements Node {
