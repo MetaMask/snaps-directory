@@ -30,6 +30,10 @@ msgid "About"
 msgstr ""
 
 #: src/features/snap/permissions.tsx
+msgid "Access the Ethereum provider"
+msgstr ""
+
+#: src/features/snap/permissions.tsx
 msgid "Access the internet"
 msgstr ""
 
@@ -71,6 +75,10 @@ msgid "Allow {name} to add or remove Ethereum accounts, then transact and sign w
 msgstr ""
 
 #: src/features/snap/permissions.tsx
+msgid "Allow {name} to communicate with MetaMask directly, in order for it to read data from the blockchain and suggest messages and transactions."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
 msgid "Allow {name} to decode transactions and show insights within the MetaMask UI. This can be used for anti-phishing and security solutions."
 msgstr ""
 
@@ -105,6 +113,10 @@ msgstr ""
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to store, update, and retrieve data securely with encryption. Other Snaps cannot access this information."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Allow {name} to use lifecycle hooks to run code at specific times during its lifecycle."
 msgstr ""
 
 #: src/features/snap/permissions.tsx
@@ -248,6 +260,10 @@ msgstr ""
 #: src/components/BackButton.tsx
 #: src/components/Banner.tsx
 msgid "Discover Snaps"
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Display a custom screen"
 msgstr ""
 
 #: src/features/snap/permissions.tsx
@@ -430,6 +446,14 @@ msgid "Latest Snaps on the MetaMask Snaps Directory"
 msgstr ""
 
 #: src/features/snap/permissions.tsx
+msgid "Let {name} access your preferred language from your MetaMask settings. This can be used to localize and display {name}'s content using your language."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Let {name} display a custom home screen in MetaMask. This can be used for user interfaces, configuration, and dashboards."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
 msgid "Let {name} receive requests to add or remove accounts, plus sign and transact on behalf of these accounts."
 msgstr ""
 
@@ -559,6 +583,10 @@ msgstr ""
 msgid "Security search"
 msgstr ""
 
+#: src/features/snap/permissions.tsx
+msgid "See address, account balance, activity and suggest transactions to approve"
+msgstr ""
+
 #: src/constants.ts
 #: src/constants.ts
 #: src/constants.ts
@@ -672,6 +700,10 @@ msgstr ""
 msgid "Updating {name}"
 msgstr ""
 
+#: src/features/snap/permissions.tsx
+msgid "Use lifecycle hooks"
+msgstr ""
+
 #: src/constants.ts
 msgid "Use MetaMask Beyond Ethereum"
 msgstr ""
@@ -686,6 +718,10 @@ msgstr ""
 
 #: src/features/snaps/components/SnapCard.tsx
 msgid "View"
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "View your preferred language"
 msgstr ""
 
 #: src/features/snap/permissions.tsx

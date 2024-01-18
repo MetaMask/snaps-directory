@@ -6,6 +6,9 @@ import type { FunctionComponent } from 'react';
 
 import type { IconProps } from '../../components';
 import {
+  EthereumIcon,
+  GlobalIcon,
+  HomeIcon,
   WifiIcon,
   SearchIcon,
   UserCircleAddIcon,
@@ -43,18 +46,26 @@ export type PermissionsSnap = Fields<
 
 // Note that we have to define the `PermissionsKey` type separately, since
 // TypeScript doesn't enforce that the keys are present otherwise.
-type PermissionsKey = Exclude<keyof InitialPermissions, 'snap_confirm'>;
+type PermissionsKey =
+  | Exclude<keyof InitialPermissions, 'snap_confirm'>
+  | 'eth_accounts'
+  | 'snap_getLocale'
+  | 'endowment:ethereum-provider'
+  | 'endowment:lifecycle-hooks'
+  | 'endowment:page-home';
 
 type PermissionDescriptor = {
   label: MessageDescriptor;
-  description: MessageDescriptor;
+  description?: MessageDescriptor;
   icon: FunctionComponent<IconProps>;
   weight: number;
 };
 
 type PermissionFunction<Permission extends PermissionsKey> = (
   snap: PermissionsSnap,
-  permission: Exclude<InitialPermissions[Permission], undefined>,
+  permission: Permission extends keyof InitialPermissions
+    ? Exclude<InitialPermissions[Permission], undefined>
+    : never,
 ) => PermissionDescriptor | PermissionDescriptor[];
 
 type PermissionsMap = {
@@ -98,11 +109,6 @@ function getPublicKeyNetworkLabel(
   return fallback;
 }
 
-// TODO: Add `eth_accounts` permission.
-// TODO: Add `snap_getLocale` permission.
-// TODO: Add `endowment:ethereum-provider` permission.
-// TODO: Add `endowment:lifecycle-hooks` permission.
-// TODO: Add `endowment:page-home` permission.
 export const SNAP_PERMISSIONS: PermissionsMap = {
   'endowment:cronjob': ({ name }) => ({
     label: defineMessage`Schedule and execute periodic actions`,
@@ -110,11 +116,23 @@ export const SNAP_PERMISSIONS: PermissionsMap = {
     icon: ClockIcon,
     weight: 3,
   }),
+  'endowment:ethereum-provider': ({ name }) => ({
+    label: defineMessage`Access the Ethereum provider`,
+    description: defineMessage`Allow ${name} to communicate with MetaMask directly, in order for it to read data from the blockchain and suggest messages and transactions.`,
+    icon: EthereumIcon,
+    weight: 3,
+  }),
   'endowment:keyring': ({ name }) => ({
     label: defineMessage`Allow requests for adding and controlling Ethereum accounts`,
     description: defineMessage`Let ${name} receive requests to add or remove accounts, plus sign and transact on behalf of these accounts.`,
     icon: UserCircleAddIcon,
     weight: 3,
+  }),
+  'endowment:lifecycle-hooks': ({ name }) => ({
+    label: defineMessage`Use lifecycle hooks`,
+    description: defineMessage`Allow ${name} to use lifecycle hooks to run code at specific times during its lifecycle.`,
+    icon: HierarchyIcon,
+    weight: 4,
   }),
   'endowment:name-lookup': ({ name }) => ({
     label: defineMessage`Provide domain and address lookups`,
@@ -127,6 +145,12 @@ export const SNAP_PERMISSIONS: PermissionsMap = {
     description: defineMessage`Allow ${name} to access the internet. This can be used to both send and receive data with third-party servers.`,
     icon: WifiIcon,
     weight: 3,
+  }),
+  'endowment:page-home': ({ name }) => ({
+    label: defineMessage`Display a custom screen`,
+    description: defineMessage`Let ${name} display a custom home screen in MetaMask. This can be used for user interfaces, configuration, and dashboards.`,
+    icon: HomeIcon,
+    weight: 4,
   }),
   'endowment:rpc': ({ name }, permission) => {
     const result: PermissionDescriptor[] = [];
@@ -192,6 +216,11 @@ export const SNAP_PERMISSIONS: PermissionsMap = {
     weight: 3,
   }),
   /* eslint-disable @typescript-eslint/naming-convention */
+  eth_accounts: () => ({
+    label: defineMessage`See address, account balance, activity and suggest transactions to approve`,
+    icon: SecuritySearchIcon,
+    weight: 2,
+  }),
   snap_dialog: ({ name }) => ({
     label: defineMessage`Display dialog windows in MetaMask`,
     description: defineMessage`Allow ${name} to display MetaMask popups with custom text, input field, and buttons to approve or reject an action. Can be used to create e.g., alerts, confirmations, and opt-in flows for a Snap.`,
@@ -257,6 +286,12 @@ export const SNAP_PERMISSIONS: PermissionsMap = {
     icon: SecurityKeyIcon,
     weight: 4,
   }),
+  snap_getLocale: ({ name }) => ({
+    label: defineMessage`View your preferred language`,
+    description: defineMessage`Let ${name} access your preferred language from your MetaMask settings. This can be used to localize and display ${name}'s content using your language.`,
+    icon: GlobalIcon,
+    weight: 4,
+  }),
   snap_manageAccounts: ({ name }) => ({
     label: defineMessage`Add and control Ethereum accounts`,
     description: defineMessage`Allow ${name} to add or remove Ethereum accounts, then transact and sign with these accounts.`,
@@ -309,8 +344,8 @@ export function getPermissions(
       const permission = SNAP_PERMISSIONS[key as PermissionsKey];
 
       if (permission) {
-        // TODO: Fix `any` type if possible.
-        const descriptors = permission(snap, value as any);
+        // TODO: Fix `never` type if possible.
+        const descriptors = permission(snap, value as never);
 
         if (Array.isArray(descriptors)) {
           return [...result, ...descriptors];

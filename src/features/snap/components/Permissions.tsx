@@ -74,13 +74,13 @@ export const Permissions: FunctionComponent<PermissionsProps> = ({
               <Box flexShrink="0">
                 <AvatarIcon icon={descriptor.icon} />
               </Box>
-              <Heading as="h5" fontSize="md">
-                {i18n._(descriptor.label)}
-              </Heading>
+              <Text fontSize="md">{i18n._(descriptor.label)}</Text>
             </Flex>
-            <Tooltip label={i18n._(descriptor.description)} placement="left">
-              <InfoIcon flexShrink="0" />
-            </Tooltip>
+            {descriptor.description && (
+              <Tooltip label={i18n._(descriptor.description)} placement="left">
+                <InfoIcon flexShrink="0" />
+              </Tooltip>
+            )}
           </ListItem>
         ))}
       </UnorderedList>
