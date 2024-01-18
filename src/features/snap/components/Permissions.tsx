@@ -25,7 +25,7 @@ export const Permissions: FunctionComponent<PermissionsProps> = ({
   );
 
   return (
-    <Box flex="50%">
+    <Box flex="33.33%">
       <Heading
         as="h4"
         color="text.alternative"
