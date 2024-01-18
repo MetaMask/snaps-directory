@@ -368,6 +368,10 @@ msgstr ""
 msgid "Identifier"
 msgstr ""
 
+#: src/components/icons/index.ts
+msgid "Info"
+msgstr ""
+
 #: src/components/InstallUnsupportedDesktop.tsx
 msgid "Install MetaMask"
 msgstr ""
@@ -503,7 +507,7 @@ msgid "Open notifications menu"
 msgstr ""
 
 #: src/features/snap/components/Permissions.tsx
-msgid "Permissions requested by <0>{0}</0>"
+msgid "Permissions by <0>{0}</0>"
 msgstr ""
 
 #: src/features/filter/constants.tsx

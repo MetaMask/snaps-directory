@@ -19,6 +19,7 @@ import BaseGlobalIcon from './global.svg';
 import BaseHierarchyIcon from './hierarchy.svg';
 import BaseHomeIcon from './home.svg';
 import { wrapIcon } from './Icon';
+import BaseInfoIcon from './info.svg';
 import BaseInteroperabilityIcon from './interoperability.svg';
 import BaseKeyIcon from './key.svg';
 import BaseLightModeIcon from './light-mode.svg';
@@ -90,6 +91,8 @@ export const HierarchyIcon = wrapIcon(
 );
 
 export const HomeIcon = wrapIcon(BaseHomeIcon, defineMessage`Home`);
+
+export const InfoIcon = wrapIcon(BaseInfoIcon, defineMessage`Info`);
 
 export const InteroperabilityIcon = wrapIcon(
   BaseInteroperabilityIcon,

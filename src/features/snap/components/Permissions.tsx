@@ -1,11 +1,19 @@
-import { Box, Heading, ListItem, Text, UnorderedList } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Heading,
+  ListItem,
+  Text,
+  Tooltip,
+  UnorderedList,
+} from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import type { InitialPermissions } from '@metamask/snaps-sdk';
 import type { FunctionComponent } from 'react';
 import { useMemo } from 'react';
 
-import { AvatarIcon } from '../../../components';
+import { AvatarIcon, InfoIcon } from '../../../components';
 import type { PermissionsSnap } from '../permissions';
 import { getPermissions } from '../permissions';
 
@@ -35,7 +43,7 @@ export const Permissions: FunctionComponent<PermissionsProps> = ({
         marginBottom="2"
       >
         <Trans>
-          Permissions requested by{' '}
+          Permissions by{' '}
           <Text
             as="span"
             color="text.default"
@@ -59,18 +67,20 @@ export const Permissions: FunctionComponent<PermissionsProps> = ({
             display="flex"
             paddingY="2"
             gap="4"
+            alignItems="center"
+            justifyContent="space-between"
           >
-            <Box flexShrink="0">
-              <AvatarIcon icon={descriptor.icon} />
-            </Box>
-            <Box>
+            <Flex gap="4" alignItems="center">
+              <Box flexShrink="0">
+                <AvatarIcon icon={descriptor.icon} />
+              </Box>
               <Heading as="h5" fontSize="md">
                 {i18n._(descriptor.label)}
               </Heading>
-              <Text color="text.alternative">
-                {i18n._(descriptor.description)}
-              </Text>
-            </Box>
+            </Flex>
+            <Tooltip label={i18n._(descriptor.description)} placement="left">
+              <InfoIcon flexShrink="0" />
+            </Tooltip>
           </ListItem>
         ))}
       </UnorderedList>
