@@ -1,7 +1,7 @@
 import type { MessageDescriptor } from '@lingui/core';
 import { defineMessage } from '@lingui/macro';
 import slip44 from '@metamask/slip44';
-import type { InitialPermissions } from '@metamask/snaps-sdk';
+import type { EmptyObject, InitialPermissions } from '@metamask/snaps-sdk';
 import type { FunctionComponent } from 'react';
 
 import type { IconProps } from '../../components';
@@ -42,6 +42,7 @@ export type PermissionsSnap = Fields<
   | 'audits'
   | 'banner'
   | 'support'
+  | 'permissions'
 >;
 
 // Note that we have to define the `PermissionsKey` type separately, since
@@ -61,12 +62,15 @@ type PermissionDescriptor = {
   weight: number;
 };
 
-type PermissionFunction<Permission extends PermissionsKey> = (
-  snap: PermissionsSnap,
-  permission: Permission extends keyof InitialPermissions
-    ? Exclude<InitialPermissions[Permission], undefined>
-    : never,
-) => PermissionDescriptor | PermissionDescriptor[];
+type PermissionFunction<Permission extends PermissionsKey> =
+  Permission extends keyof InitialPermissions
+    ? Exclude<InitialPermissions[Permission], undefined> extends EmptyObject
+      ? (snap: PermissionsSnap) => PermissionDescriptor | PermissionDescriptor[]
+      : (
+          snap: PermissionsSnap,
+          permission: Exclude<InitialPermissions[Permission], undefined>,
+        ) => PermissionDescriptor | PermissionDescriptor[]
+    : (snap: PermissionsSnap) => PermissionDescriptor | PermissionDescriptor[];
 
 type PermissionsMap = {
   [Key in PermissionsKey]: PermissionFunction<Key>;
@@ -160,7 +164,7 @@ export const SNAP_PERMISSIONS: PermissionsMap = {
       weight: 3,
     };
 
-    if (permission?.snaps) {
+    if (permission.snaps) {
       result.push({
         label: defineMessage`Allow other Snaps to communicate directly with ${name}`,
         description: defineMessage`Allow other Snaps to send messages to ${name} and receive a response from ${name}.`,
@@ -168,7 +172,7 @@ export const SNAP_PERMISSIONS: PermissionsMap = {
       });
     }
 
-    if (permission?.dapps) {
+    if (permission.dapps) {
       result.push({
         label: defineMessage`Allow websites to communicate with ${name}`,
         description: defineMessage`Allow websites to send messages to website and receive a response from ${name}.`,
@@ -176,7 +180,7 @@ export const SNAP_PERMISSIONS: PermissionsMap = {
       });
     }
 
-    if (permission?.allowedOrigins) {
+    if (permission.allowedOrigins) {
       for (const origin of permission.allowedOrigins) {
         result.push({
           label: defineMessage`Allow ${origin} to communicate with ${name}`,
@@ -310,20 +314,14 @@ export const SNAP_PERMISSIONS: PermissionsMap = {
     icon: NotificationIcon,
     weight: 4,
   }),
-  wallet_snap: (_, permissions) => {
-    const permission = permissions.wallet_snap;
-
-    if (permission) {
-      Object.keys(permission).map((snapId) => ({
-        // TODO: Get friendly name for `snapId`.
-        label: defineMessage`Connect to ${snapId}`,
-        description: defineMessage`Allow the Snap to interact with ${snapId}.`,
-        icon: FlashIcon,
-        weight: 4,
-      }));
-    }
-
-    return [];
+  wallet_snap: (_, permission) => {
+    return Object.keys(permission).map((snapId) => ({
+      // TODO: Get friendly name for `snapId`.
+      label: defineMessage`Connect to ${snapId}`,
+      description: defineMessage`Allow the Snap to interact with ${snapId}.`,
+      icon: FlashIcon,
+      weight: 4,
+    }));
   },
   /* eslint-enable @typescript-eslint/naming-convention */
 };
@@ -345,7 +343,7 @@ export function getPermissions(
 
       if (permission) {
         // TODO: Fix `never` type if possible.
-        const descriptors = permission(snap, value as never);
+        const descriptors = permission(snap, value as any);
 
         if (Array.isArray(descriptors)) {
           return [...result, ...descriptors];
