@@ -1,29 +1,63 @@
+import Fuse from 'fuse.js';
 import { graphql, useStaticQuery } from 'gatsby';
-import { useGatsbyPluginFusejs } from 'react-use-fusejs';
+import { useMemo } from 'react';
 
 import type { Snap } from '../features';
 
+type QueryData = {
+  allSnap: {
+    nodes: Snap[];
+  };
+};
+
 /**
- * Get the search results for the given query. This will return the search
- * results for the given query, debounced by 300 milliseconds.
+ * Get the search results for the given query.
  *
  * @param query - The query to search for.
  * @returns The search results.
  */
 export function useSearchResults(query: string) {
-  const { fusejs } = useStaticQuery<{ fusejs: Queries.fusejs }>(graphql`
+  const { allSnap } = useStaticQuery<QueryData>(graphql`
     query {
-      fusejs {
-        index
-        data
+      allSnap {
+        nodes {
+          snapId
+          name
+          summary
+          description {
+            description
+          }
+        }
       }
     }
   `);
 
-  const results = useGatsbyPluginFusejs<Snap>(query, fusejs, {
-    threshold: 0.3,
-    distance: 300,
-  });
+  const fuse = useMemo(
+    () =>
+      new Fuse(allSnap.nodes, {
+        keys: [
+          {
+            name: 'name',
+            weight: 1,
+          },
+          {
+            name: 'summary',
+            weight: 0.25,
+          },
+          {
+            name: 'description',
+            weight: 0.25,
+            getFn: (snap) => snap.description.description,
+          },
+        ],
+        threshold: 0.3,
+      }),
+    [allSnap.nodes],
+  );
 
-  return results.map(({ item }) => item);
+  const results = useMemo(() => {
+    return fuse.search(query).map(({ item }) => item);
+  }, [fuse, query]);
+
+  return results;
 }
