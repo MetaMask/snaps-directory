@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2023-09-04 10:53+0200\n"
+"POT-Creation-Date: 2024-02-07 13:20+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: src/components/FooterLinks.tsx
 msgid "About"
-msgstr "<<<<<<< HEAD"
+msgstr ""
 
 #: src/features/snap/permissions.tsx
 msgid "Access the Ethereum provider"
@@ -43,7 +43,7 @@ msgstr ""
 
 #: src/constants.ts
 msgid "Account Management"
-msgstr "<<<<<<< HEAD"
+msgstr ""
 
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "Account Management Snaps are released as part of an experimental beta release. You agree that you will only use one of these Snaps if you understand how it functions and how to use it, and you have fully read and understand all risk warnings and other disclosures made available by the Third Party Service provider relating to use of their Snap. You agree that Consensys is not responsible for any injury that you incur as a result of your use of this Snap."
@@ -313,7 +313,7 @@ msgstr ""
 
 #: src/components/icons/index.ts
 msgid "Enable light mode"
-msgstr "<<<<<<< HEAD"
+msgstr ""
 
 #: src/components/icons/index.ts
 msgid "Ethereum"
@@ -496,7 +496,7 @@ msgstr ""
 
 #: src/components/icons/index.ts
 msgid "Live"
-msgstr "<<<<<<< HEAD"
+msgstr ""
 
 #: src/features/snap/permissions.tsx
 msgid "Manage {name} accounts"
@@ -756,7 +756,7 @@ msgstr ""
 
 #: src/features/snaps/components/SnapCard.tsx
 msgid "View"
-msgstr "<<<<<<< HEAD"
+msgstr ""
 
 #: src/features/snap/permissions.tsx
 msgid "View your preferred language"
