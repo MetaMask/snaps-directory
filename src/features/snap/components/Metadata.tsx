@@ -23,6 +23,7 @@ export type MetadataProps = {
     | 'category'
     | 'author'
     | 'sourceCode'
+    | 'additionalSourceCode'
     | 'audits'
     | 'banner'
     | 'support'

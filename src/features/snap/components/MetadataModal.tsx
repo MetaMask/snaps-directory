@@ -24,6 +24,7 @@ export type MetadataModalProps = {
     | 'author'
     | 'latestVersion'
     | 'sourceCode'
+    | 'additionalSourceCode'
     | 'website'
     | 'privateCode'
   >;
@@ -36,7 +37,15 @@ export const MetadataModal: FunctionComponent<MetadataModalProps> = ({
   isOpen,
   onClose,
 }) => {
-  const { name, author, audits, latestVersion, sourceCode, privateCode } = snap;
+  const {
+    name,
+    author,
+    audits,
+    latestVersion,
+    sourceCode,
+    additionalSourceCode,
+    privateCode,
+  } = snap;
 
   return (
     <Modal variant="minimal" isOpen={isOpen} onClose={onClose}>
@@ -49,7 +58,12 @@ export const MetadataModal: FunctionComponent<MetadataModalProps> = ({
           <Data label={t`Version`} value={latestVersion} />
           <Data
             label={t`Source Code`}
-            value={<SourceCode url={sourceCode} />}
+            value={
+              <SourceCode
+                url={sourceCode}
+                additionalUrls={additionalSourceCode}
+              />
+            }
             warning={
               privateCode && (
                 <Trans>
