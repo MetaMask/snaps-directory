@@ -79,6 +79,7 @@ type PermissionsMap = {
  * unknown.
  */
 function getNetworkLabel(networkId: string, fallback: MessageDescriptor) {
+  // TODO: Use functions from `@metamask/snaps-utils` instead of `slip44`.
   const name = slip44[networkId as keyof typeof slip44]?.name;
   if (name) {
     return defineMessage`Manage ${name} accounts`;
@@ -99,6 +100,7 @@ function getPublicKeyNetworkLabel(
   networkId: string,
   fallback: MessageDescriptor,
 ) {
+  // TODO: Use functions from `@metamask/snaps-utils` instead of `slip44`.
   const name = slip44[networkId as keyof typeof slip44]?.name;
   if (name) {
     return defineMessage`View your public key for ${name}`;
