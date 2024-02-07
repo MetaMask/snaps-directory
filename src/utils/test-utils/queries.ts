@@ -1,3 +1,5 @@
+import type { InitialPermissions } from '@metamask/snaps-sdk';
+
 import { RegistrySnapCategory } from '../../constants';
 import type { Fields } from '../snaps';
 
@@ -64,6 +66,7 @@ export type MockSnap = Fields<
   | 'gatsbyPath'
   | 'downloads'
   | 'lastUpdated'
+  | 'permissions'
 >;
 
 export type GetMockSnapArgs = {
@@ -87,6 +90,7 @@ export type GetMockSnapArgs = {
   gatsbyPath?: string;
   downloads?: number;
   lastUpdated?: number;
+  permissions?: InitialPermissions;
 };
 
 /**
@@ -111,6 +115,7 @@ export type GetMockSnapArgs = {
  * @param args.gatsbyPath - The Gatsby path.
  * @param args.downloads - The number of downloads.
  * @param args.lastUpdated - A unix timestamp of the last update to the snap.
+ * @param args.permissions - The Snap's initial permissions.
  * @returns The mock snap data.
  */
 export function getMockSnap({
@@ -149,6 +154,11 @@ export function getMockSnap({
   gatsbyPath = `/snap/${snapId}`,
   downloads = 0,
   lastUpdated = 1701260892,
+  permissions = {
+    'endowment:rpc': {
+      dapps: true,
+    },
+  },
 }: GetMockSnapArgs = {}): { snap: MockSnap } {
   return {
     snap: {
@@ -173,6 +183,7 @@ export function getMockSnap({
       gatsbyPath,
       downloads,
       lastUpdated,
+      permissions,
     },
   };
 }

@@ -1,18 +1,25 @@
-import { Box, Container, Divider, Flex, Text } from '@chakra-ui/react';
-import { Trans } from '@lingui/macro';
+import {
+  Box,
+  Container,
+  Divider,
+  Flex,
+  Stack,
+  StackDivider,
+} from '@chakra-ui/react';
 import { graphql } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
 import { InstallSnapButton, SnapWebsiteButton } from '../../../components';
 import { type RegistrySnapCategory } from '../../../constants';
 import {
-  Description,
   useGetInstalledSnapsQuery,
   Authorship,
   RelatedSnaps,
   Metadata,
+  NotificationAcknowledger,
+  Permissions,
+  Description,
 } from '../../../features';
-import { NotificationAcknowledger } from '../../../features/notifications/components';
 import type { Fields } from '../../../utils';
 
 type SnapPageProps = {
@@ -32,6 +39,7 @@ type SnapPageProps = {
       | 'audits'
       | 'banner'
       | 'support'
+      | 'permissions'
     >;
   };
 };
@@ -46,6 +54,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
     description,
     latestVersion,
     category,
+    permissions,
   } = data.snap;
 
   const { data: installedSnaps } = useGetInstalledSnapsQuery();
@@ -91,33 +100,20 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
           </Flex>
         </Flex>
 
-        <Divider marginY="6" />
+        <Divider marginY="8" />
         <Metadata snap={data.snap} />
+        <Divider marginTop="8" marginBottom="12" />
 
-        <Text
-          color="text.alternative"
-          textTransform="uppercase"
-          fontWeight="medium"
-          fontSize="sm"
-        >
-          <Trans>
-            Description by{' '}
-            <Text
-              as="span"
-              color="text.default"
-              textTransform="uppercase"
-              fontWeight="medium"
-              fontSize="sm"
-            >
-              {name}
-            </Text>
-          </Trans>
-        </Text>
-        <Description
-          description={description}
+        <Stack
+          direction={['column', null, null, 'row']}
+          divider={<StackDivider />}
           marginTop="2"
-          whiteSpace="pre-wrap"
-        />
+          marginBottom="12"
+          spacing="8"
+        >
+          <Description name={name} description={description} />
+          <Permissions snap={data.snap} permissions={permissions} />
+        </Stack>
 
         {category && (
           <>
@@ -201,6 +197,7 @@ export const query = graphql`
         faq
         knowledgeBase
       }
+      permissions
     }
 
     site {

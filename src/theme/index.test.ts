@@ -114,6 +114,7 @@ describe('theme', () => {
             "baseStyle": Object {
               "color": "text.default",
               "fontWeight": "500",
+              "lineHeight": "1.5",
             },
           },
           "Link": Object {
@@ -302,6 +303,18 @@ describe('theme', () => {
               },
             },
           },
+          "Tooltip": Object {
+            "baseStyle": Object {
+              "background": "background.default",
+              "border": "1px solid",
+              "borderColor": "border.muted",
+              "borderRadius": "md",
+              "color": "text.default",
+              "fontWeight": "normal",
+              "paddingX": 4,
+              "paddingY": 2,
+            },
+          },
         },
         "config": Object {
           "initialColorMode": "system",
@@ -393,7 +406,7 @@ describe('theme', () => {
               },
               "muted": Object {
                 "_dark": "#1098FC26",
-                "default": "#0376C91A",
+                "default": "#037DD61A",
               },
             },
             "primary": Object {
@@ -435,6 +448,7 @@ describe('theme', () => {
           "global": Object {
             "body": Object {
               "background": "background.default",
+              "color": "text.default",
               "overflowY": "scroll",
             },
           },

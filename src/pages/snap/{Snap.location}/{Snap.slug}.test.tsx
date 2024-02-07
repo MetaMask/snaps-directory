@@ -14,7 +14,7 @@ describe('Snap page', () => {
       render(<SnapPage data={getMockSnap({ name: 'Foo Snap' })} />),
     );
 
-    expect(queryAllByText('Foo Snap')).toHaveLength(2);
+    expect(queryAllByText('Foo Snap')).toHaveLength(3);
   });
 
   it('does not render the installation button if `onboard` is enabled', async () => {

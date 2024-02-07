@@ -1,43 +1,47 @@
-import type { TextProps } from '@chakra-ui/react';
-import { Text } from '@chakra-ui/react';
-import Linkify from 'linkify-react';
-import type { IntermediateRepresentation } from 'linkifyjs';
+import { Box, Heading, Text } from '@chakra-ui/react';
+import { Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
-import { ExternalLink } from '../../../components';
+import { DescriptionText } from './DescriptionText';
 import type { Fields } from '../../../utils';
-import { getLinkText } from '../../../utils';
 
-export type SnapDescriptionProps = TextProps & {
+export type DescriptionProps = {
+  name: string;
   description: Fields<Queries.SnapDescription, 'description' | 'trusted'>;
   allowLinks?: boolean;
 };
 
-/**
- * Render a link using the {@link ExternalLink} component.
- *
- * @param options - The options to render the link with.
- * @param options.attributes - The attributes of the link.
- * @param options.content - The content of the link.
- * @returns The rendered link.
- */
-function render({ attributes, content }: IntermediateRepresentation) {
-  const { href } = attributes;
-  return <ExternalLink href={href}>{getLinkText(content)}</ExternalLink>;
-}
-
-export const Description: FunctionComponent<SnapDescriptionProps> = ({
+export const Description: FunctionComponent<DescriptionProps> = ({
+  name,
   description,
   allowLinks = description.trusted,
-  ...props
-}) => {
-  if (allowLinks) {
-    return (
-      <Linkify as={Text} options={{ render }} {...props}>
-        {description.description}
-      </Linkify>
-    );
-  }
+}) => (
+  <Box flex="66.66%">
+    <Heading
+      as="h4"
+      color="text.alternative"
+      textTransform="uppercase"
+      fontWeight="medium"
+      fontSize="sm"
+    >
+      <Trans>
+        Description by{' '}
+        <Text
+          as="span"
+          color="text.default"
+          textTransform="uppercase"
+          fontWeight="medium"
+          fontSize="sm"
+        >
+          {name}
+        </Text>
+      </Trans>
+    </Heading>
 
-  return <Text {...props}>{description.description}</Text>;
-};
+    <DescriptionText
+      description={description}
+      allowLinks={allowLinks}
+      whiteSpace="pre-wrap"
+    />
+  </Box>
+);

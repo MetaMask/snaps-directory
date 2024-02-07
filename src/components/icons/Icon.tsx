@@ -5,7 +5,7 @@ import { useLingui } from '@lingui/react';
 import type { FunctionComponent } from 'react';
 
 export type IconProps = BoxProps & {
-  as: As;
+  as?: As;
   label?: MessageDescriptor;
   fill?: string;
 };
@@ -37,7 +37,7 @@ export const Icon: ComponentWithAs<As, IconProps> = forwardRef(
         }}
       >
         <Box
-          as={as}
+          as={as as As}
           aria-label={label && i18n._(label)}
           width="100%"
           height="100%"
