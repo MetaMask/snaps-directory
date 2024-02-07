@@ -47,13 +47,7 @@ export type PermissionsSnap = Fields<
 
 // Note that we have to define the `PermissionsKey` type separately, since
 // TypeScript doesn't enforce that the keys are present otherwise.
-type PermissionsKey =
-  | Exclude<keyof InitialPermissions, 'snap_confirm'>
-  | 'eth_accounts'
-  | 'snap_getLocale'
-  | 'endowment:ethereum-provider'
-  | 'endowment:lifecycle-hooks'
-  | 'endowment:page-home';
+type PermissionsKey = keyof InitialPermissions | 'eth_accounts';
 
 type PermissionDescriptor = {
   label: MessageDescriptor;
@@ -192,6 +186,13 @@ export const SNAP_PERMISSIONS: PermissionsMap = {
 
     return result;
   },
+  // TODO: Update this copy once this is implemented in the extension.
+  'endowment:signature-insight': ({ name }) => ({
+    label: defineMessage`Fetch and display signature insights`,
+    description: defineMessage`Allow ${name} to decode signatures and show insights within the MetaMask UI. This can be used for anti-phishing and security solutions.`,
+    icon: SecuritySearchIcon,
+    weight: 4,
+  }),
   'endowment:transaction-insight': ({ name }, permission) => {
     const result: PermissionDescriptor[] = [];
 

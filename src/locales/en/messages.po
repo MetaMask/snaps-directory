@@ -79,6 +79,10 @@ msgid "Allow {name} to communicate with MetaMask directly, in order for it to re
 msgstr ""
 
 #: src/features/snap/permissions.tsx
+msgid "Allow {name} to decode signatures and show insights within the MetaMask UI. This can be used for anti-phishing and security solutions."
+msgstr ""
+
+#: src/features/snap/permissions.tsx
 msgid "Allow {name} to decode transactions and show insights within the MetaMask UI. This can be used for anti-phishing and security solutions."
 msgstr ""
 
@@ -328,6 +332,10 @@ msgstr ""
 
 #: src/components/FooterLinks.tsx
 msgid "Feedback"
+msgstr ""
+
+#: src/features/snap/permissions.tsx
+msgid "Fetch and display signature insights"
 msgstr ""
 
 #: src/features/snap/permissions.tsx
