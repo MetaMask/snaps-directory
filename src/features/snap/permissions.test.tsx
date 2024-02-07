@@ -97,7 +97,7 @@ describe('SNAP_PERMISSIONS', () => {
 
   describe('endowment:lifecycle-hooks', () => {
     it('returns the correct permission', () => {
-      expect(SNAP_PERMISSIONS['endowment:lifecycle-hooks'](snap))
+      expect(SNAP_PERMISSIONS['endowment:lifecycle-hooks'](snap, {}))
         .toMatchInlineSnapshot(`
         Object {
           "description": Object {
@@ -123,8 +123,11 @@ describe('SNAP_PERMISSIONS', () => {
 
   describe('endowment:name-lookup', () => {
     it('returns the correct permission', () => {
-      expect(SNAP_PERMISSIONS['endowment:name-lookup'](snap, ['foo:bar']))
-        .toMatchInlineSnapshot(`
+      expect(
+        SNAP_PERMISSIONS['endowment:name-lookup'](snap, {
+          chains: ['eip155:1'],
+        }),
+      ).toMatchInlineSnapshot(`
         Object {
           "description": Object {
             "id": "CQGihP",
@@ -175,7 +178,7 @@ describe('SNAP_PERMISSIONS', () => {
 
   describe('endowment:page-home', () => {
     it('returns the correct permission', () => {
-      expect(SNAP_PERMISSIONS['endowment:page-home'](snap))
+      expect(SNAP_PERMISSIONS['endowment:page-home'](snap, {}))
         .toMatchInlineSnapshot(`
         Object {
           "description": Object {
@@ -283,6 +286,32 @@ describe('SNAP_PERMISSIONS', () => {
           snaps: false,
         }),
       ).toMatchInlineSnapshot(`Array []`);
+    });
+  });
+
+  describe('endowment:signature-insight', () => {
+    it('returns the correct permission', () => {
+      expect(SNAP_PERMISSIONS['endowment:signature-insight'](snap, {}))
+        .toMatchInlineSnapshot(`
+        Object {
+          "description": Object {
+            "id": "lL5lxE",
+            "message": "Allow {name} to decode signatures and show insights within the MetaMask UI. This can be used for anti-phishing and security solutions.",
+            "values": Object {
+              "name": "Snap",
+            },
+          },
+          "icon": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "label": Object {
+            "id": "R+1slK",
+            "message": "Fetch and display signature insights",
+          },
+          "weight": 4,
+        }
+      `);
     });
   });
 
