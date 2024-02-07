@@ -49,8 +49,7 @@ type SnapNode = NodeInput & {
 
 // eslint-disable-next-line no-restricted-globals
 const IS_STAGING = process.env.GATSBY_STAGING === 'true';
-const REGISTRY_URL =
-  'https://gist.githubusercontent.com/Mrtenz/bd444e041056351fa3cd5a471b22fbae/raw/381c375788818873ac794b749f1e52a61fe4ecc0/registry.json';
+const REGISTRY_URL = 'https://acl.execution.metamask.io/latest/registry.json';
 
 /**
  * Normalize the description to ensure it ends with a period. This also replaces
