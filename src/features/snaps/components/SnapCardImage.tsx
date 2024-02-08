@@ -21,13 +21,19 @@ export const SnapCardImage: FunctionComponent<SnapCardImageProps> = ({
     alignItems="center"
     justifyContent="center"
     data-testid="snap-card-image"
+    sx={{
+      // This is a bit hacky, but sets the background color for the avatar component
+      // only when the fallback icon is shown.
+      '.chakra-avatar:has(div)': {
+        backgroundColor: 'background.alternative',
+      },
+    }}
   >
     <Avatar
       src={icon}
       name={name.slice(0, 1).toUpperCase()}
       fontSize="md"
       color="text.alternative"
-      background="background.alternative"
       size="md"
       width="6rem"
       height="6rem"
