@@ -478,6 +478,10 @@ msgstr ""
 msgid "Latest Snaps on the MetaMask Snaps Directory"
 msgstr ""
 
+#: src/features/snap/components/MetadataModal.tsx
+msgid "Legal"
+msgstr ""
+
 #: src/features/snap/permissions.tsx
 msgid "Let {name} access your preferred language from your MetaMask settings. This can be used to localize and display {name}'s content using your language."
 msgstr ""
@@ -576,6 +580,7 @@ msgid "Popularity"
 msgstr ""
 
 #: src/components/FooterCopyright.tsx
+#: src/features/snap/components/MetadataModal.tsx
 msgid "Privacy Policy"
 msgstr ""
 
@@ -696,6 +701,10 @@ msgstr ""
 
 #: src/components/icons/index.ts
 msgid "Tag"
+msgstr ""
+
+#: src/features/snap/components/MetadataModal.tsx
+msgid "Terms of Use"
 msgstr ""
 
 #: src/pages/404.tsx
