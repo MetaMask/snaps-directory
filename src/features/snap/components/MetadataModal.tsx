@@ -13,6 +13,7 @@ import { Audits } from './Audits';
 import { Data } from './Data';
 import { MetadataItems } from './MetadataItems';
 import { SourceCode } from './SourceCode';
+import { ExternalLink } from '../../../components';
 import type { Fields } from '../../../utils';
 
 export type MetadataModalProps = {
@@ -27,6 +28,8 @@ export type MetadataModalProps = {
     | 'additionalSourceCode'
     | 'website'
     | 'privateCode'
+    | 'privacyPolicy'
+    | 'termsOfUse'
   >;
   isOpen: boolean;
   onClose: () => void;
@@ -45,6 +48,8 @@ export const MetadataModal: FunctionComponent<MetadataModalProps> = ({
     sourceCode,
     additionalSourceCode,
     privateCode,
+    privacyPolicy,
+    termsOfUse,
   } = snap;
 
   return (
@@ -95,6 +100,26 @@ export const MetadataModal: FunctionComponent<MetadataModalProps> = ({
               />
             }
           />
+          {(privacyPolicy || termsOfUse) && (
+            <Data
+              label={t`Legal`}
+              value={
+                <>
+                  {privacyPolicy && (
+                    <ExternalLink href={privacyPolicy}>
+                      <Trans>Privacy Policy</Trans>
+                    </ExternalLink>
+                  )}
+
+                  {termsOfUse && (
+                    <ExternalLink href={termsOfUse}>
+                      <Trans>Terms of Use</Trans>
+                    </ExternalLink>
+                  )}
+                </>
+              }
+            />
+          )}
         </ModalBody>
       </ModalContent>
     </Modal>

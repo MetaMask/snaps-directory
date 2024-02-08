@@ -42,6 +42,8 @@ type SnapPageProps = {
       | 'support'
       | 'permissions'
       | 'privateCode'
+      | 'privacyPolicy'
+      | 'termsOfUse'
     >;
   };
 };
@@ -208,6 +210,8 @@ export const query = graphql`
       }
       permissions
       privateCode
+      privacyPolicy
+      termsOfUse
     }
 
     site {

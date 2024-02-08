@@ -326,6 +326,8 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
         onboard: Boolean
         privateCode: Boolean
         additionalSourceCode: [SnapAdditionalSourceCode]
+        privacyPolicy: String
+        termsOfUse: String
       }
 
       type SnapAdditionalSourceCode {
