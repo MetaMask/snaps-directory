@@ -9,7 +9,7 @@ import {
 import type { ReactElement } from 'react';
 import { Provider } from 'react-redux';
 
-import { messages } from '../../locales/en/messages';
+import { messages } from '../../locales/en-US/messages';
 import { createStore } from '../../store';
 
 i18n.load('en', messages);

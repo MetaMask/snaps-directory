@@ -3,7 +3,7 @@ import { formatter } from '@lingui/format-po';
 
 const config: LinguiConfig = {
   compileNamespace: 'es',
-  locales: ['en'],
+  locales: ['de-DE', 'en-US', 'ja-JP', 'pt-BR', 'ru-RU', 'tr-TR', 'zh-CN'],
   format: formatter({ lineNumbers: false }),
   catalogs: [
     {
