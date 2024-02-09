@@ -3,14 +3,14 @@ import { I18nProvider } from '@lingui/react';
 import type { GatsbyBrowser } from 'gatsby';
 
 import { Layout, SnapsProvider } from './components';
-import { messages } from './locales/en/messages';
+import { messages } from './locales/en-US/messages';
 import { createStore } from './store';
 
 // eslint-disable-next-line import/no-unassigned-import, import/extensions
 import './assets/fonts/fonts.css';
 
-i18n.load('en', messages);
-i18n.activate('en');
+i18n.load('en-US', messages);
+i18n.activate('en-US');
 
 /**
  * Wrap every page in the specified components. This can be used to wrap pages
