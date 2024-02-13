@@ -11,9 +11,9 @@ import type { FunctionComponent } from 'react';
 
 import { Audits } from './Audits';
 import { Data } from './Data';
+import { Legal } from './Legal';
 import { MetadataItems } from './MetadataItems';
 import { SourceCode } from './SourceCode';
-import { ExternalLink } from '../../../components';
 import type { Fields } from '../../../utils';
 
 export type MetadataModalProps = {
@@ -104,19 +104,7 @@ export const MetadataModal: FunctionComponent<MetadataModalProps> = ({
             <Data
               label={t`Legal`}
               value={
-                <>
-                  {privacyPolicy && (
-                    <ExternalLink href={privacyPolicy}>
-                      <Trans>Privacy Policy</Trans>
-                    </ExternalLink>
-                  )}
-
-                  {termsOfUse && (
-                    <ExternalLink href={termsOfUse}>
-                      <Trans>Terms of Use</Trans>
-                    </ExternalLink>
-                  )}
-                </>
+                <Legal privacyPolicy={privacyPolicy} termsOfUse={termsOfUse} />
               }
             />
           )}
