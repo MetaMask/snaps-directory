@@ -11,6 +11,7 @@ import type { FunctionComponent } from 'react';
 
 import { Audits } from './Audits';
 import { Data } from './Data';
+import { Legal } from './Legal';
 import { MetadataItems } from './MetadataItems';
 import { SourceCode } from './SourceCode';
 import type { Fields } from '../../../utils';
@@ -27,6 +28,8 @@ export type MetadataModalProps = {
     | 'additionalSourceCode'
     | 'website'
     | 'privateCode'
+    | 'privacyPolicy'
+    | 'termsOfUse'
   >;
   isOpen: boolean;
   onClose: () => void;
@@ -45,6 +48,8 @@ export const MetadataModal: FunctionComponent<MetadataModalProps> = ({
     sourceCode,
     additionalSourceCode,
     privateCode,
+    privacyPolicy,
+    termsOfUse,
   } = snap;
 
   return (
@@ -95,6 +100,14 @@ export const MetadataModal: FunctionComponent<MetadataModalProps> = ({
               />
             }
           />
+          {(privacyPolicy || termsOfUse) && (
+            <Data
+              label={t`Legal`}
+              value={
+                <Legal privacyPolicy={privacyPolicy} termsOfUse={termsOfUse} />
+              }
+            />
+          )}
         </ModalBody>
       </ModalContent>
     </Modal>

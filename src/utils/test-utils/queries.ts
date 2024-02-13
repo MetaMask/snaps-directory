@@ -68,6 +68,8 @@ export type MockSnap = Fields<
   | 'lastUpdated'
   | 'permissions'
   | 'privateCode'
+  | 'privacyPolicy'
+  | 'termsOfUse'
 >;
 
 export type GetMockSnapArgs = {
@@ -96,6 +98,8 @@ export type GetMockSnapArgs = {
   lastUpdated?: number;
   permissions?: InitialPermissions;
   privateCode?: boolean;
+  privacyPolicy?: string;
+  termsOfUse?: string;
 };
 
 /**
@@ -123,6 +127,8 @@ export type GetMockSnapArgs = {
  * @param args.permissions - The Snap's initial permissions.
  * @param args.privateCode - Whether the Snap's source code is (partially)
  * private.
+ * @param args.privacyPolicy - The privacy policy URL.
+ * @param args.termsOfUse - The terms of use URL.
  * @returns The mock snap data.
  */
 export function getMockSnap({
@@ -168,6 +174,8 @@ export function getMockSnap({
     },
   },
   privateCode = false,
+  privacyPolicy = 'https://example.com/privacyPolicy',
+  termsOfUse = 'https://example.com/termsOfUse',
 }: GetMockSnapArgs = {}): { snap: MockSnap } {
   return {
     snap: {
@@ -194,6 +202,8 @@ export function getMockSnap({
       lastUpdated,
       permissions,
       privateCode,
+      privacyPolicy,
+      termsOfUse,
     },
   };
 }
