@@ -580,7 +580,7 @@ msgid "Popularity"
 msgstr ""
 
 #: src/components/FooterCopyright.tsx
-#: src/features/snap/components/MetadataModal.tsx
+#: src/features/snap/components/Legal.tsx
 msgid "Privacy Policy"
 msgstr ""
 
@@ -703,7 +703,7 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
-#: src/features/snap/components/MetadataModal.tsx
+#: src/features/snap/components/Legal.tsx
 msgid "Terms of Use"
 msgstr ""
 
