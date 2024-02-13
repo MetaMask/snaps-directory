@@ -7,19 +7,23 @@ import { Link } from '../../../components';
 export type BaseProps = FlexProps & {
   to: string;
   external?: boolean;
+  background?: string;
+  backgroundImage?: string;
   children: ReactNode;
 };
 
 export const Base: FunctionComponent<BaseProps> = ({
   to,
   external,
+  background = 'background.default-hover',
+  backgroundImage,
   children,
   ...props
 }) => (
   <Box
     position="relative"
     overflow="hidden"
-    background="background.default-hover"
+    background={background}
     borderRadius="xl"
     width="100%"
     height="100%"
@@ -49,6 +53,9 @@ export const Base: FunctionComponent<BaseProps> = ({
         textAlign="center"
         position="relative"
         zIndex="2"
+        backgroundImage={backgroundImage as string}
+        backgroundPosition="bottom"
+        backgroundRepeat="no-repeat"
         {...props}
       >
         {children}
