@@ -24,7 +24,7 @@ describe('MetadataModal', () => {
     expect(queryByLabelText('Warning')).toBeInTheDocument();
   });
 
-  it('doesnt render legal if privacy policy and terms of use are missing', () => {
+  it("doesn't render legal if privacy policy and terms of use are missing", () => {
     const { snap: rawSnap } = getMockSnap();
     const snap = {
       ...rawSnap,
