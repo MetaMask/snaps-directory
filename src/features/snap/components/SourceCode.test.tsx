@@ -13,4 +13,20 @@ describe('SourceCode', () => {
 
     expect(queryByText('GitHub')).toBeInTheDocument();
   });
+
+  it('renders a known name with additional URLs', () => {
+    const { queryByText } = render(
+      <SourceCode
+        url="https://github.com"
+        additionalUrls={[
+          { name: 'Foo', url: 'https://gitlab.com' },
+          { name: 'Bar', url: 'https://bitbucket.org' },
+        ]}
+      />,
+    );
+
+    expect(queryByText('Main (GitHub)')).toBeInTheDocument();
+    expect(queryByText('Foo (GitLab)')).toBeInTheDocument();
+    expect(queryByText('Bar (Bitbucket)')).toBeInTheDocument();
+  });
 });

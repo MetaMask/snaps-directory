@@ -1,6 +1,7 @@
 import { defineMessage } from '@lingui/macro';
 
 import BaseAddSquareIcon from './add-square.svg';
+import BaseAddUserIcon from './add-user.svg';
 import BaseBackIcon from './back.svg';
 import BaseCheckThinIcon from './check-thin.svg';
 import BaseCheckIcon from './check.svg';
@@ -39,9 +40,12 @@ import BaseTagIcon from './tag.svg';
 import BaseTimerIcon from './timer.svg';
 import BaseTransactionInsightsIcon from './transaction-insights.svg';
 import BaseUserCircleAddIcon from './user-circle-add.svg';
+import BaseWarningIcon from './warning.svg';
 import BaseWifiIcon from './wifi.svg';
 
 export const AddSquareIcon = wrapIcon(BaseAddSquareIcon, defineMessage`Add`);
+
+export const AddUserIcon = wrapIcon(BaseAddUserIcon, defineMessage`Add user`);
 
 export const BackIcon = wrapIcon(BaseBackIcon, defineMessage`Back`);
 
@@ -163,6 +167,8 @@ export const UserCircleAddIcon = wrapIcon(
   BaseUserCircleAddIcon,
   defineMessage`Add user`,
 );
+
+export const WarningIcon = wrapIcon(BaseWarningIcon, defineMessage`Warning`);
 
 export const WifiIcon = wrapIcon(BaseWifiIcon, defineMessage`Wifi`);
 

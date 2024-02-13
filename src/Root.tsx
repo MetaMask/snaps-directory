@@ -20,14 +20,16 @@ i18n.activate('en-US');
  * This is exported here so that it can be used in both gatsby-browser.tsx and
  * gatsby-ssr.tsx.
  *
- * @param props - The props provided by Gatsby.
- * @param props.element - The page element to wrap.
+ * @param options - The options provided by Gatsby.
+ * @param options.element - The page element to wrap.
+ * @param options.props - The props for the page.
  * @returns The wrapped page element.
  */
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({
   element,
+  props,
 }) => {
-  return <Layout>{element}</Layout>;
+  return <Layout {...props}>{element}</Layout>;
 };
 
 /**

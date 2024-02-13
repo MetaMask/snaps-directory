@@ -3,14 +3,20 @@ import { Box, Container, Flex, Text } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
+import { FooterAccountManagementTerms } from './FooterAccountManagementTerms';
 import { FooterCopyright } from './FooterCopyright';
 import { FooterLinks } from './FooterLinks';
 import { FooterTerms } from './FooterTerms';
 import { MetaMaskLogo } from './MetaMaskLogo';
 
-export type FooterProps = BoxProps;
+export type FooterProps = BoxProps & {
+  isAccountManagement?: boolean;
+};
 
-export const Footer: FunctionComponent<FooterProps> = (props) => (
+export const Footer: FunctionComponent<FooterProps> = ({
+  isAccountManagement,
+  ...props
+}) => (
   <Box
     {...props}
     as="footer"
@@ -39,7 +45,7 @@ export const Footer: FunctionComponent<FooterProps> = (props) => (
         </Box>
         <FooterLinks />
       </Flex>
-      <FooterTerms />
+      {isAccountManagement ? <FooterAccountManagementTerms /> : <FooterTerms />}
       <FooterCopyright />
     </Container>
   </Box>

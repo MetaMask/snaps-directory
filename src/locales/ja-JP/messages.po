@@ -25,6 +25,10 @@ msgstr ""
 msgid "©{0} MetaMask. All rights reserved."
 msgstr ""
 
+#: src/features/snap/components/MetadataModal.tsx
+msgid "<0>{name}</0> uses code that isn't viewable by the public. Critical parts of the codebase were audited for security, but later versions of the code may not be. Make sure you trust <1>{0}</1> before installing and using <2>{name}</2>."
+msgstr ""
+
 #: src/components/FooterLinks.tsx
 msgid "About"
 msgstr ""
@@ -35,6 +39,14 @@ msgstr ""
 
 #: src/features/snap/permissions.tsx
 msgid "Access the internet"
+msgstr ""
+
+#: src/constants.ts
+msgid "Account Management"
+msgstr ""
+
+#: src/components/FooterAccountManagementTerms.tsx
+msgid "Account Management Snaps are released as part of an experimental beta release. You agree that you will only use one of these Snaps if you understand how it functions and how to use it, and you have fully read and understand all risk warnings and other disclosures made available by the Third Party Service provider relating to use of their Snap. You agree that Consensys is not responsible for any injury that you incur as a result of your use of this Snap."
 msgstr ""
 
 #: src/components/icons/index.ts
@@ -50,6 +62,7 @@ msgstr ""
 msgid "Add to MetaMask"
 msgstr ""
 
+#: src/components/icons/index.ts
 #: src/components/icons/index.ts
 msgid "Add user"
 msgstr ""
@@ -229,6 +242,10 @@ msgstr ""
 msgid "Continue to <0>{name}</0>'s website to get started with this snap."
 msgstr ""
 
+#: src/constants.ts
+msgid "Create an Ethereum Account"
+msgstr ""
+
 #: src/features/banner/components/create-snap-banner/CreateSnapBanner.tsx
 msgid "Create your own Snap"
 msgstr ""
@@ -300,6 +317,10 @@ msgstr ""
 
 #: src/components/icons/index.ts
 msgid "Ethereum"
+msgstr ""
+
+#: src/components/FooterAccountManagementTerms.tsx
+msgid "Experimental Beta"
 msgstr ""
 
 #: src/components/icons/index.ts
@@ -437,6 +458,10 @@ msgid "Key"
 msgstr ""
 
 #: src/features/snap/components/Metadata.tsx
+msgid "Key Recovery"
+msgstr ""
+
+#: src/features/snap/components/Metadata.tsx
 msgid "Knowledge Base"
 msgstr ""
 
@@ -483,6 +508,10 @@ msgstr ""
 
 #: src/features/snap/permissions.tsx
 msgid "Manage accounts (Unknown network \"m/44'/{coinType}'\")"
+msgstr ""
+
+#: src/constants.ts
+msgid "Manage your accounts and keys with MetaMask."
 msgstr ""
 
 #: src/components/icons/index.ts
@@ -595,6 +624,7 @@ msgstr ""
 msgid "See address, account balance, activity and suggest transactions to approve"
 msgstr ""
 
+#: src/constants.ts
 #: src/constants.ts
 #: src/constants.ts
 #: src/constants.ts
@@ -740,6 +770,10 @@ msgstr ""
 msgid "View your public key for {name}"
 msgstr ""
 
+#: src/components/icons/index.ts
+msgid "Warning"
+msgstr ""
+
 #: src/components/FooterLinks.tsx
 msgid "Website"
 msgstr ""
@@ -750,4 +784,8 @@ msgstr ""
 
 #: src/components/FooterTerms.tsx
 msgid "You acknowledge that any Snap that you install is a Third Party Service, unless otherwise identified, as defined in the <0>Consensys Terms of Use</0>. Your use of Third Party Services is governed by separate terms and conditions set forth by the Third Party Service provider. Consensys does not recommend the use of any Snap by any particular person for any particular reason. You access, rely upon or use the Third Party Service at your own risk. Consensys disclaims all responsibility and liability for any losses on account of your use of Third Party Services. Any information you share with Third Party Services will be collected directly by those Third Party Services in accordance with their privacy policies. Please refer to their privacy policies for more information. Consensys has no access to information you share with Third Party Services."
+msgstr ""
+
+#: src/components/FooterAccountManagementTerms.tsx
+msgid "You will not be able to use your MetaMask Secret Recovery Phrase to recover accounts added through Account Management Snaps. If your account credentials are lost or compromised, MetaMask will not be able to help you. If the Snap or the associated dapp is hacked or ceases to function, you may not be able to access your account and the funds in your account."
 msgstr ""

@@ -126,33 +126,28 @@ describe('filterSlice', () => {
         toggleCategory(RegistrySnapCategory.TransactionInsights),
       );
 
-      expect(state.categories).toStrictEqual([
-        RegistrySnapCategory.Interoperability,
-        RegistrySnapCategory.Notifications,
-      ]);
+      expect(state.categories).not.toContain(
+        RegistrySnapCategory.TransactionInsights,
+      );
 
       const newState = filterSlice.reducer(
         state,
         toggleCategory(RegistrySnapCategory.TransactionInsights),
       );
 
-      expect(newState.categories).toStrictEqual([
-        RegistrySnapCategory.Interoperability,
-        RegistrySnapCategory.Notifications,
+      expect(newState.categories).toContain(
         RegistrySnapCategory.TransactionInsights,
-      ]);
+      );
     });
 
     it('sets the categories to all if all categories are toggled off', () => {
-      const state = filterSlice.reducer(
-        filterSlice.reducer(
+      const state = Object.values(RegistrySnapCategory).reduce(
+        (currentState, category) =>
           filterSlice.reducer(
-            filterSlice.getInitialState(),
-            toggleCategory(RegistrySnapCategory.Notifications),
+            currentState,
+            toggleCategory(category as RegistrySnapCategory),
           ),
-          toggleCategory(RegistrySnapCategory.TransactionInsights),
-        ),
-        toggleCategory(RegistrySnapCategory.Interoperability),
+        filterSlice.getInitialState(),
       );
 
       expect(state.categories).toStrictEqual(
@@ -230,11 +225,7 @@ describe('filterSlice', () => {
       const state = getMockState({
         filter: {
           installed: false,
-          categories: [
-            RegistrySnapCategory.Interoperability,
-            RegistrySnapCategory.Notifications,
-            RegistrySnapCategory.TransactionInsights,
-          ],
+          categories: filterSlice.getInitialState().categories,
         },
       });
 

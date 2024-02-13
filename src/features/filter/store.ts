@@ -153,6 +153,7 @@ export const getFilteredSnaps = createSelector(
 
     const allSelected = getAll(state);
     // In staging we also show snaps without categories
+    // istanbul ignore next
     // eslint-disable-next-line no-restricted-globals
     if (process.env.GATSBY_STAGING === 'true' && allSelected) {
       return filteredSnaps;

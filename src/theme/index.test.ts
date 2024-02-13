@@ -437,6 +437,16 @@ describe('theme', () => {
                 "default": "#24272A1A",
               },
             },
+            "warning": Object {
+              "default": Object {
+                "_dark": "#FFD33D",
+                "default": "#BF5208",
+              },
+              "muted": Object {
+                "_dark": "#FFD33D26",
+                "default": "#BF520819",
+              },
+            },
           },
           "shadows": Object {
             "lg": "0px 2px 40px 0px #0000001A",

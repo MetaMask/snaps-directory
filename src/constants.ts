@@ -2,6 +2,7 @@ import type { MessageDescriptor } from '@lingui/core';
 import { defineMessage } from '@lingui/macro';
 
 export enum RegistrySnapCategory {
+  AccountManagement = 'account management',
   Interoperability = 'interoperability',
   Notifications = 'notifications',
   TransactionInsights = 'transaction insights',
@@ -14,6 +15,10 @@ export const SNAP_CATEGORY_LABELS: Record<
     description: MessageDescriptor;
   }
 > = {
+  [RegistrySnapCategory.AccountManagement]: {
+    name: defineMessage`Account Management`,
+    description: defineMessage`Manage your accounts and keys with MetaMask.`,
+  },
   [RegistrySnapCategory.Interoperability]: {
     name: defineMessage`Interoperability`,
     description: defineMessage`Connect to non-Ethereum blockchains with MetaMask.`,
@@ -36,6 +41,11 @@ export const SNAP_CATEGORY_LINKS: Record<
     linkText: MessageDescriptor;
   }
 > = {
+  [RegistrySnapCategory.AccountManagement]: {
+    header: defineMessage`Create an Ethereum Account`,
+    link: '/account-management',
+    linkText: defineMessage`See All`,
+  },
   [RegistrySnapCategory.Interoperability]: {
     header: defineMessage`Use MetaMask Beyond Ethereum`,
     link: '/interoperability',

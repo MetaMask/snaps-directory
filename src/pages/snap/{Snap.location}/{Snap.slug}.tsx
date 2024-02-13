@@ -10,7 +10,7 @@ import { graphql } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
 import { InstallSnapButton, SnapWebsiteButton } from '../../../components';
-import { type RegistrySnapCategory } from '../../../constants';
+import { RegistrySnapCategory } from '../../../constants';
 import {
   useGetInstalledSnapsQuery,
   Authorship,
@@ -36,10 +36,12 @@ type SnapPageProps = {
       | 'category'
       | 'author'
       | 'sourceCode'
+      | 'additionalSourceCode'
       | 'audits'
       | 'banner'
       | 'support'
       | 'permissions'
+      | 'privateCode'
     >;
   };
 };
@@ -115,7 +117,9 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data }) => {
           <Permissions snap={data.snap} permissions={permissions} />
         </Stack>
 
-        {category && (
+        {/* TODO: Enable account management category when there are more Snaps
+            in the registry. */}
+        {category && category !== RegistrySnapCategory.AccountManagement && (
           <>
             <Divider my="12" />
             <RelatedSnaps
@@ -185,6 +189,10 @@ export const query = graphql`
         website
       }
       sourceCode
+      additionalSourceCode {
+        name
+        url
+      }
       audits {
         auditor
         report
@@ -196,8 +204,10 @@ export const query = graphql`
         contact
         faq
         knowledgeBase
+        keyRecovery
       }
       permissions
+      privateCode
     }
 
     site {
