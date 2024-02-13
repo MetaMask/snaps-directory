@@ -5,6 +5,6 @@ describe('CreateSnapBanner', () => {
   it('renders the banner', () => {
     const { queryByText } = render(<CreateSnapBanner />);
 
-    expect(queryByText('Create your own Snap')).toBeInTheDocument();
+    expect(queryByText('Build your own Snap')).toBeInTheDocument();
   });
 });
