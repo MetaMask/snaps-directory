@@ -15,7 +15,7 @@ describe('FilterOrder', () => {
       </Menu>,
     );
 
-    expect(queryByText('Popularity')).toBeInTheDocument();
+    expect(queryByText('Most Popular')).toBeInTheDocument();
   });
 
   it('sets the order when clicked', () => {
