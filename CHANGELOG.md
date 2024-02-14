@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.7.0]
+### Added
+- Add account management category ([#164](https://github.com/MetaMask/snaps-directory/pull/164), [#301](https://github.com/MetaMask/snaps-directory/pull/301))
+- Add announcement banners to home page ([#262](https://github.com/MetaMask/snaps-directory/pull/262), [#299](https://github.com/MetaMask/snaps-directory/pull/299))
+- Add privacy policy and terms of use fields ([#296](https://github.com/MetaMask/snaps-directory/pull/296))
+- Show permissions on Snap details page ([#255](https://github.com/MetaMask/snaps-directory/pull/255))
+
+### Fixed
+- Fix fallback background for `SnapCardImage` ([#286](https://github.com/MetaMask/snaps-directory/pull/286))
+- Fix known link detection ([#285](https://github.com/MetaMask/snaps-directory/pull/285))
+
 ## [1.6.0]
 ### Changed
 - Redesign the directory experience ([#219](https://github.com/MetaMask/snaps-directory/pull/219), [#223](https://github.com/MetaMask/snaps-directory/pull/223), [#226](https://github.com/MetaMask/snaps-directory/pull/226), [#237](https://github.com/MetaMask/snaps-directory/pull/237), [#238](https://github.com/MetaMask/snaps-directory/pull/238), [#241](https://github.com/MetaMask/snaps-directory/pull/241), [#239](https://github.com/MetaMask/snaps-directory/pull/239), [#242](https://github.com/MetaMask/snaps-directory/pull/242), [#246](https://github.com/MetaMask/snaps-directory/pull/246), [#248](https://github.com/MetaMask/snaps-directory/pull/248), [#249](https://github.com/MetaMask/snaps-directory/pull/249), [#227](https://github.com/MetaMask/snaps-directory/pull/227), [#230](https://github.com/MetaMask/snaps-directory/pull/230), [#251](https://github.com/MetaMask/snaps-directory/pull/251). [#252](https://github.com/MetaMask/snaps-directory/pull/252))
@@ -137,7 +148,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.6.0...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.7.0...HEAD
+[1.7.0]: https://github.com/MetaMask/snaps-directory/compare/v1.6.0...v1.7.0
 [1.6.0]: https://github.com/MetaMask/snaps-directory/compare/v1.5.0...v1.6.0
 [1.5.0]: https://github.com/MetaMask/snaps-directory/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/MetaMask/snaps-directory/compare/v1.3.1...v1.4.0
