@@ -30,6 +30,6 @@ export enum Order {
 
 export const SNAP_ORDER_LABELS = {
   [Order.Alphabetical]: defineMessage`Alphabetical`,
-  [Order.Popularity]: defineMessage`Popularity`,
+  [Order.Popularity]: defineMessage`Most Popular`,
   [Order.Latest]: defineMessage`Latest`,
 };
