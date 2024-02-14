@@ -10,7 +10,7 @@ export const Menu = defineMultiStyleConfig({
       border: 'none',
       borderRadius: 'lg',
       padding: '1',
-      boxShadow: 'lg',
+      boxShadow: 'md',
       background: 'background.default',
     },
     item: {

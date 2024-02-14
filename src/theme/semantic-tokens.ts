@@ -133,7 +133,10 @@ export const semanticTokens: SemanticTokens = {
   },
 
   shadows: {
-    md: '0px 2px 16px 0px #0000001A',
+    md: {
+      default: '0px 4px 16px 0px #00000066',
+      _dark: '0px 2px 16px 0px #00000040',
+    },
     lg: '0px 2px 40px 0px #0000001A',
     xl: '0px 4px 16px 0px #0000001A',
   },

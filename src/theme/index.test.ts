@@ -167,7 +167,7 @@ describe('theme', () => {
                 "background": "background.default",
                 "border": "none",
                 "borderRadius": "lg",
-                "boxShadow": "lg",
+                "boxShadow": "md",
                 "padding": "1",
               },
             },
@@ -450,7 +450,10 @@ describe('theme', () => {
           },
           "shadows": Object {
             "lg": "0px 2px 40px 0px #0000001A",
-            "md": "0px 2px 16px 0px #0000001A",
+            "md": Object {
+              "_dark": "0px 2px 16px 0px #00000040",
+              "default": "0px 4px 16px 0px #00000066",
+            },
             "xl": "0px 4px 16px 0px #0000001A",
           },
         },

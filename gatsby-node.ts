@@ -508,9 +508,10 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
         {
           test: /\.svg$/u,
           issuer: /\.tsx?$/u,
-          use: [
+          oneOf: [
             {
               loader: '@svgr/webpack',
+              resourceQuery: /^((?!raw).)*$/u,
               options: {
                 svgo: true,
                 svgoConfig: {
@@ -520,6 +521,12 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
                   accessibilityRole: 'image',
                 },
               },
+            },
+            {
+              // Allows for importing SVGs as raw strings using
+              // `import file from './file.svg?raw';`.
+              resourceQuery: /raw/u,
+              type: 'asset/resource',
             },
           ],
         },

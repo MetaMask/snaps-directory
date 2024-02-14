@@ -6,4 +6,6 @@ declare module '*.svg' {
   export default Component;
 }
 
+declare module '*.svg?raw';
+
 declare module '*.png';
