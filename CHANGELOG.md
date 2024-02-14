@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.7.0]
 ### Added
-- Add account management category ([#164](https://github.com/MetaMask/snaps-directory/pull/164))
+- Add account management category ([#164](https://github.com/MetaMask/snaps-directory/pull/164), [#301](https://github.com/MetaMask/snaps-directory/pull/301))
 - Add announcement banners to home page ([#262](https://github.com/MetaMask/snaps-directory/pull/262), [#299](https://github.com/MetaMask/snaps-directory/pull/299))
 - Add privacy policy and terms of use fields ([#296](https://github.com/MetaMask/snaps-directory/pull/296))
 - Show permissions on Snap details page ([#255](https://github.com/MetaMask/snaps-directory/pull/255))
