@@ -115,9 +115,16 @@ export async function getIcon(name: string, icon?: string) {
       height: 188,
     });
 
+    const masked = snapIcon.composite([
+      {
+        input: resolve(__dirname, '../assets/images/seo/icon.png'),
+        blend: 'dest-in',
+      },
+    ]);
+
     return [
       {
-        input: await snapIcon.png().toBuffer(),
+        input: await masked.png().toBuffer(),
         top: SNAP_ICON_Y,
         left: SNAP_ICON_X,
       },
