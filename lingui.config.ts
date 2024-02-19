@@ -4,6 +4,7 @@ import { formatter } from '@lingui/format-po';
 const config: LinguiConfig = {
   compileNamespace: 'es',
   locales: ['de-DE', 'en-US', 'ja-JP', 'pt-BR', 'ru-RU', 'tr-TR', 'zh-CN'],
+  sourceLocale: 'en-US',
   format: formatter({ lineNumbers: false }),
   catalogs: [
     {
