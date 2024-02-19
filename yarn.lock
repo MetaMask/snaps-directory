@@ -5169,9 +5169,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@metamask/snaps-sdk@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@metamask/snaps-sdk@npm:2.1.0"
+  dependencies:
+    "@metamask/key-tree": ^9.0.0
+    "@metamask/providers": ^14.0.2
+    "@metamask/rpc-errors": ^6.1.0
+    "@metamask/utils": ^8.3.0
+    fast-xml-parser: ^4.3.4
+    superstruct: ^1.0.3
+  checksum: 09cfc8b6f51b5895599474bfc9a6a36bef9a078ed3796d3db94dcf9abcc6d5e0c06d9e48193506ef5b757d8b9358877163cfe20c85442cc6986c2759975f2bac
+  languageName: node
+  linkType: hard
+
 "@metamask/snaps-utils@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "@metamask/snaps-utils@npm:6.0.0"
+  version: 6.1.0
+  resolution: "@metamask/snaps-utils@npm:6.1.0"
   dependencies:
     "@babel/core": ^7.23.2
     "@babel/types": ^7.23.0
@@ -5181,7 +5195,7 @@ __metadata:
     "@metamask/rpc-errors": ^6.1.0
     "@metamask/slip44": ^3.1.0
     "@metamask/snaps-registry": ^3.0.0
-    "@metamask/snaps-sdk": ^2.0.0
+    "@metamask/snaps-sdk": ^2.1.0
     "@metamask/utils": ^8.3.0
     "@noble/hashes": ^1.3.1
     "@scure/base": ^1.1.1
@@ -5189,13 +5203,12 @@ __metadata:
     cron-parser: ^4.5.0
     fast-deep-equal: ^3.1.3
     fast-json-stable-stringify: ^2.1.0
-    is-svg: ^4.4.0
     rfdc: ^1.3.0
     semver: ^7.5.4
     ses: ^1.1.0
     superstruct: ^1.0.3
     validate-npm-package-name: ^5.0.0
-  checksum: 3365da773583791cb0e663dab9349931460b4a161d3e2407426bbb7a8fe761ba4abcfbdc249bb0452a69831459c9fd640e0cb5c15772cd15303b929476933b6b
+  checksum: 1e6fcffe875ed7089bf103227bb5edf8b24503b1f959ddadd40f20b5c42e4d8b38633ad98fa794d643ccfd612a6ab0777f322398a50184d40b297d125576ff3a
   languageName: node
   linkType: hard
 
@@ -12130,6 +12143,17 @@ __metadata:
   bin:
     fxparser: src/cli/cli.js
   checksum: 8cd2262a19a1a5c5ebf782eb17d7d52f4d8192edee49c188feecf6bfaf70046c088edbb6a92f0a6911ba18b8fd2d2c0c3b87f018b297983ef621c1ddfa09c0a0
+  languageName: node
+  linkType: hard
+
+"fast-xml-parser@npm:^4.3.4":
+  version: 4.3.4
+  resolution: "fast-xml-parser@npm:4.3.4"
+  dependencies:
+    strnum: ^1.0.5
+  bin:
+    fxparser: src/cli/cli.js
+  checksum: ab88177343f6d3d971d53462db3011003a83eb8a8db704840127ddaaf27105ea90cdf7903a0f9b2e1279ccc4adfca8dfc0277b33bae6262406f10c16bd60ccf9
   languageName: node
   linkType: hard
 
