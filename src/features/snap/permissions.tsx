@@ -281,7 +281,7 @@ export const SNAP_PERMISSIONS: PermissionsMap = {
 
       return {
         label,
-        description: defineMessage`Allow ${name} to view your public keys (and addresses) for $1. This does not grant any control of accounts or assets.`,
+        description: defineMessage`Allow ${name} to view your public keys (and addresses) for the requested network. This does not grant any control of accounts or assets.`,
         icon: SecuritySearchIcon,
         weight: 2,
       };

@@ -142,8 +142,8 @@ msgid "Allow {name} to use lifecycle hooks to run code at specific times during 
 msgstr "允许 {name} 使用生命周期挂钩，在其生命周期的特定时间运行代码。"
 
 #: src/features/snap/permissions.tsx
-msgid "Allow {name} to view your public keys (and addresses) for $1. This does not grant any control of accounts or assets."
-msgstr "允许 {name} 查看您的 $1 公钥（和地址）。这并不会授予对账户或资产的任何控制权。"
+msgid "Allow {name} to view your public keys (and addresses) for the requested network. This does not grant any control of accounts or assets."
+msgstr ""
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {origin} to communicate with {name}"

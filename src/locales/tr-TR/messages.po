@@ -142,8 +142,8 @@ msgid "Allow {name} to use lifecycle hooks to run code at specific times during 
 msgstr "Bu yaşam döngüsü sırasında belirli zamanlarda kod çalıştırmak için {name} adlı snap'in yaşam döngüsü kancalarını kullanmasına izin verin."
 
 #: src/features/snap/permissions.tsx
-msgid "Allow {name} to view your public keys (and addresses) for $1. This does not grant any control of accounts or assets."
-msgstr "{name} adlı snap'in $1 için genel anahtarları (ve adresleri) görüntülemesine izin verin. Bu eylem, herhangi bir şekilde hesapların ya da varlıkların kontrolünü vermez."
+msgid "Allow {name} to view your public keys (and addresses) for the requested network. This does not grant any control of accounts or assets."
+msgstr ""
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {origin} to communicate with {name}"
