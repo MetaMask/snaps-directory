@@ -143,7 +143,7 @@ msgstr "Erlauben Sie {name}, Lebenszyklus-Hooks zu verwenden, um Code zu bestimm
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to view your public keys (and addresses) for $1. This does not grant any control of accounts or assets."
-msgstr "Erlauben Sie {name}, Ihre öffentlichen Schlüssel (und Adressen) für 1 $ einzusehen. Dies gewährt keine Kontrolle über Konten oder Assets."
+msgstr "Erlauben Sie {name}, Ihre öffentlichen Schlüssel (und Adressen) für $1 einzusehen. Dies gewährt keine Kontrolle über Konten oder Assets."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {origin} to communicate with {name}"
