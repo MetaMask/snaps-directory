@@ -137,8 +137,8 @@ msgid "Allow {name} to use lifecycle hooks to run code at specific times during 
 msgstr ""
 
 #: src/features/snap/permissions.tsx
-msgid "Allow {name} to view your public keys (and addresses) for $1. This does not grant any control of accounts or assets."
-msgstr ""
+msgid "Allow {name} to view your public keys (and addresses) for the requested network. This does not grant any control of accounts or assets."
+msgstr "Allow {name} to view your public keys (and addresses) for the requested network. This does not grant any control of accounts or assets."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {origin} to communicate with {name}"
