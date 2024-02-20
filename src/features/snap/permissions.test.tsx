@@ -627,8 +627,8 @@ describe('SNAP_PERMISSIONS', () => {
         Array [
           Object {
             "description": Object {
-              "id": "rh23nf",
-              "message": "Allow {name} to view your public keys (and addresses) for $1. This does not grant any control of accounts or assets.",
+              "id": "qogTk8",
+              "message": "Allow {name} to view your public keys (and addresses) for the requested network. This does not grant any control of accounts or assets.",
               "values": Object {
                 "name": "Snap",
               },
@@ -648,8 +648,8 @@ describe('SNAP_PERMISSIONS', () => {
           },
           Object {
             "description": Object {
-              "id": "rh23nf",
-              "message": "Allow {name} to view your public keys (and addresses) for $1. This does not grant any control of accounts or assets.",
+              "id": "qogTk8",
+              "message": "Allow {name} to view your public keys (and addresses) for the requested network. This does not grant any control of accounts or assets.",
               "values": Object {
                 "name": "Snap",
               },
@@ -670,8 +670,8 @@ describe('SNAP_PERMISSIONS', () => {
           },
           Object {
             "description": Object {
-              "id": "rh23nf",
-              "message": "Allow {name} to view your public keys (and addresses) for $1. This does not grant any control of accounts or assets.",
+              "id": "qogTk8",
+              "message": "Allow {name} to view your public keys (and addresses) for the requested network. This does not grant any control of accounts or assets.",
               "values": Object {
                 "name": "Snap",
               },
@@ -880,8 +880,8 @@ describe('getPermissions', () => {
       Array [
         Object {
           "description": Object {
-            "id": "rh23nf",
-            "message": "Allow {name} to view your public keys (and addresses) for $1. This does not grant any control of accounts or assets.",
+            "id": "qogTk8",
+            "message": "Allow {name} to view your public keys (and addresses) for the requested network. This does not grant any control of accounts or assets.",
             "values": Object {
               "name": "Snap",
             },
