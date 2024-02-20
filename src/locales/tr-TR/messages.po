@@ -8,7 +8,7 @@ msgstr ""
 "Language: tr\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-19 17:34\n"
+"PO-Revision-Date: 2024-02-20 09:58\n"
 "Last-Translator: \n"
 "Language-Team: Turkish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -20,616 +20,616 @@ msgstr ""
 
 #: src/components/PostInstallModal.tsx
 msgid "{name} is now ready to use."
-msgstr ""
+msgstr "{name} artık kullanılmaya hazır."
 
 #: src/pages/{Category.name}/index.tsx
 msgid "{nameText} Snaps on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "MetaMask Snaps Dizinindeki {nameText} Snap'leri"
 
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
-msgstr ""
+msgstr "©{0} MetaMask. Tüm hakları saklıdır."
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "<0>{name}</0> uses code that isn't viewable by the public. Critical parts of the codebase were audited for security, but later versions of the code may not be. Make sure you trust <1>{0}</1> before installing and using <2>{name}</2>."
-msgstr ""
+msgstr "<0>{name}</0> herkes tarafından görüntülenemeyen kod kullanır. Kod tabanının kritik kısımları güvenlik amaçlı denetlenir ancak kodun sonraki sürümleri denetlenmeyebilir. <2>{name}</2> yüklemeden ve kullanmadan önce <1>{0}</1> güvendiğinizden emin olun."
 
 #: src/components/FooterLinks.tsx
 msgid "About"
-msgstr ""
+msgstr "Hakkında"
 
 #: src/features/snap/permissions.tsx
 msgid "Access the Ethereum provider"
-msgstr ""
+msgstr "Ethereum sağlayıcısına erişim sağla"
 
 #: src/features/snap/permissions.tsx
 msgid "Access the internet"
-msgstr ""
+msgstr "İnternete erişim sağla"
 
 #: src/constants.ts
 msgid "Account Management"
-msgstr ""
+msgstr "Hesap Yönetimi"
 
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "Account Management Snaps are released as part of an experimental beta release. You agree that you will only use one of these Snaps if you understand how it functions and how to use it, and you have fully read and understand all risk warnings and other disclosures made available by the Third Party Service provider relating to use of their Snap. You agree that Consensys is not responsible for any injury that you incur as a result of your use of this Snap."
-msgstr ""
+msgstr "Hesap Yönetimi Snap'leri deneysel beta sürümünün bir parçası olarak piyasaya sürülür. Bu Snap'lerden birini sadece nasıl işlediğini ve nasıl kullanılacağını anlıyorsanız ve Snap'lerinin kullanımı ile ilgili olarak Üçüncü Taraf Hizmet Sağlayıcısı tarafından sunulan tüm risk uyarılarını ve diğer açıklamaları tam olarak okuyup anladıysanız kullanacağınızı kabul ederseniz. Consensys'in bu Snap'i kullanımınızın sonucunda yaşayacağınız zararlardan sorumlu olmadığını kabul edersiniz."
 
 #: src/components/icons/index.ts
 msgid "Add"
-msgstr ""
+msgstr "Ekle"
 
 #: src/features/snap/permissions.tsx
 msgid "Add and control Ethereum accounts"
-msgstr ""
+msgstr "Ethereum hesaplarını ekle ve kontrol et"
 
 #: src/components/InstallSnapButton.tsx
 #: src/components/InstallUnsupported.tsx
 msgid "Add to MetaMask"
-msgstr ""
+msgstr "MetaMask'e ekle"
 
 #: src/components/icons/index.ts
 #: src/components/icons/index.ts
 msgid "Add user"
-msgstr ""
+msgstr "Kullanıcı ekle"
 
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "Adjust your search or display all available Snaps by clicking below."
-msgstr ""
+msgstr "Aşağıya tıklayarak aramanızı ayarlayın ve tüm mevcut Snap'leri görüntüleyin."
 
 #: src/features/filter/Filter.tsx
 msgid "All"
-msgstr ""
+msgstr "Tümü"
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to access low-level execution environments via WebAssembly."
-msgstr ""
+msgstr "{name} adlı snap'in WebAssembly aracılığıyla düşük seviye yürütme ortamlarına erişim sağlamasına izin verin."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to access the internet. This can be used to both send and receive data with third-party servers."
-msgstr ""
+msgstr "{name} adlı snap'in internete erişim sağlamasına izin verin. Üçüncü taraf sunucuları ile hem veri göndermek hem de veri almak için kullanılabilir."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to add or remove Ethereum accounts, then transact and sign with these accounts."
-msgstr ""
+msgstr "{name} adlı snap'in Ethereum hesabı eklemesine veya kaldırmasına izin verin, ardından bu hesaplarla işlem ve imza gerçekleştirin."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to communicate with MetaMask directly, in order for it to read data from the blockchain and suggest messages and transactions."
-msgstr ""
+msgstr "Blok zincirinden veri okuyabilmesi ve mesaj ile işlemleri önerebilmesi için {name} adlı snap'in doğrudan MetaMask ile iletişim kurmasına izin verin."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to decode signatures and show insights within the MetaMask UI. This can be used for anti-phishing and security solutions."
-msgstr ""
+msgstr "{name} adlı snap'in imzaların şifresini çözmesine ve MetaMask Kullanıcı Arayüzü dahilinde içgörüleri göstermesine izin verin. Kimlik avından korunma ve güvenlik çözümleri için kullanılabilir."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to decode transactions and show insights within the MetaMask UI. This can be used for anti-phishing and security solutions."
-msgstr ""
+msgstr "{name} adlı snap'in işlemlerin şifresini çözmesine ve MetaMask Kullanıcı Arayüzü dahilinde içgörüleri göstermesine izin verin. Kimlik avından korunma ve güvenlik çözümleri için kullanılabilir."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to derive arbitrary keys unique to {name}, without exposing them. These keys are separate from your MetaMask account(s) and not related to your private keys or Secret Recovery Phrase. Other snaps cannot access this information."
-msgstr ""
+msgstr "{name} adlı snap'in, paylaşmadan, {name} adlı snap'e özel rastgele anahtarlar türetmesine izin verin. Bu anahtarlar MetaMask hesap veya hesaplarınızdan ayrıdır ve özel anahtarlarınızla ya da Gizli Kurtarma İfadenizle bağlantılı değildir. Diğer snap'ler bu bilgilere erişemez."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to display MetaMask popups with custom text, input field, and buttons to approve or reject an action. Can be used to create e.g., alerts, confirmations, and opt-in flows for a Snap."
-msgstr ""
+msgstr "{name} adlı snap'in bir eylemi onaylamak ya da reddetmek için özel metin, giriş alanı ve düğmelerle MetaMask açılır pencerelerini göstermesine izin verin. Bir Snap için ör. uyarı, onay ve talep edilen akış oluşturmak için kullanılabilir."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to display notifications within MetaMask. A short notification text can be triggered by a Snap for actionable or time-sensitive information."
-msgstr ""
+msgstr "{name} adlı snap'in MetaMask dahilinde bildirim göstermesine izin verin. Eyleme geçirilebilir ya da zamana duyarlı bilgiler için bir Snap tarafından kısa bir bildirim metni tetiklenebilir."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to fetch and display address and domain lookups in different parts of the MetaMask UI."
-msgstr ""
+msgstr "{name} adlı snap'in MetaMask Arayüzünün farklı kısımlarında adres ve alan aramalarını almasına ve göstermesine izin verin."
 
 #: src/features/snap/permissions.tsx
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to manage accounts and assets on the requested network. These accounts are derived and backed up using your secret recovery phrase (without revealing it). With the power to derive keys, {name} can support a variety of blockchain protocols beyond Ethereum (EVMs)."
-msgstr ""
+msgstr "{name} adlı snap'in talep edilen ağ üzerinde hesap ve varlıkları yönetmesine izin verin. Bu hesaplar, gizli kurtarma ifadenizi kullanarak (açığa çıkarmadan) türetilir ve yedeklenir. {name}, anahtar türetme gücü ile Ethereum (EVM'ler) ötesinde çeşitli blok zinciri protokollerini destekleyebilir."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to perform actions that run periodically at fixed times, dates, or intervals. This can be used to trigger time-sensitive interactions or notifications."
-msgstr ""
+msgstr "{name} adlı snap'in sabit saat, tarih veya aralıklarda periyodik olarak çalışan eylemleri gerçekleştirmesine izin verin. Zamana duyarlı etkileşim ya da bildirimleri tetiklemek için kullanılabilir."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to see the origin (URI) of websites that suggest transactions. This can be used for anti-phishing and security solutions."
-msgstr ""
+msgstr "{name} adlı snap'in işlem öneren web sitelerinin asıl adresini (URI) görmesine izin verin. Kimlik avından korunma ve güvenlik çözümleri için kullanılabilir."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to store, update, and retrieve data securely with encryption. Other Snaps cannot access this information."
-msgstr ""
+msgstr "{name} adlı snap'in şifreleme ile güvenli bir şekilde veri depolamasına, güncellemesine ve almasına izin verin. Diğer Snap'ler bu bilgilere erişim sağlayamaz."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to use lifecycle hooks to run code at specific times during its lifecycle."
-msgstr ""
+msgstr "Bu yaşam döngüsü sırasında belirli zamanlarda kod çalıştırmak için {name} adlı snap'in yaşam döngüsü kancalarını kullanmasına izin verin."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to view your public keys (and addresses) for $1. This does not grant any control of accounts or assets."
-msgstr ""
+msgstr "{name} adlı snap'in $1 için genel anahtarları (ve adresleri) görüntülemesine izin verin. Bu eylem, herhangi bir şekilde hesapların ya da varlıkların kontrolünü vermez."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {origin} to communicate with {name}"
-msgstr ""
+msgstr "{origin} ile {name} iletişimine izin verin"
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {origin} to send messages to {name} and receive a response from {name}."
-msgstr ""
+msgstr "{origin} için {name} adlı snap'e mesaj gönderme ve {name} adlı snap'ten yanıt alma izni verin."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow other Snaps to communicate directly with {name}"
-msgstr ""
+msgstr "Diğer Snap'lerin doğrudan {name} ile iletişime geçmesine izin verin"
 
 #: src/features/snap/permissions.tsx
 msgid "Allow other Snaps to send messages to {name} and receive a response from {name}."
-msgstr ""
+msgstr "Tüm diğer Snap'ler için {name} adlı snap'e mesaj gönderme ve {name} adlı snap'ten yanıt alma izni verin."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow requests for adding and controlling Ethereum accounts"
-msgstr ""
+msgstr "Ethereum hesaplarını ekleme ve kontrol etme taleplerine izin verin"
 
 #: src/features/snap/permissions.tsx
 msgid "Allow the Snap to interact with {snapId}."
-msgstr ""
+msgstr "Snap'in {snapId} ile etkileşimde bulunmasına izin verin."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow websites to communicate with {name}"
-msgstr ""
+msgstr "Web sitelerinin {name} ile iletişim kurmasına izin verin"
 
 #: src/features/snap/permissions.tsx
 msgid "Allow websites to send messages to website and receive a response from {name}."
-msgstr ""
+msgstr "Web sitelerinin web sitesine mesaj göndermesine ve {name} adlı snap'ten yanıt almasına izin verin."
 
 #: src/features/filter/constants.tsx
 msgid "Alphabetical"
-msgstr ""
+msgstr "Alfabetik"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Audit"
-msgstr ""
+msgstr "Denetle"
 
 #: src/components/InstallUnsupportedMobile.tsx
 msgid "Available on desktop"
-msgstr ""
+msgstr "Masaüstünde kullanılabilir"
 
 #: src/components/icons/index.ts
 msgid "Back"
-msgstr ""
+msgstr "Geri"
 
 #: src/pages/{Category.name}/installed.tsx
 msgid "Browse your installed {nameText} Snaps on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "MetaMask Snaps Dizininde yüklü {nameText} Snap'lerinize göz atın"
 
 #: src/pages/installed.tsx
 msgid "Browse your installed Snaps on the MetaMask Snaps Directory."
-msgstr ""
+msgstr "MetaMask Snaps Dizininde yüklü Snap'lerinize göz atın."
 
 #: src/features/banner/components/create-snap-banner/CreateSnapBanner.tsx
 msgid "Build your own Snap"
-msgstr ""
+msgstr "Kendi Snap'inizi kurun"
 
 #: src/features/filter/Filter.tsx
 msgid "Categories"
-msgstr ""
+msgstr "Kategoriler"
 
 #: src/features/snap/components/Metadata.tsx
 msgid "Category"
-msgstr ""
+msgstr "Kategori"
 
 #: src/components/icons/index.ts
 #: src/components/icons/index.ts
 msgid "Check"
-msgstr ""
+msgstr "İncele"
 
 #: src/components/icons/index.ts
 msgid "Clock"
-msgstr ""
+msgstr "Saat"
 
 #: src/components/icons/index.ts
 msgid "Close"
-msgstr ""
+msgstr "Kapat"
 
 #: src/components/icons/index.ts
 #: src/constants.ts
 msgid "Communication"
-msgstr ""
+msgstr "İletişim"
 
 #: src/features/snap/permissions.tsx
 msgid "Connect to {snapId}"
-msgstr ""
+msgstr "{snapId} adlı snap'e bağlan"
 
 #: src/constants.ts
 msgid "Connect to non-Ethereum blockchains with MetaMask."
-msgstr ""
+msgstr "MetaMask ile Ethereum dışı blokzincirlere bağlanın."
 
 #: src/features/snap/components/Metadata.tsx
 msgid "Contact"
-msgstr ""
+msgstr "İletişim"
 
 #: src/components/FooterLinks.tsx
 msgid "Contact Us"
-msgstr ""
+msgstr "Bize Ulaşın"
 
 #: src/components/PostInstallModal.tsx
 msgid "Continue to <0>{name}</0>'s website to get started with this snap."
-msgstr ""
+msgstr "Bu snap ile başlamak için <0>{name}</0> web sitesine devam edin."
 
 #: src/constants.ts
 msgid "Create an Ethereum Account"
-msgstr ""
+msgstr "Bir Ethereum Hesabı oluştur"
 
 #: src/features/snap/permissions.tsx
 msgid "Derive arbitrary keys unique to {name}"
-msgstr ""
+msgstr "{name} için eşsiz rastgele anahtarları türetin"
 
 #: src/features/snap/components/Description.tsx
 msgid "Description by <0>{name}</0>"
-msgstr ""
+msgstr "<0>{name}</0> açıklaması"
 
 #: src/components/InstallUnsupportedMobile.tsx
 msgid "Desktop only"
-msgstr ""
+msgstr "Sadece masaüstü"
 
 #: src/features/snap/components/MetadataItems.tsx
 msgid "Developer"
-msgstr ""
+msgstr "Geliştirici"
 
 #: src/components/FooterLinks.tsx
 msgid "Developer Docs"
-msgstr ""
+msgstr "Geliştirici Belgeleri"
 
 #: src/features/banner/components/create-snap-banner/CreateSnapBanner.tsx
 msgid "Developers"
-msgstr ""
+msgstr "Geliştiriciler"
 
 #: src/features/banner/components/explore-banner/ExploreBanner.tsx
 msgid "Discover"
-msgstr ""
+msgstr "Keşfet"
 
 #: src/components/BackButton.tsx
 #: src/components/Banner.tsx
 msgid "Discover Snaps"
-msgstr ""
+msgstr "Snap'leri keşfedin"
 
 #: src/features/snap/permissions.tsx
 msgid "Display a custom screen"
-msgstr ""
+msgstr "Özel bir ekran göster"
 
 #: src/features/snap/permissions.tsx
 msgid "Display dialog windows in MetaMask"
-msgstr ""
+msgstr "MetaMask'te iletişim kutusu pencerelerini göster"
 
 #: src/components/icons/index.ts
 msgid "Document code"
-msgstr ""
+msgstr "Belge kodu"
 
 #: src/features/banner/components/create-snap-banner/CreateSnapBanner.tsx
 msgid "Documentation"
-msgstr ""
+msgstr "Belgeler"
 
 #: src/components/InstallUnsupportedDesktop.tsx
 msgid "Download MetaMask"
-msgstr ""
+msgstr "MetaMask'i İndir"
 
 #: src/components/icons/index.ts
 msgid "Dropdown"
-msgstr ""
+msgstr "Açılır Menü"
 
 #: src/components/icons/index.ts
 msgid "Enable dark mode"
-msgstr ""
+msgstr "Karanlık modu etkinleştir"
 
 #: src/components/icons/index.ts
 msgid "Enable light mode"
-msgstr ""
+msgstr "Aydınlık modu etkinleştir"
 
 #: src/components/icons/index.ts
 msgid "Ethereum"
-msgstr ""
+msgstr "Ethereum"
 
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "Experimental Beta"
-msgstr ""
+msgstr "Deneysel Beta"
 
 #: src/components/icons/index.ts
 msgid "Explore"
-msgstr ""
+msgstr "Keşfet"
 
 #: src/pages/index.tsx
 msgid "Explore All Snaps"
-msgstr ""
+msgstr "Tüm Snap'leri Keşfet"
 
 #: src/pages/explore.tsx
 msgid "Explore Snaps"
-msgstr ""
+msgstr "Snap'leri Keşfet"
 
 #: src/pages/latest.tsx
 msgid "Explore the latest community-built Snaps to customize your web3 experience."
-msgstr ""
+msgstr "web3 deneyiminizi kişiselleştirmek için topluluk tarafından oluşturulmuş en yeni Snap'leri keşfedin."
 
 #: src/components/Banner.tsx
 msgid "Explore, install, and use community-built features in MetaMask. <0>Learn more</0> and <1>FAQ</1>."
-msgstr ""
+msgstr "MetaMask'te topluluk tarafından oluşturulmuş özellikleri keşfedin, yükleyin ve kullanın. <0>Daha fazla bilgi alın</0> ve <1>SSS</1>."
 
 #: src/components/icons/index.ts
 msgid "External link"
-msgstr ""
+msgstr "Harici bağlantı"
 
 #: src/features/snap/components/Metadata.tsx
 msgid "FAQ"
-msgstr ""
+msgstr "SSS"
 
 #: src/components/FooterLinks.tsx
 msgid "Feedback"
-msgstr ""
+msgstr "Geri Bildirim"
 
 #: src/features/snap/permissions.tsx
 msgid "Fetch and display signature insights"
-msgstr ""
+msgstr "İmza içgörülerini al ve görüntüle"
 
 #: src/features/snap/permissions.tsx
 msgid "Fetch and display transaction insights"
-msgstr ""
+msgstr "İşlem içgörülerini al ve görüntüle"
 
 #: src/components/icons/index.ts
 #: src/features/filter/Filter.tsx
 msgid "Filter"
-msgstr ""
+msgstr "Filtrele"
 
 #: src/components/icons/index.ts
 msgid "Flash"
-msgstr ""
+msgstr "Işık"
 
 #: src/features/banner/components/faq-banner/FaqBanner.tsx
 msgid "Frequently asked questions"
-msgstr ""
+msgstr "Sıkça sorulan sorular"
 
 #: src/components/FooterLinks.tsx
 msgid "Get in touch"
-msgstr ""
+msgstr "İletişime geç"
 
 #: src/components/icons/index.ts
 msgid "Global"
-msgstr ""
+msgstr "Küresel"
 
 #: src/pages/404.tsx
 msgid "Go home"
-msgstr ""
+msgstr "Ana sayfaya git"
 
 #: src/components/InstallUnsupportedDesktopUpdate.tsx
 #: src/components/InstallUnsupportedMobile.tsx
 msgid "Got it"
-msgstr ""
+msgstr "Anladım"
 
 #: src/constants.ts
 msgid "Guard Your Wallet"
-msgstr ""
+msgstr "Cüzdanınızı Koruyun"
 
 #: src/constants.ts
 msgid "Guard your wallet with transaction insights and safety tools."
-msgstr ""
+msgstr "İşlem içgörüleri ve güvenlik araçları ile cüzdanınızı koruyun."
 
 #: src/components/icons/index.ts
 msgid "Hierarchy"
-msgstr ""
+msgstr "Hiyerarşi"
 
 #: src/components/icons/index.ts
 msgid "Home"
-msgstr ""
+msgstr "Ana Sayfa"
 
 #: src/features/snap/components/MetadataItems.tsx
 msgid "Identifier"
-msgstr ""
+msgstr "Tanımlayıcı"
 
 #: src/components/icons/index.ts
 msgid "Info"
-msgstr ""
+msgstr "Bilgi"
 
 #: src/components/InstallUnsupportedDesktop.tsx
 msgid "Install MetaMask"
-msgstr ""
+msgstr "MetaMask'i yükle"
 
 #: src/components/InstallSnapButton.tsx
 #: src/components/PostInstallModal.tsx
 #: src/features/filter/components/FilterTags.tsx
 #: src/features/filter/Filter.tsx
 msgid "Installed"
-msgstr ""
+msgstr "Yüklendi"
 
 #: src/pages/{Category.name}/installed.tsx
 msgid "Installed {nameText} Snaps"
-msgstr ""
+msgstr "Yüklü {nameText} Snap'leri"
 
 #: src/pages/{Category.name}/installed.tsx
 msgid "Installed {nameText} Snaps on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "MetaMask Snaps Dizininde yüklü {nameText} Snap'leri"
 
 #: src/pages/installed.tsx
 msgid "Installed Snaps"
-msgstr ""
+msgstr "Yüklü Snap'ler"
 
 #: src/pages/installed.tsx
 msgid "Installed Snaps on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "MetaMask Snaps Dizininde yüklü Snap'ler"
 
 #: src/components/InstallSnapButton.tsx
 msgid "Installing {name}"
-msgstr ""
+msgstr "{name} yükleniyor"
 
 #: src/components/icons/index.ts
 #: src/constants.ts
 msgid "Interoperability"
-msgstr ""
+msgstr "Birlikte çalışabilirlik"
 
 #: src/components/icons/index.ts
 msgid "Key"
-msgstr ""
+msgstr "Anahtar"
 
 #: src/features/snap/components/Metadata.tsx
 msgid "Key Recovery"
-msgstr ""
+msgstr "Anahtar Kurtarma"
 
 #: src/features/snap/components/Metadata.tsx
 msgid "Knowledge Base"
-msgstr ""
+msgstr "Bilgi Tabanı"
 
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
 msgid "Latest"
-msgstr ""
+msgstr "En Yeni"
 
 #: src/pages/latest.tsx
 msgid "Latest Snaps"
-msgstr ""
+msgstr "En Yeni Snap'ler"
 
 #: src/pages/latest.tsx
 msgid "Latest Snaps on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "MetaMask Snaps Dizinindeki En Yeni Snap'ler"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Legal"
-msgstr ""
+msgstr "Hukuki"
 
 #: src/features/snap/permissions.tsx
 msgid "Let {name} access your preferred language from your MetaMask settings. This can be used to localize and display {name}'s content using your language."
-msgstr ""
+msgstr "{name} adlı snap'in MetaMask ayarlarınızdan tercih ettiğiniz dile erişim sağlamasına izin verin. {name} içeriğini dilinizi kullanarak yerelleştirmek ve görüntülemek için bu özellik kullanılabilir."
 
 #: src/features/snap/permissions.tsx
 msgid "Let {name} display a custom home screen in MetaMask. This can be used for user interfaces, configuration, and dashboards."
-msgstr ""
+msgstr "{name} adlı snap'in MetaMask'te özel bir ana sayfa ekranı göstermesine izin verin. Bu, kullanıcı arayüzleri, yapılandırma ve kontrol panelleri için kullanılabilir."
 
 #: src/features/snap/permissions.tsx
 msgid "Let {name} receive requests to add or remove accounts, plus sign and transact on behalf of these accounts."
-msgstr ""
+msgstr "{name} adlı snap'in hesap ekleme ve kaldırma talepleri almasına ve ayrıca bu hesapların adına imza ve işlem gerçekleştirmesine izin verin."
 
 #: src/components/icons/index.ts
 msgid "Link"
-msgstr ""
+msgstr "Bağlantı"
 
 #: src/components/icons/index.ts
 msgid "Live"
-msgstr ""
+msgstr "Canlı"
 
 #: src/features/snap/permissions.tsx
 msgid "Manage {name} accounts"
-msgstr ""
+msgstr "{name} hesaplarını yönet"
 
 #: src/features/snap/permissions.tsx
 msgid "Manage accounts (Unknown network \"m/{purpose}/{coinType}\")"
-msgstr ""
+msgstr "Hesapları yönet (Bilinmeyen ağ \"m/{purpose}/{coinType}\")"
 
 #: src/features/snap/permissions.tsx
 msgid "Manage accounts (Unknown network \"m/44'/{coinType}'\")"
-msgstr ""
+msgstr "Hesapları yönet (Bilinmeyen ağ \"m/44'/{coinType}'\")"
 
 #: src/constants.ts
 msgid "Manage your accounts and keys with MetaMask."
-msgstr ""
+msgstr "MetaMask ile hesapları ve anahtarlarını yönetin."
 
 #: src/components/icons/index.ts
 msgid "Messages"
-msgstr ""
+msgstr "Mesajlar"
 
 #: src/components/icons/index.ts
 msgid "MetaMask"
-msgstr ""
+msgstr "MetaMask"
 
 #: src/components/InstallUnsupportedMobile.tsx
 msgid "MetaMask Snaps is in open beta and only supported via our extension clients on desktop such as <0>Brave</0>, <1>Chrome</1>, or <2>Firefox</2>."
-msgstr ""
+msgstr "MetaMask Snaps, açık beta halindedir ve sadece <0>Brave</0>, <1>Chrome</1> veya <2>Firefox</2> gibi masaüstünde uzantı istemcilerimiz aracılığıyla desteklenir."
 
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
 msgid "Most Popular"
-msgstr ""
+msgstr "En Popüler"
 
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "No Snaps found"
-msgstr ""
+msgstr "Snap bulunamadı"
 
 #: src/features/notifications/components/NoNotifications.tsx
 msgid "No updates"
-msgstr ""
+msgstr "Güncelleme yok"
 
 #: src/components/icons/index.ts
 msgid "Notification"
-msgstr ""
+msgstr "Bildirim"
 
 #: src/components/icons/index.ts
 msgid "Notifications"
-msgstr ""
+msgstr "Bildirimler"
 
 #: src/constants.ts
 msgid "Notifications and Chat"
-msgstr ""
+msgstr "Bildirimler ve Sohbet"
 
 #: src/components/SnapWebsiteButton.tsx
 #: src/features/banner/components/faq-banner/FaqBanner.tsx
 msgid "Open"
-msgstr ""
+msgstr "Aç"
 
 #: src/features/banner/components/explore-banner/ExploreBanner.tsx
 msgid "Open Beta Live"
-msgstr ""
+msgstr "Beta Live'i Aç"
 
 #: src/features/filter/components/FilterButton.tsx
 msgid "Open filter menu"
-msgstr ""
+msgstr "Filtrele menüsünü aç"
 
 #: src/features/notifications/components/NotificationsButton.tsx
 msgid "Open notifications menu"
-msgstr ""
+msgstr "Bildirimler menüsünü aç"
 
 #: src/features/snap/components/Permissions.tsx
 msgid "Permissions by <0>{0}</0>"
-msgstr ""
+msgstr "<0>{0}</0> izinleri"
 
 #: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Gizlilik Politikası"
 
 #: src/features/snap/permissions.tsx
 msgid "Provide domain and address lookups"
-msgstr ""
+msgstr "Alan ve adres aramalarını sunun"
 
 #: src/components/icons/index.ts
 msgid "Question"
-msgstr ""
+msgstr "Soru"
 
 #: src/features/snap/components/RelatedSnaps.tsx
 msgid "Related Snaps"
-msgstr ""
+msgstr "İlgili Snap'ler"
 
 #: src/pages/explore.tsx
 msgid "Results for \"{searchQuery}\""
-msgstr ""
+msgstr "\"{searchQuery}\" için sonuçlar"
 
 #: src/features/snap/permissions.tsx
 msgid "Schedule and execute periodic actions"
-msgstr ""
+msgstr "Periyodik eylemleri planla ve gerçekleştir"
 
 #: src/components/icons/index.ts
 msgid "Search"
-msgstr ""
+msgstr "Ara"
 
 #: src/features/filter/components/FilterSearchInput.tsx
 msgid "Search Snaps"
-msgstr ""
+msgstr "Snap'leri Ara"
 
 #: src/components/icons/index.ts
 #: src/constants.ts
 msgid "Security"
-msgstr ""
+msgstr "Güvenlik"
 
 #: src/components/icons/index.ts
 msgid "Security key"
-msgstr ""
+msgstr "Güvenlik anahtarı"
 
 #: src/components/icons/index.ts
 msgid "Security search"
-msgstr ""
+msgstr "Güvenlik araması"
 
 #: src/features/snap/permissions.tsx
 msgid "See address, account balance, activity and suggest transactions to approve"
-msgstr ""
+msgstr "Adrese, hesap bakiyesine, aktiviteye bakın ve işlemleri başlatın"
 
 #: src/constants.ts
 #: src/constants.ts
@@ -637,167 +637,167 @@ msgstr ""
 #: src/constants.ts
 #: src/pages/explore.tsx
 msgid "See All"
-msgstr ""
+msgstr "Tümünü gör"
 
 #: src/features/filter/components/FilterSearch.tsx
 msgid "See all results"
-msgstr ""
+msgstr "Tüm sonuçları gör"
 
 #: src/features/snap/components/Metadata.tsx
 msgid "See Details"
-msgstr ""
+msgstr "Ayrıntıları gör"
 
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "See everything"
-msgstr ""
+msgstr "Her şeyi gör"
 
 #: src/pages/index.tsx
 msgid "See Latest"
-msgstr ""
+msgstr "En Yenileri gör"
 
 #: src/features/snap/permissions.tsx
 msgid "See the origins of websites that suggest transactions"
-msgstr ""
+msgstr "İşlem öneren web sitelerinin kökenlerini gör"
 
 #: src/features/snap/permissions.tsx
 msgid "Show notifications"
-msgstr ""
+msgstr "Bildirimleri göster"
 
 #: src/components/icons/index.ts
 msgid "Snap"
-msgstr ""
+msgstr "Snap"
 
 #: src/features/filter/Filter.tsx
 msgid "Sort"
-msgstr ""
+msgstr "Sırala"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Source Code"
-msgstr ""
+msgstr "Kaynak Kodu"
 
 #: src/components/icons/index.ts
 msgid "Speedometer"
-msgstr ""
+msgstr "Hızölçer"
 
 #: src/components/Footer.tsx
 msgid "Start exploring blockchain applications in seconds. Trusted by over 30 million users worldwide."
-msgstr ""
+msgstr "Saniyeler içinde blokzincir uygulamalarını keşfetmeye başlayın. Dünya çapında 30 milyonu aşkın kullanıcı güveniyor."
 
 #: src/constants.ts
 msgid "Stay in the know with notifications and chat directly in MetaMask."
-msgstr ""
+msgstr "Bildirimlerle güncel kalın ve doğrudan MetaMask'te sohbet edin."
 
 #: src/features/snap/permissions.tsx
 msgid "Store and manage its data on your device"
-msgstr ""
+msgstr "Verilerini cihazınızda saklayın ve yönetin"
 
 #: src/components/FooterLinks.tsx
 #: src/features/banner/components/faq-banner/FaqBanner.tsx
 #: src/features/snap/components/Metadata.tsx
 msgid "Support"
-msgstr ""
+msgstr "Destek"
 
 #: src/features/snap/permissions.tsx
 msgid "Support for WebAssembly"
-msgstr ""
+msgstr "WebAssembly desteği"
 
 #: src/components/icons/index.ts
 msgid "Tag"
-msgstr ""
+msgstr "Etiket"
 
 #: src/features/snap/components/Legal.tsx
 msgid "Terms of Use"
-msgstr ""
+msgstr "Kullanım Şartları"
 
 #: src/pages/404.tsx
 msgid "The page you're looking for can't be found."
-msgstr ""
+msgstr "Aradığınız sayfa bulunamıyor."
 
 #: src/components/icons/index.ts
 msgid "Timer"
-msgstr ""
+msgstr "Zamanlayıcı"
 
 #: src/components/InstallUnsupportedDesktop.tsx
 msgid "To use MetaMask Snaps, you need the extension in your browser."
-msgstr ""
+msgstr "MetaMask Snap'lerini kullanmak için tarayıcınızda uzantıya ihtiyacınız var."
 
 #: src/components/InstallUnsupportedDesktopUpdate.tsx
 msgid "To use MetaMask Snaps, you need the latest version (11.0) of MetaMask in your browser. <0>Learn more.</0>"
-msgstr ""
+msgstr "MetaMask Snaps'i kullanmak için tarayıcınızda en yeni MetaMask sürümüne (11.0) ihtiyacınız vardır. <0>Daha fazla bilgi alın.</0>"
 
 #: src/components/ColorModeToggle.tsx
 msgid "Toggle color mode"
-msgstr ""
+msgstr "Renk modunu değiştir"
 
 #: src/components/icons/index.ts
 msgid "Unread notification"
-msgstr ""
+msgstr "Okunmamış bildirim"
 
 #: src/components/InstallUnsupportedDesktopUpdate.tsx
 msgid "Update required"
-msgstr ""
+msgstr "Güncelleme gerekli"
 
 #: src/components/InstallSnapButton.tsx
 msgid "Update Snap"
-msgstr ""
+msgstr "Snap'i güncelle"
 
 #: src/features/notifications/components/NoNotifications.tsx
 msgid "Updates for your installed Snaps will be displayed here when available."
-msgstr ""
+msgstr "Yüklü Snap'leriniz için güncellemeler olduğunda burada gösterilecektir."
 
 #: src/components/InstallSnapButton.tsx
 msgid "Updating {name}"
-msgstr ""
+msgstr "{name} güncelleniyor"
 
 #: src/features/snap/permissions.tsx
 msgid "Use lifecycle hooks"
-msgstr ""
+msgstr "Yaşam döngüsü kancalarını kullanın"
 
 #: src/constants.ts
 msgid "Use MetaMask Beyond Ethereum"
-msgstr ""
+msgstr "Ethereum Ötesinde MetaMask Kullanın"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Version"
-msgstr ""
+msgstr "Sürüm"
 
 #: src/features/notifications/components/Notification.tsx
 msgid "Version {0} update available"
-msgstr ""
+msgstr "Sürüm {0} güncellemesi mevcut"
 
 #: src/features/snaps/components/SnapCard.tsx
 msgid "View"
-msgstr ""
+msgstr "Görüntüle"
 
 #: src/features/snap/permissions.tsx
 msgid "View your preferred language"
-msgstr ""
+msgstr "Tercih ettiğiniz dili görüntüleyin"
 
 #: src/features/snap/permissions.tsx
 msgid "View your public key (Unknown network \"m/{purpose}/{coinType}\")"
-msgstr ""
+msgstr "Genel anahtarınızı (Bilinmeyen ağ \"m/{purpose}/{coinType}\") görüntüleyin"
 
 #: src/features/snap/permissions.tsx
 msgid "View your public key for {name}"
-msgstr ""
+msgstr "{name} için genel anahtarınızı görüntüleyin"
 
 #: src/components/icons/index.ts
 msgid "Warning"
-msgstr ""
+msgstr "Uyarı"
 
 #: src/components/FooterLinks.tsx
 msgid "Website"
-msgstr ""
+msgstr "Web Sitesi"
 
 #: src/components/icons/index.ts
 msgid "Wifi"
-msgstr ""
+msgstr "Wifi"
 
 #: src/components/FooterTerms.tsx
 msgid "You acknowledge that any Snap that you install is a Third Party Service, unless otherwise identified, as defined in the <0>Consensys Terms of Use</0>. Your use of Third Party Services is governed by separate terms and conditions set forth by the Third Party Service provider. Consensys does not recommend the use of any Snap by any particular person for any particular reason. You access, rely upon or use the Third Party Service at your own risk. Consensys disclaims all responsibility and liability for any losses on account of your use of Third Party Services. Any information you share with Third Party Services will be collected directly by those Third Party Services in accordance with their privacy policies. Please refer to their privacy policies for more information. Consensys has no access to information you share with Third Party Services."
-msgstr ""
+msgstr "Yüklediğiniz her Snap'in, aksi belirtilmedikçe, <0>Consensys Kullanım Şartları</0> bölümünde tanımlanan şekilde Üçüncü Taraf Hizmet olduğunu kabul edersiniz. Üçüncü Taraf Hizmetlerini kullanımınız Üçüncü Taraf Hizmet sağlayıcısı tarafından belirtilen ayrı şart ve koşullar ile yönetilir. Consensys, herhangi bir Snap'in herhangi bir sebeple herhangi bir kişi tarafından kullanımını önermez. Üçüncü Taraf Hizmetinee erişiminizin, güvenmenizin veya kullanımınızın riski size aittir. Consensys, Üçüncü Taraf Hizmetlerini kullanımınızla ilgili zararlara yönelik her türlü sorumluluk ve yükümlülüğü reddeder. Üçüncü Taraf Hizmetleri ile paylaştığınız tüm bilgiler, kendi gizlilik politikalarına göre doğrudan bu Üçüncü Taraf Hizmetleri tarafından toplanır. Daha fazla bilgi için lütfen onların gizlilik politikalarına bakın. Consensys'in Üçüncü Taraflarla paylaştığınız bilgilere hiçbir erişimi yoktur."
 
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "You will not be able to use your MetaMask Secret Recovery Phrase to recover accounts added through Account Management Snaps. If your account credentials are lost or compromised, MetaMask will not be able to help you. If the Snap or the associated dapp is hacked or ceases to function, you may not be able to access your account and the funds in your account."
-msgstr ""
+msgstr "Hesap Yönetimi Snap'leri ile eklenen hesapları kurtarmak için MetaMask Gizli Kurtarma İfadenizi kullanamazsınız. Hesap kimlik bilgileriniz kaybolur veya başkalarının eline geçerse MetaMask size yardımcı olamaz. Snap veya ilişkili merkeziyetsiz uygulama haclenirse veya çalışmayı durdurursa hesabınıza ve hesabınızdaki paraya erişim sağlayamayabilirsiniz."
 
