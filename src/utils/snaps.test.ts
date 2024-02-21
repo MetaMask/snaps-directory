@@ -10,6 +10,20 @@ import {
 } from './snaps';
 import { getRequestMethodMock } from './test-utils';
 
+const MOCK_EIP6963_PROVIDER = { request: jest.fn() };
+
+// eslint-disable-next-line no-restricted-globals
+const MOCK_EIP6963_ANNOUNCEMENT = new CustomEvent('eip6963:announceProvider', {
+  detail: {
+    info: {
+      name: 'MetaMask',
+      rdns: 'io.metamask',
+      uuid: '359b317d-0e02-4cea-ade8-7f671fdd5c7e',
+    },
+    provider: MOCK_EIP6963_PROVIDER,
+  },
+});
+
 describe('hasSnapsSupport', () => {
   it('returns `true` if the provider supports Snaps', async () => {
     const provider = getRequestMethodMock({
@@ -76,6 +90,9 @@ describe('getMetaMaskProvider', () => {
       writable: true,
       value: {
         ethereum: undefined,
+        addEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+        removeEventListener: jest.fn(),
       },
     });
 
@@ -143,6 +160,24 @@ describe('getMetaMaskProvider', () => {
 
     expect(await getMetaMaskProvider()).toBe(provider);
   });
+
+  it('returns the provider if it is available via EIP6963', async () => {
+    Object.defineProperty(globalThis, 'window', {
+      writable: true,
+      value: {
+        ethereum: undefined,
+        addEventListener: jest.fn().mockImplementation((type, listener) => {
+          if (type === 'eip6963:announceProvider') {
+            listener(MOCK_EIP6963_ANNOUNCEMENT);
+          }
+        }),
+        dispatchEvent: jest.fn(),
+        removeEventListener: jest.fn(),
+      },
+    });
+
+    expect(await getMetaMaskProvider()).toStrictEqual(MOCK_EIP6963_PROVIDER);
+  });
 });
 
 describe('getSnapsProvider', () => {
@@ -162,6 +197,9 @@ describe('getSnapsProvider', () => {
       writable: true,
       value: {
         ethereum: undefined,
+        addEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+        removeEventListener: jest.fn(),
       },
     });
 
@@ -228,6 +266,24 @@ describe('getSnapsProvider', () => {
     });
 
     expect(await getSnapsProvider()).toBe(provider);
+  });
+
+  it('returns the provider if it is available via EIP6963', async () => {
+    Object.defineProperty(globalThis, 'window', {
+      writable: true,
+      value: {
+        ethereum: undefined,
+        addEventListener: jest.fn().mockImplementation((type, listener) => {
+          if (type === 'eip6963:announceProvider') {
+            listener(MOCK_EIP6963_ANNOUNCEMENT);
+          }
+        }),
+        dispatchEvent: jest.fn(),
+        removeEventListener: jest.fn(),
+      },
+    });
+
+    expect(await getSnapsProvider()).toStrictEqual(MOCK_EIP6963_PROVIDER);
   });
 });
 
