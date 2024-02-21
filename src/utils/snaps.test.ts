@@ -24,6 +24,21 @@ const MOCK_EIP6963_ANNOUNCEMENT = new CustomEvent('eip6963:announceProvider', {
   },
 });
 
+// eslint-disable-next-line no-restricted-globals
+const MOCK_EIP6963_ANNOUNCEMENT_NON_METAMASK = new CustomEvent(
+  'eip6963:announceProvider',
+  {
+    detail: {
+      info: {
+        name: 'Some other wallet',
+        rdns: 'foo.bar',
+        uuid: '7da4d4cb-5265-4138-b5d9-c3fc97798ee1',
+      },
+      provider: null,
+    },
+  },
+);
+
 describe('hasSnapsSupport', () => {
   it('returns `true` if the provider supports Snaps', async () => {
     const provider = getRequestMethodMock({
@@ -168,6 +183,7 @@ describe('getMetaMaskProvider', () => {
         ethereum: undefined,
         addEventListener: jest.fn().mockImplementation((type, listener) => {
           if (type === 'eip6963:announceProvider') {
+            listener(MOCK_EIP6963_ANNOUNCEMENT_NON_METAMASK);
             listener(MOCK_EIP6963_ANNOUNCEMENT);
           }
         }),
@@ -275,6 +291,7 @@ describe('getSnapsProvider', () => {
         ethereum: undefined,
         addEventListener: jest.fn().mockImplementation((type, listener) => {
           if (type === 'eip6963:announceProvider') {
+            listener(MOCK_EIP6963_ANNOUNCEMENT_NON_METAMASK);
             listener(MOCK_EIP6963_ANNOUNCEMENT);
           }
         }),
