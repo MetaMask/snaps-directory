@@ -520,6 +520,16 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
 
   replaceWebpackConfig({
     ...config,
+    resolve: {
+      ...config.resolve,
+      fallback: {
+        ...config.resolve.fallback,
+        assert: false,
+        stream: false,
+        path: false,
+        fs: false,
+      },
+    },
     module: {
       ...config.module,
       rules: [
