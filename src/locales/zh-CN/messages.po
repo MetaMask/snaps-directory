@@ -508,6 +508,7 @@ msgid "Live"
 msgstr "在线"
 
 #: src/features/snap/permissions.tsx
+#: src/features/snap/permissions.tsx
 msgid "Manage {name} accounts"
 msgstr "管理 {name} 账户"
 
