@@ -8,7 +8,7 @@ msgstr ""
 "Language: pt\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-20 09:58\n"
+"PO-Revision-Date: 2024-02-20 12:01\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -110,7 +110,7 @@ msgstr "Permitir que {name} derive chaves arbitrárias únicas para {name}, sem 
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to display MetaMask popups with custom text, input field, and buttons to approve or reject an action. Can be used to create e.g., alerts, confirmations, and opt-in flows for a Snap."
-msgstr "Permitir que {name} exiba popups da MetaMask com texto personalizado, campo de entrada e botões para aprovar ou rejeitar uma ação. Pode ser usado para criar, por exemplo, alertas, confirmações e fluxos de adesão para um Snap."
+msgstr "Permitir que {name} exiba popups da MetaMask com texto personalizado, campo de entrada de texto e botões para aprovar ou rejeitar uma ação. Pode ser usado para criar, por exemplo, alertas, confirmações e fluxos de adesão para um Snap."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to display notifications within MetaMask. A short notification text can be triggered by a Snap for actionable or time-sensitive information."
@@ -245,7 +245,7 @@ msgstr "Contato"
 
 #: src/components/FooterLinks.tsx
 msgid "Contact Us"
-msgstr "Falec conosco"
+msgstr "Fale conosco"
 
 #: src/components/PostInstallModal.tsx
 msgid "Continue to <0>{name}</0>'s website to get started with this snap."
@@ -584,7 +584,7 @@ msgstr "Permissões por <0>{0}</0>"
 #: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
 msgid "Privacy Policy"
-msgstr "Política de privacidade"
+msgstr "Política de Privacidade"
 
 #: src/features/snap/permissions.tsx
 msgid "Provide domain and address lookups"
@@ -707,7 +707,7 @@ msgstr "Tag"
 
 #: src/features/snap/components/Legal.tsx
 msgid "Terms of Use"
-msgstr "Termos de uso"
+msgstr "Termos de Uso"
 
 #: src/pages/404.tsx
 msgid "The page you're looking for can't be found."
@@ -795,7 +795,7 @@ msgstr "WiFi"
 
 #: src/components/FooterTerms.tsx
 msgid "You acknowledge that any Snap that you install is a Third Party Service, unless otherwise identified, as defined in the <0>Consensys Terms of Use</0>. Your use of Third Party Services is governed by separate terms and conditions set forth by the Third Party Service provider. Consensys does not recommend the use of any Snap by any particular person for any particular reason. You access, rely upon or use the Third Party Service at your own risk. Consensys disclaims all responsibility and liability for any losses on account of your use of Third Party Services. Any information you share with Third Party Services will be collected directly by those Third Party Services in accordance with their privacy policies. Please refer to their privacy policies for more information. Consensys has no access to information you share with Third Party Services."
-msgstr "Você reconhece que qualquer Snap instalado é um Serviço Terceirizado, a menos que identificado de outra forma, conforme definido nos <0>termos de uso da Consensys</0>. Seu uso dos Serviços Terceirizados é regido por termos e condições separados, estabelecidos pelo prestador do Serviço Terceirizado. A Consensys não faz recomendação de uso de nenhum Snap a nenhuma pessoa específica por qualquer motivo específico. Você acessa, confia ou usa o Serviço Terceirizado por sua conta e risco. A Consensys se isenta de toda e qualquer responsabilidade e obrigação por perdas relacionadas ao seu uso dos Serviços Terceirizados. Qualquer informação que você compartilha com os Serviços Terceirizados será coletada diretamente pelos respectivos Serviços Terceirizados, de acordo com as políticas de privacidade pertinentes. Por favor, consulte as respectivas políticas de privacidade para mais informações. A Consensys não tem acesso às informações que você compartilha com Serviços Terceirizados."
+msgstr "Você reconhece que qualquer Snap instalado é um Serviço Terceirizado, a menos que identificado de outra forma, conforme definido nos <0>Termos de Uso da Consensys</0>. Seu uso dos Serviços Terceirizados é regido por termos e condições separados, estabelecidos pelo prestador do Serviço Terceirizado. A Consensys não faz recomendação de uso de nenhum Snap a nenhuma pessoa específica por qualquer motivo específico. Você acessa, confia ou usa o Serviço Terceirizado por sua conta e risco. A Consensys se isenta de toda e qualquer responsabilidade e obrigação por perdas relacionadas ao seu uso dos Serviços Terceirizados. Qualquer informação que você compartilhar com os Serviços Terceirizados será coletada diretamente pelos respectivos Serviços Terceirizados, de acordo com as políticas de privacidade pertinentes. Consulte mais informações nas respectivas políticas de privacidade. A Consensys não tem acesso às informações que você compartilha com Serviços Terceirizados."
 
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "You will not be able to use your MetaMask Secret Recovery Phrase to recover accounts added through Account Management Snaps. If your account credentials are lost or compromised, MetaMask will not be able to help you. If the Snap or the associated dapp is hacked or ceases to function, you may not be able to access your account and the funds in your account."

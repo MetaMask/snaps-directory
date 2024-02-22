@@ -8,7 +8,7 @@ msgstr ""
 "Language: tr\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-20 09:58\n"
+"PO-Revision-Date: 2024-02-21 00:02\n"
 "Last-Translator: \n"
 "Language-Team: Turkish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -32,7 +32,7 @@ msgstr "©{0} MetaMask. Tüm hakları saklıdır."
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "<0>{name}</0> uses code that isn't viewable by the public. Critical parts of the codebase were audited for security, but later versions of the code may not be. Make sure you trust <1>{0}</1> before installing and using <2>{name}</2>."
-msgstr "<0>{name}</0> herkes tarafından görüntülenemeyen kod kullanır. Kod tabanının kritik kısımları güvenlik amaçlı denetlenir ancak kodun sonraki sürümleri denetlenmeyebilir. <2>{name}</2> yüklemeden ve kullanmadan önce <1>{0}</1> güvendiğinizden emin olun."
+msgstr "<0>{name}</0> herkes tarafından görüntülenemeyen kod kullanır. Kod tabanının kritik kısımları güvenlik amaçlı denetlenir ancak kodun sonraki sürümleri denetlenmeyebilir. <2>{name}</2> yüklemeden ve kullanmadan önce şuna güvendiğinizden emin olun: <1>{0}</1>."
 
 #: src/components/FooterLinks.tsx
 msgid "About"
@@ -74,7 +74,7 @@ msgstr "Kullanıcı ekle"
 
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "Adjust your search or display all available Snaps by clicking below."
-msgstr "Aşağıya tıklayarak aramanızı ayarlayın ve tüm mevcut Snap'leri görüntüleyin."
+msgstr "Aşağıya tıklayarak aramanızı ayarlayın ve kullanılabilir tüm Snap'leri görüntüleyin."
 
 #: src/features/filter/Filter.tsx
 msgid "All"
@@ -82,11 +82,11 @@ msgstr "Tümü"
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to access low-level execution environments via WebAssembly."
-msgstr "{name} adlı snap'in WebAssembly aracılığıyla düşük seviye yürütme ortamlarına erişim sağlamasına izin verin."
+msgstr "{name} adlı snap'in WebAssembly aracılığıyla düşük seviye yürütme ortamlarına erişmesine izin verin."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to access the internet. This can be used to both send and receive data with third-party servers."
-msgstr "{name} adlı snap'in internete erişim sağlamasına izin verin. Üçüncü taraf sunucuları ile hem veri göndermek hem de veri almak için kullanılabilir."
+msgstr "{name} adlı snap'in internete erişmesine izin verin. Üçüncü taraf sunucuları ile hem veri göndermek hem de veri almak için kullanılabilir."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to add or remove Ethereum accounts, then transact and sign with these accounts."
@@ -106,7 +106,7 @@ msgstr "{name} adlı snap'in işlemlerin şifresini çözmesine ve MetaMask Kull
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to derive arbitrary keys unique to {name}, without exposing them. These keys are separate from your MetaMask account(s) and not related to your private keys or Secret Recovery Phrase. Other snaps cannot access this information."
-msgstr "{name} adlı snap'in, paylaşmadan, {name} adlı snap'e özel rastgele anahtarlar türetmesine izin verin. Bu anahtarlar MetaMask hesap veya hesaplarınızdan ayrıdır ve özel anahtarlarınızla ya da Gizli Kurtarma İfadenizle bağlantılı değildir. Diğer snap'ler bu bilgilere erişemez."
+msgstr "{name} adlı snap'in, paylaşmadan, {name} adlı snap için özel rastgele anahtarlar türetmesine izin verin. Bu anahtarlar MetaMask hesap veya hesaplarınızdan ayrıdır ve özel anahtarlarınızla ya da Gizli Kurtarma İfadenizle bağlantılı değildir. Diğer snap'ler bu bilgilere erişemez."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to display MetaMask popups with custom text, input field, and buttons to approve or reject an action. Can be used to create e.g., alerts, confirmations, and opt-in flows for a Snap."
@@ -123,7 +123,7 @@ msgstr "{name} adlı snap'in MetaMask Arayüzünün farklı kısımlarında adre
 #: src/features/snap/permissions.tsx
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to manage accounts and assets on the requested network. These accounts are derived and backed up using your secret recovery phrase (without revealing it). With the power to derive keys, {name} can support a variety of blockchain protocols beyond Ethereum (EVMs)."
-msgstr "{name} adlı snap'in talep edilen ağ üzerinde hesap ve varlıkları yönetmesine izin verin. Bu hesaplar, gizli kurtarma ifadenizi kullanarak (açığa çıkarmadan) türetilir ve yedeklenir. {name}, anahtar türetme gücü ile Ethereum (EVM'ler) ötesinde çeşitli blok zinciri protokollerini destekleyebilir."
+msgstr "{name} adlı snap'in talep edilen ağ üzerinde hesap ve varlıkları yönetmesine izin verin. Bu hesaplar, gizli kurtarma ifadenizi kullanarak (açığa çıkarmadan) türetilir ve yedeklenir. {name}, anahtar türetme gücü ile Ethereum (EVM'ler) dışında çeşitli blok zinciri protokollerini destekleyebilir."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to perform actions that run periodically at fixed times, dates, or intervals. This can be used to trigger time-sensitive interactions or notifications."
@@ -135,7 +135,7 @@ msgstr "{name} adlı snap'in işlem öneren web sitelerinin asıl adresini (URI)
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to store, update, and retrieve data securely with encryption. Other Snaps cannot access this information."
-msgstr "{name} adlı snap'in şifreleme ile güvenli bir şekilde veri depolamasına, güncellemesine ve almasına izin verin. Diğer Snap'ler bu bilgilere erişim sağlayamaz."
+msgstr "{name} adlı snap'in şifreleme ile güvenli bir şekilde veri depolamasına, güncellemesine ve almasına izin verin. Diğer Snap'ler bu bilgilere erişemez."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to use lifecycle hooks to run code at specific times during its lifecycle."
@@ -237,7 +237,7 @@ msgstr "{snapId} adlı snap'e bağlan"
 
 #: src/constants.ts
 msgid "Connect to non-Ethereum blockchains with MetaMask."
-msgstr "MetaMask ile Ethereum dışı blokzincirlere bağlanın."
+msgstr "MetaMask ile Ethereum dışı blok zincirlere bağlanın."
 
 #: src/features/snap/components/Metadata.tsx
 msgid "Contact"
@@ -257,7 +257,7 @@ msgstr "Bir Ethereum Hesabı oluştur"
 
 #: src/features/snap/permissions.tsx
 msgid "Derive arbitrary keys unique to {name}"
-msgstr "{name} için eşsiz rastgele anahtarları türetin"
+msgstr "{name} için eşsiz rastgele anahtarlar türetin"
 
 #: src/features/snap/components/Description.tsx
 msgid "Description by <0>{name}</0>"
@@ -342,7 +342,7 @@ msgstr "Snap'leri Keşfet"
 
 #: src/pages/latest.tsx
 msgid "Explore the latest community-built Snaps to customize your web3 experience."
-msgstr "web3 deneyiminizi kişiselleştirmek için topluluk tarafından oluşturulmuş en yeni Snap'leri keşfedin."
+msgstr "Web3 deneyiminizi kişiselleştirmek için topluluk tarafından oluşturulmuş en yeni Snap'leri keşfedin."
 
 #: src/components/Banner.tsx
 msgid "Explore, install, and use community-built features in MetaMask. <0>Learn more</0> and <1>FAQ</1>."
@@ -375,7 +375,7 @@ msgstr "Filtrele"
 
 #: src/components/icons/index.ts
 msgid "Flash"
-msgstr "Işık"
+msgstr "Flaş"
 
 #: src/features/banner/components/faq-banner/FaqBanner.tsx
 msgid "Frequently asked questions"
@@ -489,7 +489,7 @@ msgstr "Hukuki"
 
 #: src/features/snap/permissions.tsx
 msgid "Let {name} access your preferred language from your MetaMask settings. This can be used to localize and display {name}'s content using your language."
-msgstr "{name} adlı snap'in MetaMask ayarlarınızdan tercih ettiğiniz dile erişim sağlamasına izin verin. {name} içeriğini dilinizi kullanarak yerelleştirmek ve görüntülemek için bu özellik kullanılabilir."
+msgstr "{name} adlı snap'in MetaMask ayarlarınızdan tercih ettiğiniz dile erişmesine izin verin. {name} içeriğini dilinizi kullanarak yerelleştirmek ve görüntülemek için bu özellik kullanılabilir."
 
 #: src/features/snap/permissions.tsx
 msgid "Let {name} display a custom home screen in MetaMask. This can be used for user interfaces, configuration, and dashboards."
@@ -533,7 +533,7 @@ msgstr "MetaMask"
 
 #: src/components/InstallUnsupportedMobile.tsx
 msgid "MetaMask Snaps is in open beta and only supported via our extension clients on desktop such as <0>Brave</0>, <1>Chrome</1>, or <2>Firefox</2>."
-msgstr "MetaMask Snaps, açık beta halindedir ve sadece <0>Brave</0>, <1>Chrome</1> veya <2>Firefox</2> gibi masaüstünde uzantı istemcilerimiz aracılığıyla desteklenir."
+msgstr "MetaMask Snaps, açık beta durumundadır ve sadece <0>Brave</0>, <1>Chrome</1> veya <2>Firefox</2> gibi masaüstünde uzantı istemcilerimiz ile desteklenir."
 
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
@@ -681,7 +681,7 @@ msgstr "Hızölçer"
 
 #: src/components/Footer.tsx
 msgid "Start exploring blockchain applications in seconds. Trusted by over 30 million users worldwide."
-msgstr "Saniyeler içinde blokzincir uygulamalarını keşfetmeye başlayın. Dünya çapında 30 milyonu aşkın kullanıcı güveniyor."
+msgstr "Saniyeler içinde blok zincir uygulamalarını keşfetmeye başlayın. Dünya çapında 30 milyonu aşkın kullanıcı güveniyor."
 
 #: src/constants.ts
 msgid "Stay in the know with notifications and chat directly in MetaMask."
@@ -719,7 +719,7 @@ msgstr "Zamanlayıcı"
 
 #: src/components/InstallUnsupportedDesktop.tsx
 msgid "To use MetaMask Snaps, you need the extension in your browser."
-msgstr "MetaMask Snap'lerini kullanmak için tarayıcınızda uzantıya ihtiyacınız var."
+msgstr "MetaMask Snaps'i kullanmak için tarayıcınızda uzantı olması gereklidir."
 
 #: src/components/InstallUnsupportedDesktopUpdate.tsx
 msgid "To use MetaMask Snaps, you need the latest version (11.0) of MetaMask in your browser. <0>Learn more.</0>"
@@ -795,9 +795,9 @@ msgstr "Wifi"
 
 #: src/components/FooterTerms.tsx
 msgid "You acknowledge that any Snap that you install is a Third Party Service, unless otherwise identified, as defined in the <0>Consensys Terms of Use</0>. Your use of Third Party Services is governed by separate terms and conditions set forth by the Third Party Service provider. Consensys does not recommend the use of any Snap by any particular person for any particular reason. You access, rely upon or use the Third Party Service at your own risk. Consensys disclaims all responsibility and liability for any losses on account of your use of Third Party Services. Any information you share with Third Party Services will be collected directly by those Third Party Services in accordance with their privacy policies. Please refer to their privacy policies for more information. Consensys has no access to information you share with Third Party Services."
-msgstr "Yüklediğiniz her Snap'in, aksi belirtilmedikçe, <0>Consensys Kullanım Şartları</0> bölümünde tanımlanan şekilde Üçüncü Taraf Hizmet olduğunu kabul edersiniz. Üçüncü Taraf Hizmetlerini kullanımınız Üçüncü Taraf Hizmet sağlayıcısı tarafından belirtilen ayrı şart ve koşullar ile yönetilir. Consensys, herhangi bir Snap'in herhangi bir sebeple herhangi bir kişi tarafından kullanımını önermez. Üçüncü Taraf Hizmetinee erişiminizin, güvenmenizin veya kullanımınızın riski size aittir. Consensys, Üçüncü Taraf Hizmetlerini kullanımınızla ilgili zararlara yönelik her türlü sorumluluk ve yükümlülüğü reddeder. Üçüncü Taraf Hizmetleri ile paylaştığınız tüm bilgiler, kendi gizlilik politikalarına göre doğrudan bu Üçüncü Taraf Hizmetleri tarafından toplanır. Daha fazla bilgi için lütfen onların gizlilik politikalarına bakın. Consensys'in Üçüncü Taraflarla paylaştığınız bilgilere hiçbir erişimi yoktur."
+msgstr "Yüklediğiniz her Snap'in, aksi belirtilmedikçe, <0>Consensys Kullanım Şartları</0> bölümünde tanımlanan şekilde Üçüncü Taraf Hizmet olduğunu kabul edersiniz. Üçüncü Taraf Hizmetlerini kullanımınız Üçüncü Taraf Hizmet sağlayıcısı tarafından belirtilen ayrı şart ve koşullar ile yönetilir. Consensys, herhangi bir Snap'in herhangi bir sebeple herhangi bir kişi tarafından kullanımını önermez. Üçüncü Taraf Hizmetine erişiminizin, güvenmenizin veya kullanımınızın riski size aittir. Consensys, Üçüncü Taraf Hizmetlerini kullanımınızla ilgili zararlara yönelik her türlü sorumluluk ve yükümlülüğü reddeder. Üçüncü Taraf Hizmetleri ile paylaştığınız tüm bilgiler, kendi gizlilik politikalarına göre doğrudan bu Üçüncü Taraf Hizmetleri tarafından toplanır. Daha fazla bilgi için lütfen onların gizlilik politikalarına bakın. Consensys'in Üçüncü Taraflarla paylaştığınız bilgilere hiçbir erişimi yoktur."
 
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "You will not be able to use your MetaMask Secret Recovery Phrase to recover accounts added through Account Management Snaps. If your account credentials are lost or compromised, MetaMask will not be able to help you. If the Snap or the associated dapp is hacked or ceases to function, you may not be able to access your account and the funds in your account."
-msgstr "Hesap Yönetimi Snap'leri ile eklenen hesapları kurtarmak için MetaMask Gizli Kurtarma İfadenizi kullanamazsınız. Hesap kimlik bilgileriniz kaybolur veya başkalarının eline geçerse MetaMask size yardımcı olamaz. Snap veya ilişkili merkeziyetsiz uygulama haclenirse veya çalışmayı durdurursa hesabınıza ve hesabınızdaki paraya erişim sağlayamayabilirsiniz."
+msgstr "Hesap Yönetimi Snap'leri ile eklenen hesapları kurtarmak için MetaMask Gizli Kurtarma İfadenizi kullanamazsınız. Hesap kimlik bilgileriniz kaybolur veya başkalarının eline geçerse MetaMask size yardımcı olamaz. Snap veya ilişkili merkeziyetsiz uygulama hack'lenirse veya çalışmayı durdurursa hesabınıza ve hesabınızdaki paraya erişim sağlayamayabilirsiniz."
 
