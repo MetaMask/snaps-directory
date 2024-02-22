@@ -19,10 +19,16 @@ jobs:
         with:
           repo: ${{ github.repository }}
           paths_ignored: |
+            tests/
+            '**/test/'
+            '**/test-utils/'
             '**/__mocks__/'
             '**/__snapshots__/'
+            '**/__fixtures__/'
             '**/*.test.js*'
             '**/*.test.ts*'
+            '**/*.test.browser.ts*'
+            docs/
             '**/jest.environment.js'
             '**/jest.config.js'
             node_modules
