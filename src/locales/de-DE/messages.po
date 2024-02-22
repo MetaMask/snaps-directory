@@ -8,7 +8,7 @@ msgstr ""
 "Language: de\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-20 09:58\n"
+"PO-Revision-Date: 2024-02-20 10:54\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -517,7 +517,7 @@ msgstr "Konten verwalten (Unbekanntes Netzwerk \"m/{purpose}/{coinType}\")"
 
 #: src/features/snap/permissions.tsx
 msgid "Manage accounts (Unknown network \"m/44'/{coinType}'\")"
-msgstr "Konten verwalten (Unbekanntes Netzwerk \"m/44'/{coinType}'\")"
+msgstr "Konten verwalten (Unbekanntes Netzwerk „m/44'/{coinType}'“)"
 
 #: src/constants.ts
 msgid "Manage your accounts and keys with MetaMask."
@@ -637,15 +637,15 @@ msgstr "Sehen Sie Adresse, Kontostand, Aktivitäten und schlagen Sie Transaktion
 #: src/constants.ts
 #: src/pages/explore.tsx
 msgid "See All"
-msgstr "Alle sehen"
+msgstr "Alle ansehen"
 
 #: src/features/filter/components/FilterSearch.tsx
 msgid "See all results"
-msgstr "Alle Ergebnisse sehen"
+msgstr "Alle Ergebnisse ansehen"
 
 #: src/features/snap/components/Metadata.tsx
 msgid "See Details"
-msgstr "Details sehen"
+msgstr "Details ansehen"
 
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "See everything"
@@ -657,7 +657,7 @@ msgstr "Neueste sehen"
 
 #: src/features/snap/permissions.tsx
 msgid "See the origins of websites that suggest transactions"
-msgstr "Sehen Sie sich die Ursprünge von Websites an, die Transaktionen vorschlagen."
+msgstr "Die Ursprünge von Websites, die Transaktionen vorschlagen, ansehen"
 
 #: src/features/snap/permissions.tsx
 msgid "Show notifications"
@@ -775,7 +775,7 @@ msgstr "Ihre bevorzugte Sprache anzeigen"
 
 #: src/features/snap/permissions.tsx
 msgid "View your public key (Unknown network \"m/{purpose}/{coinType}\")"
-msgstr "Ihren öffentlichen Schlüssel anzeigen (Unbekanntes Netzwerk \"m/{purpose}/{coinType}\")"
+msgstr "Ihren öffentlichen Schlüssel anzeigen (Unbekanntes Netzwerk „m/{purpose}/{coinType}“)"
 
 #: src/features/snap/permissions.tsx
 msgid "View your public key for {name}"
@@ -791,11 +791,11 @@ msgstr "Website"
 
 #: src/components/icons/index.ts
 msgid "Wifi"
-msgstr "WLAN"
+msgstr "WiFi"
 
 #: src/components/FooterTerms.tsx
 msgid "You acknowledge that any Snap that you install is a Third Party Service, unless otherwise identified, as defined in the <0>Consensys Terms of Use</0>. Your use of Third Party Services is governed by separate terms and conditions set forth by the Third Party Service provider. Consensys does not recommend the use of any Snap by any particular person for any particular reason. You access, rely upon or use the Third Party Service at your own risk. Consensys disclaims all responsibility and liability for any losses on account of your use of Third Party Services. Any information you share with Third Party Services will be collected directly by those Third Party Services in accordance with their privacy policies. Please refer to their privacy policies for more information. Consensys has no access to information you share with Third Party Services."
-msgstr "Sie erkennen an, dass jeder Snap, den Sie installieren, ein Dienst eines Dritten ist, sofern nicht anders angegeben, wie in den <0>Consensys-Nutzungsbedingungen</0> definiert. Ihre Nutzung von Diensten Dritter unterliegt separaten Bedingungen, die Drittdienstanbieter festgelegt werden. Consensys empfiehlt nicht die Nutzung eines Snaps durch eine bestimmte Person aus einem bestimmten Grund. Sie greifen auf den Dienst eines Dritten zu, verlassen sich darauf oder nutzen ihn auf eigenes Risiko. Consensys lehnt jede Verantwortung und Haftung für Verluste ab, die sich aus Ihrer Nutzung von Diensten Dritter ergeben. Alle Informationen, die Sie den Diensten Dritter zur Verfügung stellen, werden direkt von diesen Diensten Dritter in Übereinstimmung mit deren Datenschutzerklärungen erfasst. Weitere Informationen finden Sie in den jeweiligen Datenschutzerklärungen. Consensys hat keinen Zugriff auf die Informationen, die Sie mit den Diensten Dritter teilen."
+msgstr "Sie erkennen an, dass jeder Snap, den Sie installieren, eine Drittanbieter-Dienstleistung ist, sofern nicht anders angegeben, wie in den <0>Consensys-Nutzungsbedingungen</0> definiert. Ihre Nutzung von Drittanbieter-Dienstleistungen unterliegt separaten Bedingungen, die von Drittanbietern von Dienstleistungen festgelegt werden. Consensys empfiehlt nicht die Nutzung eines Snaps durch eine bestimmte Person aus einem bestimmten Grund. Sie greifen auf die Drittanbieter-Dienstleistung zu, verlassen sich darauf oder nutzen sie auf eigenes Risiko. Consensys lehnt jede Verantwortung und Haftung für Verluste ab, die sich aus Ihrer Nutzung von Drittanbieter-Dienstleistungen ergeben. Alle Informationen, die Sie den Drittanbieter-Dienstleistungen zur Verfügung stellen, werden direkt von diesen Drittanbieter-Dienstleistungen in Übereinstimmung mit deren Datenschutzrichtlinien erfasst. Weitere Informationen finden Sie in den jeweiligen Datenschutzrichtlinien. Consensys hat keinen Zugriff auf die Informationen, die Sie mit den Drittanbieter-Dienstleistungen teilen."
 
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "You will not be able to use your MetaMask Secret Recovery Phrase to recover accounts added through Account Management Snaps. If your account credentials are lost or compromised, MetaMask will not be able to help you. If the Snap or the associated dapp is hacked or ceases to function, you may not be able to access your account and the funds in your account."
