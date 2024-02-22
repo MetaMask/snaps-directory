@@ -91,7 +91,12 @@ describe('request', () => {
   it('returns `null` if the provider is not available', async () => {
     Object.defineProperty(globalThis, 'window', {
       writable: true,
-      value: {},
+      value: {
+        ethereum: undefined,
+        addEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+        removeEventListener: jest.fn(),
+      },
     });
 
     expect(
