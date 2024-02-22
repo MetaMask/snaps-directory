@@ -4,11 +4,13 @@ import type {
   SnapsRegistryDatabase,
   VerifiedSnap,
 } from '@metamask/snaps-registry';
+import { verify } from '@metamask/snaps-registry';
 import {
   getLocalizedSnapManifest,
   getValidatedLocalizationFiles,
   type SnapManifest,
 } from '@metamask/snaps-utils';
+import { assert } from '@metamask/utils';
 import deepEqual from 'fast-deep-equal';
 import { rm } from 'fs/promises';
 import type { GatsbyNode, NodeInput } from 'gatsby';
@@ -50,6 +52,9 @@ type SnapNode = NodeInput & {
 // eslint-disable-next-line no-restricted-globals
 const IS_STAGING = process.env.GATSBY_STAGING === 'true';
 const REGISTRY_URL = 'https://acl.execution.metamask.io/latest/registry.json';
+const SIGNATURE_URL = 'https://acl.execution.metamask.io/latest/signature.json';
+const PUBLIC_KEY =
+  '0x025b65308f0f0fb8bc7f7ff87bfc296e0330eee5d3c1d1ee4a048b2fd6a86fa0a6';
 
 /**
  * Normalize the description to ensure it ends with a period. This also replaces
@@ -113,9 +118,23 @@ async function getRegistry() {
     new FileSystemCache({ cacheDirectory: fetchCachePath }),
   );
 
-  const registry: SnapsRegistryDatabase = await fetch(REGISTRY_URL, {
+  const rawRegistry = await fetch(REGISTRY_URL, {
+    headers,
+  }).then(async (response) => response.text());
+
+  const signature = await fetch(SIGNATURE_URL, {
     headers,
   }).then(async (response) => response.json());
+
+  const isRegistryValid = verify({
+    registry: rawRegistry,
+    signature,
+    publicKey: PUBLIC_KEY,
+  });
+
+  assert(isRegistryValid, 'Invalid registry signature.');
+
+  const registry: SnapsRegistryDatabase = JSON.parse(rawRegistry);
 
   const cachedRegistry = await cachedFetch(REGISTRY_URL, { headers }).then(
     async (response: any) => response.json(),

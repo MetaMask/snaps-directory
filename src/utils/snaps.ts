@@ -1,4 +1,7 @@
-import type { MetaMaskInpageProvider } from '@metamask/providers';
+import type {
+  EIP6963AnnounceProviderEvent,
+  MetaMaskInpageProvider,
+} from '@metamask/providers';
 import type { SnapsRegistryDatabase } from '@metamask/snaps-registry';
 import semver from 'semver/preload';
 
@@ -55,6 +58,55 @@ export async function isMetaMaskProvider(
 }
 
 /**
+ * Get a MetaMask provider using EIP6963. This will return the first provider
+ * reporting as MetaMask. If no provider is found after 500ms, this will
+ * return null instead.
+ *
+ * @returns A MetaMask provider if found, otherwise null.
+ */
+export async function getMetaMaskEIP6963Provider() {
+  return new Promise<MetaMaskInpageProvider | null>((rawResolve) => {
+    // Timeout looking for providers after 500ms
+    const timeout = setTimeout(() => {
+      resolve(null);
+    }, 500);
+
+    /**
+     * Resolve the promise with a MetaMask provider and clean up.
+     *
+     * @param provider - A MetaMask provider if found, otherwise null.
+     */
+    function resolve(provider: MetaMaskInpageProvider | null) {
+      window.removeEventListener(
+        'eip6963:announceProvider',
+        onAnnounceProvider,
+      );
+      clearTimeout(timeout);
+      rawResolve(provider);
+    }
+
+    /**
+     * Listener for the EIP6963 announceProvider event.
+     *
+     * Resolves the promise if a MetaMask provider is found.
+     *
+     * @param event - The EIP6963 announceProvider event.
+     */
+    function onAnnounceProvider(event: EIP6963AnnounceProviderEvent) {
+      const { info, provider } = event.detail;
+
+      if (info.rdns.includes('io.metamask')) {
+        resolve(provider);
+      }
+    }
+
+    window.addEventListener('eip6963:announceProvider', onAnnounceProvider);
+
+    window.dispatchEvent(new Event('eip6963:requestProvider'));
+  });
+}
+
+/**
  * Get a MetaMask provider. This will loop through all the detected providers
  * and return the first one that is MetaMask.
  */
@@ -81,6 +133,12 @@ export async function getMetaMaskProvider() {
         return provider;
       }
     }
+  }
+
+  const eip6963Provider = await getMetaMaskEIP6963Provider();
+
+  if (eip6963Provider) {
+    return eip6963Provider;
   }
 
   return null;
@@ -115,6 +173,12 @@ export async function getSnapsProvider() {
         return provider;
       }
     }
+  }
+
+  const eip6963Provider = await getMetaMaskEIP6963Provider();
+
+  if (eip6963Provider && (await hasSnapsSupport(eip6963Provider))) {
+    return eip6963Provider;
   }
 
   return null;
