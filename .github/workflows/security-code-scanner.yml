@@ -32,6 +32,6 @@ jobs:
             '**/jest.environment.js'
             '**/jest.config.js'
             node_modules
-          mixpanel_project_token: ${{secrets.SECURITY_CODE_SCANNER_MIXPANEL_TOKEN}}
+          mixpanel_project_token: ${{ secrets.SECURITY_CODE_SCANNER_MIXPANEL_TOKEN }}
           slack_webhook: ${{ secrets.APPSEC_BOT_SLACK_WEBHOOK }}
 
