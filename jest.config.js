@@ -95,6 +95,8 @@ module.exports = {
   moduleNameMapper: {
     '^.+\\.svg(\\?raw)?$': '<rootDir>/src/__mocks__/svg.tsx',
     '^.+\\.(png|css)': '<rootDir>/src/__mocks__/file.ts',
+    // eslint-disable-next-line n/no-extraneous-require
+    nanoid: require.resolve('nanoid'),
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -154,7 +156,7 @@ module.exports = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: 'jest-environment-jsdom',
+  testEnvironment: './jest.environment.js',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -198,7 +200,10 @@ module.exports = {
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  transformIgnorePatterns: ['node_modules/(?!(nanoid))'],
+  // transformIgnorePatterns: [
+  //   "/node_modules/",
+  //   "\\.pnp\\.[^\\/]+$"
+  // ],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,
