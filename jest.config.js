@@ -95,7 +95,6 @@ module.exports = {
   moduleNameMapper: {
     '^.+\\.svg(\\?raw)?$': '<rootDir>/src/__mocks__/svg.tsx',
     '^.+\\.(png|css)': '<rootDir>/src/__mocks__/file.ts',
-    // eslint-disable-next-line n/no-extraneous-require
     nanoid: require.resolve('nanoid'),
   },
 
