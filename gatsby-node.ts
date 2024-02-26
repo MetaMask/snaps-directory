@@ -535,7 +535,7 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
         crypto: false,
         stream: false,
         path: false,
-        fs: false,
+        url: false,
       },
     },
     module: {
