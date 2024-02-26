@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add EIP-6963 support ([#316](https://github.com/MetaMask/snaps-directory/pull/316))
 
 ### Changed
+- Update banner link and ordering ([#323](https://github.com/MetaMask/snaps-directory/pull/323))
 - Simplify protocol name detection ([#317](https://github.com/MetaMask/snaps-directory/pull/317))
 - Update popularity label to "Most Popular" ([#302](https://github.com/MetaMask/snaps-directory/pull/302))
 
