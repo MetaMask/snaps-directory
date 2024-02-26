@@ -17,8 +17,8 @@ export const Banner: FunctionComponent<BannerProps> = ({ snaps }) => (
   <Box height="21.875rem">
     <Carousel>
       <ExploreBanner snaps={snaps} key="explore-banner" />
-      <FaqBanner key="faq-banner" />
       <CreateSnapBanner key="create-snap-banner" />
+      <FaqBanner key="faq-banner" />
     </Carousel>
   </Box>
 );

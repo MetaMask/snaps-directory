@@ -9,7 +9,7 @@ import { Base } from '../Base';
 
 export const CreateSnapBanner: FunctionComponent = () => (
   <Base
-    to="https://docs.metamask.io/snaps/how-to/develop-a-snap/"
+    to="https://docs.metamask.io/snaps/"
     external={true}
     // Based on `success.muted`, but without opacity.
     background="#E8F2EA"
