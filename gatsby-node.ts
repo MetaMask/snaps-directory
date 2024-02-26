@@ -20,6 +20,7 @@ import type { RequestInfo, RequestInit } from 'node-fetch';
 import fetch from 'node-fetch';
 import { fetchBuilder, FileSystemCache } from 'node-fetch-cache';
 import path from 'path';
+import { NormalModuleReplacementPlugin } from 'webpack';
 
 import type { Fields } from './src/utils';
 import { getLatestSnapVersion } from './src/utils';
@@ -520,6 +521,23 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
 
   replaceWebpackConfig({
     ...config,
+    plugins: [
+      ...config.plugins,
+      new NormalModuleReplacementPlugin(/node:/u, (resource) => {
+        resource.request = resource.request.replace(/^node:/u, '');
+      }),
+    ],
+    resolve: {
+      ...config.resolve,
+      fallback: {
+        ...config.resolve.fallback,
+        assert: false,
+        crypto: false,
+        stream: false,
+        path: false,
+        url: false,
+      },
+    },
     module: {
       ...config.module,
       rules: [

@@ -492,7 +492,7 @@ describe('SNAP_PERMISSIONS', () => {
               "id": "TuvFzN",
               "message": "Manage {name} accounts",
               "values": Object {
-                "name": "Testnet (all coins)",
+                "name": "Testnet",
               },
             },
             "weight": 1,
@@ -575,7 +575,7 @@ describe('SNAP_PERMISSIONS', () => {
               "id": "TuvFzN",
               "message": "Manage {name} accounts",
               "values": Object {
-                "name": "Testnet (all coins)",
+                "name": "Test Networks",
               },
             },
             "weight": 1,
@@ -641,7 +641,7 @@ describe('SNAP_PERMISSIONS', () => {
               "id": "P4MCkP",
               "message": "View your public key for {name}",
               "values": Object {
-                "name": "Testnet (all coins)",
+                "name": "Testnet",
               },
             },
             "weight": 2,
@@ -894,7 +894,7 @@ describe('getPermissions', () => {
             "id": "P4MCkP",
             "message": "View your public key for {name}",
             "values": Object {
-              "name": "Testnet (all coins)",
+              "name": "Testnet",
             },
           },
           "weight": 2,

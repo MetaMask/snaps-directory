@@ -508,6 +508,7 @@ msgid "Live"
 msgstr "Выпущенная версия"
 
 #: src/features/snap/permissions.tsx
+#: src/features/snap/permissions.tsx
 msgid "Manage {name} accounts"
 msgstr "Управление счетами {name}"
 

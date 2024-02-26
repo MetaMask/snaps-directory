@@ -508,6 +508,7 @@ msgid "Live"
 msgstr "Canlı"
 
 #: src/features/snap/permissions.tsx
+#: src/features/snap/permissions.tsx
 msgid "Manage {name} accounts"
 msgstr "{name} hesaplarını yönet"
 

@@ -508,6 +508,7 @@ msgid "Live"
 msgstr "ライブ"
 
 #: src/features/snap/permissions.tsx
+#: src/features/snap/permissions.tsx
 msgid "Manage {name} accounts"
 msgstr "{name}アカウントの管理"
 

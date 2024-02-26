@@ -95,6 +95,8 @@ module.exports = {
   moduleNameMapper: {
     '^.+\\.svg(\\?raw)?$': '<rootDir>/src/__mocks__/svg.tsx',
     '^.+\\.(png|css)': '<rootDir>/src/__mocks__/file.ts',
+    // Force resolve nanoid to CJS to fix Jest tests
+    nanoid: require.resolve('nanoid'),
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -154,7 +156,7 @@ module.exports = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: 'jest-environment-jsdom',
+  testEnvironment: './jest.environment.js',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},

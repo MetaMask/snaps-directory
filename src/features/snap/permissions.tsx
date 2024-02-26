@@ -1,7 +1,11 @@
 import type { MessageDescriptor } from '@lingui/core';
 import { defineMessage } from '@lingui/macro';
-import slip44 from '@metamask/slip44';
 import type { EmptyObject, InitialPermissions } from '@metamask/snaps-sdk';
+import type { SnapsDerivationPath } from '@metamask/snaps-utils';
+import {
+  getSnapDerivationPathName,
+  getSlip44ProtocolName,
+} from '@metamask/snaps-utils';
 import type { FunctionComponent } from 'react';
 
 import type { IconProps } from '../../components';
@@ -71,16 +75,40 @@ type PermissionsMap = {
 };
 
 /**
- * Get the label to use for a network.
+ * Get the label to use for a network using the coin type.
  *
- * @param networkId - The ID of the network to get the name for.
+ * @param coinType - The coin_type of the network to get the name for.
  * @param fallback - The fallback name to use if the network is unknown.
  * @returns The label for the network, or the fallback if the network is
  * unknown.
  */
-function getNetworkLabel(networkId: string, fallback: MessageDescriptor) {
-  // TODO: Use functions from `@metamask/snaps-utils` instead of `slip44`.
-  const name = slip44[networkId as keyof typeof slip44]?.name;
+function getNetworkLabelByCoinType(
+  coinType: string,
+  fallback: MessageDescriptor,
+) {
+  const name = getSlip44ProtocolName(coinType);
+  if (name) {
+    return defineMessage`Manage ${name} accounts`;
+  }
+
+  return fallback;
+}
+
+/**
+ * Get the label to use for a network using path and curve.
+ *
+ * @param path - The derivation path of the network to get the name for.
+ * @param curve - The curve of the network to get the name for.
+ * @param fallback - The fallback name to use if the network is unknown.
+ * @returns The label for the network, or the fallback if the network is
+ * unknown.
+ */
+function getNetworkLabelByPath(
+  path: SnapsDerivationPath['path'],
+  curve: SnapsDerivationPath['curve'],
+  fallback: MessageDescriptor,
+) {
+  const name = getSnapDerivationPathName(path, curve);
   if (name) {
     return defineMessage`Manage ${name} accounts`;
   }
@@ -91,17 +119,18 @@ function getNetworkLabel(networkId: string, fallback: MessageDescriptor) {
 /**
  * Get the label to use for a network.
  *
- * @param networkId - The ID of the network to get the name for.
+ * @param path - The derivation path of the network to get the name for.
+ * @param curve - The curve of the network to get the name for.
  * @param fallback - The fallback name to use if the network is unknown.
  * @returns The label for the network, or the fallback if the network is
  * unknown.
  */
 function getPublicKeyNetworkLabel(
-  networkId: string,
+  path: SnapsDerivationPath['path'],
+  curve: SnapsDerivationPath['curve'],
   fallback: MessageDescriptor,
 ) {
-  // TODO: Use functions from `@metamask/snaps-utils` instead of `slip44`.
-  const name = slip44[networkId as keyof typeof slip44]?.name;
+  const name = getSnapDerivationPathName(path, curve);
   if (name) {
     return defineMessage`View your public key for ${name}`;
   }
@@ -238,13 +267,13 @@ export const SNAP_PERMISSIONS: PermissionsMap = {
     return permission.map(({ path, curve }) => {
       const purpose = path[1];
       const coinType = path[2] as string;
-      const isBip44 =
-        curve === 'secp256k1' && purpose === `44'` && coinType?.endsWith(`'`);
 
       const fallback = defineMessage`Manage accounts (Unknown network "m/${purpose}/${coinType}")`;
-      const label = isBip44
-        ? getNetworkLabel(coinType.slice(0, -1), fallback)
-        : fallback;
+      const label = getNetworkLabelByPath(
+        path as SnapsDerivationPath['path'],
+        curve,
+        fallback,
+      );
 
       return {
         label,
@@ -257,7 +286,7 @@ export const SNAP_PERMISSIONS: PermissionsMap = {
   snap_getBip44Entropy: ({ name }, permission) => {
     return permission.map(({ coinType }) => {
       const fallback = defineMessage`Manage accounts (Unknown network "m/44'/${coinType}'")`;
-      const label = getNetworkLabel(String(coinType), fallback);
+      const label = getNetworkLabelByCoinType(String(coinType), fallback);
 
       return {
         label,
@@ -271,13 +300,13 @@ export const SNAP_PERMISSIONS: PermissionsMap = {
     return permission.map(({ path, curve }) => {
       const purpose = path[1];
       const coinType = path[2] as string;
-      const isBip44 =
-        curve === 'secp256k1' && purpose === `44'` && coinType?.endsWith(`'`);
 
       const fallback = defineMessage`View your public key (Unknown network "m/${purpose}/${coinType}")`;
-      const label = isBip44
-        ? getPublicKeyNetworkLabel(coinType.slice(0, -1), fallback)
-        : fallback;
+      const label = getPublicKeyNetworkLabel(
+        path as SnapsDerivationPath['path'],
+        curve,
+        fallback,
+      );
 
       return {
         label,

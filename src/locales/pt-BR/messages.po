@@ -508,6 +508,7 @@ msgid "Live"
 msgstr "No ar"
 
 #: src/features/snap/permissions.tsx
+#: src/features/snap/permissions.tsx
 msgid "Manage {name} accounts"
 msgstr "Gerenciar contas de {name}"
 
