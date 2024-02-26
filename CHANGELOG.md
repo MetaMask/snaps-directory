@@ -6,6 +6,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.8.0]
+### Uncategorized
+- Simplify protocol name detection ([#317](https://github.com/MetaMask/snaps-directory/pull/317))
+- Enabling the MetaMask Security Code Scanner ([#315](https://github.com/MetaMask/snaps-directory/pull/315))
+- New Crowdin translations by Github Action ([#320](https://github.com/MetaMask/snaps-directory/pull/320))
+- Bump @metamask/snaps-controllers from 5.0.0 to 5.0.1 ([#310](https://github.com/MetaMask/snaps-directory/pull/310))
+- Verify registry signature before building ([#319](https://github.com/MetaMask/snaps-directory/pull/319))
+- Add EIP-6963 support ([#316](https://github.com/MetaMask/snaps-directory/pull/316))
+- New Crowdin translations by Github Action ([#312](https://github.com/MetaMask/snaps-directory/pull/312))
+- Bump @metamask/rpc-errors from 6.1.0 to 6.2.0 ([#318](https://github.com/MetaMask/snaps-directory/pull/318))
+- Fix translation in permission ([#313](https://github.com/MetaMask/snaps-directory/pull/313))
+- New Crowdin translations by Github Action ([#311](https://github.com/MetaMask/snaps-directory/pull/311))
+- New Crowdin translations by Github Action ([#309](https://github.com/MetaMask/snaps-directory/pull/309))
+- Set up Crowdin translations ([#308](https://github.com/MetaMask/snaps-directory/pull/308))
+- Bump @metamask/snaps-utils from 6.0.0 to 6.1.0 ([#306](https://github.com/MetaMask/snaps-directory/pull/306))
+- Fix banners for non-circular icons ([#305](https://github.com/MetaMask/snaps-directory/pull/305))
+- Update popularity label to "Most Popular" ([#302](https://github.com/MetaMask/snaps-directory/pull/302))
+
 ## [1.7.0]
 ### Added
 - Add account management category ([#164](https://github.com/MetaMask/snaps-directory/pull/164), [#301](https://github.com/MetaMask/snaps-directory/pull/301))
@@ -148,7 +166,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.7.0...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.8.0...HEAD
+[1.8.0]: https://github.com/MetaMask/snaps-directory/compare/v1.7.0...v1.8.0
 [1.7.0]: https://github.com/MetaMask/snaps-directory/compare/v1.6.0...v1.7.0
 [1.6.0]: https://github.com/MetaMask/snaps-directory/compare/v1.5.0...v1.6.0
 [1.5.0]: https://github.com/MetaMask/snaps-directory/compare/v1.4.0...v1.5.0
