@@ -25,6 +25,7 @@ const config: GatsbyConfig = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-react-helmet-async',
     {
       resolve: 'gatsby-source-filesystem',
       options: { name: 'content', path: './src/pages' },

@@ -23,8 +23,8 @@ msgid "{name} is now ready to use."
 msgstr "{name} artık kullanılmaya hazır."
 
 #: src/pages/{Category.name}/index.tsx
-msgid "{nameText} Snaps on the MetaMask Snaps Directory"
-msgstr "MetaMask Snaps Dizinindeki {nameText} Snap'leri"
+msgid "{nameText} Snaps"
+msgstr ""
 
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
@@ -255,6 +255,10 @@ msgstr "Bu snap ile başlamak için <0>{name}</0> web sitesine devam edin."
 msgid "Create an Ethereum Account"
 msgstr "Bir Ethereum Hesabı oluştur"
 
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+msgid "Customize your web3 experience with {0}."
+msgstr ""
+
 #: src/features/snap/permissions.tsx
 msgid "Derive arbitrary keys unique to {name}"
 msgstr "{name} için eşsiz rastgele anahtarlar türetin"
@@ -437,17 +441,9 @@ msgstr "Yüklendi"
 msgid "Installed {nameText} Snaps"
 msgstr "Yüklü {nameText} Snap'leri"
 
-#: src/pages/{Category.name}/installed.tsx
-msgid "Installed {nameText} Snaps on the MetaMask Snaps Directory"
-msgstr "MetaMask Snaps Dizininde yüklü {nameText} Snap'leri"
-
 #: src/pages/installed.tsx
 msgid "Installed Snaps"
 msgstr "Yüklü Snap'ler"
-
-#: src/pages/installed.tsx
-msgid "Installed Snaps on the MetaMask Snaps Directory"
-msgstr "MetaMask Snaps Dizininde yüklü Snap'ler"
 
 #: src/components/InstallSnapButton.tsx
 msgid "Installing {name}"
@@ -478,10 +474,6 @@ msgstr "En Yeni"
 #: src/pages/latest.tsx
 msgid "Latest Snaps"
 msgstr "En Yeni Snap'ler"
-
-#: src/pages/latest.tsx
-msgid "Latest Snaps on the MetaMask Snaps Directory"
-msgstr "MetaMask Snaps Dizinindeki En Yeni Snap'ler"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Legal"
@@ -577,6 +569,10 @@ msgstr "Filtrele menüsünü aç"
 #: src/features/notifications/components/NotificationsButton.tsx
 msgid "Open notifications menu"
 msgstr "Bildirimler menüsünü aç"
+
+#: src/pages/404.tsx
+msgid "Page not found"
+msgstr ""
 
 #: src/features/snap/components/Permissions.tsx
 msgid "Permissions by <0>{0}</0>"

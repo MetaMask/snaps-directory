@@ -18,12 +18,14 @@ import { createFileNodeFromBuffer } from 'gatsby-source-filesystem';
 import { GraphQLJSONObject } from 'graphql-type-json';
 import type { RequestInfo, RequestInit } from 'node-fetch';
 import fetch from 'node-fetch';
+// @ts-expect-error - No types available for this package.
 import { fetchBuilder, FileSystemCache } from 'node-fetch-cache';
 import path from 'path';
 import { NormalModuleReplacementPlugin } from 'webpack';
 
-import type { Fields } from './src/utils';
+import { DEFAULT_LOCALE, LOCALES } from './src/locales';
 import { getLatestSnapVersion } from './src/utils';
+import type { Fields } from './src/utils';
 import {
   generateCategoryImage,
   generateInstalledImage,
@@ -317,6 +319,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
     [...snaps].sort((a, b) => b.lastUpdated - a.lastUpdated).slice(0, 6),
     6,
   );
+
   await createFileNodeFromBuffer({
     buffer: latestImage,
     name: 'latest-banner',
@@ -461,6 +464,37 @@ export const onCreateNode: GatsbyNode[`onCreateNode`] = async ({
       node,
       name: 'installedLocalFile',
       value: installedBannerNode.id,
+    });
+  }
+};
+
+export const onCreatePage: GatsbyNode['onCreatePage'] = async ({
+  page,
+  actions,
+}) => {
+  const { createPage, deletePage } = actions;
+
+  deletePage(page);
+  createPage({
+    ...page,
+    context: {
+      ...page.context,
+      locale: DEFAULT_LOCALE,
+    },
+  });
+
+  for (const { locale } of LOCALES) {
+    if (locale === DEFAULT_LOCALE) {
+      continue;
+    }
+
+    createPage({
+      ...page,
+      path: `/${locale.toLowerCase()}${page.path}`,
+      context: {
+        ...page.context,
+        locale,
+      },
     });
   }
 };

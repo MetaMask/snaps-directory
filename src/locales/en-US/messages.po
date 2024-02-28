@@ -18,8 +18,8 @@ msgid "{name} is now ready to use."
 msgstr ""
 
 #: src/pages/{Category.name}/index.tsx
-msgid "{nameText} Snaps on the MetaMask Snaps Directory"
-msgstr ""
+msgid "{nameText} Snaps"
+msgstr "{nameText} Snaps"
 
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
@@ -250,6 +250,10 @@ msgstr ""
 msgid "Create an Ethereum Account"
 msgstr ""
 
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+msgid "Customize your web3 experience with {0}."
+msgstr "Customize your web3 experience with {0}."
+
 #: src/features/snap/permissions.tsx
 msgid "Derive arbitrary keys unique to {name}"
 msgstr ""
@@ -432,16 +436,8 @@ msgstr ""
 msgid "Installed {nameText} Snaps"
 msgstr ""
 
-#: src/pages/{Category.name}/installed.tsx
-msgid "Installed {nameText} Snaps on the MetaMask Snaps Directory"
-msgstr ""
-
 #: src/pages/installed.tsx
 msgid "Installed Snaps"
-msgstr ""
-
-#: src/pages/installed.tsx
-msgid "Installed Snaps on the MetaMask Snaps Directory"
 msgstr ""
 
 #: src/components/InstallSnapButton.tsx
@@ -472,10 +468,6 @@ msgstr ""
 
 #: src/pages/latest.tsx
 msgid "Latest Snaps"
-msgstr ""
-
-#: src/pages/latest.tsx
-msgid "Latest Snaps on the MetaMask Snaps Directory"
 msgstr ""
 
 #: src/features/snap/components/MetadataModal.tsx
@@ -572,6 +564,10 @@ msgstr ""
 #: src/features/notifications/components/NotificationsButton.tsx
 msgid "Open notifications menu"
 msgstr ""
+
+#: src/pages/404.tsx
+msgid "Page not found"
+msgstr "Page not found"
 
 #: src/features/snap/components/Permissions.tsx
 msgid "Permissions by <0>{0}</0>"

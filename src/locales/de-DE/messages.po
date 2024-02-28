@@ -23,8 +23,8 @@ msgid "{name} is now ready to use."
 msgstr "{name} ist jetzt einsatzbereit."
 
 #: src/pages/{Category.name}/index.tsx
-msgid "{nameText} Snaps on the MetaMask Snaps Directory"
-msgstr "{nameText}-Snaps im MetaMask Snaps Directory"
+msgid "{nameText} Snaps"
+msgstr ""
 
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
@@ -255,6 +255,10 @@ msgstr "Gehen Sie auf die Website von <0>{name}</0>, um mit diesem Snap zu begin
 msgid "Create an Ethereum Account"
 msgstr "Erstellen Sie ein Ethereum-Konto."
 
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+msgid "Customize your web3 experience with {0}."
+msgstr ""
+
 #: src/features/snap/permissions.tsx
 msgid "Derive arbitrary keys unique to {name}"
 msgstr "Leiten Sie beliebige, für {name} eindeutige Schlüssel ab."
@@ -437,17 +441,9 @@ msgstr "Installiert"
 msgid "Installed {nameText} Snaps"
 msgstr "Installierte {nameText}-Snaps"
 
-#: src/pages/{Category.name}/installed.tsx
-msgid "Installed {nameText} Snaps on the MetaMask Snaps Directory"
-msgstr "Installierte {nameText}-Snaps im MetaMask Snaps Directory"
-
 #: src/pages/installed.tsx
 msgid "Installed Snaps"
 msgstr "Installierte Snaps"
-
-#: src/pages/installed.tsx
-msgid "Installed Snaps on the MetaMask Snaps Directory"
-msgstr "Installierte Snaps im MetaMask Snaps Directory"
 
 #: src/components/InstallSnapButton.tsx
 msgid "Installing {name}"
@@ -478,10 +474,6 @@ msgstr "Neueste"
 #: src/pages/latest.tsx
 msgid "Latest Snaps"
 msgstr "Neueste Snaps"
-
-#: src/pages/latest.tsx
-msgid "Latest Snaps on the MetaMask Snaps Directory"
-msgstr "Neueste Snaps im MetaMask Snaps Directory"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Legal"
@@ -577,6 +569,10 @@ msgstr "Filtemenü öffnen"
 #: src/features/notifications/components/NotificationsButton.tsx
 msgid "Open notifications menu"
 msgstr "Benachrichtigungsmenü öffnen"
+
+#: src/pages/404.tsx
+msgid "Page not found"
+msgstr ""
 
 #: src/features/snap/components/Permissions.tsx
 msgid "Permissions by <0>{0}</0>"

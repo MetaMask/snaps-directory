@@ -23,8 +23,8 @@ msgid "{name} is now ready to use."
 msgstr "{name} 现在可以使用了。"
 
 #: src/pages/{Category.name}/index.tsx
-msgid "{nameText} Snaps on the MetaMask Snaps Directory"
-msgstr "MetaMask Snaps 目录上的 {nameText} Snap"
+msgid "{nameText} Snaps"
+msgstr ""
 
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
@@ -255,6 +255,10 @@ msgstr "继续访问 <0>{name}</0> 的网站，开始使用此 snap。"
 msgid "Create an Ethereum Account"
 msgstr "创建以太坊账户"
 
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+msgid "Customize your web3 experience with {0}."
+msgstr ""
+
 #: src/features/snap/permissions.tsx
 msgid "Derive arbitrary keys unique to {name}"
 msgstr "派生 {name} 独有的任意密钥"
@@ -437,17 +441,9 @@ msgstr "已安装"
 msgid "Installed {nameText} Snaps"
 msgstr "已安装的 {nameText} Snap"
 
-#: src/pages/{Category.name}/installed.tsx
-msgid "Installed {nameText} Snaps on the MetaMask Snaps Directory"
-msgstr "已在 MetaMask Snaps 目录上安装的 {nameText} Snap"
-
 #: src/pages/installed.tsx
 msgid "Installed Snaps"
 msgstr "已安装的 Snap"
-
-#: src/pages/installed.tsx
-msgid "Installed Snaps on the MetaMask Snaps Directory"
-msgstr "已在 MetaMask Snaps 目录上安装的 Snap"
 
 #: src/components/InstallSnapButton.tsx
 msgid "Installing {name}"
@@ -478,10 +474,6 @@ msgstr "最新"
 #: src/pages/latest.tsx
 msgid "Latest Snaps"
 msgstr "最新的 Snap"
-
-#: src/pages/latest.tsx
-msgid "Latest Snaps on the MetaMask Snaps Directory"
-msgstr "MetaMask Snaps 目录上的最新 Snap"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Legal"
@@ -577,6 +569,10 @@ msgstr "打开筛选菜单"
 #: src/features/notifications/components/NotificationsButton.tsx
 msgid "Open notifications menu"
 msgstr "打开通知菜单"
+
+#: src/pages/404.tsx
+msgid "Page not found"
+msgstr ""
 
 #: src/features/snap/components/Permissions.tsx
 msgid "Permissions by <0>{0}</0>"

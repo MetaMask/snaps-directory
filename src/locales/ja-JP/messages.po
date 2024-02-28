@@ -23,8 +23,8 @@ msgid "{name} is now ready to use."
 msgstr "{name}の使用準備ができました。"
 
 #: src/pages/{Category.name}/index.tsx
-msgid "{nameText} Snaps on the MetaMask Snaps Directory"
-msgstr "MetaMask Snaps Directoryの{nameText} Snap"
+msgid "{nameText} Snaps"
+msgstr ""
 
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
@@ -255,6 +255,10 @@ msgstr "<0>{name}</0>のWebサイトに移動して、このSnapの使用を開�
 msgid "Create an Ethereum Account"
 msgstr "イーサリアムアカウントを作成"
 
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+msgid "Customize your web3 experience with {0}."
+msgstr ""
+
 #: src/features/snap/permissions.tsx
 msgid "Derive arbitrary keys unique to {name}"
 msgstr "{name}に固有の任意のキーを導出する"
@@ -437,17 +441,9 @@ msgstr "インストール完了"
 msgid "Installed {nameText} Snaps"
 msgstr "インストールされた{nameText} Snap"
 
-#: src/pages/{Category.name}/installed.tsx
-msgid "Installed {nameText} Snaps on the MetaMask Snaps Directory"
-msgstr "MetaMask Snaps Directoryのインストールされた{nameText} Snap"
-
 #: src/pages/installed.tsx
 msgid "Installed Snaps"
 msgstr "インストールされたSnap"
-
-#: src/pages/installed.tsx
-msgid "Installed Snaps on the MetaMask Snaps Directory"
-msgstr "MetaMask Snaps DirectoryのインストールされたSnap"
 
 #: src/components/InstallSnapButton.tsx
 msgid "Installing {name}"
@@ -478,10 +474,6 @@ msgstr "最新"
 #: src/pages/latest.tsx
 msgid "Latest Snaps"
 msgstr "最新のSnap"
-
-#: src/pages/latest.tsx
-msgid "Latest Snaps on the MetaMask Snaps Directory"
-msgstr "MetaMask Snaps Directoryの最新のSnap"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Legal"
@@ -577,6 +569,10 @@ msgstr "フィルターメニューを開く"
 #: src/features/notifications/components/NotificationsButton.tsx
 msgid "Open notifications menu"
 msgstr "通知メニューを開く"
+
+#: src/pages/404.tsx
+msgid "Page not found"
+msgstr ""
 
 #: src/features/snap/components/Permissions.tsx
 msgid "Permissions by <0>{0}</0>"

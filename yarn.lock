@@ -5105,6 +5105,7 @@ __metadata:
     gatsby: ^5.12.12
     gatsby-plugin-fusejs: ^2.0.2
     gatsby-plugin-manifest: ^5.12.0
+    gatsby-plugin-react-helmet-async: ^1.2.3
     gatsby-plugin-robots-txt: ^1.8.0
     gatsby-plugin-segment-js: ^5.0.0
     gatsby-plugin-sharp: ^5.12.0
@@ -5129,6 +5130,7 @@ __metadata:
     prettier-plugin-packagejson: ^2.3.0
     react: ^18.2.0
     react-dom: ^18.2.0
+    react-helmet-async: ^2.0.4
     react-redux: ^8.1.2
     react-use-fusejs: ^2.0.2
     redux: ^4.2.1
@@ -12832,6 +12834,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-react-helmet-async@npm:^1.2.3":
+  version: 1.2.3
+  resolution: "gatsby-plugin-react-helmet-async@npm:1.2.3"
+  peerDependencies:
+    gatsby: ">=2"
+    react: ^16.6.0 || ^17 || ^18
+    react-dom: ^16.6.0 || ^17 || ^18
+    react-helmet-async: 1.x
+  checksum: d7fcd585fce47f30c6cbb625707e76856654c375108ef5dc65ad9d2e234b475b2786eb8cfa2c7379548814d55eafa9e029d802e02bad1deb42ad814a39329c61
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-robots-txt@npm:^1.8.0":
   version: 1.8.0
   resolution: "gatsby-plugin-robots-txt@npm:1.8.0"
@@ -19031,6 +19045,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-fast-compare@npm:^3.2.2":
+  version: 3.2.2
+  resolution: "react-fast-compare@npm:3.2.2"
+  checksum: 2071415b4f76a3e6b55c84611c4d24dcb12ffc85811a2840b5a3f1ff2d1a99be1020d9437ee7c6e024c9f4cbb84ceb35e48cf84f28fcb00265ad2dfdd3947704
+  languageName: node
+  linkType: hard
+
 "react-focus-lock@npm:^2.9.4":
   version: 2.9.5
   resolution: "react-focus-lock@npm:2.9.5"
@@ -19048,6 +19069,20 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 93473a6f0a249487e0f1609ccfe94312ce86265d7bca01f6825c061e15fcc13c78d6adb0555f8d9e7fa1cba3e23958f3ca4d4148c7bea828843c909feb5e10f1
+  languageName: node
+  linkType: hard
+
+"react-helmet-async@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "react-helmet-async@npm:2.0.4"
+  dependencies:
+    invariant: ^2.2.4
+    react-fast-compare: ^3.2.2
+    shallowequal: ^1.1.0
+  peerDependencies:
+    react: ^16.6.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
+  checksum: 1bd16e6be6d15cf3d4b4c0853d1e122941a05d3fb2bad1fb1c5037069c5f142fcab063c342b95c58a998a81f093bdf1bd1bb00852a5a3a84d49e48790d5142bb
   languageName: node
   linkType: hard
 
@@ -20054,6 +20089,13 @@ __metadata:
   version: 1.2.2
   resolution: "shallow-compare@npm:1.2.2"
   checksum: 900b9fd6931e1c5293ee67765b3a7043b10f83c147cf60c2869076e772189e9b25b664efa93cda09c411b08ff32e3614cf1b349f92e91ae14298ef1726ae0964
+  languageName: node
+  linkType: hard
+
+"shallowequal@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "shallowequal@npm:1.1.0"
+  checksum: f4c1de0837f106d2dbbfd5d0720a5d059d1c66b42b580965c8f06bb1db684be8783538b684092648c981294bf817869f743a066538771dbecb293df78f765e00
   languageName: node
   linkType: hard
 
