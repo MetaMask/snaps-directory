@@ -21,7 +21,7 @@ export const LocaleProvider: FunctionComponent<LocaleProviderProps> = ({
   locale,
   children,
 }) => {
-  const [currentLocale] = useState(localStorage.getItem('locale') ?? locale);
+  const [currentLocale] = useState(localStorage?.getItem('locale') ?? locale);
 
   const setLocale = (newLocale: string) => {
     localStorage.setItem('locale', newLocale);
