@@ -9,11 +9,6 @@ import { getSearchQuery } from '../store';
 
 describe('FilterSearch', () => {
   it('renders', () => {
-    const mock = getMock(useStaticQuery);
-    mock.mockReturnValue({
-      fusejs: {},
-    });
-
     const { getByPlaceholderText } = render(<FilterSearch />);
 
     expect(getByPlaceholderText('Search Snaps')).toBeInTheDocument();

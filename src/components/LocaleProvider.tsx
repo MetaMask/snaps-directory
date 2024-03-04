@@ -10,12 +10,12 @@ export type LocaleProviderProps = {
   children: ReactNode;
 };
 
-export const LocaleContext = createContext({
-  locale: 'en',
-  setLocale: (_locale: string) => {
-    // noop
-  },
-});
+export type LocaleContextType = {
+  locale: string;
+  setLocale: (locale: string) => void;
+};
+
+export const LocaleContext = createContext<LocaleContextType | null>(null);
 
 /**
  * Get a value from local storage.
@@ -24,6 +24,7 @@ export const LocaleContext = createContext({
  * @returns The value from local storage, or null if it doesn't exist.
  */
 function getFromLocalStorage(key: string): string | null {
+  // istanbul ignore next
   if (
     typeof window === 'undefined' ||
     typeof window.localStorage === 'undefined'
@@ -49,7 +50,12 @@ export const LocaleProvider: FunctionComponent<LocaleProviderProps> = ({
   };
 
   const data = LOCALES.find((item) => item.locale === currentLocale);
-  i18n.load(currentLocale, data?.messages ?? {});
+  if (!data) {
+    setLocale('en-US');
+    return null;
+  }
+
+  i18n.load(currentLocale, data.messages);
   i18n.activate(currentLocale);
 
   return (

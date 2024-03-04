@@ -1,10 +1,9 @@
 import { Container, Divider, Flex, Heading, Link } from '@chakra-ui/react';
 import { defineMessage } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
-import { graphql, Link as GatsbyLink, withPrefix } from 'gatsby';
+import { graphql, Link as GatsbyLink } from 'gatsby';
 import { useEffect, type FunctionComponent, Fragment } from 'react';
 
-import banner from '../assets/images/seo/home.png';
 import { SEO } from '../components';
 import { RegistrySnapCategory, SNAP_CATEGORY_LINKS } from '../constants';
 import { Banner, FilteredSnaps, resetFilters } from '../features';
@@ -77,7 +76,7 @@ export type IndexPageProps = {
 };
 
 const Head: FunctionComponent<IndexPageProps> = ({ pageContext }) => {
-  return <SEO locale={pageContext.locale} banner={withPrefix(banner)} />;
+  return <SEO locale={pageContext.locale} />;
 };
 
 const IndexPage: FunctionComponent<IndexPageProps> = ({

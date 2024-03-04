@@ -1,20 +1,25 @@
 import { describe } from '@jest/globals';
 import { navigate } from 'gatsby';
 
-import CategoryInstalledPage, { Head } from './installed';
+import CategoryInstalledPage from './installed';
 import { RegistrySnapCategory } from '../../constants';
 import { getCategories, getInstalled } from '../../features';
 import { createStore } from '../../store';
-import { render } from '../../utils/test-utils';
 import {
+  render,
   getMockCategory,
-  getMockSiteMetadata,
-} from '../../utils/test-utils/queries';
+  getMockPageContext,
+} from '../../utils/test-utils';
 
 describe('Category installed page', () => {
   it('renders', async () => {
     expect(() =>
-      render(<CategoryInstalledPage data={getMockCategory()} />),
+      render(
+        <CategoryInstalledPage
+          pageContext={getMockPageContext()}
+          data={getMockCategory()}
+        />,
+      ),
     ).not.toThrow();
   });
 
@@ -24,7 +29,13 @@ describe('Category installed page', () => {
       Object.values(RegistrySnapCategory),
     );
 
-    render(<CategoryInstalledPage data={getMockCategory()} />, store);
+    render(
+      <CategoryInstalledPage
+        pageContext={getMockPageContext()}
+        data={getMockCategory()}
+      />,
+      store,
+    );
 
     expect(getCategories(store.getState())).toStrictEqual([
       getMockCategory().category.name,
@@ -35,25 +46,24 @@ describe('Category installed page', () => {
     const store = createStore();
     expect(getInstalled(store.getState())).toBe(false);
 
-    render(<CategoryInstalledPage data={getMockCategory()} />, store);
+    render(
+      <CategoryInstalledPage
+        pageContext={getMockPageContext()}
+        data={getMockCategory()}
+      />,
+      store,
+    );
 
     expect(getInstalled(store.getState())).toBe(true);
   });
 
   it('redirects to the main page', () => {
-    render(<CategoryInstalledPage data={getMockCategory()} />);
+    render(
+      <CategoryInstalledPage
+        pageContext={getMockPageContext()}
+        data={getMockCategory()}
+      />,
+    );
     expect(navigate).toHaveBeenCalledWith('/explore', { replace: true });
-  });
-
-  describe('Head', () => {
-    it('has the correct title', () => {
-      const { queryByText } = render(
-        <Head data={{ ...getMockCategory(), ...getMockSiteMetadata() }} />,
-      );
-
-      expect(
-        queryByText('Installed Security Snaps on the MetaMask Snaps Directory'),
-      ).toBeInTheDocument();
-    });
   });
 });

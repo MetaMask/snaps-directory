@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, withPrefix } from 'gatsby';
 import type { FunctionComponent } from 'react';
 import { Helmet } from 'react-helmet-async';
 
@@ -24,7 +24,7 @@ type QueryData = {
 export const SEO: FunctionComponent<SEOProps> = ({
   title,
   description,
-  banner = defaultBanner,
+  banner = withPrefix(defaultBanner),
   locale,
 }) => {
   const {
