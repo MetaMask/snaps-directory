@@ -11,6 +11,7 @@ export * from './InstallSnapButton';
 export * from './InstallUnsupportedMobile';
 export * from './Layout';
 export * from './Link';
+export * from './LocalePicker';
 export * from './LocaleProvider';
 export * from './Logo';
 export * from './PostInstallModal';

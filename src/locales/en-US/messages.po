@@ -343,6 +343,10 @@ msgstr ""
 msgid "Explore the latest community-built Snaps to customize your web3 experience."
 msgstr ""
 
+#: src/features/banner/components/explore-banner/ExploreBanner.tsx
+msgid "Explore, install, and use community-built features in MetaMask"
+msgstr "Explore, install, and use community-built features in MetaMask"
+
 #: src/components/Banner.tsx
 msgid "Explore, install, and use community-built features in MetaMask. <0>Learn more</0> and <1>FAQ</1>."
 msgstr ""

@@ -1,6 +1,7 @@
 import type { GatsbyBrowser } from 'gatsby';
 
 import { Layout, LocaleProvider, SnapsProvider } from './components';
+import { DEFAULT_LOCALE } from './locales';
 import { createStore } from './store';
 
 // eslint-disable-next-line import/no-unassigned-import, import/extensions
@@ -25,7 +26,7 @@ export const wrapPageElement: GatsbyBrowser<
     locale: string;
   }
 >['wrapPageElement'] = ({ element, props }) => {
-  const { locale } = props.pageContext;
+  const { locale = DEFAULT_LOCALE } = props.pageContext;
 
   return (
     <LocaleProvider locale={locale}>

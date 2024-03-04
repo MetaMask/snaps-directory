@@ -20,10 +20,9 @@ import type { RequestInfo, RequestInit } from 'node-fetch';
 import fetch from 'node-fetch';
 // @ts-expect-error - No types available for this package.
 import { fetchBuilder, FileSystemCache } from 'node-fetch-cache';
-import path from 'path';
+import { resolve } from 'path';
 import { NormalModuleReplacementPlugin } from 'webpack';
 
-import { DEFAULT_LOCALE, LOCALES } from './src/locales';
 import { getLatestSnapVersion } from './src/utils';
 import type { Fields } from './src/utils';
 import {
@@ -146,7 +145,7 @@ async function getRegistry() {
   // If the registry has changed, we need to clear the fetch cache to ensure
   // that we get the latest tarballs.
   if (!deepEqual(cachedRegistry, registry)) {
-    await rm(path.resolve(fetchCachePath), { recursive: true });
+    await rm(resolve(fetchCachePath), { recursive: true });
   }
 
   /**
@@ -464,37 +463,6 @@ export const onCreateNode: GatsbyNode[`onCreateNode`] = async ({
       node,
       name: 'installedLocalFile',
       value: installedBannerNode.id,
-    });
-  }
-};
-
-export const onCreatePage: GatsbyNode['onCreatePage'] = async ({
-  page,
-  actions,
-}) => {
-  const { createPage, deletePage } = actions;
-
-  deletePage(page);
-  createPage({
-    ...page,
-    context: {
-      ...page.context,
-      locale: DEFAULT_LOCALE,
-    },
-  });
-
-  for (const { locale } of LOCALES) {
-    if (locale === DEFAULT_LOCALE) {
-      continue;
-    }
-
-    createPage({
-      ...page,
-      path: `/${locale.toLowerCase()}${page.path}`,
-      context: {
-        ...page.context,
-        locale,
-      },
     });
   }
 };
