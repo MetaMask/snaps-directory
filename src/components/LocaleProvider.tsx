@@ -17,11 +17,28 @@ export const LocaleContext = createContext({
   },
 });
 
+/**
+ * Get a value from local storage.
+ *
+ * @param key - The key to get from local storage.
+ * @returns The value from local storage, or null if it doesn't exist.
+ */
+function getFromLocalStorage(key: string): string | null {
+  if (
+    typeof window === 'undefined' ||
+    typeof window.localStorage === 'undefined'
+  ) {
+    return null;
+  }
+
+  return window.localStorage.getItem(key);
+}
+
 export const LocaleProvider: FunctionComponent<LocaleProviderProps> = ({
   locale,
   children,
 }) => {
-  const [currentLocale] = useState(localStorage?.getItem('locale') ?? locale);
+  const [currentLocale] = useState(getFromLocalStorage('locale') ?? locale);
 
   const setLocale = (newLocale: string) => {
     localStorage.setItem('locale', newLocale);
