@@ -13,8 +13,6 @@ const SITE_URL = IS_STAGING
 const config: GatsbyConfig = {
   siteMetadata: {
     title: 'MetaMask Snaps Directory',
-    description:
-      'Explore community-built Snaps to customize your web3 experience via our official directory.',
     siteUrl: SITE_URL,
     author: 'MetaMask',
   },

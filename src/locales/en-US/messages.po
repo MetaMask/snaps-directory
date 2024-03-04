@@ -335,6 +335,10 @@ msgstr ""
 msgid "Explore All Snaps"
 msgstr ""
 
+#: src/components/SEO.tsx
+msgid "Explore community-built Snaps to customize your web3 experience via our official directory."
+msgstr "Explore community-built Snaps to customize your web3 experience via our official directory."
+
 #: src/pages/explore.tsx
 msgid "Explore Snaps"
 msgstr ""

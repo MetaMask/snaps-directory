@@ -340,6 +340,10 @@ msgstr "Keşfet"
 msgid "Explore All Snaps"
 msgstr "Tüm Snap'leri Keşfet"
 
+#: src/components/SEO.tsx
+msgid "Explore community-built Snaps to customize your web3 experience via our official directory."
+msgstr ""
+
 #: src/pages/explore.tsx
 msgid "Explore Snaps"
 msgstr "Snap'leri Keşfet"

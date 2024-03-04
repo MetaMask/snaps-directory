@@ -1,3 +1,4 @@
+import { t } from '@lingui/macro';
 import { graphql, useStaticQuery, withPrefix } from 'gatsby';
 import type { FunctionComponent } from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -16,7 +17,7 @@ type QueryData = {
   site: {
     siteMetadata: Fields<
       Queries.SiteSiteMetadata,
-      'title' | 'description' | 'author' | 'siteUrl'
+      'title' | 'author' | 'siteUrl'
     >;
   };
 };
@@ -29,25 +30,21 @@ export const SEO: FunctionComponent<SEOProps> = ({
 }) => {
   const {
     site: {
-      siteMetadata: {
-        title: defaultTitle,
-        description: defaultDescription,
-        author,
-        siteUrl,
-      },
+      siteMetadata: { title: defaultTitle, author, siteUrl },
     },
   } = useStaticQuery<QueryData>(graphql`
     query {
       site {
         siteMetadata {
           title
-          description
           author
           siteUrl
         }
       }
     }
   `);
+
+  const defaultDescription = t`Explore community-built Snaps to customize your web3 experience via our official directory.`;
 
   const metaTitle = title ? `${title} - ${defaultTitle}` : defaultTitle;
   const metaDescription = description ?? defaultDescription;
