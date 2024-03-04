@@ -6,7 +6,7 @@ import { render, renderHook } from '../utils/test-utils';
 describe('LocaleProvider', () => {
   it('renders children', () => {
     const { queryByText } = render(
-      <LocaleProvider locale="en-US">
+      <LocaleProvider defaultLocale="en-US">
         <div>Test</div>
       </LocaleProvider>,
     );
@@ -19,7 +19,7 @@ describe('LocaleProvider', () => {
     localStorage.setItem('locale', 'de-DE');
 
     render(
-      <LocaleProvider locale="en-US">
+      <LocaleProvider defaultLocale="en-US">
         <div>Test</div>
       </LocaleProvider>,
     );
@@ -36,7 +36,7 @@ describe('LocaleProvider', () => {
     });
 
     render(
-      <LocaleProvider locale="en-US">
+      <LocaleProvider defaultLocale="en-US">
         <div>Test</div>
       </LocaleProvider>,
     );
@@ -59,7 +59,7 @@ describe('LocaleProvider', () => {
     localStorage.setItem('locale', 'foo');
 
     render(
-      <LocaleProvider locale="bar">
+      <LocaleProvider defaultLocale="bar">
         <div>Test</div>
       </LocaleProvider>,
     );

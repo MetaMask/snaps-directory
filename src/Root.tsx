@@ -29,7 +29,7 @@ export const wrapPageElement: GatsbyBrowser<
   const { locale = DEFAULT_LOCALE } = props.pageContext;
 
   return (
-    <LocaleProvider locale={locale}>
+    <LocaleProvider defaultLocale={locale}>
       <Layout {...props}>{element}</Layout>
     </LocaleProvider>
   );

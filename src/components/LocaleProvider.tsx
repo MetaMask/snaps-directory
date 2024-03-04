@@ -6,7 +6,7 @@ import { createContext, useState } from 'react';
 import { LOCALES } from '../locales';
 
 export type LocaleProviderProps = {
-  locale: string;
+  defaultLocale: string;
   children: ReactNode;
 };
 
@@ -36,10 +36,12 @@ function getFromLocalStorage(key: string): string | null {
 }
 
 export const LocaleProvider: FunctionComponent<LocaleProviderProps> = ({
-  locale,
+  defaultLocale,
   children,
 }) => {
-  const [currentLocale] = useState(getFromLocalStorage('locale') ?? locale);
+  const [currentLocale] = useState(
+    getFromLocalStorage('locale') ?? defaultLocale,
+  );
 
   const setLocale = (newLocale: string) => {
     localStorage.setItem('locale', newLocale);

@@ -44,7 +44,7 @@ function wrapChildren(
 ) {
   return (
     <Provider store={store}>
-      <LocaleProvider locale="en-US">
+      <LocaleProvider defaultLocale="en-US">
         <HelmetProvider>
           <ChakraProvider
             theme={extendTheme({
