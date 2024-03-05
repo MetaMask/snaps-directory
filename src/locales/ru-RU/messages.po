@@ -8,7 +8,7 @@ msgstr ""
 "Language: ru\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-20 10:54\n"
+"PO-Revision-Date: 2024-03-05 13:11\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
@@ -32,7 +32,7 @@ msgstr ""
 
 #: src/pages/{Category.name}/index.tsx
 msgid "{nameText} Snaps on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "Snaps {nameText} в Каталоге MetaMask Snaps"
 
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
@@ -459,7 +459,7 @@ msgstr "Установленные Snaps {nameText}"
 
 #: src/pages/{Category.name}/installed.tsx
 msgid "Installed {nameText} Snaps on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "Установленные Snaps {nameText} в Каталоге MetaMask Snaps"
 
 #: src/pages/installed.tsx
 msgid "Installed Snaps"
@@ -467,7 +467,7 @@ msgstr "Установленные Snaps"
 
 #: src/pages/installed.tsx
 msgid "Installed Snaps on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "Установленные Snaps в Каталоге MetaMask Snaps"
 
 #: src/components/InstallSnapButton.tsx
 msgid "Installing {name}"
@@ -501,7 +501,7 @@ msgstr "Новейшие Snaps"
 
 #: src/pages/latest.tsx
 msgid "Latest Snaps on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "Новейшие Snaps в Каталоге MetaMask Snaps"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Legal"

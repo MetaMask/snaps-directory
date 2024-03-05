@@ -8,7 +8,7 @@ msgstr ""
 "Language: ja\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-23 12:01\n"
+"PO-Revision-Date: 2024-03-05 13:11\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -32,7 +32,7 @@ msgstr ""
 
 #: src/pages/{Category.name}/index.tsx
 msgid "{nameText} Snaps on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "MetaMask Snaps Directoryの{nameText} Snap"
 
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
@@ -459,7 +459,7 @@ msgstr "インストールされた{nameText} Snap"
 
 #: src/pages/{Category.name}/installed.tsx
 msgid "Installed {nameText} Snaps on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "MetaMask Snaps Directoryのインストールされた{nameText} Snap"
 
 #: src/pages/installed.tsx
 msgid "Installed Snaps"
@@ -467,7 +467,7 @@ msgstr "インストールされたSnap"
 
 #: src/pages/installed.tsx
 msgid "Installed Snaps on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "MetaMask Snaps DirectoryのインストールされたSnap"
 
 #: src/components/InstallSnapButton.tsx
 msgid "Installing {name}"
@@ -501,7 +501,7 @@ msgstr "最新のSnap"
 
 #: src/pages/latest.tsx
 msgid "Latest Snaps on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "MetaMask Snaps Directoryの最新のSnap"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Legal"
