@@ -18,13 +18,21 @@ msgstr ""
 "X-Crowdin-File: /src/locales/en-US/messages.po\n"
 "X-Crowdin-File-ID: 1546\n"
 
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+msgid "{0} on the MetaMask Snaps Directory"
+msgstr ""
+
 #: src/components/PostInstallModal.tsx
 msgid "{name} is now ready to use."
 msgstr "{name} já está pronto para uso."
 
 #: src/pages/{Category.name}/index.tsx
+msgid "{nameText} Snaps"
+msgstr ""
+
+#: src/pages/{Category.name}/index.tsx
 msgid "{nameText} Snaps on the MetaMask Snaps Directory"
-msgstr "Snaps {nameText} no Diretório do MetaMask Snaps"
+msgstr ""
 
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
@@ -255,6 +263,10 @@ msgstr "Prossiga para o site de <0>{name}</0> para começar com esse Snap."
 msgid "Create an Ethereum Account"
 msgstr "Criar uma conta Ethereum"
 
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+msgid "Customize your web3 experience with {0}."
+msgstr ""
+
 #: src/features/snap/permissions.tsx
 msgid "Derive arbitrary keys unique to {name}"
 msgstr "Derivar chaves arbitrárias únicas para {name}"
@@ -336,6 +348,10 @@ msgstr "Explorar"
 msgid "Explore All Snaps"
 msgstr "Explorar todos os Snaps"
 
+#: src/components/SEO.tsx
+msgid "Explore community-built Snaps to customize your web3 experience via our official directory."
+msgstr ""
+
 #: src/pages/explore.tsx
 msgid "Explore Snaps"
 msgstr "Explorar Snaps"
@@ -343,6 +359,10 @@ msgstr "Explorar Snaps"
 #: src/pages/latest.tsx
 msgid "Explore the latest community-built Snaps to customize your web3 experience."
 msgstr "Explore os Snaps mais recentes desenvolvidos pela comunidade para personalizar sua experiência web3."
+
+#: src/features/banner/components/explore-banner/ExploreBanner.tsx
+msgid "Explore, install, and use community-built features in MetaMask"
+msgstr ""
 
 #: src/components/Banner.tsx
 msgid "Explore, install, and use community-built features in MetaMask. <0>Learn more</0> and <1>FAQ</1>."
@@ -439,7 +459,7 @@ msgstr "Snaps {nameText} instalados"
 
 #: src/pages/{Category.name}/installed.tsx
 msgid "Installed {nameText} Snaps on the MetaMask Snaps Directory"
-msgstr "Snaps {nameText} instalados no Diretório do MetaMask Snaps"
+msgstr ""
 
 #: src/pages/installed.tsx
 msgid "Installed Snaps"
@@ -447,7 +467,7 @@ msgstr "Snaps instalados"
 
 #: src/pages/installed.tsx
 msgid "Installed Snaps on the MetaMask Snaps Directory"
-msgstr "Snaps instalados no Diretório do MetaMask Snaps"
+msgstr ""
 
 #: src/components/InstallSnapButton.tsx
 msgid "Installing {name}"
@@ -481,7 +501,7 @@ msgstr "Snaps mais recentes"
 
 #: src/pages/latest.tsx
 msgid "Latest Snaps on the MetaMask Snaps Directory"
-msgstr "Snaps mais recentes no Diretório do MetaMask Snaps"
+msgstr ""
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Legal"
@@ -577,6 +597,14 @@ msgstr "Abrir menu de filtros"
 #: src/features/notifications/components/NotificationsButton.tsx
 msgid "Open notifications menu"
 msgstr "Abrir menu de notificações"
+
+#: src/pages/404.tsx
+msgid "Page not found"
+msgstr ""
+
+#: src/pages/404.tsx
+msgid "Page not found on the MetaMask Snaps Directory"
+msgstr ""
 
 #: src/features/snap/components/Permissions.tsx
 msgid "Permissions by <0>{0}</0>"
@@ -706,6 +734,7 @@ msgstr "Suporte do WebAssembly"
 msgid "Tag"
 msgstr "Tag"
 
+#: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
 msgid "Terms of Use"
 msgstr "Termos de Uso"

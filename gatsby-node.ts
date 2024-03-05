@@ -18,12 +18,13 @@ import { createFileNodeFromBuffer } from 'gatsby-source-filesystem';
 import { GraphQLJSONObject } from 'graphql-type-json';
 import type { RequestInfo, RequestInit } from 'node-fetch';
 import fetch from 'node-fetch';
+// @ts-expect-error - No types available for this package.
 import { fetchBuilder, FileSystemCache } from 'node-fetch-cache';
-import path from 'path';
+import { resolve } from 'path';
 import { NormalModuleReplacementPlugin } from 'webpack';
 
-import type { Fields } from './src/utils';
 import { getLatestSnapVersion } from './src/utils';
+import type { Fields } from './src/utils';
 import {
   generateCategoryImage,
   generateInstalledImage,
@@ -144,7 +145,7 @@ async function getRegistry() {
   // If the registry has changed, we need to clear the fetch cache to ensure
   // that we get the latest tarballs.
   if (!deepEqual(cachedRegistry, registry)) {
-    await rm(path.resolve(fetchCachePath), { recursive: true });
+    await rm(resolve(fetchCachePath), { recursive: true });
   }
 
   /**
@@ -317,6 +318,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
     [...snaps].sort((a, b) => b.lastUpdated - a.lastUpdated).slice(0, 6),
     6,
   );
+
   await createFileNodeFromBuffer({
     buffer: latestImage,
     name: 'latest-banner',

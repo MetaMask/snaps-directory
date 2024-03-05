@@ -18,13 +18,21 @@ msgstr ""
 "X-Crowdin-File: /src/locales/en-US/messages.po\n"
 "X-Crowdin-File-ID: 1546\n"
 
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+msgid "{0} on the MetaMask Snaps Directory"
+msgstr ""
+
 #: src/components/PostInstallModal.tsx
 msgid "{name} is now ready to use."
 msgstr "{name}の使用準備ができました。"
 
 #: src/pages/{Category.name}/index.tsx
+msgid "{nameText} Snaps"
+msgstr ""
+
+#: src/pages/{Category.name}/index.tsx
 msgid "{nameText} Snaps on the MetaMask Snaps Directory"
-msgstr "MetaMask Snaps Directoryの{nameText} Snap"
+msgstr ""
 
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
@@ -255,6 +263,10 @@ msgstr "<0>{name}</0>のWebサイトに移動して、このSnapの使用を開�
 msgid "Create an Ethereum Account"
 msgstr "イーサリアムアカウントを作成"
 
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+msgid "Customize your web3 experience with {0}."
+msgstr ""
+
 #: src/features/snap/permissions.tsx
 msgid "Derive arbitrary keys unique to {name}"
 msgstr "{name}に固有の任意のキーを導出する"
@@ -336,6 +348,10 @@ msgstr "閲覧"
 msgid "Explore All Snaps"
 msgstr "すべてのSnapsを閲覧"
 
+#: src/components/SEO.tsx
+msgid "Explore community-built Snaps to customize your web3 experience via our official directory."
+msgstr ""
+
 #: src/pages/explore.tsx
 msgid "Explore Snaps"
 msgstr "Snapを閲覧"
@@ -343,6 +359,10 @@ msgstr "Snapを閲覧"
 #: src/pages/latest.tsx
 msgid "Explore the latest community-built Snaps to customize your web3 experience."
 msgstr "Web3のエクスペリエンスをカスタマイズする、コミュニティが開発した最新のSnapをご覧ください。"
+
+#: src/features/banner/components/explore-banner/ExploreBanner.tsx
+msgid "Explore, install, and use community-built features in MetaMask"
+msgstr ""
 
 #: src/components/Banner.tsx
 msgid "Explore, install, and use community-built features in MetaMask. <0>Learn more</0> and <1>FAQ</1>."
@@ -439,7 +459,7 @@ msgstr "インストールされた{nameText} Snap"
 
 #: src/pages/{Category.name}/installed.tsx
 msgid "Installed {nameText} Snaps on the MetaMask Snaps Directory"
-msgstr "MetaMask Snaps Directoryのインストールされた{nameText} Snap"
+msgstr ""
 
 #: src/pages/installed.tsx
 msgid "Installed Snaps"
@@ -447,7 +467,7 @@ msgstr "インストールされたSnap"
 
 #: src/pages/installed.tsx
 msgid "Installed Snaps on the MetaMask Snaps Directory"
-msgstr "MetaMask Snaps DirectoryのインストールされたSnap"
+msgstr ""
 
 #: src/components/InstallSnapButton.tsx
 msgid "Installing {name}"
@@ -481,7 +501,7 @@ msgstr "最新のSnap"
 
 #: src/pages/latest.tsx
 msgid "Latest Snaps on the MetaMask Snaps Directory"
-msgstr "MetaMask Snaps Directoryの最新のSnap"
+msgstr ""
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Legal"
@@ -577,6 +597,14 @@ msgstr "フィルターメニューを開く"
 #: src/features/notifications/components/NotificationsButton.tsx
 msgid "Open notifications menu"
 msgstr "通知メニューを開く"
+
+#: src/pages/404.tsx
+msgid "Page not found"
+msgstr ""
+
+#: src/pages/404.tsx
+msgid "Page not found on the MetaMask Snaps Directory"
+msgstr ""
 
 #: src/features/snap/components/Permissions.tsx
 msgid "Permissions by <0>{0}</0>"
@@ -706,6 +734,7 @@ msgstr "WebAssemblyのサポート"
 msgid "Tag"
 msgstr "タグ"
 
+#: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
 msgid "Terms of Use"
 msgstr "利用規約"

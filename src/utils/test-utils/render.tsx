@@ -1,14 +1,15 @@
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { i18n } from '@lingui/core';
-import { I18nProvider } from '@lingui/react';
 import type { RenderHookResult } from '@testing-library/react';
 import {
   render as renderComponent,
   renderHook as renderHookTest,
 } from '@testing-library/react';
 import type { ReactElement } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { Provider } from 'react-redux';
 
+import { LocaleProvider } from '../../components';
 import { messages } from '../../locales/en-US/messages';
 import { createStore } from '../../store';
 
@@ -43,18 +44,20 @@ function wrapChildren(
 ) {
   return (
     <Provider store={store}>
-      <I18nProvider i18n={i18n}>
-        <ChakraProvider
-          theme={extendTheme({
-            config: {
-              initialColorMode: colorMode,
-              useSystemColorMode: false,
-            },
-          })}
-        >
-          {children}
-        </ChakraProvider>
-      </I18nProvider>
+      <LocaleProvider defaultLocale="en-US">
+        <HelmetProvider>
+          <ChakraProvider
+            theme={extendTheme({
+              config: {
+                initialColorMode: colorMode,
+                useSystemColorMode: false,
+              },
+            })}
+          >
+            {children}
+          </ChakraProvider>
+        </HelmetProvider>
+      </LocaleProvider>
     </Provider>
   );
 }

@@ -1,20 +1,14 @@
 import { expect } from '@jest/globals';
 import { act } from '@testing-library/react';
-import { useStaticQuery } from 'gatsby';
 
 import { Filter } from './Filter';
 import { setCategory, toggleInstalled } from './store';
 import { RegistrySnapCategory } from '../../constants';
 import { createStore } from '../../store';
-import { getMock, render } from '../../utils/test-utils';
+import { render } from '../../utils/test-utils';
 
 describe('Filter', () => {
   it('renders the enabled categories', async () => {
-    const mock = getMock(useStaticQuery);
-    mock.mockReturnValue({
-      fusejs: {},
-    });
-
     const store = createStore();
     store.dispatch(setCategory(RegistrySnapCategory.TransactionInsights));
 
@@ -37,11 +31,6 @@ describe('Filter', () => {
   });
 
   it('renders the menu on click', () => {
-    const mock = getMock(useStaticQuery);
-    mock.mockReturnValue({
-      fusejs: {},
-    });
-
     const { getByLabelText, queryByTestId, queryAllByTestId } = render(
       <Filter />,
     );
@@ -54,11 +43,6 @@ describe('Filter', () => {
   });
 
   it('enables all categories and disabled installed when clicking "All"', () => {
-    const mock = getMock(useStaticQuery);
-    mock.mockReturnValue({
-      fusejs: {},
-    });
-
     const store = createStore();
     store.dispatch(toggleInstalled());
     store.dispatch(setCategory(RegistrySnapCategory.TransactionInsights));
@@ -87,11 +71,6 @@ describe('Filter', () => {
   });
 
   it('enables the installed filter when clicking "Installed"', () => {
-    const mock = getMock(useStaticQuery);
-    mock.mockReturnValue({
-      fusejs: {},
-    });
-
     const store = createStore();
     store.dispatch(setCategory(RegistrySnapCategory.TransactionInsights));
 

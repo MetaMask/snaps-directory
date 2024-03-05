@@ -5,6 +5,7 @@ import {
   InputLeftElement,
 } from '@chakra-ui/react';
 import { t } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 import type { ChangeEvent, FunctionComponent } from 'react';
 
 import { SearchIcon } from '../../../components';
@@ -24,6 +25,8 @@ export const FilterSearchInput: FunctionComponent<FilterSearchInputProps> =
   // `MenuButton`. The `MenuButton` component will pass a ref to this component
   // so that it can be used to position the menu.
   forwardRef(({ query, onFormClick, onFormChange, onFormSubmit }, ref) => {
+    const { _ } = useLingui();
+
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
       if (event.key === 'Enter') {
         onFormSubmit();
@@ -38,7 +41,7 @@ export const FilterSearchInput: FunctionComponent<FilterSearchInputProps> =
         <Input
           type="search"
           borderRadius="full"
-          placeholder={t`Search Snaps`}
+          placeholder={_(t`Search Snaps`)}
           value={query}
           onChange={onFormChange}
           onClick={onFormClick}

@@ -4,6 +4,7 @@ import { graphql, navigate } from 'gatsby';
 import type { FunctionComponent } from 'react';
 import { useEffect } from 'react';
 
+import { SEO } from '../../components';
 import type { RegistrySnapCategory } from '../../constants';
 import { SNAP_CATEGORY_LABELS } from '../../constants';
 import { setCategory } from '../../features';
@@ -11,9 +12,34 @@ import { useDispatch } from '../../hooks';
 import type { Fields } from '../../utils';
 
 export type CategoryProps = {
+  pageContext: {
+    locale: string;
+  };
   data: {
     category: Fields<Queries.Category, 'name' | 'banner'>;
   };
+};
+
+const Head: FunctionComponent<CategoryProps> = ({ data, pageContext }) => {
+  const { _ } = useLingui();
+
+  const category = data.category.name as RegistrySnapCategory;
+  const { name, description } = SNAP_CATEGORY_LABELS[category];
+
+  const nameText = _(name);
+  const descriptionText = _(description);
+  const title = _(t`${nameText} Snaps on the MetaMask Snaps Directory`);
+  const ogTitle = _(t`${nameText} Snaps`);
+
+  return (
+    <SEO
+      locale={pageContext.locale}
+      title={title}
+      ogTitle={ogTitle}
+      description={descriptionText}
+      banner={data.category.banner.publicURL}
+    />
+  );
 };
 
 /**
@@ -24,9 +50,10 @@ export type CategoryProps = {
  *
  * @param props - The component props.
  * @param props.data - The page data.
+ * @param props.pageContext - The page context.
  * @returns The rendered component.
  */
-const Category: FunctionComponent<CategoryProps> = ({ data }) => {
+const Category: FunctionComponent<CategoryProps> = ({ data, pageContext }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -38,50 +65,7 @@ const Category: FunctionComponent<CategoryProps> = ({ data }) => {
     navigate('/explore', { replace: true });
   }, [data.category.name, dispatch]);
 
-  return null;
-};
-
-type HeadProps = CategoryProps & {
-  data: {
-    site: {
-      siteMetadata: Fields<
-        Queries.SiteSiteMetadata,
-        'title' | 'description' | 'author' | 'siteUrl'
-      >;
-    };
-  };
-};
-
-export const Head: FunctionComponent<HeadProps> = ({ data }) => {
-  const i18n = useLingui();
-
-  const category = data.category.name as RegistrySnapCategory;
-  const { name, description } = SNAP_CATEGORY_LABELS[category];
-  const image = `${data.site.siteMetadata.siteUrl}${data.category.banner.publicURL}`;
-
-  const nameText = i18n._(name);
-  const descriptionText = i18n._(description);
-  const title = t`${nameText} Snaps on the MetaMask Snaps Directory`;
-
-  return (
-    <>
-      <html lang="en" />
-      <title>{title}</title>
-      <meta name="description" content={descriptionText} />
-      <meta property="og:title" content={nameText} />
-      <meta property="og:site_name" content={data.site.siteMetadata.title} />
-      <meta property="og:description" content={descriptionText} />
-      <meta property="og:type" content="website" />
-      <meta name="og:image" content={image} />
-      <meta name="og:image:width" content="1200" />
-      <meta name="og:image:height" content="630" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={data.site.siteMetadata.author} />
-      <meta name="twitter:title" content={nameText} />
-      <meta name="twitter:description" content={descriptionText} />
-      <meta name="twitter:image" content={image} />
-    </>
-  );
+  return <Head data={data} pageContext={pageContext} />;
 };
 
 export const query = graphql`
@@ -90,15 +74,6 @@ export const query = graphql`
       name
       banner {
         publicURL
-      }
-    }
-
-    site {
-      siteMetadata {
-        title
-        description
-        author
-        siteUrl
       }
     }
   }

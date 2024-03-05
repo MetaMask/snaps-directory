@@ -1,10 +1,11 @@
 import { Container, Flex, Divider, Heading, Link } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
-import { graphql, withPrefix } from 'gatsby';
+import { withPrefix } from 'gatsby';
 import type { FunctionComponent } from 'react';
 import { useDispatch } from 'react-redux';
 
 import banner from '../assets/images/seo/home.png';
+import { SEO } from '../components';
 import {
   Filter,
   Snaps,
@@ -13,9 +14,18 @@ import {
   getSearchQuery,
 } from '../features';
 import { useSelector } from '../hooks';
-import type { Fields } from '../utils';
 
-const ExplorePage: FunctionComponent = () => {
+export type ExplorePageProps = {
+  pageContext: {
+    locale: string;
+  };
+};
+
+const Head: FunctionComponent<ExplorePageProps> = ({ pageContext }) => {
+  return <SEO locale={pageContext.locale} banner={withPrefix(banner)} />;
+};
+
+const ExplorePage: FunctionComponent<ExplorePageProps> = ({ pageContext }) => {
   const dispatch = useDispatch();
   const allSnapsShown = useSelector(getAll);
   const searchQuery = useSelector(getSearchQuery);
@@ -32,6 +42,7 @@ const ExplorePage: FunctionComponent = () => {
       paddingTop="0"
       marginTop={{ base: 4, md: 20 }}
     >
+      <Head pageContext={pageContext} />
       <Flex direction="row" marginBottom={{ base: 4, md: 6 }} gap="2">
         <Filter />
       </Flex>
@@ -63,58 +74,5 @@ const ExplorePage: FunctionComponent = () => {
     </Container>
   );
 };
-
-type HeadProps = {
-  data: {
-    site: {
-      siteMetadata: Fields<
-        Queries.SiteSiteMetadata,
-        'title' | 'description' | 'author' | 'siteUrl'
-      >;
-    };
-  };
-};
-
-export const Head: FunctionComponent<HeadProps> = ({ data }) => {
-  const image = `${data.site.siteMetadata.siteUrl}${withPrefix(banner)}`;
-
-  return (
-    <>
-      <html lang="en" />
-      <title>{data.site.siteMetadata.title}</title>
-      <meta name="description" content={data.site.siteMetadata.description} />
-      <meta property="og:title" content={data.site.siteMetadata.title} />
-      <meta
-        property="og:description"
-        content={data.site.siteMetadata.description}
-      />
-      <meta property="og:type" content="website" />
-      <meta name="og:image" content={image} />
-      <meta name="og:image:width" content="1200" />
-      <meta name="og:image:height" content="630" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={data.site.siteMetadata.author} />
-      <meta name="twitter:title" content={data.site.siteMetadata.title} />
-      <meta
-        name="twitter:description"
-        content={data.site.siteMetadata.description}
-      />
-      <meta name="twitter:image" content={image} />
-    </>
-  );
-};
-
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-        siteUrl
-      }
-    }
-  }
-`;
 
 export default ExplorePage;

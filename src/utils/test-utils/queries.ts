@@ -46,6 +46,19 @@ export function getMockSiteMetadata({
   };
 }
 
+/**
+ * Get mock page context in the shape of a Gatsby page context.
+ *
+ * @param args - The arguments.
+ * @param args.locale - The locale.
+ * @returns The mock page context.
+ */
+export function getMockPageContext({ locale = 'en-US' } = {}) {
+  return {
+    locale,
+  };
+}
+
 export type MockSnap = Fields<
   Queries.Snap,
   | 'id'
@@ -60,6 +73,7 @@ export type MockSnap = Fields<
   | 'category'
   | 'author'
   | 'sourceCode'
+  | 'additionalSourceCode'
   | 'audits'
   | 'banner'
   | 'support'
@@ -85,6 +99,10 @@ export type GetMockSnapArgs = {
   category?: RegistrySnapCategory | undefined;
   author?: Fields<Queries.SnapAuthor, 'name' | 'website'>;
   sourceCode?: string;
+  additionalSourceCode?: {
+    url: string;
+    name: string;
+  }[];
   audits?: Fields<Queries.SnapAudits, 'auditor' | 'report'>[];
   banner?: Fields<Queries.File, 'publicURL'>;
   support?: Partial<
@@ -118,6 +136,7 @@ export type GetMockSnapArgs = {
  * @param args.category - The category.
  * @param args.author - The author.
  * @param args.sourceCode - The source code URL.
+ * @param args.additionalSourceCode - Additional source code URLs.
  * @param args.audits - The audits.
  * @param args.banner - The banner.
  * @param args.support - The support page URL.
@@ -150,6 +169,7 @@ export function getMockSnap({
     website: 'https://example.com/author',
   },
   sourceCode = 'https://example.com/source-code',
+  additionalSourceCode = [],
   audits = [
     {
       auditor: 'Auditor',
@@ -191,6 +211,7 @@ export function getMockSnap({
       category,
       author,
       sourceCode,
+      additionalSourceCode,
       audits,
       banner: banner as Fields<Queries.File, keyof Queries.File>,
       support: support as Fields<

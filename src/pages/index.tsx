@@ -1,10 +1,10 @@
 import { Container, Divider, Flex, Heading, Link } from '@chakra-ui/react';
 import { defineMessage } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
-import { graphql, Link as GatsbyLink, withPrefix } from 'gatsby';
+import { graphql, Link as GatsbyLink } from 'gatsby';
 import { useEffect, type FunctionComponent, Fragment } from 'react';
 
-import banner from '../assets/images/seo/home.png';
+import { SEO } from '../components';
 import { RegistrySnapCategory, SNAP_CATEGORY_LINKS } from '../constants';
 import { Banner, FilteredSnaps, resetFilters } from '../features';
 import { Order } from '../features/filter/constants';
@@ -65,6 +65,9 @@ const GROUPS = [
 ];
 
 export type IndexPageProps = {
+  pageContext: {
+    locale: string;
+  };
   data: {
     allSnap: {
       nodes: Fields<Queries.Snap, 'snapId' | 'icon'>[];
@@ -72,7 +75,14 @@ export type IndexPageProps = {
   };
 };
 
-const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
+const Head: FunctionComponent<IndexPageProps> = ({ pageContext }) => {
+  return <SEO locale={pageContext.locale} />;
+};
+
+const IndexPage: FunctionComponent<IndexPageProps> = ({
+  data,
+  pageContext,
+}) => {
   const i18n = useLingui();
   const dispatch = useDispatch();
 
@@ -88,6 +98,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
       display="flex"
       flexDirection="column"
     >
+      <Head data={data} pageContext={pageContext} />
       <Banner snaps={data.allSnap.nodes} />
       <Divider my="8" />
 
@@ -123,57 +134,8 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
   );
 };
 
-type HeadProps = {
-  data: {
-    site: {
-      siteMetadata: Fields<
-        Queries.SiteSiteMetadata,
-        'title' | 'description' | 'author' | 'siteUrl'
-      >;
-    };
-  };
-};
-
-export const Head: FunctionComponent<HeadProps> = ({ data }) => {
-  const image = `${data.site.siteMetadata.siteUrl}${withPrefix(banner)}`;
-
-  return (
-    <>
-      <html lang="en" />
-      <title>{data.site.siteMetadata.title}</title>
-      <meta name="description" content={data.site.siteMetadata.description} />
-      <meta property="og:title" content={data.site.siteMetadata.title} />
-      <meta
-        property="og:description"
-        content={data.site.siteMetadata.description}
-      />
-      <meta property="og:type" content="website" />
-      <meta name="og:image" content={image} />
-      <meta name="og:image:width" content="1200" />
-      <meta name="og:image:height" content="630" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={data.site.siteMetadata.author} />
-      <meta name="twitter:title" content={data.site.siteMetadata.title} />
-      <meta
-        name="twitter:description"
-        content={data.site.siteMetadata.description}
-      />
-      <meta name="twitter:image" content={image} />
-    </>
-  );
-};
-
 export const query = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-        siteUrl
-      }
-    }
-
     allSnap {
       nodes {
         snapId

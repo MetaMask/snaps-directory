@@ -1,12 +1,43 @@
 import { t } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 import { graphql, navigate } from 'gatsby';
 import type { FunctionComponent } from 'react';
 import { useEffect } from 'react';
 
+import { SEO } from '../components';
 import { setOrder } from '../features';
 import { Order } from '../features/filter/constants';
 import { useDispatch } from '../hooks';
 import type { Fields } from '../utils';
+
+export type LatestPageProps = {
+  pageContext: {
+    locale: string;
+  };
+  data: {
+    file: Fields<Queries.File, 'publicURL'>;
+  };
+};
+
+const Head: FunctionComponent<LatestPageProps> = ({ data, pageContext }) => {
+  const { _ } = useLingui();
+
+  const title = _(t`Latest Snaps on the MetaMask Snaps Directory`);
+  const ogTitle = _(t`Latest Snaps`);
+  const description = _(
+    t`Explore the latest community-built Snaps to customize your web3 experience.`,
+  );
+
+  return (
+    <SEO
+      locale={pageContext.locale}
+      title={title}
+      ogTitle={ogTitle}
+      description={description}
+      banner={data.file.publicURL}
+    />
+  );
+};
 
 /**
  * This page is used to redirect to the main page, and showing the latest
@@ -14,9 +45,12 @@ import type { Fields } from '../utils';
  *
  * This page is reachable at `/latest`.
  *
+ * @param props - The component props.
+ * @param props.data - The data for the page.
+ * @param props.pageContext - The page context.
  * @returns The rendered component.
  */
-const Latest: FunctionComponent = () => {
+const Latest: FunctionComponent<LatestPageProps> = ({ data, pageContext }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -28,61 +62,13 @@ const Latest: FunctionComponent = () => {
     navigate('/explore', { replace: true });
   }, [dispatch]);
 
-  return null;
-};
-
-export type HeadProps = {
-  data: {
-    file: Fields<Queries.File, 'publicURL'>;
-    site: {
-      siteMetadata: Fields<
-        Queries.SiteSiteMetadata,
-        'title' | 'description' | 'author' | 'siteUrl'
-      >;
-    };
-  };
-};
-
-export const Head: FunctionComponent<HeadProps> = ({ data }) => {
-  const name = t`Latest Snaps`;
-  const title = t`Latest Snaps on the MetaMask Snaps Directory`;
-  const description = t`Explore the latest community-built Snaps to customize your web3 experience.`;
-
-  const image = `${data.site.siteMetadata.siteUrl}${data.file.publicURL}`;
-
-  return (
-    <>
-      <html lang="en" />
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta property="og:title" content={name} />
-      <meta property="og:site_name" content={data.site.siteMetadata.title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:type" content="website" />
-      <meta name="og:image" content={image} />
-      <meta name="og:image:width" content="1200" />
-      <meta name="og:image:height" content="630" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={data.site.siteMetadata.author} />
-      <meta name="twitter:title" content={name} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
-    </>
-  );
+  return <Head data={data} pageContext={pageContext} />;
 };
 
 export const query = graphql`
   query {
     file(name: { eq: "latest-banner" }) {
       publicURL
-    }
-    site {
-      siteMetadata {
-        title
-        description
-        author
-        siteUrl
-      }
     }
   }
 `;

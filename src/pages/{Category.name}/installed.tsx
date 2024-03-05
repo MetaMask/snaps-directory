@@ -4,6 +4,7 @@ import { graphql, navigate } from 'gatsby';
 import type { FunctionComponent } from 'react';
 import { useEffect } from 'react';
 
+import { SEO } from '../../components';
 import type { RegistrySnapCategory } from '../../constants';
 import { SNAP_CATEGORY_LABELS } from '../../constants';
 import { setCategory, toggleInstalled } from '../../features';
@@ -11,9 +12,41 @@ import { useDispatch } from '../../hooks';
 import type { Fields } from '../../utils';
 
 export type CategoryInstalledProps = {
+  pageContext: {
+    locale: string;
+  };
   data: {
     category: Fields<Queries.Category, 'name' | 'installedBanner'>;
   };
+};
+
+const Head: FunctionComponent<CategoryInstalledProps> = ({
+  data,
+  pageContext,
+}) => {
+  const { _ } = useLingui();
+
+  const category = data.category.name as RegistrySnapCategory;
+  const { name } = SNAP_CATEGORY_LABELS[category];
+
+  const nameText = _(name);
+  const title = _(
+    t`Installed ${nameText} Snaps on the MetaMask Snaps Directory`,
+  );
+  const ogTitle = _(t`Installed ${nameText} Snaps`);
+  const description = _(
+    t`Browse your installed ${nameText} Snaps on the MetaMask Snaps Directory`,
+  );
+
+  return (
+    <SEO
+      locale={pageContext.locale}
+      title={title}
+      ogTitle={ogTitle}
+      description={description}
+      banner={data.category.installedBanner.publicURL}
+    />
+  );
 };
 
 /**
@@ -24,10 +57,12 @@ export type CategoryInstalledProps = {
  *
  * @param props - The component props.
  * @param props.data - The page data.
+ * @param props.pageContext - The page context.
  * @returns The rendered component.
  */
 const CategoryInstalled: FunctionComponent<CategoryInstalledProps> = ({
   data,
+  pageContext,
 }) => {
   const dispatch = useDispatch();
 
@@ -41,51 +76,7 @@ const CategoryInstalled: FunctionComponent<CategoryInstalledProps> = ({
     navigate('/explore', { replace: true });
   }, [data.category.name, dispatch]);
 
-  return null;
-};
-
-type HeadProps = CategoryInstalledProps & {
-  data: {
-    site: {
-      siteMetadata: Fields<
-        Queries.SiteSiteMetadata,
-        'title' | 'description' | 'author' | 'siteUrl'
-      >;
-    };
-  };
-};
-
-export const Head: FunctionComponent<HeadProps> = ({ data }) => {
-  const i18n = useLingui();
-
-  const category = data.category.name as RegistrySnapCategory;
-  const { name } = SNAP_CATEGORY_LABELS[category];
-  const image = `${data.site.siteMetadata.siteUrl}${data.category.installedBanner.publicURL}`;
-
-  const nameText = i18n._(name);
-  const title = t`Installed ${nameText} Snaps on the MetaMask Snaps Directory`;
-  const ogTitle = t`Installed ${nameText} Snaps`;
-  const ogDescription = t`Browse your installed ${nameText} Snaps on the MetaMask Snaps Directory`;
-
-  return (
-    <>
-      <html lang="en" />
-      <title>{title}</title>
-      <meta name="description" content={ogDescription} />
-      <meta property="og:title" content={ogTitle} />
-      <meta property="og:site_name" content={data.site.siteMetadata.title} />
-      <meta property="og:description" content={ogDescription} />
-      <meta property="og:type" content="website" />
-      <meta name="og:image" content={image} />
-      <meta name="og:image:width" content="1200" />
-      <meta name="og:image:height" content="630" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={data.site.siteMetadata.author} />
-      <meta name="twitter:title" content={ogTitle} />
-      <meta name="twitter:description" content={ogDescription} />
-      <meta name="twitter:image" content={image} />
-    </>
-  );
+  return <Head data={data} pageContext={pageContext} />;
 };
 
 export const query = graphql`
@@ -94,15 +85,6 @@ export const query = graphql`
       name
       installedBanner {
         publicURL
-      }
-    }
-
-    site {
-      siteMetadata {
-        title
-        description
-        author
-        siteUrl
       }
     }
   }

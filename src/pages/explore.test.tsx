@@ -1,48 +1,32 @@
 import { describe } from '@jest/globals';
 import { act } from '@testing-library/react';
-import { useStaticQuery } from 'gatsby';
 
-import ExplorePage, { Head } from './explore';
+import ExplorePage from './explore';
 import { RegistrySnapCategory } from '../constants';
 import { setCategory, setSearchQuery, setSnaps } from '../features';
 import { createStore } from '../store';
-import {
-  render,
-  getMock,
-  getMockSiteMetadata,
-  getMockSnap,
-} from '../utils/test-utils';
+import { render, getMockSnap, getMockPageContext } from '../utils/test-utils';
 
 describe('Explore page', () => {
   it('renders', async () => {
-    const mock = getMock(useStaticQuery);
-    mock.mockReturnValue({
-      fusejs: {},
-    });
-
-    const { queryByText } = render(<ExplorePage />);
+    const { queryByText } = render(
+      <ExplorePage pageContext={getMockPageContext()} />,
+    );
     expect(queryByText('Explore Snaps')).toBeInTheDocument();
   });
 
   it('renders the search query in the heading', async () => {
-    const mock = getMock(useStaticQuery);
-    mock.mockReturnValue({
-      fusejs: {},
-    });
-
     const store = createStore();
     store.dispatch(setSearchQuery('foo'));
 
-    const { queryByText } = render(<ExplorePage />, store);
+    const { queryByText } = render(
+      <ExplorePage pageContext={getMockPageContext()} />,
+      store,
+    );
     expect(queryByText('Results for "foo"')).toBeInTheDocument();
   });
 
   it('resets filters when see all is clicked', async () => {
-    const mock = getMock(useStaticQuery);
-    mock.mockReturnValue({
-      fusejs: {},
-    });
-
     const { snap: fooSnap } = getMockSnap({
       snapId: 'foo-snap',
       name: 'Foo Snap',
@@ -62,7 +46,10 @@ describe('Explore page', () => {
     store.dispatch(setCategory(RegistrySnapCategory.Interoperability));
 
     const { queryByText, getByText } = await act(
-      async () => await act(() => render(<ExplorePage />, store)),
+      async () =>
+        await act(() =>
+          render(<ExplorePage pageContext={getMockPageContext()} />, store),
+        ),
     );
 
     expect(queryByText('Foo Snap')).toBeInTheDocument();
@@ -76,12 +63,5 @@ describe('Explore page', () => {
     expect(queryByText('Foo Snap')).toBeInTheDocument();
     expect(queryByText('Bar Snap')).toBeInTheDocument();
     expect(queryByText('Baz Snap')).toBeInTheDocument();
-  });
-
-  describe('Head', () => {
-    it('has the correct title', () => {
-      const { queryByText } = render(<Head data={getMockSiteMetadata()} />);
-      expect(queryByText('MetaMask Snaps Directory')).toBeInTheDocument();
-    });
   });
 });
