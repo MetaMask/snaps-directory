@@ -7,41 +7,35 @@ import { messages as turkish } from './tr-TR/messages';
 import { messages as chinese } from './zh-CN/messages';
 
 export const LOCALES = [
-  { label: 'Deutsch', locale: 'de-DE', alternatives: ['de'], messages: german },
+  { label: 'Deutsch', locale: 'de-DE', messages: german },
   {
     label: 'English',
     locale: 'en-US',
-    alternatives: ['en'],
     messages: english,
   },
   {
     label: '日本語',
     locale: 'ja-JP',
-    alternatives: ['ja'],
     messages: japanese,
   },
   {
     label: 'Português',
     locale: 'pt-BR',
-    alternatives: ['pt'],
     messages: portuguese,
   },
   {
     label: 'Русский',
     locale: 'ru-RU',
-    alternatives: ['ru'],
     messages: russian,
   },
   {
     label: 'Türkçe',
     locale: 'tr-TR',
-    alternatives: ['tr'],
     messages: turkish,
   },
   {
     label: '中文',
     locale: 'zh-CN',
-    alternatives: ['zh'],
     messages: chinese,
   },
 ];
