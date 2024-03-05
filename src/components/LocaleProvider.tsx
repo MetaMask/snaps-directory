@@ -1,12 +1,15 @@
 import { i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
 import type { FunctionComponent, ReactNode } from 'react';
-import { useLayoutEffect, useEffect, createContext, useState } from 'react';
+import { useEffect, createContext, useState } from 'react';
 
-import { DEFAULT_LOCALE, DEFAULT_LOCALE_MESSAGES, LOCALES } from '../locales';
+import { DEFAULT_LOCALE, LOCALES } from '../locales';
 import { getPreferredLocale } from '../utils';
 
-i18n.load(DEFAULT_LOCALE, DEFAULT_LOCALE_MESSAGES);
+for (const { locale, messages } of LOCALES) {
+  i18n.load(locale, messages);
+}
+
 i18n.activate(DEFAULT_LOCALE);
 
 export type LocaleProviderProps = {
@@ -33,12 +36,6 @@ export const LocaleProvider: FunctionComponent<LocaleProviderProps> = ({
     localStorage.setItem('locale', newLocale);
     setCurrentLocale(newLocale);
   };
-
-  useLayoutEffect(() => {
-    for (const { locale, messages } of LOCALES) {
-      i18n.load(locale, messages);
-    }
-  }, []);
 
   useEffect(() => {
     i18n.activate(currentLocale);
