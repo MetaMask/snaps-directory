@@ -43,3 +43,4 @@ export const LOCALES = [
 export const LOCALE_CODES = LOCALES.map(({ locale }) => locale);
 
 export const DEFAULT_LOCALE = 'en-US';
+export const DEFAULT_LOCALE_MESSAGES = english;
