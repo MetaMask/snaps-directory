@@ -1,9 +1,11 @@
 import { i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
+import { assert } from '@metamask/utils';
 import type { FunctionComponent, ReactNode } from 'react';
 import { createContext, useState } from 'react';
 
 import { LOCALES } from '../locales';
+import { getPreferredLocale } from '../utils';
 
 export type LocaleProviderProps = {
   defaultLocale: string;
@@ -17,31 +19,11 @@ export type LocaleContextType = {
 
 export const LocaleContext = createContext<LocaleContextType | null>(null);
 
-/**
- * Get a value from local storage.
- *
- * @param key - The key to get from local storage.
- * @returns The value from local storage, or null if it doesn't exist.
- */
-function getFromLocalStorage(key: string): string | null {
-  // istanbul ignore next
-  if (
-    typeof window === 'undefined' ||
-    typeof window.localStorage === 'undefined'
-  ) {
-    return null;
-  }
-
-  return window.localStorage.getItem(key);
-}
-
 export const LocaleProvider: FunctionComponent<LocaleProviderProps> = ({
   defaultLocale,
   children,
 }) => {
-  const [currentLocale] = useState(
-    getFromLocalStorage('locale') ?? defaultLocale,
-  );
+  const [currentLocale] = useState(getPreferredLocale(defaultLocale));
 
   const setLocale = (newLocale: string) => {
     localStorage.setItem('locale', newLocale);
@@ -52,10 +34,7 @@ export const LocaleProvider: FunctionComponent<LocaleProviderProps> = ({
   };
 
   const data = LOCALES.find((item) => item.locale === currentLocale);
-  if (!data) {
-    setLocale('en-US');
-    return null;
-  }
+  assert(data, `No locale data found for ${currentLocale}.`);
 
   i18n.load(currentLocale, data.messages);
   i18n.activate(currentLocale);

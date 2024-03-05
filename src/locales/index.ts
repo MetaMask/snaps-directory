@@ -46,4 +46,6 @@ export const LOCALES = [
   },
 ];
 
+export const LOCALE_CODES = LOCALES.map(({ locale }) => locale);
+
 export const DEFAULT_LOCALE = 'en-US';
