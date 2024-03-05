@@ -1,5 +1,6 @@
 import { Button, useDisclosure } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 import type { FunctionComponent } from 'react';
 
 import { CheckIcon, MetaMaskIcon } from './icons';
@@ -53,13 +54,15 @@ const InstallButton: FunctionComponent<InstallButtonProps> = ({
   updateAvailable,
   handleInstall,
 }) => {
+  const { _ } = useLingui();
+
   if (updateAvailable) {
     return (
       <Button
         leftIcon={<MetaMaskIcon width="1.3rem" />}
         variant="primary"
         isLoading={isLoading}
-        loadingText={t`Updating ${name}`}
+        loadingText={_(t`Updating ${name}`)}
         onClick={handleInstall}
         width={{ base: '100%', md: 'auto' }}
       >
@@ -86,7 +89,7 @@ const InstallButton: FunctionComponent<InstallButtonProps> = ({
       leftIcon={<MetaMaskIcon width="1.3rem" />}
       variant="primary"
       isLoading={isLoading}
-      loadingText={t`Installing ${name}`}
+      loadingText={_(t`Installing ${name}`)}
       onClick={handleInstall}
       width={{ base: '100%', md: 'auto' }}
     >

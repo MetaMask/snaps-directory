@@ -21,7 +21,7 @@ export const FooterCopyright: FunctionComponent<FooterCopyrightProps> = (
         </Link>{' '}
         &{' '}
         <Link href="https://consensys.io/terms-of-use/" isExternal={true}>
-          Terms of Use
+          <Trans>Terms of Use</Trans>
         </Link>
       </Text>
     </Box>

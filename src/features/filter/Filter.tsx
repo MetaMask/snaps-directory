@@ -7,6 +7,7 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 import type { FunctionComponent } from 'react';
 
 import {
@@ -37,6 +38,7 @@ function getOrders<Excluded extends Order>(
 }
 
 export const Filter: FunctionComponent = () => {
+  const { _ } = useLingui();
   const dispatch = useDispatch();
   const all = useSelector(getAll);
   const installed = useSelector(getInstalled);
@@ -54,7 +56,11 @@ export const Filter: FunctionComponent = () => {
       <Menu closeOnSelect={false} isLazy={true}>
         <MenuButton as={FilterButton} />
         <MenuList width="17.188rem" boxShadow="md">
-          <MenuGroup marginLeft="2" title={t`Filter`} data-testid="menu-group">
+          <MenuGroup
+            marginLeft="2"
+            title={_(t`Filter`)}
+            data-testid="menu-group"
+          >
             <FilterItem checked={all} onClick={handleClickAll}>
               <Text>
                 <Trans>All</Trans>
@@ -68,7 +74,7 @@ export const Filter: FunctionComponent = () => {
           </MenuGroup>
           <MenuGroup
             marginLeft="2"
-            title={t`Categories`}
+            title={_(t`Categories`)}
             data-testid="menu-group"
           >
             {Object.entries(SNAP_CATEGORY_LABELS).map(
@@ -81,7 +87,7 @@ export const Filter: FunctionComponent = () => {
               ),
             )}
           </MenuGroup>
-          <MenuGroup marginLeft="2" title={t`Sort`}>
+          <MenuGroup marginLeft="2" title={_(t`Sort`)}>
             {getOrders([
               Order.Random,
               Order.DeterministicRandom,

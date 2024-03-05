@@ -1,6 +1,7 @@
 import type { As, IconButtonProps, ComponentWithAs } from '@chakra-ui/react';
 import { forwardRef, IconButton } from '@chakra-ui/react';
 import { t } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 
 import { getUnacknowledgedUpdates } from '../..';
 import { DotIcon, NotificationsIcon } from '../../../components';
@@ -12,6 +13,8 @@ export const NotificationsButton: ComponentWithAs<
   As,
   NotificationsButtonProps
 > = forwardRef((props, ref) => {
+  const { _ } = useLingui();
+
   const hasUnacknowledgedUpdates =
     useSelector(getUnacknowledgedUpdates).length > 0;
 
@@ -20,7 +23,7 @@ export const NotificationsButton: ComponentWithAs<
       ref={ref}
       {...props}
       position="relative"
-      aria-label={t`Open notifications menu`}
+      aria-label={_(t`Open notifications menu`)}
       variant="clear"
       icon={
         <>

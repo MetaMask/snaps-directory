@@ -7,6 +7,7 @@ import {
   StackDivider,
 } from '@chakra-ui/react';
 import { t } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 import { graphql } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
@@ -53,9 +54,13 @@ type SnapPageProps = {
 };
 
 const Head: FunctionComponent<SnapPageProps> = ({ data, pageContext }) => {
-  const title = t`${data.snap.name} on the MetaMask Snaps Directory`;
+  const { _ } = useLingui();
+
+  const title = _(t`${data.snap.name} on the MetaMask Snaps Directory`);
   const ogTitle = data.snap.name;
-  const metaDescription = t`Customize your web3 experience with ${data.snap.name}.`;
+  const metaDescription = _(
+    t`Customize your web3 experience with ${data.snap.name}.`,
+  );
 
   return (
     <SEO

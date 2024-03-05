@@ -21,15 +21,15 @@ export type CategoryProps = {
 };
 
 const Head: FunctionComponent<CategoryProps> = ({ data, pageContext }) => {
-  const i18n = useLingui();
+  const { _ } = useLingui();
 
   const category = data.category.name as RegistrySnapCategory;
   const { name, description } = SNAP_CATEGORY_LABELS[category];
 
-  const nameText = i18n._(name);
-  const descriptionText = i18n._(description);
-  const title = t`${nameText} Snaps on the MetaMask Snaps Directory`;
-  const ogTitle = t`${nameText} Snaps`;
+  const nameText = _(name);
+  const descriptionText = _(description);
+  const title = _(t`${nameText} Snaps on the MetaMask Snaps Directory`);
+  const ogTitle = _(t`${nameText} Snaps`);
 
   return (
     <SEO

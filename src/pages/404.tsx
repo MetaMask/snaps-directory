@@ -1,5 +1,6 @@
 import { Container, Heading, Button } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 import { Link, withPrefix } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
@@ -13,8 +14,10 @@ export type NotFoundPageProps = {
 };
 
 const Head: FunctionComponent<NotFoundPageProps> = ({ pageContext }) => {
-  const title = t`Page not found on the MetaMask Snaps Directory`;
-  const ogTitle = t`Page not found`;
+  const { _ } = useLingui();
+
+  const title = _(t`Page not found on the MetaMask Snaps Directory`);
+  const ogTitle = _(t`Page not found`);
 
   return (
     <SEO

@@ -729,6 +729,7 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
+#: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
 msgid "Terms of Use"
 msgstr ""

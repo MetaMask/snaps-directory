@@ -734,6 +734,7 @@ msgstr "Suporte do WebAssembly"
 msgid "Tag"
 msgstr "Tag"
 
+#: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
 msgid "Terms of Use"
 msgstr "Termos de Uso"

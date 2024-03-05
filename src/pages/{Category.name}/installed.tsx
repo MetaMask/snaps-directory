@@ -24,15 +24,19 @@ const Head: FunctionComponent<CategoryInstalledProps> = ({
   data,
   pageContext,
 }) => {
-  const i18n = useLingui();
+  const { _ } = useLingui();
 
   const category = data.category.name as RegistrySnapCategory;
   const { name } = SNAP_CATEGORY_LABELS[category];
 
-  const nameText = i18n._(name);
-  const title = t`Installed ${nameText} Snaps on the MetaMask Snaps Directory`;
-  const ogTitle = t`Installed ${nameText} Snaps`;
-  const description = t`Browse your installed ${nameText} Snaps on the MetaMask Snaps Directory`;
+  const nameText = _(name);
+  const title = _(
+    t`Installed ${nameText} Snaps on the MetaMask Snaps Directory`,
+  );
+  const ogTitle = _(t`Installed ${nameText} Snaps`);
+  const description = _(
+    t`Browse your installed ${nameText} Snaps on the MetaMask Snaps Directory`,
+  );
 
   return (
     <SEO

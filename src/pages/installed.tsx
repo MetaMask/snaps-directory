@@ -1,4 +1,5 @@
 import { t } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 import { graphql, navigate } from 'gatsby';
 import type { FunctionComponent } from 'react';
 import { useEffect } from 'react';
@@ -18,9 +19,13 @@ export type InstalledPageProps = {
 };
 
 const Head: FunctionComponent<InstalledPageProps> = ({ pageContext, data }) => {
-  const title = t`Installed Snaps on the MetaMask Snaps Directory`;
-  const ogTitle = t`Installed Snaps`;
-  const description = t`Browse your installed Snaps on the MetaMask Snaps Directory.`;
+  const { _ } = useLingui();
+
+  const title = _(t`Installed Snaps on the MetaMask Snaps Directory`);
+  const ogTitle = _(t`Installed Snaps`);
+  const description = _(
+    t`Browse your installed Snaps on the MetaMask Snaps Directory.`,
+  );
 
   return (
     <SEO

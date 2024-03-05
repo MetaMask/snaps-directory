@@ -1,8 +1,7 @@
 import { i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
-import { assert } from '@metamask/utils';
 import type { FunctionComponent, ReactNode } from 'react';
-import { createContext, useState } from 'react';
+import { useEffect, createContext, useState } from 'react';
 
 import { LOCALES } from '../locales';
 import { getPreferredLocale } from '../utils';
@@ -23,21 +22,24 @@ export const LocaleProvider: FunctionComponent<LocaleProviderProps> = ({
   defaultLocale,
   children,
 }) => {
-  const [currentLocale] = useState(getPreferredLocale(defaultLocale));
+  const [currentLocale, setCurrentLocale] = useState(
+    getPreferredLocale(defaultLocale),
+  );
 
   const setLocale = (newLocale: string) => {
     localStorage.setItem('locale', newLocale);
-
-    // Reloading the page seems to be the most reliable way to ensure the
-    // entire app is using the new locale.
-    window.location.reload();
+    setCurrentLocale(newLocale);
   };
 
-  const data = LOCALES.find((item) => item.locale === currentLocale);
-  assert(data, `No locale data found for ${currentLocale}.`);
+  useEffect(() => {
+    for (const { locale, messages } of LOCALES) {
+      i18n.load(locale, messages);
+    }
+  }, []);
 
-  i18n.load(currentLocale, data.messages);
-  i18n.activate(currentLocale);
+  useEffect(() => {
+    i18n.activate(currentLocale);
+  }, [currentLocale]);
 
   return (
     <LocaleContext.Provider value={{ locale: currentLocale, setLocale }}>

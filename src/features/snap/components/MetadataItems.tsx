@@ -1,4 +1,5 @@
 import { t } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 import type { FunctionComponent } from 'react';
 
 import { Data } from './Data';
@@ -13,20 +14,21 @@ export type MetadataItemsProps = {
 export const MetadataItems: FunctionComponent<MetadataItemsProps> = ({
   snap,
 }) => {
+  const { _ } = useLingui();
   const { snapId, author } = snap;
 
   return (
     <>
       {author && (
         <Data
-          label={t`Developer`}
+          label={_(t`Developer`)}
           value={
             <ExternalLink href={author.website}>{author.name}</ExternalLink>
           }
         />
       )}
 
-      <Data label={t`Identifier`} value={<Identifier snapId={snapId} />} />
+      <Data label={_(t`Identifier`)} value={<Identifier snapId={snapId} />} />
     </>
   );
 };

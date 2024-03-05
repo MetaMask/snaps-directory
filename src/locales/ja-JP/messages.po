@@ -734,6 +734,7 @@ msgstr "WebAssemblyのサポート"
 msgid "Tag"
 msgstr "タグ"
 
+#: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
 msgid "Terms of Use"
 msgstr "利用規約"

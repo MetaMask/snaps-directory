@@ -11,6 +11,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 import type { FunctionComponent } from 'react';
 
 import { MetaMaskIcon } from './icons';
@@ -32,6 +33,8 @@ export type InstallUnsupportedMobileProps = {
 export const InstallUnsupportedMobile: FunctionComponent<
   InstallUnsupportedMobileProps
 > = ({ isOpen, onClose }) => {
+  const { _ } = useLingui();
+
   return (
     <Drawer placement="bottom" onClose={onClose} isOpen={isOpen} size="lg">
       <DrawerOverlay />
@@ -45,7 +48,7 @@ export const InstallUnsupportedMobile: FunctionComponent<
             <Box maxWidth="18.75rem">
               <MetaMaskIcon
                 role="img"
-                aria-label={t`Desktop only`}
+                aria-label={_(t`Desktop only`)}
                 width="100%"
                 maxWidth="9.5rem"
               />

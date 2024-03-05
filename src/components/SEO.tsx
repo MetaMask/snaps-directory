@@ -1,4 +1,5 @@
 import { t } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 import { graphql, useStaticQuery, withPrefix } from 'gatsby';
 import type { FunctionComponent } from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -30,6 +31,7 @@ export const SEO: FunctionComponent<SEOProps> = ({
   banner = withPrefix(defaultBanner),
   locale,
 }) => {
+  const { _ } = useLingui();
   const {
     site: {
       siteMetadata: { title: defaultTitle, author, siteUrl },
@@ -46,7 +48,9 @@ export const SEO: FunctionComponent<SEOProps> = ({
     }
   `);
 
-  const defaultDescription = t`Explore community-built Snaps to customize your web3 experience via our official directory.`;
+  const defaultDescription = _(
+    t`Explore community-built Snaps to customize your web3 experience via our official directory.`,
+  );
 
   const metaTitle = title ?? defaultTitle;
   const metaDescription = description ?? defaultDescription;

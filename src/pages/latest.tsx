@@ -1,4 +1,5 @@
 import { t } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 import { graphql, navigate } from 'gatsby';
 import type { FunctionComponent } from 'react';
 import { useEffect } from 'react';
@@ -19,9 +20,13 @@ export type LatestPageProps = {
 };
 
 const Head: FunctionComponent<LatestPageProps> = ({ data, pageContext }) => {
-  const title = t`Latest Snaps on the MetaMask Snaps Directory`;
-  const ogTitle = t`Latest Snaps`;
-  const description = t`Explore the latest community-built Snaps to customize your web3 experience.`;
+  const { _ } = useLingui();
+
+  const title = _(t`Latest Snaps on the MetaMask Snaps Directory`);
+  const ogTitle = _(t`Latest Snaps`);
+  const description = _(
+    t`Explore the latest community-built Snaps to customize your web3 experience.`,
+  );
 
   return (
     <SEO
