@@ -8,7 +8,7 @@ msgstr ""
 "Language: tr\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-02-21 00:02\n"
+"PO-Revision-Date: 2024-03-05 13:11\n"
 "Last-Translator: \n"
 "Language-Team: Turkish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -32,7 +32,7 @@ msgstr ""
 
 #: src/pages/{Category.name}/index.tsx
 msgid "{nameText} Snaps on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "MetaMask Snaps Dizinindeki {nameText} Snap'leri"
 
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
@@ -459,7 +459,7 @@ msgstr "Yüklü {nameText} Snap'leri"
 
 #: src/pages/{Category.name}/installed.tsx
 msgid "Installed {nameText} Snaps on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "MetaMask Snaps Dizininde yüklü {nameText} Snap'leri"
 
 #: src/pages/installed.tsx
 msgid "Installed Snaps"
@@ -467,7 +467,7 @@ msgstr "Yüklü Snap'ler"
 
 #: src/pages/installed.tsx
 msgid "Installed Snaps on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "MetaMask Snaps Dizininde yüklü Snap'ler"
 
 #: src/components/InstallSnapButton.tsx
 msgid "Installing {name}"
@@ -501,7 +501,7 @@ msgstr "En Yeni Snap'ler"
 
 #: src/pages/latest.tsx
 msgid "Latest Snaps on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "MetaMask Snaps Dizinindeki En Yeni Snap'ler"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Legal"
