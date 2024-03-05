@@ -13,6 +13,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+msgid "{0} on the MetaMask Snaps Directory"
+msgstr "{0} on the MetaMask Snaps Directory"
+
 #: src/components/PostInstallModal.tsx
 msgid "{name} is now ready to use."
 msgstr ""
@@ -20,6 +24,10 @@ msgstr ""
 #: src/pages/{Category.name}/index.tsx
 msgid "{nameText} Snaps"
 msgstr "{nameText} Snaps"
+
+#: src/pages/{Category.name}/index.tsx
+msgid "{nameText} Snaps on the MetaMask Snaps Directory"
+msgstr "{nameText} Snaps on the MetaMask Snaps Directory"
 
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
@@ -444,9 +452,17 @@ msgstr ""
 msgid "Installed {nameText} Snaps"
 msgstr ""
 
+#: src/pages/{Category.name}/installed.tsx
+msgid "Installed {nameText} Snaps on the MetaMask Snaps Directory"
+msgstr "Installed {nameText} Snaps on the MetaMask Snaps Directory"
+
 #: src/pages/installed.tsx
 msgid "Installed Snaps"
 msgstr ""
+
+#: src/pages/installed.tsx
+msgid "Installed Snaps on the MetaMask Snaps Directory"
+msgstr "Installed Snaps on the MetaMask Snaps Directory"
 
 #: src/components/InstallSnapButton.tsx
 msgid "Installing {name}"
@@ -477,6 +493,10 @@ msgstr ""
 #: src/pages/latest.tsx
 msgid "Latest Snaps"
 msgstr ""
+
+#: src/pages/latest.tsx
+msgid "Latest Snaps on the MetaMask Snaps Directory"
+msgstr "Latest Snaps on the MetaMask Snaps Directory"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Legal"
@@ -576,6 +596,10 @@ msgstr ""
 #: src/pages/404.tsx
 msgid "Page not found"
 msgstr "Page not found"
+
+#: src/pages/404.tsx
+msgid "Page not found on the MetaMask Snaps Directory"
+msgstr "Page not found on the MetaMask Snaps Directory"
 
 #: src/features/snap/components/Permissions.tsx
 msgid "Permissions by <0>{0}</0>"

@@ -18,7 +18,8 @@ export type InstalledPageProps = {
 };
 
 const Head: FunctionComponent<InstalledPageProps> = ({ pageContext, data }) => {
-  const title = t`Installed Snaps`;
+  const title = t`Installed Snaps on the MetaMask Snaps Directory`;
+  const ogTitle = t`Installed Snaps`;
   const description = t`Browse your installed Snaps on the MetaMask Snaps Directory.`;
 
   return (
@@ -26,6 +27,7 @@ const Head: FunctionComponent<InstalledPageProps> = ({ pageContext, data }) => {
       locale={pageContext.locale}
       banner={data.file.publicURL}
       title={title}
+      ogTitle={ogTitle}
       description={description}
     />
   );

@@ -13,12 +13,14 @@ export type NotFoundPageProps = {
 };
 
 const Head: FunctionComponent<NotFoundPageProps> = ({ pageContext }) => {
-  const title = t`Page not found`;
+  const title = t`Page not found on the MetaMask Snaps Directory`;
+  const ogTitle = t`Page not found`;
 
   return (
     <SEO
       locale={pageContext.locale}
       title={title}
+      ogTitle={ogTitle}
       banner={withPrefix(banner)}
     />
   );

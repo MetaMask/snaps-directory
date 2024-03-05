@@ -19,13 +19,15 @@ export type LatestPageProps = {
 };
 
 const Head: FunctionComponent<LatestPageProps> = ({ data, pageContext }) => {
-  const title = t`Latest Snaps`;
+  const title = t`Latest Snaps on the MetaMask Snaps Directory`;
+  const ogTitle = t`Latest Snaps`;
   const description = t`Explore the latest community-built Snaps to customize your web3 experience.`;
 
   return (
     <SEO
       locale={pageContext.locale}
       title={title}
+      ogTitle={ogTitle}
       description={description}
       banner={data.file.publicURL}
     />

@@ -53,12 +53,15 @@ type SnapPageProps = {
 };
 
 const Head: FunctionComponent<SnapPageProps> = ({ data, pageContext }) => {
+  const title = t`${data.snap.name} on the MetaMask Snaps Directory`;
+  const ogTitle = data.snap.name;
   const metaDescription = t`Customize your web3 experience with ${data.snap.name}.`;
 
   return (
     <SEO
       locale={pageContext.locale}
-      title={data.snap.name}
+      title={title}
+      ogTitle={ogTitle}
       description={metaDescription}
       banner={data.snap.banner.publicURL}
     />

@@ -30,13 +30,15 @@ const Head: FunctionComponent<CategoryInstalledProps> = ({
   const { name } = SNAP_CATEGORY_LABELS[category];
 
   const nameText = i18n._(name);
-  const title = t`Installed ${nameText} Snaps`;
+  const title = t`Installed ${nameText} Snaps on the MetaMask Snaps Directory`;
+  const ogTitle = t`Installed ${nameText} Snaps`;
   const description = t`Browse your installed ${nameText} Snaps on the MetaMask Snaps Directory`;
 
   return (
     <SEO
       locale={pageContext.locale}
       title={title}
+      ogTitle={ogTitle}
       description={description}
       banner={data.category.installedBanner.publicURL}
     />

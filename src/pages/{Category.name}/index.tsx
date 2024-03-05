@@ -28,12 +28,14 @@ const Head: FunctionComponent<CategoryProps> = ({ data, pageContext }) => {
 
   const nameText = i18n._(name);
   const descriptionText = i18n._(description);
-  const title = t`${nameText} Snaps`;
+  const title = t`${nameText} Snaps on the MetaMask Snaps Directory`;
+  const ogTitle = t`${nameText} Snaps`;
 
   return (
     <SEO
       locale={pageContext.locale}
       title={title}
+      ogTitle={ogTitle}
       description={descriptionText}
       banner={data.category.banner.publicURL}
     />

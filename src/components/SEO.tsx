@@ -8,6 +8,7 @@ import type { Fields } from '../utils';
 
 export type SEOProps = {
   title?: string;
+  ogTitle?: string;
   description?: string;
   banner?: string;
   locale: string;
@@ -24,6 +25,7 @@ type QueryData = {
 
 export const SEO: FunctionComponent<SEOProps> = ({
   title,
+  ogTitle = title,
   description,
   banner = withPrefix(defaultBanner),
   locale,
@@ -46,9 +48,8 @@ export const SEO: FunctionComponent<SEOProps> = ({
 
   const defaultDescription = t`Explore community-built Snaps to customize your web3 experience via our official directory.`;
 
-  const metaTitle = title ? `${title} - ${defaultTitle}` : defaultTitle;
+  const metaTitle = title ?? defaultTitle;
   const metaDescription = description ?? defaultDescription;
-  const ogTitle = title ?? defaultTitle;
   const ogImage = `${siteUrl}${banner}`;
 
   return (
@@ -56,7 +57,7 @@ export const SEO: FunctionComponent<SEOProps> = ({
       <html lang={locale} />
       <title>{metaTitle}</title>
       <meta name="description" content={metaDescription} />
-      <meta property="og:title" content={ogTitle} />
+      <meta property="og:title" content={ogTitle ?? metaTitle} />
       <meta property="og:site_name" content={defaultTitle} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
@@ -65,7 +66,7 @@ export const SEO: FunctionComponent<SEOProps> = ({
       <meta name="og:image:height" content="630" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={author} />
-      <meta name="twitter:title" content={ogTitle} />
+      <meta name="twitter:title" content={ogTitle ?? metaTitle} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content={ogImage} />
     </Helmet>

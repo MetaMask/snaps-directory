@@ -18,12 +18,20 @@ msgstr ""
 "X-Crowdin-File: /src/locales/en-US/messages.po\n"
 "X-Crowdin-File-ID: 1546\n"
 
+#: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
+msgid "{0} on the MetaMask Snaps Directory"
+msgstr ""
+
 #: src/components/PostInstallModal.tsx
 msgid "{name} is now ready to use."
 msgstr "{name} 现在可以使用了。"
 
 #: src/pages/{Category.name}/index.tsx
 msgid "{nameText} Snaps"
+msgstr ""
+
+#: src/pages/{Category.name}/index.tsx
+msgid "{nameText} Snaps on the MetaMask Snaps Directory"
 msgstr ""
 
 #: src/components/FooterCopyright.tsx
@@ -449,9 +457,17 @@ msgstr "已安装"
 msgid "Installed {nameText} Snaps"
 msgstr "已安装的 {nameText} Snap"
 
+#: src/pages/{Category.name}/installed.tsx
+msgid "Installed {nameText} Snaps on the MetaMask Snaps Directory"
+msgstr ""
+
 #: src/pages/installed.tsx
 msgid "Installed Snaps"
 msgstr "已安装的 Snap"
+
+#: src/pages/installed.tsx
+msgid "Installed Snaps on the MetaMask Snaps Directory"
+msgstr ""
 
 #: src/components/InstallSnapButton.tsx
 msgid "Installing {name}"
@@ -482,6 +498,10 @@ msgstr "最新"
 #: src/pages/latest.tsx
 msgid "Latest Snaps"
 msgstr "最新的 Snap"
+
+#: src/pages/latest.tsx
+msgid "Latest Snaps on the MetaMask Snaps Directory"
+msgstr ""
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Legal"
@@ -580,6 +600,10 @@ msgstr "打开通知菜单"
 
 #: src/pages/404.tsx
 msgid "Page not found"
+msgstr ""
+
+#: src/pages/404.tsx
+msgid "Page not found on the MetaMask Snaps Directory"
 msgstr ""
 
 #: src/features/snap/components/Permissions.tsx
