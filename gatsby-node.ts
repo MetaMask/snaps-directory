@@ -534,10 +534,14 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
       fallback: {
         ...config.resolve.fallback,
         assert: false,
+        http: false,
+        https: false,
         crypto: false,
-        stream: false,
         path: false,
+        stream: false,
         url: false,
+        util: false,
+        zlib: false,
       },
     },
     module: {
