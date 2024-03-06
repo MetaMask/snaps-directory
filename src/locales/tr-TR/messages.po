@@ -8,7 +8,7 @@ msgstr ""
 "Language: tr\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-03-05 13:11\n"
+"PO-Revision-Date: 2024-03-06 00:02\n"
 "Last-Translator: \n"
 "Language-Team: Turkish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -542,7 +542,7 @@ msgstr "Hesapları yönet (Bilinmeyen ağ \"m/44'/{coinType}'\")"
 
 #: src/constants.ts
 msgid "Manage your accounts and keys with MetaMask."
-msgstr "MetaMask ile hesapları ve anahtarlarını yönetin."
+msgstr "MetaMask ile hesaplarınızı ve anahtarlarını yönetin."
 
 #: src/components/icons/index.ts
 msgid "Messages"
