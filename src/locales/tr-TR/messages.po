@@ -8,7 +8,7 @@ msgstr ""
 "Language: tr\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-03-06 00:02\n"
+"PO-Revision-Date: 2024-03-08 00:02\n"
 "Last-Translator: \n"
 "Language-Team: Turkish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "{0} on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "MetaMask Snaps Dizinindeki {0}"
 
 #: src/components/PostInstallModal.tsx
 msgid "{name} is now ready to use."
@@ -28,7 +28,7 @@ msgstr "{name} artık kullanılmaya hazır."
 
 #: src/pages/{Category.name}/index.tsx
 msgid "{nameText} Snaps"
-msgstr ""
+msgstr "{nameText} Snap'leri"
 
 #: src/pages/{Category.name}/index.tsx
 msgid "{nameText} Snaps on the MetaMask Snaps Directory"
@@ -151,7 +151,7 @@ msgstr "Bu yaşam döngüsü sırasında belirli zamanlarda kod çalıştırmak 
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to view your public keys (and addresses) for the requested network. This does not grant any control of accounts or assets."
-msgstr ""
+msgstr "{name} adlı snap'in talep edilen ağ için genel anahtarları (ve adresleri) görüntülemesine izin verin. Bu eylem, herhangi bir şekilde hesapların ya da varlıkların kontrolünü vermez."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {origin} to communicate with {name}"
@@ -265,7 +265,7 @@ msgstr "Bir Ethereum Hesabı oluştur"
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Customize your web3 experience with {0}."
-msgstr ""
+msgstr "{0} ile web3 deneyiminizi kişiselleştirin."
 
 #: src/features/snap/permissions.tsx
 msgid "Derive arbitrary keys unique to {name}"
@@ -350,7 +350,7 @@ msgstr "Tüm Snap'leri Keşfet"
 
 #: src/components/SEO.tsx
 msgid "Explore community-built Snaps to customize your web3 experience via our official directory."
-msgstr ""
+msgstr "Resmi dizinimiz aracılığıyla web3 deneyiminizi kişiselleştirmek için topluluk tarafından oluşturulmuş Snap'leri keşfedin."
 
 #: src/pages/explore.tsx
 msgid "Explore Snaps"
@@ -362,7 +362,7 @@ msgstr "Web3 deneyiminizi kişiselleştirmek için topluluk tarafından oluştur
 
 #: src/features/banner/components/explore-banner/ExploreBanner.tsx
 msgid "Explore, install, and use community-built features in MetaMask"
-msgstr ""
+msgstr "MetaMask'te topluluk tarafından oluşturulmuş özellikleri keşfedin, yükleyin ve kullanın"
 
 #: src/components/Banner.tsx
 msgid "Explore, install, and use community-built features in MetaMask. <0>Learn more</0> and <1>FAQ</1>."
@@ -600,11 +600,11 @@ msgstr "Bildirimler menüsünü aç"
 
 #: src/pages/404.tsx
 msgid "Page not found"
-msgstr ""
+msgstr "Sayfa bulunamadı"
 
 #: src/pages/404.tsx
 msgid "Page not found on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "MetaMask Snaps Dizininde sayfa bulunamadı"
 
 #: src/features/snap/components/Permissions.tsx
 msgid "Permissions by <0>{0}</0>"
