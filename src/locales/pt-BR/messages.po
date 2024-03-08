@@ -8,7 +8,7 @@ msgstr ""
 "Language: pt\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-03-05 13:11\n"
+"PO-Revision-Date: 2024-03-08 00:02\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "{0} on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "{0} no Diretório do MetaMask Snaps"
 
 #: src/components/PostInstallModal.tsx
 msgid "{name} is now ready to use."
@@ -28,7 +28,7 @@ msgstr "{name} já está pronto para uso."
 
 #: src/pages/{Category.name}/index.tsx
 msgid "{nameText} Snaps"
-msgstr ""
+msgstr "Snaps {nameText}"
 
 #: src/pages/{Category.name}/index.tsx
 msgid "{nameText} Snaps on the MetaMask Snaps Directory"
@@ -151,7 +151,7 @@ msgstr "Permitir que {name} use ganchos de ciclo de vida para executar código e
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to view your public keys (and addresses) for the requested network. This does not grant any control of accounts or assets."
-msgstr ""
+msgstr "Permitir que {name} veja suas chaves públicas (e endereços) na rede selecionada. Isso não concede nenhum controle de contas ou ativos."
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {origin} to communicate with {name}"
@@ -265,7 +265,7 @@ msgstr "Criar uma conta Ethereum"
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Customize your web3 experience with {0}."
-msgstr ""
+msgstr "Personalize sua experiência na web3 com {0}."
 
 #: src/features/snap/permissions.tsx
 msgid "Derive arbitrary keys unique to {name}"
@@ -350,7 +350,7 @@ msgstr "Explorar todos os Snaps"
 
 #: src/components/SEO.tsx
 msgid "Explore community-built Snaps to customize your web3 experience via our official directory."
-msgstr ""
+msgstr "Explore snaps desenvolvidos pela comunidade para personalizar sua experiência na web3 por meio do nosso diretório oficial."
 
 #: src/pages/explore.tsx
 msgid "Explore Snaps"
@@ -362,7 +362,7 @@ msgstr "Explore os Snaps mais recentes desenvolvidos pela comunidade para person
 
 #: src/features/banner/components/explore-banner/ExploreBanner.tsx
 msgid "Explore, install, and use community-built features in MetaMask"
-msgstr ""
+msgstr "Explore, instale e use recursos desenvolvidos pela comunidade na MetaMask"
 
 #: src/components/Banner.tsx
 msgid "Explore, install, and use community-built features in MetaMask. <0>Learn more</0> and <1>FAQ</1>."
@@ -600,11 +600,11 @@ msgstr "Abrir menu de notificações"
 
 #: src/pages/404.tsx
 msgid "Page not found"
-msgstr ""
+msgstr "Página não encontrada"
 
 #: src/pages/404.tsx
 msgid "Page not found on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "Página não encontrada no Diretório do MetaMask Snaps"
 
 #: src/features/snap/components/Permissions.tsx
 msgid "Permissions by <0>{0}</0>"
