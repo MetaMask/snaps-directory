@@ -8,7 +8,7 @@ msgstr ""
 "Language: ja\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-03-05 13:11\n"
+"PO-Revision-Date: 2024-03-09 00:02\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "{0} on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "MetaMask Snaps Directoryの{0}"
 
 #: src/components/PostInstallModal.tsx
 msgid "{name} is now ready to use."
@@ -28,7 +28,7 @@ msgstr "{name}の使用準備ができました。"
 
 #: src/pages/{Category.name}/index.tsx
 msgid "{nameText} Snaps"
-msgstr ""
+msgstr "{nameText} Snap"
 
 #: src/pages/{Category.name}/index.tsx
 msgid "{nameText} Snaps on the MetaMask Snaps Directory"
@@ -151,7 +151,7 @@ msgstr "{name}がライフサイクルフックを使用して、ライフサイ
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {name} to view your public keys (and addresses) for the requested network. This does not grant any control of accounts or assets."
-msgstr ""
+msgstr "{name}が、要求されたネットワークの公開鍵 (およびアドレス) を表示することを許可します。これは、アカウントや資産のコントロールを許可するものでは一切ありません。"
 
 #: src/features/snap/permissions.tsx
 msgid "Allow {origin} to communicate with {name}"
@@ -265,7 +265,7 @@ msgstr "イーサリアムアカウントを作成"
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Customize your web3 experience with {0}."
-msgstr ""
+msgstr "{0}でweb3エクスペリエンスをカスタマイズしましょう。"
 
 #: src/features/snap/permissions.tsx
 msgid "Derive arbitrary keys unique to {name}"
@@ -350,7 +350,7 @@ msgstr "すべてのSnapsを閲覧"
 
 #: src/components/SEO.tsx
 msgid "Explore community-built Snaps to customize your web3 experience via our official directory."
-msgstr ""
+msgstr "MetaMaskの公式ディレクトリで、web3のエクスペリエンスをカスタマイズする、コミュニティが開発したSnapをご覧ください."
 
 #: src/pages/explore.tsx
 msgid "Explore Snaps"
@@ -362,7 +362,7 @@ msgstr "Web3のエクスペリエンスをカスタマイズする、コミュ�
 
 #: src/features/banner/components/explore-banner/ExploreBanner.tsx
 msgid "Explore, install, and use community-built features in MetaMask"
-msgstr ""
+msgstr "MetaMaskでコミュニティが開発した機能を閲覧、インストール、使用する"
 
 #: src/components/Banner.tsx
 msgid "Explore, install, and use community-built features in MetaMask. <0>Learn more</0> and <1>FAQ</1>."
@@ -600,11 +600,11 @@ msgstr "通知メニューを開く"
 
 #: src/pages/404.tsx
 msgid "Page not found"
-msgstr ""
+msgstr "ページが見つかりません"
 
 #: src/pages/404.tsx
 msgid "Page not found on the MetaMask Snaps Directory"
-msgstr ""
+msgstr "MetaMask Snaps Directoryでページが見つかりません"
 
 #: src/features/snap/components/Permissions.tsx
 msgid "Permissions by <0>{0}</0>"
