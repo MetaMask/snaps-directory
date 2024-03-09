@@ -8,7 +8,7 @@ msgstr ""
 "Language: pt\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-03-08 00:02\n"
+"PO-Revision-Date: 2024-03-09 00:02\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -350,7 +350,7 @@ msgstr "Explorar todos os Snaps"
 
 #: src/components/SEO.tsx
 msgid "Explore community-built Snaps to customize your web3 experience via our official directory."
-msgstr "Explore snaps desenvolvidos pela comunidade para personalizar sua experiência na web3 por meio do nosso diretório oficial."
+msgstr "Explore Snaps desenvolvidos pela comunidade para personalizar sua experiência na web3 por meio do nosso diretório oficial."
 
 #: src/pages/explore.tsx
 msgid "Explore Snaps"
