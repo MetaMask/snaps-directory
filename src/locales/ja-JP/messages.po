@@ -8,7 +8,7 @@ msgstr ""
 "Language: ja\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-03-09 00:02\n"
+"PO-Revision-Date: 2024-03-12 12:01\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -265,7 +265,7 @@ msgstr "イーサリアムアカウントを作成"
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Customize your web3 experience with {0}."
-msgstr "{0}でweb3エクスペリエンスをカスタマイズしましょう。"
+msgstr "{0}でWeb3エクスペリエンスをカスタマイズしましょう。"
 
 #: src/features/snap/permissions.tsx
 msgid "Derive arbitrary keys unique to {name}"
@@ -350,7 +350,7 @@ msgstr "すべてのSnapsを閲覧"
 
 #: src/components/SEO.tsx
 msgid "Explore community-built Snaps to customize your web3 experience via our official directory."
-msgstr "MetaMaskの公式ディレクトリで、web3のエクスペリエンスをカスタマイズする、コミュニティが開発したSnapをご覧ください."
+msgstr "MetaMaskの公式ディレクトリで、Web3のエクスペリエンスをカスタマイズする、コミュニティが開発したSnapをご覧ください。"
 
 #: src/pages/explore.tsx
 msgid "Explore Snaps"
