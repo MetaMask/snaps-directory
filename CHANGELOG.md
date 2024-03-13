@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.9.0]
+### Added
+- Add support for multiple locales ([#328](https://github.com/MetaMask/snaps-directory/pull/328))
+
 ## [1.8.0]
 ### Added
 - Add EIP-6963 support ([#316](https://github.com/MetaMask/snaps-directory/pull/316))
@@ -160,7 +164,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.8.0...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.9.0...HEAD
+[1.9.0]: https://github.com/MetaMask/snaps-directory/compare/v1.8.0...v1.9.0
 [1.8.0]: https://github.com/MetaMask/snaps-directory/compare/v1.7.0...v1.8.0
 [1.7.0]: https://github.com/MetaMask/snaps-directory/compare/v1.6.0...v1.7.0
 [1.6.0]: https://github.com/MetaMask/snaps-directory/compare/v1.5.0...v1.6.0
