@@ -6,6 +6,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.9.0]
+### Uncategorized
+- Bump MetaMask dependencies ([#350](https://github.com/MetaMask/snaps-directory/pull/350))
+- New Crowdin translations by Github Action ([#345](https://github.com/MetaMask/snaps-directory/pull/345))
+- Bump @metamask/safe-event-emitter from 3.0.0 to 3.1.0 ([#344](https://github.com/MetaMask/snaps-directory/pull/344))
+- New Crowdin translations by Github Action ([#343](https://github.com/MetaMask/snaps-directory/pull/343))
+- New Crowdin translations by Github Action ([#342](https://github.com/MetaMask/snaps-directory/pull/342))
+- New Crowdin translations by Github Action ([#340](https://github.com/MetaMask/snaps-directory/pull/340))
+- Bump @metamask/snaps-registry from 3.0.0 to 3.0.1 ([#341](https://github.com/MetaMask/snaps-directory/pull/341))
+- Update security code scanner file ([#339](https://github.com/MetaMask/snaps-directory/pull/339))
+- Bump @metamask/snaps-controllers from 6.0.1 to 6.0.2 ([#338](https://github.com/MetaMask/snaps-directory/pull/338))
+- Bump @metamask/snaps-utils from 7.0.1 to 7.0.2 ([#336](https://github.com/MetaMask/snaps-directory/pull/336))
+- Bump @metamask/snaps-sdk from 3.0.1 to 3.1.0 ([#337](https://github.com/MetaMask/snaps-directory/pull/337))
+- Bump @metamask/controller-utils from 8.0.3 to 8.0.4 ([#333](https://github.com/MetaMask/snaps-directory/pull/333))
+- New Crowdin translations by Github Action ([#335](https://github.com/MetaMask/snaps-directory/pull/335))
+- Bump @metamask/approval-controller from 5.1.2 to 5.1.3 ([#334](https://github.com/MetaMask/snaps-directory/pull/334))
+- New Crowdin translations by Github Action ([#321](https://github.com/MetaMask/snaps-directory/pull/321))
+- Bump @metamask/providers from 14.0.2 to 15.0.0 ([#332](https://github.com/MetaMask/snaps-directory/pull/332))
+- Bump @metamask/json-rpc-engine from 7.3.2 to 7.3.3 ([#331](https://github.com/MetaMask/snaps-directory/pull/331))
+- Implement localisation ([#328](https://github.com/MetaMask/snaps-directory/pull/328))
+- Bump @metamask/snaps-controllers from 6.0.0 to 6.0.1 ([#326](https://github.com/MetaMask/snaps-directory/pull/326))
+- Bump @metamask/snaps-utils from 7.0.0 to 7.0.1 ([#325](https://github.com/MetaMask/snaps-directory/pull/325))
+- Bump @metamask/snaps-sdk from 3.0.0 to 3.0.1 ([#324](https://github.com/MetaMask/snaps-directory/pull/324))
+
 ## [1.8.0]
 ### Added
 - Add EIP-6963 support ([#316](https://github.com/MetaMask/snaps-directory/pull/316))
@@ -160,7 +184,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.8.0...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.9.0...HEAD
+[1.9.0]: https://github.com/MetaMask/snaps-directory/compare/v1.8.0...v1.9.0
 [1.8.0]: https://github.com/MetaMask/snaps-directory/compare/v1.7.0...v1.8.0
 [1.7.0]: https://github.com/MetaMask/snaps-directory/compare/v1.6.0...v1.7.0
 [1.6.0]: https://github.com/MetaMask/snaps-directory/compare/v1.5.0...v1.6.0
