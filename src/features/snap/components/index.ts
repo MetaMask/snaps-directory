@@ -10,3 +10,4 @@ export * from './MetadataModal';
 export * from './Permissions';
 export * from './RelatedSnaps';
 export * from './SourceCode';
+export * from './Screenshots';

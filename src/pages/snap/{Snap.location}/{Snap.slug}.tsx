@@ -21,6 +21,7 @@ import {
   NotificationAcknowledger,
   Permissions,
   Description,
+  Screenshots,
 } from '../../../features';
 import type { Fields } from '../../../utils';
 
@@ -131,6 +132,11 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data, pageContext }) => {
         </Flex>
 
         <Divider marginY="8" />
+
+        <Box marginBottom="12" overflowX="auto">
+          <Screenshots />
+        </Box>
+
         <Metadata snap={data.snap} />
         <Divider marginTop="8" marginBottom="12" />
 
