@@ -227,7 +227,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
     const lastUpdated = new Date(time[latestVersion]).getTime();
 
     const downloadsJson = await customFetch(
-      `https://api.npmjs.org/versions/${slug.replace('/', '%2F')}/last-week`,
+      `https://api.npmjs.org/versions/${slug.replace(/\//gu, '%2F')}/last-week`,
     ).then(async (response: any) => response.json());
 
     const { downloads } = downloadsJson as {
