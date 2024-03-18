@@ -1,15 +1,17 @@
 import { Avatar, Box, Flex } from '@chakra-ui/react';
+import type { IGatsbyImageData } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import type { FunctionComponent } from 'react';
 
 export type SnapCardImageProps = {
   name: string;
   icon: string;
+  image?: IGatsbyImageData | undefined;
 };
 
-export const SnapCardImage: FunctionComponent<SnapCardImageProps> = ({
-  name,
-  icon,
-}) => (
+export const SnapCardFallbackImage: FunctionComponent<
+  Omit<SnapCardImageProps, 'image'>
+> = ({ name, icon }) => (
   <Flex
     width="100%"
     height="11rem"
@@ -54,3 +56,19 @@ export const SnapCardImage: FunctionComponent<SnapCardImageProps> = ({
     />
   </Flex>
 );
+
+export const SnapCardImage: FunctionComponent<SnapCardImageProps> = ({
+  name,
+  icon,
+  image,
+}) => {
+  if (image) {
+    return (
+      <Box marginBottom="4" borderRadius="lg" overflow="hidden">
+        <GatsbyImage alt={name} image={image} />
+      </Box>
+    );
+  }
+
+  return <SnapCardFallbackImage name={name} icon={icon} />;
+};

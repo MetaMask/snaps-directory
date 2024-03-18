@@ -36,6 +36,16 @@ export const SnapsProvider: FunctionComponent<SnapsProviderProps> = ({
           gatsbyPath(filePath: "/snap/{Snap.location}/{Snap.slug}")
           downloads
           lastUpdated
+          screenshots {
+            childImageSharp {
+              gatsbyImageData(
+                layout: FIXED
+                width: 400
+                height: 225
+                quality: 90
+              )
+            }
+          }
         }
       }
     }

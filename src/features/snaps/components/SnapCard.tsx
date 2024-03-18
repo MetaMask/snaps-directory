@@ -10,7 +10,7 @@ import { useGetInstalledSnapsQuery } from '../api';
 
 export type SnapCardProps = Fields<
   Queries.Snap,
-  'name' | 'summary' | 'snapId' | 'icon' | 'gatsbyPath'
+  'name' | 'summary' | 'snapId' | 'icon' | 'gatsbyPath' | 'screenshots'
 > & {
   image?: boolean | undefined;
   onClick?: () => void;
@@ -23,6 +23,7 @@ export const SnapCard: FunctionComponent<SnapCardProps> = ({
   icon,
   gatsbyPath,
   image,
+  screenshots,
   onClick = () => undefined,
 }) => {
   const { data: installedSnaps } = useGetInstalledSnapsQuery();
@@ -44,7 +45,13 @@ export const SnapCard: FunctionComponent<SnapCardProps> = ({
           },
         }}
       >
-        {image && <SnapCardImage name={name} icon={icon} />}
+        {image && (
+          <SnapCardImage
+            name={name}
+            icon={icon}
+            image={screenshots?.[0]?.childImageSharp?.gatsbyImageData}
+          />
+        )}
         <Flex
           height="3rem"
           flexDirection="row"
