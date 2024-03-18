@@ -1,5 +1,5 @@
 import { Box, Modal, ModalContent, ModalOverlay } from '@chakra-ui/react';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import type { FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
 
@@ -12,7 +12,11 @@ export type ScreenshotsProps = {
 export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
   screenshots,
 }) => {
-  const images = screenshots.map(getImage);
+  const images = screenshots.map((screenshot) => ({
+    small: screenshot.childImageSharp.small,
+    medium: screenshot.childImageSharp.medium,
+    large: screenshot.childImageSharp.large,
+  }));
 
   const [shownScreenshot, setShownScreenshot] = useState<number | null>(null);
   const isOpen = shownScreenshot !== null;
@@ -46,11 +50,13 @@ export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
           <Box
             key={index}
             maxW={['250px', null, '400px']}
+            maxH={['140px', null, '225px']}
+            flexShrink={0}
             borderRadius="2xl"
             overflow="hidden"
             onClick={() => setShownScreenshot(index)}
           >
-            <GatsbyImage image={image} />
+            <GatsbyImage image={image.medium} />
           </Box>
         ))}
       </Box>
@@ -64,7 +70,7 @@ export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
       >
         <ModalOverlay />
         <ModalContent overflow="hidden">
-          <GatsbyImage image={images[shownScreenshot as number]} />
+          <GatsbyImage image={images[shownScreenshot as number]?.large} />
         </ModalContent>
       </Modal>
     </>
