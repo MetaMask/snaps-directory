@@ -1,41 +1,41 @@
 import { Box, Modal, ModalContent, ModalOverlay } from '@chakra-ui/react';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import type { IGatsbyImageData } from 'gatsby-plugin-image';
 import type { FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
 
-import type { Fields } from '../../../utils';
-
 export type ScreenshotsProps = {
-  screenshots: Fields<Queries.Snap, 'screenshots'>;
+  screenshots: {
+    childImageSharp: {
+      medium: IGatsbyImageData;
+      large: IGatsbyImageData;
+    };
+  }[];
 };
 
 export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
   screenshots,
 }) => {
-  const images = screenshots.map((screenshot) => ({
-    small: screenshot.childImageSharp.small,
-    medium: screenshot.childImageSharp.medium,
-    large: screenshot.childImageSharp.large,
-  }));
-
   const [shownScreenshot, setShownScreenshot] = useState<number | null>(null);
   const isOpen = shownScreenshot !== null;
 
   useEffect(() => {
-    const onKeyUp = (ev: KeyboardEvent) => {
+    const onKeyUp = (event: KeyboardEvent) => {
       if (!isOpen) {
         return;
       }
 
-      if (ev.code === 'ArrowLeft') {
+      if (event.code === 'ArrowLeft') {
         setShownScreenshot((state) => Math.max((state as number) - 1, 0));
-      } else if (ev.code === 'ArrowRight') {
+      } else if (event.code === 'ArrowRight') {
         setShownScreenshot((state) => Math.min((state as number) + 1, 2));
       }
     };
-    window.addEventListener('keyup', onKeyUp, false);
+
+    window.addEventListener('keyup', onKeyUp);
+
     return () => {
-      window.removeEventListener('keyup', onKeyUp, false);
+      window.removeEventListener('keyup', onKeyUp);
     };
   }, [isOpen]);
 
@@ -46,7 +46,7 @@ export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
   return (
     <>
       <Box display="flex" flexDirection="row" gap="6">
-        {images.map((image, index) => (
+        {screenshots.map((image, index) => (
           <Box
             key={index}
             maxW={['250px', null, '400px']}
@@ -55,8 +55,17 @@ export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
             borderRadius="2xl"
             overflow="hidden"
             onClick={() => setShownScreenshot(index)}
+            sx={{
+              '.gatsby-image-wrapper': {
+                width: '100% !important',
+                height: '100% !important',
+              },
+            }}
           >
-            <GatsbyImage image={image.medium} />
+            <GatsbyImage
+              alt="Snap image"
+              image={image.childImageSharp.medium}
+            />
           </Box>
         ))}
       </Box>
@@ -70,7 +79,13 @@ export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
       >
         <ModalOverlay />
         <ModalContent overflow="hidden">
-          <GatsbyImage image={images[shownScreenshot as number]?.large} />
+          <GatsbyImage
+            alt="Snap image"
+            image={
+              screenshots[shownScreenshot as number]?.childImageSharp
+                .large as IGatsbyImageData
+            }
+          />
         </ModalContent>
       </Modal>
     </>

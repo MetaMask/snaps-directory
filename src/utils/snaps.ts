@@ -5,7 +5,9 @@ import type {
 import type { SnapsRegistryDatabase } from '@metamask/snaps-registry';
 import semver from 'semver/preload';
 
-export type DeepFields<Type> = Type extends Record<string, unknown>
+export type DeepFields<Type> = Type extends (infer ArrayType)[]
+  ? DeepFields<ArrayType>
+  : Type extends Record<string, unknown>
   ? Fields<Type, keyof Type>
   : Type;
 

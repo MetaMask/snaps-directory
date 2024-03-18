@@ -213,9 +213,13 @@ export const query = graphql`
       termsOfUse
       screenshots {
         childImageSharp {
-          small: gatsbyImageData(layout: FIXED, width: 250, height: 140)
-          medium: gatsbyImageData(layout: FIXED, width: 400, height: 225)
-          large: gatsbyImageData(width: 960, height: 540)
+          medium: gatsbyImageData(
+            layout: FIXED
+            width: 400
+            height: 225
+            quality: 90
+          )
+          large: gatsbyImageData(width: 960, height: 540, quality: 100)
         }
       }
     }
