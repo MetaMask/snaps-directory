@@ -227,10 +227,23 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
     const lastUpdated = new Date(time[latestVersion]).getTime();
 
     const downloadsJson = await customFetch(
-      `https://api.npmjs.org/downloads/point/last-year/${slug}`,
+      `https://api.npmjs.org/versions/${slug.replace('/', '%2F')}/last-week`,
     ).then(async (response: any) => response.json());
 
-    const { downloads } = downloadsJson;
+    const { downloads } = downloadsJson as {
+      downloads: Record<string, number>;
+    };
+
+    const allVersions = Object.keys(snap.versions);
+    const totalDownloads = Object.entries(downloads).reduce(
+      (total, [version, count]) => {
+        if (allVersions.includes(version)) {
+          return total + count;
+        }
+        return total;
+      },
+      0,
+    );
 
     const content = {
       ...snap.metadata,
@@ -242,7 +255,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       slug,
       latestVersion,
       icon,
-      downloads,
+      downloads: totalDownloads,
       lastUpdated,
 
       // We need to stringify the permissions because Gatsby doesn't support
