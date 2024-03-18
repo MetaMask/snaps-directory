@@ -14,7 +14,10 @@ import { assert } from '@metamask/utils';
 import deepEqual from 'fast-deep-equal';
 import { rm } from 'fs/promises';
 import type { GatsbyNode, NodeInput } from 'gatsby';
-import { createFileNodeFromBuffer } from 'gatsby-source-filesystem';
+import {
+  createFileNodeFromBuffer,
+  createRemoteFileNode,
+} from 'gatsby-source-filesystem';
 import { GraphQLJSONObject } from 'graphql-type-json';
 import type { RequestInfo, RequestInit } from 'node-fetch';
 import fetch from 'node-fetch';
@@ -363,6 +366,7 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
         additionalSourceCode: [SnapAdditionalSourceCode]
         privacyPolicy: String
         termsOfUse: String
+        screenshots: [File] @link(from: "fields.screenshotFiles")
       }
 
       type SnapAdditionalSourceCode {
@@ -428,6 +432,25 @@ export const onCreateNode: GatsbyNode[`onCreateNode`] = async ({
       node,
       name: 'localFile',
       value: bannerNode.id,
+    });
+
+    const screenshots = await Promise.all(
+      new Array(3).fill(1).map(async () =>
+        createRemoteFileNode({
+          url: 'https://placehold.co/960x540.png',
+          createNode,
+          createNodeId,
+          getCache,
+          cache,
+          parentNodeId: snapNode.id,
+        }),
+      ),
+    );
+
+    createNodeField({
+      node,
+      name: 'screenshotFiles',
+      value: screenshots.map((screenshotNode) => screenshotNode.id),
     });
   }
 

@@ -1,19 +1,18 @@
-import {
-  Image,
-  Box,
-  Modal,
-  ModalContent,
-  ModalOverlay,
-} from '@chakra-ui/react';
-import type { MouseEvent } from 'react';
+import { Box, Modal, ModalContent, ModalOverlay } from '@chakra-ui/react';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import type { FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
 
-export const Screenshots = () => {
-  const screenshots = [
-    'https://placehold.co/960x540',
-    'https://placehold.co/960x540',
-    'https://placehold.co/960x540',
-  ];
+import type { Fields } from '../../../utils';
+
+export type ScreenshotsProps = {
+  screenshots: Fields<Queries.Snap, 'screenshots'>;
+};
+
+export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
+  screenshots,
+}) => {
+  const images = screenshots.map(getImage);
 
   const [shownScreenshot, setShownScreenshot] = useState<number | null>(null);
   const isOpen = shownScreenshot !== null;
@@ -40,31 +39,32 @@ export const Screenshots = () => {
     setShownScreenshot(null);
   };
 
-  const onImageClick = (event: MouseEvent<HTMLImageElement>) => {
-    setShownScreenshot(screenshots.indexOf(event.target.currentSrc));
-  };
-
   return (
     <>
       <Box display="flex" flexDirection="row" gap="6">
-        {screenshots.map((src, index) => (
-          <Image
+        {images.map((image, index) => (
+          <Box
             key={index}
-            src={src}
             maxW={['250px', null, '400px']}
             borderRadius="2xl"
-            onClick={onImageClick}
-          />
+            overflow="hidden"
+            onClick={() => setShownScreenshot(index)}
+          >
+            <GatsbyImage image={image} />
+          </Box>
         ))}
       </Box>
 
-      <Modal isOpen={isOpen} onClose={onClose} size="4xl" isCentered>
+      <Modal
+        variant="screenshot"
+        isOpen={isOpen}
+        onClose={onClose}
+        size="4xl"
+        isCentered
+      >
         <ModalOverlay />
-        <ModalContent borderRadius="2xl">
-          <Image
-            src={screenshots[shownScreenshot as number] as string}
-            borderRadius="2xl"
-          />
+        <ModalContent overflow="hidden">
+          <GatsbyImage image={images[shownScreenshot as number]} />
         </ModalContent>
       </Modal>
     </>

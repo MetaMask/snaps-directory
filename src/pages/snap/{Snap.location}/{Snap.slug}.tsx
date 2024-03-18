@@ -50,6 +50,7 @@ type SnapPageProps = {
       | 'privateCode'
       | 'privacyPolicy'
       | 'termsOfUse'
+      | 'screenshots'
     >;
   };
 };
@@ -85,6 +86,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data, pageContext }) => {
     latestVersion,
     category,
     permissions,
+    screenshots,
   } = data.snap;
 
   const { data: installedSnaps } = useGetInstalledSnapsQuery();
@@ -133,9 +135,11 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data, pageContext }) => {
 
         <Divider marginY="8" />
 
-        <Box marginBottom="12" overflowX="auto">
-          <Screenshots />
-        </Box>
+        {screenshots.length > 0 && (
+          <Box marginBottom="12" overflowX="auto">
+            <Screenshots screenshots={screenshots} />
+          </Box>
+        )}
 
         <Metadata snap={data.snap} />
         <Divider marginTop="8" marginBottom="12" />
@@ -207,6 +211,11 @@ export const query = graphql`
       privateCode
       privacyPolicy
       termsOfUse
+      screenshots {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
     }
   }
 `;

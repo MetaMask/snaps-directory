@@ -23,5 +23,12 @@ export const Modal = defineMultiStyleConfig({
         padding: '0',
       },
     }),
+
+    screenshot: definePartsStyle({
+      dialog: {
+        boxShadow: 'md',
+        borderRadius: '2xl',
+      },
+    }),
   },
 });
