@@ -4,6 +4,8 @@ import type { IGatsbyImageData } from 'gatsby-plugin-image';
 import type { FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
 
+import type { Screenshot as ScreenshotType } from '../../../utils';
+
 export type ScreenshotProps = {
   image: IGatsbyImageData;
   index: number;
@@ -40,12 +42,7 @@ export const Screenshot: FunctionComponent<ScreenshotProps> = ({
 };
 
 export type ScreenshotsProps = {
-  screenshots: {
-    childImageSharp: {
-      medium: IGatsbyImageData;
-      large: IGatsbyImageData;
-    };
-  }[];
+  screenshots: ScreenshotType[];
 };
 
 export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
@@ -102,6 +99,7 @@ export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
         <ModalContent overflow="hidden">
           {screenshots[shownScreenshot as number] && (
             <GatsbyImage
+              data-testid={`screenshot-modal-${shownScreenshot ?? 0}`}
               alt="Snap image"
               image={
                 screenshots[shownScreenshot as number]?.childImageSharp

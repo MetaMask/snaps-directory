@@ -207,6 +207,12 @@ describe('theme', () => {
                   "padding": "6",
                 },
               },
+              "screenshot": Object {
+                "dialog": Object {
+                  "borderRadius": "2xl",
+                  "boxShadow": "md",
+                },
+              },
             },
           },
           "Skeleton": Object {

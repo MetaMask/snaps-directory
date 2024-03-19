@@ -23,7 +23,7 @@ import {
   Description,
   Screenshots,
 } from '../../../features';
-import type { Fields } from '../../../utils';
+import type { Fields, Screenshot } from '../../../utils';
 
 type SnapPageProps = {
   pageContext: {
@@ -50,8 +50,7 @@ type SnapPageProps = {
       | 'privateCode'
       | 'privacyPolicy'
       | 'termsOfUse'
-      | 'screenshots'
-    >;
+    > & { screenshots: Screenshot[] };
   };
 };
 

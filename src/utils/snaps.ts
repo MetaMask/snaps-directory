@@ -3,6 +3,7 @@ import type {
   MetaMaskInpageProvider,
 } from '@metamask/providers';
 import type { SnapsRegistryDatabase } from '@metamask/snaps-registry';
+import type { IGatsbyImageData } from 'gatsby-plugin-image';
 import semver from 'semver/preload';
 
 export type DeepFields<Type> = Type extends (infer ArrayType)[]
@@ -187,6 +188,13 @@ export async function getSnapsProvider() {
 }
 
 export type VerifiedSnap = SnapsRegistryDatabase['verifiedSnaps'][string];
+
+export type Screenshot = {
+  childImageSharp: {
+    medium: IGatsbyImageData;
+    large: IGatsbyImageData;
+  };
+};
 
 /**
  * Get the latest version of the given Snap.
