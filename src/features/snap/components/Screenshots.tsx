@@ -4,6 +4,41 @@ import type { IGatsbyImageData } from 'gatsby-plugin-image';
 import type { FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
 
+export type ScreenshotProps = {
+  image: IGatsbyImageData;
+  index: number;
+  setShownScreenshot: (index: number) => void;
+};
+
+export const Screenshot: FunctionComponent<ScreenshotProps> = ({
+  image,
+  index,
+  setShownScreenshot,
+}) => {
+  const onClick = () => {
+    setShownScreenshot(index);
+  };
+
+  return (
+    <Box
+      maxW={['250px', null, '400px']}
+      maxH={['140px', null, '225px']}
+      flexShrink={0}
+      borderRadius="2xl"
+      overflow="hidden"
+      onClick={onClick}
+      sx={{
+        '.gatsby-image-wrapper': {
+          width: '100% !important',
+          height: '100% !important',
+        },
+      }}
+    >
+      <GatsbyImage alt="Snap image" image={image} />
+    </Box>
+  );
+};
+
 export type ScreenshotsProps = {
   screenshots: {
     childImageSharp: {
@@ -47,26 +82,12 @@ export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
     <>
       <Box display="flex" flexDirection="row" gap="6">
         {screenshots.map((image, index) => (
-          <Box
+          <Screenshot
             key={index}
-            maxW={['250px', null, '400px']}
-            maxH={['140px', null, '225px']}
-            flexShrink={0}
-            borderRadius="2xl"
-            overflow="hidden"
-            onClick={() => setShownScreenshot(index)}
-            sx={{
-              '.gatsby-image-wrapper': {
-                width: '100% !important',
-                height: '100% !important',
-              },
-            }}
-          >
-            <GatsbyImage
-              alt="Snap image"
-              image={image.childImageSharp.medium}
-            />
-          </Box>
+            index={index}
+            image={image.childImageSharp.medium}
+            setShownScreenshot={setShownScreenshot}
+          />
         ))}
       </Box>
 
@@ -79,13 +100,15 @@ export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
       >
         <ModalOverlay />
         <ModalContent overflow="hidden">
-          <GatsbyImage
-            alt="Snap image"
-            image={
-              screenshots[shownScreenshot as number]?.childImageSharp
-                .large as IGatsbyImageData
-            }
-          />
+          {screenshots[shownScreenshot as number] && (
+            <GatsbyImage
+              alt="Snap image"
+              image={
+                screenshots[shownScreenshot as number]?.childImageSharp
+                  .large as IGatsbyImageData
+              }
+            />
+          )}
         </ModalContent>
       </Modal>
     </>
