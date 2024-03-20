@@ -50,7 +50,7 @@ type SnapPageProps = {
       | 'privateCode'
       | 'privacyPolicy'
       | 'termsOfUse'
-    > & { screenshots: Screenshot[] };
+    > & { screenshots: Screenshot[] | null };
   };
 };
 
@@ -134,7 +134,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data, pageContext }) => {
 
         <Divider marginY="8" />
 
-        {screenshots.length > 0 && (
+        {screenshots && screenshots.length > 0 && (
           <Box marginBottom="8" overflowX="auto" paddingBottom="2">
             <Screenshots screenshots={screenshots} />
           </Box>
