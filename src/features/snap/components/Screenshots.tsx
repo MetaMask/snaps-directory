@@ -57,10 +57,15 @@ export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
         return;
       }
 
-      if (event.code === 'ArrowLeft') {
-        setShownScreenshot((state) => Math.max((state as number) - 1, 0));
-      } else if (event.code === 'ArrowRight') {
-        setShownScreenshot((state) => Math.min((state as number) + 1, 2));
+      switch (event.code) {
+        case 'ArrowLeft':
+          setShownScreenshot((state) => Math.max((state as number) - 1, 0));
+          break;
+        case 'ArrowRight':
+          setShownScreenshot((state) => Math.min((state as number) + 1, 2));
+          break;
+        default:
+          break;
       }
     };
 
@@ -99,7 +104,7 @@ export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
         <ModalContent overflow="hidden">
           {screenshots[shownScreenshot as number] && (
             <GatsbyImage
-              data-testid={`screenshot-modal-${shownScreenshot ?? 0}`}
+              data-testid={`screenshot-modal-${shownScreenshot}`}
               alt="Snap image"
               image={
                 screenshots[shownScreenshot as number]?.childImageSharp

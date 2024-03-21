@@ -1,4 +1,8 @@
-import { act, fireEvent } from '@testing-library/react';
+import {
+  act,
+  fireEvent,
+  waitForElementToBeRemoved,
+} from '@testing-library/react';
 
 import { Screenshots } from './Screenshots';
 import { getMockScreenshots, render } from '../../../utils/test-utils';
@@ -15,8 +19,8 @@ describe('Screenshots', () => {
     expect(queryByTestId('screenshot-modal-0')).not.toBeInTheDocument();
   });
 
-  it('can open the modal', () => {
-    const { queryAllByAltText, queryByTestId } = render(
+  it('can open and close the modal', async () => {
+    const { queryAllByAltText, queryByTestId, getByRole } = render(
       <Screenshots screenshots={screenshots} />,
     );
 
@@ -24,6 +28,15 @@ describe('Screenshots', () => {
     act(() => firstScreenshot.click());
 
     expect(queryByTestId('screenshot-modal-0')).toBeInTheDocument();
+
+    const dialog = getByRole('dialog');
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const overlay = dialog.parentElement!;
+
+    fireEvent.mouseDown(overlay);
+    fireEvent.click(overlay);
+
+    await waitForElementToBeRemoved(queryByTestId('screenshot-modal-0'));
   });
 
   it('can switch between screenshots', () => {
@@ -44,6 +57,12 @@ describe('Screenshots', () => {
 
     fireEvent.keyUp(container, {
       code: 'ArrowLeft',
+    });
+
+    expect(queryByTestId('screenshot-modal-0')).toBeInTheDocument();
+
+    fireEvent.keyUp(container, {
+      code: 'ArrowDown',
     });
 
     expect(queryByTestId('screenshot-modal-0')).toBeInTheDocument();

@@ -257,7 +257,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
         createRemoteFileNode({
           url: new URL(
             path,
-            'https://raw.githubusercontent.com/MetaMask/snaps-registry/main/src',
+            'https://raw.githubusercontent.com/MetaMask/snaps-registry/main/src/',
           ).toString(),
           createNode,
           createNodeId,
@@ -390,7 +390,7 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
         additionalSourceCode: [SnapAdditionalSourceCode]
         privacyPolicy: String
         termsOfUse: String
-        screenshots: [File] @link(from: "fields.screenshotFiles")
+        screenshots: [File] @link(from: "screenshotFiles")
       }
 
       type SnapAdditionalSourceCode {
