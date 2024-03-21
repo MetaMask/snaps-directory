@@ -21,8 +21,9 @@ import {
   NotificationAcknowledger,
   Permissions,
   Description,
+  Screenshots,
 } from '../../../features';
-import type { Fields } from '../../../utils';
+import type { Fields, Screenshot } from '../../../utils';
 
 type SnapPageProps = {
   pageContext: {
@@ -49,7 +50,7 @@ type SnapPageProps = {
       | 'privateCode'
       | 'privacyPolicy'
       | 'termsOfUse'
-    >;
+    > & { screenshots: Screenshot[] };
   };
 };
 
@@ -84,6 +85,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data, pageContext }) => {
     latestVersion,
     category,
     permissions,
+    screenshots,
   } = data.snap;
 
   const { data: installedSnaps } = useGetInstalledSnapsQuery();
@@ -131,6 +133,13 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data, pageContext }) => {
         </Flex>
 
         <Divider marginY="8" />
+
+        {screenshots.length > 0 && (
+          <Box marginBottom="8" overflowX="auto" paddingBottom="2">
+            <Screenshots name={name} screenshots={screenshots} />
+          </Box>
+        )}
+
         <Metadata snap={data.snap} />
         <Divider marginTop="8" marginBottom="12" />
 
@@ -201,6 +210,17 @@ export const query = graphql`
       privateCode
       privacyPolicy
       termsOfUse
+      screenshots {
+        childImageSharp {
+          medium: gatsbyImageData(
+            layout: FIXED
+            width: 400
+            height: 225
+            quality: 90
+          )
+          large: gatsbyImageData(width: 960, height: 540, quality: 100)
+        }
+      }
     }
   }
 `;

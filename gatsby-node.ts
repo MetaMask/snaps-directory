@@ -14,7 +14,10 @@ import { assert } from '@metamask/utils';
 import deepEqual from 'fast-deep-equal';
 import { rm } from 'fs/promises';
 import type { GatsbyNode, NodeInput } from 'gatsby';
-import { createFileNodeFromBuffer } from 'gatsby-source-filesystem';
+import {
+  createFileNodeFromBuffer,
+  createRemoteFileNode,
+} from 'gatsby-source-filesystem';
 import { GraphQLJSONObject } from 'graphql-type-json';
 import type { RequestInfo, RequestInit } from 'node-fetch';
 import fetch from 'node-fetch';
@@ -245,6 +248,26 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       0,
     );
 
+    const nodeId = createNodeId(`snap__${snap.id}`);
+
+    const screenshots = snap.metadata.screenshots ?? [];
+
+    const screenshotNodes = await Promise.all(
+      screenshots.map(async (path) =>
+        createRemoteFileNode({
+          url: new URL(
+            path,
+            'https://raw.githubusercontent.com/MetaMask/snaps-registry/main/src/',
+          ).toString(),
+          createNode,
+          createNodeId,
+          getCache,
+          cache,
+          parentNodeId: nodeId,
+        }),
+      ),
+    );
+
     const content = {
       ...snap.metadata,
       snapId: snap.id,
@@ -258,6 +281,10 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       downloads: totalDownloads,
       lastUpdated,
 
+      screenshotFiles: screenshotNodes.map(
+        (screenshotNode) => screenshotNode.id,
+      ),
+
       // We need to stringify the permissions because Gatsby doesn't support
       // JSON objects in GraphQL out of the box. This field is turned into a
       // JSON object in the `createResolvers` function. The `permissionsJson`
@@ -269,7 +296,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       ...content,
       parent: null,
       children: [],
-      id: createNodeId(`snap__${snap.id}`),
+      id: nodeId,
       internal: {
         type: 'Snap',
         content: JSON.stringify(content),
@@ -363,6 +390,7 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
         additionalSourceCode: [SnapAdditionalSourceCode]
         privacyPolicy: String
         termsOfUse: String
+        screenshots: [File] @link(from: "screenshotFiles")
       }
 
       type SnapAdditionalSourceCode {

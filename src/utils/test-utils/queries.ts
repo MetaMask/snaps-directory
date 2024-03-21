@@ -1,7 +1,7 @@
 import type { InitialPermissions } from '@metamask/snaps-sdk';
 
 import { RegistrySnapCategory } from '../../constants';
-import type { Fields } from '../snaps';
+import type { Fields, Screenshot } from '../snaps';
 
 export type GetMockSiteMetadataArgs = {
   title?: string;
@@ -59,6 +59,160 @@ export function getMockPageContext({ locale = 'en-US' } = {}) {
   };
 }
 
+/**
+ * Get mock data for screenshots.
+ *
+ * @returns Mock data for screenshots.
+ */
+export function getMockScreenshots() {
+  return [
+    {
+      childImageSharp: {
+        medium: {
+          layout: 'fixed',
+          backgroundColor: '#181828',
+          images: {
+            fallback: {
+              src: '/static/7e10f91462adb6ce05b1d0e9b02535b8/758b3/7e10f91462adb6ce05b1d0e9b02535b8.png',
+              srcSet:
+                '/static/7e10f91462adb6ce05b1d0e9b02535b8/758b3/7e10f91462adb6ce05b1d0e9b02535b8.png 400w,\n/static/7e10f91462adb6ce05b1d0e9b02535b8/a0dad/7e10f91462adb6ce05b1d0e9b02535b8.png 800w',
+              sizes: '400px',
+            },
+            sources: [
+              {
+                srcSet:
+                  '/static/7e10f91462adb6ce05b1d0e9b02535b8/e5289/7e10f91462adb6ce05b1d0e9b02535b8.webp 400w,\n/static/7e10f91462adb6ce05b1d0e9b02535b8/490e2/7e10f91462adb6ce05b1d0e9b02535b8.webp 800w',
+                type: 'image/webp',
+                sizes: '400px',
+              },
+            ],
+          },
+          width: 400,
+          height: 225,
+        },
+        large: {
+          layout: 'constrained',
+          backgroundColor: '#181828',
+          images: {
+            fallback: {
+              src: '/static/7e10f91462adb6ce05b1d0e9b02535b8/f5e84/7e10f91462adb6ce05b1d0e9b02535b8.png',
+              srcSet:
+                '/static/7e10f91462adb6ce05b1d0e9b02535b8/d0a15/7e10f91462adb6ce05b1d0e9b02535b8.png 240w,\n/static/7e10f91462adb6ce05b1d0e9b02535b8/c6b60/7e10f91462adb6ce05b1d0e9b02535b8.png 480w,\n/static/7e10f91462adb6ce05b1d0e9b02535b8/f5e84/7e10f91462adb6ce05b1d0e9b02535b8.png 960w',
+              sizes: '(min-width: 960px) 960px, 100vw',
+            },
+            sources: [
+              {
+                srcSet:
+                  '/static/7e10f91462adb6ce05b1d0e9b02535b8/4a319/7e10f91462adb6ce05b1d0e9b02535b8.webp 240w,\n/static/7e10f91462adb6ce05b1d0e9b02535b8/0df1a/7e10f91462adb6ce05b1d0e9b02535b8.webp 480w,\n/static/7e10f91462adb6ce05b1d0e9b02535b8/eeb31/7e10f91462adb6ce05b1d0e9b02535b8.webp 960w',
+                type: 'image/webp',
+                sizes: '(min-width: 960px) 960px, 100vw',
+              },
+            ],
+          },
+          width: 960,
+          height: 540,
+        },
+      },
+    },
+    {
+      childImageSharp: {
+        medium: {
+          layout: 'fixed',
+          backgroundColor: '#282828',
+          images: {
+            fallback: {
+              src: '/static/01d53b165dac0be84479c8766b65d57b/758b3/01d53b165dac0be84479c8766b65d57b.png',
+              srcSet:
+                '/static/01d53b165dac0be84479c8766b65d57b/758b3/01d53b165dac0be84479c8766b65d57b.png 400w,\n/static/01d53b165dac0be84479c8766b65d57b/a0dad/01d53b165dac0be84479c8766b65d57b.png 800w',
+              sizes: '400px',
+            },
+            sources: [
+              {
+                srcSet:
+                  '/static/01d53b165dac0be84479c8766b65d57b/e5289/01d53b165dac0be84479c8766b65d57b.webp 400w,\n/static/01d53b165dac0be84479c8766b65d57b/490e2/01d53b165dac0be84479c8766b65d57b.webp 800w',
+                type: 'image/webp',
+                sizes: '400px',
+              },
+            ],
+          },
+          width: 400,
+          height: 225,
+        },
+        large: {
+          layout: 'constrained',
+          backgroundColor: '#282828',
+          images: {
+            fallback: {
+              src: '/static/01d53b165dac0be84479c8766b65d57b/f5e84/01d53b165dac0be84479c8766b65d57b.png',
+              srcSet:
+                '/static/01d53b165dac0be84479c8766b65d57b/d0a15/01d53b165dac0be84479c8766b65d57b.png 240w,\n/static/01d53b165dac0be84479c8766b65d57b/c6b60/01d53b165dac0be84479c8766b65d57b.png 480w,\n/static/01d53b165dac0be84479c8766b65d57b/f5e84/01d53b165dac0be84479c8766b65d57b.png 960w',
+              sizes: '(min-width: 960px) 960px, 100vw',
+            },
+            sources: [
+              {
+                srcSet:
+                  '/static/01d53b165dac0be84479c8766b65d57b/4a319/01d53b165dac0be84479c8766b65d57b.webp 240w,\n/static/01d53b165dac0be84479c8766b65d57b/0df1a/01d53b165dac0be84479c8766b65d57b.webp 480w,\n/static/01d53b165dac0be84479c8766b65d57b/eeb31/01d53b165dac0be84479c8766b65d57b.webp 960w',
+                type: 'image/webp',
+                sizes: '(min-width: 960px) 960px, 100vw',
+              },
+            ],
+          },
+          width: 960,
+          height: 540,
+        },
+      },
+    },
+    {
+      childImageSharp: {
+        medium: {
+          layout: 'fixed',
+          backgroundColor: '#182828',
+          images: {
+            fallback: {
+              src: '/static/a20f0f9585a4e848a0cb828a29a4de09/758b3/a20f0f9585a4e848a0cb828a29a4de09.png',
+              srcSet:
+                '/static/a20f0f9585a4e848a0cb828a29a4de09/758b3/a20f0f9585a4e848a0cb828a29a4de09.png 400w,\n/static/a20f0f9585a4e848a0cb828a29a4de09/a0dad/a20f0f9585a4e848a0cb828a29a4de09.png 800w',
+              sizes: '400px',
+            },
+            sources: [
+              {
+                srcSet:
+                  '/static/a20f0f9585a4e848a0cb828a29a4de09/e5289/a20f0f9585a4e848a0cb828a29a4de09.webp 400w,\n/static/a20f0f9585a4e848a0cb828a29a4de09/490e2/a20f0f9585a4e848a0cb828a29a4de09.webp 800w',
+                type: 'image/webp',
+                sizes: '400px',
+              },
+            ],
+          },
+          width: 400,
+          height: 225,
+        },
+        large: {
+          layout: 'constrained',
+          backgroundColor: '#182828',
+          images: {
+            fallback: {
+              src: '/static/a20f0f9585a4e848a0cb828a29a4de09/f5e84/a20f0f9585a4e848a0cb828a29a4de09.png',
+              srcSet:
+                '/static/a20f0f9585a4e848a0cb828a29a4de09/d0a15/a20f0f9585a4e848a0cb828a29a4de09.png 240w,\n/static/a20f0f9585a4e848a0cb828a29a4de09/c6b60/a20f0f9585a4e848a0cb828a29a4de09.png 480w,\n/static/a20f0f9585a4e848a0cb828a29a4de09/f5e84/a20f0f9585a4e848a0cb828a29a4de09.png 960w',
+              sizes: '(min-width: 960px) 960px, 100vw',
+            },
+            sources: [
+              {
+                srcSet:
+                  '/static/a20f0f9585a4e848a0cb828a29a4de09/4a319/a20f0f9585a4e848a0cb828a29a4de09.webp 240w,\n/static/a20f0f9585a4e848a0cb828a29a4de09/0df1a/a20f0f9585a4e848a0cb828a29a4de09.webp 480w,\n/static/a20f0f9585a4e848a0cb828a29a4de09/eeb31/a20f0f9585a4e848a0cb828a29a4de09.webp 960w',
+                type: 'image/webp',
+                sizes: '(min-width: 960px) 960px, 100vw',
+              },
+            ],
+          },
+          width: 960,
+          height: 540,
+        },
+      },
+    },
+  ];
+}
+
 export type MockSnap = Fields<
   Queries.Snap,
   | 'id'
@@ -84,7 +238,7 @@ export type MockSnap = Fields<
   | 'privateCode'
   | 'privacyPolicy'
   | 'termsOfUse'
->;
+> & { screenshots: Screenshot[] };
 
 export type GetMockSnapArgs = {
   id?: string;
@@ -118,6 +272,7 @@ export type GetMockSnapArgs = {
   privateCode?: boolean;
   privacyPolicy?: string;
   termsOfUse?: string;
+  screenshots?: any[];
 };
 
 /**
@@ -148,6 +303,7 @@ export type GetMockSnapArgs = {
  * private.
  * @param args.privacyPolicy - The privacy policy URL.
  * @param args.termsOfUse - The terms of use URL.
+ * @param args.screenshots - The screenshots.
  * @returns The mock snap data.
  */
 export function getMockSnap({
@@ -196,6 +352,7 @@ export function getMockSnap({
   privateCode = false,
   privacyPolicy = 'https://example.com/privacyPolicy',
   termsOfUse = 'https://example.com/termsOfUse',
+  screenshots = getMockScreenshots(),
 }: GetMockSnapArgs = {}): { snap: MockSnap } {
   return {
     snap: {
@@ -225,6 +382,7 @@ export function getMockSnap({
       privateCode,
       privacyPolicy,
       termsOfUse,
+      screenshots,
     },
   };
 }

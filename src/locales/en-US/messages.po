@@ -630,6 +630,11 @@ msgstr ""
 msgid "Schedule and execute periodic actions"
 msgstr ""
 
+#: src/features/snap/components/Screenshot.tsx
+#: src/features/snap/components/Screenshots.tsx
+msgid "Screenshot for {name}"
+msgstr "Screenshot for {name}"
+
 #: src/components/icons/index.ts
 msgid "Search"
 msgstr ""

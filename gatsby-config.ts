@@ -22,6 +22,7 @@ const config: GatsbyConfig = {
   plugins: [
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-react-helmet-async',
     {
