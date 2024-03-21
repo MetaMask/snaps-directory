@@ -4,42 +4,8 @@ import type { IGatsbyImageData } from 'gatsby-plugin-image';
 import type { FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
 
+import { Screenshot } from './Screenshot';
 import type { Screenshot as ScreenshotType } from '../../../utils';
-
-export type ScreenshotProps = {
-  image: IGatsbyImageData;
-  index: number;
-  setShownScreenshot: (index: number) => void;
-};
-
-export const Screenshot: FunctionComponent<ScreenshotProps> = ({
-  image,
-  index,
-  setShownScreenshot,
-}) => {
-  const onClick = () => {
-    setShownScreenshot(index);
-  };
-
-  return (
-    <Box
-      maxW={['250px', null, '400px']}
-      maxH={['140px', null, '225px']}
-      flexShrink={0}
-      borderRadius="2xl"
-      overflow="hidden"
-      onClick={onClick}
-      sx={{
-        '.gatsby-image-wrapper': {
-          width: '100% !important',
-          height: '100% !important',
-        },
-      }}
-    >
-      <GatsbyImage alt="Snap image" image={image} />
-    </Box>
-  );
-};
 
 export type ScreenshotsProps = {
   screenshots: ScreenshotType[];
