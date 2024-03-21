@@ -635,6 +635,11 @@ msgstr "Результаты для \"{searchQuery}\""
 msgid "Schedule and execute periodic actions"
 msgstr "Планируйте и выполняйте периодические действия"
 
+#: src/features/snap/components/Screenshot.tsx
+#: src/features/snap/components/Screenshots.tsx
+msgid "Screenshot for {name}"
+msgstr ""
+
 #: src/components/icons/index.ts
 msgid "Search"
 msgstr "Поиск"

@@ -1,4 +1,6 @@
 import { Box, Modal, ModalContent, ModalOverlay } from '@chakra-ui/react';
+import { t } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import type { IGatsbyImageData } from 'gatsby-plugin-image';
 import type { FunctionComponent } from 'react';
@@ -16,6 +18,7 @@ export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
   name,
   screenshots,
 }) => {
+  const { _ } = useLingui();
   const [shownScreenshot, setShownScreenshot] = useState<number | null>(null);
   const isOpen = shownScreenshot !== null;
 
@@ -74,7 +77,7 @@ export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
           {screenshots[shownScreenshot as number] && (
             <GatsbyImage
               data-testid={`screenshot-modal-${shownScreenshot}`}
-              alt={`Screenshot for ${name}`}
+              alt={_(t`Screenshot for ${name}`)}
               image={
                 screenshots[shownScreenshot as number]?.childImageSharp
                   .large as IGatsbyImageData

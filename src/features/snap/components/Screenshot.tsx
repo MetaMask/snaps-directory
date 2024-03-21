@@ -1,4 +1,6 @@
 import { Box } from '@chakra-ui/react';
+import { t } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import type { IGatsbyImageData } from 'gatsby-plugin-image';
 import type { FunctionComponent } from 'react';
@@ -16,6 +18,8 @@ export const Screenshot: FunctionComponent<ScreenshotProps> = ({
   index,
   setShownScreenshot,
 }) => {
+  const { _ } = useLingui();
+
   const onClick = () => {
     setShownScreenshot(index);
   };
@@ -38,7 +42,7 @@ export const Screenshot: FunctionComponent<ScreenshotProps> = ({
         cursor: 'pointer',
       }}
     >
-      <GatsbyImage alt={`Screenshot for ${name}`} image={image} />
+      <GatsbyImage alt={_(t`Screenshot for ${name}`)} image={image} />
     </Box>
   );
 };
