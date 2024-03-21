@@ -136,7 +136,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data, pageContext }) => {
 
         {screenshots.length > 0 && (
           <Box marginBottom="8" overflowX="auto" paddingBottom="2">
-            <Screenshots screenshots={screenshots} />
+            <Screenshots name={name} screenshots={screenshots} />
           </Box>
         )}
 

@@ -8,10 +8,12 @@ import { Screenshot } from './Screenshot';
 import type { Screenshot as ScreenshotType } from '../../../utils';
 
 export type ScreenshotsProps = {
+  name: string;
   screenshots: ScreenshotType[];
 };
 
 export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
+  name,
   screenshots,
 }) => {
   const [shownScreenshot, setShownScreenshot] = useState<number | null>(null);
@@ -52,6 +54,7 @@ export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
         {screenshots.map((image, index) => (
           <Screenshot
             key={index}
+            name={name}
             index={index}
             image={image.childImageSharp.medium}
             setShownScreenshot={setShownScreenshot}
@@ -71,7 +74,7 @@ export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
           {screenshots[shownScreenshot as number] && (
             <GatsbyImage
               data-testid={`screenshot-modal-${shownScreenshot}`}
-              alt="Snap image"
+              alt={`Screenshot for ${name}`}
               image={
                 screenshots[shownScreenshot as number]?.childImageSharp
                   .large as IGatsbyImageData

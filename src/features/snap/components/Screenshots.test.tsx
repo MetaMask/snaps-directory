@@ -5,26 +5,26 @@ import {
 } from '@testing-library/react';
 
 import { Screenshots } from './Screenshots';
-import { getMockScreenshots, render } from '../../../utils/test-utils';
+import { getMockSnap, render } from '../../../utils/test-utils';
 
-const screenshots = getMockScreenshots();
+const { name, screenshots } = getMockSnap().snap;
 
 describe('Screenshots', () => {
   it('renders', () => {
     const { queryAllByAltText, queryByTestId } = render(
-      <Screenshots screenshots={screenshots} />,
+      <Screenshots name={name} screenshots={screenshots} />,
     );
 
-    expect(queryAllByAltText('Snap image')).toHaveLength(3);
+    expect(queryAllByAltText(`Screenshot for ${name}`)).toHaveLength(3);
     expect(queryByTestId('screenshot-modal-0')).not.toBeInTheDocument();
   });
 
   it('can open and close the modal', async () => {
     const { queryAllByAltText, queryByTestId, getByRole } = render(
-      <Screenshots screenshots={screenshots} />,
+      <Screenshots name={name} screenshots={screenshots} />,
     );
 
-    const firstScreenshot = queryAllByAltText('Snap image')[0];
+    const firstScreenshot = queryAllByAltText(`Screenshot for ${name}`)[0];
     act(() => firstScreenshot.click());
 
     expect(queryByTestId('screenshot-modal-0')).toBeInTheDocument();
@@ -41,10 +41,10 @@ describe('Screenshots', () => {
 
   it('can switch between screenshots', () => {
     const { queryAllByAltText, queryByTestId, container } = render(
-      <Screenshots screenshots={screenshots} />,
+      <Screenshots name={name} screenshots={screenshots} />,
     );
 
-    const firstScreenshot = queryAllByAltText('Snap image')[0];
+    const firstScreenshot = queryAllByAltText(`Screenshot for ${name}`)[0];
     act(() => firstScreenshot.click());
 
     expect(queryByTestId('screenshot-modal-0')).toBeInTheDocument();
@@ -70,7 +70,7 @@ describe('Screenshots', () => {
 
   it('using the arrow keys should not display a screenshot one hasnt been clicked', () => {
     const { queryByTestId, container } = render(
-      <Screenshots screenshots={screenshots} />,
+      <Screenshots name={name} screenshots={screenshots} />,
     );
 
     fireEvent.keyUp(container, {

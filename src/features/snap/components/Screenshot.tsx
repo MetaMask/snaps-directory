@@ -4,12 +4,14 @@ import type { IGatsbyImageData } from 'gatsby-plugin-image';
 import type { FunctionComponent } from 'react';
 
 export type ScreenshotProps = {
+  name: string;
   image: IGatsbyImageData;
   index: number;
   setShownScreenshot: (index: number) => void;
 };
 
 export const Screenshot: FunctionComponent<ScreenshotProps> = ({
+  name,
   image,
   index,
   setShownScreenshot,
@@ -36,7 +38,7 @@ export const Screenshot: FunctionComponent<ScreenshotProps> = ({
         cursor: 'pointer',
       }}
     >
-      <GatsbyImage alt="Snap image" image={image} />
+      <GatsbyImage alt={`Screenshot for ${name}`} image={image} />
     </Box>
   );
 };
