@@ -6,6 +6,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.10.0]
+### Uncategorized
+- Improve modal behavior ([#363](https://github.com/MetaMask/snaps-directory/pull/363))
+- Bump @metamask/snaps-controllers from 6.0.3 to 6.0.4 ([#358](https://github.com/MetaMask/snaps-directory/pull/358))
+- Bump follow-redirects from 1.15.2 to 1.15.6 ([#360](https://github.com/MetaMask/snaps-directory/pull/360))
+- Bump ip from 2.0.0 to 2.0.1 ([#361](https://github.com/MetaMask/snaps-directory/pull/361))
+- Add support for screenshots ([#352](https://github.com/MetaMask/snaps-directory/pull/352))
+- Bump @metamask/snaps-rpc-methods from 7.0.1 to 7.0.2 ([#356](https://github.com/MetaMask/snaps-directory/pull/356))
+- Bump @metamask/snaps-utils from 7.0.3 to 7.0.4 ([#355](https://github.com/MetaMask/snaps-directory/pull/355))
+- Bump @metamask/snaps-sdk from 3.1.1 to 3.2.0 ([#357](https://github.com/MetaMask/snaps-directory/pull/357))
+- Bump @metamask/snaps-registry from 3.0.1 to 3.1.0 ([#359](https://github.com/MetaMask/snaps-directory/pull/359))
+- Tweak popularity calculation ([#354](https://github.com/MetaMask/snaps-directory/pull/354))
+- Bump @metamask/safe-event-emitter from 3.1.0 to 3.1.1 ([#346](https://github.com/MetaMask/snaps-directory/pull/346))
+- Bump @metamask/utils from 8.3.0 to 8.4.0 ([#353](https://github.com/MetaMask/snaps-directory/pull/353))
+
 ## [1.9.0]
 ### Added
 - Add support for multiple locales ([#328](https://github.com/MetaMask/snaps-directory/pull/328))
@@ -164,7 +179,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.9.0...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.10.0...HEAD
+[1.10.0]: https://github.com/MetaMask/snaps-directory/compare/v1.9.0...v1.10.0
 [1.9.0]: https://github.com/MetaMask/snaps-directory/compare/v1.8.0...v1.9.0
 [1.8.0]: https://github.com/MetaMask/snaps-directory/compare/v1.7.0...v1.8.0
 [1.7.0]: https://github.com/MetaMask/snaps-directory/compare/v1.6.0...v1.7.0
