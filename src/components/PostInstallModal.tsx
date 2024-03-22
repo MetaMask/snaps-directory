@@ -50,7 +50,13 @@ export const PostInstallModal: FunctionComponent<PostInstallModalProps> = ({
 }) => {
   return (
     <>
-      <Modal variant="minimal" size="xs" isOpen={isOpen} onClose={onClose}>
+      <Modal
+        variant="minimal"
+        size="xs"
+        isOpen={isOpen}
+        onClose={onClose}
+        preserveScrollBarGap
+      >
         <ModalOverlay />
         <ModalContent>
           <ModalBody>

@@ -1884,6 +1884,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@chakra-ui/focus-lock@patch:@chakra-ui/focus-lock@npm%3A2.1.0#./.yarn/patches/@chakra-ui-focus-lock-npm-2.1.0-46e41f49ee.patch::locator=%40metamask%2Fsnaps-directory%40workspace%3A.":
+  version: 2.1.0
+  resolution: "@chakra-ui/focus-lock@patch:@chakra-ui/focus-lock@npm%3A2.1.0#./.yarn/patches/@chakra-ui-focus-lock-npm-2.1.0-46e41f49ee.patch::version=2.1.0&hash=12e677&locator=%40metamask%2Fsnaps-directory%40workspace%3A."
+  dependencies:
+    "@chakra-ui/dom-utils": 2.1.0
+    react-focus-lock: ^2.9.4
+  peerDependencies:
+    react: ">=18"
+  checksum: 9034905acd1dc54936d2efbf7ed461ebec489554943b9f30d3700d8b11be52cfa21d4d92d42c9834dc7a00ed25b17530794de87470bc9f1404d33f8990f567d3
+  languageName: node
+  linkType: hard
+
 "@chakra-ui/form-control@npm:2.1.0":
   version: 2.1.0
   resolution: "@chakra-ui/form-control@npm:2.1.0"

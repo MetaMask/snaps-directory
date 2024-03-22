@@ -71,6 +71,7 @@ export const Screenshots: FunctionComponent<ScreenshotsProps> = ({
         onClose={onClose}
         size="4xl"
         isCentered
+        preserveScrollBarGap
       >
         <ModalOverlay />
         <ModalContent overflow="hidden">

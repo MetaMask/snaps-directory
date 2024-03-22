@@ -1,0 +1,28 @@
+diff --git a/dist/chunk-UU5OHSNF.mjs b/dist/chunk-UU5OHSNF.mjs
+index ab2da7c6549ee5bf14954007159237ed727f4626..e5ae5c92a26c04188c0b15eed85721cd3e61de77 100644
+--- a/dist/chunk-UU5OHSNF.mjs
++++ b/dist/chunk-UU5OHSNF.mjs
+@@ -46,7 +46,8 @@ var FocusLock = (props) => {
+       disabled: isDisabled,
+       onActivation,
+       onDeactivation,
+-      returnFocus,
++      // We prefer not scrolling when returning focus, but Chakra doesn't currently support that.
++      returnFocus: returnFocus ? { preventScroll: true } : false,
+       children
+     }
+   );
+diff --git a/dist/focus-lock.js b/dist/focus-lock.js
+index 9bbab83ca824e2da993bb5af1cf3cbaa3613469c..4484343331e4cb216a7064b1571bb12495089e8f 100644
+--- a/dist/focus-lock.js
++++ b/dist/focus-lock.js
+@@ -80,7 +80,8 @@ var FocusLock = (props) => {
+       disabled: isDisabled,
+       onActivation,
+       onDeactivation,
+-      returnFocus,
++      // We prefer not scrolling when returning focus, but Chakra doesn't currently support that.
++      returnFocus: returnFocus ? { preventScroll: true } : false,
+       children
+     }
+   );
