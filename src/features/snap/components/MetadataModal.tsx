@@ -55,7 +55,12 @@ export const MetadataModal: FunctionComponent<MetadataModalProps> = ({
   } = snap;
 
   return (
-    <Modal variant="minimal" isOpen={isOpen} onClose={onClose}>
+    <Modal
+      variant="minimal"
+      isOpen={isOpen}
+      onClose={onClose}
+      preserveScrollBarGap
+    >
       <ModalOverlay />
       <ModalContent>
         <ModalCloseButton />

@@ -28,7 +28,13 @@ export const InstallUnsupportedDesktop: FunctionComponent<
   const isSupported = useSupportedVersion();
 
   return (
-    <Modal variant="minimal" size="xs" isOpen={isOpen} onClose={onClose}>
+    <Modal
+      variant="minimal"
+      size="xs"
+      isOpen={isOpen}
+      onClose={onClose}
+      preserveScrollBarGap
+    >
       <ModalOverlay />
       <ModalContent>
         <ModalBody>
