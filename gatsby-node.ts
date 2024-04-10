@@ -192,8 +192,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
   );
 
   const stats = rawStats.reduce((acc, snap) => {
-    const id = snap.snap_id.replaceAll('/', '/');
-    acc[id] = snap.installs;
+    acc[snap.snap_id] = snap.installs;
     return acc;
   }, {});
 
