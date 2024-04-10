@@ -60,6 +60,12 @@ const REGISTRY_URL = 'https://acl.execution.metamask.io/latest/registry.json';
 const SIGNATURE_URL = 'https://acl.execution.metamask.io/latest/signature.json';
 const PUBLIC_KEY =
   '0x025b65308f0f0fb8bc7f7ff87bfc296e0330eee5d3c1d1ee4a048b2fd6a86fa0a6';
+const STATS_URL = 'https://data.snaps.metamask.io/';
+
+const HEADERS = {
+  'User-Agent':
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36',
+};
 
 const LEGACY_CATEGORIES: Record<string, string> = {
   'transaction insights': 'security',
@@ -114,11 +120,6 @@ function getDescription(
  * @returns The registry and custom fetch function.
  */
 async function getRegistry() {
-  const headers = {
-    'User-Agent':
-      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36',
-  };
-
   const cachedTarballFetch = fetchBuilder.withCache(
     new FileSystemCache({ cacheDirectory: 'node_modules/.cache/npm/tarballs' }),
   );
@@ -129,11 +130,11 @@ async function getRegistry() {
   );
 
   const rawRegistry = await fetch(REGISTRY_URL, {
-    headers,
+    headers: HEADERS,
   }).then(async (response) => response.text());
 
   const signature = await fetch(SIGNATURE_URL, {
-    headers,
+    headers: HEADERS,
   }).then(async (response) => response.json());
 
   const isRegistryValid = verify({
@@ -146,9 +147,9 @@ async function getRegistry() {
 
   const registry: SnapsRegistryDatabase = JSON.parse(rawRegistry);
 
-  const cachedRegistry = await cachedFetch(REGISTRY_URL, { headers }).then(
-    async (response: any) => response.json(),
-  );
+  const cachedRegistry = await cachedFetch(REGISTRY_URL, {
+    headers: HEADERS,
+  }).then(async (response: any) => response.json());
 
   // If the registry has changed, we need to clear the fetch cache to ensure
   // that we get the latest tarballs.
@@ -185,6 +186,16 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
 }) => {
   const { createNode } = actions;
   const { registry, customFetch } = await getRegistry();
+
+  const rawStats = await customFetch(STATS_URL, { headers: HEADERS }).then(
+    async (response: any) => response.json(),
+  );
+
+  const stats = rawStats.reduce((acc, snap) => {
+    const id = snap.snap_id.replaceAll('/', '/');
+    acc[id] = snap.installs;
+    return acc;
+  }, {});
 
   const verifiedSnaps = Object.values(registry.verifiedSnaps)
     .filter((snap) => IS_STAGING || Boolean(snap.metadata.category))
@@ -234,24 +245,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
 
     const lastUpdated = new Date(time[latestVersion]).getTime();
 
-    const downloadsJson = await customFetch(
-      `https://api.npmjs.org/versions/${encodeURIComponent(slug)}/last-week`,
-    ).then(async (response: any) => response.json());
-
-    const { downloads } = downloadsJson as {
-      downloads: Record<string, number>;
-    };
-
-    const allVersions = Object.keys(snap.versions);
-    const totalDownloads = Object.entries(downloads).reduce(
-      (total, [version, count]) => {
-        if (allVersions.includes(version)) {
-          return total + count;
-        }
-        return total;
-      },
-      0,
-    );
+    const downloads = stats[snap.id] ?? 0;
 
     const nodeId = createNodeId(`snap__${snap.id}`);
 
@@ -288,7 +282,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       slug,
       latestVersion,
       icon,
-      downloads: totalDownloads,
+      downloads,
       lastUpdated,
 
       screenshotFiles: screenshotNodes.map(
