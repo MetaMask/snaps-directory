@@ -80,7 +80,7 @@ const CategoryInstalled: FunctionComponent<CategoryInstalledProps> = ({
     // practice it does not.
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     navigate('/explore', { replace: true });
-  }, [data.category.name, dispatch]);
+  }, [categoryName, dispatch]);
 
   return <Head data={data} pageContext={pageContext} />;
 };
