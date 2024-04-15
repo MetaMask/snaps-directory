@@ -319,7 +319,7 @@ export function getMockSnap({
   latestVersion = '1.0.0',
   website = 'https://example.com',
   onboard = false,
-  category = RegistrySnapCategory.TransactionInsights,
+  category = RegistrySnapCategory.Security,
   author = {
     name: 'Author',
     website: 'https://example.com/author',
@@ -403,7 +403,7 @@ export type GetMockCategoryArgs = {
  * @returns The mock category data.
  */
 export function getMockCategory({
-  name = RegistrySnapCategory.TransactionInsights,
+  name = RegistrySnapCategory.Security,
   banner = {
     publicURL: 'https://example.com/banner.png',
   },

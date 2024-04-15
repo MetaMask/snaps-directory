@@ -92,7 +92,7 @@ describe('filterSlice', () => {
       const state = filterSlice.reducer(
         filterSlice.reducer(
           filterSlice.getInitialState(),
-          setCategory(RegistrySnapCategory.TransactionInsights),
+          setCategory(RegistrySnapCategory.Security),
         ),
         toggleInstalled(),
       );
@@ -107,15 +107,13 @@ describe('filterSlice', () => {
       const state = filterSlice.reducer(
         filterSlice.reducer(
           filterSlice.reducer(filterSlice.getInitialState(), toggleInstalled()),
-          setCategory(RegistrySnapCategory.TransactionInsights),
+          setCategory(RegistrySnapCategory.Security),
         ),
         toggleInstalled(),
       );
 
       expect(state.installed).toBe(false);
-      expect(state.categories).toStrictEqual([
-        RegistrySnapCategory.TransactionInsights,
-      ]);
+      expect(state.categories).toStrictEqual([RegistrySnapCategory.Security]);
     });
   });
 
@@ -123,21 +121,17 @@ describe('filterSlice', () => {
     it('toggles the category', () => {
       const state = filterSlice.reducer(
         filterSlice.getInitialState(),
-        toggleCategory(RegistrySnapCategory.TransactionInsights),
+        toggleCategory(RegistrySnapCategory.Security),
       );
 
-      expect(state.categories).not.toContain(
-        RegistrySnapCategory.TransactionInsights,
-      );
+      expect(state.categories).not.toContain(RegistrySnapCategory.Security);
 
       const newState = filterSlice.reducer(
         state,
-        toggleCategory(RegistrySnapCategory.TransactionInsights),
+        toggleCategory(RegistrySnapCategory.Security),
       );
 
-      expect(newState.categories).toContain(
-        RegistrySnapCategory.TransactionInsights,
-      );
+      expect(newState.categories).toContain(RegistrySnapCategory.Security);
     });
 
     it('sets the categories to all if all categories are toggled off', () => {
@@ -160,12 +154,10 @@ describe('filterSlice', () => {
     it('sets the category', () => {
       const state = filterSlice.reducer(
         filterSlice.getInitialState(),
-        setCategory(RegistrySnapCategory.TransactionInsights),
+        setCategory(RegistrySnapCategory.Security),
       );
 
-      expect(state.categories).toStrictEqual([
-        RegistrySnapCategory.TransactionInsights,
-      ]);
+      expect(state.categories).toStrictEqual([RegistrySnapCategory.Security]);
     });
   });
 
@@ -263,14 +255,14 @@ describe('filterSlice', () => {
         filter: {
           categories: [
             RegistrySnapCategory.Interoperability,
-            RegistrySnapCategory.Notifications,
+            RegistrySnapCategory.Communication,
           ],
         },
       });
 
       expect(getCategories(state)).toStrictEqual([
         RegistrySnapCategory.Interoperability,
-        RegistrySnapCategory.Notifications,
+        RegistrySnapCategory.Communication,
       ]);
     });
   });
@@ -281,7 +273,7 @@ describe('filterSlice', () => {
         filter: {
           categories: [
             RegistrySnapCategory.Interoperability,
-            RegistrySnapCategory.Notifications,
+            RegistrySnapCategory.Communication,
           ],
         },
       });
@@ -296,14 +288,12 @@ describe('filterSlice', () => {
         filter: {
           categories: [
             RegistrySnapCategory.Interoperability,
-            RegistrySnapCategory.Notifications,
+            RegistrySnapCategory.Communication,
           ],
         },
       });
 
-      expect(getCategory(RegistrySnapCategory.TransactionInsights)(state)).toBe(
-        false,
-      );
+      expect(getCategory(RegistrySnapCategory.Security)(state)).toBe(false);
     });
   });
 
@@ -337,8 +327,8 @@ describe('filterSlice', () => {
           installed: false,
           categories: [
             RegistrySnapCategory.Interoperability,
-            RegistrySnapCategory.Notifications,
-            RegistrySnapCategory.TransactionInsights,
+            RegistrySnapCategory.Communication,
+            RegistrySnapCategory.Security,
           ],
           order: Order.Popularity,
         },
@@ -387,8 +377,8 @@ describe('filterSlice', () => {
           installed: false,
           categories: [
             RegistrySnapCategory.Interoperability,
-            RegistrySnapCategory.Notifications,
-            RegistrySnapCategory.TransactionInsights,
+            RegistrySnapCategory.Communication,
+            RegistrySnapCategory.Security,
           ],
           order: Order.Popularity,
         },
@@ -431,8 +421,8 @@ describe('filterSlice', () => {
           installed: false,
           categories: [
             RegistrySnapCategory.Interoperability,
-            RegistrySnapCategory.Notifications,
-            RegistrySnapCategory.TransactionInsights,
+            RegistrySnapCategory.Communication,
+            RegistrySnapCategory.Security,
           ],
           order: Order.Popularity,
         },
@@ -478,8 +468,8 @@ describe('filterSlice', () => {
           installed: false,
           categories: [
             RegistrySnapCategory.Interoperability,
-            RegistrySnapCategory.Notifications,
-            RegistrySnapCategory.TransactionInsights,
+            RegistrySnapCategory.Communication,
+            RegistrySnapCategory.Security,
           ],
           order: Order.Popularity,
         },
@@ -516,8 +506,8 @@ describe('filterSlice', () => {
           installed: true,
           categories: [
             RegistrySnapCategory.Interoperability,
-            RegistrySnapCategory.Notifications,
-            RegistrySnapCategory.TransactionInsights,
+            RegistrySnapCategory.Communication,
+            RegistrySnapCategory.Security,
           ],
           order: Order.Popularity,
         },
@@ -541,7 +531,7 @@ describe('filterSlice', () => {
     it('returns the Snaps within the selected categories', () => {
       const { snap: fooSnap } = getMockSnap({
         snapId: 'foo-snap',
-        category: RegistrySnapCategory.Notifications,
+        category: RegistrySnapCategory.Communication,
       });
 
       const { snap: barSnap } = getMockSnap({
@@ -551,7 +541,7 @@ describe('filterSlice', () => {
 
       const { snap: bazSnap } = getMockSnap({
         snapId: 'baz-snap',
-        category: RegistrySnapCategory.TransactionInsights,
+        category: RegistrySnapCategory.Security,
       });
 
       const state = getMockState({
@@ -560,8 +550,8 @@ describe('filterSlice', () => {
           searchResults: [],
           installed: false,
           categories: [
-            RegistrySnapCategory.Notifications,
-            RegistrySnapCategory.TransactionInsights,
+            RegistrySnapCategory.Communication,
+            RegistrySnapCategory.Security,
           ],
           order: Order.Popularity,
         },
@@ -609,8 +599,8 @@ describe('filterSlice', () => {
           installed: false,
           categories: [
             RegistrySnapCategory.Interoperability,
-            RegistrySnapCategory.Notifications,
-            RegistrySnapCategory.TransactionInsights,
+            RegistrySnapCategory.Communication,
+            RegistrySnapCategory.Security,
           ],
           order: Order.Alphabetical,
         },
@@ -665,8 +655,8 @@ describe('filterSlice', () => {
           installed: false,
           categories: [
             RegistrySnapCategory.Interoperability,
-            RegistrySnapCategory.Notifications,
-            RegistrySnapCategory.TransactionInsights,
+            RegistrySnapCategory.Communication,
+            RegistrySnapCategory.Security,
           ],
           order: Order.Popularity,
         },
@@ -718,8 +708,8 @@ describe('filterSlice', () => {
           installed: false,
           categories: [
             RegistrySnapCategory.Interoperability,
-            RegistrySnapCategory.Notifications,
-            RegistrySnapCategory.TransactionInsights,
+            RegistrySnapCategory.Communication,
+            RegistrySnapCategory.Security,
           ],
           order: Order.DeterministicRandom,
         },
@@ -771,8 +761,8 @@ describe('filterSlice', () => {
           installed: false,
           categories: [
             RegistrySnapCategory.Interoperability,
-            RegistrySnapCategory.Notifications,
-            RegistrySnapCategory.TransactionInsights,
+            RegistrySnapCategory.Communication,
+            RegistrySnapCategory.Security,
           ],
           order: Order.Random,
         },
@@ -825,8 +815,8 @@ describe('filterSlice', () => {
           installed: false,
           categories: [
             RegistrySnapCategory.Interoperability,
-            RegistrySnapCategory.Notifications,
-            RegistrySnapCategory.TransactionInsights,
+            RegistrySnapCategory.Communication,
+            RegistrySnapCategory.Security,
           ],
           order: Order.Latest,
         },

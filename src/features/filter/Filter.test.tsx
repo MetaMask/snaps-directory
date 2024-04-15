@@ -10,7 +10,7 @@ import { render } from '../../utils/test-utils';
 describe('Filter', () => {
   it('renders the enabled categories', async () => {
     const store = createStore();
-    store.dispatch(setCategory(RegistrySnapCategory.TransactionInsights));
+    store.dispatch(setCategory(RegistrySnapCategory.Security));
 
     const { queryByText } = render(<Filter />, store);
     expect(queryByText('Security')).toBeInTheDocument();
@@ -45,7 +45,7 @@ describe('Filter', () => {
   it('enables all categories and disabled installed when clicking "All"', () => {
     const store = createStore();
     store.dispatch(toggleInstalled());
-    store.dispatch(setCategory(RegistrySnapCategory.TransactionInsights));
+    store.dispatch(setCategory(RegistrySnapCategory.Security));
 
     const { queryByText, getByText, getByLabelText } = render(
       <Filter />,
@@ -72,7 +72,7 @@ describe('Filter', () => {
 
   it('enables the installed filter when clicking "Installed"', () => {
     const store = createStore();
-    store.dispatch(setCategory(RegistrySnapCategory.TransactionInsights));
+    store.dispatch(setCategory(RegistrySnapCategory.Security));
 
     const { queryByText, getByText, getByLabelText } = render(
       <Filter />,

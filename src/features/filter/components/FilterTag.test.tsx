@@ -9,7 +9,7 @@ import { getCategory } from '../store';
 describe('FilterTag', () => {
   it('renders', () => {
     const { queryByText } = render(
-      <FilterTag category={RegistrySnapCategory.TransactionInsights} />,
+      <FilterTag category={RegistrySnapCategory.Security} />,
     );
 
     expect(queryByText('Security')).toBeInTheDocument();
@@ -18,19 +18,19 @@ describe('FilterTag', () => {
   it('toggles the category when clicked', () => {
     const store = createStore();
     const { getByLabelText } = render(
-      <FilterTag category={RegistrySnapCategory.TransactionInsights} />,
+      <FilterTag category={RegistrySnapCategory.Security} />,
       store,
     );
 
-    expect(
-      getCategory(RegistrySnapCategory.TransactionInsights)(store.getState()),
-    ).toBe(true);
+    expect(getCategory(RegistrySnapCategory.Security)(store.getState())).toBe(
+      true,
+    );
 
     const button = getByLabelText('Close').parentElement;
     act(() => button?.click());
 
-    expect(
-      getCategory(RegistrySnapCategory.TransactionInsights)(store.getState()),
-    ).toBe(false);
+    expect(getCategory(RegistrySnapCategory.Security)(store.getState())).toBe(
+      false,
+    );
   });
 });

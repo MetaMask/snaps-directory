@@ -10,7 +10,7 @@ import { setCategory, toggleInstalled } from '../store';
 describe('FilterTags', () => {
   it('renders the selected filters', async () => {
     const store = createStore();
-    store.dispatch(setCategory(RegistrySnapCategory.TransactionInsights));
+    store.dispatch(setCategory(RegistrySnapCategory.Security));
 
     const { queryByText } = render(<FilterTags />, store);
     expect(queryByText('Security')).toBeInTheDocument();

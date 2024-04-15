@@ -15,8 +15,8 @@ export const SNAP_CATEGORY_ICONS: Record<
 > = {
   [RegistrySnapCategory.AccountManagement]: AddUserIcon,
   [RegistrySnapCategory.Interoperability]: InteroperabilityIcon,
-  [RegistrySnapCategory.Notifications]: NotificationsCategoryIcon,
-  [RegistrySnapCategory.TransactionInsights]: TransactionInsightsIcon,
+  [RegistrySnapCategory.Communication]: NotificationsCategoryIcon,
+  [RegistrySnapCategory.Security]: TransactionInsightsIcon,
 };
 
 export enum Order {
