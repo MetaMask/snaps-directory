@@ -4,8 +4,8 @@ import { defineMessage } from '@lingui/macro';
 export enum RegistrySnapCategory {
   AccountManagement = 'account management',
   Interoperability = 'interoperability',
-  Notifications = 'notifications',
-  TransactionInsights = 'transaction insights',
+  Communication = 'communication',
+  Security = 'security',
 }
 
 export const SNAP_CATEGORY_LABELS: Record<
@@ -23,11 +23,11 @@ export const SNAP_CATEGORY_LABELS: Record<
     name: defineMessage`Interoperability`,
     description: defineMessage`Connect to non-Ethereum blockchains with MetaMask.`,
   },
-  [RegistrySnapCategory.Notifications]: {
+  [RegistrySnapCategory.Communication]: {
     name: defineMessage`Communication`,
     description: defineMessage`Stay in the know with notifications and chat directly in MetaMask.`,
   },
-  [RegistrySnapCategory.TransactionInsights]: {
+  [RegistrySnapCategory.Security]: {
     name: defineMessage`Security`,
     description: defineMessage`Guard your wallet with transaction insights and safety tools.`,
   },
@@ -51,14 +51,14 @@ export const SNAP_CATEGORY_LINKS: Record<
     link: '/interoperability',
     linkText: defineMessage`See All`,
   },
-  [RegistrySnapCategory.Notifications]: {
+  [RegistrySnapCategory.Communication]: {
     header: defineMessage`Notifications and Chat`,
-    link: '/notifications',
+    link: '/communication',
     linkText: defineMessage`See All`,
   },
-  [RegistrySnapCategory.TransactionInsights]: {
+  [RegistrySnapCategory.Security]: {
     header: defineMessage`Guard Your Wallet`,
-    link: '/transaction-insights',
+    link: '/security',
     linkText: defineMessage`See All`,
   },
 };

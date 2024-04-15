@@ -14,7 +14,7 @@ describe('FilterCategory', () => {
     const { queryByText, queryByLabelText } = render(
       <Menu>
         <FilterCategory
-          category={RegistrySnapCategory.TransactionInsights}
+          category={RegistrySnapCategory.Security}
           icon={TransactionInsightsIcon}
         />
       </Menu>,
@@ -29,22 +29,22 @@ describe('FilterCategory', () => {
     const { getByText } = render(
       <Menu>
         <FilterCategory
-          category={RegistrySnapCategory.TransactionInsights}
+          category={RegistrySnapCategory.Security}
           icon={TransactionInsightsIcon}
         />
       </Menu>,
       store,
     );
 
-    expect(
-      getCategory(RegistrySnapCategory.TransactionInsights)(store.getState()),
-    ).toBe(true);
+    expect(getCategory(RegistrySnapCategory.Security)(store.getState())).toBe(
+      true,
+    );
 
     const button = getByText('Security');
     act(() => button.click());
 
-    expect(
-      getCategory(RegistrySnapCategory.TransactionInsights)(store.getState()),
-    ).toBe(false);
+    expect(getCategory(RegistrySnapCategory.Security)(store.getState())).toBe(
+      false,
+    );
   });
 });

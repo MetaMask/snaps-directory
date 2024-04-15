@@ -61,6 +61,11 @@ const SIGNATURE_URL = 'https://acl.execution.metamask.io/latest/signature.json';
 const PUBLIC_KEY =
   '0x025b65308f0f0fb8bc7f7ff87bfc296e0330eee5d3c1d1ee4a048b2fd6a86fa0a6';
 
+const LEGACY_CATEGORIES: Record<string, string> = {
+  'transaction insights': 'security',
+  notifications: 'communication',
+};
+
 /**
  * Normalize the description to ensure it ends with a period. This also replaces
  * "Metamask" with "MetaMask".
@@ -268,8 +273,13 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       ),
     );
 
+    const migratedCategory =
+      snap.metadata.category && LEGACY_CATEGORIES[snap.metadata.category];
+    const category = migratedCategory ?? snap.metadata.category;
+
     const content = {
       ...snap.metadata,
+      category,
       snapId: snap.id,
       name: manifest.proposedName,
       description: getDescription(snap, manifest),
@@ -315,19 +325,27 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
 
       return result;
     },
-    new Set<string>(),
+    new Set<string>([
+      ...Object.keys(LEGACY_CATEGORIES),
+      ...Object.values(LEGACY_CATEGORIES),
+    ]),
   );
 
   for (const category of categories) {
+    // For legacy categories, we map to the new name.
+    const legacyMapping = LEGACY_CATEGORIES[category];
+
+    const categoryData = { name: category, legacyMapping };
+
     const node = {
-      name: category,
+      ...categoryData,
       parent: null,
       children: [],
       id: createNodeId(`category__${category}`),
       internal: {
         type: 'Category',
-        content: JSON.stringify(category),
-        contentDigest: createContentDigest(category),
+        content: JSON.stringify(categoryData),
+        contentDigest: createContentDigest(categoryData),
       },
     };
 
@@ -466,8 +484,9 @@ export const onCreateNode: GatsbyNode[`onCreateNode`] = async ({
     >;
 
     const { createNode, createNodeField } = actions;
+    const name = categoryNode.legacyMapping ?? categoryNode.name;
     const snaps = getNodesByType('Snap').filter(
-      (snap) => snap.category === categoryNode.name,
+      (snap) => snap.category === name,
     ) as unknown as Fields<Queries.Snap, keyof Queries.Snap>[];
 
     const banner = await generateCategoryImage(snaps);

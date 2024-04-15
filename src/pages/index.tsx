@@ -38,21 +38,19 @@ const GROUPS = [
     order: Order.DeterministicRandom,
   },
   {
-    header:
-      SNAP_CATEGORY_LINKS[RegistrySnapCategory.TransactionInsights].header,
-    category: RegistrySnapCategory.TransactionInsights,
+    header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Security].header,
+    category: RegistrySnapCategory.Security,
     limit: 6,
-    link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.TransactionInsights].link,
-    linkText:
-      SNAP_CATEGORY_LINKS[RegistrySnapCategory.TransactionInsights].linkText,
+    link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Security].link,
+    linkText: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Security].linkText,
     order: Order.DeterministicRandom,
   },
   {
-    header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Notifications].header,
-    category: RegistrySnapCategory.Notifications,
+    header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Communication].header,
+    category: RegistrySnapCategory.Communication,
     limit: 3,
-    link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Notifications].link,
-    linkText: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Notifications].linkText,
+    link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Communication].link,
+    linkText: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Communication].linkText,
     order: Order.DeterministicRandom,
   },
   {

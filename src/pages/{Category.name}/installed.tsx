@@ -16,7 +16,10 @@ export type CategoryInstalledProps = {
     locale: string;
   };
   data: {
-    category: Fields<Queries.Category, 'name' | 'installedBanner'>;
+    category: Fields<
+      Queries.Category,
+      'name' | 'installedBanner' | 'legacyMapping'
+    >;
   };
 };
 
@@ -26,7 +29,8 @@ const Head: FunctionComponent<CategoryInstalledProps> = ({
 }) => {
   const { _ } = useLingui();
 
-  const category = data.category.name as RegistrySnapCategory;
+  const category = (data.category.legacyMapping ??
+    data.category.name) as RegistrySnapCategory;
   const { name } = SNAP_CATEGORY_LABELS[category];
 
   const nameText = _(name);
@@ -66,15 +70,17 @@ const CategoryInstalled: FunctionComponent<CategoryInstalledProps> = ({
 }) => {
   const dispatch = useDispatch();
 
+  const categoryName = data.category.legacyMapping ?? data.category.name;
+
   useEffect(() => {
     dispatch(toggleInstalled());
-    dispatch(setCategory(data.category.name as RegistrySnapCategory));
+    dispatch(setCategory(categoryName as RegistrySnapCategory));
 
     // According to the type definition, `navigate` returns a promise, but in
     // practice it does not.
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     navigate('/explore', { replace: true });
-  }, [data.category.name, dispatch]);
+  }, [categoryName, dispatch]);
 
   return <Head data={data} pageContext={pageContext} />;
 };
@@ -83,6 +89,7 @@ export const query = graphql`
   query ($id: String) {
     category(id: { eq: $id }) {
       name
+      legacyMapping
       installedBanner {
         publicURL
       }

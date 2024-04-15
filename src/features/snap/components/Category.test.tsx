@@ -5,7 +5,7 @@ import { render } from '../../../utils/test-utils';
 describe('Category', () => {
   it('renders the correct category name', () => {
     const { queryByText } = render(
-      <Category category={RegistrySnapCategory.TransactionInsights} />,
+      <Category category={RegistrySnapCategory.Security} />,
     );
 
     expect(queryByText('Security')).toBeInTheDocument();
