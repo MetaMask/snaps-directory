@@ -61,10 +61,10 @@ const SIGNATURE_URL = 'https://acl.execution.metamask.io/latest/signature.json';
 const PUBLIC_KEY =
   '0x025b65308f0f0fb8bc7f7ff87bfc296e0330eee5d3c1d1ee4a048b2fd6a86fa0a6';
 
-const LEGACY_CATEGORIES = {
+const LEGACY_CATEGORIES: Record<string, string> = {
   'transaction insights': 'security',
   notifications: 'communication',
-} as Record<string, string>;
+};
 
 /**
  * Normalize the description to ensure it ends with a period. This also replaces
