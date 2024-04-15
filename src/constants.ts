@@ -53,12 +53,12 @@ export const SNAP_CATEGORY_LINKS: Record<
   },
   [RegistrySnapCategory.Communication]: {
     header: defineMessage`Notifications and Chat`,
-    link: '/notifications',
+    link: '/communication',
     linkText: defineMessage`See All`,
   },
   [RegistrySnapCategory.Security]: {
     header: defineMessage`Guard Your Wallet`,
-    link: '/transaction-insights',
+    link: '/security',
     linkText: defineMessage`See All`,
   },
 };
