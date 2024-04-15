@@ -46,7 +46,6 @@ export const SnapAvatar: FunctionComponent<SnapIconProps> = ({
         size="md"
         width={size}
         height={size}
-        margin="1"
       />
       {isInstalled && (
         <SnapIcon

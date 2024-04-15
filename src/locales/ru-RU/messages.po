@@ -18,6 +18,10 @@ msgstr ""
 "X-Crowdin-File: /src/locales/en-US/messages.po\n"
 "X-Crowdin-File-ID: 1546\n"
 
+#: src/components/InstallationCount.tsx
+msgid "{0} installs"
+msgstr ""
+
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "{0} on the MetaMask Snaps Directory"
 msgstr "{0} в Каталоге MetaMask Snaps"
@@ -41,6 +45,10 @@ msgstr "©{0} MetaMask. Все права защищены."
 #: src/features/snap/components/MetadataModal.tsx
 msgid "<0>{name}</0> uses code that isn't viewable by the public. Critical parts of the codebase were audited for security, but later versions of the code may not be. Make sure you trust <1>{0}</1> before installing and using <2>{name}</2>."
 msgstr "<0>{name}</0> использует код, который не доступен для свободного просмотра. Критические части базы кода были проверены на предмет безопасности, но более поздние версии кода могут не проверяться. Убедитесь, что вы доверяете <1>{0}</1>перед установкой и использованием <2>{name}</2>."
+
+#: src/components/InstallationCount.tsx
+msgid "<1K installs"
+msgstr ""
 
 #: src/components/FooterLinks.tsx
 msgid "About"

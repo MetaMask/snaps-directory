@@ -13,7 +13,7 @@ export const Authorship: FunctionComponent<
 
   return (
     <Flex
-      alignItems="center"
+      alignItems={['center', null, 'flex-start']}
       overflow="hidden"
       flexDirection={['column', null, 'row']}
       gap="4"
