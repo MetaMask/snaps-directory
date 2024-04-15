@@ -325,7 +325,10 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
 
       return result;
     },
-    new Set<string>(Object.keys(LEGACY_CATEGORIES)),
+    new Set<string>([
+      ...Object.keys(LEGACY_CATEGORIES),
+      ...Object.values(LEGACY_CATEGORIES),
+    ]),
   );
 
   for (const category of categories) {
