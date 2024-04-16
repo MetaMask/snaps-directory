@@ -94,7 +94,5 @@ jobs:
       pages: write
       id-token: write
     uses: ./.github/workflows/publish-site.yml
-    with:
-      destination_dir: .
     secrets:
       SEGMENT_PRODUCTION_WRITE_KEY: ${{ secrets.SEGMENT_PRODUCTION_WRITE_KEY }}

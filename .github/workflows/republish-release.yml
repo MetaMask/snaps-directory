@@ -107,7 +107,6 @@ jobs:
       id-token: write
     uses: ./.github/workflows/publish-site.yml
     with:
-      destination_dir: .
       ref: ${{ needs.get-release-tag.outputs.tag }}
     secrets:
       SEGMENT_PRODUCTION_WRITE_KEY: ${{ secrets.SEGMENT_PRODUCTION_WRITE_KEY }}
