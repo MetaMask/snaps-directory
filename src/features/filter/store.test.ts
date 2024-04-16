@@ -635,17 +635,17 @@ describe('filterSlice', () => {
       const { snap: fooSnap } = getMockSnap({
         snapId: 'foo-snap',
         name: 'Foo',
-        downloads: 100,
+        installs: 100,
       });
       const { snap: barSnap } = getMockSnap({
         snapId: 'bar-snap',
         name: 'Bar',
-        downloads: 300,
+        installs: 300,
       });
       const { snap: bazSnap } = getMockSnap({
         snapId: 'baz-snap',
         name: 'Baz',
-        downloads: 5,
+        installs: 5,
       });
 
       const state = getMockState({
