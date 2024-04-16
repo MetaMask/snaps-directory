@@ -3,35 +3,36 @@ name: Publish site to GitHub Pages
 on:
   workflow_call:
     inputs:
-      destination_dir:
-        required: true
-        type: string
       ref:
         required: false
         type: string
     secrets:
-      PUBLISH_PAGES_TOKEN:
-        required: true
       SEGMENT_PRODUCTION_WRITE_KEY:
         required: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   publish-site-to-gh-pages:
     name: Publish site to GitHub Pages
     runs-on: ubuntu-latest
-    environment: github-pages
-    permissions:
-      contents: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Ensure `destination_dir` is not empty
-        if: ${{ inputs.destination_dir == '' }}
-        run: exit 1
       - name: Checkout the repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ inputs.ref || github.sha }}
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
           cache: 'yarn'
@@ -41,9 +42,12 @@ jobs:
         run: yarn build
         env:
           SEGMENT_PRODUCTION_WRITE_KEY: ${{ secrets.SEGMENT_PRODUCTION_WRITE_KEY }}
-      - name: Deploy to `${{ inputs.destination_dir }}` directory of `gh-pages` branch
-        uses: peaceiris/actions-gh-pages@de7ea6f8efb354206b205ef54722213d99067935
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          personal_token: ${{ secrets.PUBLISH_PAGES_TOKEN }}
-          publish_dir: ./public
-          destination_dir: ${{ inputs.destination_dir }}
+          path: public
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

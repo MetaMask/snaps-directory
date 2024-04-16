@@ -70,7 +70,7 @@ jobs:
       IS_RELEASE: ${{ steps.is-release.outputs.IS_RELEASE }}
     runs-on: ubuntu-latest
     steps:
-      - uses: MetaMask/action-is-release@v1
+      - uses: MetaMask/action-is-release@v2
         id: is-release
 
   publish-release:
@@ -79,10 +79,11 @@ jobs:
     name: Publish release
     permissions:
       contents: write
+      pages: write
+      id-token: write
     uses: ./.github/workflows/publish-release.yml
     with:
       slack-subteam: S05RL9W7H54 # @metamask-snaps-publishers
     secrets:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-      PUBLISH_PAGES_TOKEN: ${{ secrets.PUBLISH_PAGES_TOKEN }}
       SEGMENT_PRODUCTION_WRITE_KEY: ${{ secrets.SEGMENT_PRODUCTION_WRITE_KEY }}
