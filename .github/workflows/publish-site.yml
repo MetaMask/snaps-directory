@@ -27,9 +27,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Ensure `destination_dir` is not empty
-        if: ${{ inputs.destination_dir == '' }}
-        run: exit 1
       - name: Checkout the repository
         uses: actions/checkout@v4
         with:
