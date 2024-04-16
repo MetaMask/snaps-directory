@@ -60,7 +60,7 @@ const REGISTRY_URL = 'https://acl.execution.metamask.io/latest/registry.json';
 const SIGNATURE_URL = 'https://acl.execution.metamask.io/latest/signature.json';
 const PUBLIC_KEY =
   '0x025b65308f0f0fb8bc7f7ff87bfc296e0330eee5d3c1d1ee4a048b2fd6a86fa0a6';
-const STATS_URL = 'https://data.snaps.metamask.io/';
+const STATS_URL = 'https://dev.data.snaps.metamask.io/';
 
 const HEADERS = {
   'User-Agent':
@@ -188,13 +188,17 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
   const { registry, customFetch } = await getRegistry();
 
   const rawStats = await customFetch(STATS_URL, { headers: HEADERS }).then(
-    async (response: any) => response.json(),
+    async (response: any) => response.text(),
   );
 
-  const stats = rawStats.reduce((acc, snap) => {
-    acc[snap.snap_id] = snap.installs;
-    return acc;
-  }, {});
+  const stats = rawStats
+    .split('\n')
+    .slice(0, -1)
+    .reduce((acc, json) => {
+      const snap = JSON.parse(json);
+      acc[snap.snap_id] = parseInt(snap.installs, 10);
+      return acc;
+    }, {});
 
   const verifiedSnaps = Object.values(registry.verifiedSnaps)
     .filter((snap) => IS_STAGING || Boolean(snap.metadata.category))
