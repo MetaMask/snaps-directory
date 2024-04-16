@@ -19,7 +19,7 @@ export type Snap = Fields<
   | 'category'
   | 'gatsbyPath'
   | 'latestVersion'
-  | 'downloads'
+  | 'installs'
   | 'lastUpdated'
 >;
 

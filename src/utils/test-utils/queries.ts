@@ -232,7 +232,7 @@ export type MockSnap = Fields<
   | 'banner'
   | 'support'
   | 'gatsbyPath'
-  | 'downloads'
+  | 'installs'
   | 'lastUpdated'
   | 'permissions'
   | 'privateCode'
@@ -266,7 +266,7 @@ export type GetMockSnapArgs = {
     >
   >;
   gatsbyPath?: string;
-  downloads?: number;
+  installs?: number;
   lastUpdated?: number;
   permissions?: InitialPermissions;
   privateCode?: boolean;
@@ -296,7 +296,7 @@ export type GetMockSnapArgs = {
  * @param args.banner - The banner.
  * @param args.support - The support page URL.
  * @param args.gatsbyPath - The Gatsby path.
- * @param args.downloads - The number of downloads.
+ * @param args.installs - The number of installs.
  * @param args.lastUpdated - A unix timestamp of the last update to the snap.
  * @param args.permissions - The Snap's initial permissions.
  * @param args.privateCode - Whether the Snap's source code is (partially)
@@ -342,7 +342,7 @@ export function getMockSnap({
     keyRecovery: 'https://example.com/key-recovery',
   },
   gatsbyPath = `/snap/${snapId}`,
-  downloads = 0,
+  installs = 0,
   lastUpdated = 1701260892,
   permissions = {
     'endowment:rpc': {
@@ -376,7 +376,7 @@ export function getMockSnap({
         keyof Queries.SnapSupport
       >,
       gatsbyPath,
-      downloads,
+      installs,
       lastUpdated,
       permissions,
       privateCode,

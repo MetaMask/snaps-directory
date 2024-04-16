@@ -18,7 +18,7 @@ export const SORT_FUNCTIONS = {
     snaps.concat().sort((a, b) => a.name.localeCompare(b.name)),
 
   [Order.Popularity]: (snaps: Snap[]) =>
-    snaps.concat().sort((a, b) => b.downloads - a.downloads),
+    snaps.concat().sort((a, b) => b.installs - a.installs),
 
   [Order.Latest]: (snaps: Snap[]) =>
     snaps.concat().sort((a, b) => b.lastUpdated - a.lastUpdated),

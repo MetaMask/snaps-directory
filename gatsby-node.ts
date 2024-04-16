@@ -244,7 +244,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
 
     const lastUpdated = new Date(time[latestVersion]).getTime();
 
-    const downloads = stats[snap.id] ?? 0;
+    const installs = stats[snap.id] ?? 0;
 
     const nodeId = createNodeId(`snap__${snap.id}`);
 
@@ -281,7 +281,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       slug,
       latestVersion,
       icon,
-      downloads,
+      installs,
       lastUpdated,
 
       screenshotFiles: screenshotNodes.map(
