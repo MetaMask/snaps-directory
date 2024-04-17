@@ -68,45 +68,49 @@ export const MetadataModal: FunctionComponent<MetadataModalProps> = ({
           <MetadataItems snap={snap} />
 
           <Data label={_(t`Version`)} value={latestVersion} />
-          <Data
-            label={_(t`Source Code`)}
-            value={
-              <SourceCode
-                url={sourceCode}
-                additionalUrls={additionalSourceCode}
-              />
-            }
-            warning={
-              privateCode && (
-                <Trans>
-                  <Box as="span" fontWeight="500">
-                    {name}
-                  </Box>{' '}
-                  uses code that isn&apos;t viewable by the public. Critical
-                  parts of the codebase were audited for security, but later
-                  versions of the code may not be. Make sure you trust{' '}
-                  <Box as="span" fontWeight="500">
-                    {author.name}
-                  </Box>{' '}
-                  before installing and using{' '}
-                  <Box as="span" fontWeight="500">
-                    {name}
-                  </Box>
-                  .
-                </Trans>
-              )
-            }
-          />
-          <Data
-            label={_(t`Audit`)}
-            value={
-              <Audits
-                audits={
-                  audits as Fields<Queries.SnapAudits, 'auditor' | 'report'>[]
-                }
-              />
-            }
-          />
+          {sourceCode && (
+            <Data
+              label={_(t`Source Code`)}
+              value={
+                <SourceCode
+                  url={sourceCode}
+                  additionalUrls={additionalSourceCode}
+                />
+              }
+              warning={
+                privateCode && (
+                  <Trans>
+                    <Box as="span" fontWeight="500">
+                      {name}
+                    </Box>{' '}
+                    uses code that isn&apos;t viewable by the public. Critical
+                    parts of the codebase were audited for security, but later
+                    versions of the code may not be. Make sure you trust{' '}
+                    <Box as="span" fontWeight="500">
+                      {author.name}
+                    </Box>{' '}
+                    before installing and using{' '}
+                    <Box as="span" fontWeight="500">
+                      {name}
+                    </Box>
+                    .
+                  </Trans>
+                )
+              }
+            />
+          )}
+          {audits?.length > 0 && (
+            <Data
+              label={_(t`Audit`)}
+              value={
+                <Audits
+                  audits={
+                    audits as Fields<Queries.SnapAudits, 'auditor' | 'report'>[]
+                  }
+                />
+              }
+            />
+          )}
           {(privacyPolicy || termsOfUse) && (
             <Data
               label={_(t`Legal`)}
