@@ -37,13 +37,13 @@ msgstr "{nameText} Snaps on the MetaMask Snaps Directory"
 msgid "©{0} MetaMask. All rights reserved."
 msgstr ""
 
+#: src/components/InstallationCount.tsx
+msgid "< 1K installs"
+msgstr "< 1K installs"
+
 #: src/features/snap/components/MetadataModal.tsx
 msgid "<0>{name}</0> uses code that isn't viewable by the public. Critical parts of the codebase were audited for security, but later versions of the code may not be. Make sure you trust <1>{0}</1> before installing and using <2>{name}</2>."
 msgstr ""
-
-#: src/components/InstallationCount.tsx
-msgid "<1K installs"
-msgstr "<1K installs"
 
 #: src/components/FooterLinks.tsx
 msgid "About"

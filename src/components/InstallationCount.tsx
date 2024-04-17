@@ -17,13 +17,13 @@ export const InstallationCount: FunctionComponent<InstallationCountProps> = ({
 
   return (
     <Text color="icon.muted">
-      {installs > 1000
+      {installs >= 1000
         ? _(
             t`${new Intl.NumberFormat(locale, { notation: 'compact' }).format(
               installs,
             )} installs`,
           )
-        : _(t`<1K installs`)}
+        : _(t`< 1K installs`)}
     </Text>
   );
 };

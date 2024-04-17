@@ -42,13 +42,13 @@ msgstr "MetaMask Snaps 目录上的 {nameText} Snap"
 msgid "©{0} MetaMask. All rights reserved."
 msgstr "© {0} MetaMask。保留所有权利。"
 
+#: src/components/InstallationCount.tsx
+msgid "< 1K installs"
+msgstr ""
+
 #: src/features/snap/components/MetadataModal.tsx
 msgid "<0>{name}</0> uses code that isn't viewable by the public. Critical parts of the codebase were audited for security, but later versions of the code may not be. Make sure you trust <1>{0}</1> before installing and using <2>{name}</2>."
 msgstr "<0>{name}</0> 使用了公众无法查看的代码。已对代码库的关键部分进行了安全性审核，但可能未对代码的更高版本进行审核。请确保您信任 <1>{0}</1>，才可以安装和使用 <2>{name}</2>。"
-
-#: src/components/InstallationCount.tsx
-msgid "<1K installs"
-msgstr ""
 
 #: src/components/FooterLinks.tsx
 msgid "About"
