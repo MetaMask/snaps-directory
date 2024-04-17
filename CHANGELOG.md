@@ -9,17 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.11.0]
 
-### Uncategorized
+### Added
 
 - Show installation counts ([#371](https://github.com/MetaMask/snaps-directory/pull/371))
+
+### Changed
+
+- Make installation numbers more accurate ([#365](https://github.com/MetaMask/snaps-directory/pull/365))
+
+### Fixed
+
 - Hide omitted fields ([#376](https://github.com/MetaMask/snaps-directory/pull/376))
-- Bump @metamask/snaps-sdk from 4.0.0 to 4.0.1 ([#375](https://github.com/MetaMask/snaps-directory/pull/375))
-- Use data endpoint for installation numbers ([#365](https://github.com/MetaMask/snaps-directory/pull/365))
-- Update GitHub Actions to latest versions and use OIDC for deploying ([#374](https://github.com/MetaMask/snaps-directory/pull/374))
-- Change category names ([#372](https://github.com/MetaMask/snaps-directory/pull/372))
-- Bump tar from 6.1.15 to 6.2.1 ([#369](https://github.com/MetaMask/snaps-directory/pull/369))
-- Bump @metamask/snaps-utils from 7.0.4 to 7.1.0 ([#366](https://github.com/MetaMask/snaps-directory/pull/366))
-- Bump @metamask/snaps-sdk from 3.2.0 to 4.0.0 ([#367](https://github.com/MetaMask/snaps-directory/pull/367))
 
 ## [1.10.0]
 
