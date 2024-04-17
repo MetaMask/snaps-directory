@@ -11,7 +11,12 @@ import { useLingui } from '@lingui/react';
 import { graphql } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
-import { InstallSnapButton, SEO, SnapWebsiteButton } from '../../../components';
+import {
+  InstallSnapButton,
+  SEO,
+  SnapWebsiteButton,
+  InstallationCount,
+} from '../../../components';
 import { RegistrySnapCategory } from '../../../constants';
 import {
   useGetInstalledSnapsQuery,
@@ -50,6 +55,7 @@ type SnapPageProps = {
       | 'privateCode'
       | 'privacyPolicy'
       | 'termsOfUse'
+      | 'installs'
     > & { screenshots: Screenshot[] };
   };
 };
@@ -86,6 +92,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data, pageContext }) => {
     category,
     permissions,
     screenshots,
+    installs,
   } = data.snap;
 
   const { data: installedSnaps } = useGetInstalledSnapsQuery();
@@ -112,22 +119,29 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data, pageContext }) => {
         <Flex
           flexDirection={['column', null, 'row']}
           justifyContent="space-between"
-          alignItems="center"
+          alignItems={['center', null, 'flex-start']}
           gap="6"
         >
           <Authorship name={name} icon={icon} snapId={snapId} />
-          <Flex alignItems="center" gap="4" width={['100%', null, 'auto']}>
-            {!onboard && (
-              <InstallSnapButton
-                snapId={snapId}
-                name={name}
-                icon={icon}
-                website={website}
-                version={latestVersion}
-              />
-            )}
-            {(isInstalled || onboard) && website && (
-              <SnapWebsiteButton snapId={snapId} website={website} />
+          <Flex flexDirection="column">
+            <Flex alignItems="center" gap="4" width={['100%', null, 'auto']}>
+              {!onboard && (
+                <InstallSnapButton
+                  snapId={snapId}
+                  name={name}
+                  icon={icon}
+                  website={website}
+                  version={latestVersion}
+                />
+              )}
+              {(isInstalled || onboard) && website && (
+                <SnapWebsiteButton snapId={snapId} website={website} />
+              )}
+            </Flex>
+            {!isInstalled && (
+              <Box textAlign="center" marginTop="2">
+                <InstallationCount installs={installs} />
+              </Box>
             )}
           </Flex>
         </Flex>
@@ -210,6 +224,7 @@ export const query = graphql`
       privateCode
       privacyPolicy
       termsOfUse
+      installs
       screenshots {
         childImageSharp {
           medium: gatsbyImageData(

@@ -7,6 +7,7 @@ export * from './Container';
 export * from './ExternalLink';
 export * from './Fox';
 export * from './Header';
+export * from './InstallationCount';
 export * from './InstallSnapButton';
 export * from './InstallUnsupportedMobile';
 export * from './Layout';
