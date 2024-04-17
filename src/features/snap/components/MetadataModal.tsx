@@ -97,16 +97,18 @@ export const MetadataModal: FunctionComponent<MetadataModalProps> = ({
               )
             }
           />
-          <Data
-            label={_(t`Audit`)}
-            value={
-              <Audits
-                audits={
-                  audits as Fields<Queries.SnapAudits, 'auditor' | 'report'>[]
-                }
-              />
-            }
-          />
+          {audits && (
+            <Data
+              label={_(t`Audit`)}
+              value={
+                <Audits
+                  audits={
+                    audits as Fields<Queries.SnapAudits, 'auditor' | 'report'>[]
+                  }
+                />
+              }
+            />
+          )}
           {(privacyPolicy || termsOfUse) && (
             <Data
               label={_(t`Legal`)}
