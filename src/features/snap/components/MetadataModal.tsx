@@ -97,7 +97,7 @@ export const MetadataModal: FunctionComponent<MetadataModalProps> = ({
               )
             }
           />
-          {audits && (
+          {audits?.length > 0 && (
             <Data
               label={_(t`Audit`)}
               value={
