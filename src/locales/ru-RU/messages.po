@@ -18,13 +18,13 @@ msgstr ""
 "X-Crowdin-File: /src/locales/en-US/messages.po\n"
 "X-Crowdin-File-ID: 1546\n"
 
-#: src/components/InstallationCount.tsx
-msgid "{0} installs"
-msgstr ""
-
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "{0} on the MetaMask Snaps Directory"
 msgstr "{0} в Каталоге MetaMask Snaps"
+
+#: src/components/InstallationCount.tsx
+msgid "{formattedNumber} installs"
+msgstr ""
 
 #: src/components/PostInstallModal.tsx
 msgid "{name} is now ready to use."
@@ -41,6 +41,10 @@ msgstr "Snaps {nameText} в Каталоге MetaMask Snaps"
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
 msgstr "©{0} MetaMask. Все права защищены."
+
+#: src/components/InstallationCount.tsx
+msgid "< 1K"
+msgstr ""
 
 #: src/components/InstallationCount.tsx
 msgid "< 1K installs"
@@ -480,6 +484,10 @@ msgstr "Установленные Snaps в Каталоге MetaMask Snaps"
 #: src/components/InstallSnapButton.tsx
 msgid "Installing {name}"
 msgstr "Выполняется установка {name}"
+
+#: src/features/snap/components/MetadataModal.tsx
+msgid "Installs"
+msgstr ""
 
 #: src/components/icons/index.ts
 #: src/constants.ts

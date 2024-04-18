@@ -13,13 +13,13 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/InstallationCount.tsx
-msgid "{0} installs"
-msgstr "{0} installs"
-
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "{0} on the MetaMask Snaps Directory"
 msgstr "{0} on the MetaMask Snaps Directory"
+
+#: src/components/InstallationCount.tsx
+msgid "{formattedNumber} installs"
+msgstr "{formattedNumber} installs"
 
 #: src/components/PostInstallModal.tsx
 msgid "{name} is now ready to use."
@@ -36,6 +36,10 @@ msgstr "{nameText} Snaps on the MetaMask Snaps Directory"
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
 msgstr ""
+
+#: src/components/InstallationCount.tsx
+msgid "< 1K"
+msgstr "< 1K"
 
 #: src/components/InstallationCount.tsx
 msgid "< 1K installs"
@@ -475,6 +479,10 @@ msgstr "Installed Snaps on the MetaMask Snaps Directory"
 #: src/components/InstallSnapButton.tsx
 msgid "Installing {name}"
 msgstr ""
+
+#: src/features/snap/components/MetadataModal.tsx
+msgid "Installs"
+msgstr "Installs"
 
 #: src/components/icons/index.ts
 #: src/constants.ts

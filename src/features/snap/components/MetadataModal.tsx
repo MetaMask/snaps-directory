@@ -5,6 +5,7 @@ import {
   ModalCloseButton,
   ModalContent,
   ModalOverlay,
+  Text,
 } from '@chakra-ui/react';
 import { t, Trans } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
@@ -15,6 +16,7 @@ import { Data } from './Data';
 import { Legal } from './Legal';
 import { MetadataItems } from './MetadataItems';
 import { SourceCode } from './SourceCode';
+import { InstallationCount } from '../../../components';
 import type { Fields } from '../../../utils';
 
 export type MetadataModalProps = {
@@ -31,6 +33,7 @@ export type MetadataModalProps = {
     | 'privateCode'
     | 'privacyPolicy'
     | 'termsOfUse'
+    | 'installs'
   >;
   isOpen: boolean;
   onClose: () => void;
@@ -52,6 +55,7 @@ export const MetadataModal: FunctionComponent<MetadataModalProps> = ({
     privateCode,
     privacyPolicy,
     termsOfUse,
+    installs,
   } = snap;
 
   return (
@@ -67,7 +71,17 @@ export const MetadataModal: FunctionComponent<MetadataModalProps> = ({
         <ModalBody display="flex" flexDirection="column" gap="4">
           <MetadataItems snap={snap} />
 
-          <Data label={_(t`Version`)} value={latestVersion} />
+          <Data label={_(t`Version`)} value={<Text>{latestVersion}</Text>} />
+          <Data
+            label={_(t`Installs`)}
+            value={
+              <InstallationCount
+                color="text.default"
+                minimal={true}
+                installs={installs}
+              />
+            }
+          />
           {sourceCode && (
             <Data
               label={_(t`Source Code`)}
