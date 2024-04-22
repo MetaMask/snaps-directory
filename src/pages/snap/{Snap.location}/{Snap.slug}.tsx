@@ -123,9 +123,14 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data, pageContext }) => {
           gap="6"
         >
           <Authorship name={name} icon={icon} snapId={snapId} />
-          <Flex flexDirection="column">
-            <Flex alignItems="center" gap="4" width={['100%', null, 'auto']}>
-              {!onboard && (
+          <Flex
+            alignItems="flex-start"
+            gap="4"
+            width={['100%', null, 'auto']}
+            flexDirection={['column-reverse', null, 'row']}
+          >
+            {!onboard && (
+              <Flex flexDirection="column" width="100%">
                 <InstallSnapButton
                   snapId={snapId}
                   name={name}
@@ -133,15 +138,13 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data, pageContext }) => {
                   website={website}
                   version={latestVersion}
                 />
-              )}
-              {(isInstalled || onboard) && website && (
-                <SnapWebsiteButton snapId={snapId} website={website} />
-              )}
-            </Flex>
-            {!isInstalled && (
-              <Box textAlign="center" marginTop="2">
-                <InstallationCount installs={installs} />
-              </Box>
+                <Box textAlign="center" marginTop="2">
+                  <InstallationCount installs={installs} />
+                </Box>
+              </Flex>
+            )}
+            {(isInstalled || onboard) && website && (
+              <SnapWebsiteButton snapId={snapId} website={website} />
             )}
           </Flex>
         </Flex>
