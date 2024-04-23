@@ -1,5 +1,5 @@
 import { SimpleGrid } from '@chakra-ui/react';
-import type { FunctionComponent } from 'react';
+import { useEffect, useState, type FunctionComponent } from 'react';
 
 import { LoadingGrid, SnapCard } from './components';
 import { getSnapsByFilter } from './store';
@@ -31,13 +31,23 @@ export const FilteredSnaps: FunctionComponent<FilteredSnapsProps> = ({
     }),
   );
 
-  if (!snaps) {
+  const [memoizedSnaps, setMemoizedSnaps] = useState(snaps);
+
+  useEffect(() => {
+    if (!memoizedSnaps) {
+      // We effectively memoize the selector, since for certain orders the output
+      // is non deterministic and but we don't want it changing every re-render.
+      setMemoizedSnaps(snaps);
+    }
+  }, [snaps, memoizedSnaps]);
+
+  if (!memoizedSnaps) {
     return <LoadingGrid />;
   }
 
   return (
     <SimpleGrid columns={[1, null, 2, 3]} spacing={4} marginX="-0.5rem">
-      {snaps.map((snap, index) => (
+      {memoizedSnaps.map((snap, index) => (
         <SnapCard key={`${snap.id}-${index}`} image={images} {...snap} />
       ))}
     </SimpleGrid>
