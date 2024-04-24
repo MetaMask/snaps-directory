@@ -60,7 +60,7 @@ const REGISTRY_URL = 'https://acl.execution.metamask.io/latest/registry.json';
 const SIGNATURE_URL = 'https://acl.execution.metamask.io/latest/signature.json';
 const PUBLIC_KEY =
   '0x025b65308f0f0fb8bc7f7ff87bfc296e0330eee5d3c1d1ee4a048b2fd6a86fa0a6';
-const STATS_URL = 'https://dev.data.snaps.metamask.io/';
+const STATS_URL = 'https://data.snaps.metamask.io/';
 
 const HEADERS = {
   'User-Agent':
