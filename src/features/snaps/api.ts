@@ -58,7 +58,7 @@ export const snapsApi = createApi({
           },
         },
       }),
-      async onQueryStarted({ snapId, version }, api) {
+      onQueryStarted({ snapId, version }, api) {
         const state = api.getState() as ApplicationState;
         const isUpdate = getUpdateAvailable(snapId)(state);
 
