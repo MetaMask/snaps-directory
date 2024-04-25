@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.12.0]
+
+### Added
+
+- Add install numbers in details modal ([#380](https://github.com/MetaMask/snaps-directory/pull/380))
+
+### Changed
+
+- Display install numbers when the Snap is installed ([#381](https://github.com/MetaMask/snaps-directory/pull/381))
+
+### Fixed
+
+- Fix order of related Snaps changing when installing a Snap ([#382](https://github.com/MetaMask/snaps-directory/pull/382))
+
 ## [1.11.0]
 
 ### Added
@@ -247,7 +261,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.11.0...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.12.0...HEAD
+[1.12.0]: https://github.com/MetaMask/snaps-directory/compare/v1.11.0...v1.12.0
 [1.11.0]: https://github.com/MetaMask/snaps-directory/compare/v1.10.0...v1.11.0
 [1.10.0]: https://github.com/MetaMask/snaps-directory/compare/v1.9.0...v1.10.0
 [1.9.0]: https://github.com/MetaMask/snaps-directory/compare/v1.8.0...v1.9.0
