@@ -9,13 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.12.0]
 
-### Uncategorized
+### Added
 
-- Memoize `FilteredSnaps` ([#382](https://github.com/MetaMask/snaps-directory/pull/382))
-- Use production endpoint for stats ([#383](https://github.com/MetaMask/snaps-directory/pull/383))
-- Bump @metamask/snaps-utils from 7.1.0 to 7.2.0 ([#385](https://github.com/MetaMask/snaps-directory/pull/385))
-- Display install numbers when installed ([#381](https://github.com/MetaMask/snaps-directory/pull/381))
-- Show install numbers in modal ([#380](https://github.com/MetaMask/snaps-directory/pull/380))
+- Add install numbers in details modal ([#380](https://github.com/MetaMask/snaps-directory/pull/380))
+
+### Changed
+
+- Display install numbers when the Snap is installed ([#381](https://github.com/MetaMask/snaps-directory/pull/381))
+
+### Fixed
+
+- Fix order of related Snaps changing when installing a Snap ([#382](https://github.com/MetaMask/snaps-directory/pull/382))
 
 ## [1.11.0]
 
