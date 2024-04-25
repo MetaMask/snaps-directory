@@ -49,7 +49,7 @@ describe('request', () => {
   it('calls the Snaps provider with the given method and params', async () => {
     const provider = getRequestMethodMock({
       // eslint-disable-next-line @typescript-eslint/naming-convention
-      wallet_getSnaps: {},
+      wallet_getAllSnaps: {},
       foo: 'bar',
     });
 
@@ -70,7 +70,7 @@ describe('request', () => {
   it('returns an error if the provider throws', async () => {
     const provider = getRequestMethodMock({
       // eslint-disable-next-line @typescript-eslint/naming-convention
-      wallet_getSnaps: {},
+      wallet_getAllSnaps: {},
       foo: new Error('Unsupported method.'),
     });
 

@@ -45,7 +45,7 @@ describe('snapsSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({}),
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({}),
           },
         },
       });
@@ -60,7 +60,7 @@ describe('snapsSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({
               'snap-id': {
                 version: '1.0.0',
               },
@@ -80,7 +80,7 @@ describe('snapsSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({
               [snap.snapId]: {
                 version: snap.latestVersion,
               },
@@ -100,7 +100,7 @@ describe('snapsSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({
               [snap.snapId]: {
                 version: '1.1.0',
               },
@@ -120,7 +120,7 @@ describe('snapsSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({
               [snap.snapId]: {
                 version: '1.0.0',
               },
@@ -144,7 +144,7 @@ describe('snapsSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({
               [barSnap.snapId]: {
                 version: '0.1.0',
               },

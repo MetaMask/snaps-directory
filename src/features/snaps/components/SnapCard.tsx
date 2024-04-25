@@ -6,7 +6,7 @@ import type { FunctionComponent } from 'react';
 import { SnapCardImage } from './SnapCardImage';
 import { Card, SnapAvatar } from '../../../components';
 import type { Fields } from '../../../utils';
-import { useGetInstalledSnapsQuery } from '../api';
+import { useGetAllInstalledSnapsQuery } from '../api';
 
 export type SnapCardProps = Fields<
   Queries.Snap,
@@ -25,7 +25,7 @@ export const SnapCard: FunctionComponent<SnapCardProps> = ({
   image,
   onClick = () => undefined,
 }) => {
-  const { data: installedSnaps } = useGetInstalledSnapsQuery();
+  const { data: installedSnaps } = useGetAllInstalledSnapsQuery();
   const isInstalled = Boolean(installedSnaps?.[snapId]);
 
   return (

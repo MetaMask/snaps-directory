@@ -18,7 +18,7 @@ describe('NotificationsList', () => {
     Object.assign(globalThis, 'window', {
       ethereum: getRequestMethodMock({
         /* eslint-disable @typescript-eslint/naming-convention */
-        wallet_getSnaps: {
+        wallet_getAllSnaps: {
           [fooSnap.snapId]: {
             name: fooSnap.name,
             version: '0.1.0',

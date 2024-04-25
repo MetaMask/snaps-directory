@@ -6,7 +6,7 @@ import { SORT_FUNCTIONS } from './sort';
 import { RegistrySnapCategory } from '../../constants';
 import type { ApplicationState } from '../../store';
 import type { Snap } from '../snaps';
-import { getInstalledSnaps, getSnapsById } from '../snaps';
+import { getAllInstalledSnaps, getSnapsById } from '../snaps';
 
 export type FilterState = {
   searchQuery: string;
@@ -146,7 +146,7 @@ export const getFilteredSnaps = createSelector(
 
     const sortedSnaps = SORT_FUNCTIONS[order](searchedSnaps);
 
-    const installedSnaps = getInstalledSnaps(state);
+    const installedSnaps = getAllInstalledSnaps(state);
     const filteredSnaps = installed
       ? sortedSnaps.filter((snap) => Boolean(installedSnaps[snap.snapId]))
       : sortedSnaps;

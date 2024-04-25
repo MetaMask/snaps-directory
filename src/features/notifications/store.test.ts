@@ -178,7 +178,7 @@ describe('notificationsSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({
               [snap.snapId]: {
                 version: '1.0.0',
               },
@@ -210,7 +210,7 @@ describe('notificationsSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({
               [snap.snapId]: {
                 version: '1.0.0',
               },
@@ -237,7 +237,7 @@ describe('notificationsSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({}),
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({}),
           },
         },
       });

@@ -19,7 +19,7 @@ import {
 } from '../../../components';
 import { RegistrySnapCategory } from '../../../constants';
 import {
-  useGetInstalledSnapsQuery,
+  useGetAllInstalledSnapsQuery,
   Authorship,
   RelatedSnaps,
   Metadata,
@@ -95,7 +95,7 @@ const SnapPage: FunctionComponent<SnapPageProps> = ({ data, pageContext }) => {
     installs,
   } = data.snap;
 
-  const { data: installedSnaps } = useGetInstalledSnapsQuery();
+  const { data: installedSnaps } = useGetAllInstalledSnapsQuery();
   const isInstalled = Boolean(installedSnaps?.[snapId]);
 
   return (

@@ -337,7 +337,7 @@ describe('filterSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({
               [fooSnap.snapId]: {
                 version: fooSnap.latestVersion,
               },
@@ -387,7 +387,7 @@ describe('filterSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({
               [fooSnap.snapId]: {
                 version: fooSnap.latestVersion,
               },
@@ -431,7 +431,7 @@ describe('filterSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({
               [fooSnap.snapId]: {
                 version: fooSnap.latestVersion,
               },
@@ -478,7 +478,7 @@ describe('filterSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({
               [fooSnap.snapId]: {
                 version: fooSnap.latestVersion,
               },
@@ -516,7 +516,7 @@ describe('filterSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({
               [fooSnap.snapId]: {
                 version: fooSnap.latestVersion,
               },
@@ -560,7 +560,7 @@ describe('filterSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({
               [fooSnap.snapId]: {
                 version: fooSnap.latestVersion,
               },
@@ -609,7 +609,7 @@ describe('filterSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({
               [fooSnap.snapId]: {
                 version: fooSnap.latestVersion,
               },
@@ -665,7 +665,7 @@ describe('filterSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({
               [fooSnap.snapId]: {
                 version: fooSnap.latestVersion,
               },
@@ -718,7 +718,7 @@ describe('filterSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({
               [fooSnap.snapId]: {
                 version: fooSnap.latestVersion,
               },
@@ -771,7 +771,7 @@ describe('filterSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({
               [fooSnap.snapId]: {
                 version: fooSnap.latestVersion,
               },
@@ -825,7 +825,7 @@ describe('filterSlice', () => {
         },
         snapsApi: {
           queries: {
-            'getInstalledSnaps(undefined)': getMockQueryResponse({
+            'getAllInstalledSnaps(undefined)': getMockQueryResponse({
               [barSnap.snapId]: {
                 version: barSnap.latestVersion,
               },
