@@ -9,7 +9,8 @@ import { PostInstallModal } from './PostInstallModal';
 import {
   getUpdateAvailable,
   removeAcknowledgedUpdate,
-  useGetInstalledSnapsQuery,
+  useGetAllInstalledSnapsQuery,
+  useRevokePermissionsMutation,
   useInstallSnapMutation,
 } from '../features';
 import {
@@ -105,8 +106,9 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
   website,
   version,
 }) => {
-  const { data: installedSnaps } = useGetInstalledSnapsQuery();
+  const { data: installedSnaps } = useGetAllInstalledSnapsQuery();
   const [installSnap, { isLoading }] = useInstallSnapMutation();
+  const [revokePermissions] = useRevokePermissionsMutation();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const isSupportedVersion = useSupportedVersion();
   const updateAvailable = useSelector(getUpdateAvailable(snapId));
@@ -116,11 +118,11 @@ export const InstallSnapButton: FunctionComponent<InstallSnapButtonProps> = ({
 
   const handleInstall = () => {
     installSnap({ snapId, version })
-      .then((result) => {
+      .then(async (result) => {
         if ('error' in result) {
           return;
         }
-
+        await revokePermissions();
         dispatch(removeAcknowledgedUpdate(snapId));
         onOpen();
       })

@@ -2,7 +2,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 import semver from 'semver/preload';
 
-import { getInstalledSnaps } from './api';
+import { getAllInstalledSnaps } from './api';
 import type { RegistrySnapCategory } from '../../constants';
 import type { ApplicationState } from '../../store';
 import type { Fields } from '../../utils';
@@ -108,7 +108,7 @@ export const getSnapsById = (snapIds: string[]) => {
 export const getUpdateAvailable = (snapId: string) =>
   createSelector(
     (state: ApplicationState) => ({
-      installedSnaps: getInstalledSnaps(state),
+      installedSnaps: getAllInstalledSnaps(state),
       snaps: getSnaps(state),
     }),
     ({ installedSnaps, snaps }) => {
@@ -128,7 +128,7 @@ export const getUpdateAvailable = (snapId: string) =>
 
 export const getUpdatableSnaps = createSelector(
   (state: ApplicationState) => ({
-    snapIds: Object.keys(getInstalledSnaps(state)).filter((snapId) =>
+    snapIds: Object.keys(getAllInstalledSnaps(state)).filter((snapId) =>
       getUpdateAvailable(snapId)(state),
     ),
     snaps: getSnaps(state),

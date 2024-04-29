@@ -3,8 +3,9 @@ import { act } from 'react-dom/test-utils';
 
 import {
   getInstalledSnap,
-  getInstalledSnaps,
-  useGetInstalledSnapsQuery,
+  getAllInstalledSnaps,
+  useGetAllInstalledSnapsQuery,
+  useRevokePermissionsMutation,
   useGetVersionQuery,
   useInstallSnapMutation,
 } from './api';
@@ -42,13 +43,35 @@ describe('snapsApi', () => {
     });
   });
 
-  describe('getInstalledSnaps', () => {
+  describe('revokePermissions', () => {
+    it('revokes the permission acquired by the directory to interact with a snap', async () => {
+      Object.assign(globalThis, 'window', {
+        ethereum: getRequestMethodMock({
+          /* eslint-disable @typescript-eslint/naming-convention */
+          wallet_revokePermissions: null,
+          /* eslint-enable @typescript-eslint/naming-convention */
+        }),
+      });
+
+      const { result } = await act(() =>
+        renderHook(() => useRevokePermissionsMutation()),
+      );
+
+      const [revokePermissions] = result.current;
+      await act(async () => await revokePermissions());
+
+      const [, { data }] = result.current;
+      expect(data).toBeNull();
+    });
+  });
+
+  describe('getAllInstalledSnaps', () => {
     it('returns the installed snaps', async () => {
       const { snap } = getMockSnap();
       Object.assign(globalThis, 'window', {
         ethereum: getRequestMethodMock({
           /* eslint-disable @typescript-eslint/naming-convention */
-          wallet_getSnaps: {
+          wallet_getAllSnaps: {
             [snap.snapId]: {
               version: snap.latestVersion,
             },
@@ -58,7 +81,7 @@ describe('snapsApi', () => {
       });
 
       const { result } = await act(() =>
-        renderHook(() => useGetInstalledSnapsQuery()),
+        renderHook(() => useGetAllInstalledSnapsQuery()),
       );
 
       expect(result.current.data).toStrictEqual({
@@ -330,7 +353,7 @@ describe('snapsApi', () => {
       Object.assign(globalThis, 'window', {
         ethereum: getRequestMethodMock({
           /* eslint-disable @typescript-eslint/naming-convention */
-          wallet_getSnaps: {
+          wallet_getAllSnaps: {
             [snap.snapId]: {
               version: '1.0.0',
             },
@@ -380,13 +403,13 @@ describe('snapsApi', () => {
   });
 
   describe('selectors', () => {
-    describe('getInstalledSnaps', () => {
+    describe('getAllInstalledSnaps', () => {
       it('selects the installed Snaps', () => {
         const { snap } = getMockSnap();
         const state = getMockState({
           snapsApi: {
             queries: {
-              'getInstalledSnaps(undefined)': getMockQueryResponse({
+              'getAllInstalledSnaps(undefined)': getMockQueryResponse({
                 [snap.snapId]: {
                   version: snap.latestVersion,
                 },
@@ -395,7 +418,7 @@ describe('snapsApi', () => {
           },
         });
 
-        expect(getInstalledSnaps(state)).toStrictEqual({
+        expect(getAllInstalledSnaps(state)).toStrictEqual({
           [snap.snapId]: {
             version: snap.latestVersion,
           },
@@ -409,7 +432,7 @@ describe('snapsApi', () => {
         const state = getMockState({
           snapsApi: {
             queries: {
-              'getInstalledSnaps(undefined)': getMockQueryResponse({
+              'getAllInstalledSnaps(undefined)': getMockQueryResponse({
                 [snap.snapId]: {
                   version: snap.latestVersion,
                 },
@@ -427,7 +450,7 @@ describe('snapsApi', () => {
         const state = getMockState({
           snapsApi: {
             queries: {
-              'getInstalledSnaps(undefined)': getMockQueryResponse({}),
+              'getAllInstalledSnaps(undefined)': getMockQueryResponse({}),
             },
           },
         });

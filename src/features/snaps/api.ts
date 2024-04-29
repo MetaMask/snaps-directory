@@ -1,3 +1,4 @@
+import { WALLET_SNAP_PERMISSION_KEY } from '@metamask/snaps-utils';
 import { createSelector } from '@reduxjs/toolkit';
 import { createApi } from '@reduxjs/toolkit/query/react';
 
@@ -30,11 +31,22 @@ export const snapsApi = createApi({
       }),
     }),
 
-    getInstalledSnaps: builder.query<InstalledSnaps, void>({
+    getAllInstalledSnaps: builder.query<InstalledSnaps, void>({
       query: () => ({
-        method: 'wallet_getSnaps',
+        method: 'wallet_getAllSnaps',
       }),
       providesTags: [SnapsTag.InstalledSnaps],
+    }),
+
+    revokePermissions: builder.mutation<null, void>({
+      query: () => ({
+        method: 'wallet_revokePermissions',
+        params: [
+          {
+            [WALLET_SNAP_PERMISSION_KEY]: {},
+          },
+        ],
+      }),
     }),
 
     installSnap: builder.mutation<InstallSnapResult, InstallSnapArgs>({
@@ -120,17 +132,18 @@ export const snapsApi = createApi({
 
 export const {
   useGetVersionQuery,
-  useGetInstalledSnapsQuery,
+  useGetAllInstalledSnapsQuery,
   useInstallSnapMutation,
+  useRevokePermissionsMutation,
 } = snapsApi;
 
-export const getInstalledSnaps = createSelector(
+export const getAllInstalledSnaps = createSelector(
   (state: ApplicationState) => state,
-  (state) => snapsApi.endpoints.getInstalledSnaps.select()(state).data ?? {},
+  (state) => snapsApi.endpoints.getAllInstalledSnaps.select()(state).data ?? {},
 );
 
 export const getInstalledSnap = (snapId: string) =>
   createSelector(
-    (state: ApplicationState) => getInstalledSnaps(state),
+    (state: ApplicationState) => getAllInstalledSnaps(state),
     (state) => state[snapId] ?? null,
   );

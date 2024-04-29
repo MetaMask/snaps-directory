@@ -3,12 +3,12 @@ import type { FunctionComponent } from 'react';
 
 import { SnapAvatar } from '../../../components';
 import type { Fields } from '../../../utils';
-import { useGetInstalledSnapsQuery } from '../../snaps';
+import { useGetAllInstalledSnapsQuery } from '../../snaps';
 
 export const Authorship: FunctionComponent<
   Fields<Queries.Snap, 'name' | 'snapId' | 'icon'>
 > = ({ name, snapId, icon }) => {
-  const { data: installedSnaps } = useGetInstalledSnapsQuery();
+  const { data: installedSnaps } = useGetAllInstalledSnapsQuery();
   const isInstalled = Boolean(installedSnaps?.[snapId]);
 
   return (

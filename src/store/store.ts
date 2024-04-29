@@ -38,7 +38,7 @@ export function createStore(
   // home page.
   store
     .dispatch(
-      snapsApi.endpoints.getInstalledSnaps.initiate(undefined, {
+      snapsApi.endpoints.getAllInstalledSnaps.initiate(undefined, {
         forceRefetch: true,
       }),
     )

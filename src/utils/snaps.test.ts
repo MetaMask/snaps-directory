@@ -43,7 +43,7 @@ describe('hasSnapsSupport', () => {
   it('returns `true` if the provider supports Snaps', async () => {
     const provider = getRequestMethodMock({
       // eslint-disable-next-line @typescript-eslint/naming-convention
-      wallet_getSnaps: {},
+      wallet_getAllSnaps: {},
     });
 
     expect(await hasSnapsSupport(provider)).toBe(true);
@@ -52,7 +52,7 @@ describe('hasSnapsSupport', () => {
   it('returns `false` if the provider does not support Snaps', async () => {
     const provider = getRequestMethodMock({
       // eslint-disable-next-line @typescript-eslint/naming-convention
-      wallet_getSnaps: new Error('Unsupported method.'),
+      wallet_getAllSnaps: new Error('Unsupported method.'),
     });
 
     expect(await hasSnapsSupport(provider)).toBe(false);
@@ -228,7 +228,7 @@ describe('getSnapsProvider', () => {
       value: {
         ethereum: getRequestMethodMock({
           // eslint-disable-next-line @typescript-eslint/naming-convention
-          wallet_getSnaps: {},
+          wallet_getAllSnaps: {},
         }),
       },
     });
@@ -239,7 +239,7 @@ describe('getSnapsProvider', () => {
   it('returns the provider if it is in the `window.ethereum.detected` array', async () => {
     const provider = getRequestMethodMock({
       // eslint-disable-next-line @typescript-eslint/naming-convention
-      wallet_getSnaps: {},
+      wallet_getAllSnaps: {},
     });
 
     Object.defineProperty(globalThis, 'window', {
@@ -249,7 +249,7 @@ describe('getSnapsProvider', () => {
           detected: [
             getRequestMethodMock({
               // eslint-disable-next-line @typescript-eslint/naming-convention
-              wallet_getSnaps: new Error('Unsupported method.'),
+              wallet_getAllSnaps: new Error('Unsupported method.'),
             }),
             provider,
           ],
@@ -263,7 +263,7 @@ describe('getSnapsProvider', () => {
   it('returns the provider if it is in the `window.ethereum.providers` array', async () => {
     const provider = getRequestMethodMock({
       // eslint-disable-next-line @typescript-eslint/naming-convention
-      wallet_getSnaps: {},
+      wallet_getAllSnaps: {},
     });
 
     Object.defineProperty(globalThis, 'window', {
@@ -273,7 +273,7 @@ describe('getSnapsProvider', () => {
           providers: [
             getRequestMethodMock({
               // eslint-disable-next-line @typescript-eslint/naming-convention
-              wallet_getSnaps: new Error('Unsupported method.'),
+              wallet_getAllSnaps: new Error('Unsupported method.'),
             }),
             provider,
           ],

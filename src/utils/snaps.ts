@@ -19,7 +19,7 @@ export type Fields<Query, Name extends keyof Query> = {
 };
 
 /**
- * Check if the current provider supports snaps by calling `wallet_getSnaps`.
+ * Check if the current provider supports snaps by calling `wallet_getAllSnaps`.
  *
  * @param provider - The provider to use to check for snaps support. Defaults to
  * `window.ethereum`.
@@ -30,7 +30,7 @@ export async function hasSnapsSupport(
 ) {
   try {
     await provider.request({
-      method: 'wallet_getSnaps',
+      method: 'wallet_getAllSnaps',
     });
 
     return true;

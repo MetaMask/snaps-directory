@@ -16,7 +16,7 @@ describe('InstallSnapButton', () => {
     Object.assign(globalThis, 'window', {
       ethereum: getRequestMethodMock({
         /* eslint-disable @typescript-eslint/naming-convention */
-        wallet_getSnaps: {},
+        wallet_getAllSnaps: {},
         web3_clientVersion: 'MetaMask/v11.0.0',
         /* eslint-enable @typescript-eslint/naming-convention */
       }),
@@ -35,7 +35,7 @@ describe('InstallSnapButton', () => {
     Object.assign(globalThis, 'window', {
       ethereum: getRequestMethodMock({
         /* eslint-disable @typescript-eslint/naming-convention */
-        wallet_getSnaps: new Error('Snaps are not supported.'),
+        wallet_getAllSnaps: new Error('Snaps are not supported.'),
         web3_clientVersion: 'MetaMask/v10.0.0',
         /* eslint-enable @typescript-eslint/naming-convention */
       }),
@@ -55,7 +55,7 @@ describe('InstallSnapButton', () => {
     Object.assign(globalThis, 'window', {
       ethereum: getRequestMethodMock({
         /* eslint-disable @typescript-eslint/naming-convention */
-        wallet_getSnaps: {},
+        wallet_getAllSnaps: {},
         web3_clientVersion: 'MetaMask/v11.0.0',
         wallet_requestSnaps: {
           [snap.snapId]: {
@@ -91,7 +91,7 @@ describe('InstallSnapButton', () => {
     Object.assign(globalThis, 'window', {
       ethereum: getRequestMethodMock({
         /* eslint-disable @typescript-eslint/naming-convention */
-        wallet_getSnaps: {},
+        wallet_getAllSnaps: {},
         web3_clientVersion: 'MetaMask/v11.0.0',
         wallet_requestSnaps: new Error('User rejected the request.'),
         /* eslint-enable @typescript-eslint/naming-convention */
@@ -123,7 +123,7 @@ describe('InstallSnapButton', () => {
     Object.assign(globalThis, 'window', {
       ethereum: getRequestMethodMock({
         /* eslint-disable @typescript-eslint/naming-convention */
-        wallet_getSnaps: {
+        wallet_getAllSnaps: {
           [snap.snapId]: {
             name: snap.name,
             version: '0.1.0',
@@ -153,7 +153,7 @@ describe('InstallSnapButton', () => {
     Object.assign(globalThis, 'window', {
       ethereum: getRequestMethodMock({
         /* eslint-disable @typescript-eslint/naming-convention */
-        wallet_getSnaps: {
+        wallet_getAllSnaps: {
           [snap.snapId]: {
             name: snap.name,
             version: snap.latestVersion,
