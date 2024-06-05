@@ -217,7 +217,7 @@ describe('theme', () => {
           },
           "Skeleton": Object {
             "baseStyle": Object {
-              "--skeleton-end-color": "colors.border",
+              "--skeleton-end-color": "colors.border.muted",
               "--skeleton-start-color": "colors.background.alternative",
               "borderRadius": "lg",
             },
