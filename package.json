@@ -62,7 +62,7 @@
     "@lingui/react": "^4.4.2",
     "@metamask/logo": "^3.1.1",
     "@metamask/providers": "^17.0.0",
-    "@metamask/snaps-controllers": "^8.3.1",
+    "@metamask/snaps-controllers": "^9.2.0",
     "@metamask/snaps-sdk": "^5.0.0",
     "@metamask/snaps-utils": "^7.4.1",
     "@metamask/utils": "^8.4.0",
