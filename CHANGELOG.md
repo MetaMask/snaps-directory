@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.13.0]
+
+### Uncategorized
+
+- New Crowdin translations by Github Action ([#362](https://github.com/MetaMask/snaps-directory/pull/362))
+- Bump @metamask/post-message-stream from 8.1.0 to 8.1.1 ([#446](https://github.com/MetaMask/snaps-directory/pull/446))
+- Bump braces from 3.0.2 to 3.0.3 in the npm_and_yarn group across 1 directory ([#426](https://github.com/MetaMask/snaps-directory/pull/426))
+- chore: Bump MetaMask dependencies ([#445](https://github.com/MetaMask/snaps-directory/pull/445))
+- Bump @metamask/json-rpc-middleware-stream from 7.0.1 to 7.0.2 ([#416](https://github.com/MetaMask/snaps-directory/pull/416))
+- Bump @metamask/utils from 8.4.0 to 8.5.0 ([#421](https://github.com/MetaMask/snaps-directory/pull/421))
+- Bump @metamask/snaps-sdk from 4.4.1 to 5.0.0 ([#425](https://github.com/MetaMask/snaps-directory/pull/425))
+- Bump other dependencies ([#415](https://github.com/MetaMask/snaps-directory/pull/415))
+- Fix missing skeleton color ([#396](https://github.com/MetaMask/snaps-directory/pull/396))
+- Bump Snaps dependencies ([#414](https://github.com/MetaMask/snaps-directory/pull/414))
+- Bump @metamask/base-controller from 5.0.1 to 5.0.2 ([#390](https://github.com/MetaMask/snaps-directory/pull/390))
+- Bump @metamask/providers from 16.0.0 to 16.1.0 ([#391](https://github.com/MetaMask/snaps-directory/pull/391))
+- Use `wallet_getAllSnaps` and revoke permissions post-install ([#388](https://github.com/MetaMask/snaps-directory/pull/388))
+
 ## [1.12.0]
 
 ### Added
@@ -261,7 +279,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.12.0...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.13.0...HEAD
+[1.13.0]: https://github.com/MetaMask/snaps-directory/compare/v1.12.0...v1.13.0
 [1.12.0]: https://github.com/MetaMask/snaps-directory/compare/v1.11.0...v1.12.0
 [1.11.0]: https://github.com/MetaMask/snaps-directory/compare/v1.10.0...v1.11.0
 [1.10.0]: https://github.com/MetaMask/snaps-directory/compare/v1.9.0...v1.10.0
