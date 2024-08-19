@@ -37,6 +37,10 @@ export const snapsApi = createApi({
         method: 'wallet_getAllSnaps',
       }),
       transformResponse(snaps: GetAllSnapsResult) {
+        if (!snaps) {
+          return {};
+        }
+
         return snaps.reduce<Record<string, GetAllSnapsResult[0]>>(
           (accumulator, snap) => {
             accumulator[snap.id] = snap;
