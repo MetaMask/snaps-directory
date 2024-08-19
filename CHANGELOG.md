@@ -9,10 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.13.2]
 
-### Uncategorized
+### Fixed
 
 - Fix build errors ([#450](https://github.com/MetaMask/snaps-directory/pull/450))
-- 1.13.1 ([#449](https://github.com/MetaMask/snaps-directory/pull/449))
 
 ## [1.13.1]
 
