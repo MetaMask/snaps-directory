@@ -71,11 +71,9 @@ describe('snapsApi', () => {
       Object.assign(globalThis, 'window', {
         ethereum: getRequestMethodMock({
           /* eslint-disable @typescript-eslint/naming-convention */
-          wallet_getAllSnaps: {
-            [snap.snapId]: {
-              version: snap.latestVersion,
-            },
-          },
+          wallet_getAllSnaps: [
+            { id: snap.snapId, version: snap.latestVersion },
+          ],
           /* eslint-enable @typescript-eslint/naming-convention */
         }),
       });
@@ -86,6 +84,7 @@ describe('snapsApi', () => {
 
       expect(result.current.data).toStrictEqual({
         [snap.snapId]: {
+          id: snap.snapId,
           version: snap.latestVersion,
         },
       });
@@ -353,11 +352,7 @@ describe('snapsApi', () => {
       Object.assign(globalThis, 'window', {
         ethereum: getRequestMethodMock({
           /* eslint-disable @typescript-eslint/naming-convention */
-          wallet_getAllSnaps: {
-            [snap.snapId]: {
-              version: '1.0.0',
-            },
-          },
+          wallet_getAllSnaps: [{ id: snap.snapId, version: '1.0.0' }],
           wallet_requestSnaps: {
             [snap.snapId]: {
               error: null,
