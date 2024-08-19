@@ -21,12 +21,7 @@ describe('NotificationAcknowledger', () => {
     Object.assign(globalThis, 'window', {
       ethereum: getRequestMethodMock({
         /* eslint-disable @typescript-eslint/naming-convention */
-        wallet_getAllSnaps: {
-          [snap.snapId]: {
-            name: snap.name,
-            version: '0.1.0',
-          },
-        },
+        wallet_getAllSnaps: [{ id: snap.snapId, version: '0.1.0' }],
         web3_clientVersion: 'MetaMask/v11.0.0',
         /* eslint-enable @typescript-eslint/naming-convention */
       }),
@@ -58,12 +53,7 @@ describe('NotificationAcknowledger', () => {
     Object.assign(globalThis, 'window', {
       ethereum: getRequestMethodMock({
         /* eslint-disable @typescript-eslint/naming-convention */
-        wallet_getAllSnaps: {
-          [snap.snapId]: {
-            name: snap.name,
-            version: '0.1.0',
-          },
-        },
+        wallet_getAllSnaps: [{ id: snap.snapId, version: '0.1.0' }],
         web3_clientVersion: 'MetaMask/v11.0.0',
         /* eslint-enable @typescript-eslint/naming-convention */
       }),
@@ -93,12 +83,7 @@ describe('NotificationAcknowledger', () => {
     Object.assign(globalThis, 'window', {
       ethereum: getRequestMethodMock({
         /* eslint-disable @typescript-eslint/naming-convention */
-        wallet_getAllSnaps: {
-          [snap.snapId]: {
-            name: snap.name,
-            version: '0.1.0',
-          },
-        },
+        wallet_getAllSnaps: [{ id: snap.snapId, version: '0.1.0' }],
         web3_clientVersion: 'MetaMask/v11.0.0',
         /* eslint-enable @typescript-eslint/naming-convention */
       }),

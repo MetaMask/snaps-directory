@@ -18,20 +18,11 @@ describe('NotificationsList', () => {
     Object.assign(globalThis, 'window', {
       ethereum: getRequestMethodMock({
         /* eslint-disable @typescript-eslint/naming-convention */
-        wallet_getAllSnaps: {
-          [fooSnap.snapId]: {
-            name: fooSnap.name,
-            version: '0.1.0',
-          },
-          [barSnap.snapId]: {
-            name: barSnap.name,
-            version: '0.1.0',
-          },
-          [bazSnap.snapId]: {
-            name: bazSnap.name,
-            version: '0.1.0',
-          },
-        },
+        wallet_getAllSnaps: [
+          { id: fooSnap.snapId, version: '0.1.0' },
+          { id: barSnap.snapId, version: '0.1.0' },
+          { id: bazSnap.snapId, version: '0.1.0' },
+        ],
         web3_clientVersion: 'MetaMask/v11.0.0',
         /* eslint-enable @typescript-eslint/naming-convention */
       }),
