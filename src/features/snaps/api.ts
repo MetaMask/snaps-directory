@@ -41,7 +41,7 @@ export const snapsApi = createApi({
           return {};
         }
 
-        return snaps?.reduce<Record<string, GetAllSnapsResult[0]>>(
+        return snaps.reduce<Record<string, GetAllSnapsResult[0]>>(
           (accumulator, snap) => {
             accumulator[snap.id] = snap;
             return accumulator;
