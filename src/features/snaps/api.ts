@@ -19,6 +19,7 @@ export type InstallSnapArgs = {
 
 export type InstalledSnaps = Record<string, { version: string }>;
 export type InstallSnapResult = Record<string, { error: unknown }>;
+export type GetAllSnapsResult = { id: string; version: string }[];
 
 export const snapsApi = createApi({
   reducerPath: 'snapsApi',
@@ -35,6 +36,15 @@ export const snapsApi = createApi({
       query: () => ({
         method: 'wallet_getAllSnaps',
       }),
+      transformResponse(snaps: GetAllSnapsResult) {
+        return snaps.reduce<Record<string, GetAllSnapsResult[0]>>(
+          (accumulator, snap) => {
+            accumulator[snap.id] = snap;
+            return accumulator;
+          },
+          {},
+        );
+      },
       providesTags: [SnapsTag.InstalledSnaps],
     }),
 
