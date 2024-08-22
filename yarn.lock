@@ -4787,13 +4787,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/eslint-config-browser@npm:^12.0.0":
-  version: 12.1.0
-  resolution: "@metamask/eslint-config-browser@npm:12.1.0"
+"@metamask/eslint-config-browser@npm:^13.0.0":
+  version: 13.0.0
+  resolution: "@metamask/eslint-config-browser@npm:13.0.0"
   peerDependencies:
-    "@metamask/eslint-config": ^12.0.0
-    eslint: ^8.27.0
-  checksum: a1d3035b0dd82aa66397e9c8916c45e1dc2d339c13dac385f7c90de09df943c313801538c0d955c2abf44a57008100874f8615d70f19188d8893b653cfe15485
+    "@metamask/eslint-config": ^13.0.0
+    eslint: ^8.57.0
+  checksum: 55fd924a60ed4f7fc78aa6e9fe3b05a74a86c171de9357bd5fbe9fba84078680a8de364bece4f904af37f7fddf251df4b45444d62b54c8d7b9e02082ca5c4f1f
   languageName: node
   linkType: hard
 
@@ -5092,7 +5092,7 @@ __metadata:
     "@lingui/react": ^4.4.2
     "@metamask/auto-changelog": ^3.2.0
     "@metamask/eslint-config": ^12.0.0
-    "@metamask/eslint-config-browser": ^12.0.0
+    "@metamask/eslint-config-browser": ^13.0.0
     "@metamask/eslint-config-jest": ^12.0.0
     "@metamask/eslint-config-nodejs": ^12.0.0
     "@metamask/eslint-config-typescript": ^12.0.0
