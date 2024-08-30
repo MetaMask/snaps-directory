@@ -272,8 +272,8 @@ msgid "Continue to <0>{name}</0>'s website to get started with this snap."
 msgstr "Bu snap ile başlamak için <0>{name}</0> web sitesine devam edin."
 
 #: src/constants.ts
-msgid "Create an Ethereum Account"
-msgstr "Bir Ethereum Hesabı oluştur"
+msgid "Custom Ethereum Accounts"
+msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Customize your web3 experience with {0}."
@@ -594,8 +594,8 @@ msgid "Notifications"
 msgstr "Bildirimler"
 
 #: src/constants.ts
-msgid "Notifications and Chat"
-msgstr "Bildirimler ve Sohbet"
+msgid "Notifications and Communication"
+msgstr ""
 
 #: src/components/SnapWebsiteButton.tsx
 #: src/features/banner/components/faq-banner/FaqBanner.tsx
