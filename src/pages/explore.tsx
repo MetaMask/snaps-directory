@@ -1,6 +1,7 @@
 import { Container, Flex, Divider, Heading, Link } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
 import { withPrefix } from 'gatsby';
+import { useEffect } from 'react';
 import type { FunctionComponent } from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -12,7 +13,9 @@ import {
   resetFilters,
   getAll,
   getSearchQuery,
+  setOrder,
 } from '../features';
+import { Order } from '../features/filter/constants';
 import { useSelector } from '../hooks';
 
 export type ExplorePageProps = {
@@ -35,6 +38,10 @@ const ExplorePage: FunctionComponent<ExplorePageProps> = ({ pageContext }) => {
   const handleResetFilter = () => {
     dispatch(resetFilters());
   };
+
+  useEffect(() => {
+    dispatch(setOrder(Order.Latest));
+  }, [dispatch]);
 
   return (
     <Container

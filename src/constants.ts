@@ -42,7 +42,7 @@ export const SNAP_CATEGORY_LINKS: Record<
   }
 > = {
   [RegistrySnapCategory.AccountManagement]: {
-    header: defineMessage`Create an Ethereum Account`,
+    header: defineMessage`Custom Ethereum Accounts`,
     link: '/account-management',
     linkText: defineMessage`See All`,
   },
@@ -52,7 +52,7 @@ export const SNAP_CATEGORY_LINKS: Record<
     linkText: defineMessage`See All`,
   },
   [RegistrySnapCategory.Communication]: {
-    header: defineMessage`Notifications and Chat`,
+    header: defineMessage`Notifications and Communication`,
     link: '/communication',
     linkText: defineMessage`See All`,
   },

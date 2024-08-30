@@ -20,13 +20,12 @@ const GROUPS = [
     images: true,
   },
   {
-    header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.AccountManagement].header,
-    category: RegistrySnapCategory.AccountManagement,
-    limit: 3,
-    link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.AccountManagement].link,
-    linkText:
-      SNAP_CATEGORY_LINKS[RegistrySnapCategory.AccountManagement].linkText,
-    order: Order.DeterministicRandom,
+    header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Security].header,
+    category: RegistrySnapCategory.Security,
+    limit: 6,
+    link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Security].link,
+    linkText: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Security].linkText,
+    order: Order.Popularity,
   },
   {
     header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Interoperability].header,
@@ -35,23 +34,24 @@ const GROUPS = [
     link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Interoperability].link,
     linkText:
       SNAP_CATEGORY_LINKS[RegistrySnapCategory.Interoperability].linkText,
-    order: Order.DeterministicRandom,
-  },
-  {
-    header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Security].header,
-    category: RegistrySnapCategory.Security,
-    limit: 6,
-    link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Security].link,
-    linkText: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Security].linkText,
-    order: Order.DeterministicRandom,
+    order: Order.Popularity,
   },
   {
     header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Communication].header,
     category: RegistrySnapCategory.Communication,
-    limit: 3,
+    limit: 6,
     link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Communication].link,
     linkText: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Communication].linkText,
-    order: Order.DeterministicRandom,
+    order: Order.Popularity,
+  },
+  {
+    header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.AccountManagement].header,
+    category: RegistrySnapCategory.AccountManagement,
+    limit: 6,
+    link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.AccountManagement].link,
+    linkText:
+      SNAP_CATEGORY_LINKS[RegistrySnapCategory.AccountManagement].linkText,
+    order: Order.Popularity,
   },
   {
     header: defineMessage`Latest`,
