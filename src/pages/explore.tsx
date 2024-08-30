@@ -40,7 +40,7 @@ const ExplorePage: FunctionComponent<ExplorePageProps> = ({ pageContext }) => {
   };
 
   useEffect(() => {
-    if (!window.history.state.isFromCategory) {
+    if (!window.history.state?.isFromCategory) {
       dispatch(setOrder(Order.Latest));
     }
   }, [dispatch]);
