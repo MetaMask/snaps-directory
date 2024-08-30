@@ -67,7 +67,7 @@ const Category: FunctionComponent<CategoryProps> = ({ data, pageContext }) => {
     // According to the type definition, `navigate` returns a promise, but in
     // practice it does not.
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    navigate('/explore', { replace: true });
+    navigate('/explore', { replace: true, state: { isFromCategory: true } });
   }, [categoryName, dispatch]);
 
   return <Head data={data} pageContext={pageContext} />;
