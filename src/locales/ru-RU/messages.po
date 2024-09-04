@@ -543,6 +543,10 @@ msgstr "Ссылка"
 msgid "Live"
 msgstr "Выпущенная версия"
 
+#: src/features/banner/components/explore-banner/ExploreBanner.tsx
+msgid "Live in MetaMask"
+msgstr ""
+
 #: src/features/snap/permissions.tsx
 #: src/features/snap/permissions.tsx
 msgid "Manage {name} accounts"
@@ -569,8 +573,8 @@ msgid "MetaMask"
 msgstr "MetaMask"
 
 #: src/components/InstallUnsupportedMobile.tsx
-msgid "MetaMask Snaps is in open beta and only supported via our extension clients on desktop such as <0>Brave</0>, <1>Chrome</1>, or <2>Firefox</2>."
-msgstr "MetaMask Snaps находится на стадии открытой бета-версии и поддерживается только через наши клиенты расширений для браузеров персональных компьютеров, таких как <0>Brave</0>, <1>Chrome</1> и <2>Firefox</2>."
+msgid "MetaMask Snaps is currently only supported via our extension clients on desktop such as <0>Brave</0>, <1>Chrome</1>, or <2>Firefox</2>."
+msgstr ""
 
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
@@ -601,10 +605,6 @@ msgstr "Уведомления и чат"
 #: src/features/banner/components/faq-banner/FaqBanner.tsx
 msgid "Open"
 msgstr "Открыть"
-
-#: src/features/banner/components/explore-banner/ExploreBanner.tsx
-msgid "Open Beta Live"
-msgstr "Открыть выпущенную бета-версию"
 
 #: src/features/filter/components/FilterButton.tsx
 msgid "Open filter menu"
