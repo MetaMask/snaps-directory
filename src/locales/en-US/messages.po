@@ -343,10 +343,6 @@ msgstr ""
 msgid "Ethereum"
 msgstr ""
 
-#: src/features/banner/components/explore-banner/ExploreBanner.tsx
-msgid "Everyone"
-msgstr "Everyone"
-
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "Experimental Beta"
 msgstr ""
@@ -539,6 +535,7 @@ msgid "Link"
 msgstr ""
 
 #: src/components/icons/index.ts
+#: src/features/banner/components/explore-banner/ExploreBanner.tsx
 msgid "Live"
 msgstr ""
 

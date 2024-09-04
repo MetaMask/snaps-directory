@@ -348,10 +348,6 @@ msgstr "Lichtmodus aktivieren"
 msgid "Ethereum"
 msgstr "Ethereum"
 
-#: src/features/banner/components/explore-banner/ExploreBanner.tsx
-msgid "Everyone"
-msgstr ""
-
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "Experimental Beta"
 msgstr "Experimentelle Beta"
@@ -544,6 +540,7 @@ msgid "Link"
 msgstr "Link"
 
 #: src/components/icons/index.ts
+#: src/features/banner/components/explore-banner/ExploreBanner.tsx
 msgid "Live"
 msgstr "Live"
 

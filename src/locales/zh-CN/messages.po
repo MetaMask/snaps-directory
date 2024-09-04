@@ -348,10 +348,6 @@ msgstr "启用浅色模式"
 msgid "Ethereum"
 msgstr "以太坊"
 
-#: src/features/banner/components/explore-banner/ExploreBanner.tsx
-msgid "Everyone"
-msgstr ""
-
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "Experimental Beta"
 msgstr "实验性测试版"
@@ -544,6 +540,7 @@ msgid "Link"
 msgstr "链接"
 
 #: src/components/icons/index.ts
+#: src/features/banner/components/explore-banner/ExploreBanner.tsx
 msgid "Live"
 msgstr "在线"
 

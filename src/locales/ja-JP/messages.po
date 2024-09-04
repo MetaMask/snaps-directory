@@ -348,10 +348,6 @@ msgstr "ライトモードを有効にする"
 msgid "Ethereum"
 msgstr "イーサリアム"
 
-#: src/features/banner/components/explore-banner/ExploreBanner.tsx
-msgid "Everyone"
-msgstr ""
-
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "Experimental Beta"
 msgstr "試験運用ベータ版"
@@ -544,6 +540,7 @@ msgid "Link"
 msgstr "リンク"
 
 #: src/components/icons/index.ts
+#: src/features/banner/components/explore-banner/ExploreBanner.tsx
 msgid "Live"
 msgstr "ライブ"
 
