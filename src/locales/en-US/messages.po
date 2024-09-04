@@ -568,8 +568,8 @@ msgid "MetaMask"
 msgstr ""
 
 #: src/components/InstallUnsupportedMobile.tsx
-msgid "MetaMask Snaps are currently only supported via our extension clients on desktop such as <0>Brave</0>, <1>Chrome</1>, or <2>Firefox</2>."
-msgstr "MetaMask Snaps are currently only supported via our extension clients on desktop such as <0>Brave</0>, <1>Chrome</1>, or <2>Firefox</2>."
+msgid "MetaMask Snaps is currently only supported via our extension clients on desktop such as <0>Brave</0>, <1>Chrome</1>, or <2>Firefox</2>."
+msgstr "MetaMask Snaps is currently only supported via our extension clients on desktop such as <0>Brave</0>, <1>Chrome</1>, or <2>Firefox</2>."
 
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
