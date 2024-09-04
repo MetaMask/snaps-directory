@@ -28,7 +28,7 @@ export const ExploreBanner: FunctionComponent<ExploreBannerProps> = ({
     }}
   >
     <Announcement>
-      <Trans>Open Beta Live</Trans>
+      <Trans>Everyone</Trans>
     </Announcement>
     <Heading
       fontSize={['3xl', '4xl', '5xl']}

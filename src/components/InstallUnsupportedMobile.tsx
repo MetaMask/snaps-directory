@@ -58,8 +58,8 @@ export const InstallUnsupportedMobile: FunctionComponent<
             </Heading>
             <Text color="text.alternative" textAlign="center" marginTop={4}>
               <Trans>
-                MetaMask Snaps is in open beta and only supported via our
-                extension clients on desktop such as{' '}
+                MetaMask Snaps are currently only supported via our extension
+                clients on desktop such as{' '}
                 <Link href="https://brave.com/" isExternal={true}>
                   Brave
                 </Link>

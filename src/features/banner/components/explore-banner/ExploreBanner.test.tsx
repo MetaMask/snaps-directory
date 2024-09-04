@@ -5,7 +5,7 @@ describe('ExploreBanner', () => {
   it('renders the banner', () => {
     const { queryByText } = render(<ExploreBanner snaps={[]} />);
 
-    expect(queryByText('Open Beta Live')).toBeInTheDocument();
+    expect(queryByText('Everyone')).toBeInTheDocument();
   });
 
   it('renders the Snaps', () => {
