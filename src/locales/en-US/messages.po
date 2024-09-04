@@ -535,9 +535,12 @@ msgid "Link"
 msgstr ""
 
 #: src/components/icons/index.ts
-#: src/features/banner/components/explore-banner/ExploreBanner.tsx
 msgid "Live"
 msgstr ""
+
+#: src/features/banner/components/explore-banner/ExploreBanner.tsx
+msgid "Live in MetaMask"
+msgstr "Live in MetaMask"
 
 #: src/features/snap/permissions.tsx
 #: src/features/snap/permissions.tsx

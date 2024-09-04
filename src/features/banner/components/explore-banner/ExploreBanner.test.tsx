@@ -5,7 +5,7 @@ describe('ExploreBanner', () => {
   it('renders the banner', () => {
     const { queryByText } = render(<ExploreBanner snaps={[]} />);
 
-    expect(queryByText('Live')).toBeInTheDocument();
+    expect(queryByText('Live in MetaMask')).toBeInTheDocument();
   });
 
   it('renders the Snaps', () => {
