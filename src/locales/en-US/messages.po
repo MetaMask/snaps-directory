@@ -760,6 +760,7 @@ msgid "Support for WebAssembly"
 msgstr ""
 
 #: src/components/icons/index.ts
+#: src/components/icons/index.ts
 msgid "Tag"
 msgstr ""
 
