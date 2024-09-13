@@ -581,6 +581,10 @@ msgstr ""
 msgid "Most Popular"
 msgstr "最常用"
 
+#: src/constants.ts
+msgid "Name Resolution"
+msgstr ""
+
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "No Snaps found"
 msgstr "未发现 Snap"
@@ -643,6 +647,14 @@ msgstr "问题"
 msgid "Related Snaps"
 msgstr "相关 Snap"
 
+#: src/constants.ts
+msgid "Resolve human-readable names to blockchain addresses."
+msgstr ""
+
+#: src/constants.ts
+msgid "Resolve Names to Addresses"
+msgstr ""
+
 #: src/pages/explore.tsx
 msgid "Results for \"{searchQuery}\""
 msgstr "\"{searchQuery}\" 的结果"
@@ -681,6 +693,7 @@ msgstr "安全搜索"
 msgid "See address, account balance, activity and suggest transactions to approve"
 msgstr "查看地址、账户余额、活动并建议要批准的交易"
 
+#: src/constants.ts
 #: src/constants.ts
 #: src/constants.ts
 #: src/constants.ts

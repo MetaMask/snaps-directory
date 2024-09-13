@@ -581,6 +581,10 @@ msgstr ""
 msgid "Most Popular"
 msgstr "最も人気"
 
+#: src/constants.ts
+msgid "Name Resolution"
+msgstr ""
+
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "No Snaps found"
 msgstr "Snapが見つかりませんでした"
@@ -643,6 +647,14 @@ msgstr "質問"
 msgid "Related Snaps"
 msgstr "関連Snap"
 
+#: src/constants.ts
+msgid "Resolve human-readable names to blockchain addresses."
+msgstr ""
+
+#: src/constants.ts
+msgid "Resolve Names to Addresses"
+msgstr ""
+
 #: src/pages/explore.tsx
 msgid "Results for \"{searchQuery}\""
 msgstr "\"{searchQuery}\"の結果"
@@ -681,6 +693,7 @@ msgstr "セキュリティ検索"
 msgid "See address, account balance, activity and suggest transactions to approve"
 msgstr "アドレス、アカウント残高、アクティビティを表示して、承認するトランザクションを提案"
 
+#: src/constants.ts
 #: src/constants.ts
 #: src/constants.ts
 #: src/constants.ts

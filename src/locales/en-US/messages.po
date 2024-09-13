@@ -576,6 +576,10 @@ msgstr "MetaMask Snaps is currently only supported via our extension clients on 
 msgid "Most Popular"
 msgstr ""
 
+#: src/constants.ts
+msgid "Name Resolution"
+msgstr "Name Resolution"
+
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "No Snaps found"
 msgstr ""
@@ -638,6 +642,14 @@ msgstr ""
 msgid "Related Snaps"
 msgstr ""
 
+#: src/constants.ts
+msgid "Resolve human-readable names to blockchain addresses."
+msgstr "Resolve human-readable names to blockchain addresses."
+
+#: src/constants.ts
+msgid "Resolve Names to Addresses"
+msgstr "Resolve Names to Addresses"
+
 #: src/pages/explore.tsx
 msgid "Results for \"{searchQuery}\""
 msgstr ""
@@ -676,6 +688,7 @@ msgstr ""
 msgid "See address, account balance, activity and suggest transactions to approve"
 msgstr ""
 
+#: src/constants.ts
 #: src/constants.ts
 #: src/constants.ts
 #: src/constants.ts
