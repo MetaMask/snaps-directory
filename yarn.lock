@@ -4880,13 +4880,13 @@ __metadata:
   linkType: hard
 
 "@metamask/json-rpc-engine@npm:^9.0.1, @metamask/json-rpc-engine@npm:^9.0.2":
-  version: 9.0.2
-  resolution: "@metamask/json-rpc-engine@npm:9.0.2"
+  version: 9.0.3
+  resolution: "@metamask/json-rpc-engine@npm:9.0.3"
   dependencies:
     "@metamask/rpc-errors": ^6.3.1
     "@metamask/safe-event-emitter": ^3.0.0
     "@metamask/utils": ^9.1.0
-  checksum: 4c852c9f30d05706ee497a2aca3ef6df12aabcff4a71a7426a27d95829f20cf2ff45c774eb9d95224bf16c9555a8cd7e44dccaea1bd44eda4dc43bf298885272
+  checksum: 519680dccba47bde30b1d8733765d4ebeb489e950b24b09d885b394eacd8e8a29d76c601be72021491c38bd0fc188d76eddcfaf81835ea053c1696f2367865ab
   languageName: node
   linkType: hard
 
