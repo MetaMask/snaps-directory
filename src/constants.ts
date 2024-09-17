@@ -67,7 +67,7 @@ export const SNAP_CATEGORY_LINKS: Record<
     linkText: defineMessage`See All`,
   },
   [RegistrySnapCategory.NameResolution]: {
-    header: defineMessage`Resolve Names to Addresses`,
+    header: defineMessage`Human-readable Addresses Onchain`,
     link: '/name-resolution',
     linkText: defineMessage`See All`,
   },

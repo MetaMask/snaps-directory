@@ -446,6 +446,10 @@ msgstr "Иерархия"
 msgid "Home"
 msgstr "Главная"
 
+#: src/constants.ts
+msgid "Human-readable Addresses Onchain"
+msgstr ""
+
 #: src/features/snap/components/MetadataItems.tsx
 msgid "Identifier"
 msgstr "Идентификатор"
@@ -649,10 +653,6 @@ msgstr "Связанные Snaps"
 
 #: src/constants.ts
 msgid "Resolve human-readable names to blockchain addresses."
-msgstr ""
-
-#: src/constants.ts
-msgid "Resolve Names to Addresses"
 msgstr ""
 
 #: src/pages/explore.tsx

@@ -441,6 +441,10 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
+#: src/constants.ts
+msgid "Human-readable Addresses Onchain"
+msgstr "Human-readable Addresses Onchain"
+
 #: src/features/snap/components/MetadataItems.tsx
 msgid "Identifier"
 msgstr ""
@@ -645,10 +649,6 @@ msgstr ""
 #: src/constants.ts
 msgid "Resolve human-readable names to blockchain addresses."
 msgstr "Resolve human-readable names to blockchain addresses."
-
-#: src/constants.ts
-msgid "Resolve Names to Addresses"
-msgstr "Resolve Names to Addresses"
 
 #: src/pages/explore.tsx
 msgid "Results for \"{searchQuery}\""
