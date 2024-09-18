@@ -7,7 +7,7 @@ on:
         required: false
         type: string
         description: 'The Slack channel to post to.'
-        default: 'metamask-snaps'
+        default: 'metamask-snaps-deployments'
       slack-icon-url:
         required: false
         type: string
