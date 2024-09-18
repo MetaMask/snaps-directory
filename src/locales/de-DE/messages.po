@@ -8,7 +8,7 @@ msgstr ""
 "Language: de\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-04-18 10:24\n"
+"PO-Revision-Date: 2024-09-18 00:03\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -24,7 +24,7 @@ msgstr "{0} im MetaMask Snaps Directory"
 
 #: src/components/InstallationCount.tsx
 msgid "{formattedNumber} installs"
-msgstr ""
+msgstr "{formattedNumber} installiert"
 
 #: src/components/PostInstallModal.tsx
 msgid "{name} is now ready to use."
@@ -44,11 +44,11 @@ msgstr "©{0} MetaMask. Alle Rechte vorbehalten."
 
 #: src/components/InstallationCount.tsx
 msgid "< 1K"
-msgstr ""
+msgstr "< 1K"
 
 #: src/components/InstallationCount.tsx
 msgid "< 1K installs"
-msgstr ""
+msgstr "< 1K installiert"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "<0>{name}</0> uses code that isn't viewable by the public. Critical parts of the codebase were audited for security, but later versions of the code may not be. Make sure you trust <1>{0}</1> before installing and using <2>{name}</2>."
@@ -448,7 +448,7 @@ msgstr "Startseite"
 
 #: src/constants.ts
 msgid "Human-readable Addresses Onchain"
-msgstr ""
+msgstr "Für Menschen lesbare Onchain-Adressen"
 
 #: src/features/snap/components/MetadataItems.tsx
 msgid "Identifier"
@@ -491,7 +491,7 @@ msgstr "Installation von {name}"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Installs"
-msgstr ""
+msgstr "Installiert"
 
 #: src/components/icons/index.ts
 #: src/constants.ts
@@ -549,7 +549,7 @@ msgstr "Live"
 
 #: src/features/banner/components/explore-banner/ExploreBanner.tsx
 msgid "Live in MetaMask"
-msgstr ""
+msgstr "Live in MetaMask"
 
 #: src/features/snap/permissions.tsx
 #: src/features/snap/permissions.tsx
@@ -578,7 +578,7 @@ msgstr "MetaMask"
 
 #: src/components/InstallUnsupportedMobile.tsx
 msgid "MetaMask Snaps is currently only supported via our extension clients on desktop such as <0>Brave</0>, <1>Chrome</1>, or <2>Firefox</2>."
-msgstr ""
+msgstr "MetaMask Snaps wird derzeit nur über unsere Erweiterungsclients auf dem Desktop wie <0>Brave</0>, <1>Chrome</1> oder <2>Firefox</2> unterstützt."
 
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
@@ -587,7 +587,7 @@ msgstr "Am beliebtesten"
 
 #: src/constants.ts
 msgid "Name Resolution"
-msgstr ""
+msgstr "Namensauflösung"
 
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "No Snaps found"
@@ -653,7 +653,7 @@ msgstr "Zugehörige Snaps"
 
 #: src/constants.ts
 msgid "Resolve human-readable names to blockchain addresses."
-msgstr ""
+msgstr "Losen Sie für Menschen lesbare Namen in Blockchain-Adressen auf."
 
 #: src/pages/explore.tsx
 msgid "Results for \"{searchQuery}\""
@@ -666,7 +666,7 @@ msgstr "Regelmäßige Aktionen planen und ausführen"
 #: src/features/snap/components/Screenshot.tsx
 #: src/features/snap/components/Screenshots.tsx
 msgid "Screenshot for {name}"
-msgstr ""
+msgstr "Screenshot für {name}"
 
 #: src/components/icons/index.ts
 msgid "Search"
