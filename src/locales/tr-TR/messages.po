@@ -8,7 +8,7 @@ msgstr ""
 "Language: tr\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-18 00:03\n"
+"PO-Revision-Date: 2024-09-18 08:08\n"
 "Last-Translator: \n"
 "Language-Team: Turkish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -653,7 +653,7 @@ msgstr "İlgili Snap'ler"
 
 #: src/constants.ts
 msgid "Resolve human-readable names to blockchain addresses."
-msgstr "Okunabilir adları blockchain adresler olarak çözümle."
+msgstr "Okunabilir adları blokzinciri adresleri olarak çözümle."
 
 #: src/pages/explore.tsx
 msgid "Results for \"{searchQuery}\""
