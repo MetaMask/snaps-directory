@@ -8,7 +8,7 @@ msgstr ""
 "Language: pt\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-18 00:03\n"
+"PO-Revision-Date: 2024-09-18 14:23\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -448,7 +448,7 @@ msgstr "Início"
 
 #: src/constants.ts
 msgid "Human-readable Addresses Onchain"
-msgstr "Endereços legíveis por pessos no blockchain"
+msgstr "Endereços legíveis por humanos na blockchain"
 
 #: src/features/snap/components/MetadataItems.tsx
 msgid "Identifier"
@@ -549,7 +549,7 @@ msgstr "No ar"
 
 #: src/features/banner/components/explore-banner/ExploreBanner.tsx
 msgid "Live in MetaMask"
-msgstr "Ao vivo na MetaMask"
+msgstr "No ar na MetaMask"
 
 #: src/features/snap/permissions.tsx
 #: src/features/snap/permissions.tsx
@@ -653,7 +653,7 @@ msgstr "Snaps relacionados"
 
 #: src/constants.ts
 msgid "Resolve human-readable names to blockchain addresses."
-msgstr "Resolva nomes legíveis por pessoas para endereços de blockchain."
+msgstr "Resolva nomes legíveis por humanos para endereços da blockchain."
 
 #: src/pages/explore.tsx
 msgid "Results for \"{searchQuery}\""
