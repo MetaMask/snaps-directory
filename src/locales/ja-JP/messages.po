@@ -8,7 +8,7 @@ msgstr ""
 "Language: ja\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-18 14:23\n"
+"PO-Revision-Date: 2024-09-19 07:54\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -44,11 +44,11 @@ msgstr "©{0} MetaMask. 不許複製。"
 
 #: src/components/InstallationCount.tsx
 msgid "< 1K"
-msgstr "< 1K"
+msgstr "< 1,000"
 
 #: src/components/InstallationCount.tsx
 msgid "< 1K installs"
-msgstr "< 1K回のインストール"
+msgstr "< 1,000回のインストール"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "<0>{name}</0> uses code that isn't viewable by the public. Critical parts of the codebase were audited for security, but later versions of the code may not be. Make sure you trust <1>{0}</1> before installing and using <2>{name}</2>."
@@ -653,7 +653,7 @@ msgstr "関連Snap"
 
 #: src/constants.ts
 msgid "Resolve human-readable names to blockchain addresses."
-msgstr "人間が読める名前をブロックチェーンアドレスに解決します。"
+msgstr "人間が読める名前をブロックチェーンアドレスに変換します。"
 
 #: src/pages/explore.tsx
 msgid "Results for \"{searchQuery}\""
