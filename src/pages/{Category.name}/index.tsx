@@ -7,7 +7,8 @@ import { useEffect } from 'react';
 import { SEO } from '../../components';
 import type { RegistrySnapCategory } from '../../constants';
 import { SNAP_CATEGORY_LABELS } from '../../constants';
-import { setCategory } from '../../features';
+import { setCategory, setOrder } from '../../features';
+import { Order } from '../../features/filter/constants';
 import { useDispatch } from '../../hooks';
 import type { Fields } from '../../utils';
 
@@ -61,11 +62,12 @@ const Category: FunctionComponent<CategoryProps> = ({ data, pageContext }) => {
 
   useEffect(() => {
     dispatch(setCategory(categoryName as RegistrySnapCategory));
+    dispatch(setOrder(Order.Popularity));
 
     // According to the type definition, `navigate` returns a promise, but in
     // practice it does not.
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    navigate('/explore', { replace: true });
+    navigate('/explore', { replace: true, state: { isFromCategory: true } });
   }, [categoryName, dispatch]);
 
   return <Head data={data} pageContext={pageContext} />;

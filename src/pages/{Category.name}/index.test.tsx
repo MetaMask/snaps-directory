@@ -49,6 +49,9 @@ describe('Category page', () => {
         data={getMockCategory()}
       />,
     );
-    expect(navigate).toHaveBeenCalledWith('/explore', { replace: true });
+    expect(navigate).toHaveBeenCalledWith('/explore', {
+      replace: true,
+      state: { isFromCategory: true },
+    });
   });
 });
