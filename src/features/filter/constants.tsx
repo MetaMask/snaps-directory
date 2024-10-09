@@ -6,6 +6,7 @@ import {
   NotificationsCategoryIcon,
   AddUserIcon,
   TransactionInsightsIcon,
+  TagCircleIcon,
 } from '../../components/icons';
 import { RegistrySnapCategory } from '../../constants';
 
@@ -17,6 +18,7 @@ export const SNAP_CATEGORY_ICONS: Record<
   [RegistrySnapCategory.Interoperability]: InteroperabilityIcon,
   [RegistrySnapCategory.Communication]: NotificationsCategoryIcon,
   [RegistrySnapCategory.Security]: TransactionInsightsIcon,
+  [RegistrySnapCategory.NameResolution]: TagCircleIcon,
 };
 
 export enum Order {

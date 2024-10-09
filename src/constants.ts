@@ -6,6 +6,7 @@ export enum RegistrySnapCategory {
   Interoperability = 'interoperability',
   Communication = 'communication',
   Security = 'security',
+  NameResolution = 'name resolution',
 }
 
 export const SNAP_CATEGORY_LABELS: Record<
@@ -30,6 +31,10 @@ export const SNAP_CATEGORY_LABELS: Record<
   [RegistrySnapCategory.Security]: {
     name: defineMessage`Security`,
     description: defineMessage`Guard your wallet with transaction insights and safety tools.`,
+  },
+  [RegistrySnapCategory.NameResolution]: {
+    name: defineMessage`Name Resolution`,
+    description: defineMessage`Resolve human-readable names to blockchain addresses.`,
   },
 };
 
@@ -59,6 +64,11 @@ export const SNAP_CATEGORY_LINKS: Record<
   [RegistrySnapCategory.Security]: {
     header: defineMessage`Guard Your Wallet`,
     link: '/security',
+    linkText: defineMessage`See All`,
+  },
+  [RegistrySnapCategory.NameResolution]: {
+    header: defineMessage`Human-readable Addresses Onchain`,
+    link: '/name-resolution',
     linkText: defineMessage`See All`,
   },
 };

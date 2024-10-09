@@ -8,7 +8,7 @@ msgstr ""
 "Language: ru\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-04-18 10:24\n"
+"PO-Revision-Date: 2024-09-18 00:03\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
@@ -24,7 +24,7 @@ msgstr "{0} в Каталоге MetaMask Snaps"
 
 #: src/components/InstallationCount.tsx
 msgid "{formattedNumber} installs"
-msgstr ""
+msgstr "{formattedNumber} установки(-ок)"
 
 #: src/components/PostInstallModal.tsx
 msgid "{name} is now ready to use."
@@ -44,11 +44,11 @@ msgstr "©{0} MetaMask. Все права защищены."
 
 #: src/components/InstallationCount.tsx
 msgid "< 1K"
-msgstr ""
+msgstr "< 1 тыс."
 
 #: src/components/InstallationCount.tsx
 msgid "< 1K installs"
-msgstr ""
+msgstr "< 1 тыс. установок"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "<0>{name}</0> uses code that isn't viewable by the public. Critical parts of the codebase were audited for security, but later versions of the code may not be. Make sure you trust <1>{0}</1> before installing and using <2>{name}</2>."
@@ -446,6 +446,10 @@ msgstr "Иерархия"
 msgid "Home"
 msgstr "Главная"
 
+#: src/constants.ts
+msgid "Human-readable Addresses Onchain"
+msgstr "Адреса в блокчейне, удобные для чтения человеком"
+
 #: src/features/snap/components/MetadataItems.tsx
 msgid "Identifier"
 msgstr "Идентификатор"
@@ -487,7 +491,7 @@ msgstr "Выполняется установка {name}"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Installs"
-msgstr ""
+msgstr "Установки"
 
 #: src/components/icons/index.ts
 #: src/constants.ts
@@ -545,7 +549,7 @@ msgstr "Выпущенная версия"
 
 #: src/features/banner/components/explore-banner/ExploreBanner.tsx
 msgid "Live in MetaMask"
-msgstr ""
+msgstr "Сейчас в MetaMask"
 
 #: src/features/snap/permissions.tsx
 #: src/features/snap/permissions.tsx
@@ -574,12 +578,16 @@ msgstr "MetaMask"
 
 #: src/components/InstallUnsupportedMobile.tsx
 msgid "MetaMask Snaps is currently only supported via our extension clients on desktop such as <0>Brave</0>, <1>Chrome</1>, or <2>Firefox</2>."
-msgstr ""
+msgstr "MetaMask Snaps сейчас поддерживается только через наши клиенты расширений для браузеров персональных компьютеров, таких как <0>Brave</0>, <1>Chrome</1> и <2>Firefox</2>."
 
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
 msgid "Most Popular"
 msgstr "Самые популярные"
+
+#: src/constants.ts
+msgid "Name Resolution"
+msgstr "Разрешение имени"
 
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "No Snaps found"
@@ -643,6 +651,10 @@ msgstr "Вопрос"
 msgid "Related Snaps"
 msgstr "Связанные Snaps"
 
+#: src/constants.ts
+msgid "Resolve human-readable names to blockchain addresses."
+msgstr "Разрешать удобные для чтения человеком имена в адреса блокчейна."
+
 #: src/pages/explore.tsx
 msgid "Results for \"{searchQuery}\""
 msgstr "Результаты для \"{searchQuery}\""
@@ -654,7 +666,7 @@ msgstr "Планируйте и выполняйте периодические 
 #: src/features/snap/components/Screenshot.tsx
 #: src/features/snap/components/Screenshots.tsx
 msgid "Screenshot for {name}"
-msgstr ""
+msgstr "Скриншот для {name}"
 
 #: src/components/icons/index.ts
 msgid "Search"
@@ -681,6 +693,7 @@ msgstr "Безопасный поиск"
 msgid "See address, account balance, activity and suggest transactions to approve"
 msgstr "Просматривайте адрес, баланс счета, активность и рекомендуйте транзакции для одобрения"
 
+#: src/constants.ts
 #: src/constants.ts
 #: src/constants.ts
 #: src/constants.ts
@@ -751,6 +764,7 @@ msgstr "Поддержка"
 msgid "Support for WebAssembly"
 msgstr "Поддержка WebAssembly"
 
+#: src/components/icons/index.ts
 #: src/components/icons/index.ts
 msgid "Tag"
 msgstr "Тег"

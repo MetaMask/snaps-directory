@@ -36,6 +36,7 @@ import BaseSecurityKeyIcon from './security-key.svg';
 import BaseSecuritySearchIcon from './security-search.svg';
 import BaseSnapIcon from './snap.svg';
 import BaseSpeedometerIcon from './speedometer.svg';
+import BaseTagCircleIcon from './tag-circle.svg';
 import BaseTagIcon from './tag.svg';
 import BaseTimerIcon from './timer.svg';
 import BaseTransactionInsightsIcon from './transaction-insights.svg';
@@ -155,6 +156,8 @@ export const SpeedometerIcon = wrapIcon(
 );
 
 export const TagIcon = wrapIcon(BaseTagIcon, defineMessage`Tag`);
+
+export const TagCircleIcon = wrapIcon(BaseTagCircleIcon, defineMessage`Tag`);
 
 export const TimerIcon = wrapIcon(BaseTimerIcon, defineMessage`Timer`);
 
