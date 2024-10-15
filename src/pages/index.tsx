@@ -20,12 +20,11 @@ const GROUPS = [
     images: true,
   },
   {
-    header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.AccountManagement].header,
-    category: RegistrySnapCategory.AccountManagement,
+    header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.NameResolution].header,
+    category: RegistrySnapCategory.NameResolution,
     limit: 3,
-    link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.AccountManagement].link,
-    linkText:
-      SNAP_CATEGORY_LINKS[RegistrySnapCategory.AccountManagement].linkText,
+    link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.NameResolution].link,
+    linkText: SNAP_CATEGORY_LINKS[RegistrySnapCategory.NameResolution].linkText,
     order: Order.DeterministicRandom,
   },
   {
@@ -46,19 +45,20 @@ const GROUPS = [
     order: Order.DeterministicRandom,
   },
   {
-    header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.NameResolution].header,
-    category: RegistrySnapCategory.NameResolution,
-    limit: 3,
-    link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.NameResolution].link,
-    linkText: SNAP_CATEGORY_LINKS[RegistrySnapCategory.NameResolution].linkText,
-    order: Order.DeterministicRandom,
-  },
-  {
     header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Communication].header,
     category: RegistrySnapCategory.Communication,
     limit: 3,
     link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Communication].link,
     linkText: SNAP_CATEGORY_LINKS[RegistrySnapCategory.Communication].linkText,
+    order: Order.DeterministicRandom,
+  },
+  {
+    header: SNAP_CATEGORY_LINKS[RegistrySnapCategory.AccountManagement].header,
+    category: RegistrySnapCategory.AccountManagement,
+    limit: 3,
+    link: SNAP_CATEGORY_LINKS[RegistrySnapCategory.AccountManagement].link,
+    linkText:
+      SNAP_CATEGORY_LINKS[RegistrySnapCategory.AccountManagement].linkText,
     order: Order.DeterministicRandom,
   },
   {
