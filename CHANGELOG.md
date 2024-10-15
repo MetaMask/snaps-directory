@@ -10,9 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.14.0]
 
 ### Added
+
 - Add name resolution category ([#471](https://github.com/MetaMask/snaps-directory/pull/471))
 
 ### Changed
+
 - Removed open beta messaging ([#463](https://github.com/MetaMask/snaps-directory/pull/463))
 
 ## [1.13.2]
