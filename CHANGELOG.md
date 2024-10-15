@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.14.0]
+
+### Uncategorized
+
+- Bump @metamask/json-rpc-engine from 9.0.2 to 9.0.3 ([#474](https://github.com/MetaMask/snaps-directory/pull/474))
+- Bump @metamask/providers from 17.1.2 to 17.2.1 ([#482](https://github.com/MetaMask/snaps-directory/pull/482))
+- New Crowdin translations by Github Action ([#480](https://github.com/MetaMask/snaps-directory/pull/480))
+- New Crowdin translations by Github Action ([#479](https://github.com/MetaMask/snaps-directory/pull/479))
+- Use `metamask-snaps-deployments` channel for deployment messages ([#478](https://github.com/MetaMask/snaps-directory/pull/478))
+- New Crowdin translations by Github Action ([#477](https://github.com/MetaMask/snaps-directory/pull/477))
+- New Crowdin translations by Github Action ([#464](https://github.com/MetaMask/snaps-directory/pull/464))
+- Add name resolution category ([#471](https://github.com/MetaMask/snaps-directory/pull/471))
+- Bump Snaps dependencies ([#470](https://github.com/MetaMask/snaps-directory/pull/470))
+- Removed open beta messaging ([#463](https://github.com/MetaMask/snaps-directory/pull/463))
+
 ## [1.13.2]
 
 ### Fixed
@@ -287,7 +302,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.13.2...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.14.0...HEAD
+[1.14.0]: https://github.com/MetaMask/snaps-directory/compare/v1.13.2...v1.14.0
 [1.13.2]: https://github.com/MetaMask/snaps-directory/compare/v1.13.1...v1.13.2
 [1.13.1]: https://github.com/MetaMask/snaps-directory/compare/v1.13.0...v1.13.1
 [1.13.0]: https://github.com/MetaMask/snaps-directory/compare/v1.12.0...v1.13.0
