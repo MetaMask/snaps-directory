@@ -4770,17 +4770,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/base-controller@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "@metamask/base-controller@npm:7.0.0"
+"@metamask/base-controller@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "@metamask/base-controller@npm:7.0.1"
   dependencies:
     "@metamask/utils": ^9.1.0
     immer: ^9.0.6
-  checksum: e71d695fff2011e241862868c5771996204e5348ffb11f1beb229956e3d1f175d01915180c570f426cd5f09cdc7aca3a5d8b32342e89659cfdff1c66fba40fb7
+  checksum: 351d46f53410732b02cef4ca08227a26e05a03447fddb3f3d298536ad212c38143717cbe65a30a86e93824048d599deb345e475690b5bf5f1e21dfd0721afd15
   languageName: node
   linkType: hard
 
-"@metamask/controller-utils@npm:^11.0.2, @metamask/controller-utils@npm:^11.2.0":
+"@metamask/controller-utils@npm:^11.0.2":
   version: 11.2.0
   resolution: "@metamask/controller-utils@npm:11.2.0"
   dependencies:
@@ -4794,6 +4794,23 @@ __metadata:
     eth-ens-namehash: ^2.0.8
     fast-deep-equal: ^3.1.3
   checksum: 59e3d32754001b2ac008ca44338be948ec1b7648fe56a4dc38bcc61ae46afe410aa40eaad68562c34f872d2fccd792829d60fcf6b2ec5512a007cd4948c23316
+  languageName: node
+  linkType: hard
+
+"@metamask/controller-utils@npm:^11.4.0":
+  version: 11.4.0
+  resolution: "@metamask/controller-utils@npm:11.4.0"
+  dependencies:
+    "@ethereumjs/util": ^8.1.0
+    "@metamask/eth-query": ^4.0.0
+    "@metamask/ethjs-unit": ^0.3.0
+    "@metamask/utils": ^9.1.0
+    "@spruceid/siwe-parser": 2.1.0
+    "@types/bn.js": ^5.1.5
+    bn.js: ^5.2.1
+    eth-ens-namehash: ^2.0.8
+    fast-deep-equal: ^3.1.3
+  checksum: 8403627d4f02ae4e85c8faa5022e0cb461c5bcfdd99dd1f9a70a89059cc61ea3a0ed6183fecc41130e7c3e854aaf649022d9ed5d419328c07ddd798852c29164
   languageName: node
   linkType: hard
 
@@ -4965,18 +4982,17 @@ __metadata:
   linkType: hard
 
 "@metamask/phishing-controller@npm:^12.0.2":
-  version: 12.0.2
-  resolution: "@metamask/phishing-controller@npm:12.0.2"
+  version: 12.3.0
+  resolution: "@metamask/phishing-controller@npm:12.3.0"
   dependencies:
-    "@metamask/base-controller": ^7.0.0
-    "@metamask/controller-utils": ^11.2.0
+    "@metamask/base-controller": ^7.0.1
+    "@metamask/controller-utils": ^11.4.0
     "@noble/hashes": ^1.4.0
     "@types/punycode": ^2.1.0
-    eth-phishing-detect: ^1.2.0
     ethereum-cryptography: ^2.1.2
     fastest-levenshtein: ^1.0.16
     punycode: ^2.1.1
-  checksum: 47a923d9119f78c162be2d4b7f322fa2d2444c2c047c08bf915e8f7eda4d9570356526cc4b495808d1b14d40ec51550227edee6ddda25f15f13973a6709f3bfc
+  checksum: ba51b76a9a16aae2b745ee8d8074733197ad01eca8bcf16bacaf7e9795bc53255cc3755142f391d8daba2d5bcf0922f1454f94052a029301f2c759eef4e2f07b
   languageName: node
   linkType: hard
 
@@ -11678,15 +11694,6 @@ __metadata:
     idna-uts46-hx: ^2.3.1
     js-sha3: ^0.5.7
   checksum: 40ce4aeedaa4e7eb4485c8d8857457ecc46a4652396981d21b7e3a5f922d5beff63c71cb4b283c935293e530eba50b329d9248be3c433949c6bc40c850c202a3
-  languageName: node
-  linkType: hard
-
-"eth-phishing-detect@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "eth-phishing-detect@npm:1.2.0"
-  dependencies:
-    fast-levenshtein: ^2.0.6
-  checksum: 66a6a7c249ec8494e0360663596ce980ca75747cd202c47732eca0bfc7a97c6debbae359842e4f3e4ac7e6c44ab1f7f091c3aa7baa330449d3c1b7cc58608b71
   languageName: node
   linkType: hard
 
