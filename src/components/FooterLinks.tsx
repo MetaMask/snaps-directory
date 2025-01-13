@@ -22,7 +22,7 @@ export const FOOTER_LINKS = [
     links: [
       {
         title: defineMessage`Contact Us`,
-        url: 'https://support.metamask.io/hc/en-us/articles/360058969391-How-to-contact-MetaMask-Support',
+        url: 'https://support.metamask.io/start/how-to-contact-metamask-support/',
       },
       {
         title: defineMessage`Feedback`,
