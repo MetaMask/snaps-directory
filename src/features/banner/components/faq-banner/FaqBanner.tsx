@@ -9,7 +9,7 @@ import { Base } from '../Base';
 
 export const FaqBanner: FunctionComponent = () => (
   <Base
-    to="https://support.metamask.io/hc/en-us/articles/18245938714395"
+    to="https://support.metamask.io/configure/snaps/metamask-snaps-faq/"
     external={true}
     // Based on `error.muted`, but without opacity.
     background="#efd7d7"

@@ -18,7 +18,7 @@ export const InstallUnsupportedDesktopUpdate: FunctionComponent<
         To use MetaMask Snaps, you need the latest version (11.0) of MetaMask in
         your browser.{' '}
         <Link
-          href="https://support.metamask.io/hc/en-us/articles/360060268452-How-to-update-the-version-of-MetaMask"
+          href="https://support.metamask.io/configure/wallet/how-to-update-the-version-of-metamask/"
           isExternal={true}
         >
           Learn more.

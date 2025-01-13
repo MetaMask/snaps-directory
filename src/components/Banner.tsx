@@ -21,7 +21,7 @@ export const Banner: FunctionComponent = () => (
           </Link>{' '}
           and{' '}
           <Link
-            href="https://support.metamask.io/hc/en-us/articles/18245938714395"
+            href="https://support.metamask.io/configure/snaps/metamask-snaps-faq/"
             isExternal={true}
           >
             FAQ
