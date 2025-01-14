@@ -466,11 +466,11 @@ describe('SNAP_PERMISSIONS', () => {
             curve: 'secp256k1',
           },
           {
-            path: ['m', `44'`, `123456'`],
+            path: ['m', `44'`, `123456789'`],
             curve: 'secp256k1',
           },
           {
-            path: ['m', `44'`, `123456'`],
+            path: ['m', `44'`, `123456789'`],
             curve: 'ed25519',
           },
         ]),
@@ -513,7 +513,7 @@ describe('SNAP_PERMISSIONS', () => {
               "id": "9PM7um",
               "message": "Manage accounts (Unknown network \\"m/{purpose}/{coinType}\\")",
               "values": Object {
-                "coinType": "123456'",
+                "coinType": "123456789'",
                 "purpose": "44'",
               },
             },
@@ -535,7 +535,7 @@ describe('SNAP_PERMISSIONS', () => {
               "id": "9PM7um",
               "message": "Manage accounts (Unknown network \\"m/{purpose}/{coinType}\\")",
               "values": Object {
-                "coinType": "123456'",
+                "coinType": "123456789'",
                 "purpose": "44'",
               },
             },
@@ -554,7 +554,7 @@ describe('SNAP_PERMISSIONS', () => {
             coinType: 1,
           },
           {
-            coinType: 123456,
+            coinType: 123456789,
           },
         ]),
       ).toMatchInlineSnapshot(`
@@ -596,7 +596,7 @@ describe('SNAP_PERMISSIONS', () => {
               "id": "qL6Mq4",
               "message": "Manage accounts (Unknown network \\"m/44'/{coinType}'\\")",
               "values": Object {
-                "coinType": 123456,
+                "coinType": 123456789,
               },
             },
             "weight": 1,
@@ -615,11 +615,11 @@ describe('SNAP_PERMISSIONS', () => {
             curve: 'secp256k1',
           },
           {
-            path: ['m', `44'`, `123456'`],
+            path: ['m', `44'`, `123456789'`],
             curve: 'secp256k1',
           },
           {
-            path: ['m', `44'`, `123456'`],
+            path: ['m', `44'`, `123456789'`],
             curve: 'ed25519',
           },
         ]),
@@ -662,7 +662,7 @@ describe('SNAP_PERMISSIONS', () => {
               "id": "erEYfR",
               "message": "View your public key (Unknown network \\"m/{purpose}/{coinType}\\")",
               "values": Object {
-                "coinType": "123456'",
+                "coinType": "123456789'",
                 "purpose": "44'",
               },
             },
@@ -684,7 +684,7 @@ describe('SNAP_PERMISSIONS', () => {
               "id": "erEYfR",
               "message": "View your public key (Unknown network \\"m/{purpose}/{coinType}\\")",
               "values": Object {
-                "coinType": "123456'",
+                "coinType": "123456789'",
                 "purpose": "44'",
               },
             },
