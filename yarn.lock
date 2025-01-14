@@ -5178,10 +5178,10 @@ __metadata:
     eslint-plugin-react: ^7.33.2
     eslint-plugin-react-hooks: ^4.6.0
     fast-deep-equal: ^3.1.3
+    fastest-levenshtein: ^1.0.16
     framer-motion: ^10.16.2
     fuse.js: ^6.6.2
     gatsby: ^5.13.3
-    gatsby-plugin-fusejs: ^2.0.2
     gatsby-plugin-image: ^3.13.1
     gatsby-plugin-manifest: ^5.12.0
     gatsby-plugin-react-helmet-async: ^1.2.3
@@ -5211,7 +5211,6 @@ __metadata:
     react-dom: ^18.2.0
     react-helmet-async: ^2.0.4
     react-redux: ^8.1.2
-    react-use-fusejs: ^2.0.2
     redux: ^4.2.1
     semver: ^7.5.4
     sharp: ^0.32.5
@@ -12555,7 +12554,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fuse.js@npm:^6.0.0, fuse.js@npm:^6.6.2":
+"fuse.js@npm:^6.6.2":
   version: 6.6.2
   resolution: "fuse.js@npm:6.6.2"
   checksum: 17ae758ce205276ebd88bd9c9f088a100be0b4896abac9f6b09847151269d1690f41d7f98ff5813d4a58973162dbd99d0072ce807020fee6f9de60170f6b08eb
@@ -12704,20 +12703,6 @@ __metadata:
   peerDependencies:
     "@parcel/core": ^2.0.0
   checksum: fc310277dfb20aecf7f2049dae8277f02e9493488b17a51604ce86789bfe3863483a2fba10b1882a22b32888444cf5ceea6185a06544cdcd611d494cca6999a4
-  languageName: node
-  linkType: hard
-
-"gatsby-plugin-fusejs@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "gatsby-plugin-fusejs@npm:2.0.2"
-  dependencies:
-    fuse.js: ^6.0.0
-    gatsby: ^5.0.0
-    react: ^18.0.0
-  peerDependencies:
-    fuse.js: ">=6.0.0"
-    gatsby: ">=5.0.0"
-  checksum: 1849dcc31fb084cb649d9bb6ce0454029be4b0ec82f3df8b1878119bb369f13e52066a8c8bdc431776b7187cbfc7c77806e34475ea6d01848e0b31758af5d25d
   languageName: node
   linkType: hard
 
@@ -13004,7 +12989,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby@npm:^5.0.0, gatsby@npm:^5.13.3":
+"gatsby@npm:^5.13.3":
   version: 5.13.3
   resolution: "gatsby@npm:5.13.3"
   dependencies:
@@ -19059,20 +19044,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-use-fusejs@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "react-use-fusejs@npm:2.0.2"
-  dependencies:
-    fuse.js: ^6.0.0
-    react: ^18.0.0
-  peerDependencies:
-    fuse.js: ">=6.0.0"
-    react: ">=18.0.0"
-  checksum: cc2e20267f9dae5f92f2b8ddda0ec05258b0c08678fa27924106ee53223624264921bcfc270fa1ce8fdc0ca36815a6108e5624135261d3427f89bf032acbfa3e
-  languageName: node
-  linkType: hard
-
-"react@npm:^18.0.0, react@npm:^18.2.0":
+"react@npm:^18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
   dependencies:

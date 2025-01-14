@@ -59,33 +59,6 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: 'gatsby-plugin-fusejs',
-      options: {
-        query: `
-          {
-            allSnap {
-              nodes {
-                snapId
-                name
-                summary
-                description {
-                  description
-                }
-              }
-            }
-          }
-        `,
-        keys: ['snapId', 'name', 'summary', 'description'],
-        normalizer: ({ data }) =>
-          data.allSnap.nodes.map((node) => ({
-            snapId: node.snapId,
-            name: node.name,
-            summary: node.summary,
-            description: node.description.description,
-          })),
-      },
-    },
-    {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://snaps.metamask.io',

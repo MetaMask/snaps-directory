@@ -1,7 +1,31 @@
+import { distance as getDistance } from 'fastest-levenshtein';
 import { graphql, useStaticQuery } from 'gatsby';
-import { useGatsbyPluginFusejs } from 'react-use-fusejs';
 
 import type { Snap } from '../features';
+import type { Fields } from '../utils';
+
+/**
+ * Get the Levenshtein distance between the given name and query. This will
+ * return the distance between the two strings, or the distance between the
+ * closest word in the name and the query.
+ *
+ * @param name - The name to compare.
+ * @param query - The query to compare.
+ * @returns The Levenshtein distance.
+ */
+function getClosestLevenshteinDistance(name: string, query: string) {
+  const lowerCaseName = name.toLowerCase();
+  const lowerCaseQuery = query.toLowerCase();
+
+  const words = lowerCaseName.split(' ');
+  const lowestWords = words.reduce((lowest, word) => {
+    const distance = getDistance(word, lowerCaseQuery);
+    return distance < lowest ? distance : lowest;
+  }, Infinity);
+
+  const fullDistance = getDistance(lowerCaseName, lowerCaseQuery);
+  return Math.min(lowestWords, fullDistance);
+}
 
 /**
  * Get the search results for the given query. This will return the search
@@ -11,19 +35,41 @@ import type { Snap } from '../features';
  * @returns The search results.
  */
 export function useSearchResults(query: string) {
-  const { fusejs } = useStaticQuery<{ fusejs: Queries.fusejs }>(graphql`
+  const { allSnap } = useStaticQuery<{
+    allSnap: {
+      nodes: Fields<
+        Queries.Snap,
+        'snapId' | 'name' | 'summary' | 'description'
+      >[];
+    };
+  }>(graphql`
     query {
-      fusejs {
-        index
-        data
+      allSnap {
+        nodes {
+          snapId
+          name
+          summary
+          description {
+            description
+          }
+        }
       }
     }
   `);
 
-  const results = useGatsbyPluginFusejs<Snap>(query, fusejs, {
-    threshold: 0.3,
-    distance: 300,
-  });
+  if (!query) {
+    return [];
+  }
 
-  return results.map(({ item }) => item);
+  const results = allSnap.nodes
+    .map((snap) => ({
+      snap,
+      distance: getClosestLevenshteinDistance(snap.name, query),
+    }))
+    .filter(({ distance }) => distance < 3)
+    .sort((a, b) => a.distance - b.distance)
+    .map(({ snap }) => snap);
+
+  // TODO: Use proper type.
+  return results as unknown as Snap[];
 }
