@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.14.1]
+
+### Changed
+
+- Bump Snaps packages ([#510](https://github.com/MetaMask/snaps-directory/pull/510))
+
+### Fixed
+
+- Fix broken support link ([#507](https://github.com/MetaMask/snaps-directory/pull/507))
+
 ## [1.14.0]
 
 ### Added
@@ -297,7 +307,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.14.0...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.14.1...HEAD
+[1.14.1]: https://github.com/MetaMask/snaps-directory/compare/v1.14.0...v1.14.1
 [1.14.0]: https://github.com/MetaMask/snaps-directory/compare/v1.13.2...v1.14.0
 [1.13.2]: https://github.com/MetaMask/snaps-directory/compare/v1.13.1...v1.13.2
 [1.13.1]: https://github.com/MetaMask/snaps-directory/compare/v1.13.0...v1.13.1
