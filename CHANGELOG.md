@@ -9,10 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.14.1]
 
-### Uncategorized
+### Changed
 
-- chore: Bump Snaps packages ([#510](https://github.com/MetaMask/snaps-directory/pull/510))
-- Update MM Support links to paths current as of January 9, 2025 ([#507](https://github.com/MetaMask/snaps-directory/pull/507))
+- Bump Snaps packages ([#510](https://github.com/MetaMask/snaps-directory/pull/510))
+
+### Fixed
+
+- Fix broken support link ([#507](https://github.com/MetaMask/snaps-directory/pull/507))
 
 ## [1.14.0]
 
