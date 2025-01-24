@@ -1,5 +1,6 @@
 import {
   getSnaps,
+  getSnapsById,
   getUpdatableSnaps,
   getUpdateAvailable,
   setSnaps,
@@ -34,6 +35,26 @@ describe('snapsSlice', () => {
       });
 
       expect(getSnaps(state)).toStrictEqual([getMockSnap().snap]);
+    });
+  });
+
+  describe('getSnapsById', () => {
+    it('returns the filtered snaps in the requested order', () => {
+      const mockSnaps = [
+        getMockSnap({ snapId: 'npm:snap1' }).snap,
+        getMockSnap({ snapId: 'npm:snap2' }).snap,
+        getMockSnap({ snapId: 'npm:snap3' }).snap,
+      ];
+      const state = getMockState({
+        snaps: {
+          snaps: mockSnaps,
+        },
+      });
+
+      expect(getSnapsById(['npm:snap3', 'npm:snap2'])(state)).toStrictEqual([
+        mockSnaps[2],
+        mockSnaps[1],
+      ]);
     });
   });
 
