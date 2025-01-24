@@ -36,7 +36,7 @@ export const FilterSearchInput: FunctionComponent<FilterSearchInputProps> =
     return (
       <InputGroup background="background.default" borderRadius="full" ref={ref}>
         <InputLeftElement pointerEvents="none">
-          <SearchIcon width="1.25rem" fill="text.muted" />
+          <SearchIcon width="1.25rem" fill="text.alternative" />
         </InputLeftElement>
         <Input
           type="search"
