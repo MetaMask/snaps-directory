@@ -75,7 +75,24 @@ const config: GatsbyConfig = {
             }
           }
         `,
-        keys: ['snapId', 'name', 'summary', 'description'],
+        keys: [
+          {
+            name: 'name',
+            weight: 3,
+          },
+          {
+            name: 'snapId',
+            weight: 2,
+          },
+          {
+            name: 'summary',
+            weight: 1,
+          },
+          {
+            name: 'description',
+            weight: 1,
+          },
+        ],
         normalizer: ({ data }) =>
           data.allSnap.nodes.map((node) => ({
             snapId: node.snapId,
