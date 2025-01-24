@@ -31,9 +31,6 @@ const MAX_FONT_WIDTH = 700;
 const NAME_X = 109;
 const NAME_Y = 102;
 
-const AUTHOR_X = NAME_X;
-const AUTHOR_Y = 186;
-
 const SNAP_ICON_X = 908;
 const SNAP_ICON_Y = 77;
 
@@ -89,7 +86,7 @@ export async function getFonts(
  * @returns The buffer of the rendered image.
  */
 export async function getText(value: string, font: Font) {
-  const image = await Jimp.create(700, 100);
+  const image = await Jimp.create(700, 300);
   image.print(font, 0, 0, normalizeName(value), 700);
 
   return image.getBufferAsync(Jimp.MIME_PNG);
@@ -182,10 +179,12 @@ export async function generateSnapImage(
 
   if (author) {
     const authorText = await getText(author, authorFont);
+    const authorY = NAME_Y + Jimp.measureTextHeight(nameFont, name, 700);
+
     layers.push({
       input: authorText,
-      top: AUTHOR_Y,
-      left: AUTHOR_X,
+      top: authorY,
+      left: NAME_X,
     });
   }
 

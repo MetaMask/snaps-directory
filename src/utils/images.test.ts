@@ -125,6 +125,18 @@ describe('generateSnapImage', () => {
     });
   });
 
+  it('renders an image for a Snap with a very long name', async () => {
+    const image = await generateSnapImage(
+      'Snap with a very long name that wraps',
+      'MetaMask',
+      DEFAULT_SNAP_ICON,
+    );
+
+    expect(image).toMatchImageSnapshot({
+      customSnapshotsDir: SNAPSHOT_DIRECTORY,
+    });
+  });
+
   it('renders an image for a Snap without an author', async () => {
     const image = await generateSnapImage(
       'Foo Snap',
