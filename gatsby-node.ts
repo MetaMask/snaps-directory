@@ -29,10 +29,10 @@ import { NormalModuleReplacementPlugin } from 'webpack';
 import { getLatestSnapVersion } from './src/utils';
 import type { Fields } from './src/utils';
 import {
-  generateCategoryImage,
-  generateInstalledImage,
-  generateSnapImage,
-} from './src/utils/images';
+  createCategoryImage,
+  createInstalledImage,
+  createSnapImage,
+} from './src/utils/seo';
 
 type Description = {
   description: string;
@@ -351,12 +351,12 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
 
   const snaps = getNodesByType('Snap') as unknown as Fields<
     Queries.Snap,
-    'icon' | 'lastUpdated'
+    'name' | 'icon' | 'lastUpdated'
   >[];
 
   // The SEO banner that is used on the main `/installed` page. This is
   // statically queried by the name.
-  const installedImage = await generateInstalledImage(snaps);
+  const installedImage = await createInstalledImage(snaps);
   await createFileNodeFromBuffer({
     buffer: installedImage,
     name: 'main-installed-banner',
@@ -369,7 +369,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
 
   // The SEO banner that is used on the main `/latest` page. This is
   // statically queried by the name.
-  const latestImage = await generateCategoryImage(
+  const latestImage = await createCategoryImage(
     [...snaps].sort((a, b) => b.lastUpdated - a.lastUpdated).slice(0, 6),
     6,
   );
@@ -450,7 +450,7 @@ export const onCreateNode: GatsbyNode[`onCreateNode`] = async ({
     >;
 
     const { createNode, createNodeField } = actions;
-    const banner = await generateSnapImage(
+    const banner = await createSnapImage(
       snapNode.name,
       snapNode.author?.name,
       snapNode.icon,
@@ -486,7 +486,7 @@ export const onCreateNode: GatsbyNode[`onCreateNode`] = async ({
       (snap) => snap.category === name,
     ) as unknown as Fields<Queries.Snap, keyof Queries.Snap>[];
 
-    const banner = await generateCategoryImage(snaps);
+    const banner = await createCategoryImage(snaps);
     const bannerNode = await createFileNodeFromBuffer({
       buffer: banner,
       name: 'banner',
@@ -504,7 +504,7 @@ export const onCreateNode: GatsbyNode[`onCreateNode`] = async ({
       value: bannerNode.id,
     });
 
-    const installedBanner = await generateInstalledImage(snaps);
+    const installedBanner = await createInstalledImage(snaps);
     const installedBannerNode = await createFileNodeFromBuffer({
       buffer: installedBanner,
       name: 'installed-banner',
