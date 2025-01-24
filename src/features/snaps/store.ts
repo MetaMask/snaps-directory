@@ -100,7 +100,10 @@ export const getSnapsById = (snapIds: string[]) => {
         return [];
       }
 
-      return snaps.filter((snap) => snapIds.includes(snap.snapId));
+      // The ordering of the input may be important so we must return it in the same order.
+      return snapIds.map((snapId) =>
+        snaps.find((snap) => snap.snapId === snapId),
+      );
     },
   );
 };
