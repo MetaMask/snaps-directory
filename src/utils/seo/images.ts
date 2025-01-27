@@ -83,19 +83,30 @@ export async function createSnapIcon(
       svgIcon.replace(/data:image\/svg\+xml;utf8,/gu, ''),
     );
 
+    const background = getImage('icon').resize(size, size);
     const icon = sharp(Buffer.from(normalisedSvgIcon, 'utf-8')).resize(
       size,
       size,
     );
 
-    const mask = await getImage('mask').resize(size, size).png().toBuffer();
-
     // Mask the icon with the mask image to create a circular icon.
-    return icon
+    const mask = await getImage('mask').resize(size, size).png().toBuffer();
+    const circularIcon = await icon
       .composite([
         {
           input: mask,
           blend: 'dest-in',
+        },
+      ])
+      .png()
+      .toBuffer();
+
+    return await background
+      .composite([
+        {
+          input: circularIcon,
+          top: 0,
+          left: 0,
         },
       ])
       .png()
@@ -147,7 +158,7 @@ export async function createCategoryImage(snaps: Snap[], limit = 5) {
     const count = `+${filteredSnaps.length - 5}`;
 
     layers.push({
-      input: await createFallbackIcon(count, 158, 'fonts/large/grey.fnt'),
+      input: await createFallbackIcon(count, 158, 'fonts/medium/grey.fnt'),
       top: SNAP_COUNT_Y,
       left: SNAP_COUNT_X,
     });
