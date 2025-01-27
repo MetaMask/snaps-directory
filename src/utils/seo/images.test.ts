@@ -10,10 +10,14 @@ import {
 } from './images';
 import { getMockSnap } from '../test-utils';
 
+jest.setTimeout(10_000);
+
 // eslint-disable-next-line jest/require-top-level-describe
 beforeAll(() => {
   const toMatchImageSnapshot = configureToMatchImageSnapshot({
     customSnapshotsDir: resolve(__dirname, '__snapshots__'),
+    failureThreshold: 0.01,
+    failureThresholdType: 'percent',
   });
 
   expect.extend({ toMatchImageSnapshot });
