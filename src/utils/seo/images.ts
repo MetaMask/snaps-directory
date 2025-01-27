@@ -127,16 +127,13 @@ const SNAP_COUNT_Y = SNAP_ICON_OFFSET_Y;
  * Create a PNG image for a category.
  *
  * @param snaps - The snaps to create the category image for.
- * @param limit - The maximum number of Snaps to include in the image. If the
- * number of Snaps is greater than the limit, a "+n" label will be added to the
- * image.
  * @returns The buffer of the image.
  */
-export async function createCategoryImage(snaps: Snap[], limit = 5) {
+export async function createCategoryImage(snaps: Snap[]) {
   const filteredSnaps = getSnapsWithIcon(snaps);
-  const randomSnaps = shuffle(filteredSnaps).slice(0, limit);
+  const randomSnaps = shuffle(filteredSnaps).slice(0, 5);
 
-  const snapsLength = filteredSnaps.length > limit ? 6 : filteredSnaps.length;
+  const snapsLength = filteredSnaps.length > 5 ? 6 : filteredSnaps.length;
   const totalIconsWidth =
     SMALL_ICON_SIZE + (snapsLength - 1) * (SMALL_ICON_SIZE - ICON_OVERLAP);
   const firstIconX = (CANVAS_WIDTH - totalIconsWidth) / 2;
@@ -154,7 +151,7 @@ export async function createCategoryImage(snaps: Snap[], limit = 5) {
     });
   }
 
-  if (filteredSnaps.length > limit) {
+  if (filteredSnaps.length > 5) {
     const count = `+${filteredSnaps.length - 5}`;
 
     layers.push({

@@ -32,6 +32,7 @@ export async function getFonts(name: string, author = '') {
     }
   }
 
+  /* istanbul ignore next */
   throw new Error('Text is too long.');
 }
 
