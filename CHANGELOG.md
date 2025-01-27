@@ -9,11 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.14.2]
 
-### Uncategorized
+### Fixed
 
+- Wrap long name to new line on SEO images ([#520](https://github.com/MetaMask/snaps-directory/pull/520))
+- Fix ordering for search results ([#518](https://github.com/MetaMask/snaps-directory/pull/518))
 - Add weights to search keys ([#521](https://github.com/MetaMask/snaps-directory/pull/521))
-- Wrap long name to new line on Snap SEO images ([#520](https://github.com/MetaMask/snaps-directory/pull/520))
-- fix: Correct ordering for search results ([#518](https://github.com/MetaMask/snaps-directory/pull/518))
 - Fix fill color for search icon ([#517](https://github.com/MetaMask/snaps-directory/pull/517))
 
 ## [1.14.1]
