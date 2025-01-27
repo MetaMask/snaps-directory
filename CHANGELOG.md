@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.14.2]
+
+### Uncategorized
+
+- Add weights to search keys ([#521](https://github.com/MetaMask/snaps-directory/pull/521))
+- Wrap long name to new line on Snap SEO images ([#520](https://github.com/MetaMask/snaps-directory/pull/520))
+- fix: Correct ordering for search results ([#518](https://github.com/MetaMask/snaps-directory/pull/518))
+- Fix fill color for search icon ([#517](https://github.com/MetaMask/snaps-directory/pull/517))
+
 ## [1.14.1]
 
 ### Changed
@@ -307,7 +316,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.14.1...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.14.2...HEAD
+[1.14.2]: https://github.com/MetaMask/snaps-directory/compare/v1.14.1...v1.14.2
 [1.14.1]: https://github.com/MetaMask/snaps-directory/compare/v1.14.0...v1.14.1
 [1.14.0]: https://github.com/MetaMask/snaps-directory/compare/v1.13.2...v1.14.0
 [1.13.2]: https://github.com/MetaMask/snaps-directory/compare/v1.13.1...v1.13.2
