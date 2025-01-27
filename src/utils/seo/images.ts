@@ -83,7 +83,7 @@ export async function createSnapIcon(
       svgIcon.replace(/data:image\/svg\+xml;utf8,/gu, ''),
     );
 
-    const background = getImage('icon').resize(size, size);
+    const background = getImage('flat-icon').resize(size, size);
     const icon = sharp(Buffer.from(normalisedSvgIcon, 'utf-8')).resize(
       size,
       size,
