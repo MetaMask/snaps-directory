@@ -2,51 +2,32 @@ import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
 
 export const Button = defineStyleConfig({
   baseStyle: defineStyle({
+    borderRadius: 'full',
+    color: 'text.default',
+    lineHeight: '1',
+    textTransform: 'uppercase',
     _hover: {
       opacity: '0.75',
     },
   }),
 
   variants: {
-    solid: defineStyle({
-      bg: '#24272A',
-      textColor: 'white',
-      _hover: {
-        bg: '#0376C9',
-      },
-      _active: {
-        bg: '#0376C9',
-      },
-    }),
-
     primary: defineStyle({
-      height: '48px',
-      borderRadius: '30px',
-      background: 'info.default',
-      fontSize: 'md',
+      background: 'primary.default',
+      fontSize: 'sm',
       fontWeight: '500',
-      lineHeight: '157%',
-      color: 'white',
-      borderColor: 'info.default',
-      padding: '4',
-      _hover: {
-        _disabled: {
-          background: 'info.default',
-        },
-      },
+      paddingX: '6',
+      paddingY: '4',
+      color: 'text.dark',
     }),
 
     outline: defineStyle({
-      height: '48px',
-      borderRadius: '30px',
-      background: 'transparent',
-      fontSize: 'md',
-      fontWeight: '500',
-      lineHeight: '157%',
-      color: 'info.default',
       border: '1.5px solid',
-      borderColor: 'info.default',
-      padding: '4',
+      borderColor: 'text.default',
+      fontSize: 'sm',
+      fontWeight: '500',
+      paddingX: '6',
+      paddingY: '4',
     }),
 
     filter: defineStyle({

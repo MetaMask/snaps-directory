@@ -3,6 +3,7 @@ import { defineMessage } from '@lingui/macro';
 import BaseAddSquareIcon from './add-square.svg';
 import BaseAddUserIcon from './add-user.svg';
 import BaseBackIcon from './back.svg';
+import BaseBellIcon from './bell.svg';
 import BaseCheckThinIcon from './check-thin.svg';
 import BaseCheckIcon from './check.svg';
 import BaseClockIcon from './clock.svg';
@@ -50,6 +51,8 @@ export const AddUserIcon = wrapIcon(BaseAddUserIcon, defineMessage`Add user`);
 
 export const BackIcon = wrapIcon(BaseBackIcon, defineMessage`Back`);
 
+export const BellIcon = wrapIcon(BaseBellIcon, defineMessage`Notifications`);
+
 export const ClockIcon = wrapIcon(BaseClockIcon, defineMessage`Clock`);
 
 export const CloseIcon = wrapIcon(BaseCloseIcon, defineMessage`Close`);
@@ -60,7 +63,7 @@ export const CheckThinIcon = wrapIcon(BaseCheckThinIcon, defineMessage`Check`);
 
 export const DarkModeIcon = wrapIcon(
   BaseDarkModeIcon,
-  defineMessage`Enable dark mode`,
+  defineMessage`Toggle color mode`,
 );
 
 export const DocumentCodeIcon = wrapIcon(

@@ -337,10 +337,6 @@ msgid "Dropdown"
 msgstr "Suspenso"
 
 #: src/components/icons/index.ts
-msgid "Enable dark mode"
-msgstr "Ativar modo escuro"
-
-#: src/components/icons/index.ts
 msgid "Enable light mode"
 msgstr "Ativar modo claro"
 
@@ -510,6 +506,10 @@ msgstr "Recuperação de chave"
 msgid "Knowledge Base"
 msgstr "Base de conhecimento"
 
+#: src/components/icons/index.ts
+msgid "Language"
+msgstr ""
+
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
 msgid "Latest"
@@ -602,6 +602,7 @@ msgid "Notification"
 msgstr "Notificação"
 
 #: src/components/icons/index.ts
+#: src/components/icons/index.ts
 msgid "Notifications"
 msgstr "Notificações"
 
@@ -669,12 +670,9 @@ msgid "Screenshot for {name}"
 msgstr "Capturas de tela de {name}"
 
 #: src/components/icons/index.ts
+#: src/features/filter/components/FilterSearchInput.tsx
 msgid "Search"
 msgstr "Pesquisar"
-
-#: src/features/filter/components/FilterSearchInput.tsx
-msgid "Search Snaps"
-msgstr "Pesquisar Snaps"
 
 #: src/components/icons/index.ts
 #: src/constants.ts
@@ -791,6 +789,7 @@ msgid "To use MetaMask Snaps, you need the latest version (11.0) of MetaMask in 
 msgstr "Para usar o MetaMask Snaps, você precisa da versão mais recente (11.0) da MetaMask em seu navegador. <0>Saiba mais.</0>"
 
 #: src/components/ColorModeToggle.tsx
+#: src/components/icons/index.ts
 msgid "Toggle color mode"
 msgstr "Alternar modo colorido"
 

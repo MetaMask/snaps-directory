@@ -34,24 +34,18 @@ export const FilterSearchInput: FunctionComponent<FilterSearchInputProps> =
     };
 
     return (
-      <InputGroup background="background.default" borderRadius="full" ref={ref}>
-        <InputLeftElement pointerEvents="none">
-          <SearchIcon width="1.25rem" fill="text.alternative" />
+      <InputGroup ref={ref}>
+        <InputLeftElement>
+          <SearchIcon />
         </InputLeftElement>
         <Input
           type="search"
-          borderRadius="full"
-          placeholder={_(t`Search Snaps`)}
+          variant="outline"
+          placeholder={_(t`Search`)}
           value={query}
           onChange={onFormChange}
           onClick={onFormClick}
           onKeyDown={handleKeyDown}
-          border="none"
-          background="background.alternative"
-          _focusVisible={{
-            border: 'none',
-            outline: 'none',
-          }}
         />
       </InputGroup>
     );
