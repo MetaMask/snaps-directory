@@ -337,6 +337,10 @@ msgid "Dropdown"
 msgstr "Dropdown"
 
 #: src/components/icons/index.ts
+msgid "Enable dark mode"
+msgstr "Dunkelmodus aktivieren"
+
+#: src/components/icons/index.ts
 msgid "Enable light mode"
 msgstr "Lichtmodus aktivieren"
 
@@ -598,7 +602,6 @@ msgid "Notification"
 msgstr "Benachrichtigung"
 
 #: src/components/icons/index.ts
-#: src/components/icons/index.ts
 msgid "Notifications"
 msgstr "Benachrichtigungen"
 
@@ -665,7 +668,6 @@ msgstr "Regelmäßige Aktionen planen und ausführen"
 msgid "Screenshot for {name}"
 msgstr "Screenshot für {name}"
 
-#: src/components/icons/index.ts
 #: src/components/icons/index.ts
 msgid "Search"
 msgstr "Suche"
@@ -789,7 +791,6 @@ msgid "To use MetaMask Snaps, you need the latest version (11.0) of MetaMask in 
 msgstr "Um MetaMask Snaps zu verwenden, benötigen Sie die neueste Version (11.0) von MetaMask in Ihrem Browser. <0>Erfahren Sie mehr.</0>"
 
 #: src/components/ColorModeToggle.tsx
-#: src/components/icons/index.ts
 msgid "Toggle color mode"
 msgstr "Farbmodus umschalten"
 

@@ -337,6 +337,10 @@ msgid "Dropdown"
 msgstr "下拉菜单"
 
 #: src/components/icons/index.ts
+msgid "Enable dark mode"
+msgstr "启用深色模式"
+
+#: src/components/icons/index.ts
 msgid "Enable light mode"
 msgstr "启用浅色模式"
 
@@ -598,7 +602,6 @@ msgid "Notification"
 msgstr "通知"
 
 #: src/components/icons/index.ts
-#: src/components/icons/index.ts
 msgid "Notifications"
 msgstr "通知"
 
@@ -665,7 +668,6 @@ msgstr "规划并执行定期操作"
 msgid "Screenshot for {name}"
 msgstr "{name} 的截图"
 
-#: src/components/icons/index.ts
 #: src/components/icons/index.ts
 msgid "Search"
 msgstr "搜索"
@@ -789,7 +791,6 @@ msgid "To use MetaMask Snaps, you need the latest version (11.0) of MetaMask in 
 msgstr "如需使用 MetaMask Snaps，您需要在浏览器中使用最新版本（11.0）的 MetaMask。<0>了解更多信息。</0>"
 
 #: src/components/ColorModeToggle.tsx
-#: src/components/icons/index.ts
 msgid "Toggle color mode"
 msgstr "切换颜色模式"
 
