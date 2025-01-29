@@ -28,6 +28,15 @@ export const Button = defineStyleConfig({
       fontWeight: '500',
       paddingX: '6',
       paddingY: '4',
+      _hover: {
+        opacity: '1',
+        background: 'text.default',
+        color: 'background.default',
+      },
+      _active: {
+        background: 'text.alternative',
+        color: 'background.default',
+      },
     }),
 
     filter: defineStyle({

@@ -25,6 +25,10 @@ export const Input = defineMultiStyleConfig({
       field: {
         borderWidth: '0.094rem',
         borderColor: 'text.default',
+        _hover: {
+          borderColor: 'text.default',
+          background: 'background.alternative',
+        },
       },
     }),
   },

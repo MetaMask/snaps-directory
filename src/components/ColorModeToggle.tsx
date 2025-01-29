@@ -13,8 +13,8 @@ export const ColorModeToggle: FunctionComponent = () => {
     <IconButton
       flexShrink="0"
       aria-label={_(t`Toggle color mode`)}
-      variant="clear"
-      icon={<DarkModeIcon width="0.75rem" color="text.default" />}
+      variant="outline"
+      icon={<DarkModeIcon width="0.75rem" />}
       onClick={toggleColorMode}
     />
   );

@@ -1,10 +1,9 @@
 import type { BoxProps } from '@chakra-ui/react';
-import { Button, Box, Container, Stack } from '@chakra-ui/react';
+import { Box, Container, Stack } from '@chakra-ui/react';
 import { Link } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
 import { ColorModeToggle } from './ColorModeToggle';
-import { GlobeIcon } from './icons';
 import { Logo } from './Logo';
 import { FilterSearch, Notifications } from '../features';
 
@@ -27,7 +26,7 @@ export const Header: FunctionComponent<HeaderProps> = (props) => (
     width="100%"
     zIndex="sticky"
   >
-    <Container maxWidth="100%">
+    <Container maxWidth="7xl">
       <Stack
         direction="row"
         alignItems="center"
@@ -40,13 +39,9 @@ export const Header: FunctionComponent<HeaderProps> = (props) => (
           </Stack>
         </Link>
         <Stack direction="row" gap="4">
-          <GlobeIcon flexShrink="0" />
-          <ColorModeToggle />
           <FilterSearch />
+          <ColorModeToggle />
           <Notifications />
-          <Button flexShrink="0" variant="primary">
-            Download
-          </Button>
         </Stack>
       </Stack>
     </Container>

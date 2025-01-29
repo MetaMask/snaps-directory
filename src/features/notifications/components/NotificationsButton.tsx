@@ -27,19 +27,7 @@ export const NotificationsButton: ComponentWithAs<
       variant="outline"
       icon={
         <>
-          <NotificationIcon
-            color="text.default"
-            width="0.638rem"
-            height="0.75rem"
-            sx={{
-              '& > svg > rect': {
-                fillOpacity: 1,
-              },
-              '& > svg > path': {
-                fill: 'text.alternative',
-              },
-            }}
-          />
+          <NotificationIcon width="0.638rem" height="0.75rem" />
           {hasUnacknowledgedUpdates && (
             <DotIcon position="absolute" top="0" right="0" />
           )}
