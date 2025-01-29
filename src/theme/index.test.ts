@@ -25,7 +25,6 @@ describe('theme', () => {
               "borderRadius": "full",
               "color": "text.default",
               "lineHeight": "1",
-              "textTransform": "uppercase",
             },
             "variants": Object {
               "filter": Object {
@@ -54,7 +53,7 @@ describe('theme', () => {
               },
               "primary": Object {
                 "background": "primary.default",
-                "color": "text.dark",
+                "color": "background.default",
                 "fontSize": "sm",
                 "fontWeight": "500",
                 "paddingX": "6",
@@ -432,8 +431,8 @@ describe('theme', () => {
             },
             "info": Object {
               "default": Object {
-                "_dark": "#1098FC",
-                "default": "#0376C9",
+                "_dark": "#6F7EFF",
+                "default": "#4459FF",
               },
               "muted": Object {
                 "_dark": "#1098FC26",
@@ -442,12 +441,12 @@ describe('theme', () => {
             },
             "primary": Object {
               "alternative": Object {
-                "_dark": "#BAF24A",
+                "_dark": "#FFFFFF",
                 "default": "#0A0A0A",
               },
               "default": Object {
-                "_dark": "#FFFFFF",
-                "default": "#FF5C16",
+                "_dark": "#6F7EFF",
+                "default": "#4459FF",
               },
               "inverse": Object {
                 "default": "#FCFCFC",
