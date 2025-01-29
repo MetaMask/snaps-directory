@@ -5,7 +5,6 @@ export const Button = defineStyleConfig({
     borderRadius: 'full',
     color: 'text.default',
     lineHeight: '1',
-    textTransform: 'uppercase',
     _hover: {
       opacity: '0.75',
     },
@@ -14,11 +13,11 @@ export const Button = defineStyleConfig({
   variants: {
     primary: defineStyle({
       background: 'primary.default',
+      color: 'background.default',
       fontSize: 'sm',
       fontWeight: '500',
       paddingX: '6',
       paddingY: '4',
-      color: 'text.dark',
     }),
 
     outline: defineStyle({

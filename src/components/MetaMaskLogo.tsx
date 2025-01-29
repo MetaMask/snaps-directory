@@ -1,8 +1,8 @@
 import type { BoxProps } from '@chakra-ui/react';
-import { Box, useColorMode } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 
-import Logo from '../assets/metamask-logo.svg';
+import Logo from '../assets/logo.svg';
 
 export type MetaMaskLogoProps = BoxProps;
 
@@ -13,12 +13,18 @@ export type MetaMaskLogoProps = BoxProps;
  * @returns A React component.
  */
 export const MetaMaskLogo: FunctionComponent<MetaMaskLogoProps> = (props) => {
-  const { colorMode } = useColorMode();
-
-  const fill = colorMode === 'light' ? '#161616' : 'white';
   return (
-    <Box height="2.5rem" {...props}>
-      <Logo role="img" aria-label="MetaMask" fill={fill} />
+    <Box {...props}>
+      <Box
+        // @ts-expect-error - SVG is a React component but TypeScript thinks
+        // it's a string.
+        as={Logo}
+        role="img"
+        width="8.125rem"
+        height="4.038rem"
+        aria-label="MetaMask"
+        fill="primary.alternative"
+      />
     </Box>
   );
 };

@@ -53,12 +53,12 @@ export const semanticTokens: SemanticTokens = {
     },
     primary: {
       default: {
-        default: '#FF5C16',
-        _dark: '#FFFFFF',
+        default: '#4459FF',
+        _dark: '#6F7EFF',
       },
       alternative: {
         default: '#0A0A0A',
-        _dark: '#BAF24A',
+        _dark: '#FFFFFF',
       },
       inverse: {
         default: '#FCFCFC',
@@ -66,8 +66,8 @@ export const semanticTokens: SemanticTokens = {
     },
     info: {
       default: {
-        default: '#0376C9',
-        _dark: '#1098FC',
+        default: '#4459FF',
+        _dark: '#6F7EFF',
       },
       muted: {
         default: '#037DD61A',
