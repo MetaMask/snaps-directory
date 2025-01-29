@@ -13,11 +13,12 @@ export const Button = defineStyleConfig({
   variants: {
     primary: defineStyle({
       background: 'primary.default',
-      color: 'background.default',
-      fontSize: 'sm',
+      color: 'text.light',
+      fontSize: 'md',
       fontWeight: '500',
       paddingX: '6',
       paddingY: '4',
+      minHeight: '3rem',
     }),
 
     outline: defineStyle({
