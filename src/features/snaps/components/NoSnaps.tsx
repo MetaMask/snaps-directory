@@ -2,7 +2,7 @@ import { Button, Center, Heading, Text } from '@chakra-ui/react';
 import { Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
-import { Fox } from '../../../components';
+import { MetaMaskIcon } from '../../../components';
 import { useDispatch } from '../../../hooks';
 import { filterAll, resetSearch } from '../../filter';
 
@@ -22,7 +22,7 @@ export const NoSnaps: FunctionComponent = () => {
       data-testid="no-snaps"
     >
       <Center flexDirection="column" gap="4" maxWidth="19.375rem">
-        <Fox />
+        <MetaMaskIcon width="10rem" />
         <Heading as="h3" fontSize="2xl" color="text.alternative">
           <Trans>No Snaps found</Trans>
         </Heading>

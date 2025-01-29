@@ -60,7 +60,6 @@
     "@lingui/core": "^4.4.2",
     "@lingui/macro": "^4.4.2",
     "@lingui/react": "^4.4.2",
-    "@metamask/logo": "^3.1.1",
     "@metamask/providers": "^17.1.2",
     "@metamask/snaps-controllers": "^9.17.0",
     "@metamask/snaps-sdk": "^6.15.0",
