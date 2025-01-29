@@ -675,7 +675,7 @@ msgstr "Ara"
 
 #: src/features/filter/components/FilterSearchInput.tsx
 msgid "Search Snaps"
-msgstr ""
+msgstr "Snap'leri Ara"
 
 #: src/components/icons/index.ts
 #: src/constants.ts

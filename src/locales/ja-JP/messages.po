@@ -675,7 +675,7 @@ msgstr "検索"
 
 #: src/features/filter/components/FilterSearchInput.tsx
 msgid "Search Snaps"
-msgstr ""
+msgstr "Snapの検索"
 
 #: src/components/icons/index.ts
 #: src/constants.ts
