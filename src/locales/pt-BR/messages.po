@@ -670,9 +670,12 @@ msgid "Screenshot for {name}"
 msgstr "Capturas de tela de {name}"
 
 #: src/components/icons/index.ts
-#: src/features/filter/components/FilterSearchInput.tsx
 msgid "Search"
 msgstr "Pesquisar"
+
+#: src/features/filter/components/FilterSearchInput.tsx
+msgid "Search Snaps"
+msgstr ""
 
 #: src/components/icons/index.ts
 #: src/constants.ts

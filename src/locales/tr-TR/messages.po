@@ -670,9 +670,12 @@ msgid "Screenshot for {name}"
 msgstr "{name} için ekran görüntüsü"
 
 #: src/components/icons/index.ts
-#: src/features/filter/components/FilterSearchInput.tsx
 msgid "Search"
 msgstr "Ara"
+
+#: src/features/filter/components/FilterSearchInput.tsx
+msgid "Search Snaps"
+msgstr ""
 
 #: src/components/icons/index.ts
 #: src/constants.ts

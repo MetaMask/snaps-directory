@@ -670,9 +670,12 @@ msgid "Screenshot for {name}"
 msgstr "{name} 的截图"
 
 #: src/components/icons/index.ts
-#: src/features/filter/components/FilterSearchInput.tsx
 msgid "Search"
 msgstr "搜索"
+
+#: src/features/filter/components/FilterSearchInput.tsx
+msgid "Search Snaps"
+msgstr ""
 
 #: src/components/icons/index.ts
 #: src/constants.ts
