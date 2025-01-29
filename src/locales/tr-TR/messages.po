@@ -337,10 +337,6 @@ msgid "Dropdown"
 msgstr "Açılır Menü"
 
 #: src/components/icons/index.ts
-msgid "Enable dark mode"
-msgstr "Karanlık modu etkinleştir"
-
-#: src/components/icons/index.ts
 msgid "Enable light mode"
 msgstr "Aydınlık modu etkinleştir"
 
@@ -510,6 +506,10 @@ msgstr "Anahtar Kurtarma"
 msgid "Knowledge Base"
 msgstr "Bilgi Tabanı"
 
+#: src/components/icons/index.ts
+msgid "Language"
+msgstr ""
+
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
 msgid "Latest"
@@ -602,6 +602,7 @@ msgid "Notification"
 msgstr "Bildirim"
 
 #: src/components/icons/index.ts
+#: src/components/icons/index.ts
 msgid "Notifications"
 msgstr "Bildirimler"
 
@@ -668,6 +669,7 @@ msgstr "Periyodik eylemleri planla ve gerçekleştir"
 msgid "Screenshot for {name}"
 msgstr "{name} için ekran görüntüsü"
 
+#: src/components/icons/index.ts
 #: src/components/icons/index.ts
 msgid "Search"
 msgstr "Ara"
@@ -791,6 +793,7 @@ msgid "To use MetaMask Snaps, you need the latest version (11.0) of MetaMask in 
 msgstr "MetaMask Snaps'i kullanmak için tarayıcınızda en yeni MetaMask sürümüne (11.0) ihtiyacınız vardır. <0>Daha fazla bilgi alın.</0>"
 
 #: src/components/ColorModeToggle.tsx
+#: src/components/icons/index.ts
 msgid "Toggle color mode"
 msgstr "Renk modunu değiştir"
 

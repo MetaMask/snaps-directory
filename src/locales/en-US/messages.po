@@ -332,10 +332,6 @@ msgid "Dropdown"
 msgstr ""
 
 #: src/components/icons/index.ts
-msgid "Enable dark mode"
-msgstr ""
-
-#: src/components/icons/index.ts
 msgid "Enable light mode"
 msgstr ""
 
@@ -505,6 +501,10 @@ msgstr ""
 msgid "Knowledge Base"
 msgstr ""
 
+#: src/components/icons/index.ts
+msgid "Language"
+msgstr "Language"
+
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
 msgid "Latest"
@@ -597,6 +597,7 @@ msgid "Notification"
 msgstr ""
 
 #: src/components/icons/index.ts
+#: src/components/icons/index.ts
 msgid "Notifications"
 msgstr ""
 
@@ -663,6 +664,7 @@ msgstr ""
 msgid "Screenshot for {name}"
 msgstr "Screenshot for {name}"
 
+#: src/components/icons/index.ts
 #: src/components/icons/index.ts
 msgid "Search"
 msgstr ""
@@ -786,6 +788,7 @@ msgid "To use MetaMask Snaps, you need the latest version (11.0) of MetaMask in 
 msgstr ""
 
 #: src/components/ColorModeToggle.tsx
+#: src/components/icons/index.ts
 msgid "Toggle color mode"
 msgstr ""
 
