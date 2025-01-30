@@ -670,6 +670,7 @@ msgid "Screenshot for {name}"
 msgstr "{name} 的截图"
 
 #: src/components/icons/index.ts
+#: src/components/icons/index.ts
 msgid "Search"
 msgstr "搜索"
 

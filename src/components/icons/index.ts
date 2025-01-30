@@ -32,6 +32,7 @@ import BaseMetaMaskIcon from './metamask.svg';
 import BaseNotificationIcon from './notification.svg';
 import BaseNotificationsIcon from './notifications.svg';
 import BaseQuestionIcon from './question.svg';
+import BaseSearchFieldIcon from './search-field.svg';
 import BaseSearchIcon from './search.svg';
 import BaseSecurityKeyIcon from './security-key.svg';
 import BaseSecuritySearchIcon from './security-search.svg';
@@ -140,6 +141,11 @@ export const NotificationsCategoryIcon = wrapIcon(
 export const QuestionIcon = wrapIcon(BaseQuestionIcon, defineMessage`Question`);
 
 export const SearchIcon = wrapIcon(BaseSearchIcon, defineMessage`Search`);
+
+export const SearchFieldIcon = wrapIcon(
+  BaseSearchFieldIcon,
+  defineMessage`Search`,
+);
 
 export const SecurityKeyIcon = wrapIcon(
   BaseSecurityKeyIcon,

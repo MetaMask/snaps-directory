@@ -670,6 +670,7 @@ msgid "Screenshot for {name}"
 msgstr "{name} için ekran görüntüsü"
 
 #: src/components/icons/index.ts
+#: src/components/icons/index.ts
 msgid "Search"
 msgstr "Ara"
 

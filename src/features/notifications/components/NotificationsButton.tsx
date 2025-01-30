@@ -4,7 +4,7 @@ import { t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 
 import { getUnacknowledgedUpdates } from '../..';
-import { DotIcon, NotificationIcon } from '../../../components';
+import { BellIcon, DotIcon } from '../../../components';
 import { useSelector } from '../../../hooks';
 
 export type NotificationsButtonProps = Partial<IconButtonProps>;
@@ -27,7 +27,7 @@ export const NotificationsButton: ComponentWithAs<
       variant="outline"
       icon={
         <>
-          <NotificationIcon width="0.638rem" height="0.75rem" />
+          <BellIcon width="0.638rem" height="0.75rem" />
           {hasUnacknowledgedUpdates && (
             <DotIcon position="absolute" top="0" right="0" />
           )}

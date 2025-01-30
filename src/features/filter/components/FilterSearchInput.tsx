@@ -8,7 +8,7 @@ import { t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import type { ChangeEvent, FunctionComponent, KeyboardEvent } from 'react';
 
-import { SearchIcon } from '../../../components';
+import { SearchFieldIcon } from '../../../components';
 
 export type FilterSearchInputProps = {
   query: string;
@@ -36,7 +36,7 @@ export const FilterSearchInput: FunctionComponent<FilterSearchInputProps> =
     return (
       <InputGroup ref={ref}>
         <InputLeftElement>
-          <SearchIcon />
+          <SearchFieldIcon />
         </InputLeftElement>
         <Input
           type="search"
