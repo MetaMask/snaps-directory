@@ -263,7 +263,7 @@ describe('getSnapsProvider', () => {
   it('returns the provider if it is in the `window.ethereum.providers` array', async () => {
     const provider = getRequestMethodMock({
       // eslint-disable-next-line @typescript-eslint/naming-convention
-      wallet_getSnaps: [],
+      wallet_getSnaps: {},
     });
 
     Object.defineProperty(globalThis, 'window', {

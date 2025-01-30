@@ -29,7 +29,7 @@ describe('useSupportedVersion', () => {
     Object.assign(globalThis, 'window', {
       ethereum: getRequestMethodMock({
         /* eslint-disable @typescript-eslint/naming-convention */
-        wallet_getSnaps: [],
+        wallet_getSnaps: {},
         web3_clientVersion: 'MetaMask/v11.0.0',
         /* eslint-enable @typescript-eslint/naming-convention */
       }),
