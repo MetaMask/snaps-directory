@@ -4,7 +4,7 @@ import { useLingui } from '@lingui/react';
 import { Link, withPrefix } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
-import banner from '../assets/images/seo/home.png';
+import banner from '../assets/seo/images/default.png';
 import { Fox, SEO } from '../components';
 
 export type NotFoundPageProps = {

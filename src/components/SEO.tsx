@@ -4,7 +4,7 @@ import { graphql, useStaticQuery, withPrefix } from 'gatsby';
 import type { FunctionComponent } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-import defaultBanner from '../assets/images/seo/home.png';
+import defaultBanner from '../assets/seo/images/default.png';
 import type { Fields } from '../utils';
 
 export type SEOProps = {
