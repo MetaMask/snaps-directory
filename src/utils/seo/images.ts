@@ -133,7 +133,7 @@ export async function createCategoryImage(snaps: Snap[]) {
   const filteredSnaps = getSnapsWithIcon(snaps);
   const randomSnaps = shuffle(filteredSnaps).slice(0, 5);
 
-  const snapsLength = filteredSnaps.length > 5 ? 6 : filteredSnaps.length;
+  const snapsLength = Math.min(6, filteredSnaps.length);
   const totalIconsWidth =
     SMALL_ICON_SIZE + (snapsLength - 1) * (SMALL_ICON_SIZE - ICON_OVERLAP);
   const firstIconX = (CANVAS_WIDTH - totalIconsWidth) / 2;
