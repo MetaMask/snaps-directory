@@ -506,10 +506,6 @@ msgstr "キーの復元"
 msgid "Knowledge Base"
 msgstr "知識ベース"
 
-#: src/components/icons/index.ts
-msgid "Language"
-msgstr ""
-
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
 msgid "Latest"
