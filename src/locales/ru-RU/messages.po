@@ -337,10 +337,6 @@ msgid "Dropdown"
 msgstr "Выпадающее меню"
 
 #: src/components/icons/index.ts
-msgid "Enable dark mode"
-msgstr "Включить темный режим"
-
-#: src/components/icons/index.ts
 msgid "Enable light mode"
 msgstr "Включить светлый режим"
 
@@ -602,6 +598,7 @@ msgid "Notification"
 msgstr "Уведомление"
 
 #: src/components/icons/index.ts
+#: src/components/icons/index.ts
 msgid "Notifications"
 msgstr "Уведомления"
 
@@ -668,6 +665,7 @@ msgstr "Планируйте и выполняйте периодические 
 msgid "Screenshot for {name}"
 msgstr "Скриншот для {name}"
 
+#: src/components/icons/index.ts
 #: src/components/icons/index.ts
 msgid "Search"
 msgstr "Поиск"
@@ -791,6 +789,7 @@ msgid "To use MetaMask Snaps, you need the latest version (11.0) of MetaMask in 
 msgstr "Для использования MetaMask Snaps вам нужна последняя версия MetaMask (11.0) в вашем браузере. <0>Подробнее.</0>"
 
 #: src/components/ColorModeToggle.tsx
+#: src/components/icons/index.ts
 msgid "Toggle color mode"
 msgstr "Сменить цветовой режим"
 

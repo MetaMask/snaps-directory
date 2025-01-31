@@ -5,22 +5,20 @@ import { render } from '../utils/test-utils';
 
 describe('ColorModeToggle', () => {
   it('renders', () => {
-    const { queryByLabelText } = render(<ColorModeToggle />);
+    const { queryAllByLabelText } = render(<ColorModeToggle />);
 
-    expect(queryByLabelText('Toggle color mode')).toBeInTheDocument();
-    expect(queryByLabelText('Enable dark mode')).toBeInTheDocument();
+    expect(queryAllByLabelText('Toggle color mode')).toHaveLength(2);
   });
 
   it('toggles the color mode when clicking', () => {
-    const { getByLabelText, queryByLabelText } = render(<ColorModeToggle />);
+    const { queryAllByLabelText, baseElement } = render(<ColorModeToggle />);
 
-    expect(queryByLabelText('Enable light mode')).not.toBeInTheDocument();
-    expect(queryByLabelText('Enable dark mode')).toBeInTheDocument();
+    expect(baseElement).toHaveClass('chakra-ui-light');
+    expect(queryAllByLabelText('Toggle color mode')).toHaveLength(2);
 
-    const toggle = getByLabelText('Toggle color mode');
-    act(() => toggle.click());
+    const toggle = queryAllByLabelText('Toggle color mode');
+    act(() => toggle[0]?.click());
 
-    expect(queryByLabelText('Enable light mode')).toBeInTheDocument();
-    expect(queryByLabelText('Enable dark mode')).not.toBeInTheDocument();
+    expect(baseElement).toHaveClass('chakra-ui-dark');
   });
 });

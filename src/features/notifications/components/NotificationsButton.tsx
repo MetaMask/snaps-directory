@@ -4,7 +4,7 @@ import { t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 
 import { getUnacknowledgedUpdates } from '../..';
-import { DotIcon, NotificationsIcon } from '../../../components';
+import { BellIcon, DotIcon } from '../../../components';
 import { useSelector } from '../../../hooks';
 
 export type NotificationsButtonProps = Partial<IconButtonProps>;
@@ -24,23 +24,10 @@ export const NotificationsButton: ComponentWithAs<
       {...props}
       position="relative"
       aria-label={_(t`Open notifications menu`)}
-      variant="clear"
+      variant="outline"
       icon={
         <>
-          <NotificationsIcon
-            fill="icon.alternative"
-            cursor="pointer"
-            width="2.25rem"
-            height="2.25rem"
-            sx={{
-              '& > svg > rect': {
-                fillOpacity: 1,
-              },
-              '& > svg > path': {
-                fill: 'text.alternative',
-              },
-            }}
-          />
+          <BellIcon width="0.638rem" height="0.75rem" />
           {hasUnacknowledgedUpdates && (
             <DotIcon position="absolute" top="0" right="0" />
           )}
