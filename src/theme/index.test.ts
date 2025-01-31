@@ -53,9 +53,10 @@ describe('theme', () => {
               },
               "primary": Object {
                 "background": "primary.default",
-                "color": "background.default",
-                "fontSize": "sm",
+                "color": "text.light",
+                "fontSize": "md",
                 "fontWeight": "500",
+                "minHeight": "3rem",
                 "paddingX": "6",
                 "paddingY": "4",
               },
@@ -473,6 +474,9 @@ describe('theme', () => {
               "default": Object {
                 "_dark": "#FFFFFF",
                 "default": "#0A0A0A",
+              },
+              "light": Object {
+                "default": "#FFFFFF",
               },
               "muted": Object {
                 "default": "#24272A1A",
