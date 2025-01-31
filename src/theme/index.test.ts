@@ -468,9 +468,6 @@ describe('theme', () => {
                 "_dark": "#C8CEDA",
                 "default": "#393D46",
               },
-              "dark": Object {
-                "default": "#0A0A0A",
-              },
               "default": Object {
                 "_dark": "#FFFFFF",
                 "default": "#0A0A0A",

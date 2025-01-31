@@ -21,9 +21,6 @@ export const semanticTokens: SemanticTokens = {
       light: {
         default: '#FFFFFF',
       },
-      dark: {
-        default: '#0A0A0A',
-      },
       alternative: {
         default: '#393D46',
         _dark: '#C8CEDA',
