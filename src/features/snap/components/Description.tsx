@@ -21,6 +21,7 @@ export const Description: FunctionComponent<DescriptionProps> = ({
       as="h4"
       color="text.alternative"
       textTransform="uppercase"
+      fontFamily="body"
       fontWeight="medium"
       fontSize="sm"
     >

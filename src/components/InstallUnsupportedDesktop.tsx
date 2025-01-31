@@ -12,7 +12,6 @@ import {
 import { Trans } from '@lingui/macro';
 import type { FunctionComponent } from 'react';
 
-import { Fox } from './Fox';
 import { MetaMaskIcon } from './icons';
 import { InstallUnsupportedDesktopUpdate } from './InstallUnsupportedDesktopUpdate';
 import { SnapStatus, useSupportedVersion } from '../hooks';
@@ -39,7 +38,7 @@ export const InstallUnsupportedDesktop: FunctionComponent<
       <ModalContent>
         <ModalBody>
           <Center flexDirection="column">
-            <Fox />
+            <MetaMaskIcon width="10rem" />
             {isSupported === SnapStatus.Unsupported ? (
               <InstallUnsupportedDesktopUpdate onClose={onClose} />
             ) : (

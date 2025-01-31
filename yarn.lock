@@ -4919,16 +4919,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/logo@npm:^3.1.1":
-  version: 3.1.2
-  resolution: "@metamask/logo@npm:3.1.2"
-  dependencies:
-    gl-mat4: 1.1.4
-    gl-vec3: 1.0.3
-  checksum: 788bd7fac605519da26fb84e12b2666028324bf1dafb6d4cf805d74b757d0e42cdd43095d0d43df761669f02183a239906ff1209daf70b32b91c1647e0bd68c2
-  languageName: node
-  linkType: hard
-
 "@metamask/number-to-bn@npm:^1.7.1":
   version: 1.7.1
   resolution: "@metamask/number-to-bn@npm:1.7.1"
@@ -5146,7 +5136,6 @@ __metadata:
     "@metamask/eslint-config-jest": ^12.0.0
     "@metamask/eslint-config-nodejs": ^12.0.0
     "@metamask/eslint-config-typescript": ^12.0.0
-    "@metamask/logo": ^3.1.1
     "@metamask/providers": ^17.1.2
     "@metamask/snaps-controllers": ^9.17.0
     "@metamask/snaps-registry": ^3.2.1
@@ -13352,20 +13341,6 @@ __metadata:
   version: 0.0.0
   resolution: "github-from-package@npm:0.0.0"
   checksum: 14e448192a35c1e42efee94c9d01a10f42fe790375891a24b25261246ce9336ab9df5d274585aedd4568f7922246c2a78b8a8cd2571bfe99c693a9718e7dd0e3
-  languageName: node
-  linkType: hard
-
-"gl-mat4@npm:1.1.4":
-  version: 1.1.4
-  resolution: "gl-mat4@npm:1.1.4"
-  checksum: a9fa84cc3d9e6801069e172c9ee8135c2d63c01147bd49fdf1c056fac88cf70b0371816e32730f430ce3eb286bbf22c1a286113408c95bd6932bb7477a6db905
-  languageName: node
-  linkType: hard
-
-"gl-vec3@npm:1.0.3":
-  version: 1.0.3
-  resolution: "gl-vec3@npm:1.0.3"
-  checksum: 29769f3330d298d461c1bc35319e7836d1328331838f8608f8b4a24e94010024d60a1a1d7fa30c49f5eb782b00b7c212a4518893e679c937158a41c6f4973094
   languageName: node
   linkType: hard
 

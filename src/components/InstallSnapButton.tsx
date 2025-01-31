@@ -93,6 +93,7 @@ const InstallButton: FunctionComponent<InstallButtonProps> = ({
       loadingText={_(t`Installing ${name}`)}
       onClick={handleInstall}
       width={{ base: '100%', md: 'auto' }}
+      fontSize="lg"
     >
       <Trans>Add to MetaMask</Trans>
     </Button>

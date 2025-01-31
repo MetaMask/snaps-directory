@@ -22,6 +22,9 @@ describe('theme', () => {
               "_hover": Object {
                 "opacity": "0.75",
               },
+              "borderRadius": "full",
+              "color": "text.default",
+              "lineHeight": "1",
             },
             "variants": Object {
               "filter": Object {
@@ -32,32 +35,30 @@ describe('theme', () => {
                 "background": "background.alternative",
               },
               "outline": Object {
-                "background": "transparent",
+                "_active": Object {
+                  "background": "text.alternative",
+                  "color": "background.default",
+                },
+                "_hover": Object {
+                  "background": "text.default",
+                  "color": "background.default",
+                  "opacity": "1",
+                },
                 "border": "1.5px solid",
-                "borderColor": "info.default",
-                "borderRadius": "30px",
-                "color": "info.default",
-                "fontSize": "md",
+                "borderColor": "text.default",
+                "fontSize": "sm",
                 "fontWeight": "500",
-                "height": "48px",
-                "lineHeight": "157%",
-                "padding": "4",
+                "paddingX": "6",
+                "paddingY": "4",
               },
               "primary": Object {
-                "_hover": Object {
-                  "_disabled": Object {
-                    "background": "info.default",
-                  },
-                },
-                "background": "info.default",
-                "borderColor": "info.default",
-                "borderRadius": "30px",
-                "color": "white",
+                "background": "primary.default",
+                "color": "text.light",
                 "fontSize": "md",
                 "fontWeight": "500",
-                "height": "48px",
-                "lineHeight": "157%",
-                "padding": "4",
+                "minHeight": "3rem",
+                "paddingX": "6",
+                "paddingY": "4",
               },
               "small": Object {
                 ".chakra-button__icon": Object {
@@ -82,16 +83,6 @@ describe('theme', () => {
                 "height": "26px",
                 "transitionDuration": "normal",
               },
-              "solid": Object {
-                "_active": Object {
-                  "bg": "#0376C9",
-                },
-                "_hover": Object {
-                  "bg": "#0376C9",
-                },
-                "bg": "#24272A",
-                "textColor": "white",
-              },
             },
           },
           "Container": Object {
@@ -115,6 +106,40 @@ describe('theme', () => {
               "color": "text.default",
               "fontWeight": "500",
               "lineHeight": "1.5",
+            },
+          },
+          "Input": Object {
+            "baseStyle": Object {
+              "field": Object {
+                "_placeholder": Object {
+                  "color": "text.default",
+                  "fontWeight": "500",
+                  "textTransform": "uppercase",
+                },
+                "borderRadius": "full",
+                "color": "text.default",
+                "fontSize": "sm",
+                "paddingX": "6",
+                "paddingY": "4",
+              },
+            },
+            "parts": Array [
+              "addon",
+              "field",
+              "element",
+              "group",
+            ],
+            "variants": Object {
+              "outline": Object {
+                "field": Object {
+                  "_hover": Object {
+                    "background": "background.alternative",
+                    "borderColor": "text.default",
+                  },
+                  "borderColor": "text.default",
+                  "borderWidth": "0.094rem",
+                },
+              },
             },
           },
           "Link": Object {
@@ -327,9 +352,9 @@ describe('theme', () => {
           "useSystemColorMode": true,
         },
         "fonts": Object {
-          "body": "\\"Euclid Circular B\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+          "body": "\\"Centra No1\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
           "code": "SFMono-Regular, Consolas, \\"Liberation Mono\\", Menlo, Courier, monospace",
-          "heading": "\\"Euclid Circular B\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+          "heading": "\\"MM Sans\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
         },
         "semanticTokens": Object {
           "borders": Object {
@@ -407,8 +432,8 @@ describe('theme', () => {
             },
             "info": Object {
               "default": Object {
-                "_dark": "#1098FC",
-                "default": "#0376C9",
+                "_dark": "#6F7EFF",
+                "default": "#4459FF",
               },
               "muted": Object {
                 "_dark": "#1098FC26",
@@ -416,6 +441,14 @@ describe('theme', () => {
               },
             },
             "primary": Object {
+              "alternative": Object {
+                "_dark": "#FFFFFF",
+                "default": "#0A0A0A",
+              },
+              "default": Object {
+                "_dark": "#6F7EFF",
+                "default": "#4459FF",
+              },
               "inverse": Object {
                 "default": "#FCFCFC",
               },
@@ -432,12 +465,15 @@ describe('theme', () => {
             },
             "text": Object {
               "alternative": Object {
-                "_dark": "#D6D9DC",
-                "default": "#535A61",
+                "_dark": "#C8CEDA",
+                "default": "#393D46",
               },
               "default": Object {
                 "_dark": "#FFFFFF",
-                "default": "#24272A",
+                "default": "#0A0A0A",
+              },
+              "light": Object {
+                "default": "#FFFFFF",
               },
               "muted": Object {
                 "default": "#24272A1A",
