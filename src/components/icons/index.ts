@@ -18,6 +18,7 @@ import BaseExternalLinkIcon from './external-link.svg';
 import BaseFilterIcon from './filter.svg';
 import BaseFlashIcon from './flash.svg';
 import BaseGlobalIcon from './global.svg';
+import BaseGlobeIcon from './globe.svg';
 import BaseHierarchyIcon from './hierarchy.svg';
 import BaseHomeIcon from './home.svg';
 import { wrapIcon } from './Icon';
@@ -93,6 +94,8 @@ export const FilterIcon = wrapIcon(BaseFilterIcon, defineMessage`Filter`);
 export const FlashIcon = wrapIcon(BaseFlashIcon, defineMessage`Flash`);
 
 export const GlobalIcon = wrapIcon(BaseGlobalIcon, defineMessage`Global`);
+
+export const GlobeIcon = wrapIcon(BaseGlobeIcon, defineMessage`Language`);
 
 export const HierarchyIcon = wrapIcon(
   BaseHierarchyIcon,

@@ -25,7 +25,6 @@ describe('theme', () => {
               "borderRadius": "full",
               "color": "text.default",
               "lineHeight": "1",
-              "textTransform": "uppercase",
             },
             "variants": Object {
               "filter": Object {
@@ -54,9 +53,10 @@ describe('theme', () => {
               },
               "primary": Object {
                 "background": "primary.default",
-                "color": "text.dark",
-                "fontSize": "sm",
+                "color": "text.light",
+                "fontSize": "md",
                 "fontWeight": "500",
+                "minHeight": "3rem",
                 "paddingX": "6",
                 "paddingY": "4",
               },
@@ -432,8 +432,8 @@ describe('theme', () => {
             },
             "info": Object {
               "default": Object {
-                "_dark": "#1098FC",
-                "default": "#0376C9",
+                "_dark": "#6F7EFF",
+                "default": "#4459FF",
               },
               "muted": Object {
                 "_dark": "#1098FC26",
@@ -442,12 +442,12 @@ describe('theme', () => {
             },
             "primary": Object {
               "alternative": Object {
-                "_dark": "#BAF24A",
+                "_dark": "#FFFFFF",
                 "default": "#0A0A0A",
               },
               "default": Object {
-                "_dark": "#FFFFFF",
-                "default": "#FF5C16",
+                "_dark": "#6F7EFF",
+                "default": "#4459FF",
               },
               "inverse": Object {
                 "default": "#FCFCFC",
@@ -468,12 +468,12 @@ describe('theme', () => {
                 "_dark": "#C8CEDA",
                 "default": "#393D46",
               },
-              "dark": Object {
-                "default": "#0A0A0A",
-              },
               "default": Object {
                 "_dark": "#FFFFFF",
                 "default": "#0A0A0A",
+              },
+              "light": Object {
+                "default": "#FFFFFF",
               },
               "muted": Object {
                 "default": "#24272A1A",

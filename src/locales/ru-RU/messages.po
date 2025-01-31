@@ -506,6 +506,10 @@ msgstr "Восстановление ключа"
 msgid "Knowledge Base"
 msgstr "База знаний"
 
+#: src/components/icons/index.ts
+msgid "Language"
+msgstr ""
+
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
 msgid "Latest"

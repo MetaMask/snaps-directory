@@ -501,6 +501,10 @@ msgstr ""
 msgid "Knowledge Base"
 msgstr ""
 
+#: src/components/icons/index.ts
+msgid "Language"
+msgstr "Language"
+
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
 msgid "Latest"

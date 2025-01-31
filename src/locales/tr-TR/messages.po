@@ -506,6 +506,10 @@ msgstr "Anahtar Kurtarma"
 msgid "Knowledge Base"
 msgstr "Bilgi Tabanı"
 
+#: src/components/icons/index.ts
+msgid "Language"
+msgstr ""
+
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
 msgid "Latest"

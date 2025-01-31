@@ -506,6 +506,10 @@ msgstr "密钥恢复"
 msgid "Knowledge Base"
 msgstr "知识库"
 
+#: src/components/icons/index.ts
+msgid "Language"
+msgstr ""
+
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
 msgid "Latest"
