@@ -13,10 +13,10 @@ import type { Fields } from '../utils';
 
 const GROUPS = [
   {
-    header: defineMessage`Most Popular`,
+    header: defineMessage`Most popular`,
     limit: 3,
     link: '/explore',
-    linkText: defineMessage`Explore All Snaps`,
+    linkText: defineMessage`Explore all Snaps`,
     images: true,
   },
   {
@@ -65,7 +65,7 @@ const GROUPS = [
     header: defineMessage`Latest`,
     limit: 3,
     link: '/latest',
-    linkText: defineMessage`See Latest`,
+    linkText: defineMessage`See latest`,
     order: Order.Latest,
   },
 ];

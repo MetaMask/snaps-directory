@@ -17,7 +17,7 @@ export const SNAP_CATEGORY_LABELS: Record<
   }
 > = {
   [RegistrySnapCategory.AccountManagement]: {
-    name: defineMessage`Account Management`,
+    name: defineMessage`Account management`,
     description: defineMessage`Manage your accounts and keys with MetaMask.`,
   },
   [RegistrySnapCategory.Interoperability]: {
@@ -33,7 +33,7 @@ export const SNAP_CATEGORY_LABELS: Record<
     description: defineMessage`Guard your wallet with transaction insights and safety tools.`,
   },
   [RegistrySnapCategory.NameResolution]: {
-    name: defineMessage`Name Resolution`,
+    name: defineMessage`Name resolution`,
     description: defineMessage`Resolve human-readable names to blockchain addresses.`,
   },
 };
@@ -47,28 +47,28 @@ export const SNAP_CATEGORY_LINKS: Record<
   }
 > = {
   [RegistrySnapCategory.AccountManagement]: {
-    header: defineMessage`Create an Ethereum Account`,
+    header: defineMessage`Create an Ethereum account`,
     link: '/account-management',
-    linkText: defineMessage`See All`,
+    linkText: defineMessage`See all`,
   },
   [RegistrySnapCategory.Interoperability]: {
-    header: defineMessage`Use MetaMask Beyond Ethereum`,
+    header: defineMessage`Use MetaMask beyond Ethereum`,
     link: '/interoperability',
-    linkText: defineMessage`See All`,
+    linkText: defineMessage`See all`,
   },
   [RegistrySnapCategory.Communication]: {
-    header: defineMessage`Notifications and Chat`,
+    header: defineMessage`Notifications and chat`,
     link: '/communication',
-    linkText: defineMessage`See All`,
+    linkText: defineMessage`See all`,
   },
   [RegistrySnapCategory.Security]: {
-    header: defineMessage`Guard Your Wallet`,
+    header: defineMessage`Guard your wallet`,
     link: '/security',
-    linkText: defineMessage`See All`,
+    linkText: defineMessage`See all`,
   },
   [RegistrySnapCategory.NameResolution]: {
-    header: defineMessage`Human-readable Addresses Onchain`,
+    header: defineMessage`Human-readable addresses onchain`,
     link: '/name-resolution',
-    linkText: defineMessage`See All`,
+    linkText: defineMessage`See all`,
   },
 };

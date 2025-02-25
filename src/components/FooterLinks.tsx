@@ -12,7 +12,7 @@ export const FOOTER_LINKS = [
         url: 'https://metamask.io/snaps',
       },
       {
-        title: defineMessage`Developer Docs`,
+        title: defineMessage`Developer docs`,
         url: 'https://docs.metamask.io/snaps/',
       },
     ],
@@ -21,7 +21,7 @@ export const FOOTER_LINKS = [
     title: defineMessage`Get in touch`,
     links: [
       {
-        title: defineMessage`Contact Us`,
+        title: defineMessage`Contact us`,
         url: 'https://support.metamask.io/start/how-to-contact-metamask-support/',
       },
       {

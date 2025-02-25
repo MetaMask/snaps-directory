@@ -65,7 +65,7 @@ const ExplorePage: FunctionComponent<ExplorePageProps> = ({ pageContext }) => {
         </Heading>
         {showResetFilter && (
           <Link onClick={handleResetFilter} variant="landing">
-            <Trans>See All</Trans>
+            <Trans>See all</Trans>
           </Link>
         )}
       </Flex>
