@@ -35,7 +35,7 @@ export const FilterSearchInput: FunctionComponent<FilterSearchInputProps> =
 
     return (
       <InputGroup ref={ref}>
-        <InputLeftElement>
+        <InputLeftElement pointerEvents="none">
           <SearchFieldIcon />
         </InputLeftElement>
         <Input
@@ -46,6 +46,8 @@ export const FilterSearchInput: FunctionComponent<FilterSearchInputProps> =
           onChange={onFormChange}
           onClick={onFormClick}
           onKeyDown={handleKeyDown}
+          paddingX="4"
+          paddingY="2"
         />
       </InputGroup>
     );
