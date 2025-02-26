@@ -67,12 +67,12 @@ msgid "Access the internet"
 msgstr "İnternete erişim sağla"
 
 #: src/constants.ts
-msgid "Account Management"
-msgstr "Hesap Yönetimi"
+msgid "Account management"
+msgstr ""
 
 #: src/components/FooterAccountManagementTerms.tsx
-msgid "Account Management Snaps are released as part of an experimental beta release. You agree that you will only use one of these Snaps if you understand how it functions and how to use it, and you have fully read and understand all risk warnings and other disclosures made available by the Third Party Service provider relating to use of their Snap. You agree that Consensys is not responsible for any injury that you incur as a result of your use of this Snap."
-msgstr "Hesap Yönetimi Snap'leri deneysel beta sürümünün bir parçası olarak piyasaya sürülür. Bu Snap'lerden birini sadece nasıl işlediğini ve nasıl kullanılacağını anlıyorsanız ve Snap'lerinin kullanımı ile ilgili olarak Üçüncü Taraf Hizmet Sağlayıcısı tarafından sunulan tüm risk uyarılarını ve diğer açıklamaları tam olarak okuyup anladıysanız kullanacağınızı kabul ederseniz. Consensys'in bu Snap'i kullanımınızın sonucunda yaşayacağınız zararlardan sorumlu olmadığını kabul edersiniz."
+msgid "Account management Snaps are released as part of an experimental beta release. You agree that you will only use one of these Snaps if you understand how it functions and how to use it, and you have fully read and understand all risk warnings and other disclosures made available by the Third Party Service provider relating to use of their Snap. You agree that Consensys is not responsible for any injury that you incur as a result of your use of this Snap."
+msgstr ""
 
 #: src/components/icons/index.ts
 msgid "Add"
@@ -264,16 +264,16 @@ msgid "Contact"
 msgstr "İletişim"
 
 #: src/components/FooterLinks.tsx
-msgid "Contact Us"
-msgstr "Bize Ulaşın"
+msgid "Contact us"
+msgstr ""
 
 #: src/components/PostInstallModal.tsx
 msgid "Continue to <0>{name}</0>'s website to get started with this snap."
 msgstr "Bu snap ile başlamak için <0>{name}</0> web sitesine devam edin."
 
 #: src/constants.ts
-msgid "Create an Ethereum Account"
-msgstr "Bir Ethereum Hesabı oluştur"
+msgid "Create an Ethereum account"
+msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Customize your web3 experience with {0}."
@@ -296,8 +296,8 @@ msgid "Developer"
 msgstr "Geliştirici"
 
 #: src/components/FooterLinks.tsx
-msgid "Developer Docs"
-msgstr "Geliştirici Belgeleri"
+msgid "Developer docs"
+msgstr ""
 
 #: src/features/banner/components/create-snap-banner/CreateSnapBanner.tsx
 msgid "Developers"
@@ -345,16 +345,16 @@ msgid "Ethereum"
 msgstr "Ethereum"
 
 #: src/components/FooterAccountManagementTerms.tsx
-msgid "Experimental Beta"
-msgstr "Deneysel Beta"
+msgid "Experimental beta"
+msgstr ""
 
 #: src/components/icons/index.ts
 msgid "Explore"
 msgstr "Keşfet"
 
 #: src/pages/index.tsx
-msgid "Explore All Snaps"
-msgstr "Tüm Snap'leri Keşfet"
+msgid "Explore all Snaps"
+msgstr ""
 
 #: src/components/SEO.tsx
 msgid "Explore community-built Snaps to customize your web3 experience via our official directory."
@@ -427,8 +427,8 @@ msgid "Got it"
 msgstr "Anladım"
 
 #: src/constants.ts
-msgid "Guard Your Wallet"
-msgstr "Cüzdanınızı Koruyun"
+msgid "Guard your wallet"
+msgstr ""
 
 #: src/constants.ts
 msgid "Guard your wallet with transaction insights and safety tools."
@@ -443,8 +443,8 @@ msgid "Home"
 msgstr "Ana Sayfa"
 
 #: src/constants.ts
-msgid "Human-readable Addresses Onchain"
-msgstr "Okunabilir Adresler Onchain"
+msgid "Human-readable addresses onchain"
+msgstr ""
 
 #: src/features/snap/components/MetadataItems.tsx
 msgid "Identifier"
@@ -499,12 +499,12 @@ msgid "Key"
 msgstr "Anahtar"
 
 #: src/features/snap/components/Metadata.tsx
-msgid "Key Recovery"
-msgstr "Anahtar Kurtarma"
+msgid "Key recovery"
+msgstr ""
 
 #: src/features/snap/components/Metadata.tsx
-msgid "Knowledge Base"
-msgstr "Bilgi Tabanı"
+msgid "Knowledge base"
+msgstr ""
 
 #: src/components/icons/index.ts
 msgid "Language"
@@ -582,12 +582,12 @@ msgstr "MetaMask Snaps şu anda sadece masaüstünde <0>Brave</0>, <1>Chrome</1>
 
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
-msgid "Most Popular"
-msgstr "En Popüler"
+msgid "Most popular"
+msgstr ""
 
 #: src/constants.ts
-msgid "Name Resolution"
-msgstr "Ad Çözümlemesi"
+msgid "Name resolution"
+msgstr ""
 
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "No Snaps found"
@@ -607,8 +607,8 @@ msgid "Notifications"
 msgstr "Bildirimler"
 
 #: src/constants.ts
-msgid "Notifications and Chat"
-msgstr "Bildirimler ve Sohbet"
+msgid "Notifications and chat"
+msgstr ""
 
 #: src/components/SnapWebsiteButton.tsx
 #: src/features/banner/components/faq-banner/FaqBanner.tsx
@@ -637,8 +637,8 @@ msgstr "<0>{0}</0> izinleri"
 
 #: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
-msgid "Privacy Policy"
-msgstr "Gizlilik Politikası"
+msgid "Privacy policy"
+msgstr ""
 
 #: src/features/snap/permissions.tsx
 msgid "Provide domain and address lookups"
@@ -701,24 +701,24 @@ msgstr "Adrese, hesap bakiyesine, aktiviteye bakın ve işlemleri başlatın"
 #: src/constants.ts
 #: src/constants.ts
 #: src/pages/explore.tsx
-msgid "See All"
-msgstr "Tümünü gör"
+msgid "See all"
+msgstr ""
 
 #: src/features/filter/components/FilterSearch.tsx
 msgid "See all results"
 msgstr "Tüm sonuçları gör"
 
 #: src/features/snap/components/Metadata.tsx
-msgid "See Details"
-msgstr "Ayrıntıları gör"
+msgid "See details"
+msgstr ""
 
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "See everything"
 msgstr "Her şeyi gör"
 
 #: src/pages/index.tsx
-msgid "See Latest"
-msgstr "En Yenileri gör"
+msgid "See latest"
+msgstr ""
 
 #: src/features/snap/permissions.tsx
 msgid "See the origins of websites that suggest transactions"
@@ -737,8 +737,8 @@ msgid "Sort"
 msgstr "Sırala"
 
 #: src/features/snap/components/MetadataModal.tsx
-msgid "Source Code"
-msgstr "Kaynak Kodu"
+msgid "Source code"
+msgstr ""
 
 #: src/components/icons/index.ts
 msgid "Speedometer"
@@ -773,8 +773,8 @@ msgstr "Etiket"
 
 #: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
-msgid "Terms of Use"
-msgstr "Kullanım Şartları"
+msgid "Terms of use"
+msgstr ""
 
 #: src/pages/404.tsx
 msgid "The page you're looking for can't be found."
@@ -822,8 +822,8 @@ msgid "Use lifecycle hooks"
 msgstr "Yaşam döngüsü kancalarını kullanın"
 
 #: src/constants.ts
-msgid "Use MetaMask Beyond Ethereum"
-msgstr "Ethereum Ötesinde MetaMask Kullanın"
+msgid "Use MetaMask beyond Ethereum"
+msgstr ""
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Version"
@@ -862,8 +862,8 @@ msgid "Wifi"
 msgstr "Wifi"
 
 #: src/components/FooterTerms.tsx
-msgid "You acknowledge that any Snap that you install is a Third Party Service, unless otherwise identified, as defined in the <0>Consensys Terms of Use</0>. Your use of Third Party Services is governed by separate terms and conditions set forth by the Third Party Service provider. Consensys does not recommend the use of any Snap by any particular person for any particular reason. You access, rely upon or use the Third Party Service at your own risk. Consensys disclaims all responsibility and liability for any losses on account of your use of Third Party Services. Any information you share with Third Party Services will be collected directly by those Third Party Services in accordance with their privacy policies. Please refer to their privacy policies for more information. Consensys has no access to information you share with Third Party Services."
-msgstr "Yüklediğiniz her Snap'in, aksi belirtilmedikçe, <0>Consensys Kullanım Şartları</0> bölümünde tanımlanan şekilde Üçüncü Taraf Hizmet olduğunu kabul edersiniz. Üçüncü Taraf Hizmetlerini kullanımınız Üçüncü Taraf Hizmet sağlayıcısı tarafından belirtilen ayrı şart ve koşullar ile yönetilir. Consensys, herhangi bir Snap'in herhangi bir sebeple herhangi bir kişi tarafından kullanımını önermez. Üçüncü Taraf Hizmetine erişiminizin, güvenmenizin veya kullanımınızın riski size aittir. Consensys, Üçüncü Taraf Hizmetlerini kullanımınızla ilgili zararlara yönelik her türlü sorumluluk ve yükümlülüğü reddeder. Üçüncü Taraf Hizmetleri ile paylaştığınız tüm bilgiler, kendi gizlilik politikalarına göre doğrudan bu Üçüncü Taraf Hizmetleri tarafından toplanır. Daha fazla bilgi için lütfen onların gizlilik politikalarına bakın. Consensys'in Üçüncü Taraflarla paylaştığınız bilgilere hiçbir erişimi yoktur."
+msgid "You acknowledge that any Snap that you install is a Third Party Service, unless otherwise identified, as defined in the <0>Consensys terms of use</0>. Your use of Third Party Services is governed by separate terms and conditions set forth by the Third Party Service provider. Consensys does not recommend the use of any Snap by any particular person for any particular reason. You access, rely upon or use the Third Party Service at your own risk. Consensys disclaims all responsibility and liability for any losses on account of your use of Third Party Services. Any information you share with Third Party Services will be collected directly by those Third Party Services in accordance with their privacy policies. Please refer to their privacy policies for more information. Consensys has no access to information you share with Third Party Services."
+msgstr ""
 
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "You will not be able to use your MetaMask Secret Recovery Phrase to recover accounts added through Account Management Snaps. If your account credentials are lost or compromised, MetaMask will not be able to help you. If the Snap or the associated dapp is hacked or ceases to function, you may not be able to access your account and the funds in your account."

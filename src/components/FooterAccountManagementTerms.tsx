@@ -7,11 +7,11 @@ import { FooterTerms } from './FooterTerms';
 export const FooterAccountManagementTerms: FunctionComponent = () => (
   <Box>
     <Text color="text.alternative" fontSize="xs" fontWeight="bold">
-      <Trans>Experimental Beta</Trans>
+      <Trans>Experimental beta</Trans>
     </Text>
     <Text color="text.alternative" fontSize="xs">
       <Trans>
-        Account Management Snaps are released as part of an experimental beta
+        Account management Snaps are released as part of an experimental beta
         release. You agree that you will only use one of these Snaps if you
         understand how it functions and how to use it, and you have fully read
         and understand all risk warnings and other disclosures made available by

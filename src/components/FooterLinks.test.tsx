@@ -8,6 +8,6 @@ describe('FooterLinks', () => {
     expect(queryByText('About')).toBeInTheDocument();
     expect(queryByText('Get in touch')).toBeInTheDocument();
     expect(queryByText('Website')).toBeInTheDocument();
-    expect(queryByText('Contact Us')).toBeInTheDocument();
+    expect(queryByText('Contact us')).toBeInTheDocument();
   });
 });

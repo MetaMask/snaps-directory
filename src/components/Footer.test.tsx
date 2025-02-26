@@ -15,6 +15,6 @@ describe('Footer', () => {
   it('renders account management terms', () => {
     const { queryByText } = render(<Footer isAccountManagement={true} />);
 
-    expect(queryByText('Experimental Beta')).toBeInTheDocument();
+    expect(queryByText('Experimental beta')).toBeInTheDocument();
   });
 });

@@ -16,13 +16,13 @@ export const Legal: FunctionComponent<SnapLegalProps> = ({
   <>
     {privacyPolicy && (
       <ExternalLink href={privacyPolicy}>
-        <Trans>Privacy Policy</Trans>
+        <Trans>Privacy policy</Trans>
       </ExternalLink>
     )}
 
     {termsOfUse && (
       <ExternalLink href={termsOfUse}>
-        <Trans>Terms of Use</Trans>
+        <Trans>Terms of use</Trans>
       </ExternalLink>
     )}
   </>
