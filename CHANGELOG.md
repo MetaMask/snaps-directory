@@ -9,9 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.15.0]
 
-### Uncategorized
+### Changed
 
 - Implement redesign ([#524](https://github.com/MetaMask/snaps-directory/pull/524))
+
+### Fixed
+
 - Update provider detection to use `wallet_getSnaps` ([#528](https://github.com/MetaMask/snaps-directory/pull/528))
 
 ## [1.14.2]
