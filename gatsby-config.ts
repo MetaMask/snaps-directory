@@ -36,7 +36,7 @@ const config: GatsbyConfig = {
         name: 'MetaMask Snaps Directory',
         start_url: '/',
         display: 'standalone',
-        icon: 'src/assets/fox.svg',
+        icon: 'src/assets/favicon.svg',
         background_color: '#ffffff',
         theme_color: '#ffffff',
         /* eslint-enable @typescript-eslint/naming-convention */
