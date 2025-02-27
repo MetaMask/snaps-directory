@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.15.1]
 
-### Uncategorized
+### Fixed
 
 - Update favicon ([#536](https://github.com/MetaMask/snaps-directory/pull/536))
 
