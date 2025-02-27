@@ -10,7 +10,7 @@ describe('Legal', () => {
       />,
     );
 
-    expect(queryByText('Privacy Policy')).toBeInTheDocument();
-    expect(queryByText('Terms of Use')).toBeInTheDocument();
+    expect(queryByText('Privacy policy')).toBeInTheDocument();
+    expect(queryByText('Terms of use')).toBeInTheDocument();
   });
 });

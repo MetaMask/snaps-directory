@@ -38,7 +38,7 @@ export const Header: FunctionComponent<HeaderProps> = (props) => (
             <Logo />
           </Stack>
         </Link>
-        <Stack direction="row" gap="2">
+        <Stack direction="row" gap="4">
           <FilterSearch />
           <ColorModeToggle />
           <Notifications />

@@ -4,8 +4,8 @@ import { useLingui } from '@lingui/react';
 import { Link, withPrefix } from 'gatsby';
 import type { FunctionComponent } from 'react';
 
-import banner from '../assets/images/seo/home.png';
-import { Fox, SEO } from '../components';
+import banner from '../assets/seo/images/default.png';
+import { MetaMaskIcon, SEO } from '../components';
 
 export type NotFoundPageProps = {
   pageContext: {
@@ -41,7 +41,7 @@ const NotFoundPage: FunctionComponent<NotFoundPageProps> = ({
     maxWidth="container.md"
   >
     <Head pageContext={pageContext} />
-    <Fox />
+    <MetaMaskIcon width="10rem" />
     <Heading
       as="h1"
       fontSize={['2xl', '4xl', '5xl']}

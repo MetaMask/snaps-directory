@@ -6,9 +6,9 @@ import {
 } from '@chakra-ui/react';
 import { t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
-import type { ChangeEvent, FunctionComponent } from 'react';
+import type { ChangeEvent, FunctionComponent, KeyboardEvent } from 'react';
 
-import { SearchIcon } from '../../../components';
+import { SearchFieldIcon } from '../../../components';
 
 export type FilterSearchInputProps = {
   query: string;
@@ -27,31 +27,27 @@ export const FilterSearchInput: FunctionComponent<FilterSearchInputProps> =
   forwardRef(({ query, onFormClick, onFormChange, onFormSubmit }, ref) => {
     const { _ } = useLingui();
 
-    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
       if (event.key === 'Enter') {
         onFormSubmit();
       }
     };
 
     return (
-      <InputGroup background="background.default" borderRadius="full" ref={ref}>
+      <InputGroup ref={ref}>
         <InputLeftElement pointerEvents="none">
-          <SearchIcon width="1.25rem" fill="text.alternative" />
+          <SearchFieldIcon />
         </InputLeftElement>
         <Input
           type="search"
-          borderRadius="full"
+          variant="outline"
           placeholder={_(t`Search Snaps`)}
           value={query}
           onChange={onFormChange}
           onClick={onFormClick}
           onKeyDown={handleKeyDown}
-          border="none"
-          background="background.alternative"
-          _focusVisible={{
-            border: 'none',
-            outline: 'none',
-          }}
+          paddingX="4"
+          paddingY="2"
         />
       </InputGroup>
     );

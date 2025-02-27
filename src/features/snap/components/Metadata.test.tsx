@@ -22,6 +22,6 @@ describe('Metadata', () => {
     const { snap } = getMockSnap();
     const { queryByText } = render(<Metadata snap={snap} />);
 
-    expect(queryByText('Key Recovery')).toBeInTheDocument();
+    expect(queryByText('Key recovery')).toBeInTheDocument();
   });
 });

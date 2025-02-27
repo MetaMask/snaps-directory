@@ -12,6 +12,6 @@ describe('Index page', () => {
       />,
     );
 
-    expect(queryByText('Most Popular')).toBeInTheDocument();
+    expect(queryByText('Most popular')).toBeInTheDocument();
   });
 });

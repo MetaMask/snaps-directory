@@ -17,11 +17,11 @@ export const FooterCopyright: FunctionComponent<FooterCopyrightProps> = (
           &copy;{new Date().getFullYear()} MetaMask. All rights reserved.
         </Trans>{' '}
         <Link href="https://consensys.io/privacy-policy/" isExternal={true}>
-          <Trans>Privacy Policy</Trans>
+          <Trans>Privacy policy</Trans>
         </Link>{' '}
         &{' '}
         <Link href="https://consensys.io/terms-of-use/" isExternal={true}>
-          <Trans>Terms of Use</Trans>
+          <Trans>Terms of use</Trans>
         </Link>
       </Text>
     </Box>

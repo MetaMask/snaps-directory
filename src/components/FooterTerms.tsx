@@ -8,7 +8,7 @@ export const FooterTerms: FunctionComponent = () => (
       You acknowledge that any Snap that you install is a Third Party Service,
       unless otherwise identified, as defined in the{' '}
       <Link href="https://consensys.io/terms-of-use/" isExternal={true}>
-        Consensys Terms of Use
+        Consensys terms of use
       </Link>
       . Your use of Third Party Services is governed by separate terms and
       conditions set forth by the Third Party Service provider. Consensys does

@@ -5,6 +5,6 @@ describe('FooterTerms', () => {
   it('renders', () => {
     const { queryByText } = render(<FooterTerms />);
 
-    expect(queryByText('Consensys Terms of Use')).toBeInTheDocument();
+    expect(queryByText('Consensys terms of use')).toBeInTheDocument();
   });
 });

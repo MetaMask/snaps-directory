@@ -4,7 +4,7 @@ import { withPrefix } from 'gatsby';
 import type { FunctionComponent } from 'react';
 import { useDispatch } from 'react-redux';
 
-import banner from '../assets/images/seo/home.png';
+import banner from '../assets/seo/images/default.png';
 import { SEO } from '../components';
 import {
   Filter,
@@ -65,7 +65,7 @@ const ExplorePage: FunctionComponent<ExplorePageProps> = ({ pageContext }) => {
         </Heading>
         {showResetFilter && (
           <Link onClick={handleResetFilter} variant="landing">
-            <Trans>See All</Trans>
+            <Trans>See all</Trans>
           </Link>
         )}
       </Flex>

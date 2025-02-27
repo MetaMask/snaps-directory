@@ -1,10 +1,10 @@
 import { t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
-import { graphql, useStaticQuery, withPrefix } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import type { FunctionComponent } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-import defaultBanner from '../assets/images/seo/home.png';
+import defaultBanner from '../assets/seo/images/default.png';
 import type { Fields } from '../utils';
 
 export type SEOProps = {
@@ -28,7 +28,7 @@ export const SEO: FunctionComponent<SEOProps> = ({
   title,
   ogTitle = title,
   description,
-  banner = withPrefix(defaultBanner),
+  banner = defaultBanner,
   locale,
 }) => {
   const { _ } = useLingui();

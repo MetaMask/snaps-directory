@@ -67,12 +67,12 @@ msgid "Access the internet"
 msgstr "インターネットへのアクセス"
 
 #: src/constants.ts
-msgid "Account Management"
-msgstr "アカウント管理"
+msgid "Account management"
+msgstr ""
 
 #: src/components/FooterAccountManagementTerms.tsx
-msgid "Account Management Snaps are released as part of an experimental beta release. You agree that you will only use one of these Snaps if you understand how it functions and how to use it, and you have fully read and understand all risk warnings and other disclosures made available by the Third Party Service provider relating to use of their Snap. You agree that Consensys is not responsible for any injury that you incur as a result of your use of this Snap."
-msgstr "アカウント管理Snapは、試験運用ベータ版の一部としてリリースされています。ユーザーは、これらのSnapのいずれも、機能や使い方を理解し、Snapの使用に関連してサードパーティサービスプロバイダーより提供されたすべてのリスクに関する警告およびその他開示事項を完全に読み、理解した場合にのみ使用することに同意するものとします。ユーザーは、Snapの使用に起因するいかなる被害についても、Consensysが責任を負わないことに同意するものとします。"
+msgid "Account management Snaps are released as part of an experimental beta release. You agree that you will only use one of these Snaps if you understand how it functions and how to use it, and you have fully read and understand all risk warnings and other disclosures made available by the Third Party Service provider relating to use of their Snap. You agree that Consensys is not responsible for any injury that you incur as a result of your use of this Snap."
+msgstr ""
 
 #: src/components/icons/index.ts
 msgid "Add"
@@ -264,16 +264,16 @@ msgid "Contact"
 msgstr "連絡先"
 
 #: src/components/FooterLinks.tsx
-msgid "Contact Us"
-msgstr "お問い合わせ"
+msgid "Contact us"
+msgstr ""
 
 #: src/components/PostInstallModal.tsx
 msgid "Continue to <0>{name}</0>'s website to get started with this snap."
 msgstr "<0>{name}</0>のWebサイトに移動して、このSnapの使用を開始します。"
 
 #: src/constants.ts
-msgid "Create an Ethereum Account"
-msgstr "イーサリアムアカウントを作成"
+msgid "Create an Ethereum account"
+msgstr ""
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Customize your web3 experience with {0}."
@@ -296,8 +296,8 @@ msgid "Developer"
 msgstr "開発者"
 
 #: src/components/FooterLinks.tsx
-msgid "Developer Docs"
-msgstr "開発者用ドキュメント"
+msgid "Developer docs"
+msgstr ""
 
 #: src/features/banner/components/create-snap-banner/CreateSnapBanner.tsx
 msgid "Developers"
@@ -337,10 +337,6 @@ msgid "Dropdown"
 msgstr "ドロップダウン"
 
 #: src/components/icons/index.ts
-msgid "Enable dark mode"
-msgstr "ダークモードを有効にする"
-
-#: src/components/icons/index.ts
 msgid "Enable light mode"
 msgstr "ライトモードを有効にする"
 
@@ -349,16 +345,16 @@ msgid "Ethereum"
 msgstr "イーサリアム"
 
 #: src/components/FooterAccountManagementTerms.tsx
-msgid "Experimental Beta"
-msgstr "試験運用ベータ版"
+msgid "Experimental beta"
+msgstr ""
 
 #: src/components/icons/index.ts
 msgid "Explore"
 msgstr "閲覧"
 
 #: src/pages/index.tsx
-msgid "Explore All Snaps"
-msgstr "すべてのSnapsを閲覧"
+msgid "Explore all Snaps"
+msgstr ""
 
 #: src/components/SEO.tsx
 msgid "Explore community-built Snaps to customize your web3 experience via our official directory."
@@ -431,8 +427,8 @@ msgid "Got it"
 msgstr "了解"
 
 #: src/constants.ts
-msgid "Guard Your Wallet"
-msgstr "ウォレットの保護"
+msgid "Guard your wallet"
+msgstr ""
 
 #: src/constants.ts
 msgid "Guard your wallet with transaction insights and safety tools."
@@ -447,8 +443,8 @@ msgid "Home"
 msgstr "ホーム"
 
 #: src/constants.ts
-msgid "Human-readable Addresses Onchain"
-msgstr "人間が読めるオンチェーンのアドレス"
+msgid "Human-readable addresses onchain"
+msgstr ""
 
 #: src/features/snap/components/MetadataItems.tsx
 msgid "Identifier"
@@ -503,12 +499,16 @@ msgid "Key"
 msgstr "キー"
 
 #: src/features/snap/components/Metadata.tsx
-msgid "Key Recovery"
-msgstr "キーの復元"
+msgid "Key recovery"
+msgstr ""
 
 #: src/features/snap/components/Metadata.tsx
-msgid "Knowledge Base"
-msgstr "知識ベース"
+msgid "Knowledge base"
+msgstr ""
+
+#: src/components/icons/index.ts
+msgid "Language"
+msgstr ""
 
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
@@ -582,12 +582,12 @@ msgstr "MetaMask Snapは現在、<0>Brave</0>、<1>Chrome</1>、<2>Firefox</2>�
 
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
-msgid "Most Popular"
-msgstr "最も人気"
+msgid "Most popular"
+msgstr ""
 
 #: src/constants.ts
-msgid "Name Resolution"
-msgstr "名前解決"
+msgid "Name resolution"
+msgstr ""
 
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "No Snaps found"
@@ -602,12 +602,13 @@ msgid "Notification"
 msgstr "通知"
 
 #: src/components/icons/index.ts
+#: src/components/icons/index.ts
 msgid "Notifications"
 msgstr "通知"
 
 #: src/constants.ts
-msgid "Notifications and Chat"
-msgstr "通知とチャット"
+msgid "Notifications and chat"
+msgstr ""
 
 #: src/components/SnapWebsiteButton.tsx
 #: src/features/banner/components/faq-banner/FaqBanner.tsx
@@ -636,8 +637,8 @@ msgstr "<0>{0}</0>による許可"
 
 #: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
-msgid "Privacy Policy"
-msgstr "プライバシー ポリシー"
+msgid "Privacy policy"
+msgstr ""
 
 #: src/features/snap/permissions.tsx
 msgid "Provide domain and address lookups"
@@ -669,6 +670,7 @@ msgid "Screenshot for {name}"
 msgstr "{name}のスクリーンショット"
 
 #: src/components/icons/index.ts
+#: src/components/icons/index.ts
 msgid "Search"
 msgstr "検索"
 
@@ -699,24 +701,24 @@ msgstr "アドレス、アカウント残高、アクティビティを表示し
 #: src/constants.ts
 #: src/constants.ts
 #: src/pages/explore.tsx
-msgid "See All"
-msgstr "すべて表示"
+msgid "See all"
+msgstr ""
 
 #: src/features/filter/components/FilterSearch.tsx
 msgid "See all results"
 msgstr "すべての結果を表示"
 
 #: src/features/snap/components/Metadata.tsx
-msgid "See Details"
-msgstr "詳細を表示"
+msgid "See details"
+msgstr ""
 
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "See everything"
 msgstr "すべて表示"
 
 #: src/pages/index.tsx
-msgid "See Latest"
-msgstr "最新のものを表示"
+msgid "See latest"
+msgstr ""
 
 #: src/features/snap/permissions.tsx
 msgid "See the origins of websites that suggest transactions"
@@ -735,8 +737,8 @@ msgid "Sort"
 msgstr "並べ替え"
 
 #: src/features/snap/components/MetadataModal.tsx
-msgid "Source Code"
-msgstr "ソースコード"
+msgid "Source code"
+msgstr ""
 
 #: src/components/icons/index.ts
 msgid "Speedometer"
@@ -771,8 +773,8 @@ msgstr "タグ"
 
 #: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
-msgid "Terms of Use"
-msgstr "利用規約"
+msgid "Terms of use"
+msgstr ""
 
 #: src/pages/404.tsx
 msgid "The page you're looking for can't be found."
@@ -791,6 +793,7 @@ msgid "To use MetaMask Snaps, you need the latest version (11.0) of MetaMask in 
 msgstr "MetaMask Snapsを使用するには、ブラウザに最新バージョン (11.0) のMetaMaskが必要です。<0>詳細はこちら。</0>"
 
 #: src/components/ColorModeToggle.tsx
+#: src/components/icons/index.ts
 msgid "Toggle color mode"
 msgstr "カラーモードを切り替える"
 
@@ -819,8 +822,8 @@ msgid "Use lifecycle hooks"
 msgstr "ライフサイクルフックを使用"
 
 #: src/constants.ts
-msgid "Use MetaMask Beyond Ethereum"
-msgstr "イーサリアム以外でMetaMaskを使用"
+msgid "Use MetaMask beyond Ethereum"
+msgstr ""
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Version"
@@ -859,8 +862,8 @@ msgid "Wifi"
 msgstr "Wi-Fi"
 
 #: src/components/FooterTerms.tsx
-msgid "You acknowledge that any Snap that you install is a Third Party Service, unless otherwise identified, as defined in the <0>Consensys Terms of Use</0>. Your use of Third Party Services is governed by separate terms and conditions set forth by the Third Party Service provider. Consensys does not recommend the use of any Snap by any particular person for any particular reason. You access, rely upon or use the Third Party Service at your own risk. Consensys disclaims all responsibility and liability for any losses on account of your use of Third Party Services. Any information you share with Third Party Services will be collected directly by those Third Party Services in accordance with their privacy policies. Please refer to their privacy policies for more information. Consensys has no access to information you share with Third Party Services."
-msgstr "ユーザーは、別途特定されていない限り、インストールするSnapが<0>Consensys利用規約</0>で定義されているサードパーティサービスであることを認めたものとみなされます。サードパーティサービスの使用には、当該サードパーティサービスプロバイダーにより定められた、別の諸条件が適用されます。Consensysは、特定の相手に対して、いかなる理由であっても、Snapの使用を推奨するものではありません。サードパーティサービスへのアクセスや依存、またはその使用は、ユーザーの自己責任となります。Consensysは、サードパーティサービスの使用によりアカウントで発生した損失について、一切責任および賠償責任を負いません。サードパーティサービスと共有する情報は、当該サードパーティサービスにより、それぞれのプライバシーポリシーに従い直接収集されます。詳細は、各サードパーティサービスのプライバシーポリシーをご覧ください。Consensysは、ユーザーがサードパーティと共有した情報に一切アクセスできません。"
+msgid "You acknowledge that any Snap that you install is a Third Party Service, unless otherwise identified, as defined in the <0>Consensys terms of use</0>. Your use of Third Party Services is governed by separate terms and conditions set forth by the Third Party Service provider. Consensys does not recommend the use of any Snap by any particular person for any particular reason. You access, rely upon or use the Third Party Service at your own risk. Consensys disclaims all responsibility and liability for any losses on account of your use of Third Party Services. Any information you share with Third Party Services will be collected directly by those Third Party Services in accordance with their privacy policies. Please refer to their privacy policies for more information. Consensys has no access to information you share with Third Party Services."
+msgstr ""
 
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "You will not be able to use your MetaMask Secret Recovery Phrase to recover accounts added through Account Management Snaps. If your account credentials are lost or compromised, MetaMask will not be able to help you. If the Snap or the associated dapp is hacked or ceases to function, you may not be able to access your account and the funds in your account."

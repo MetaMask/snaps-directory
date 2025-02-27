@@ -1,7 +1,8 @@
-export const DEFAULT_FONT = `"Euclid Circular B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`;
+export const DEFAULT_FONT =
+  '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
 
 export const fonts: Record<string, string> = {
-  heading: DEFAULT_FONT,
-  body: DEFAULT_FONT,
+  heading: `"MM Sans", ${DEFAULT_FONT}`,
+  body: `"Centra No1", ${DEFAULT_FONT}`,
   code: `SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace`,
 };

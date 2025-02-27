@@ -3,6 +3,7 @@ import { defineMessage } from '@lingui/macro';
 import BaseAddSquareIcon from './add-square.svg';
 import BaseAddUserIcon from './add-user.svg';
 import BaseBackIcon from './back.svg';
+import BaseBellIcon from './bell.svg';
 import BaseCheckThinIcon from './check-thin.svg';
 import BaseCheckIcon from './check.svg';
 import BaseClockIcon from './clock.svg';
@@ -17,6 +18,7 @@ import BaseExternalLinkIcon from './external-link.svg';
 import BaseFilterIcon from './filter.svg';
 import BaseFlashIcon from './flash.svg';
 import BaseGlobalIcon from './global.svg';
+import BaseGlobeIcon from './globe.svg';
 import BaseHierarchyIcon from './hierarchy.svg';
 import BaseHomeIcon from './home.svg';
 import { wrapIcon } from './Icon';
@@ -31,6 +33,7 @@ import BaseMetaMaskIcon from './metamask.svg';
 import BaseNotificationIcon from './notification.svg';
 import BaseNotificationsIcon from './notifications.svg';
 import BaseQuestionIcon from './question.svg';
+import BaseSearchFieldIcon from './search-field.svg';
 import BaseSearchIcon from './search.svg';
 import BaseSecurityKeyIcon from './security-key.svg';
 import BaseSecuritySearchIcon from './security-search.svg';
@@ -50,6 +53,8 @@ export const AddUserIcon = wrapIcon(BaseAddUserIcon, defineMessage`Add user`);
 
 export const BackIcon = wrapIcon(BaseBackIcon, defineMessage`Back`);
 
+export const BellIcon = wrapIcon(BaseBellIcon, defineMessage`Notifications`);
+
 export const ClockIcon = wrapIcon(BaseClockIcon, defineMessage`Clock`);
 
 export const CloseIcon = wrapIcon(BaseCloseIcon, defineMessage`Close`);
@@ -60,7 +65,7 @@ export const CheckThinIcon = wrapIcon(BaseCheckThinIcon, defineMessage`Check`);
 
 export const DarkModeIcon = wrapIcon(
   BaseDarkModeIcon,
-  defineMessage`Enable dark mode`,
+  defineMessage`Toggle color mode`,
 );
 
 export const DocumentCodeIcon = wrapIcon(
@@ -89,6 +94,8 @@ export const FilterIcon = wrapIcon(BaseFilterIcon, defineMessage`Filter`);
 export const FlashIcon = wrapIcon(BaseFlashIcon, defineMessage`Flash`);
 
 export const GlobalIcon = wrapIcon(BaseGlobalIcon, defineMessage`Global`);
+
+export const GlobeIcon = wrapIcon(BaseGlobeIcon, defineMessage`Language`);
 
 export const HierarchyIcon = wrapIcon(
   BaseHierarchyIcon,
@@ -137,6 +144,11 @@ export const NotificationsCategoryIcon = wrapIcon(
 export const QuestionIcon = wrapIcon(BaseQuestionIcon, defineMessage`Question`);
 
 export const SearchIcon = wrapIcon(BaseSearchIcon, defineMessage`Search`);
+
+export const SearchFieldIcon = wrapIcon(
+  BaseSearchFieldIcon,
+  defineMessage`Search`,
+);
 
 export const SecurityKeyIcon = wrapIcon(
   BaseSecurityKeyIcon,

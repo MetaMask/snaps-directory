@@ -15,12 +15,15 @@ export const semanticTokens: SemanticTokens = {
   colors: {
     text: {
       default: {
-        default: '#24272A',
+        default: '#0A0A0A',
         _dark: '#FFFFFF',
       },
+      light: {
+        default: '#FFFFFF',
+      },
       alternative: {
-        default: '#535A61',
-        _dark: '#D6D9DC',
+        default: '#393D46',
+        _dark: '#C8CEDA',
       },
       muted: {
         default: '#24272A1A',
@@ -49,14 +52,22 @@ export const semanticTokens: SemanticTokens = {
       'alternative-hover': { default: '#EDEFF1', _dark: '#191B1D' },
     },
     primary: {
+      default: {
+        default: '#4459FF',
+        _dark: '#6F7EFF',
+      },
+      alternative: {
+        default: '#0A0A0A',
+        _dark: '#FFFFFF',
+      },
       inverse: {
         default: '#FCFCFC',
       },
     },
     info: {
       default: {
-        default: '#0376C9',
-        _dark: '#1098FC',
+        default: '#4459FF',
+        _dark: '#6F7EFF',
       },
       muted: {
         default: '#037DD61A',

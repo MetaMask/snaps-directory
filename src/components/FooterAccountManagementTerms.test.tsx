@@ -5,6 +5,6 @@ describe('FooterAccountManagementTerms', () => {
   it('renders', () => {
     const { queryByText } = render(<FooterAccountManagementTerms />);
 
-    expect(queryByText('Experimental Beta')).toBeInTheDocument();
+    expect(queryByText('Experimental beta')).toBeInTheDocument();
   });
 });

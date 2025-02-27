@@ -72,12 +72,12 @@ export const Metadata: FunctionComponent<MetadataProps> = ({ snap }) => {
                 )}
                 {support.knowledgeBase && (
                   <ExternalLink href={support.knowledgeBase}>
-                    <Trans>Knowledge Base</Trans>
+                    <Trans>Knowledge base</Trans>
                   </ExternalLink>
                 )}
                 {support.keyRecovery && (
                   <ExternalLink href={support.keyRecovery}>
-                    <Trans>Key Recovery</Trans>
+                    <Trans>Key recovery</Trans>
                   </ExternalLink>
                 )}
               </>
@@ -86,7 +86,7 @@ export const Metadata: FunctionComponent<MetadataProps> = ({ snap }) => {
         )}
       </Flex>
       <Link fontWeight="500" onClick={onOpen}>
-        <Trans>See Details</Trans>
+        <Trans>See details</Trans>
       </Link>
     </Flex>
   );

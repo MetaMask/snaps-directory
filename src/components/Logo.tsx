@@ -1,7 +1,6 @@
-import { Box, useColorMode } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import type { FunctionComponent } from 'react';
 
-import SmallLogo from './icons/metamask.svg';
 import SvgLogo from '../assets/logo.svg';
 
 /**
@@ -10,37 +9,18 @@ import SvgLogo from '../assets/logo.svg';
  * @returns A React component.
  */
 export const Logo: FunctionComponent = () => {
-  const { colorMode } = useColorMode();
-
-  const fill = colorMode === 'light' ? '#161616' : 'white';
   return (
-    <>
+    <Box width="4.103rem" height="2.039rem">
       <Box
-        width="11.95rem"
-        height="1.5rem"
-        display={{ base: 'none', md: 'block' }}
-      >
-        <SvgLogo
-          width="100%"
-          height="100%"
-          role="img"
-          aria-label="MetaMask Snaps Directory"
-          fill={fill}
-        />
-      </Box>
-      <Box
-        width="1.603rem"
-        height="1.5rem"
-        display={{ base: 'block', md: 'none' }}
-      >
-        <SmallLogo
-          width="100%"
-          height="100%"
-          role="img"
-          aria-label="MetaMask Snaps Directory"
-          fill={fill}
-        />
-      </Box>
-    </>
+        // @ts-expect-error - SVG is a React component but TypeScript thinks
+        // it's a string.
+        as={SvgLogo}
+        width="100%"
+        height="100%"
+        role="img"
+        aria-label="MetaMask Snaps Directory"
+        fill="primary.alternative"
+      />
+    </Box>
   );
 };

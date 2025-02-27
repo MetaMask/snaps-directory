@@ -38,6 +38,7 @@ export const Permissions: FunctionComponent<PermissionsProps> = ({
         as="h4"
         color="text.alternative"
         textTransform="uppercase"
+        fontFamily="body"
         fontWeight="medium"
         fontSize="sm"
         marginBottom="2"
