@@ -8,7 +8,7 @@ msgstr ""
 "Language: de\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-18 08:08\n"
+"PO-Revision-Date: 2025-03-19 12:01\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -68,11 +68,11 @@ msgstr "Zugriff auf das Internet"
 
 #: src/constants.ts
 msgid "Account management"
-msgstr ""
+msgstr "Account-Management"
 
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "Account management Snaps are released as part of an experimental beta release. You agree that you will only use one of these Snaps if you understand how it functions and how to use it, and you have fully read and understand all risk warnings and other disclosures made available by the Third Party Service provider relating to use of their Snap. You agree that Consensys is not responsible for any injury that you incur as a result of your use of this Snap."
-msgstr ""
+msgstr "Account-Management-Snaps werden als Teil einer experimentellen Beta-Version veröffentlicht. Sie erklären sich damit einverstanden, einen dieser Snaps nur dann zu verwenden, wenn Sie verstehen, wie er funktioniert und wie er zu verwenden ist, und wenn Sie alle Risikowarnungen und andere Informationen, die der Drittdienstanbieter in Bezug auf die Verwendung seines Snaps zur Verfügung stellt, vollständig gelesen und verstanden haben. Sie erklären sich damit einverstanden, dass Consensys nicht für Verletzungen verantwortlich ist, die Ihnen durch die Nutzung dieses Snaps entstehen."
 
 #: src/components/icons/index.ts
 msgid "Add"
@@ -265,7 +265,7 @@ msgstr "Kontakt"
 
 #: src/components/FooterLinks.tsx
 msgid "Contact us"
-msgstr ""
+msgstr "Kontaktieren Sie uns"
 
 #: src/components/PostInstallModal.tsx
 msgid "Continue to <0>{name}</0>'s website to get started with this snap."
@@ -273,7 +273,7 @@ msgstr "Gehen Sie auf die Website von <0>{name}</0>, um mit diesem Snap zu begin
 
 #: src/constants.ts
 msgid "Create an Ethereum account"
-msgstr ""
+msgstr "Erstellen Sie ein Ethereum-Konto"
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Customize your web3 experience with {0}."
@@ -297,7 +297,7 @@ msgstr "Entwickler"
 
 #: src/components/FooterLinks.tsx
 msgid "Developer docs"
-msgstr ""
+msgstr "Entwickler-Dokumente"
 
 #: src/features/banner/components/create-snap-banner/CreateSnapBanner.tsx
 msgid "Developers"
@@ -346,7 +346,7 @@ msgstr "Ethereum"
 
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "Experimental beta"
-msgstr ""
+msgstr "Experimentelle Beta"
 
 #: src/components/icons/index.ts
 msgid "Explore"
@@ -354,7 +354,7 @@ msgstr "Erkunden"
 
 #: src/pages/index.tsx
 msgid "Explore all Snaps"
-msgstr ""
+msgstr "Alle Snaps entdecken"
 
 #: src/components/SEO.tsx
 msgid "Explore community-built Snaps to customize your web3 experience via our official directory."
@@ -428,7 +428,7 @@ msgstr "Verstanden"
 
 #: src/constants.ts
 msgid "Guard your wallet"
-msgstr ""
+msgstr "Schützen Sie Ihre Wallet"
 
 #: src/constants.ts
 msgid "Guard your wallet with transaction insights and safety tools."
@@ -444,7 +444,7 @@ msgstr "Startseite"
 
 #: src/constants.ts
 msgid "Human-readable addresses onchain"
-msgstr ""
+msgstr "Für Menschen lesbare Onchain-Adressen"
 
 #: src/features/snap/components/MetadataItems.tsx
 msgid "Identifier"
@@ -500,15 +500,15 @@ msgstr "Schlüssel"
 
 #: src/features/snap/components/Metadata.tsx
 msgid "Key recovery"
-msgstr ""
+msgstr "Schlüsselwiederherstellung"
 
 #: src/features/snap/components/Metadata.tsx
 msgid "Knowledge base"
-msgstr ""
+msgstr "Wissensdatenbank"
 
 #: src/components/icons/index.ts
 msgid "Language"
-msgstr ""
+msgstr "Sprache"
 
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
@@ -583,11 +583,11 @@ msgstr "MetaMask Snaps wird derzeit nur über unsere Erweiterungsclients auf dem
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
 msgid "Most popular"
-msgstr ""
+msgstr "Am beliebtesten"
 
 #: src/constants.ts
 msgid "Name resolution"
-msgstr ""
+msgstr "Namensauflösung"
 
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "No Snaps found"
@@ -608,7 +608,7 @@ msgstr "Benachrichtigungen"
 
 #: src/constants.ts
 msgid "Notifications and chat"
-msgstr ""
+msgstr "Benachrichtigungen und Chat"
 
 #: src/components/SnapWebsiteButton.tsx
 #: src/features/banner/components/faq-banner/FaqBanner.tsx
@@ -638,7 +638,7 @@ msgstr "Berechtigungen von <0>{0}</0>"
 #: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
 msgid "Privacy policy"
-msgstr ""
+msgstr "Datenschutzerklärung"
 
 #: src/features/snap/permissions.tsx
 msgid "Provide domain and address lookups"
@@ -702,7 +702,7 @@ msgstr "Sehen Sie Adresse, Kontostand, Aktivitäten und schlagen Sie Transaktion
 #: src/constants.ts
 #: src/pages/explore.tsx
 msgid "See all"
-msgstr ""
+msgstr "Alle ansehen"
 
 #: src/features/filter/components/FilterSearch.tsx
 msgid "See all results"
@@ -710,7 +710,7 @@ msgstr "Alle Ergebnisse ansehen"
 
 #: src/features/snap/components/Metadata.tsx
 msgid "See details"
-msgstr ""
+msgstr "Details ansehen"
 
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "See everything"
@@ -718,7 +718,7 @@ msgstr "Alles sehen"
 
 #: src/pages/index.tsx
 msgid "See latest"
-msgstr ""
+msgstr "Neueste sehen"
 
 #: src/features/snap/permissions.tsx
 msgid "See the origins of websites that suggest transactions"
@@ -738,7 +738,7 @@ msgstr "Sortieren"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Source code"
-msgstr ""
+msgstr "Quellcode"
 
 #: src/components/icons/index.ts
 msgid "Speedometer"
@@ -774,7 +774,7 @@ msgstr "Tag"
 #: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
 msgid "Terms of use"
-msgstr ""
+msgstr "Nutzungsbedingungen"
 
 #: src/pages/404.tsx
 msgid "The page you're looking for can't be found."
@@ -823,7 +823,7 @@ msgstr "Lebenszyklus-Hooks verwenden"
 
 #: src/constants.ts
 msgid "Use MetaMask beyond Ethereum"
-msgstr ""
+msgstr "MetaMask über Ethereum hinaus verwenden"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Version"
@@ -863,7 +863,7 @@ msgstr "WiFi"
 
 #: src/components/FooterTerms.tsx
 msgid "You acknowledge that any Snap that you install is a Third Party Service, unless otherwise identified, as defined in the <0>Consensys terms of use</0>. Your use of Third Party Services is governed by separate terms and conditions set forth by the Third Party Service provider. Consensys does not recommend the use of any Snap by any particular person for any particular reason. You access, rely upon or use the Third Party Service at your own risk. Consensys disclaims all responsibility and liability for any losses on account of your use of Third Party Services. Any information you share with Third Party Services will be collected directly by those Third Party Services in accordance with their privacy policies. Please refer to their privacy policies for more information. Consensys has no access to information you share with Third Party Services."
-msgstr ""
+msgstr "Sie erkennen an, dass jeder Snap, den Sie installieren, eine Fremddienstleistung ist, sofern nicht anders angegeben, wie in den <0>Consensys-Nutzungsbedingungen</0> definiert. Ihre Nutzung von Fremddienstleistungen unterliegt separaten Bedingungen, die von Drittanbietern von Dienstleistungen festgelegt werden. Consensys empfiehlt nicht die Nutzung eines Snaps durch eine bestimmte Person aus einem bestimmten Grund. Sie greifen auf die Fremddienstleistung zu, verlassen sich darauf oder nutzen sie auf eigenes Risiko. Consensys lehnt jede Verantwortung und Haftung für Verluste ab, die sich aus Ihrer Nutzung von Fremddienstleistungen ergeben. Alle Informationen, die Sie den Fremddienstleistungen zur Verfügung stellen, werden direkt von diesen Fremddienstleistungen in Übereinstimmung mit deren Datenschutzerklärungen erfasst. Weitere Informationen finden Sie in den jeweiligen Datenschutzerklärungen. Consensys hat keinen Zugriff auf die Informationen, die Sie mit den Fremddienstleistungen teilen."
 
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "You will not be able to use your MetaMask Secret Recovery Phrase to recover accounts added through Account Management Snaps. If your account credentials are lost or compromised, MetaMask will not be able to help you. If the Snap or the associated dapp is hacked or ceases to function, you may not be able to access your account and the funds in your account."

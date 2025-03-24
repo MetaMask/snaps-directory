@@ -8,7 +8,7 @@ msgstr ""
 "Language: zh\n"
 "Project-Id-Version: snapsmetamask\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-09-19 00:03\n"
+"PO-Revision-Date: 2025-03-19 12:01\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -68,11 +68,11 @@ msgstr "访问互联网"
 
 #: src/constants.ts
 msgid "Account management"
-msgstr ""
+msgstr "账户管理"
 
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "Account management Snaps are released as part of an experimental beta release. You agree that you will only use one of these Snaps if you understand how it functions and how to use it, and you have fully read and understand all risk warnings and other disclosures made available by the Third Party Service provider relating to use of their Snap. You agree that Consensys is not responsible for any injury that you incur as a result of your use of this Snap."
-msgstr ""
+msgstr "账户管理 Snaps 是作为实验性测试版的一部分发布的。您同意，只有当您了解其中一种 Snap 的功能和使用方法，并且您已完全阅读并理解第三方服务提供商提供的与使用其 Snap 相关的所有风险警告和其他信息时，您才会使用该 Snap。您同意，Consensys 不对您因使用此 Snap 而造成的任何损害负责。"
 
 #: src/components/icons/index.ts
 msgid "Add"
@@ -265,7 +265,7 @@ msgstr "联系方式"
 
 #: src/components/FooterLinks.tsx
 msgid "Contact us"
-msgstr ""
+msgstr "联系我们"
 
 #: src/components/PostInstallModal.tsx
 msgid "Continue to <0>{name}</0>'s website to get started with this snap."
@@ -273,7 +273,7 @@ msgstr "继续访问 <0>{name}</0> 的网站，开始使用此 snap。"
 
 #: src/constants.ts
 msgid "Create an Ethereum account"
-msgstr ""
+msgstr "创建以太坊账户"
 
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Customize your web3 experience with {0}."
@@ -297,7 +297,7 @@ msgstr "开发者"
 
 #: src/components/FooterLinks.tsx
 msgid "Developer docs"
-msgstr ""
+msgstr "开发者文档"
 
 #: src/features/banner/components/create-snap-banner/CreateSnapBanner.tsx
 msgid "Developers"
@@ -346,7 +346,7 @@ msgstr "以太坊"
 
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "Experimental beta"
-msgstr ""
+msgstr "实验性测试版"
 
 #: src/components/icons/index.ts
 msgid "Explore"
@@ -354,7 +354,7 @@ msgstr "探索"
 
 #: src/pages/index.tsx
 msgid "Explore all Snaps"
-msgstr ""
+msgstr "探索所有 Snap"
 
 #: src/components/SEO.tsx
 msgid "Explore community-built Snaps to customize your web3 experience via our official directory."
@@ -428,7 +428,7 @@ msgstr "知道了"
 
 #: src/constants.ts
 msgid "Guard your wallet"
-msgstr ""
+msgstr "保护您的钱包"
 
 #: src/constants.ts
 msgid "Guard your wallet with transaction insights and safety tools."
@@ -444,7 +444,7 @@ msgstr "主页"
 
 #: src/constants.ts
 msgid "Human-readable addresses onchain"
-msgstr ""
+msgstr "链上真人可读的地址"
 
 #: src/features/snap/components/MetadataItems.tsx
 msgid "Identifier"
@@ -500,15 +500,15 @@ msgstr "密钥"
 
 #: src/features/snap/components/Metadata.tsx
 msgid "Key recovery"
-msgstr ""
+msgstr "密钥恢复"
 
 #: src/features/snap/components/Metadata.tsx
 msgid "Knowledge base"
-msgstr ""
+msgstr "知识库"
 
 #: src/components/icons/index.ts
 msgid "Language"
-msgstr ""
+msgstr "语言"
 
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
@@ -583,11 +583,11 @@ msgstr "MetaMask Snaps 目前仅通过 <0>Brave</0>、<1>Chrome</1> 或 <2>Firef
 #: src/features/filter/constants.tsx
 #: src/pages/index.tsx
 msgid "Most popular"
-msgstr ""
+msgstr "最热门"
 
 #: src/constants.ts
 msgid "Name resolution"
-msgstr ""
+msgstr "名称解析"
 
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "No Snaps found"
@@ -608,7 +608,7 @@ msgstr "通知"
 
 #: src/constants.ts
 msgid "Notifications and chat"
-msgstr ""
+msgstr "通知和聊天"
 
 #: src/components/SnapWebsiteButton.tsx
 #: src/features/banner/components/faq-banner/FaqBanner.tsx
@@ -638,7 +638,7 @@ msgstr "由 <0>{0}</0> 授予权限"
 #: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
 msgid "Privacy policy"
-msgstr ""
+msgstr "隐私政策"
 
 #: src/features/snap/permissions.tsx
 msgid "Provide domain and address lookups"
@@ -702,7 +702,7 @@ msgstr "查看地址、账户余额、活动并建议要批准的交易"
 #: src/constants.ts
 #: src/pages/explore.tsx
 msgid "See all"
-msgstr ""
+msgstr "查看所有"
 
 #: src/features/filter/components/FilterSearch.tsx
 msgid "See all results"
@@ -710,7 +710,7 @@ msgstr "查看所有结果"
 
 #: src/features/snap/components/Metadata.tsx
 msgid "See details"
-msgstr ""
+msgstr "查看详情"
 
 #: src/features/snaps/components/NoSnaps.tsx
 msgid "See everything"
@@ -718,7 +718,7 @@ msgstr "查看所有内容"
 
 #: src/pages/index.tsx
 msgid "See latest"
-msgstr ""
+msgstr "查看最新"
 
 #: src/features/snap/permissions.tsx
 msgid "See the origins of websites that suggest transactions"
@@ -738,7 +738,7 @@ msgstr "排序"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Source code"
-msgstr ""
+msgstr "源代码"
 
 #: src/components/icons/index.ts
 msgid "Speedometer"
@@ -774,7 +774,7 @@ msgstr "标签"
 #: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
 msgid "Terms of use"
-msgstr ""
+msgstr "使用条款"
 
 #: src/pages/404.tsx
 msgid "The page you're looking for can't be found."
@@ -823,7 +823,7 @@ msgstr "使用生命周期挂钩"
 
 #: src/constants.ts
 msgid "Use MetaMask beyond Ethereum"
-msgstr ""
+msgstr "在以太坊以外使用 MetaMask"
 
 #: src/features/snap/components/MetadataModal.tsx
 msgid "Version"
@@ -863,7 +863,7 @@ msgstr "无线网络"
 
 #: src/components/FooterTerms.tsx
 msgid "You acknowledge that any Snap that you install is a Third Party Service, unless otherwise identified, as defined in the <0>Consensys terms of use</0>. Your use of Third Party Services is governed by separate terms and conditions set forth by the Third Party Service provider. Consensys does not recommend the use of any Snap by any particular person for any particular reason. You access, rely upon or use the Third Party Service at your own risk. Consensys disclaims all responsibility and liability for any losses on account of your use of Third Party Services. Any information you share with Third Party Services will be collected directly by those Third Party Services in accordance with their privacy policies. Please refer to their privacy policies for more information. Consensys has no access to information you share with Third Party Services."
-msgstr ""
+msgstr "除非另有说明，否则您认可您安装的任何 Snap 均来自 <0>Consensys 使用条款</0>中所定义的第三方服务。您对第三方服务的使用受第三方服务提供商规定的单独条款与条件的约束。Consensys 不建议任何特定人员出于任何特定原因使用任何 Snap。您访问、依赖或使用第三方服务的风险由您自行承担。对于因使用第三方服务而造成的任何损失，Consensys 不承担任何责任。您与第三方服务共享的任何信息将由这些第三方服务根据其隐私政策直接收集。有关更多信息，请参阅其隐私政策。Consensys 无法访问您与第三方服务共享的信息。"
 
 #: src/components/FooterAccountManagementTerms.tsx
 msgid "You will not be able to use your MetaMask Secret Recovery Phrase to recover accounts added through Account Management Snaps. If your account credentials are lost or compromised, MetaMask will not be able to help you. If the Snap or the associated dapp is hacked or ceases to function, you may not be able to access your account and the funds in your account."
