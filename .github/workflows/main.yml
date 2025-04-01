@@ -38,6 +38,15 @@ jobs:
     name: Build, lint, and test
     uses: ./.github/workflows/build-lint-test.yml
 
+  publish-staging:
+    name: Publish staging site
+    uses: ./.github/workflows/publish-staging.yml
+    permissions:
+      contents: read
+      pull-requests: write
+    secrets:
+      PUBLISH_STAGING_PAGES_TOKEN: ${{ secrets.PUBLISH_STAGING_PAGES_TOKEN }}
+
   all-jobs-completed:
     name: All jobs completed
     runs-on: ubuntu-latest
