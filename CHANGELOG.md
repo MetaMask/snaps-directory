@@ -9,11 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.15.2]
 
-### Uncategorized
+### Changed
 
-- New Crowdin translations by Github Action ([#542](https://github.com/MetaMask/snaps-directory/pull/542))
-- Bump @metamask/providers from 17.2.1 to 20.0.0 ([#530](https://github.com/MetaMask/snaps-directory/pull/530))
-- chore: add workflow_dispatch to security-code-scanner ([#538](https://github.com/MetaMask/snaps-directory/pull/538))
+- Update translations ([#542](https://github.com/MetaMask/snaps-directory/pull/542))
+
+### Removed
+
+- Remove feedback link ([#550](https://github.com/MetaMask/snaps-directory/pull/550))
 
 ## [1.15.1]
 
