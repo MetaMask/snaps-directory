@@ -31,7 +31,7 @@ jobs:
     outputs:
       tag: ${{ steps.get-release-tag.outputs.tag }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Get release tag
