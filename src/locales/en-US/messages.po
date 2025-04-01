@@ -379,10 +379,6 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: src/components/FooterLinks.tsx
-msgid "Feedback"
-msgstr ""
-
 #: src/features/snap/permissions.tsx
 msgid "Fetch and display signature insights"
 msgstr ""

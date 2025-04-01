@@ -384,10 +384,6 @@ msgstr "外部链接"
 msgid "FAQ"
 msgstr "常见问题解答"
 
-#: src/components/FooterLinks.tsx
-msgid "Feedback"
-msgstr "反馈"
-
 #: src/features/snap/permissions.tsx
 msgid "Fetch and display signature insights"
 msgstr "获取并显示签名洞察"
