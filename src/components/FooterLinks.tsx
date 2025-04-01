@@ -25,10 +25,6 @@ export const FOOTER_LINKS = [
         url: 'https://support.metamask.io/start/how-to-contact-metamask-support/',
       },
       {
-        title: defineMessage`Feedback`,
-        url: 'https://survey.usabilla.com/live/s/64f99fe2b12d6940df7c0357?utm_source=snapsdirectory&utm_medium=landing-page&utm_campaign=2023_Sep_snaps-launch_awareness_content',
-      },
-      {
         title: defineMessage`Support`,
         url: 'https://support.metamask.io/',
       },
