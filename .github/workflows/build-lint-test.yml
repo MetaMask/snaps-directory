@@ -32,6 +32,14 @@ jobs:
         with:
           is-high-risk-environment: false
           node-version: ${{ matrix.node-version }}
+      - name: Cache NPM tarballs
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules/.cache/npm
+          key: npm-tarballs-${{ github.run_id }}
+          restore-keys: |
+            npm-tarballs
       - name: Extract translations
         run: yarn lang:extract
       - name: Build
