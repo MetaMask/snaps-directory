@@ -19,15 +19,11 @@ jobs:
       - name: Ensure `destination_dir` is not empty
         if: ${{ inputs.destination_dir == '' }}
         run: exit 1
-      - name: Checkout the repository
-        uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
+      - name: Checkout and setup environment
+        uses: MetaMask/action-checkout-and-setup@v1
         with:
-          node-version-file: '.nvmrc'
-          cache: 'yarn'
-      - name: Install npm dependencies
-        run: yarn --immutable
+          is-high-risk-environment: true
+          ref: ${{ github.sha }}
       - name: Run build script
         run: yarn build
         env:
