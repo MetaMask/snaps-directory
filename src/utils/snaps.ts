@@ -21,13 +21,10 @@ export type Fields<Query, Name extends keyof Query> = {
 /**
  * Check if the current provider supports snaps by calling `wallet_getSnaps`.
  *
- * @param provider - The provider to use to check for snaps support. Defaults to
- * `window.ethereum`.
+ * @param provider - The provider to use to check for snaps support.
  * @returns True if the provider supports snaps, false otherwise.
  */
-export async function hasSnapsSupport(
-  provider: MetaMaskInpageProvider = window.ethereum,
-) {
+export async function hasSnapsSupport(provider: MetaMaskInpageProvider) {
   try {
     await provider.request({
       method: 'wallet_getSnaps',
@@ -42,13 +39,10 @@ export async function hasSnapsSupport(
 /**
  * Check if the current provider is MetaMask by calling `web3_clientVersion`.
  *
- * @param provider - The provider to use to check for MetaMask. Defaults to
- * `window.ethereum`.
+ * @param provider - The provider to use to check for MetaMask.
  * @returns True if the provider is MetaMask, false otherwise.
  */
-export async function isMetaMaskProvider(
-  provider: MetaMaskInpageProvider = window.ethereum,
-) {
+export async function isMetaMaskProvider(provider: MetaMaskInpageProvider) {
   try {
     const result = await provider.request<string>({
       method: 'web3_clientVersion',
@@ -68,6 +62,14 @@ export async function isMetaMaskProvider(
  * @returns A MetaMask provider if found, otherwise null.
  */
 export async function getMetaMaskEIP6963Provider() {
+  /* can't do this in a util 
+  const [metaMaskProvider, setMetaMaskProvider] = useState<MetaMaskInpageProvider | null>(null);
+
+  if(metaMaskProvider) { 
+    return metaMaskProvider; 
+  }
+    */
+
   return new Promise<MetaMaskInpageProvider | null>((rawResolve) => {
     // Timeout looking for providers after 500ms
     const timeout = setTimeout(() => {
@@ -99,6 +101,7 @@ export async function getMetaMaskEIP6963Provider() {
       const { info, provider } = event.detail;
 
       if (info.rdns.includes('io.metamask')) {
+        // setMetaMaskProvider(provider);
         resolve(provider);
       }
     }
@@ -114,37 +117,7 @@ export async function getMetaMaskEIP6963Provider() {
  * and return the first one that is MetaMask.
  */
 export async function getMetaMaskProvider() {
-  if (typeof window === 'undefined') {
-    return null;
-  }
-
-  if (await isMetaMaskProvider()) {
-    return window.ethereum;
-  }
-
-  if (window.ethereum?.detected) {
-    for (const provider of window.ethereum.detected) {
-      if (await isMetaMaskProvider(provider)) {
-        return provider;
-      }
-    }
-  }
-
-  if (window.ethereum?.providers) {
-    for (const provider of window.ethereum.providers) {
-      if (await isMetaMaskProvider(provider)) {
-        return provider;
-      }
-    }
-  }
-
-  const eip6963Provider = await getMetaMaskEIP6963Provider();
-
-  if (eip6963Provider) {
-    return eip6963Provider;
-  }
-
-  return null;
+  return getMetaMaskEIP6963Provider();
 }
 
 /**
@@ -154,30 +127,6 @@ export async function getMetaMaskProvider() {
  * @returns The provider, or `null` if no provider supports snaps.
  */
 export async function getSnapsProvider() {
-  if (typeof window === 'undefined') {
-    return null;
-  }
-
-  if (await hasSnapsSupport()) {
-    return window.ethereum;
-  }
-
-  if (window.ethereum?.detected) {
-    for (const provider of window.ethereum.detected) {
-      if (await hasSnapsSupport(provider)) {
-        return provider;
-      }
-    }
-  }
-
-  if (window.ethereum?.providers) {
-    for (const provider of window.ethereum.providers) {
-      if (await hasSnapsSupport(provider)) {
-        return provider;
-      }
-    }
-  }
-
   const eip6963Provider = await getMetaMaskEIP6963Provider();
 
   if (eip6963Provider && (await hasSnapsSupport(eip6963Provider))) {
