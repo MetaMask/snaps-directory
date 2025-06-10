@@ -62,14 +62,6 @@ export async function isMetaMaskProvider(provider: MetaMaskInpageProvider) {
  * @returns A MetaMask provider if found, otherwise null.
  */
 export async function getMetaMaskEIP6963Provider() {
-  /* can't do this in a util 
-  const [metaMaskProvider, setMetaMaskProvider] = useState<MetaMaskInpageProvider | null>(null);
-
-  if(metaMaskProvider) { 
-    return metaMaskProvider; 
-  }
-    */
-
   return new Promise<MetaMaskInpageProvider | null>((rawResolve) => {
     // Timeout looking for providers after 500ms
     const timeout = setTimeout(() => {
@@ -101,7 +93,6 @@ export async function getMetaMaskEIP6963Provider() {
       const { info, provider } = event.detail;
 
       if (info.rdns.includes('io.metamask')) {
-        // setMetaMaskProvider(provider);
         resolve(provider);
       }
     }
