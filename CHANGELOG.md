@@ -9,10 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.15.3]
 
-### Uncategorized
+### Fixed
 
-- feat: Prefer EIP-6963 for detecting providers ([#563](https://github.com/MetaMask/snaps-directory/pull/563))
-- Update workflows to use `MetaMask/action-checkout-and-setup` and remove Node.js 16.x ([#552](https://github.com/MetaMask/snaps-directory/pull/552))
+- Prefer EIP-6963 for detecting providers ([#563](https://github.com/MetaMask/snaps-directory/pull/563))
 
 ## [1.15.2]
 
