@@ -31,4 +31,32 @@ beforeEach(() => {
 
     originalConsoleError(error, ...args);
   });
+
+  const realAddEventListener = window?.addEventListener?.bind?.(window);
+
+  // Return window.ethereum for EIP6963 when applicable.
+  Object.assign(globalThis, 'window', {
+    addEventListener: jest.fn().mockImplementation((type, listener) => {
+      if (
+        typeof listener === 'function' &&
+        type === 'eip6963:announceProvider' &&
+        window.ethereum
+      ) {
+        listener(
+          new CustomEvent('eip6963:announceProvider', {
+            detail: {
+              info: {
+                name: 'MetaMask',
+                rdns: 'io.metamask',
+                uuid: '359b317d-0e02-4cea-ade8-7f671fdd5c7e',
+              },
+              provider: window.ethereum,
+            },
+          }),
+        );
+      } else {
+        realAddEventListener(type, listener);
+      }
+    }),
+  });
 });

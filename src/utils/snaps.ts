@@ -118,6 +118,12 @@ export async function getMetaMaskProvider() {
     return null;
   }
 
+  const eip6963Provider = await getMetaMaskEIP6963Provider();
+
+  if (eip6963Provider) {
+    return eip6963Provider;
+  }
+
   if (await isMetaMaskProvider()) {
     return window.ethereum;
   }
@@ -138,12 +144,6 @@ export async function getMetaMaskProvider() {
     }
   }
 
-  const eip6963Provider = await getMetaMaskEIP6963Provider();
-
-  if (eip6963Provider) {
-    return eip6963Provider;
-  }
-
   return null;
 }
 
@@ -156,6 +156,12 @@ export async function getMetaMaskProvider() {
 export async function getSnapsProvider() {
   if (typeof window === 'undefined') {
     return null;
+  }
+
+  const eip6963Provider = await getMetaMaskEIP6963Provider();
+
+  if (eip6963Provider && (await hasSnapsSupport(eip6963Provider))) {
+    return eip6963Provider;
   }
 
   if (await hasSnapsSupport()) {
@@ -176,12 +182,6 @@ export async function getSnapsProvider() {
         return provider;
       }
     }
-  }
-
-  const eip6963Provider = await getMetaMaskEIP6963Provider();
-
-  if (eip6963Provider && (await hasSnapsSupport(eip6963Provider))) {
-    return eip6963Provider;
   }
 
   return null;

@@ -122,6 +122,9 @@ describe('getMetaMaskProvider', () => {
           // eslint-disable-next-line @typescript-eslint/naming-convention
           web3_clientVersion: 'MetaMask/11.0.0',
         }),
+        addEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+        removeEventListener: jest.fn(),
       },
     });
 
@@ -146,6 +149,9 @@ describe('getMetaMaskProvider', () => {
             provider,
           ],
         },
+        addEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+        removeEventListener: jest.fn(),
       },
     });
 
@@ -170,6 +176,9 @@ describe('getMetaMaskProvider', () => {
             provider,
           ],
         },
+        addEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+        removeEventListener: jest.fn(),
       },
     });
 
@@ -230,6 +239,9 @@ describe('getSnapsProvider', () => {
           // eslint-disable-next-line @typescript-eslint/naming-convention
           wallet_getAllSnaps: [],
         }),
+        addEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+        removeEventListener: jest.fn(),
       },
     });
 
@@ -254,6 +266,9 @@ describe('getSnapsProvider', () => {
             provider,
           ],
         },
+        addEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+        removeEventListener: jest.fn(),
       },
     });
 
@@ -278,6 +293,9 @@ describe('getSnapsProvider', () => {
             provider,
           ],
         },
+        addEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+        removeEventListener: jest.fn(),
       },
     });
 

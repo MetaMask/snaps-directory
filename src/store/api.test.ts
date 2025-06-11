@@ -57,6 +57,9 @@ describe('request', () => {
       writable: true,
       value: {
         ethereum: provider,
+        addEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+        removeEventListener: jest.fn(),
       },
     });
 
@@ -78,6 +81,9 @@ describe('request', () => {
       writable: true,
       value: {
         ethereum: provider,
+        addEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+        removeEventListener: jest.fn(),
       },
     });
 
