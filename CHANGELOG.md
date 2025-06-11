@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.15.3]
+
+### Fixed
+
+- Prefer EIP-6963 for detecting providers ([#563](https://github.com/MetaMask/snaps-directory/pull/563))
+
 ## [1.15.2]
 
 ### Changed
@@ -342,7 +348,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.15.2...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.15.3...HEAD
+[1.15.3]: https://github.com/MetaMask/snaps-directory/compare/v1.15.2...v1.15.3
 [1.15.2]: https://github.com/MetaMask/snaps-directory/compare/v1.15.1...v1.15.2
 [1.15.1]: https://github.com/MetaMask/snaps-directory/compare/v1.15.0...v1.15.1
 [1.15.0]: https://github.com/MetaMask/snaps-directory/compare/v1.14.2...v1.15.0
