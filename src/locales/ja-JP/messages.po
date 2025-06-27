@@ -18,6 +18,7 @@ msgstr ""
 "X-Crowdin-File: /src/locales/en-US/messages.po\n"
 "X-Crowdin-File-ID: 1546\n"
 
+#. placeholder {0}: data.snap.name
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "{0} on the MetaMask Snaps Directory"
 msgstr "MetaMask Snaps Directoryの{0}"
@@ -38,6 +39,7 @@ msgstr "{nameText} Snap"
 msgid "{nameText} Snaps on the MetaMask Snaps Directory"
 msgstr "MetaMask Snaps Directoryの{nameText} Snap"
 
+#. placeholder {0}: new Date().getFullYear()
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
 msgstr "©{0} MetaMask. 不許複製。"
@@ -50,6 +52,7 @@ msgstr "< 1,000"
 msgid "< 1K installs"
 msgstr "< 1,000回のインストール"
 
+#. placeholder {0}: author.name
 #: src/features/snap/components/MetadataModal.tsx
 msgid "<0>{name}</0> uses code that isn't viewable by the public. Critical parts of the codebase were audited for security, but later versions of the code may not be. Make sure you trust <1>{0}</1> before installing and using <2>{name}</2>."
 msgstr "<0>{name}</0>は一般に表示されないコードを使用します。コードベースの重要な部分はセキュリティ監査を受けていますが、後のバージョンのコードは監査を受けていない可能性があります。<2>{name}</2>をインストールして使用する前に、<1>{0}</1>が信頼できることを確認してください。"
@@ -82,8 +85,8 @@ msgstr "追加"
 msgid "Add and control Ethereum accounts"
 msgstr "イーサリアムアカウントの追加と制御"
 
-#: src/components/InstallSnapButton.tsx
 #: src/components/InstallUnsupported.tsx
+#: src/components/InstallSnapButton.tsx
 msgid "Add to MetaMask"
 msgstr "MetaMaskに追加"
 
@@ -246,8 +249,8 @@ msgstr "時計"
 msgid "Close"
 msgstr "閉じる"
 
-#: src/components/icons/index.ts
 #: src/constants.ts
+#: src/components/icons/index.ts
 msgid "Communication"
 msgstr "コミュニケーション"
 
@@ -275,6 +278,7 @@ msgstr "<0>{name}</0>のWebサイトに移動して、このSnapの使用を開�
 msgid "Create an Ethereum account"
 msgstr "イーサリアムアカウントを作成"
 
+#. placeholder {0}: data.snap.name
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Customize your web3 experience with {0}."
 msgstr "{0}でWeb3エクスペリエンスをカスタマイズしましょう。"
@@ -307,8 +311,8 @@ msgstr "開発者"
 msgid "Discover"
 msgstr "ディスカバリ"
 
-#: src/components/BackButton.tsx
 #: src/components/Banner.tsx
+#: src/components/BackButton.tsx
 msgid "Discover Snaps"
 msgstr "Snapのご紹介"
 
@@ -392,8 +396,8 @@ msgstr "署名分析情報の取得と表示"
 msgid "Fetch and display transaction insights"
 msgstr "トランザクションインサイトの取得と表示"
 
-#: src/components/icons/index.ts
 #: src/features/filter/Filter.tsx
+#: src/components/icons/index.ts
 msgid "Filter"
 msgstr "フィルター"
 
@@ -417,8 +421,8 @@ msgstr "グローバル"
 msgid "Go home"
 msgstr "ホームに戻る"
 
-#: src/components/InstallUnsupportedDesktopUpdate.tsx
 #: src/components/InstallUnsupportedMobile.tsx
+#: src/components/InstallUnsupportedDesktopUpdate.tsx
 msgid "Got it"
 msgstr "了解"
 
@@ -454,10 +458,10 @@ msgstr "情報"
 msgid "Install MetaMask"
 msgstr "MetaMaskをインストール"
 
-#: src/components/InstallSnapButton.tsx
-#: src/components/PostInstallModal.tsx
-#: src/features/filter/components/FilterTags.tsx
 #: src/features/filter/Filter.tsx
+#: src/features/filter/components/FilterTags.tsx
+#: src/components/PostInstallModal.tsx
+#: src/components/InstallSnapButton.tsx
 msgid "Installed"
 msgstr "インストール完了"
 
@@ -485,8 +489,8 @@ msgstr "{name}をインストールしています"
 msgid "Installs"
 msgstr "インストール"
 
-#: src/components/icons/index.ts
 #: src/constants.ts
+#: src/components/icons/index.ts
 msgid "Interoperability"
 msgstr "Interoperability"
 
@@ -506,8 +510,8 @@ msgstr "知識ベース"
 msgid "Language"
 msgstr "言語"
 
-#: src/features/filter/constants.tsx
 #: src/pages/index.tsx
+#: src/features/filter/constants.tsx
 msgid "Latest"
 msgstr "最新"
 
@@ -576,8 +580,8 @@ msgstr "MetaMask"
 msgid "MetaMask Snaps is currently only supported via our extension clients on desktop such as <0>Brave</0>, <1>Chrome</1>, or <2>Firefox</2>."
 msgstr "MetaMask Snapは現在、<0>Brave</0>、<1>Chrome</1>、<2>Firefox</2>などのデスクトップ版の拡張機能クライアントでのみサポートされています。"
 
-#: src/features/filter/constants.tsx
 #: src/pages/index.tsx
+#: src/features/filter/constants.tsx
 msgid "Most popular"
 msgstr "最も人気"
 
@@ -606,8 +610,8 @@ msgstr "通知"
 msgid "Notifications and chat"
 msgstr "通知とチャット"
 
-#: src/components/SnapWebsiteButton.tsx
 #: src/features/banner/components/faq-banner/FaqBanner.tsx
+#: src/components/SnapWebsiteButton.tsx
 msgid "Open"
 msgstr "開く"
 
@@ -627,12 +631,13 @@ msgstr "ページが見つかりません"
 msgid "Page not found on the MetaMask Snaps Directory"
 msgstr "MetaMask Snaps Directoryでページが見つかりません"
 
+#. placeholder {0}: snap.name
 #: src/features/snap/components/Permissions.tsx
 msgid "Permissions by <0>{0}</0>"
 msgstr "<0>{0}</0>による許可"
 
-#: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
+#: src/components/FooterCopyright.tsx
 msgid "Privacy policy"
 msgstr "プライバシーポリシー"
 
@@ -660,8 +665,8 @@ msgstr "\"{searchQuery}\"の結果"
 msgid "Schedule and execute periodic actions"
 msgstr "定期的なアクションのスケジュール設定と実行"
 
-#: src/features/snap/components/Screenshot.tsx
 #: src/features/snap/components/Screenshots.tsx
+#: src/features/snap/components/Screenshot.tsx
 msgid "Screenshot for {name}"
 msgstr "{name}のスクリーンショット"
 
@@ -674,8 +679,8 @@ msgstr "検索"
 msgid "Search Snaps"
 msgstr "Snapの検索"
 
-#: src/components/icons/index.ts
 #: src/constants.ts
+#: src/components/icons/index.ts
 msgid "Security"
 msgstr "セキュリティ"
 
@@ -752,9 +757,9 @@ msgstr "通知で最新情報を取得し、MetaMaskで直接チャット。"
 msgid "Store and manage its data on your device"
 msgstr "デバイスでデータを保存・管理"
 
-#: src/components/FooterLinks.tsx
-#: src/features/banner/components/faq-banner/FaqBanner.tsx
 #: src/features/snap/components/Metadata.tsx
+#: src/features/banner/components/faq-banner/FaqBanner.tsx
+#: src/components/FooterLinks.tsx
 msgid "Support"
 msgstr "サポート"
 
@@ -767,8 +772,8 @@ msgstr "WebAssemblyのサポート"
 msgid "Tag"
 msgstr "タグ"
 
-#: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
+#: src/components/FooterCopyright.tsx
 msgid "Terms of use"
 msgstr "利用規約"
 
@@ -825,6 +830,7 @@ msgstr "イーサリアム以外でMetaMaskを使用"
 msgid "Version"
 msgstr "バージョン"
 
+#. placeholder {0}: snap.latestVersion
 #: src/features/notifications/components/Notification.tsx
 msgid "Version {0} update available"
 msgstr "バージョン{0}のアップデートが利用可能です"

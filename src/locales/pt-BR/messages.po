@@ -18,6 +18,7 @@ msgstr ""
 "X-Crowdin-File: /src/locales/en-US/messages.po\n"
 "X-Crowdin-File-ID: 1546\n"
 
+#. placeholder {0}: data.snap.name
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "{0} on the MetaMask Snaps Directory"
 msgstr "{0} no Diretório do MetaMask Snaps"
@@ -38,6 +39,7 @@ msgstr "Snaps {nameText}"
 msgid "{nameText} Snaps on the MetaMask Snaps Directory"
 msgstr "Snaps {nameText} no Diretório do MetaMask Snaps"
 
+#. placeholder {0}: new Date().getFullYear()
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
 msgstr "©{0} MetaMask. Todos os direitos reservados."
@@ -50,6 +52,7 @@ msgstr "< 1 mil"
 msgid "< 1K installs"
 msgstr "< 1 mil instalações"
 
+#. placeholder {0}: author.name
 #: src/features/snap/components/MetadataModal.tsx
 msgid "<0>{name}</0> uses code that isn't viewable by the public. Critical parts of the codebase were audited for security, but later versions of the code may not be. Make sure you trust <1>{0}</1> before installing and using <2>{name}</2>."
 msgstr "<0>{name}</0> usa um código que não é visível pelo público. Partes críticas da base do código foram auditadas quanto à segurança, mas versões posteriores do código podem não ser. Certifique-se de que confia em <1>{0}</1> antes de instalar e usar <2>{name}</2>."
@@ -82,8 +85,8 @@ msgstr "Adicionar"
 msgid "Add and control Ethereum accounts"
 msgstr "Adicionar e controlar contas Ethereum"
 
-#: src/components/InstallSnapButton.tsx
 #: src/components/InstallUnsupported.tsx
+#: src/components/InstallSnapButton.tsx
 msgid "Add to MetaMask"
 msgstr "Adicionar à MetaMask"
 
@@ -246,8 +249,8 @@ msgstr "Relógio"
 msgid "Close"
 msgstr "Fechar"
 
-#: src/components/icons/index.ts
 #: src/constants.ts
+#: src/components/icons/index.ts
 msgid "Communication"
 msgstr "Comunicação"
 
@@ -275,6 +278,7 @@ msgstr "Prossiga para o site de <0>{name}</0> para começar com esse Snap."
 msgid "Create an Ethereum account"
 msgstr "Criar uma conta Ethereum"
 
+#. placeholder {0}: data.snap.name
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Customize your web3 experience with {0}."
 msgstr "Personalize sua experiência na web3 com {0}."
@@ -307,8 +311,8 @@ msgstr "Desenvolvedores"
 msgid "Discover"
 msgstr "Descobrir"
 
-#: src/components/BackButton.tsx
 #: src/components/Banner.tsx
+#: src/components/BackButton.tsx
 msgid "Discover Snaps"
 msgstr "Descobrir Snaps"
 
@@ -392,8 +396,8 @@ msgstr "Buscar e exibir insights de assinaturas"
 msgid "Fetch and display transaction insights"
 msgstr "Buscar e exibir insights de transações"
 
-#: src/components/icons/index.ts
 #: src/features/filter/Filter.tsx
+#: src/components/icons/index.ts
 msgid "Filter"
 msgstr "Filtrar"
 
@@ -417,8 +421,8 @@ msgstr "Global"
 msgid "Go home"
 msgstr "Ir ao início"
 
-#: src/components/InstallUnsupportedDesktopUpdate.tsx
 #: src/components/InstallUnsupportedMobile.tsx
+#: src/components/InstallUnsupportedDesktopUpdate.tsx
 msgid "Got it"
 msgstr "Entendi"
 
@@ -454,10 +458,10 @@ msgstr "Informações"
 msgid "Install MetaMask"
 msgstr "Instalar MetaMask"
 
-#: src/components/InstallSnapButton.tsx
-#: src/components/PostInstallModal.tsx
-#: src/features/filter/components/FilterTags.tsx
 #: src/features/filter/Filter.tsx
+#: src/features/filter/components/FilterTags.tsx
+#: src/components/PostInstallModal.tsx
+#: src/components/InstallSnapButton.tsx
 msgid "Installed"
 msgstr "Instalado"
 
@@ -485,8 +489,8 @@ msgstr "Instalando {name}"
 msgid "Installs"
 msgstr "Instalações"
 
-#: src/components/icons/index.ts
 #: src/constants.ts
+#: src/components/icons/index.ts
 msgid "Interoperability"
 msgstr "Interoperabilidade"
 
@@ -506,8 +510,8 @@ msgstr "Base de conhecimento"
 msgid "Language"
 msgstr "Idioma"
 
-#: src/features/filter/constants.tsx
 #: src/pages/index.tsx
+#: src/features/filter/constants.tsx
 msgid "Latest"
 msgstr "Mais recentes"
 
@@ -576,8 +580,8 @@ msgstr "MetaMask"
 msgid "MetaMask Snaps is currently only supported via our extension clients on desktop such as <0>Brave</0>, <1>Chrome</1>, or <2>Firefox</2>."
 msgstr "No momento, o MetaMask Snaps só é compatível com nossos clientes de extensão para desktop, como <0>Brave</0>, <1>Chrome</1> ou <2>Firefox</2>."
 
-#: src/features/filter/constants.tsx
 #: src/pages/index.tsx
+#: src/features/filter/constants.tsx
 msgid "Most popular"
 msgstr "Mais populares"
 
@@ -606,8 +610,8 @@ msgstr "Notificações"
 msgid "Notifications and chat"
 msgstr "Notificações e chat"
 
-#: src/components/SnapWebsiteButton.tsx
 #: src/features/banner/components/faq-banner/FaqBanner.tsx
+#: src/components/SnapWebsiteButton.tsx
 msgid "Open"
 msgstr "Abrir"
 
@@ -627,12 +631,13 @@ msgstr "Página não encontrada"
 msgid "Page not found on the MetaMask Snaps Directory"
 msgstr "Página não encontrada no Diretório do MetaMask Snaps"
 
+#. placeholder {0}: snap.name
 #: src/features/snap/components/Permissions.tsx
 msgid "Permissions by <0>{0}</0>"
 msgstr "Permissões por <0>{0}</0>"
 
-#: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
+#: src/components/FooterCopyright.tsx
 msgid "Privacy policy"
 msgstr "Política de privacidade"
 
@@ -660,8 +665,8 @@ msgstr "Resultados para \"{searchQuery}\""
 msgid "Schedule and execute periodic actions"
 msgstr "Agendar e executar ações periódicas"
 
-#: src/features/snap/components/Screenshot.tsx
 #: src/features/snap/components/Screenshots.tsx
+#: src/features/snap/components/Screenshot.tsx
 msgid "Screenshot for {name}"
 msgstr "Capturas de tela de {name}"
 
@@ -674,8 +679,8 @@ msgstr "Pesquisar"
 msgid "Search Snaps"
 msgstr "Pesquisar Snaps"
 
-#: src/components/icons/index.ts
 #: src/constants.ts
+#: src/components/icons/index.ts
 msgid "Security"
 msgstr "Segurança"
 
@@ -752,9 +757,9 @@ msgstr "Fique por dentro com notificações e converse diretamente na MetaMask."
 msgid "Store and manage its data on your device"
 msgstr "Armazene e gerencie seus dados em seu dispositivo"
 
-#: src/components/FooterLinks.tsx
-#: src/features/banner/components/faq-banner/FaqBanner.tsx
 #: src/features/snap/components/Metadata.tsx
+#: src/features/banner/components/faq-banner/FaqBanner.tsx
+#: src/components/FooterLinks.tsx
 msgid "Support"
 msgstr "Suporte"
 
@@ -767,8 +772,8 @@ msgstr "Suporte do WebAssembly"
 msgid "Tag"
 msgstr "Tag"
 
-#: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
+#: src/components/FooterCopyright.tsx
 msgid "Terms of use"
 msgstr "Termos de uso"
 
@@ -825,6 +830,7 @@ msgstr "Use a MetaMask para além da Ethereum"
 msgid "Version"
 msgstr "Versão"
 
+#. placeholder {0}: snap.latestVersion
 #: src/features/notifications/components/Notification.tsx
 msgid "Version {0} update available"
 msgstr "Atualização para a versão {0} disponível"

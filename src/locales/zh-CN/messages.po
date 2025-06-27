@@ -18,6 +18,7 @@ msgstr ""
 "X-Crowdin-File: /src/locales/en-US/messages.po\n"
 "X-Crowdin-File-ID: 1546\n"
 
+#. placeholder {0}: data.snap.name
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "{0} on the MetaMask Snaps Directory"
 msgstr "MetaMask Snaps 目录上的 {0}"
@@ -38,6 +39,7 @@ msgstr "{nameText} Snap"
 msgid "{nameText} Snaps on the MetaMask Snaps Directory"
 msgstr "MetaMask Snaps 目录上的 {nameText} Snap"
 
+#. placeholder {0}: new Date().getFullYear()
 #: src/components/FooterCopyright.tsx
 msgid "©{0} MetaMask. All rights reserved."
 msgstr "© {0} MetaMask。保留所有权利。"
@@ -50,6 +52,7 @@ msgstr "少于 1000"
 msgid "< 1K installs"
 msgstr "少于 1000 次安装"
 
+#. placeholder {0}: author.name
 #: src/features/snap/components/MetadataModal.tsx
 msgid "<0>{name}</0> uses code that isn't viewable by the public. Critical parts of the codebase were audited for security, but later versions of the code may not be. Make sure you trust <1>{0}</1> before installing and using <2>{name}</2>."
 msgstr "<0>{name}</0> 使用了公众无法查看的代码。已对代码库的关键部分进行了安全性审核，但可能未对代码的更高版本进行审核。请确保您信任 <1>{0}</1>，才可以安装和使用 <2>{name}</2>。"
@@ -82,8 +85,8 @@ msgstr "添加"
 msgid "Add and control Ethereum accounts"
 msgstr "添加并控制以太坊账户"
 
-#: src/components/InstallSnapButton.tsx
 #: src/components/InstallUnsupported.tsx
+#: src/components/InstallSnapButton.tsx
 msgid "Add to MetaMask"
 msgstr "添加到 MetaMask"
 
@@ -246,8 +249,8 @@ msgstr "时钟"
 msgid "Close"
 msgstr "关闭"
 
-#: src/components/icons/index.ts
 #: src/constants.ts
+#: src/components/icons/index.ts
 msgid "Communication"
 msgstr "通信"
 
@@ -275,6 +278,7 @@ msgstr "继续访问 <0>{name}</0> 的网站，开始使用此 snap。"
 msgid "Create an Ethereum account"
 msgstr "创建以太坊账户"
 
+#. placeholder {0}: data.snap.name
 #: src/pages/snap/{Snap.location}/{Snap.slug}.tsx
 msgid "Customize your web3 experience with {0}."
 msgstr "使用 {0} 自定义您的 web3 体验。"
@@ -307,8 +311,8 @@ msgstr "开发者"
 msgid "Discover"
 msgstr "发现"
 
-#: src/components/BackButton.tsx
 #: src/components/Banner.tsx
+#: src/components/BackButton.tsx
 msgid "Discover Snaps"
 msgstr "发现 Snap"
 
@@ -392,8 +396,8 @@ msgstr "获取并显示签名洞察"
 msgid "Fetch and display transaction insights"
 msgstr "获取并显示交易洞察"
 
-#: src/components/icons/index.ts
 #: src/features/filter/Filter.tsx
+#: src/components/icons/index.ts
 msgid "Filter"
 msgstr "筛选"
 
@@ -417,8 +421,8 @@ msgstr "全球"
 msgid "Go home"
 msgstr "返回主页"
 
-#: src/components/InstallUnsupportedDesktopUpdate.tsx
 #: src/components/InstallUnsupportedMobile.tsx
+#: src/components/InstallUnsupportedDesktopUpdate.tsx
 msgid "Got it"
 msgstr "知道了"
 
@@ -454,10 +458,10 @@ msgstr "信息"
 msgid "Install MetaMask"
 msgstr "安装 MetaMask"
 
-#: src/components/InstallSnapButton.tsx
-#: src/components/PostInstallModal.tsx
-#: src/features/filter/components/FilterTags.tsx
 #: src/features/filter/Filter.tsx
+#: src/features/filter/components/FilterTags.tsx
+#: src/components/PostInstallModal.tsx
+#: src/components/InstallSnapButton.tsx
 msgid "Installed"
 msgstr "已安装"
 
@@ -485,8 +489,8 @@ msgstr "正在安装 {name}"
 msgid "Installs"
 msgstr "安装次数"
 
-#: src/components/icons/index.ts
 #: src/constants.ts
+#: src/components/icons/index.ts
 msgid "Interoperability"
 msgstr "互操作性"
 
@@ -506,8 +510,8 @@ msgstr "知识库"
 msgid "Language"
 msgstr "语言"
 
-#: src/features/filter/constants.tsx
 #: src/pages/index.tsx
+#: src/features/filter/constants.tsx
 msgid "Latest"
 msgstr "最新"
 
@@ -576,8 +580,8 @@ msgstr "MetaMask"
 msgid "MetaMask Snaps is currently only supported via our extension clients on desktop such as <0>Brave</0>, <1>Chrome</1>, or <2>Firefox</2>."
 msgstr "MetaMask Snaps 目前仅通过 <0>Brave</0>、<1>Chrome</1> 或 <2>Firefox</2> 等桌面扩展客户端获得支持。"
 
-#: src/features/filter/constants.tsx
 #: src/pages/index.tsx
+#: src/features/filter/constants.tsx
 msgid "Most popular"
 msgstr "最热门"
 
@@ -606,8 +610,8 @@ msgstr "通知"
 msgid "Notifications and chat"
 msgstr "通知和聊天"
 
-#: src/components/SnapWebsiteButton.tsx
 #: src/features/banner/components/faq-banner/FaqBanner.tsx
+#: src/components/SnapWebsiteButton.tsx
 msgid "Open"
 msgstr "打开"
 
@@ -627,12 +631,13 @@ msgstr "找不到页面"
 msgid "Page not found on the MetaMask Snaps Directory"
 msgstr "在 MetaMask Snaps 目录中找不到页面"
 
+#. placeholder {0}: snap.name
 #: src/features/snap/components/Permissions.tsx
 msgid "Permissions by <0>{0}</0>"
 msgstr "由 <0>{0}</0> 授予权限"
 
-#: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
+#: src/components/FooterCopyright.tsx
 msgid "Privacy policy"
 msgstr "隐私政策"
 
@@ -660,8 +665,8 @@ msgstr "\"{searchQuery}\" 的结果"
 msgid "Schedule and execute periodic actions"
 msgstr "规划并执行定期操作"
 
-#: src/features/snap/components/Screenshot.tsx
 #: src/features/snap/components/Screenshots.tsx
+#: src/features/snap/components/Screenshot.tsx
 msgid "Screenshot for {name}"
 msgstr "{name} 的截图"
 
@@ -674,8 +679,8 @@ msgstr "搜索"
 msgid "Search Snaps"
 msgstr "搜索 Snap"
 
-#: src/components/icons/index.ts
 #: src/constants.ts
+#: src/components/icons/index.ts
 msgid "Security"
 msgstr "安全"
 
@@ -752,9 +757,9 @@ msgstr "通过通知及时了解资讯，并直接在 MetaMask 中聊天。"
 msgid "Store and manage its data on your device"
 msgstr "在您的设备上存储和管理其数据"
 
-#: src/components/FooterLinks.tsx
-#: src/features/banner/components/faq-banner/FaqBanner.tsx
 #: src/features/snap/components/Metadata.tsx
+#: src/features/banner/components/faq-banner/FaqBanner.tsx
+#: src/components/FooterLinks.tsx
 msgid "Support"
 msgstr "支持"
 
@@ -767,8 +772,8 @@ msgstr "支持 WebAssembly"
 msgid "Tag"
 msgstr "标签"
 
-#: src/components/FooterCopyright.tsx
 #: src/features/snap/components/Legal.tsx
+#: src/components/FooterCopyright.tsx
 msgid "Terms of use"
 msgstr "使用条款"
 
@@ -825,6 +830,7 @@ msgstr "在以太坊以外使用 MetaMask"
 msgid "Version"
 msgstr "版本"
 
+#. placeholder {0}: snap.latestVersion
 #: src/features/notifications/components/Notification.tsx
 msgid "Version {0} update available"
 msgstr "版本 {0} 更新可用"
