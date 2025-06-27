@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 import { configureToMatchImageSnapshot } from 'jest-image-snapshot';
 import { resolve } from 'path';
 

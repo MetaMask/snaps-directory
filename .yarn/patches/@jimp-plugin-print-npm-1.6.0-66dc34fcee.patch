@@ -1,0 +1,21 @@
+diff --git a/dist/commonjs/load-font.js b/dist/commonjs/load-font.js
+index 7c158d32db4965d7b6c739c6ed2382251232b808..dad1ff91af23a661eefdc5d074cb61791c98e512 100644
+--- a/dist/commonjs/load-font.js
++++ b/dist/commonjs/load-font.js
+@@ -2,6 +2,7 @@
+ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.loadFont = loadFont;
+ const load_bitmap_font_js_1 = require("./load-bitmap-font.js");
++const _fs = require("fs");
+ /**
+  * Loads a Bitmap Font from a file.
+  * @param file A path or URL to a font file
+@@ -20,7 +21,7 @@ const load_bitmap_font_js_1 = require("./load-bitmap-font.js");
+ async function loadFont(file) {
+     let fileOrBuffer = file;
+     if (typeof window === "undefined" && !load_bitmap_font_js_1.isWebWorker) {
+-        const { existsSync, promises: fs } = await import("fs");
++        const { existsSync, promises: fs } = _fs;
+         if (existsSync(file)) {
+             fileOrBuffer = await fs.readFile(file);
+         }
