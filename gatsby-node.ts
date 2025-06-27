@@ -23,6 +23,7 @@ import type { RequestInfo, RequestInit } from 'node-fetch';
 import fetch from 'node-fetch';
 // @ts-expect-error - No types available for this package.
 import { fetchBuilder, FileSystemCache } from 'node-fetch-cache';
+import { ReadableStream } from 'node:stream/web';
 import { resolve } from 'path';
 import { NormalModuleReplacementPlugin } from 'webpack';
 
@@ -165,9 +166,13 @@ async function getRegistry() {
    * @param options - The fetch options.
    * @returns The fetch response.
    */
-  const customFetch = (url: RequestInfo, options?: RequestInit) => {
+  const customFetch = async (url: RequestInfo, options?: RequestInit) => {
     if (url.toString().endsWith('.tgz')) {
-      return cachedTarballFetch(url, options);
+      const response = await cachedTarballFetch(url, options);
+      // We have to recreate the response since node-fetch doesn't provide a web stream.
+      return new Response(ReadableStream.from(response.body), {
+        headers: response.headers,
+      });
     }
 
     return cachedFetch(url, options);
