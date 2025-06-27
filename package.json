@@ -48,6 +48,7 @@
     "@noble/hashes@~1.1.1": "patch:@noble/hashes@npm%3A1.3.2#./.yarn/patches/@noble-hashes-npm-1.3.2-1e619f9da0.patch",
     "@noble/hashes@~1.3.0": "patch:@noble/hashes@npm%3A1.3.2#./.yarn/patches/@noble-hashes-npm-1.3.2-1e619f9da0.patch",
     "@noble/hashes@~1.3.1": "patch:@noble/hashes@npm%3A1.3.2#./.yarn/patches/@noble-hashes-npm-1.3.2-1e619f9da0.patch",
+    "express": "^4.21.2",
     "sharp": "^0.34.2",
     "xml2js": "^0.5.0"
   },
