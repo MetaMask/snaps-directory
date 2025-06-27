@@ -32,7 +32,8 @@ beforeEach(() => {
     originalConsoleError(error, ...args);
   });
 
-  const realAddEventListener = window?.addEventListener?.bind?.(window);
+  const realAddEventListener =
+    typeof window !== 'undefined' && window?.addEventListener?.bind?.(window);
 
   // Return window.ethereum for EIP6963 when applicable.
   Object.assign(globalThis, 'window', {
@@ -54,7 +55,7 @@ beforeEach(() => {
             },
           }),
         );
-      } else {
+      } else if (realAddEventListener) {
         realAddEventListener(type, listener);
       }
     }),

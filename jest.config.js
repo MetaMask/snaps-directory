@@ -159,7 +159,9 @@ module.exports = {
   testEnvironment: './jest.environment.js',
 
   // Options that will be passed to the testEnvironment
-  // testEnvironmentOptions: {},
+  testEnvironmentOptions: {
+    customExportConditions: ['require'],
+  },
 
   // Adds a location field to test results
   // testLocationInResults: false,

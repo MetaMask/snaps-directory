@@ -1,7 +1,7 @@
 /* eslint-disable import/no-nodejs-modules, no-restricted-globals */
 
 import assert from 'assert';
-import Jimp from 'jimp';
+import { Jimp, loadFont, measureText, measureTextHeight } from 'jimp';
 import shuffle from 'lodash/shuffle';
 import sharp, { type OverlayOptions } from 'sharp';
 
@@ -41,16 +41,21 @@ export async function createFallbackIcon(
   size = 256,
   fontPath = 'fonts/icon/grey.fnt',
 ) {
-  const image = await Jimp.create(size, size);
-  const font = await Jimp.loadFont(getAssetPath(fontPath));
+  const image = new Jimp({ width: size, height: size });
+  const font = await loadFont(getAssetPath(fontPath));
 
-  const letterX = (size - Jimp.measureText(font, text)) / 2;
-  const letterY = (size - Jimp.measureTextHeight(font, text, size)) / 2;
+  const letterX = (size - measureText(font, text)) / 2;
+  const letterY = (size - measureTextHeight(font, text, size)) / 2;
 
-  image.print(font, letterX, letterY, text);
+  image.print({
+    font,
+    text,
+    x: letterX,
+    y: letterY,
+  });
 
   const icon = getImage('icon');
-  const input = await image.getBufferAsync(Jimp.MIME_PNG);
+  const input = await image.getBuffer('image/png');
 
   return icon
     .resize(size, size)
@@ -182,7 +187,7 @@ export async function createSnapImage(
 
   // The name may take two lines, so we need to calculate the height of the
   // name to determine the top of the author text.
-  const nameHeight = Jimp.measureTextHeight(black, name, FONT_MAX_WIDTH);
+  const nameHeight = measureTextHeight(black, name, FONT_MAX_WIDTH);
   const authorTop = 85 + nameHeight;
 
   background.composite([
