@@ -3,6 +3,6 @@ export const DEFAULT_FONT =
 
 export const fonts: Record<string, string> = {
   heading: `"MM Sans", ${DEFAULT_FONT}`,
-  body: `"Centra No1", ${DEFAULT_FONT}`,
+  body: `"Geist", ${DEFAULT_FONT}`,
   code: `SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace`,
 };
