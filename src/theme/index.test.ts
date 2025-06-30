@@ -352,7 +352,7 @@ describe('theme', () => {
           "useSystemColorMode": true,
         },
         "fonts": Object {
-          "body": "\\"Centra No1\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+          "body": "\\"Geist\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
           "code": "SFMono-Regular, Consolas, \\"Liberation Mono\\", Menlo, Courier, monospace",
           "heading": "\\"MM Sans\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
         },
