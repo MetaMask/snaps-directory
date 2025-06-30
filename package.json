@@ -42,6 +42,7 @@
   },
   "resolutions": {
     "@chakra-ui/focus-lock@2.1.0": "patch:@chakra-ui/focus-lock@npm%3A2.1.0#./.yarn/patches/@chakra-ui-focus-lock-npm-2.1.0-46e41f49ee.patch",
+    "@jimp/plugin-print@1.6.0": "patch:@jimp/plugin-print@npm%3A1.6.0#./.yarn/patches/@jimp-plugin-print-npm-1.6.0-66dc34fcee.patch",
     "@noble/hashes@1.3.1": "patch:@noble/hashes@npm%3A1.3.2#./.yarn/patches/@noble-hashes-npm-1.3.2-1e619f9da0.patch",
     "@noble/hashes@^1.0.0": "patch:@noble/hashes@npm%3A1.3.2#./.yarn/patches/@noble-hashes-npm-1.3.2-1e619f9da0.patch",
     "@noble/hashes@^1.3.1": "patch:@noble/hashes@npm%3A1.3.2#./.yarn/patches/@noble-hashes-npm-1.3.2-1e619f9da0.patch",
@@ -141,7 +142,7 @@
     "jest-image-snapshot": "^6.2.0",
     "jest-it-up": "^2.0.2",
     "jest-when": "^3.6.0",
-    "jimp": "^0.22.10",
+    "jimp": "^1.6.0",
     "lint-staged": "^16.1.2",
     "nanoid": "^3.3.7",
     "node-fetch-cache": "^3.1.3",

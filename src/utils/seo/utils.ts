@@ -1,13 +1,13 @@
 /* eslint-disable import/no-nodejs-modules, no-restricted-globals */
 
-import Jimp from 'jimp';
+import { Jimp, JimpMime, loadFont, measureText } from 'jimp';
 import { resolve } from 'path';
 import sharp from 'sharp';
 
 import { BASE_SEO_DIRECTORY, CANVAS_WIDTH, JIMP_FONTS } from './constants';
 import type { Fields } from '../snaps';
 
-export type Font = Awaited<ReturnType<typeof Jimp.loadFont>>;
+export type Font = Awaited<ReturnType<typeof loadFont>>;
 
 export type Snap = Fields<Queries.Snap, 'name'> & { icon?: string };
 export type SnapWithIcon = Snap & { icon: string };
@@ -21,14 +21,11 @@ export type SnapWithIcon = Snap & { icon: string };
  */
 export async function getFonts(name: string, author = '') {
   for (const { maxWidth, black, grey } of JIMP_FONTS) {
-    const font = await Jimp.loadFont(black);
-    const width = Math.max(
-      Jimp.measureText(font, name),
-      Jimp.measureText(font, author),
-    );
+    const font = await loadFont(black);
+    const width = Math.max(measureText(font, name), measureText(font, author));
 
     if (width <= maxWidth) {
-      return Promise.all([Jimp.loadFont(black), Jimp.loadFont(grey)]);
+      return Promise.all([loadFont(black), loadFont(grey)]);
     }
   }
 
@@ -76,10 +73,16 @@ export function normalizeName(name: string) {
  * @returns The buffer of the rendered image.
  */
 export async function getText(value: string, font: Font) {
-  const image = await Jimp.create(700, 300);
-  image.print(font, 0, 0, normalizeName(value), 700);
+  const image = new Jimp({ width: 700, height: 300 });
+  image.print({
+    font,
+    x: 0,
+    y: 0,
+    text: normalizeName(value),
+    maxWidth: 700,
+  });
 
-  return image.getBufferAsync(Jimp.MIME_PNG);
+  return image.getBuffer(JimpMime.png);
 }
 
 /**

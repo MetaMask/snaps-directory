@@ -55,6 +55,15 @@ module.exports = {
         '@metamask/eslint-config-nodejs',
         'plugin:jest-dom/recommended',
       ],
+
+      rules: {
+        'jsdoc/check-tag-names': [
+          'error',
+          {
+            definedTags: ['jest-environment'],
+          },
+        ],
+      },
     },
 
     {
