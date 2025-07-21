@@ -69,7 +69,7 @@
     "@lingui/react": "^5.3.2",
     "@metamask/providers": "^22.1.0",
     "@metamask/snaps-controllers": "^13.1.1",
-    "@metamask/snaps-sdk": "^8.1.0",
+    "@metamask/snaps-sdk": "^9.2.0",
     "@metamask/snaps-utils": "^10.1.0",
     "@metamask/utils": "^11.4.0",
     "@reduxjs/toolkit": "^1.9.6",
