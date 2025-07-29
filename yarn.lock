@@ -5384,7 +5384,7 @@ __metadata:
     jest-it-up: ^2.0.2
     jest-when: ^3.6.0
     jimp: ^1.6.0
-    linkify-react: ^4.1.1
+    linkify-react: ^4.3.2
     linkifyjs: ^4.3.2
     lint-staged: ^16.1.2
     lodash: ^4.17.21
@@ -16280,13 +16280,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"linkify-react@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "linkify-react@npm:4.1.1"
+"linkify-react@npm:^4.3.2":
+  version: 4.3.2
+  resolution: "linkify-react@npm:4.3.2"
   peerDependencies:
     linkifyjs: ^4.0.0
     react: ">= 15.0.0"
-  checksum: 2f213f134055d4a11587e7e0bc3e0ef7e372c8c0d1419dbc5bb8e3a280f325bea9ad9d8d6017fd79f8f86fa4127ed75cbe6f320ef9d92a00ae510f320db0f408
+  checksum: 42b52fc6e7b88a11bf367130551da284bb1f819afa4bad9fa22270f5183cf113cb150d9749615ed7eca92056939934f4d5f95e0a09870f12bff36bbfe85594b8
   languageName: node
   linkType: hard
 
