@@ -9,28 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.16.0]
 
-### Uncategorized
+### Changed
 
-- fix: Skip unpublished Snaps ([#604](https://github.com/MetaMask/snaps-directory/pull/604))
-- chore(deps): bump form-data from 4.0.0 to 4.0.4 in the npm_and_yarn group across 1 directory ([#598](https://github.com/MetaMask/snaps-directory/pull/598))
-- chore(deps): bump multer from 2.0.1 to 2.0.2 in the npm_and_yarn group across 1 directory ([#593](https://github.com/MetaMask/snaps-directory/pull/593))
-- chore: updating fonts from centrano1 to geist ([#586](https://github.com/MetaMask/snaps-directory/pull/586))
-- chore(dev-deps): Bump `cookie` from `0.4.2` to `0.7.2` ([#585](https://github.com/MetaMask/snaps-directory/pull/585))
-- chore(dev-deps): Bump `jimp` from `0.22.10` to `1.6.0` ([#577](https://github.com/MetaMask/snaps-directory/pull/577))
-- chore(dev-deps): Bump `ws` from `8.11.0` to `8.17.1` ([#584](https://github.com/MetaMask/snaps-directory/pull/584))
-- chore(dev-deps): Bump `path-to-regexp` from `0.1.10` to `0.1.12` ([#583](https://github.com/MetaMask/snaps-directory/pull/583))
-- chore(dev-deps): Bump `es5-ext` from `0.10.62` to `0.10.64` ([#582](https://github.com/MetaMask/snaps-directory/pull/582))
-- Bump `brace-expansion` from `2.0.1` to `2.0.2` ([#576](https://github.com/MetaMask/snaps-directory/pull/576))
-- Bump Lingui and related dependencies ([#574](https://github.com/MetaMask/snaps-directory/pull/574))
-- chore(dev-deps): Bump `msgpackr` from `1.9.7` to `1.11.4` ([#572](https://github.com/MetaMask/snaps-directory/pull/572))
-- Bump the npm_and_yarn group across 1 directory with 4 updates ([#573](https://github.com/MetaMask/snaps-directory/pull/573))
-- Bump @metamask/safe-event-emitter from 3.1.1 to 3.1.2 ([#513](https://github.com/MetaMask/snaps-directory/pull/513))
-- Bump `express` from `4.19.2` to `4.21.2` ([#570](https://github.com/MetaMask/snaps-directory/pull/570))
-- chore: Bump MetaMask packages ([#566](https://github.com/MetaMask/snaps-directory/pull/566))
-- chore(dev-deps): Bump LavaMoat dependencies ([#569](https://github.com/MetaMask/snaps-directory/pull/569))
-- chore(dev-deps): Bump `@babel/core` from `7.22.11` to `7.27.7` ([#568](https://github.com/MetaMask/snaps-directory/pull/568))
-- Bump `sharp` from `0.32.6` to `0.34.2` ([#567](https://github.com/MetaMask/snaps-directory/pull/567))
-- chore(deps): Bump Gatsby and related dependencies ([#565](https://github.com/MetaMask/snaps-directory/pull/565))
+- Update font from centrano1 to geist ([#586](https://github.com/MetaMask/snaps-directory/pull/586))
+
+### Fixed
+
+- Skip unpublished Snaps when building ([#604](https://github.com/MetaMask/snaps-directory/pull/604))
 
 ## [1.15.3]
 
