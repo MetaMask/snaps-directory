@@ -10,7 +10,7 @@ import {
   getValidatedLocalizationFiles,
   type SnapManifest,
 } from '@metamask/snaps-utils';
-import { assert } from '@metamask/utils';
+import { assert, getErrorMessage } from '@metamask/utils';
 import deepEqual from 'fast-deep-equal';
 import { rm } from 'fs/promises';
 import type { GatsbyNode, NodeInput } from 'gatsby';
@@ -172,6 +172,8 @@ async function getRegistry() {
       // We have to recreate the response since node-fetch doesn't provide a web stream.
       return new Response(ReadableStream.from(response.body), {
         headers: response.headers,
+        status: response.status,
+        statusText: response.statusText,
       });
     }
 
@@ -216,107 +218,117 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async ({
       fetch: customFetch as any,
     });
 
-    const { result: rawManifest } = await location.manifest();
-    const { iconPath } = rawManifest.source.location.npm;
-    const icon = iconPath
-      ? `data:image/svg+xml;utf8,${encodeURIComponent(
-          (await location.fetch(iconPath)).toString(),
-        )}`
-      : undefined;
+    try {
+      const { result: rawManifest } = await location.manifest();
+      const { iconPath } = rawManifest.source.location.npm;
+      const icon = iconPath
+        ? `data:image/svg+xml;utf8,${encodeURIComponent(
+            (await location.fetch(iconPath)).toString(),
+          )}`
+        : undefined;
 
-    const localizationFiles = await getSnapFiles(
-      location,
-      rawManifest.source.locales,
-    );
+      const localizationFiles = await getSnapFiles(
+        location,
+        rawManifest.source.locales,
+      );
 
-    const validatedLocalizationFiles = getValidatedLocalizationFiles(
-      localizationFiles,
-    ).map((file) => file.result);
+      const validatedLocalizationFiles = getValidatedLocalizationFiles(
+        localizationFiles,
+      ).map((file) => file.result);
 
-    // For now, just use the English translation
-    const manifest = getLocalizedSnapManifest(
-      rawManifest,
-      'en',
-      validatedLocalizationFiles,
-    );
+      // For now, just use the English translation
+      const manifest = getLocalizedSnapManifest(
+        rawManifest,
+        'en',
+        validatedLocalizationFiles,
+      );
 
-    const [snapLocation, slug] = snap.id.split(':') as [string, string];
-    const summary = normalizeDescription(
-      snap.metadata.summary ?? manifest.description,
-    );
+      const [snapLocation, slug] = snap.id.split(':') as [string, string];
+      const summary = normalizeDescription(
+        snap.metadata.summary ?? manifest.description,
+      );
 
-    const registryJson = await customFetch(
-      `https://registry.npmjs.org/${slug}`,
-    ).then(async (response: any) => response.json());
+      const registryJson = await customFetch(
+        `https://registry.npmjs.org/${slug}`,
+      ).then(async (response: any) => response.json());
 
-    const { time } = registryJson;
+      const { time } = registryJson;
 
-    const lastUpdated = new Date(time[latestVersion]).getTime();
+      const lastUpdated = new Date(time[latestVersion]).getTime();
 
-    const installs = stats[snap.id] ?? 0;
+      const installs = stats[snap.id] ?? 0;
 
-    const nodeId = createNodeId(`snap__${snap.id}`);
+      const nodeId = createNodeId(`snap__${snap.id}`);
 
-    const screenshots = snap.metadata.screenshots ?? [];
+      const screenshots = snap.metadata.screenshots ?? [];
 
-    const screenshotNodes = await Promise.all(
-      screenshots.map(async (path) =>
-        createRemoteFileNode({
-          url: new URL(
-            path,
-            'https://raw.githubusercontent.com/MetaMask/snaps-registry/main/src/',
-          ).toString(),
-          createNode,
-          createNodeId,
-          getCache,
-          cache,
-          parentNodeId: nodeId,
-        }),
-      ),
-    );
+      const screenshotNodes = await Promise.all(
+        screenshots.map(async (path) =>
+          createRemoteFileNode({
+            url: new URL(
+              path,
+              'https://raw.githubusercontent.com/MetaMask/snaps-registry/main/src/',
+            ).toString(),
+            createNode,
+            createNodeId,
+            getCache,
+            cache,
+            parentNodeId: nodeId,
+          }),
+        ),
+      );
 
-    const migratedCategory =
-      snap.metadata.category && LEGACY_CATEGORIES[snap.metadata.category];
-    const category = migratedCategory ?? snap.metadata.category;
+      const migratedCategory =
+        snap.metadata.category && LEGACY_CATEGORIES[snap.metadata.category];
+      const category = migratedCategory ?? snap.metadata.category;
 
-    const content = {
-      ...snap.metadata,
-      category,
-      snapId: snap.id,
-      name: manifest.proposedName,
-      description: getDescription(snap, manifest),
-      summary,
-      location: snapLocation,
-      slug,
-      latestVersion,
-      icon,
-      installs,
-      lastUpdated,
+      const content = {
+        ...snap.metadata,
+        category,
+        snapId: snap.id,
+        name: manifest.proposedName,
+        description: getDescription(snap, manifest),
+        summary,
+        location: snapLocation,
+        slug,
+        latestVersion,
+        icon,
+        installs,
+        lastUpdated,
 
-      screenshotFiles: screenshotNodes.map(
-        (screenshotNode) => screenshotNode.id,
-      ),
+        screenshotFiles: screenshotNodes.map(
+          (screenshotNode) => screenshotNode.id,
+        ),
 
-      // We need to stringify the permissions because Gatsby doesn't support
-      // JSON objects in GraphQL out of the box. This field is turned into a
-      // JSON object in the `createResolvers` function. The `permissionsJson`
-      // field should not be used directly.
-      permissionsJson: JSON.stringify(manifest.initialPermissions),
-    };
+        // We need to stringify the permissions because Gatsby doesn't support
+        // JSON objects in GraphQL out of the box. This field is turned into a
+        // JSON object in the `createResolvers` function. The `permissionsJson`
+        // field should not be used directly.
+        permissionsJson: JSON.stringify(manifest.initialPermissions),
+      };
 
-    const node: SnapNode = {
-      ...content,
-      parent: null,
-      children: [],
-      id: nodeId,
-      internal: {
-        type: 'Snap',
-        content: JSON.stringify(content),
-        contentDigest: createContentDigest(content),
-      },
-    };
+      const node: SnapNode = {
+        ...content,
+        parent: null,
+        children: [],
+        id: nodeId,
+        internal: {
+          type: 'Snap',
+          content: JSON.stringify(content),
+          contentDigest: createContentDigest(content),
+        },
+      };
 
-    await createNode(node);
+      await createNode(node);
+    } catch (error) {
+      // Skip Snaps that have been unpublished
+      if (
+        getErrorMessage(error).endsWith('was not found in the NPM registry')
+      ) {
+        continue;
+      }
+      throw error;
+    }
   }
 
   const categories = Object.values(registry.verifiedSnaps).reduce(
