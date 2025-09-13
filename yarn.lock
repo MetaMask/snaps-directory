@@ -5420,18 +5420,18 @@ __metadata:
   linkType: hard
 
 "@metamask/snaps-rpc-methods@npm:^13.5.0":
-  version: 13.5.0
-  resolution: "@metamask/snaps-rpc-methods@npm:13.5.0"
+  version: 13.5.1
+  resolution: "@metamask/snaps-rpc-methods@npm:13.5.1"
   dependencies:
     "@metamask/key-tree": ^10.1.1
     "@metamask/permission-controller": ^11.0.6
     "@metamask/rpc-errors": ^7.0.3
     "@metamask/snaps-sdk": ^9.3.0
-    "@metamask/snaps-utils": ^11.3.0
+    "@metamask/snaps-utils": ^11.5.0
     "@metamask/superstruct": ^3.2.1
     "@metamask/utils": ^11.4.2
     "@noble/hashes": ^1.7.1
-  checksum: 1a58cc0c1434da1f603dbcd28693aedc1476940a91e4851ac13c2624f3adce4db0f5ff56eace1da605e8cf04da319fba949c83630213fbbc0a1c1ab4f30206b8
+  checksum: 620fa4c714641bf1ffd9e4547280246ba45e0cbe0dbb0b19b968bae85a1aa0acde91c8eba2263efc5f48e4dd08ad802c8aa9ae559a1dbafa0096fb3e40b8cff5
   languageName: node
   linkType: hard
 
@@ -5448,7 +5448,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/snaps-utils@npm:^11.3.0, @metamask/snaps-utils@npm:^11.5.0":
+"@metamask/snaps-utils@npm:^11.5.0":
   version: 11.5.0
   resolution: "@metamask/snaps-utils@npm:11.5.0"
   dependencies:
