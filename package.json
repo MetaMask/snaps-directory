@@ -97,7 +97,7 @@
     "@lingui/cli": "^5.3.2",
     "@lingui/conf": "^5.3.2",
     "@lingui/format-po": "^5.3.2",
-    "@metamask/auto-changelog": "^3.2.0",
+    "@metamask/auto-changelog": "^5.1.0",
     "@metamask/eslint-config": "^12.0.0",
     "@metamask/eslint-config-browser": "^12.0.0",
     "@metamask/eslint-config-jest": "^12.0.0",
