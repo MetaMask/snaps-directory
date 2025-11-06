@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.16.1]
+
+### Uncategorized
+
+- chore: Bump lmdb ([#621](https://github.com/MetaMask/snaps-directory/pull/621))
+- chore(deps): bump axios from 1.10.0 to 1.12.1 in the npm_and_yarn group across 1 directory ([#612](https://github.com/MetaMask/snaps-directory/pull/612))
+- chore(deps): bump linkifyjs from 4.1.1 to 4.3.2 in the npm_and_yarn group across 1 directory ([#599](https://github.com/MetaMask/snaps-directory/pull/599))
+
 ## [1.16.0]
 
 ### Changed
@@ -358,7 +366,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.16.0...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.16.1...HEAD
+[1.16.1]: https://github.com/MetaMask/snaps-directory/compare/v1.16.0...v1.16.1
 [1.16.0]: https://github.com/MetaMask/snaps-directory/compare/v1.15.3...v1.16.0
 [1.15.3]: https://github.com/MetaMask/snaps-directory/compare/v1.15.2...v1.15.3
 [1.15.2]: https://github.com/MetaMask/snaps-directory/compare/v1.15.1...v1.15.2
