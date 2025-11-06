@@ -9,11 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.16.1]
 
-### Uncategorized
+### Changed
 
-- chore: Bump lmdb ([#621](https://github.com/MetaMask/snaps-directory/pull/621))
-- chore(deps): bump axios from 1.10.0 to 1.12.1 in the npm_and_yarn group across 1 directory ([#612](https://github.com/MetaMask/snaps-directory/pull/612))
-- chore(deps): bump linkifyjs from 4.1.1 to 4.3.2 in the npm_and_yarn group across 1 directory ([#599](https://github.com/MetaMask/snaps-directory/pull/599))
+- Bump dependencies ([#621](https://github.com/MetaMask/snaps-directory/pull/621), [#612](https://github.com/MetaMask/snaps-directory/pull/612), [#599](https://github.com/MetaMask/snaps-directory/pull/599))
 
 ## [1.16.0]
 
