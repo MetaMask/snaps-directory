@@ -9,9 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.16.3]
 
-### Uncategorized
+### Fixed
 
-- fix: Await verify function ([#629](https://github.com/MetaMask/snaps-directory/pull/629))
+- Await `verify` function ([#629](https://github.com/MetaMask/snaps-directory/pull/629))
 
 ## [1.16.2]
 
