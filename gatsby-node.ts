@@ -138,7 +138,7 @@ async function getRegistry() {
     headers: HEADERS,
   }).then(async (response) => response.json());
 
-  const isRegistryValid = verify({
+  const isRegistryValid = await verify({
     registry: rawRegistry,
     signature,
     publicKey: PUBLIC_KEY,
