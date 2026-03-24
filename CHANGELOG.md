@@ -9,9 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.16.2]
 
-### Uncategorized
+### Changed
 
-- chore: Bump MetaMask dependencies ([#627](https://github.com/MetaMask/snaps-directory/pull/627))
+- Bump MetaMask dependencies ([#627](https://github.com/MetaMask/snaps-directory/pull/627))
 
 ## [1.16.1]
 
