@@ -3277,6 +3277,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eslint/js@npm:^9.11.0":
+  version: 9.39.4
+  resolution: "@eslint/js@npm:9.39.4"
+  checksum: 5b1cd1e6c13bc119c92911e6cef7cf886d942c9e047db0c923bbdd539ed6b9820d986b4559be1f2e24836de7fbad95bbfe268b2bf3d1fef76de37bdc8fae19d8
+  languageName: node
+  linkType: hard
+
 "@ethereumjs/common@npm:^3.2.0":
   version: 3.2.0
   resolution: "@ethereumjs/common@npm:3.2.0"
@@ -5002,13 +5009,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/eslint-config-browser@npm:^12.0.0":
-  version: 12.1.0
-  resolution: "@metamask/eslint-config-browser@npm:12.1.0"
+"@metamask/eslint-config-browser@npm:^15.0.0":
+  version: 15.0.0
+  resolution: "@metamask/eslint-config-browser@npm:15.0.0"
+  dependencies:
+    "@eslint/js": ^9.11.0
+    globals: ^15.9.0
   peerDependencies:
-    "@metamask/eslint-config": ^12.0.0
-    eslint: ^8.27.0
-  checksum: a1d3035b0dd82aa66397e9c8916c45e1dc2d339c13dac385f7c90de09df943c313801538c0d955c2abf44a57008100874f8615d70f19188d8893b653cfe15485
+    "@metamask/eslint-config": ^15.0.0
+    eslint: ^9.11.0
+  checksum: 6482bb91e10b2becd8b592053f9eddc62253c2126f2f7259fabad8f36268fd6bcc1d637535cc8562d89d579150380b3968614056c40900930bf2956008a10982
   languageName: node
   linkType: hard
 
@@ -5299,7 +5309,7 @@ __metadata:
     "@lingui/react": ^5.3.2
     "@metamask/auto-changelog": ^3.2.0
     "@metamask/eslint-config": ^12.0.0
-    "@metamask/eslint-config-browser": ^12.0.0
+    "@metamask/eslint-config-browser": ^15.0.0
     "@metamask/eslint-config-jest": ^12.0.0
     "@metamask/eslint-config-nodejs": ^12.0.0
     "@metamask/eslint-config-typescript": ^12.0.0
@@ -13788,6 +13798,13 @@ __metadata:
   dependencies:
     type-fest: ^0.20.2
   checksum: 86c92ca8a04efd864c10852cd9abb1ebe6d447dcc72936783e66eaba1087d7dba5c9c3421a48d6ca722c319378754dbcc3f3f732dbe47592d7de908edf58a773
+  languageName: node
+  linkType: hard
+
+"globals@npm:^15.9.0":
+  version: 15.15.0
+  resolution: "globals@npm:15.15.0"
+  checksum: a2a92199a112db00562a2f85eeef2a7e3943e171f7f7d9b17dfa9231e35fd612588f3c199d1509ab1757273467e413b08c80424cf6e399e96acdaf93deb3ee88
   languageName: node
   linkType: hard
 
