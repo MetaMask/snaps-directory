@@ -5130,6 +5130,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@metamask/messenger@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@metamask/messenger@npm:1.0.0"
+  checksum: c46d41b4ab398cdf38851b97fec575c8941d12905cde58b6d44d5dcabd736ddbfd9dd2f6b10537e7b6338574ede3beb903f06e219edd3e417121b00b8828bc04
+  languageName: node
+  linkType: hard
+
 "@metamask/number-to-bn@npm:^1.7.1":
   version: 1.7.1
   resolution: "@metamask/number-to-bn@npm:1.7.1"
@@ -5452,12 +5459,12 @@ __metadata:
   linkType: hard
 
 "@metamask/storage-service@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@metamask/storage-service@npm:1.0.0"
+  version: 1.0.1
+  resolution: "@metamask/storage-service@npm:1.0.1"
   dependencies:
-    "@metamask/messenger": ^0.3.0
+    "@metamask/messenger": ^1.0.0
     "@metamask/utils": ^11.9.0
-  checksum: ca48ced386a7e543988507715c4f2eede176df485e739ce794917488b1818b59a107c15d6296dd3e1277e33597c29af4cde5a380d0be2943f9a42f7d16224fda
+  checksum: 64a85de4007fea63344aa7d60f07772950f5724cd7503879e27a3a0f3e131b2b7fef5c105946b54450c4d2ea8696c92ea8184dccf4d86960e8dd29a225372f56
   languageName: node
   linkType: hard
 
