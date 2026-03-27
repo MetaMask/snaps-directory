@@ -4971,13 +4971,13 @@ __metadata:
   linkType: hard
 
 "@metamask/base-controller@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "@metamask/base-controller@npm:9.0.0"
+  version: 9.0.1
+  resolution: "@metamask/base-controller@npm:9.0.1"
   dependencies:
-    "@metamask/messenger": ^0.3.0
-    "@metamask/utils": ^11.8.1
+    "@metamask/messenger": ^1.0.0
+    "@metamask/utils": ^11.9.0
     immer: ^9.0.6
-  checksum: 02da25ce528ccd18c253127972b39830b59d9c56a703cf9cc34505185191742ab2e28aca4d6f42f7ee5769ff3a989a9d536911f83baee9b44ce44bf91f08d7d7
+  checksum: 9bb0c0a29ae2576f2bb03066e81763cf08d4f3c8551ea95fb4d81e5f20de32faf9aa6c4af9e9d16135ce59b6b8f6bb4b1acbb516a3eed4c67013b4c80d403805
   languageName: node
   linkType: hard
 
@@ -5127,6 +5127,13 @@ __metadata:
   version: 0.3.0
   resolution: "@metamask/messenger@npm:0.3.0"
   checksum: 72050d7ba672bc82319a6b6ff126c52d372418a9049555a1b94f520e664b6e8037e44203f2ecffb33f8de8e3b874174ad40da306fb8cb17decccaeb50f36f180
+  languageName: node
+  linkType: hard
+
+"@metamask/messenger@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@metamask/messenger@npm:1.0.0"
+  checksum: c46d41b4ab398cdf38851b97fec575c8941d12905cde58b6d44d5dcabd736ddbfd9dd2f6b10537e7b6338574ede3beb903f06e219edd3e417121b00b8828bc04
   languageName: node
   linkType: hard
 
