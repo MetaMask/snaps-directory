@@ -9,11 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.16.4]
 
-### Uncategorized
+### Fixed
 
-- fix: Disable connection keepalive when using `node-fetch` ([#643](https://github.com/MetaMask/snaps-directory/pull/643))
-- chore: Disallow Git dependencies ([#641](https://github.com/MetaMask/snaps-directory/pull/641))
-- chore: Change CODEOWNERS ([#642](https://github.com/MetaMask/snaps-directory/pull/642))
+- Disable connection keepalive when using `node-fetch` ([#643](https://github.com/MetaMask/snaps-directory/pull/643))
 
 ## [1.16.3]
 
