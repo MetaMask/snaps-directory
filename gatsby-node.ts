@@ -64,6 +64,7 @@ const PUBLIC_KEY =
 const STATS_URL = 'https://data.snaps.metamask.io/';
 
 const HEADERS = {
+  Connection: 'close',
   'User-Agent':
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36',
 };
