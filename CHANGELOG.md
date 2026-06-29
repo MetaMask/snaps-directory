@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.16.4]
+
+### Fixed
+
+- Disable connection keepalive when using `node-fetch` ([#643](https://github.com/MetaMask/snaps-directory/pull/643))
+
 ## [1.16.3]
 
 ### Fixed
@@ -376,7 +382,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.16.3...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.16.4...HEAD
+[1.16.4]: https://github.com/MetaMask/snaps-directory/compare/v1.16.3...v1.16.4
 [1.16.3]: https://github.com/MetaMask/snaps-directory/compare/v1.16.2...v1.16.3
 [1.16.2]: https://github.com/MetaMask/snaps-directory/compare/v1.16.1...v1.16.2
 [1.16.1]: https://github.com/MetaMask/snaps-directory/compare/v1.16.0...v1.16.1
