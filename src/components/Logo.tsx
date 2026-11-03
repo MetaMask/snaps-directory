@@ -10,7 +10,7 @@ import SvgLogo from '../assets/logo.svg';
  */
 export const Logo: FunctionComponent = () => {
   return (
-    <Box width="4.103rem" height="2.039rem">
+    <Box width="11.7rem" height="1.6rem">
       <Box
         // @ts-expect-error - SVG is a React component but TypeScript thinks
         // it's a string.
