@@ -9,10 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.17.0]
 
-### Uncategorized
+### Changed
 
-- feat: Update logo ([#646](https://github.com/MetaMask/snaps-directory/pull/646))
-- chore: Bump `allow-scripts` ([#647](https://github.com/MetaMask/snaps-directory/pull/647))
+- Update logo ([#646](https://github.com/MetaMask/snaps-directory/pull/646))
 
 ## [1.16.4]
 
