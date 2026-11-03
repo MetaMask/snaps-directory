@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Update logo ([#646](https://github.com/MetaMask/snaps-directory/pull/646))
+- Remove account management category from landing page ([#648](https://github.com/MetaMask/snaps-directory/pull/648))
 
 ## [1.16.4]
 
