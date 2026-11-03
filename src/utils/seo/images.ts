@@ -193,7 +193,7 @@ export async function createSnapImage(
   background.composite([
     {
       input: getAssetPath('images/logo.png'),
-      top: 462,
+      top: 497,
       left: 108,
     },
     {
