@@ -9,9 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.17.1]
 
-### Uncategorized
+### Fixed
 
-- fix: Update logo on SEO banners ([#650](https://github.com/MetaMask/snaps-directory/pull/650))
+- Update logo on SEO banners ([#650](https://github.com/MetaMask/snaps-directory/pull/650))
 
 ## [1.17.0]
 
