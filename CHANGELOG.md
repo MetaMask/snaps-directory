@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.17.1]
+
+### Uncategorized
+
+- fix: Update logo on SEO banners ([#650](https://github.com/MetaMask/snaps-directory/pull/650))
+
 ## [1.17.0]
 
 ### Changed
@@ -389,7 +395,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial test release.
 
-[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.17.0...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps-directory/compare/v1.17.1...HEAD
+[1.17.1]: https://github.com/MetaMask/snaps-directory/compare/v1.17.0...v1.17.1
 [1.17.0]: https://github.com/MetaMask/snaps-directory/compare/v1.16.4...v1.17.0
 [1.16.4]: https://github.com/MetaMask/snaps-directory/compare/v1.16.3...v1.16.4
 [1.16.3]: https://github.com/MetaMask/snaps-directory/compare/v1.16.2...v1.16.3
