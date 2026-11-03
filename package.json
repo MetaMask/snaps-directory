@@ -162,25 +162,19 @@
   "lavamoat": {
     "allowScripts": {
       "@lavamoat/preinstall-always-fail": false,
-      "@metamask/snaps-controllers>@metamask/permission-controller>@metamask/controller-utils>ethereumjs-util>ethereum-cryptography>keccak": false,
-      "@metamask/snaps-controllers>@metamask/permission-controller>@metamask/controller-utils>ethereumjs-util>ethereum-cryptography>secp256k1": false,
       "gatsby": false,
-      "gatsby>@parcel/cache>lmdb": false,
       "gatsby>@pmmmwh/react-refresh-webpack-plugin>core-js-pure": false,
       "gatsby>core-js": false,
       "gatsby>gatsby-cli": false,
       "gatsby>gatsby-sharp>sharp": true,
-      "gatsby>gatsby-telemetry": false,
       "gatsby>lmdb": false,
       "gatsby>lmdb>msgpackr>msgpackr-extract": false,
       "gatsby>memoizee>es5-ext": false,
       "gatsby-plugin-manifest>sharp": true,
       "@lingui/cli>esbuild": false,
-      "simple-git-hooks": true,
       "gatsby-plugin-sharp>sharp": true,
-      "sharp": true,
-      "@metamask/snaps-utils>@metamask/permission-controller>@metamask/controller-utils>ethereumjs-util>ethereum-cryptography>keccak": false,
-      "@metamask/snaps-utils>@metamask/permission-controller>@metamask/controller-utils>ethereumjs-util>ethereum-cryptography>secp256k1": false
+      "simple-git-hooks#2.9.0": true,
+      "sharp#0.34.2": true
     }
   }
 }
