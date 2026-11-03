@@ -92,8 +92,8 @@
   "devDependencies": {
     "@babel/core": "^7.27.7",
     "@jest/globals": "^29.7.0",
-    "@lavamoat/allow-scripts": "^3.3.4",
-    "@lavamoat/preinstall-always-fail": "^2.1.1",
+    "@lavamoat/allow-scripts": "^5.1.0",
+    "@lavamoat/preinstall-always-fail": "^3.0.1",
     "@lingui/cli": "^5.3.2",
     "@lingui/conf": "^5.3.2",
     "@lingui/format-po": "^5.3.2",
@@ -162,25 +162,19 @@
   "lavamoat": {
     "allowScripts": {
       "@lavamoat/preinstall-always-fail": false,
-      "@metamask/snaps-controllers>@metamask/permission-controller>@metamask/controller-utils>ethereumjs-util>ethereum-cryptography>keccak": false,
-      "@metamask/snaps-controllers>@metamask/permission-controller>@metamask/controller-utils>ethereumjs-util>ethereum-cryptography>secp256k1": false,
       "gatsby": false,
-      "gatsby>@parcel/cache>lmdb": false,
       "gatsby>@pmmmwh/react-refresh-webpack-plugin>core-js-pure": false,
       "gatsby>core-js": false,
       "gatsby>gatsby-cli": false,
       "gatsby>gatsby-sharp>sharp": true,
-      "gatsby>gatsby-telemetry": false,
       "gatsby>lmdb": false,
       "gatsby>lmdb>msgpackr>msgpackr-extract": false,
       "gatsby>memoizee>es5-ext": false,
       "gatsby-plugin-manifest>sharp": true,
       "@lingui/cli>esbuild": false,
-      "simple-git-hooks": true,
       "gatsby-plugin-sharp>sharp": true,
-      "sharp": true,
-      "@metamask/snaps-utils>@metamask/permission-controller>@metamask/controller-utils>ethereumjs-util>ethereum-cryptography>keccak": false,
-      "@metamask/snaps-utils>@metamask/permission-controller>@metamask/controller-utils>ethereumjs-util>ethereum-cryptography>secp256k1": false
+      "simple-git-hooks#2.9.0": true,
+      "sharp#0.34.2": true
     }
   }
 }
