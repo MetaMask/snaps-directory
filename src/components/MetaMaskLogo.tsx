@@ -20,8 +20,12 @@ export const MetaMaskLogo: FunctionComponent<MetaMaskLogoProps> = (props) => {
         // it's a string.
         as={Logo}
         role="img"
-        width="8.125rem"
-        height="4.038rem"
+        width={{
+          base: '8.125rem',
+          md: '25.06vw',
+          lg: 'min(14.51vw, 17.42rem)',
+        }}
+        height="auto"
         aria-label="MetaMask"
         fill="primary.alternative"
       />
